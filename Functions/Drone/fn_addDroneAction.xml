@@ -29,18 +29,18 @@
         <Chinese>无人机正在执行任务，请等待其返回。</Chinese>
     </Key>
     <Key ID="STR_Drone_ClickMap">
-        <Original>Cliquez sur la carte pour définir la zone de surveillance.</Original>
-        <English>Define the surveillance zone on your map.</English>
-        <French>Cliquez sur la carte pour définir la zone de surveillance.</French>
-        <Spanish>Define la zona de vigilancia en tu mapa.</Spanish>
-        <Italian>Definisci la zona di sorveglianza sulla tua mappa.</Italian>
-        <German>Definieren Sie die Überwachungszone auf Ihrer Karte.</German>
-        <Polish>Określ strefę obserwacji na mapie.</Polish>
-        <Russian>Определите зону наблюдения на карте.</Russian>
-        <Turkish>Haritanızda gözetleme bölgesini belirleyin.</Turkish>
-        <Japanese>マップ上で監視ゾーンを指定してください。</Japanese>
-        <Korean>지도에서 감시 구역을 지정하십시오.</Korean>
-        <Chinese>在地图上指定监视区域。</Chinese>
+        <Original>Define the surveillance zone.</Original>
+        <English>Define the surveillance zone.</English>
+        <French>Définir la zone de surveillance.</French>
+        <Spanish>Definir la zona de vigilancia.</Spanish>
+        <Italian>Definire la zona di sorveglianza.</Italian>
+        <German>Überwachungszone definieren.</German>
+        <Polish>Określ strefę obserwacji.</Polish>
+        <Russian>Определить зону наблюдения.</Russian>
+        <Turkish>Gözetleme bölgesini belirle.</Turkish>
+        <Japanese>監視ゾーンを定義する。</Japanese>
+        <Korean>감시 구역 설정.</Korean>
+        <Chinese>定义监视区域。</Chinese>
     </Key>
     <Key ID="STR_Drone_EnRoute">
         <Original>Drone en route vers la position [%1, %2].</Original>

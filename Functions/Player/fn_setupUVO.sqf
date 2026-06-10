@@ -7,7 +7,7 @@ private _uvoLang = "";
 if (side _unit == independent) then {
     _uvoLang = selectRandom ["English", "American English"];
 } else {
-    
+
     _uvoLang = selectRandom ["Arabic", "Persian"];
 };
 

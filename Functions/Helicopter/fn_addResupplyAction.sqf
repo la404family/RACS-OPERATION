@@ -1,5 +1,3 @@
-
-
 if (!hasInterface) exitWith {};
 
 params [["_crate", objNull, [objNull]]];
@@ -91,7 +89,7 @@ _crate addAction [
             {
                 private _unit = _x;
                 if (alive _unit) then {
-                    
+
                     private _dirToUnit = _cratePos getDir (getPos _unit);
                     private _approachPos = _crate getPos [0.1, _dirToUnit];
 
@@ -106,7 +104,7 @@ _crate addAction [
                     };
 
                     if (alive _unit) then {
-                        
+
                         _unit doWatch _crate;
                         sleep 0.5;
 
@@ -118,7 +116,7 @@ _crate addAction [
 
                         _unit doWatch objNull;
                         _unit doFollow _leader;
-                        
+
                         sleep 1.0;
                     };
                 };
@@ -137,6 +135,6 @@ _crate addAction [
     true,      
     true,      
     "",
-    
+
     "leader group player == player && { !isPlayer _x } count (units group player) > 0 && !(_target getVariable ['LL_Resupply_InProgress', false])"
 ];

@@ -1,5 +1,3 @@
-
-
 if (!isServer) exitWith {};
 
 private _fnSetState = {
@@ -9,7 +7,7 @@ private _fnSetState = {
 };
 
 private _fnInitState = {
-    
+
     ["IDLE"] call _fnSetState;
     missionNamespace setVariable ["LL_HELI_type",     "",      true];
     missionNamespace setVariable ["LL_HELI_priority", 0,       true];
@@ -28,7 +26,7 @@ private _fnAborted = {
 };
 
 private _fnGetSpawnPos = {
-    
+
     params ["_targetPos", "_height"];
     private _corners = [
         [200,  200,  _height],
@@ -43,7 +41,7 @@ private _fnGetSpawnPos = {
 };
 
 private _fnGetLZ = {
-    
+
     params ["_caller", "_type"];
     private _lzPos = getPosATL _caller;
     if (_type in ["LIVRAISON", "VEHICULE", "DEBARQUEMENT", "EMBARQUEMENT"]) then {
@@ -82,23 +80,23 @@ private _fnCreateMarker = {
     _mrk setMarkerType  (_data # 0);
     _mrk setMarkerColor (_data # 1);
     _mrk setMarkerText  (_data # 2);
-    
+
     if (_type == "CAS") then {
         private _areaName = _name + "_area";
         private _mrkArea = createMarker [_areaName, _pos];
         _mrkArea setMarkerShape "ELLIPSE";
-        
+
         _mrkArea setMarkerSize [200, 200];
         _mrkArea setMarkerColor "ColorRed";
         _mrkArea setMarkerAlpha 0.3;
         _mrkArea setMarkerBrush "SolidBorder";
     };
-    
+
     _name
 };
 
 private _fnSpawnHeli = {
-    
+
     params ["_spawnPos", "_targetPos", "_flyHeight"];
     ["SPAWNING"] call _fnSetState;
 
@@ -157,7 +155,7 @@ private _fnSpawnHeli = {
 };
 
 private _fnApproach = {
-    
+
     params ["_heli", "_group", "_targetPos", "_flyHeight"];
     ["APPROACHING"] call _fnSetState;
 
@@ -191,7 +189,7 @@ private _fnApproach = {
 };
 
 private _fnRTB = {
-    
+
     params [
         "_heli", "_group", "_crew", "_homeBase", "_flyHeight",
         ["_withCargo",        false],
@@ -252,7 +250,7 @@ private _fnRTB = {
 };
 
 private _fnExecCAS = {
-    
+
     params ["_heli", "_group", "_caller", "_targetPos", "_loiterHeight", "_loiterRadius", "_loiterDuration"];
     ["CAS"] call _fnSetState;
 
@@ -297,7 +295,7 @@ private _fnExecCAS = {
 };
 
 private _fnExecDelivery = {
-    
+
     params ["_heli", "_group", "_crew", "_caller", "_type", "_targetPos", "_hoverHeight", "_side"];
     ["DELIVERING"] call _fnSetState;
 
@@ -361,7 +359,7 @@ private _fnExecDelivery = {
         clearMagazineCargoGlobal _cargo;
         clearItemCargoGlobal     _cargo;
         clearBackpackCargoGlobal _cargo;
-        
+
         private _leader = missionNamespace getVariable ["player_00", objNull];
         if (!isNull _leader) then {
             private _uniqueMags = [];
@@ -381,13 +379,13 @@ private _fnExecDelivery = {
                     };
                 };
             } forEach (units group _leader);
-            
+
             {
                 _cargo addMagazineCargoGlobal [_x, 3];
             } forEach _uniqueMags;
         };
     };
-    
+
     _heli flyInHeight _hoverHeight;
     _heli flyInHeightASL [_hoverHeight, _hoverHeight, _hoverHeight];
 
@@ -481,7 +479,7 @@ private _fnExecDelivery = {
         };
     } else {
         ["STR_TAG_Msg_Vehicle_Dropped"] remoteExec ["LL_fnc_radioMessage", _caller];
-        
+
         missionNamespace setVariable ["vehicule_team", _cargo, true];
     };
 
@@ -489,7 +487,7 @@ private _fnExecDelivery = {
 };
 
 private _fnExecDeploy = {
-    
+
     params ["_heli", "_group", "_crew", "_caller", "_targetPos", "_homeBase", "_side"];
     ["DEPLOYING"] call _fnSetState;
 
@@ -561,7 +559,7 @@ private _fnExecDeploy = {
         removeUniform _unit; removeVest _unit; removeBackpack _unit;
         removeHeadgear _unit; removeGoggles _unit;
         removeAllWeapons _unit; 
-        
+
         _unit forceAddUniform (selectRandom _uniforms);
         [_unit, "CSAT_ScimitarRegiment"] call BIS_fnc_setUnitInsignia;
         _unit addVest     (selectRandom _vestPool);
@@ -569,10 +567,10 @@ private _fnExecDeploy = {
         _unit addHeadgear (selectRandom _helmets);
         _unit addGoggles  (selectRandom _cagoules);
         _unit linkItem "NVGogglesB_blk_F";
-        
+
         private _refUnit = missionNamespace getVariable ["LL_HELI_caller", objNull];
         if (isNull _refUnit) then { _refUnit = missionNamespace getVariable ["player_00", objNull]; };
-        
+
         if (!isNull _refUnit) then {
             private _pw = primaryWeapon _refUnit;
             if (_pw != "") then {
@@ -584,13 +582,13 @@ private _fnExecDeploy = {
                 [_unit, _hw, 3] call _fnAddMags;
                 _unit addWeapon _hw;
             };
-            
+
         } else {
-            
+
             [_unit, "CUP_arifle_FAMAS_F1", 5] call _fnAddMags;
             _unit addWeapon "CUP_arifle_FAMAS_F1";
         };
-        
+
         _unit addWeapon "CUP_LRTV";
 
         if (!isNil "LL_g_allNamesTyped") then {
@@ -600,7 +598,7 @@ private _fnExecDeploy = {
             private _entry = selectRandom _available;
             private _nameData = _entry select 0;
             private _faceType = _entry select 1;
-            
+
             _used pushBack (_nameData select 0);
             missionNamespace setVariable ["LL_g_usedPlayerNames", _used];
 
@@ -622,7 +620,7 @@ private _fnExecDeploy = {
             [_unit, _nameData, _face, _speaker, _pitch, ""] remoteExec ["LL_fnc_applyIdentity", 0, _unit];
             _unit setVariable ["LL_s_identity", [_nameData, _faceType, _face, _speaker, _pitch, ""], true];
             _unit setVariable ["LL_IdentitySet", true, true];
-            
+
             if (!isNil "LL_fnc_setupUVO") then { [_unit] call LL_fnc_setupUVO; };
         };
 
@@ -687,7 +685,7 @@ private _fnExecDeploy = {
 };
 
 private _fnExecExtract = {
-    
+
     params ["_heli", "_group", "_crew", "_caller", "_targetPos", "_homeBase", "_flyHeight"];
     ["EXTRACTING"] call _fnSetState;
 
@@ -773,7 +771,7 @@ private _fnExecExtract = {
         private _playersInHeli = { isPlayer _x && { alive _x } } count (crew _heli);
 
         if (_isTask02bExtract) then {
-            
+
             private _hostage = missionNamespace getVariable ["LL_Task02b_Hostage", objNull];
 
             {
@@ -799,7 +797,7 @@ private _fnExecExtract = {
                 "" remoteExec ["hintSilent", 0];
             };
         } else {
-            
+
             (format [localize "STR_LL_Heli_Msg_Extract_Counter", _playersInHeli, count _allHumans])
                 remoteExec ["hintSilent", 0];
             if (_playersInHeli >= count _allHumans && { _playersInHeli > 0 }) then {
@@ -834,7 +832,7 @@ private _fnExecExtract = {
     private _boardedPlayers = crew _heli select { isPlayer _x && { alive _x } };
 
     if (count _boardedPlayers > 0) then {
-        
+
         "" remoteExec ["hintSilent", 0];
         _heli flyInHeight _flyHeight;
         private _wpVic = _group addWaypoint [_homeBase, 0];
@@ -850,7 +848,7 @@ private _fnExecExtract = {
         };
         true
     } else {
-        
+
         _heli flyInHeight _flyHeight;
         _heli doMove _homeBase;
         _heli lock 2; 
@@ -879,7 +877,7 @@ while { true } do {
     if (count _pending > 0) then {
 
         _pending params ["_type", "_pos", "_caller", "_priority"];
-        
+
         missionNamespace setVariable ["LL_HELI_pending", [], false];
 
         missionNamespace setVariable ["LL_HELI_type",     _type,     true];
@@ -921,19 +919,19 @@ while { true } do {
             private _aborted = [_heli, _group, _lzPos, _flyHeight] call _fnApproach;
 
             if (!alive _heli) then {
-                
+
                 deleteMarker _markerName; deleteMarker (_markerName + "_area");
                 ["STR_LL_Heli_Msg_Killed"] remoteExec ["LL_fnc_radioMessage", 0];
                 if (!isNull _group) then { deleteGroup _group; };
                 call _fnInitState;
             } else {
                 if (_aborted) then {
-                    
+
                     deleteMarker _markerName; deleteMarker (_markerName + "_area");
                     [_heli, _group, _crew, _homeBase, _flyHeight, false, false] call _fnRTB;
                     call _fnInitState;
                 } else {
-                    
+
                     private _victoryTriggered  = false;
                     private _deadDuringMission = false;
 
@@ -953,7 +951,7 @@ while { true } do {
                                 if (!_casAborted) then {
                                     ["STR_TAG_Msg_CAS_RTB"] remoteExec ["LL_fnc_radioMessage", _caller];
                                 };
-                                
+
                                 [_heli, _group, _crew, _homeBase, _flyHeight, false, !_casAborted] call _fnRTB;
                             };
                         };

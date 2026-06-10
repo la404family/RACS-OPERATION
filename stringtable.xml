@@ -30,18 +30,18 @@
             <Chinese>无人机正在执行任务，请等待其返回。</Chinese>
         </Key>
         <Key ID="STR_Drone_ClickMap">
-            <Original>Cliquez sur la carte pour définir la zone de surveillance.</Original>
-            <English>Define the surveillance zone on your map.</English>
-            <French>Cliquez sur la carte pour définir la zone de surveillance.</French>
-            <Spanish>Define la zona de vigilancia en tu mapa.</Spanish>
-            <Italian>Definisci la zona di sorveglianza sulla tua mappa.</Italian>
-            <German>Definieren Sie die Überwachungszone auf Ihrer Karte.</German>
-            <Polish>Określ strefę obserwacji na mapie.</Polish>
-            <Russian>Определите зону наблюдения на карте.</Russian>
-            <Turkish>Haritanızda gözetleme bölgesini belirleyin.</Turkish>
-            <Japanese>マップ上で監視ゾーンを指定してください。</Japanese>
-            <Korean>지도에서 감시 구역을 지정하십시오.</Korean>
-            <Chinese>在地图上指定监视区域。</Chinese>
+            <Original>Define the surveillance zone.</Original>
+            <English>Define the surveillance zone.</English>
+            <French>Définir la zone de surveillance.</French>
+            <Spanish>Definir la zona de vigilancia.</Spanish>
+            <Italian>Definire la zona di sorveglianza.</Italian>
+            <German>Überwachungszone definieren.</German>
+            <Polish>Określ strefę obserwacji.</Polish>
+            <Russian>Определить зону наблюдения.</Russian>
+            <Turkish>Gözetleme bölgesini belirle.</Turkish>
+            <Japanese>監視ゾーンを定義する。</Japanese>
+            <Korean>감시 구역 설정.</Korean>
+            <Chinese>定义监视区域。</Chinese>
         </Key>
         <Key ID="STR_Drone_EnRoute">
             <Original>Drone en route vers la position [%1, %2].</Original>
@@ -144,18 +144,18 @@
             <Chinese>近距离空中支援冷却中，剩余%1秒。</Chinese>
         </Key>
         <Key ID="STR_LL_Heli_Action_ClickMap">
-            <Original>Click on the map to define the helicopter zone.</Original>
-            <English>Click on the map to define the helicopter zone.</English>
-            <French>Cliquez sur la carte pour définir la zone de l'hélicoptère.</French>
-            <Spanish>Haz clic en el mapa para definir la zona del helicóptero.</Spanish>
-            <Italian>Clicca sulla mappa per definire la zona dell'elicottero.</Italian>
-            <German>Klicken Sie auf die Karte, um die Helikopterzone zu definieren.</German>
-            <Polish>Kliknij na mapie, aby określić strefę helikoptera.</Polish>
-            <Russian>Нажмите на карту, чтобы определить зону для вертолета.</Russian>
-            <Turkish>Helikopter bölgesini belirlemek için haritaya tıklayın.</Turkish>
-            <Japanese>マップをクリックしてヘリコプターのゾーンを定義してください。</Japanese>
-            <Korean>지도에서 헬리콥터 구역을 설정하려면 클릭하세요.</Korean>
-            <Chinese>在地图上点击以定义直升机区域。</Chinese>
+            <Original>Define the helicopter zone.</Original>
+            <English>Define the helicopter zone.</English>
+            <French>Définir la zone de l'hélicoptère.</French>
+            <Spanish>Definir la zona del helicóptero.</Spanish>
+            <Italian>Definire la zona dell'elicottero.</Italian>
+            <German>Helikopterzone definieren.</German>
+            <Polish>Określ strefę helikoptera.</Polish>
+            <Russian>Определить зону для вертолета.</Russian>
+            <Turkish>Helikopter bölgesini belirle.</Turkish>
+            <Japanese>ヘリコプターのゾーンを定義する。</Japanese>
+            <Korean>헬리콥터 구역 설정.</Korean>
+            <Chinese>定义直升机区域。</Chinese>
         </Key>
         <Key ID="STR_LL_Heli_Action_EnRoute">
             <Original>Helicopter on the way to [%1, %2]. Type: %3</Original>
@@ -329,96 +329,267 @@
             <Original>Ammo drop approved. Helicopter en route.</Original>
             <English>Ammo drop approved. Helicopter en route.</English>
             <French>Livraison de munitions approuvée. Hélicoptère en route.</French>
+            <Spanish>Lanzamiento de munición aprobado. Helicóptero en camino.</Spanish>
+            <Italian>Lancio munizioni approvato. Elicottero in arrivo.</Italian>
+            <German>Munitionsabwurf genehmigt. Hubschrauber ist unterwegs.</German>
+            <Polish>Zrzut amunicji zatwierdzony. Śmigłowiec w drodze.</Polish>
+            <Russian>Сброс боеприпасов одобрен. Вертолет в пути.</Russian>
+            <Turkish>Cephane ikmali onaylandı. Helikopter yolda.</Turkish>
+            <Japanese>弾薬投下を承認。ヘリが向かっています。</Japanese>
+            <Korean>탄약 투하 승인됨. 헬기 이동 중.</Korean>
+            <Chinese>弹药空投已批准。直升机在途中。</Chinese>
         </Key>
         <Key ID="STR_LL_Heli_Dispatch_Approve_VEHICULE">
             <Original>Vehicle drop approved. Helicopter en route.</Original>
             <English>Vehicle drop approved. Helicopter en route.</English>
             <French>Livraison de véhicule approuvée. Hélicoptère en route.</French>
+            <Spanish>Lanzamiento de vehículo aprobado. Helicóptero en camino.</Spanish>
+            <Italian>Lancio veicolo approvato. Elicottero in arrivo.</Italian>
+            <German>Fahrzeugabwurf genehmigt. Hubschrauber ist unterwegs.</German>
+            <Polish>Zrzut pojazdu zatwierdzony. Śmigłowiec w drodze.</Polish>
+            <Russian>Сброс техники одобрен. Вертолет в пути.</Russian>
+            <Turkish>Araç ikmali onaylandı. Helikopter yolda.</Turkish>
+            <Japanese>車両投下を承認。ヘリが向かっています。</Japanese>
+            <Korean>차량 투하 승인됨. 헬기 이동 중.</Korean>
+            <Chinese>车辆空投已批准。直升机在途中。</Chinese>
         </Key>
         <Key ID="STR_LL_Heli_Dispatch_Approve_CAS">
             <Original>Close Air Support approved. Helicopter en route.</Original>
             <English>Close Air Support approved. Helicopter en route.</English>
             <French>Appui aérien CAS approuvé. Hélicoptère en route.</French>
+            <Spanish>Apoyo aéreo cercano aprobado. Helicóptero en camino.</Spanish>
+            <Italian>Supporto aereo ravvicinato approvato. Elicottero in arrivo.</Italian>
+            <German>Luftnahunterstützung genehmigt. Hubschrauber ist unterwegs.</German>
+            <Polish>Bezpośrednie wsparcie lotnicze zatwierdzone. Śmigłowiec w drodze.</Polish>
+            <Russian>Непосредственная авиационная поддержка одобрена. Вертолет в пути.</Russian>
+            <Turkish>Yakın Hava Desteği onaylandı. Helikopter yolda.</Turkish>
+            <Japanese>近接航空支援を承認。ヘリが向かっています。</Japanese>
+            <Korean>근접 항공 지원 승인됨. 헬기 이동 중.</Korean>
+            <Chinese>近距离空中支援已批准。直升机在途中。</Chinese>
         </Key>
         <Key ID="STR_LL_Heli_Dispatch_Approve_DEBARQUEMENT">
             <Original>Reinforcements approved. Helicopter en route with troops.</Original>
             <English>Reinforcements approved. Helicopter en route with troops.</English>
             <French>Renforts approuvés. Hélicoptère en route avec des troupes.</French>
+            <Spanish>Refuerzos aprobados. Helicóptero en camino con tropas.</Spanish>
+            <Italian>Rinforzi approvati. Elicottero in arrivo con truppe.</Italian>
+            <German>Verstärkung genehmigt. Hubschrauber mit Truppen ist unterwegs.</German>
+            <Polish>Posiłki zatwierdzone. Śmigłowiec z żołnierzami w drodze.</Polish>
+            <Russian>Подкрепление одобрено. Вертолет с войсками в пути.</Russian>
+            <Turkish>Takviye onaylandı. Helikopter birliklerle yolda.</Turkish>
+            <Japanese>増援を承認。部隊を乗せたヘリが向かっています。</Japanese>
+            <Korean>증원 승인됨. 병력을 태운 헬기 이동 중.</Korean>
+            <Chinese>增援已批准。直升机正载着部队在途中。</Chinese>
         </Key>
         <Key ID="STR_LL_Heli_Dispatch_Approve_EMBARQUEMENT">
             <Original>Extraction approved. Helicopter en route to pickup zone.</Original>
             <English>Extraction approved. Helicopter en route to pickup zone.</English>
             <French>Extraction approuvée. Hélicoptère en route vers la zone de pickup.</French>
+            <Spanish>Extracción aprobada. Helicóptero en camino a la zona de recogida.</Spanish>
+            <Italian>Estrazione approvata. Elicottero in arrivo alla zona di prelievo.</Italian>
+            <German>Evakuierung genehmigt. Hubschrauber auf dem Weg zur Abholzone.</German>
+            <Polish>Ewakuacja zatwierdzona. Śmigłowiec w drodze do strefy podjęcia.</Polish>
+            <Russian>Эвакуация одобрена. Вертолет направляется в зону посадки.</Russian>
+            <Turkish>Tahliye onaylandı. Helikopter alınma bölgesine yolda.</Turkish>
+            <Japanese>撤退を承認。ヘリが回収ゾーンに向かっています。</Japanese>
+            <Korean>추출 승인됨. 헬기가 픽업 지점으로 이동 중.</Korean>
+            <Chinese>撤离已批准。直升机正在前往接应区。</Chinese>
         </Key>
         <Key ID="STR_LL_Heli_Dispatch_Approve_DEFAULT">
             <Original>Request approved. Helicopter en route.</Original>
             <English>Request approved. Helicopter en route.</English>
             <French>Demande approuvée. Hélicoptère en route.</French>
+            <Spanish>Solicitud aprobada. Helicóptero en camino.</Spanish>
+            <Italian>Richiesta approvata. Elicottero in arrivo.</Italian>
+            <German>Anfrage genehmigt. Hubschrauber ist unterwegs.</German>
+            <Polish>Żądanie zatwierdzone. Śmigłowiec w drodze.</Polish>
+            <Russian>Запрос одобрен. Вертолет в пути.</Russian>
+            <Turkish>İstek onaylandı. Helikopter yolda.</Turkish>
+            <Japanese>要求を承認。ヘリが向かっています。</Japanese>
+            <Korean>요청 승인됨. 헬기 이동 중.</Korean>
+            <Chinese>请求已批准。直升机在途中。</Chinese>
         </Key>
         <Key ID="STR_LL_Heli_Dispatch_Abort_CAS">
             <Original>CAS mission aborted — higher priority task.</Original>
             <English>CAS mission aborted — higher priority task.</English>
             <French>Mission CAS annulée — priorité supérieure.</French>
+            <Spanish>Misión CAS abortada — tarea de mayor prioridad.</Spanish>
+            <Italian>Missione CAS annullata — incarico a priorità maggiore.</Italian>
+            <German>CAS-Mission abgebrochen — Aufgabe mit höherer Priorität.</German>
+            <Polish>Misja CAS przerwana — zadanie o wyższej priorytecie.</Polish>
+            <Russian>Миссия CAS отменена — более приоритетная задача.</Russian>
+            <Turkish>CAS görevi iptal edildi — daha yüksek öncelikli görev.</Turkish>
+            <Japanese>CAS任務は中止されました — より優先度の高い任務があります。</Japanese>
+            <Korean>CAS 임무 중단됨 — 더 높은 우선순위의 작업.</Korean>
+            <Chinese>CAS任务取消 — 有更高优先级的任务。</Chinese>
         </Key>
         <Key ID="STR_LL_Heli_Dispatch_Abort_LIVRAISON">
             <Original>Supply drop aborted — priority mission active.</Original>
             <English>Supply drop aborted — priority mission active.</English>
             <French>Livraison annulée — mission prioritaire en cours.</French>
+            <Spanish>Lanzamiento de suministros abortado — misión prioritaria activa.</Spanish>
+            <Italian>Lancio forniture annullato — missione prioritaria attiva.</Italian>
+            <German>Versorgungsabwurf abgebrochen — Prioritätsmission aktiv.</German>
+            <Polish>Zrzut zaopatrzenia przerwany — aktywna misja priorytetowa.</Polish>
+            <Russian>Сброс припасов отменен — активна приоритетная миссия.</Russian>
+            <Turkish>İkmal atışı iptal edildi — öncelikli görev aktif.</Turkish>
+            <Japanese>補給投下は中止されました — 優先任務が進行中です。</Japanese>
+            <Korean>보급품 투하 중단됨 — 우선순위 임무 진행 중.</Korean>
+            <Chinese>补给空投取消 — 优先任务正在进行中。</Chinese>
         </Key>
         <Key ID="STR_LL_Heli_Dispatch_Abort_VEHICULE">
             <Original>Vehicle drop aborted — priority mission active.</Original>
             <English>Vehicle drop aborted — priority mission active.</English>
             <French>Livraison véhicule annulée — mission prioritaire en cours.</French>
+            <Spanish>Lanzamiento de vehículo abortado — misión prioritaria activa.</Spanish>
+            <Italian>Lancio veicolo annullato — missione prioritaria attiva.</Italian>
+            <German>Fahrzeugabwurf abgebrochen — Prioritätsmission aktiv.</German>
+            <Polish>Zrzut pojazdu przerwany — aktywna misja priorytetowa.</Polish>
+            <Russian>Сброс техники отменен — активна приоритетная миссия.</Russian>
+            <Turkish>Araç ikmali iptal edildi — öncelikli görev aktif.</Turkish>
+            <Japanese>車両投下は中止されました — 優先任務が進行中です。</Japanese>
+            <Korean>차량 투하 중단됨 — 우선순위 임무 진행 중.</Korean>
+            <Chinese>车辆空投取消 — 优先任务正在进行中。</Chinese>
         </Key>
         <Key ID="STR_LL_Heli_Dispatch_Abort_DEBARQUEMENT">
             <Original>Reinforcements aborted — priority mission active.</Original>
             <English>Reinforcements aborted — priority mission active.</English>
             <French>Renforts annulés — mission prioritaire en cours.</French>
+            <Spanish>Refuerzos abortados — misión prioritaria activa.</Spanish>
+            <Italian>Rinforzi annullati — missione prioritaria attiva.</Italian>
+            <German>Verstärkung abgebrochen — Prioritätsmission aktiv.</German>
+            <Polish>Posiłki przerwane — aktywna misja priorytetowa.</Polish>
+            <Russian>Подкрепление отменено — активна приоритетная миссия.</Russian>
+            <Turkish>Takviye iptal edildi — öncelikli görev aktif.</Turkish>
+            <Japanese>増援は中止されました — 優先任務が進行中です。</Japanese>
+            <Korean>증원 중단됨 — 우선순위 임무 진행 중.</Korean>
+            <Chinese>增援取消 — 优先任务正在进行中。</Chinese>
         </Key>
         <Key ID="STR_LL_Heli_Dispatch_Abort_DEFAULT">
             <Original>Current mission aborted — helicopter redirected.</Original>
             <English>Current mission aborted — helicopter redirected.</English>
             <French>Mission en cours annulée — redirection de l'hélicoptère.</French>
+            <Spanish>Misión actual abortada — helicóptero redirigido.</Spanish>
+            <Italian>Missione attuale annullata — elicottero reindirizzato.</Italian>
+            <German>Aktuelle Mission abgebrochen — Hubschrauber umgeleitet.</German>
+            <Polish>Obecna misja przerwana — śmigłowiec przekierowany.</Polish>
+            <Russian>Текущая миссия отменена — вертолет перенаправлен.</Russian>
+            <Turkish>Mevcut görev iptal edildi — helikopter yönlendirildi.</Turkish>
+            <Japanese>現在の任務は中止されました — ヘリは方向転換しました。</Japanese>
+            <Korean>현재 임무 중단됨 — 헬기 경로 변경.</Korean>
+            <Chinese>当前任务取消 — 直升机已重新定向。</Chinese>
         </Key>
         <Key ID="STR_LL_Heli_Dispatch_New_EMBARQUEMENT">
             <Original>PRIORITY extraction — helicopter redirected immediately.</Original>
             <English>PRIORITY extraction — helicopter redirected immediately.</English>
             <French>Extraction PRIORITAIRE — hélicoptère redirigé immédiatement.</French>
+            <Spanish>Extracción PRIORITARIA — helicóptero redirigido inmediatamente.</Spanish>
+            <Italian>Estrazione PRIORITARIA — elicottero reindirizzato immediatamente.</Italian>
+            <German>PRIORITÄRE Evakuierung — Hubschrauber wird sofort umgeleitet.</German>
+            <Polish>Ewakuacja PRIORYTETOWA — śmigłowiec natychmiast przekierowany.</Polish>
+            <Russian>ПРИОРИТЕТНАЯ эвакуация — вертолет немедленно перенаправлен.</Russian>
+            <Turkish>ÖNCELİKLİ tahliye — helikopter derhal yönlendirildi.</Turkish>
+            <Japanese>最優先の撤退 — ヘリは直ちに方向転換しました。</Japanese>
+            <Korean>우선순위 추출 — 헬기가 즉시 경로를 변경했습니다.</Korean>
+            <Chinese>优先撤离 — 直升机立即重新定向。</Chinese>
         </Key>
         <Key ID="STR_LL_Heli_Dispatch_New_DEFAULT">
             <Original>New priority mission accepted. Helicopter redirected.</Original>
             <English>New priority mission accepted. Helicopter redirected.</English>
             <French>Nouvelle mission prioritaire acceptée. Hélicoptère redirigé.</French>
+            <Spanish>Nueva misión prioritaria aceptada. Helicóptero redirigido.</Spanish>
+            <Italian>Nuova missione prioritaria accettata. Elicottero reindirizzato.</Italian>
+            <German>Neue Prioritätsmission akzeptiert. Hubschrauber umgeleitet.</German>
+            <Polish>Nowa misja priorytetowa zaakceptowana. Śmigłowiec przekierowany.</Polish>
+            <Russian>Новая приоритетная миссия принята. Вертолет перенаправлен.</Russian>
+            <Turkish>Yeni öncelikli görev kabul edildi. Helikopter yönlendirildi.</Turkish>
+            <Japanese>新しい優先任務が受諾されました。ヘリは方向転換しました。</Japanese>
+            <Korean>새로운 우선순위 임무 수락됨. 헬기 경로 변경.</Korean>
+            <Chinese>接受新优先任务。直升机已重新定向。</Chinese>
         </Key>
         <Key ID="STR_LL_Heli_Dispatch_Deny_EMBARQUEMENT">
             <Original>Extraction already in progress. Request denied.</Original>
             <English>Extraction already in progress. Request denied.</English>
             <French>Extraction déjà en cours. Demande refusée.</French>
+            <Spanish>Extracción ya en curso. Solicitud denegada.</Spanish>
+            <Italian>Estrazione già in corso. Richiesta respinta.</Italian>
+            <German>Evakuierung bereits im Gange. Anfrage abgelehnt.</German>
+            <Polish>Ewakuacja już w toku. Żądanie odrzucone.</Polish>
+            <Russian>Эвакуация уже выполняется. Запрос отклонен.</Russian>
+            <Turkish>Tahliye zaten devam ediyor. İstek reddedildi.</Turkish>
+            <Japanese>撤退はすでに進行中です。要求は拒否されました。</Japanese>
+            <Korean>추출이 이미 진행 중입니다. 요청이 거부되었습니다.</Korean>
+            <Chinese>撤离已在进行中。请求被拒绝。</Chinese>
         </Key>
         <Key ID="STR_LL_Heli_Dispatch_Deny_CAS">
             <Original>Helicopter busy (mission %1 in progress). CAS support denied.</Original>
             <English>Helicopter busy (mission %1 in progress). CAS support denied.</English>
             <French>Hélicoptère occupé (mission %1 en cours). Appui CAS refusé.</French>
+            <Spanish>Helicóptero ocupado (misión %1 en curso). Apoyo CAS denegado.</Spanish>
+            <Italian>Elicottero occupato (missione %1 in corso). Supporto CAS respinto.</Italian>
+            <German>Hubschrauber beschäftigt (Mission %1 im Gange). CAS-Unterstützung abgelehnt.</German>
+            <Polish>Śmigłowiec zajęty (misja %1 w toku). Wsparcie CAS odrzucone.</Polish>
+            <Russian>Вертолет занят (выполняется миссия %1). Поддержка CAS отклонена.</Russian>
+            <Turkish>Helikopter meşgul (görev %1 devam ediyor). CAS desteği reddedildi.</Turkish>
+            <Japanese>ヘリは現在塞がっています（任務 %1 進行中）。CAS支援は拒否されました。</Japanese>
+            <Korean>헬기가 바쁩니다 (임무 %1 진행 중). CAS 지원 거부됨.</Korean>
+            <Chinese>直升机正忙（%1 任务进行中）。CAS支援被拒绝。</Chinese>
         </Key>
         <Key ID="STR_LL_Heli_Dispatch_Deny_LIVRAISON">
             <Original>Helicopter busy (mission %1 in progress). Supply drop denied.</Original>
             <English>Helicopter busy (mission %1 in progress). Supply drop denied.</English>
             <French>Hélicoptère occupé (mission %1 en cours). Livraison refusée.</French>
+            <Spanish>Helicóptero ocupado (misión %1 en curso). Lanzamiento de suministros denegado.</Spanish>
+            <Italian>Elicottero occupato (missione %1 in corso). Lancio forniture respinto.</Italian>
+            <German>Hubschrauber beschäftigt (Mission %1 im Gange). Versorgungsabwurf abgelehnt.</German>
+            <Polish>Śmigłowiec zajęty (misja %1 w toku). Zrzut zaopatrzenia odrzucony.</Polish>
+            <Russian>Вертолет занят (выполняется миссия %1). Сброс припасов отклонен.</Russian>
+            <Turkish>Helikopter meşgul (görev %1 devam ediyor). İkmal atışı reddedildi.</Turkish>
+            <Japanese>ヘリは現在塞がっています（任務 %1 進行中）。補給投下は拒否されました。</Japanese>
+            <Korean>헬기가 바쁩니다 (임무 %1 진행 중). 보급품 투하 거부됨.</Korean>
+            <Chinese>直升机正忙（%1 任务进行中）。补给空投被拒绝。</Chinese>
         </Key>
         <Key ID="STR_LL_Heli_Dispatch_Deny_VEHICULE">
             <Original>Helicopter busy (mission %1 in progress). Vehicle drop denied.</Original>
             <English>Helicopter busy (mission %1 in progress). Vehicle drop denied.</English>
             <French>Hélicoptère occupé (mission %1 en cours). Véhicule refusé.</French>
+            <Spanish>Helicóptero ocupado (misión %1 en curso). Lanzamiento de vehículo denegado.</Spanish>
+            <Italian>Elicottero occupato (missione %1 in corso). Lancio veicolo respinto.</Italian>
+            <German>Hubschrauber beschäftigt (Mission %1 im Gange). Fahrzeugabwurf abgelehnt.</German>
+            <Polish>Śmigłowiec zajęty (misja %1 w toku). Zrzut pojazdu odrzucony.</Polish>
+            <Russian>Вертолет занят (выполняется миссия %1). Сброс техники отклонен.</Russian>
+            <Turkish>Helikopter meşgul (görev %1 devam ediyor). Araç ikmali reddedildi.</Turkish>
+            <Japanese>ヘリは現在塞がっています（任務 %1 進行中）。車両投下は拒否されました。</Japanese>
+            <Korean>헬기가 바쁩니다 (임무 %1 진행 중). 차량 투하 거부됨.</Korean>
+            <Chinese>直升机正忙（%1 任务进行中）。车辆空投被拒绝。</Chinese>
         </Key>
         <Key ID="STR_LL_Heli_Dispatch_Deny_DEBARQUEMENT">
             <Original>Helicopter busy (mission %1 in progress). Reinforcements denied.</Original>
             <English>Helicopter busy (mission %1 in progress). Reinforcements denied.</English>
             <French>Hélicoptère occupé (mission %1 en cours). Renforts refusés.</French>
+            <Spanish>Helicóptero ocupado (misión %1 en curso). Refuerzos denegados.</Spanish>
+            <Italian>Elicottero occupato (missione %1 in corso). Rinforzi respinti.</Italian>
+            <German>Hubschrauber beschäftigt (Mission %1 im Gange). Verstärkung abgelehnt.</German>
+            <Polish>Śmigłowiec zajęty (misja %1 w toku). Posiłki odrzucone.</Polish>
+            <Russian>Вертолет занят (выполняется миссия %1). Подкрепление отклонено.</Russian>
+            <Turkish>Helikopter meşgul (görev %1 devam ediyor). Takviye reddedildi.</Turkish>
+            <Japanese>ヘリは現在塞がっています（任務 %1 進行中）。増援は拒否されました。</Japanese>
+            <Korean>헬기가 바쁩니다 (임무 %1 진행 중). 증원 거부됨.</Korean>
+            <Chinese>直升机正忙（%1 任务进行中）。增援被拒绝。</Chinese>
         </Key>
         <Key ID="STR_LL_Heli_Dispatch_Deny_DEFAULT">
             <Original>Helicopter busy (mission %1 in progress). Request denied.</Original>
             <English>Helicopter busy (mission %1 in progress). Request denied.</English>
             <French>Hélicoptère occupé (mission %1 en cours). Demande refusée.</French>
+            <Spanish>Helicóptero ocupado (misión %1 en curso). Solicitud denegada.</Spanish>
+            <Italian>Elicottero occupato (missione %1 in corso). Richiesta respinta.</Italian>
+            <German>Hubschrauber beschäftigt (Mission %1 im Gange). Anfrage abgelehnt.</German>
+            <Polish>Śmigłowiec zajęty (misja %1 w toku). Żądanie odrzucone.</Polish>
+            <Russian>Вертолет занят (выполняется миссия %1). Запрос отклонен.</Russian>
+            <Turkish>Helikopter meşgul (görev %1 devam ediyor). İstek reddedildi.</Turkish>
+            <Japanese>ヘリは現在塞がっています（任務 %1 進行中）。要求は拒否されました。</Japanese>
+            <Korean>헬기가 바쁩니다 (임무 %1 진행 중). 요청이 거부되었습니다.</Korean>
+            <Chinese>直升机正忙（%1 任务进行中）。请求被拒绝。</Chinese>
         </Key>
         <Key ID="STR_LL_Heli_Msg_CargoAborted">
             <Original>Drop aborted.</Original>

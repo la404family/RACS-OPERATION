@@ -31,7 +31,7 @@ private _fnc_addSearchAction = {
             private _buildings = nearestObjects [_center, ["House", "Building"], 50];
             _buildings = _buildings select { count (_x buildingPos -1) > 1 };
 
-            if (_buildings isEqualTo []) exitWith { ["STR_LL_SearchAction_NoBuildings"] call LL_fnc_radioMessage; };
+            if (_buildings isEqualTo []) exitWith { ["STR_LL_SearchAction_NoBuildings", [], 6, false] call LL_fnc_radioMessage; };
 
             private _markerName = format ["LL_SearchArea_%1", time];
             private _marker = createMarkerLocal [_markerName, _center];
@@ -44,7 +44,7 @@ private _fnc_addSearchAction = {
             private _squadAI = (units group _caller) select { !isPlayer _x && alive _x && vehicle _x == _x };
             if (_squadAI isEqualTo []) exitWith {
                 deleteMarkerLocal _marker;
-                ["STR_LL_SearchAction_NoAI"] call LL_fnc_radioMessage;
+                ["STR_LL_SearchAction_NoAI", [], 6, false] call LL_fnc_radioMessage;
             };
 
             [_caller, "gestureAdvance"] remoteExec ["playActionNow", 0];
@@ -75,12 +75,12 @@ private _fnc_addSearchAction = {
                             _unit setBehaviour "AWARE";
                             _unit setSpeedMode "FULL";
                             _unit setCombatMode "YELLOW";
-                            
+
                             private _pos = [];
                             if (_positions isNotEqualTo []) then {
                                 _pos = _positions deleteAt 0;
                             } else {
-                                
+
                                 _pos = _building getRelPos [8 + random 7, random 360];
                             };
 
@@ -97,7 +97,7 @@ private _fnc_addSearchAction = {
                                     private _dist = _unit distance _targetPos;
 
                                     if (_dist < 2.5) exitWith { 
-                                        
+
                                         doStop _unit;
                                         _unit setUnitPos "UP";
                                         for "_k" from 1 to 3 do {
@@ -129,7 +129,7 @@ private _fnc_addSearchAction = {
                     private _buildingTimeout = time + 45;
                     waitUntil {
                         sleep 2;
-                        
+
                         private _moving = {alive _x && !unitReady _x} count _squadAI;
                         _moving == 0 || time > _buildingTimeout || time - _searchStart > _maxTime
                     };
@@ -137,7 +137,7 @@ private _fnc_addSearchAction = {
                     private _needsDescent = false;
                     private _lowestPos = [];
                     private _allBPos = _building buildingPos -1;
-                    
+
                     if (_allBPos isNotEqualTo []) then {
                         private _bPosData = _allBPos apply { [_x select 2, _x] };
                         _bPosData sort true;
@@ -180,8 +180,8 @@ private _fnc_addSearchAction = {
                         _x doFollow _leader;
                     };
                 } forEach _squadAI;
-                
-                ["STR_LL_SearchAction_Secured"] remoteExec ["LL_fnc_radioMessage", _leader];
+
+                ["STR_LL_SearchAction_Secured", [], 6, false] remoteExec ["LL_fnc_radioMessage", _leader];
             };
         },
         [],

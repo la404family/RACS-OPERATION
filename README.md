@@ -122,9 +122,24 @@ Le système hélicoptère repose sur un **unique UH-60L** (`CUP_I_UH60L_FFV_RACS
     *   **Rôle :** Serveur uniquement. Spawne un MQ-9 Reaper (`CUP_B_USMC_DYN_MQ9`) à 350m d'altitude, le fait orbiter autour de la zone ciblée (LOITER, rayon 400m). Crée 3 marqueurs carte : zone de surveillance (ellipse bleue), icône aérienne fixe, et position temps-réel du drone. Durée de mission : 5 minutes. Cooldown de 2 minutes après le retour à la base. Nettoyage automatique (drone + crew + marqueurs + groupe).
     *   **Marqueurs ennemis :** Utilise une HashMap indexée par `netId` pour garantir qu'il n'y a qu'**un seul marqueur rouge par ennemi vivant** (repositionné à chaque scan). Les marqueurs d'ennemis morts ou sortis de la zone sont automatiquement supprimés à chaque cycle.
 
+### Interface Utilisateur (`Functions\UI\`)
+*   **`fn_radioMessage.sqf` (`LL_fnc_radioMessage`)**
+    *   **Rôle :** Affiche des sous-titres dynamiques synchronisés et joue optionnellement les voix radio générées. Composant central pour l'immersion sonore (Hélico, Drone, Actions d'escouade).
+
 ---
 
-## 3. Normes de Code & Bonnes Pratiques
+## 3. Outils de Développement (Python)
+
+Afin d'automatiser et d'améliorer la production de la mission (Génération des voix, Traductions, Compilation), une suite de scripts Python est fournie à la racine :
+
+*   **`compile_stringtable.py`** : Regroupe les micro-fichiers XML de chaque sous-dossier (`Functions/*/*.xml`) et les fusionne pour générer le dictionnaire central `stringtable.xml` supportant 11 langues.
+*   **`TTS\generate_radio.py`** : Génère des fichiers audio `.ogg` à partir des textes en anglais du `stringtable.xml` en appliquant un filtre radio (saturation, bruit blanc, compression) ultra réaliste via `edge-tts` et `pydub`.
+*   **`update_sounds.py`** : Scanne les audios générés et met à jour dynamiquement la configuration `CfgSounds.hpp` de la mission pour les rendre exploitables en jeu par `playSound`.
+*   **`strip_comments.py`** : Nettoyeur automatisé. Retire l'intégralité des commentaires in-game (`//` et `/* */`) des fichiers `.sqf` pour un code brut optimisé.
+
+---
+
+## 4. Normes de Code & Bonnes Pratiques
 
 - **Zéro Commentaire in-game :** Les fichiers `.sqf` ont été expurgés de tout commentaire afin de réduire (bien que de manière marginale) la taille des fichiers envoyés sur le réseau lors de la connexion des joueurs et pour conserver un code strictement minimaliste. La documentation est centralisée ici.
 - **Performances Réseau :** L'usage exclusif de `remoteExecCall` (pas de suspension d'environnement) et la séparation Serveur/Local (`init` vs `apply`) assurent une synchronisation sans faille en multijoueur tout en supportant les connexions tardives (JIP).

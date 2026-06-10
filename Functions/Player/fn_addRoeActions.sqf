@@ -32,14 +32,14 @@ if (isNil "LL_fnc_applyRoE") then {
             case "DEFEND":  {"Position défensive"};
             default {"Par défaut"};
         };
-        
-        ["STR_LL_RoeAction_Changed", [_frName]] call LL_fnc_radioMessage;
+
+        ["STR_LL_RoeAction_Changed", [_frName], 6, false] call LL_fnc_radioMessage;
     };
 };
 
 private _fnc_addRoeActions = {
     params ["_unit"];
-    
+
     if (_unit getVariable ["LL_Action_Roe_Added", false]) exitWith {};
     _unit setVariable ["LL_Action_Roe_Added", true];
 

@@ -3,7 +3,7 @@ if (!hasInterface) exitWith {};
 [] spawn {
     private _fnc_addAction = {
         params ["_unit"];
-        
+
         if (_unit getVariable ["LL_Action_Heal_Added", false]) exitWith {};
         _unit setVariable ["LL_Action_Heal_Added", true];
 
@@ -22,9 +22,9 @@ if (!hasInterface) exitWith {};
 
                 if (_healers isEqualTo []) exitWith {
                     if (_aiUnits isNotEqualTo []) then {
-                        ["STR_LL_HealAction_NoKits"] call LL_fnc_radioMessage;
+                        ["STR_LL_HealAction_NoKits", [], 6, false] call LL_fnc_radioMessage;
                     } else {
-                        ["STR_LL_HealAction_NoWounded"] call LL_fnc_radioMessage;
+                        ["STR_LL_HealAction_NoWounded", [], 6, false] call LL_fnc_radioMessage;
                     };
                 };
 
@@ -66,7 +66,7 @@ if (!hasInterface) exitWith {};
                     };
                 } forEach _healers;
 
-                ["STR_LL_HealAction_Healing", [count _healers]] call LL_fnc_radioMessage;
+                ["STR_LL_HealAction_Healing", [count _healers], 6, false] call LL_fnc_radioMessage;
             },
             [],
             6.6,

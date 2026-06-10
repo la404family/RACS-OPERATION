@@ -53,7 +53,7 @@ if (!isServer) exitWith {};
                 _unit setVariable ["LL_skillsApplied", true, true];
             };
         } forEach allUnits;
-        
+
         sleep 20;
     };
 };

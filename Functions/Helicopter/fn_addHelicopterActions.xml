@@ -29,18 +29,18 @@
         <Chinese>近距离空中支援冷却中，剩余%1秒。</Chinese>
     </Key>
     <Key ID="STR_LL_Heli_Action_ClickMap">
-        <Original>Click on the map to define the helicopter zone.</Original>
-        <English>Click on the map to define the helicopter zone.</English>
-        <French>Cliquez sur la carte pour définir la zone de l'hélicoptère.</French>
-        <Spanish>Haz clic en el mapa para definir la zona del helicóptero.</Spanish>
-        <Italian>Clicca sulla mappa per definire la zona dell'elicottero.</Italian>
-        <German>Klicken Sie auf die Karte, um die Helikopterzone zu definieren.</German>
-        <Polish>Kliknij na mapie, aby określić strefę helikoptera.</Polish>
-        <Russian>Нажмите на карту, чтобы определить зону для вертолета.</Russian>
-        <Turkish>Helikopter bölgesini belirlemek için haritaya tıklayın.</Turkish>
-        <Japanese>マップをクリックしてヘリコプターのゾーンを定義してください。</Japanese>
-        <Korean>지도에서 헬리콥터 구역을 설정하려면 클릭하세요.</Korean>
-        <Chinese>在地图上点击以定义直升机区域。</Chinese>
+        <Original>Define the helicopter zone.</Original>
+        <English>Define the helicopter zone.</English>
+        <French>Définir la zone de l'hélicoptère.</French>
+        <Spanish>Definir la zona del helicóptero.</Spanish>
+        <Italian>Definire la zona dell'elicottero.</Italian>
+        <German>Helikopterzone definieren.</German>
+        <Polish>Określ strefę helikoptera.</Polish>
+        <Russian>Определить зону для вертолета.</Russian>
+        <Turkish>Helikopter bölgesini belirle.</Turkish>
+        <Japanese>ヘリコプターのゾーンを定義する。</Japanese>
+        <Korean>헬리콥터 구역 설정.</Korean>
+        <Chinese>定义直升机区域。</Chinese>
     </Key>
     <Key ID="STR_LL_Heli_Action_EnRoute">
         <Original>Helicopter on the way to [%1, %2]. Type: %3</Original>

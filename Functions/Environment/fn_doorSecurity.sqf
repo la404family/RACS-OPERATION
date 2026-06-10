@@ -49,12 +49,12 @@ if (!isServer) exitWith {};
             private _aiNearby = _aiUnits findIf { _x distance _bldg < _OPEN_DIST } != -1;
 
             if (_aiNearby) then {
-                
+
                 if (_currentTime - _lastOpened > 1.5) then {  
                     {
                         private _phase = _bldg animationPhase _x;
                         if (_phase < 0.95) then {
-                            
+
                             _bldg animate [_x, 1, 0.8];           
                             _bldg animateDoor [_x, 1, false];     
 
@@ -68,7 +68,7 @@ if (!isServer) exitWith {};
                 };
             } 
             else {
-                
+
                 if (_currentTime - _lastOpened > _CLOSE_DELAY) then {
                     {
                         if (_bldg animationPhase _x > 0.05) then {
