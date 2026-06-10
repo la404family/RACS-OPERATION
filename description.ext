@@ -80,6 +80,7 @@ class CfgFunctions {
         class Briefing {
             file = "Functions\Briefing";
             class initBriefing {};
+            class initContext {};
         };
     };
 };

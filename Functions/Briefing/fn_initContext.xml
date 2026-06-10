@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keys>
+    <Key ID="STR_LL_Context_Tab">
+        <Original>Contexte</Original>
+        <French>Contexte de Mission</French>
+        <English>Context</English>
+        <Spanish>Contexto de Misión</Spanish>
+        <Italian>Contesto Missione</Italian>
+        <German>Missionskontext</German>
+        <Polish>Kontekst Misji</Polish>
+        <Russian>Контекст миссии</Russian>
+        <Turkish>Görev Bağlamı</Turkish>
+        <Japanese>ミッションの背景</Japanese>
+        <Korean>임무 배경</Korean>
+        <Chinese>任务背景</Chinese>
+    </Key>
+
+    <Key ID="STR_LL_Context_1_Title">
+        <Original>1. Contexte Global</Original>
+        <French>1. Contexte Global</French>
+        <English>1. Global Context</English>
+        <Spanish>1. Contexto Global</Spanish>
+        <Italian>1. Contesto Globale</Italian>
+        <German>1. Globaler Kontext</German>
+        <Polish>1. Globalny Kontekst</Polish>
+        <Russian>1. Глобальный контекст</Russian>
+        <Turkish>1. Küresel Bağlam</Turkish>
+        <Japanese>1. グローバルな背景</Japanese>
+        <Korean>1. 글로벌 배경</Korean>
+        <Chinese>1. 全球背景</Chinese>
+    </Key>
+    <Key ID="STR_LL_Context_1_Text">
+        <Original>
+&lt;font color='#FFA500' size='16'&gt;1. Contexte Global (Post-Conflit Sahrani)&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;Après la réunification difficile de Sahrani (fin des années 2000 / début 2010), le Royaume de Sahrani (United Sahrani) est devenu une &lt;font color='#FFD700'&gt;puissance mondiale&lt;/font&gt;.&lt;br/&gt;&lt;br/&gt;&lt;font color='#00BFFF' size='14'&gt;L'Évolution du RACS&lt;/font&gt;&lt;br/&gt;Le RACS n'est plus uniquement une armée royale sudiste dotée de matériel américain obsolète. C'est une &lt;font color='#00FF00'&gt;armée multinationale, forte et expérimentée&lt;/font&gt;. Afin de stabiliser les régions du monde et de désamorcer les conflits, le gouvernement monarchique a instauré un &lt;font color='#FFD700'&gt;Corps Expéditionnaire Multinational&lt;/font&gt; sous commandement du RACS.&lt;br/&gt;&lt;br/&gt;Ce corps intègre des volontaires et des contractuels en provenance de nombreux pays alliés ou coopérants.
+        </Original>
+        <French>
+&lt;font color='#FFA500' size='16'&gt;1. Contexte Global (Post-Conflit Sahrani)&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;Après la réunification difficile de Sahrani (fin des années 2000 / début 2010), le Royaume de Sahrani (United Sahrani) est devenu une &lt;font color='#FFD700'&gt;puissance mondiale&lt;/font&gt;.&lt;br/&gt;&lt;br/&gt;&lt;font color='#00BFFF' size='14'&gt;L'Évolution du RACS&lt;/font&gt;&lt;br/&gt;Le RACS n'est plus uniquement une armée royale sudiste dotée de matériel américain obsolète. C'est une &lt;font color='#00FF00'&gt;armée multinationale, forte et expérimentée&lt;/font&gt;. Afin de stabiliser les régions du monde et de désamorcer les conflits, le gouvernement monarchique a instauré un &lt;font color='#FFD700'&gt;Corps Expéditionnaire Multinational&lt;/font&gt; sous commandement du RACS.&lt;br/&gt;&lt;br/&gt;Ce corps intègre des volontaires et des contractuels en provenance de nombreux pays alliés ou coopérants.
+        </French>
+        <English>
+&lt;font color='#FFA500' size='16'&gt;1. Global Context (Post-Sahrani Conflict)&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;Following the difficult reunification of Sahrani (late 2000s / early 2010s), the Kingdom of Sahrani (United Sahrani) has become a &lt;font color='#FFD700'&gt;global power&lt;/font&gt;.&lt;br/&gt;&lt;br/&gt;&lt;font color='#00BFFF' size='14'&gt;Evolution of the RACS&lt;/font&gt;&lt;br/&gt;The RACS is no longer merely a southern royal army equipped with obsolete American hardware. It is now a &lt;font color='#00FF00'&gt;strong and experienced multinational army&lt;/font&gt;. In order to stabilize world regions and de-escalate conflicts, the monarchical government established a &lt;font color='#FFD700'&gt;Multinational Expeditionary Corps&lt;/font&gt; under RACS command.&lt;br/&gt;&lt;br/&gt;This corps integrates volunteers and contractors from numerous allied or cooperating nations.
+        </English>
+        <Spanish>
+&lt;font color='#FFA500' size='16'&gt;1. Contexto Global (Conflicto Post-Sahrani)&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;Tras la difícil reunificación de Sahrani (finales de los 2000 / principios de los 2010), el Reino de Sahrani (United Sahrani) se ha convertido en una &lt;font color='#FFD700'&gt;potencia mundial&lt;/font&gt;.&lt;br/&gt;&lt;br/&gt;&lt;font color='#00BFFF' size='14'&gt;Evolución del RACS&lt;/font&gt;&lt;br/&gt;El RACS ya no es simplemente un ejército real del sur equipado con material americano obsoleto. Ahora es un &lt;font color='#00FF00'&gt;ejército multinacional fuerte y experimentado&lt;/font&gt;. Con el fin de estabilizar las regiones del mundo y desescalar conflictos, el gobierno monárquico estableció un &lt;font color='#FFD700'&gt;Cuerpo Expedicionario Multinacional&lt;/font&gt; bajo el mando del RACS.&lt;br/&gt;&lt;br/&gt;Este cuerpo integra voluntarios y contratistas de numerosas naciones aliadas o cooperantes.
+        </Spanish>
+        <Italian>
+&lt;font color='#FFA500' size='16'&gt;1. Contesto Globale (Conflitto Post-Sahrani)&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;In seguito alla difficile riunificazione di Sahrani (fine anni 2000 / inizio anni 2010), il Regno di Sahrani (United Sahrani) è diventato una &lt;font color='#FFD700'&gt;potenza mondiale&lt;/font&gt;.&lt;br/&gt;&lt;br/&gt;&lt;font color='#00BFFF' size='14'&gt;Evoluzione del RACS&lt;/font&gt;&lt;br/&gt;Il RACS non è più un semplice esercito reale del sud equipaggiato con materiale americano obsoleto. Ora è un &lt;font color='#00FF00'&gt;esercito multinazionale forte ed esperto&lt;/font&gt;. Al fine di stabilizzare le regioni del mondo e allentare i conflitti, il governo monarchico ha istituito un &lt;font color='#FFD700'&gt;Corpo di Spedizione Multinazionale&lt;/font&gt; sotto il comando del RACS.&lt;br/&gt;&lt;br/&gt;Questo corpo integra volontari e paramilitari provenienti da numerose nazioni alleate o cooperanti.
+        </Italian>
+        <German>
+&lt;font color='#FFA500' size='16'&gt;1. Globaler Kontext (Post-Sahrani-Konflikt)&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;Nach der schwierigen Wiedervereinigung von Sahrani (Ende der 2000er / Anfang der 2010er Jahre) hat sich das Königreich Sahrani (United Sahrani) zu einer &lt;font color='#FFD700'&gt;Weltmacht&lt;/font&gt; entwickelt.&lt;br/&gt;&lt;br/&gt;&lt;font color='#00BFFF' size='14'&gt;Evolution der RACS&lt;/font&gt;&lt;br/&gt;Die RACS ist nicht mehr nur eine südliche königliche Armee, die mit veralteter amerikanischer Ausrüstung ausgestattet ist. Sie ist nun eine &lt;font color='#00FF00'&gt;starke und erfahrene multinationale Armee&lt;/font&gt;. Um Weltregionen zu stabilisieren und Konflikte zu deeskalieren, gründete die monarchische Regierung ein &lt;font color='#FFD700'&gt;Multinationales Expeditionskorps&lt;/font&gt; unter dem Kommando der RACS.&lt;br/&gt;&lt;br/&gt;Dieses Korps integriert Freiwillige und Vertragspartner aus zahlreichen verbündeten oder kooperierenden Nationen.
+        </German>
+        <Polish>
+&lt;font color='#FFA500' size='16'&gt;1. Globalny Kontekst (Konflikt Post-Sahrani)&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;Po trudnym zjednoczeniu Sahrani (koniec lat 2000 / początek 2010), Królestwo Sahrani (United Sahrani) stało się &lt;font color='#FFD700'&gt;światową potęgą&lt;/font&gt;.&lt;br/&gt;&lt;br/&gt;&lt;font color='#00BFFF' size='14'&gt;Ewolucja RACS&lt;/font&gt;&lt;br/&gt;RACS nie jest już tylko południową armią królewską wyposażoną w przestarzały amerykański sprzęt. Obecnie jest to &lt;font color='#00FF00'&gt;silna i doświadczona wielonarodowa armia&lt;/font&gt;. W celu stabilizacji regionów świata i deeskalacji konfliktów, monarchistyczny rząd utworzył &lt;font color='#FFD700'&gt;Wielonarodowy Korpus Ekspedycyjny&lt;/font&gt; pod dowództwem RACS.&lt;br/&gt;&lt;br/&gt;Korpus ten integruje ochotników i kontraktorów z wielu państw sojuszniczych lub współpracujących.
+        </Polish>
+        <Russian>
+&lt;font color='#FFA500' size='16'&gt;1. Глобальный контекст (Пост-Сахранский конфликт)&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;После трудного воссоединения Сахрани (конец 2000-х / начало 2010-х годов) Королевство Сахрани (Объединенное Сахрани) стало &lt;font color='#FFD700'&gt;мировой державой&lt;/font&gt;.&lt;br/&gt;&lt;br/&gt;&lt;font color='#00BFFF' size='14'&gt;Эволюция RACS&lt;/font&gt;&lt;br/&gt;RACS больше не является просто южной королевской армией, оснащенной устаревшей американской техникой. Теперь это &lt;font color='#00FF00'&gt;сильная и опытная многонациональная армия&lt;/font&gt;. С целью стабилизации регионов мира и деэскалации конфликтов монархическое правительство создало &lt;font color='#FFD700'&gt;Многонациональный экспедиционный корпус&lt;/font&gt; под командованием RACS.&lt;br/&gt;&lt;br/&gt;В состав этого корпуса входят добровольцы и контрактники из многих союзных или сотрудничающих стран.
+        </Russian>
+        <Turkish>
+&lt;font color='#FFA500' size='16'&gt;1. Küresel Bağlam (Sahrani Çatışması Sonrası)&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;Sahrani'nin zorlu yeniden birleşmesinin (2000'lerin sonu / 2010'ların başı) ardından Sahrani Krallığı (Birleşik Sahrani) &lt;font color='#FFD700'&gt;küresel bir güç&lt;/font&gt; haline gelmiştir.&lt;br/&gt;&lt;br/&gt;&lt;font color='#00BFFF' size='14'&gt;RACS'ın Evrimi&lt;/font&gt;&lt;br/&gt;RACS artık sadece eski Amerikan donanımıyla donatılmış güneyli bir kraliyet ordusu değildir. Artık &lt;font color='#00FF00'&gt;güçlü ve deneyimli çok uluslu bir ordudur&lt;/font&gt;. Dünya bölgelerini istikrara kavuşturmak ve çatışmaları hafifletmek amacıyla monarşik hükümet, RACS komutası altında bir &lt;font color='#FFD700'&gt;Çok Uluslu Sefer Kolordusu&lt;/font&gt; kurdu.&lt;br/&gt;&lt;br/&gt;Bu kolordu, çok sayıda müttefik veya işbirliği yapan ulustan gönüllüleri ve sözleşmeli personeli bünyesinde barındırmaktadır.
+        </Turkish>
+        <Japanese>
+&lt;font color='#FFA500' size='16'&gt;1. グローバルな背景 (サーラニ紛争後)&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;困難なサーラニの再統一 (2000年代後半 / 2010年代前半) を経て、サーラニ王国 (統一サーラニ) は&lt;font color='#FFD700'&gt;世界的な大国&lt;/font&gt;となった。&lt;br/&gt;&lt;br/&gt;&lt;font color='#00BFFF' size='14'&gt;RACSの進化&lt;/font&gt;&lt;br/&gt;RACSはもはや、時代遅れのアメリカ製兵器を装備した単なる南部の王立軍ではない。今や&lt;font color='#00FF00'&gt;強力で経験豊富な多国籍軍&lt;/font&gt;である。世界の地域を安定させ、紛争を沈静化させるため、君主制政府はRACS指揮下に&lt;font color='#FFD700'&gt;多国籍遠征軍&lt;/font&gt;を創設した。&lt;br/&gt;&lt;br/&gt;この部隊には、多数の同盟国や協力国からの志願兵や請負業者が組み込まれている。
+        </Japanese>
+        <Korean>
+&lt;font color='#FFA500' size='16'&gt;1. 글로벌 배경 (사라니 분쟁 이후)&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;어려운 사라니 재통일(2000년대 후반 / 2010년대 초반) 이후, 사라니 왕국(통일 사라니)은 &lt;font color='#FFD700'&gt;세계적인 강대국&lt;/font&gt;이 되었습니다.&lt;br/&gt;&lt;br/&gt;&lt;font color='#00BFFF' size='14'&gt;RACS의 진화&lt;/font&gt;&lt;br/&gt;RACS는 더 이상 구식 미국 장비를 갖춘 단순한 남부 왕립 군대가 아닙니다. 이제 &lt;font color='#00FF00'&gt;강력하고 경험이 풍부한 다국적 군대&lt;/font&gt;입니다. 세계 지역을 안정시키고 분쟁을 완화하기 위해 군주제 정부는 RACS 지휘하에 &lt;font color='#FFD700'&gt;다국적 원정대&lt;/font&gt;를 창설했습니다.&lt;br/&gt;&lt;br/&gt;이 부대에는 수많은 동맹국이나 협력국의 자원 봉사자와 계약자가 통합되어 있습니다.
+        </Korean>
+        <Chinese>
+&lt;font color='#FFA500' size='16'&gt;1. 全球背景 (萨赫拉尼冲突后)&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;在萨赫拉尼艰难的重新统一（2000 年代末 / 2010 年代初）之后，萨赫拉尼王国 (United Sahrani) 已成为一个&lt;font color='#FFD700'&gt;全球强国&lt;/font&gt;。&lt;br/&gt;&lt;br/&gt;&lt;font color='#00BFFF' size='14'&gt;RACS 的演变&lt;/font&gt;&lt;br/&gt;RACS 不再仅仅是一支装备过时美国硬件的南部皇家军队。它现在是一支&lt;font color='#00FF00'&gt;强大且经验丰富的多国军队&lt;/font&gt;。为了稳定世界地区和缓和冲突，君主制政府在 RACS 的指挥下建立了一支&lt;font color='#FFD700'&gt;多国远征军&lt;/font&gt;。&lt;br/&gt;&lt;br/&gt;该部队整合了来自众多盟国或合作国的志愿者和承包商。
+        </Chinese>
+    </Key>
+
+    <Key ID="STR_LL_Context_2_Title">
+        <Original>2. Objectifs et Missions</Original>
+        <French>2. Objectifs et Missions</French>
+        <English>2. Objectives and Missions</English>
+        <Spanish>2. Objetivos y Misiones</Spanish>
+        <Italian>2. Obiettivi e Missioni</Italian>
+        <German>2. Ziele und Missionen</German>
+        <Polish>2. Cele i Misje</Polish>
+        <Russian>2. Цели и задачи</Russian>
+        <Turkish>2. Hedefler ve Görevler</Turkish>
+        <Japanese>2. 目標と任務</Japanese>
+        <Korean>2. 목표 및 임무</Korean>
+        <Chinese>2. 目标与任务</Chinese>
+    </Key>
+    <Key ID="STR_LL_Context_2_Text">
+        <Original>
+&lt;font color='#FFA500' size='16'&gt;2. Objectifs et Missions du RACS&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;Le Commandement Multinational du RACS s'est vu confier la tâche de stabiliser et sécuriser les zones sensibles du Moyen-Orient...&lt;br/&gt;&lt;br/&gt;&lt;font color='#00BFFF' size='14'&gt;Missions Principales&lt;/font&gt;&lt;br/&gt;- &lt;font color='#00FF00'&gt;Contrôle Territorial :&lt;/font&gt; Déploiement rapide d'un bataillon multinational pour sécuriser et purger les zones urbaines.&lt;br/&gt;- &lt;font color='#00FF00'&gt;Contre-terrorisme :&lt;/font&gt; Traquer et démanteler les cellules des mouvements extrémistes impliquées dans la préparation d'attentats et le trafic d'armes lourdes.&lt;br/&gt;- &lt;font color='#00FF00'&gt;Stabilisation Politique :&lt;/font&gt; Neutraliser la subversion armée pour empêcher la résurgence d'une insurrection globale.&lt;br/&gt;- &lt;font color='#00FF00'&gt;Sécurisation des Infrastructures :&lt;/font&gt; Protéger les infrastructures critiques et les axes routiers majeurs.&lt;br/&gt;&lt;br/&gt;&lt;font color='#00BFFF' size='14'&gt;Tâches Secondaires&lt;/font&gt;&lt;br/&gt;- Opérations de renseignement et patrouilles de reconnaissance.&lt;br/&gt;- Protection et escorte de personnalités civiles et militaires (VIP).
+        </Original>
+        <French>
+&lt;font color='#FFA500' size='16'&gt;2. Objectifs et Missions du RACS&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;Le Commandement Multinational du RACS s'est vu confier la tâche de stabiliser et sécuriser les zones sensibles du Moyen-Orient...&lt;br/&gt;&lt;br/&gt;&lt;font color='#00BFFF' size='14'&gt;Missions Principales&lt;/font&gt;&lt;br/&gt;- &lt;font color='#00FF00'&gt;Contrôle Territorial :&lt;/font&gt; Déploiement rapide d'un bataillon multinational pour sécuriser et purger les zones urbaines.&lt;br/&gt;- &lt;font color='#00FF00'&gt;Contre-terrorisme :&lt;/font&gt; Traquer et démanteler les cellules des mouvements extrémistes impliquées dans la préparation d'attentats et le trafic d'armes lourdes.&lt;br/&gt;- &lt;font color='#00FF00'&gt;Stabilisation Politique :&lt;/font&gt; Neutraliser la subversion armée pour empêcher la résurgence d'une insurrection globale.&lt;br/&gt;- &lt;font color='#00FF00'&gt;Sécurisation des Infrastructures :&lt;/font&gt; Protéger les infrastructures critiques et les axes routiers majeurs.&lt;br/&gt;&lt;br/&gt;&lt;font color='#00BFFF' size='14'&gt;Tâches Secondaires&lt;/font&gt;&lt;br/&gt;- Opérations de renseignement et patrouilles de reconnaissance.&lt;br/&gt;- Protection et escorte de personnalités civiles et militaires (VIP).
+        </French>
+        <English>
+&lt;font color='#FFA500' size='16'&gt;2. RACS Objectives and Missions&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;The RACS Multinational Command has been tasked with stabilizing and securing sensitive areas in the Middle East...&lt;br/&gt;&lt;br/&gt;&lt;font color='#00BFFF' size='14'&gt;Main Missions&lt;/font&gt;&lt;br/&gt;- &lt;font color='#00FF00'&gt;Territorial Control:&lt;/font&gt; Rapid deployment of a multinational battalion to secure and purge urban areas.&lt;br/&gt;- &lt;font color='#00FF00'&gt;Counter-terrorism:&lt;/font&gt; Track and dismantle extremist movement cells involved in preparing attacks and heavy weapons trafficking.&lt;br/&gt;- &lt;font color='#00FF00'&gt;Political Stabilization:&lt;/font&gt; Neutralize armed subversion to prevent the resurgence of a global insurgency.&lt;br/&gt;- &lt;font color='#00FF00'&gt;Infrastructure Security:&lt;/font&gt; Protect critical infrastructures and major road axes.&lt;br/&gt;&lt;br/&gt;&lt;font color='#00BFFF' size='14'&gt;Secondary Tasks&lt;/font&gt;&lt;br/&gt;- Intelligence operations and reconnaissance patrols.&lt;br/&gt;- Protection and escort of civil and military VIPs.
+        </English>
+        <Spanish>
+&lt;font color='#FFA500' size='16'&gt;2. Objetivos y Misiones del RACS&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;El Mando Multinacional del RACS ha sido encargado de estabilizar y asegurar áreas sensibles en Oriente Medio...&lt;br/&gt;&lt;br/&gt;&lt;font color='#00BFFF' size='14'&gt;Misiones Principales&lt;/font&gt;&lt;br/&gt;- &lt;font color='#00FF00'&gt;Control Territorial:&lt;/font&gt; Despliegue rápido de un batallón multinacional para asegurar y purgar zonas urbanas.&lt;br/&gt;- &lt;font color='#00FF00'&gt;Contraterrorismo:&lt;/font&gt; Rastrear y desmantelar células de movimientos extremistas involucradas en la preparación de ataques y tráfico de armas pesadas.&lt;br/&gt;- &lt;font color='#00FF00'&gt;Estabilización Política:&lt;/font&gt; Neutralizar la subversión armada para prevenir el resurgimiento de una insurgencia global.&lt;br/&gt;- &lt;font color='#00FF00'&gt;Seguridad de Infraestructuras:&lt;/font&gt; Proteger infraestructuras críticas y los principales ejes de carreteras.&lt;br/&gt;&lt;br/&gt;&lt;font color='#00BFFF' size='14'&gt;Tareas Secundarias&lt;/font&gt;&lt;br/&gt;- Operaciones de inteligencia y patrullas de reconocimiento.&lt;br/&gt;- Protección y escolta de VIPs civiles y militares.
+        </Spanish>
+        <Italian>
+&lt;font color='#FFA500' size='16'&gt;2. Obiettivi e Missioni RACS&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;Il Comando Multinazionale RACS è stato incaricato di stabilizzare e mettere in sicurezza aree sensibili in Medio Oriente...&lt;br/&gt;&lt;br/&gt;&lt;font color='#00BFFF' size='14'&gt;Missioni Principali&lt;/font&gt;&lt;br/&gt;- &lt;font color='#00FF00'&gt;Controllo Territoriale:&lt;/font&gt; Rapido dispiegamento di un battaglione multinazionale per mettere in sicurezza e ripulire le aree urbane.&lt;br/&gt;- &lt;font color='#00FF00'&gt;Antiterrorismo:&lt;/font&gt; Rintracciare e smantellare le cellule dei movimenti estremisti coinvolte nella preparazione di attacchi e nel traffico di armi pesanti.&lt;br/&gt;- &lt;font color='#00FF00'&gt;Stabilizzazione Politica:&lt;/font&gt; Neutralizzare la sovversione armata per prevenire la rinascita di un'insurrezione globale.&lt;br/&gt;- &lt;font color='#00FF00'&gt;Sicurezza Infrastrutture:&lt;/font&gt; Proteggere le infrastrutture critiche e i principali assi stradali.&lt;br/&gt;&lt;br/&gt;&lt;font color='#00BFFF' size='14'&gt;Compiti Secondari&lt;/font&gt;&lt;br/&gt;- Operazioni di intelligence e pattuglie di ricognizione.&lt;br/&gt;- Protezione e scorta di VIP civili e militari.
+        </Italian>
+        <German>
+&lt;font color='#FFA500' size='16'&gt;2. RACS Ziele und Missionen&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;Das Multinationale Kommando der RACS wurde damit beauftragt, sensible Gebiete im Nahen Osten zu stabilisieren und zu sichern...&lt;br/&gt;&lt;br/&gt;&lt;font color='#00BFFF' size='14'&gt;Hauptmissionen&lt;/font&gt;&lt;br/&gt;- &lt;font color='#00FF00'&gt;Territoriale Kontrolle:&lt;/font&gt; Schneller Einsatz eines multinationalen Bataillons zur Sicherung und Säuberung städtischer Gebiete.&lt;br/&gt;- &lt;font color='#00FF00'&gt;Terrorismusbekämpfung:&lt;/font&gt; Aufspüren und Zerschlagen von Zellen extremistischer Bewegungen, die an der Vorbereitung von Angriffen und schwerem Waffenhandel beteiligt sind.&lt;br/&gt;- &lt;font color='#00FF00'&gt;Politische Stabilisierung:&lt;/font&gt; Neutralisierung der bewaffneten Subversion, um das Wiederaufleben eines globalen Aufstands zu verhindern.&lt;br/&gt;- &lt;font color='#00FF00'&gt;Infrastruktursicherheit:&lt;/font&gt; Schutz kritischer Infrastrukturen und wichtiger Straßenachsen.&lt;br/&gt;&lt;br/&gt;&lt;font color='#00BFFF' size='14'&gt;Sekundäre Aufgaben&lt;/font&gt;&lt;br/&gt;- Geheimdienstoperationen und Aufklärungspatrouillen.&lt;br/&gt;- Schutz und Eskorte von zivilen und militärischen VIPs.
+        </German>
+        <Polish>
+&lt;font color='#FFA500' size='16'&gt;2. Cele i Misje RACS&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;Wielonarodowe Dowództwo RACS otrzymało zadanie stabilizacji i zabezpieczenia wrażliwych obszarów na Bliskim Wschodzie...&lt;br/&gt;&lt;br/&gt;&lt;font color='#00BFFF' size='14'&gt;Główne Misje&lt;/font&gt;&lt;br/&gt;- &lt;font color='#00FF00'&gt;Kontrola Terytorialna:&lt;/font&gt; Szybkie rozmieszczenie wielonarodowego batalionu w celu zabezpieczenia i oczyszczenia obszarów miejskich.&lt;br/&gt;- &lt;font color='#00FF00'&gt;Antyterroryzm:&lt;/font&gt; Śledzenie i rozbijanie komórek ruchów ekstremistycznych zaangażowanych w przygotowywanie ataków i handel bronią ciężką.&lt;br/&gt;- &lt;font color='#00FF00'&gt;Stabilizacja Polityczna:&lt;/font&gt; Neutralizacja zbrojnej dywersji w celu zapobieżenia odrodzeniu się globalnej rebelii.&lt;br/&gt;- &lt;font color='#00FF00'&gt;Bezpieczeństwo Infrastruktury:&lt;/font&gt; Ochrona infrastruktury krytycznej i głównych osi drogowych.&lt;br/&gt;&lt;br/&gt;&lt;font color='#00BFFF' size='14'&gt;Zadania Dodatkowe&lt;/font&gt;&lt;br/&gt;- Operacje wywiadowcze i patrole rozpoznawcze.&lt;br/&gt;- Ochrona i eskorta cywilnych oraz wojskowych VIP-ów.
+        </Polish>
+        <Russian>
+&lt;font color='#FFA500' size='16'&gt;2. Цели и задачи RACS&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;Многонациональному командованию RACS была поручена задача по стабилизации и обеспечению безопасности в уязвимых районах Ближнего Востока...&lt;br/&gt;&lt;br/&gt;&lt;font color='#00BFFF' size='14'&gt;Основные задачи&lt;/font&gt;&lt;br/&gt;- &lt;font color='#00FF00'&gt;Территориальный контроль:&lt;/font&gt; Быстрое развертывание многонационального батальона для обеспечения безопасности и зачистки городских районов.&lt;br/&gt;- &lt;font color='#00FF00'&gt;Контртерроризм:&lt;/font&gt; Выслеживание и ликвидация ячеек экстремистских движений, причастных к подготовке терактов и контрабанде тяжелого оружия.&lt;br/&gt;- &lt;font color='#00FF00'&gt;Политическая стабилизация:&lt;/font&gt; Нейтрализация вооруженной подрывной деятельности для предотвращения возрождения глобального мятежа.&lt;br/&gt;- &lt;font color='#00FF00'&gt;Безопасность инфраструктуры:&lt;/font&gt; Защита критически важных объектов инфраструктуры и основных транспортных магистралей.&lt;br/&gt;&lt;br/&gt;&lt;font color='#00BFFF' size='14'&gt;Второстепенные задачи&lt;/font&gt;&lt;br/&gt;- Разведывательные операции и разведывательные патрули.&lt;br/&gt;- Охрана и сопровождение гражданских и военных VIP-персон.
+        </Russian>
+        <Turkish>
+&lt;font color='#FFA500' size='16'&gt;2. RACS Hedefleri ve Görevleri&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;RACS Çok Uluslu Komutanlığı, Orta Doğu'daki hassas bölgeleri istikrara kavuşturmak ve güvence altına almakla görevlendirilmiştir...&lt;br/&gt;&lt;br/&gt;&lt;font color='#00BFFF' size='14'&gt;Ana Görevler&lt;/font&gt;&lt;br/&gt;- &lt;font color='#00FF00'&gt;Bölgesel Kontrol:&lt;/font&gt; Kentsel alanları güvence altına almak ve temizlemek için çok uluslu bir taburun hızla konuşlandırılması.&lt;br/&gt;- &lt;font color='#00FF00'&gt;Terörle Mücadele:&lt;/font&gt; Saldırı hazırlığına ve ağır silah kaçakçılığına karışan aşırılıkçı hareket hücrelerini takip etmek ve çökertmek.&lt;br/&gt;- &lt;font color='#00FF00'&gt;Siyasi İstikrar:&lt;/font&gt; Küresel bir isyanın yeniden canlanmasını önlemek için silahlı yıkıcı faaliyetleri etkisiz hale getirmek.&lt;br/&gt;- &lt;font color='#00FF00'&gt;Altyapı Güvenliği:&lt;/font&gt; Kritik altyapıları ve ana yol eksenlerini korumak.&lt;br/&gt;&lt;br/&gt;&lt;font color='#00BFFF' size='14'&gt;İkincil Görevler&lt;/font&gt;&lt;br/&gt;- İstihbarat operasyonları ve keşif devriyeleri.&lt;br/&gt;- Sivil ve askeri VIP'lerin korunması ve eskortluğu.
+        </Turkish>
+        <Japanese>
+&lt;font color='#FFA500' size='16'&gt;2. RACSの目標と任務&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;RACS多国籍軍司令部は、中東の敏感な地域を安定させ、確保する任務を負っている。&lt;br/&gt;&lt;br/&gt;&lt;font color='#00BFFF' size='14'&gt;主な任務&lt;/font&gt;&lt;br/&gt;- &lt;font color='#00FF00'&gt;領土の支配:&lt;/font&gt; 市街地を確保し浄化するため、多国籍大隊を迅速に展開する。&lt;br/&gt;- &lt;font color='#00FF00'&gt;テロ対策:&lt;/font&gt; 攻撃の準備や重兵器の密輸に関与する過激派組織の細胞を追跡し、解体する。&lt;br/&gt;- &lt;font color='#00FF00'&gt;政治的安定化:&lt;/font&gt; 世界的な反乱の再燃を防ぐため、武装した破壊活動を無力化する。&lt;br/&gt;- &lt;font color='#00FF00'&gt;インフラの安全性:&lt;/font&gt; 重要なインフラと主要な道路網を保護する。&lt;br/&gt;&lt;br/&gt;&lt;font color='#00BFFF' size='14'&gt;二次的な任務&lt;/font&gt;&lt;br/&gt;- 諜報活動および偵察パトロール。&lt;br/&gt;- 民間および軍のVIPの保護と護衛。
+        </Japanese>
+        <Korean>
+&lt;font color='#FFA500' size='16'&gt;2. RACS 목표 및 임무&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;RACS 다국적 사령부는 중동의 민감한 지역을 안정시키고 확보하는 임무를 맡았습니다...&lt;br/&gt;&lt;br/&gt;&lt;font color='#00BFFF' size='14'&gt;주요 임무&lt;/font&gt;&lt;br/&gt;- &lt;font color='#00FF00'&gt;영토 통제:&lt;/font&gt; 도시 지역을 확보하고 정화하기 위해 다국적 대대의 신속한 배치.&lt;br/&gt;- &lt;font color='#00FF00'&gt;대테러:&lt;/font&gt; 공격 준비 및 중무기 밀매에 관련된 극단주의 운동 점조직을 추적하고 해체.&lt;br/&gt;- &lt;font color='#00FF00'&gt;정치적 안정:&lt;/font&gt; 세계적인 반란의 부활을 막기 위해 무장 전복 세력 무력화.&lt;br/&gt;- &lt;font color='#00FF00'&gt;인프라 보안:&lt;/font&gt; 주요 인프라 및 주요 도로 축 보호.&lt;br/&gt;&lt;br/&gt;&lt;font color='#00BFFF' size='14'&gt;부차적 임무&lt;/font&gt;&lt;br/&gt;- 정보 작전 및 정찰 순찰.&lt;br/&gt;- 민간 및 군사 VIP의 보호 및 호위.
+        </Korean>
+        <Chinese>
+&lt;font color='#FFA500' size='16'&gt;2. RACS 目标与任务&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;RACS 多国指挥部受命稳定和保卫中东的敏感地区...&lt;br/&gt;&lt;br/&gt;&lt;font color='#00BFFF' size='14'&gt;主要任务&lt;/font&gt;&lt;br/&gt;- &lt;font color='#00FF00'&gt;领土控制:&lt;/font&gt; 快速部署多国营以确保和清理城市地区。&lt;br/&gt;- &lt;font color='#00FF00'&gt;反恐:&lt;/font&gt; 追踪和瓦解参与准备袭击和重武器走私的极端主义运动小组。&lt;br/&gt;- &lt;font color='#00FF00'&gt;政治稳定:&lt;/font&gt; 消除武装颠覆，防止全球叛乱的死灰复燃。&lt;br/&gt;- &lt;font color='#00FF00'&gt;基础设施安全:&lt;/font&gt; 保护关键基础设施和主要道路干线。&lt;br/&gt;&lt;br/&gt;&lt;font color='#00BFFF' size='14'&gt;次要任务&lt;/font&gt;&lt;br/&gt;- 情报行动和侦察巡逻。&lt;br/&gt;- 民用和军用 VIP 的保护和护送。
+        </Chinese>
+    </Key>
+
+    <Key ID="STR_LL_Context_3_Title">
+        <Original>3. Contexte Narratif</Original>
+        <French>3. Contexte Narratif</French>
+        <English>3. Narrative Context</English>
+        <Spanish>3. Contexto Narrativo</Spanish>
+        <Italian>3. Contesto Narrativo</Italian>
+        <German>3. Erzählerischer Kontext</German>
+        <Polish>3. Kontekst Fabularny</Polish>
+        <Russian>3. Сюжетный контекст</Russian>
+        <Turkish>3. Hikaye Bağlamı</Turkish>
+        <Japanese>3. 物語の背景</Japanese>
+        <Korean>3. 내러티브 배경</Korean>
+        <Chinese>3. 叙事背景</Chinese>
+    </Key>
+    <Key ID="STR_LL_Context_3_Text">
+        <Original>
+&lt;font color='#FFA500' size='16'&gt;3. Contexte Narratif (Lore de Campagne)&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;En &lt;font color='#FFD700'&gt;2025-2026&lt;/font&gt;, à la suite d'une vague d'attentats sanglants, le RACS multinational est envoyé en Opération d'Assistance Humanitaire dans plusieurs régions du monde.&lt;br/&gt;&lt;br/&gt;Cette intervention, officiellement humanitaire, vise en réalité à &lt;font color='#00FF00'&gt;neutraliser les milices locales&lt;/font&gt; et à &lt;font color='#00FF00'&gt;sécuriser les installations stratégiques&lt;/font&gt; pour éviter que l'OTAN ou les États-Unis n'interviennent et prennent le contrôle de la région.
+        </Original>
+        <French>
+&lt;font color='#FFA500' size='16'&gt;3. Contexte Narratif (Lore de Campagne)&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;En &lt;font color='#FFD700'&gt;2025-2026&lt;/font&gt;, à la suite d'une vague d'attentats sanglants, le RACS multinational est envoyé en Opération d'Assistance Humanitaire dans plusieurs régions du monde.&lt;br/&gt;&lt;br/&gt;Cette intervention, officiellement humanitaire, vise en réalité à &lt;font color='#00FF00'&gt;neutraliser les milices locales&lt;/font&gt; et à &lt;font color='#00FF00'&gt;sécuriser les installations stratégiques&lt;/font&gt; pour éviter que l'OTAN ou les États-Unis n'interviennent et prennent le contrôle de la région.
+        </French>
+        <English>
+&lt;font color='#FFA500' size='16'&gt;3. Narrative Context (Campaign Lore)&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;In &lt;font color='#FFD700'&gt;2025-2026&lt;/font&gt;, following a wave of bloody attacks, the multinational RACS is deployed on a Humanitarian Assistance Operation across several regions of the world.&lt;br/&gt;&lt;br/&gt;This intervention, officially humanitarian, actually aims to &lt;font color='#00FF00'&gt;neutralize local militias&lt;/font&gt; and &lt;font color='#00FF00'&gt;secure strategic facilities&lt;/font&gt; to prevent NATO or the United States from intervening and taking control of the region.
+        </English>
+        <Spanish>
+&lt;font color='#FFA500' size='16'&gt;3. Contexto Narrativo (Lore de Campaña)&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;En &lt;font color='#FFD700'&gt;2025-2026&lt;/font&gt;, tras una ola de sangrientos ataques, el RACS multinacional se despliega en una Operación de Asistencia Humanitaria en varias regiones del mundo.&lt;br/&gt;&lt;br/&gt;Esta intervención, oficialmente humanitaria, en realidad tiene como objetivo &lt;font color='#00FF00'&gt;neutralizar las milicias locales&lt;/font&gt; y &lt;font color='#00FF00'&gt;asegurar las instalaciones estratégicas&lt;/font&gt; para evitar que la OTAN o los Estados Unidos intervengan y tomen el control de la región.
+        </Spanish>
+        <Italian>
+&lt;font color='#FFA500' size='16'&gt;3. Contesto Narrativo (Lore della Campagna)&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;Nel &lt;font color='#FFD700'&gt;2025-2026&lt;/font&gt;, in seguito ad un'ondata di sanguinosi attacchi, il RACS multinazionale viene schierato in un'Operazione di Assistenza Umanitaria in diverse regioni del mondo.&lt;br/&gt;&lt;br/&gt;Questo intervento, ufficialmente umanitario, mira in realtà a &lt;font color='#00FF00'&gt;neutralizzare le milizie locali&lt;/font&gt; e a &lt;font color='#00FF00'&gt;mettere in sicurezza le strutture strategiche&lt;/font&gt; per impedire che la NATO o gli Stati Uniti intervengano assumendo il controllo della regione.
+        </Italian>
+        <German>
+&lt;font color='#FFA500' size='16'&gt;3. Erzählerischer Kontext (Kampagnen-Lore)&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;In &lt;font color='#FFD700'&gt;2025-2026&lt;/font&gt;, nach einer Welle blutiger Anschläge, wird die multinationale RACS zu einer humanitären Hilfsoperation in verschiedenen Regionen der Welt eingesetzt.&lt;br/&gt;&lt;br/&gt;Diese offiziell humanitäre Intervention zielt eigentlich darauf ab, &lt;font color='#00FF00'&gt;lokale Milizen zu neutralisieren&lt;/font&gt; und &lt;font color='#00FF00'&gt;strategische Einrichtungen zu sichern&lt;/font&gt;, um zu verhindern, dass die NATO oder die Vereinigten Staaten eingreifen und die Kontrolle über die Region übernehmen.
+        </German>
+        <Polish>
+&lt;font color='#FFA500' size='16'&gt;3. Kontekst Fabularny (Lore Kampanii)&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;W latach &lt;font color='#FFD700'&gt;2025-2026&lt;/font&gt;, w następstwie fali krwawych ataków, wielonarodowe siły RACS zostają rozmieszczone w ramach Operacji Pomocy Humanitarnej w kilku regionach świata.&lt;br/&gt;&lt;br/&gt;Ta interwencja, oficjalnie humanitarna, w rzeczywistości ma na celu &lt;font color='#00FF00'&gt;zneutralizowanie lokalnych bojówek&lt;/font&gt; i &lt;font color='#00FF00'&gt;zabezpieczenie obiektów strategicznych&lt;/font&gt;, aby zapobiec interwencji NATO lub Stanów Zjednoczonych i przejęciu przez nie kontroli nad regionem.
+        </Polish>
+        <Russian>
+&lt;font color='#FFA500' size='16'&gt;3. Сюжетный контекст (История кампании)&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;В &lt;font color='#FFD700'&gt;2025-2026&lt;/font&gt; годах, после волны кровавых терактов, многонациональные силы RACS разворачиваются для проведения операции по гуманитарной помощи в нескольких регионах мира.&lt;br/&gt;&lt;br/&gt;Это вмешательство, официально являющееся гуманитарным, на самом деле направлено на &lt;font color='#00FF00'&gt;нейтрализацию местных ополченцев&lt;/font&gt; и &lt;font color='#00FF00'&gt;обеспечение безопасности стратегических объектов&lt;/font&gt;, чтобы не допустить вмешательства НАТО или США и захвата ими контроля над регионом.
+        </Russian>
+        <Turkish>
+&lt;font color='#FFA500' size='16'&gt;3. Hikaye Bağlamı (Sefer Hikayesi)&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;In &lt;font color='#FFD700'&gt;2025-2026&lt;/font&gt; yıllarında, kanlı saldırı dalgasının ardından, çok uluslu RACS dünyanın çeşitli bölgelerinde bir İnsani Yardım Operasyonu için konuşlandırılır.&lt;br/&gt;&lt;br/&gt;Resmi olarak insani yardım amaçlı olan bu müdahale, aslında NATO veya ABD'nin müdahale ederek bölgenin kontrolünü ele geçirmesini önlemek için &lt;font color='#00FF00'&gt;yerel milisleri etkisiz hale getirmeyi&lt;/font&gt; ve &lt;font color='#00FF00'&gt;stratejik tesisleri güvence altına almayı&lt;/font&gt; amaçlamaktadır.
+        </Turkish>
+        <Japanese>
+&lt;font color='#FFA500' size='16'&gt;3. 物語の背景 (キャンペーンの伝承)&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFD700'&gt;2025-2026年&lt;/font&gt;、血生臭い攻撃の波が続いた後、多国籍RACSは世界のいくつかの地域で人道支援作戦に展開される。&lt;br/&gt;&lt;br/&gt;この介入は、公式には人道的支援であるが、実際にはNATOや米国が介入して地域の支配権を握るのを防ぐために、&lt;font color='#00FF00'&gt;地元の民兵を無力化し&lt;/font&gt;、&lt;font color='#00FF00'&gt;戦略施設を確保すること&lt;/font&gt;を目的としている。
+        </Japanese>
+        <Korean>
+&lt;font color='#FFA500' size='16'&gt;3. 내러티브 배경 (캠페인 로어)&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFD700'&gt;2025-2026년&lt;/font&gt;, 유혈 공격의 물결에 이어 다국적 RACS가 세계 여러 지역에서 인도적 지원 작전을 위해 배치됩니다.&lt;br/&gt;&lt;br/&gt;공식적으로 인도주의적인 이 개입은 실제로는 NATO나 미국이 개입하여 지역을 통제하는 것을 막기 위해 &lt;font color='#00FF00'&gt;현지 민병대를 무력화&lt;/font&gt;하고 &lt;font color='#00FF00'&gt;전략 시설을 확보하는 것&lt;/font&gt;을 목표로 합니다.
+        </Korean>
+        <Chinese>
+&lt;font color='#FFA500' size='16'&gt;3. 叙事背景 (战役背景故事)&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;在 &lt;font color='#FFD700'&gt;2025-2026&lt;/font&gt; 年，在一波血腥袭击之后，多国 RACS 被部署到世界多个地区执行人道主义援助行动。&lt;br/&gt;&lt;br/&gt;这种干预名义上是人道主义的，实际上旨在&lt;font color='#00FF00'&gt;消除当地民兵的威胁&lt;/font&gt;并&lt;font color='#00FF00'&gt;保护战略设施&lt;/font&gt;，以防止北约或美国干预并控制该地区。
+        </Chinese>
+    </Key>
+</Keys>
