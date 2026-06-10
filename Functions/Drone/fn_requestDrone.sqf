@@ -62,8 +62,6 @@ _markerDrone setMarkerSize [0.9, 0.9];
 
 [format ["QG : MQ-9 Reaper en approche. Surveillance active pendant %1 minutes.", round (_duration / 60)]] remoteExec ["systemChat", 0];
 
-if (isNil "LL_Drone_EnemyMarkers") then { LL_Drone_EnemyMarkers = []; };
-
 [_drone, _targetPos, _orbitRadius, _scanRadius, _duration, _markerArea, _markerIcon, _markerDrone, _grp] spawn {
     params ["_drone", "_center", "_radius", "_scanR", "_dur", "_mArea", "_mIcon", "_mDrone", "_grp"];
 
@@ -74,7 +72,7 @@ if (isNil "LL_Drone_EnemyMarkers") then { LL_Drone_EnemyMarkers = []; };
     _wp setWaypointSpeed "LIMITED";
 
     private _endTime = time + _dur;
-    private _markerIndex = 0;
+    private _enemyMarkers = createHashMap;
 
     while { time < _endTime && alive _drone } do {
         _mDrone setMarkerPos (getPosATL _drone);
@@ -82,22 +80,35 @@ if (isNil "LL_Drone_EnemyMarkers") then { LL_Drone_EnemyMarkers = []; };
         private _enemies = _center nearEntities [["CAManBase", "Car", "Tank", "Helicopter", "Plane", "Ship"], _scanR];
         _enemies = _enemies select { alive _x && side _x == east };
 
+        private _currentEnemyIds = [];
+
         {
-            private _mName = format ["LL_Drone_Enemy_%1", _markerIndex];
-            _markerIndex = _markerIndex + 1;
+            private _id = str (netId _x);
+            _currentEnemyIds pushBack _id;
+            private _mName = format ["LL_Drone_Enemy_%1", _id];
 
-            if (getMarkerColor _mName == "") then {
+            if !(_id in keys _enemyMarkers) then {
                 createMarker [_mName, getPosATL _x];
+                _mName setMarkerType "mil_dot";
+                _mName setMarkerColor "ColorRed";
+                _mName setMarkerSize [0.7, 0.7];
+                _enemyMarkers set [_id, _mName];
             };
+
             _mName setMarkerPos (getPosATL _x);
-            _mName setMarkerType "mil_dot";
-            _mName setMarkerColor "ColorRed";
-            _mName setMarkerSize [0.7, 0.7];
-
-            _mName setMarkerText "";
-
-            LL_Drone_EnemyMarkers pushBackUnique _mName;
         } forEach _enemies;
+
+        private _toRemove = [];
+        {
+            private _eid = _x;
+            private _mkr = _y;
+            if !(_eid in _currentEnemyIds) then {
+                deleteMarker _mkr;
+                _toRemove pushBack _eid;
+            };
+        } forEach _enemyMarkers;
+        { _enemyMarkers deleteAt _x; } forEach _toRemove;
+
         private _vehicles = _enemies select { !(_x isKindOf "CAManBase") };
         {
             _grp reveal [_x, 4];
@@ -110,8 +121,8 @@ if (isNil "LL_Drone_EnemyMarkers") then { LL_Drone_EnemyMarkers = []; };
 
     ["QG : Drone de surveillance en retour à la base."] remoteExec ["systemChat", 0];
 
-    { deleteMarker _x; } forEach LL_Drone_EnemyMarkers;
-    LL_Drone_EnemyMarkers = [];
+    { deleteMarker _y; } forEach _enemyMarkers;
+    _enemyMarkers = createHashMap;
     deleteMarker _mArea;
     deleteMarker _mIcon;
     deleteMarker _mDrone;
