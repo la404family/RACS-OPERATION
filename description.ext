@@ -53,6 +53,7 @@ class CfgFunctions {
             class initCivilians {};
             class applyTemplate {};
             class spawnPresence {};
+            class manageInsurgents {};
         };
         class Drone {
             file = "Functions\Drone";

@@ -36,10 +36,13 @@ Toutes les fonctions sont pré-compilées par le moteur Arma 3 au démarrage de 
 *   **`fn_playEzan.sqf` (`LL_fnc_playEzan`)**
     *   **Rôle :** Renforce massivement l'immersion en jouant des appels à la prière (Ezan) spatialisés via les haut-parleurs des minarets de la carte.
     *   **Fonctionnement :** Le serveur calcule (avec le très rapide `distanceSqr`) quels joueurs sont à portée (< 2500m) et envoie un `remoteExecCall` pour jouer le son localement en 3D.
+*   **`fn_doorSecurity.sqf` (`LL_fnc_doorSecurity`)**
+    *   **Rôle :** Exécuté côté serveur. Gère dynamiquement l'ouverture et la fermeture des portes pour les IA ennemies et civiles (non-BLUFOR).
+    *   **Fonctionnement :** Scanne les bâtiments proches des IA. Ouvre de manière anticipée et fluide les portes sur leur chemin en jouant un son localisé, et les referme après un délai (12s). Empêche les bots de traverser les murs fermés et améliore drastiquement l'immersion des combats urbains.
 
 ### Joueurs (`Functions\Player\`)
 *   **`fn_initIdentity.sqf` (`LL_fnc_initIdentity`)**
-    *   **Rôle :** Exécuté par le serveur. Assigne dynamiquement un nom complet, un type de visage (Africain, Arabe, Asiatique, Pacifique, Européen) et une voix à chaque joueur de l'escouade.
+    *   **Rôle :** Exécuté par le serveur. Assigne dynamiquement un nom complet, un type de visage (Africain, Arabe, Asiatique, Pacifique, Européen) et une voix native anglaise (Arma 3 Vanilla) à chaque joueur de l'escouade.
 *   **`fn_applyIdentity.sqf` (`LL_fnc_applyIdentity`)**
     *   **Rôle :** Applique techniquement (`setFace`, `setName`, `setSpeaker`, `setPitch`) l'identité transmise par le serveur de manière purement locale.
 *   **`fn_initLoadout.sqf` (`LL_fnc_initLoadout`)**
@@ -65,16 +68,21 @@ Toutes les fonctions sont pré-compilées par le moteur Arma 3 au démarrage de 
 *   **`fn_addRoeActions.sqf` (`LL_fnc_addRoeActions`)**
     *   **Rôle :** Exécuté localement. Ajoute un menu molette dynamique permettant au chef d'escouade de dicter les Règles d'Engagement (RoE) de ses IA.
     *   **Fonctionnement :** Propose 7 comportements tactiques distincts (Infiltration, Patrouille, Vigilance, Assaut, Charge, Défense, Reset) affectant simultanément la formation, la vitesse, l'attitude de combat (`AWARE`, `COMBAT`, `STEALTH`) et la posture (`UP`, `AUTO`). Inclut un feedback visuel coloré et textuel, et se maintient après chaque réapparition via une boucle locale.
-
+*   **`fn_setupUVO.sqf` (`LL_fnc_setupUVO`)**
+    *   **Rôle :** Exécuté dynamiquement à la création d'une unité. Assure la compatibilité totale et automatique avec le mod audio *Unit Voice-Overs (UVO)* s'il est activé.
+    *   **Fonctionnement :** Force la langue des joueurs RACS en Anglais, et la langue des ennemis/civils (OPFOR/Civil) aléatoirement en Arabe ou en Perse. Bloque les systèmes de détection automatique du mod pour éviter les conflits d'assignation.
 
 ### Civils (`Functions\Civilian\`)
 *   **`fn_initCivilians.sqf` (`LL_fnc_initCivilians`)**
     *   **Rôle :** Initialisation serveur du système civil complet. Construit les bases de données de noms perses/afghans (146 hommes, 130+ femmes), les pools visuels (visages, couvre-chefs CUP, barbes) et les 24 loadouts bandits. Collecte les templates placés dans l'éditeur (`template_01` à `template_XX` + `Max_Tak_woman*`) via `getUnitLoadout`, puis les supprime de la carte. Installe le gestionnaire `EntityCreated` pour appliquer les templates aux spawns futurs.
     *   **Convention de genre :** `template_01` à `template_16` = femmes (détection par `"woman"` dans la classe). `template_17+` = hommes. Les hommes reçoivent barbe (`CUP_Beard_Brown`/`Black`) + couvre-chef CUP aléatoire. Les femmes ont un pitch voix plus élevé (1.3–1.4).
 *   **`fn_applyTemplate.sqf` (`LL_fnc_applyTemplate`)**
-    *   **Rôle :** Applique un template civil à une unité non-joueur, non-indépendante. Utilise `setUnitLoadout` pour la tenue complète. Les OPFOR/BLUFOR reçoivent en plus un armement bandit (AK47, FN FAL, M14, M1014...) avec lampe tactique forcée. Les civils sont désarmés. L'identité (nom + visage + voix perse) est diffusée à tous les clients via `remoteExec` JIP-safe.
+    *   **Rôle :** Applique un template civil à une unité non-joueur, non-indépendante. Utilise `setUnitLoadout` pour la tenue complète. Les OPFOR/BLUFOR reçoivent en plus un armement bandit avec lampe tactique forcée. L'identité (nom + visage + voix native perse) est diffusée à tous les clients via `remoteExec`. Le script déclenche également `LL_fnc_setupUVO` pour le support éventuel des voix arabes HD.
 *   **`fn_spawnPresence.sqf` (`LL_fnc_spawnPresence`)**
     *   **Rôle :** Boucle infinie serveur gérant la présence civile dynamique. Spawne des civils dans les bâtiments proches des joueurs (rayon 500m, minimum 50m) et supprime ceux au-delà de 1200m. Maximum 55 civils simultanés. Chaque civil reçoit un template et une patrouille aléatoire.
+*   **`fn_manageInsurgents.sqf` (`LL_fnc_manageInsurgents`)**
+    *   **Rôle :** Boucle infinie serveur gérant le système de "Sleeper Cells" (cellules dormantes).
+    *   **Fonctionnement :** Convertit de manière transparente et aléatoire des civils éloignés (300-450m) en insurgés hostiles (OPFOR). Utilise un changement de camp invisible (`joinSilent`) pour que le civil conserve exactement son modèle 3D, ses vêtements civils et sa voix UVO. Pioche ensuite aléatoirement un sac et une arme dans la banque `MISSION_BanditLoadouts` avant de lancer un ordre d'assaut (SAD) sur l'escouade du joueur.
 
 ### Drone (`Functions\Drone\`)
 *   **`fn_addDroneAction.sqf` (`LL_fnc_addDroneAction`)**

@@ -42,16 +42,17 @@ if (!isServer) exitWith {};
 
         {
             private _bldg = _x;
-            private _bldgData = _doorCache getOrDefault [_bldg, []];
+            private _bldgKey = hashValue _bldg;
+            private _bldgData = _doorCache getOrDefault [_bldgKey, []];
 
             // Cache des animations de portes
             if (_bldgData isEqualTo []) then {
                 private _anims = (animationNames _bldg) select { (toLowerANSI _x) find "door" >= 0 };
-                _bldgData = [_anims, 0]; 
-                _doorCache set [_bldg, _bldgData];
+                _bldgData = [_anims, 0, _bldg]; 
+                _doorCache set [_bldgKey, _bldgData];
             };
 
-            _bldgData params ["_doorAnims", "_lastOpened"];
+            _bldgData params ["_doorAnims", "_lastOpened", "_cachedBldg"];
 
             if (_doorAnims isEqualTo []) then { continue; };
 
@@ -74,7 +75,7 @@ if (!isServer) exitWith {};
                     } forEach _doorAnims;
 
                     _bldgData set [1, _currentTime];
-                    _doorCache set [_bldg, _bldgData];
+                    _doorCache set [_bldgKey, _bldgData];
                 };
             } 
             else {
@@ -88,7 +89,7 @@ if (!isServer) exitWith {};
 
                     // Mise à jour du timestamp
                     _bldgData set [1, _currentTime - _CLOSE_DELAY + 3];
-                    _doorCache set [_bldg, _bldgData];
+                    _doorCache set [_bldgKey, _bldgData];
                 };
             };
         } forEach _nearBuildings;
@@ -98,10 +99,13 @@ if (!isServer) exitWith {};
             private _refPos = getPosATL (selectRandom _aiUnits);
             private _toRemove = [];
             {
-                if (_x distance2D _refPos > 300) then {
-                    _toRemove pushBack _x;
+                private _key = _x;
+                private _data = _y;
+                private _cachedObj = _data select 2;
+                if (isNull _cachedObj || { _cachedObj distance2D _refPos > 300 }) then {
+                    _toRemove pushBack _key;
                 };
-            } forEach (keys _doorCache);
+            } forEach _doorCache;
             { _doorCache deleteAt _x; } forEach _toRemove;
         };
     };
