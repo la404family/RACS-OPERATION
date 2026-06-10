@@ -6,3 +6,4 @@ params ["_player", "_didJIP"];
 [] spawn LL_fnc_addHealAction;
 [] spawn LL_fnc_addSearchAction;
 [] spawn LL_fnc_addRoeActions;
+[] spawn LL_fnc_initBriefing;

@@ -1,0 +1,777 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keys>
+    <Key ID="STR_LL_Briefing_Manual_Tab">
+        <Original>Field Manual</Original>
+        <French>Manuel Opérationnel</French>
+        <English>Field Manual</English>
+        <Spanish>Manual de Campo</Spanish>
+        <Italian>Manuale da Campo</Italian>
+        <German>Feldhandbuch</German>
+        <Polish>Podręcznik polowy</Polish>
+        <Russian>Полевой устав</Russian>
+        <Turkish>Sahra Talimnamesi</Turkish>
+        <Japanese>野外マニュアル</Japanese>
+        <Korean>야전 교범</Korean>
+        <Chinese>野战手册</Chinese>
+    </Key>
+
+    <Key ID="STR_LL_Briefing_1_1_Title">
+        <Original>1.1. Rules of Engagement</Original>
+        <French>1.1. Règles d'Engagement</French>
+        <English>1.1. Rules of Engagement</English>
+        <Spanish>1.1. Reglas de Enfrentamiento</Spanish>
+        <Italian>1.1. Regole di Ingaggio</Italian>
+        <German>1.1. Einsatzregeln</German>
+        <Polish>1.1. Zasady Zaangażowania</Polish>
+        <Russian>1.1. Правила ведения боя</Russian>
+        <Turkish>1.1. Angajman Kuralları</Turkish>
+        <Japanese>1.1. 交戦規定</Japanese>
+        <Korean>1.1. 교전 수칙</Korean>
+        <Chinese>1.1. 交战规则</Chinese>
+    </Key>
+    <Key ID="STR_LL_Briefing_1_1_Text">
+        <Original>
+&lt;font color='#FF8800'&gt;Interface:&lt;/font&gt; Dynamic menu (Scroll action).&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Description:&lt;/font&gt; Instantly modifies the tactical behavior of your entire squad.&lt;br/&gt;&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Infiltration:&lt;/font&gt; Stealthy movement, silent, weapons lowered.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Patrol:&lt;/font&gt; Standard movement, moderate speed, spaced formation.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Vigilance:&lt;/font&gt; Weapons raised, increased situational awareness, ready to fire.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Assault:&lt;/font&gt; Maximum speed, aggressive behavior to gain the upper hand.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Charge:&lt;/font&gt; Fast chaotic movement towards the objective, ignoring suppressive fire.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Defense:&lt;/font&gt; Hold position, seek cover, immediate return of fire.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Reset:&lt;/font&gt; Return to standard AI behavior.
+        </Original>
+        <French>
+&lt;font color='#FF8800'&gt;Interface :&lt;/font&gt; Menu dynamique (Action molette).&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Description :&lt;/font&gt; Modifie instantanément le comportement tactique de l'ensemble de votre escouade.&lt;br/&gt;&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Infiltration :&lt;/font&gt; Déplacement furtif, silencieux, armes baissées.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Patrouille :&lt;/font&gt; Déplacement standard, vitesse modérée, formation espacée.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Vigilance :&lt;/font&gt; Armes levées, conscience situationnelle accrue, prêts à faire feu.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Assaut :&lt;/font&gt; Vitesse maximale, comportement agressif pour prendre l'ascendant.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Charge :&lt;/font&gt; Mouvement désordonné et ultra-rapide vers l'objectif, ignorer les tirs de suppression.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Défense :&lt;/font&gt; Tenir la position, chercher un couvert, riposte immédiate.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Reset :&lt;/font&gt; Retour au comportement standard de l'IA.
+        </French>
+        <English>
+&lt;font color='#FF8800'&gt;Interface:&lt;/font&gt; Dynamic menu (Scroll action).&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Description:&lt;/font&gt; Instantly modifies the tactical behavior of your entire squad.&lt;br/&gt;&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Infiltration:&lt;/font&gt; Stealthy movement, silent, weapons lowered.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Patrol:&lt;/font&gt; Standard movement, moderate speed, spaced formation.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Vigilance:&lt;/font&gt; Weapons raised, increased situational awareness, ready to fire.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Assault:&lt;/font&gt; Maximum speed, aggressive behavior to gain the upper hand.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Charge:&lt;/font&gt; Fast chaotic movement towards the objective, ignoring suppressive fire.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Defense:&lt;/font&gt; Hold position, seek cover, immediate return of fire.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Reset:&lt;/font&gt; Return to standard AI behavior.
+        </English>
+        <Spanish>
+&lt;font color='#FF8800'&gt;Interfaz:&lt;/font&gt; Menú dinámico (Acción rueda del ratón).&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Descripción:&lt;/font&gt; Modifica instantáneamente el comportamiento táctico de toda tu escuadra.&lt;br/&gt;&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Infiltración:&lt;/font&gt; Movimiento sigiloso, silencioso, armas bajas.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Patrulla:&lt;/font&gt; Movimiento estándar, velocidad moderada, formación espaciada.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Vigilancia:&lt;/font&gt; Armas en alto, mayor conciencia situacional, listos para disparar.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Asalto:&lt;/font&gt; Velocidad máxima, comportamiento agresivo para ganar ventaja.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Carga:&lt;/font&gt; Movimiento rápido y caótico hacia el objetivo, ignorando el fuego de supresión.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Defensa:&lt;/font&gt; Mantener posición, buscar cobertura, devolver el fuego inmediatamente.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Reinicio:&lt;/font&gt; Volver al comportamiento estándar de la IA.
+        </Spanish>
+        <Italian>
+&lt;font color='#FF8800'&gt;Interfaccia:&lt;/font&gt; Menu dinamico (Rotellina del mouse).&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Descrizione:&lt;/font&gt; Modifica istantaneamente il comportamento tattico dell'intera squadra.&lt;br/&gt;&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Infiltrazione:&lt;/font&gt; Movimento furtivo, silenzioso, armi abbassate.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Pattuglia:&lt;/font&gt; Movimento standard, velocità moderata, formazione distanziata.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Vigilanza:&lt;/font&gt; Armi alzate, maggiore consapevolezza situazionale, pronti al fuoco.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Assalto:&lt;/font&gt; Massima velocità, comportamento aggressivo per avere la meglio.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Carica:&lt;/font&gt; Movimento veloce e caotico verso l'obiettivo, ignorando il fuoco di soppressione.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Difesa:&lt;/font&gt; Mantenere la posizione, cercare riparo, rispondere immediatamente al fuoco.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Ripristino:&lt;/font&gt; Torna al comportamento IA standard.
+        </Italian>
+        <German>
+&lt;font color='#FF8800'&gt;Schnittstelle:&lt;/font&gt; Dynamisches Menü (Mausrad).&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Beschreibung:&lt;/font&gt; Ändert sofort das taktische Verhalten deines gesamten Trupps.&lt;br/&gt;&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Infiltration:&lt;/font&gt; Heimliche Bewegung, leise, Waffen gesenkt.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Patrouille:&lt;/font&gt; Standardbewegung, moderate Geschwindigkeit, weite Formation.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Wachsamkeit:&lt;/font&gt; Waffen erhoben, erhöhtes Situationsbewusstsein, feuerbereit.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Angriff:&lt;/font&gt; Maximale Geschwindigkeit, aggressives Verhalten, um die Oberhand zu gewinnen.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Ansturm:&lt;/font&gt; Schnelle chaotische Bewegung auf das Ziel zu, ignoriert Unterdrückungsfeuer.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Verteidigung:&lt;/font&gt; Position halten, Deckung suchen, sofort das Feuer erwidern.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Zurücksetzen:&lt;/font&gt; Zurück zum Standard-KI-Verhalten.
+        </German>
+        <Polish>
+&lt;font color='#FF8800'&gt;Interfejs:&lt;/font&gt; Dynamiczne menu (kółko myszy).&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Opis:&lt;/font&gt; Błyskawicznie modyfikuje zachowanie taktyczne całego twojego oddziału.&lt;br/&gt;&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Infiltracja:&lt;/font&gt; Ruch z ukrycia, cicho, opuszczona broń.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Patrol:&lt;/font&gt; Standardowy ruch, umiarkowana prędkość, rozproszona formacja.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Czujność:&lt;/font&gt; Podniesiona broń, zwiększona świadomość sytuacyjna, gotowość do strzału.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Szturm:&lt;/font&gt; Maksymalna prędkość, agresywne zachowanie w celu zdobycia przewagi.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Szarża:&lt;/font&gt; Szybki, chaotyczny ruch w stronę celu, ignorujący ogień zaporowy.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Obrona:&lt;/font&gt; Utrzymanie pozycji, szukanie osłony, natychmiastowe otwarcie ognia.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Reset:&lt;/font&gt; Powrót do standardowego zachowania SI.
+        </Polish>
+        <Russian>
+&lt;font color='#FF8800'&gt;Интерфейс:&lt;/font&gt; Динамическое меню (Колесико мыши).&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Описание:&lt;/font&gt; Мгновенно изменяет тактическое поведение всего вашего отряда.&lt;br/&gt;&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Проникновение:&lt;/font&gt; Скрытное передвижение, тишина, оружие опущено.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Патруль:&lt;/font&gt; Стандартное передвижение, средняя скорость, рассредоточенное построение.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Бдительность:&lt;/font&gt; Оружие наготове, повышенная осведомленность, готовность открыть огонь.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Штурм:&lt;/font&gt; Максимальная скорость, агрессивное поведение для получения преимущества.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Атака:&lt;/font&gt; Быстрое хаотичное движение к цели, игнорируя подавляющий огонь.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Оборона:&lt;/font&gt; Удерживать позицию, искать укрытие, немедленный ответный огонь.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Сброс:&lt;/font&gt; Возврат к стандартному поведению ИИ.
+        </Russian>
+        <Turkish>
+&lt;font color='#FF8800'&gt;Arayüz:&lt;/font&gt; Dinamik menü (Fare tekerleği).&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Açıklama:&lt;/font&gt; Tüm manganızın taktiksel davranışını anında değiştirir.&lt;br/&gt;&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Sızma:&lt;/font&gt; Gizli hareket, sessiz, silahlar aşağıda.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Devriye:&lt;/font&gt; Standart hareket, orta hız, aralıklı dizilim.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Teyakkuz:&lt;/font&gt; Silahlar yukarıda, durumsal farkındalık artmış, ateşe hazır.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Saldırı:&lt;/font&gt; Maksimum hız, üstünlük sağlamak için agresif davranış.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Hücum:&lt;/font&gt; Baskı ateşini görmezden gelerek hedefe doğru hızlı kaotik hareket.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Savunma:&lt;/font&gt; Pozisyonu koru, siper al, ateşe anında karşılık ver.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Sıfırla:&lt;/font&gt; Standart yapay zeka davranışına dön.
+        </Turkish>
+        <Japanese>
+&lt;font color='#FF8800'&gt;インターフェース:&lt;/font&gt; ダイナミックメニュー (マウスホイール).&lt;br/&gt;
+&lt;font color='#FFD700'&gt;説明:&lt;/font&gt; 分隊全体の戦術的行動を即座に変更します。&lt;br/&gt;&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;潜入:&lt;/font&gt; 隠密行動、静粛、武器を下げる。&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;パトロール:&lt;/font&gt; 標準的な移動、中程度の速度、間隔を空けた陣形。&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;警戒:&lt;/font&gt; 武器を構え、状況認識を高め、発砲準備完了。&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;強襲:&lt;/font&gt; 最高速度、優位に立つための攻撃的な行動。&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;突撃:&lt;/font&gt; 制圧射撃を無視して、目標に向かって高速で混沌とした移動。&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;防衛:&lt;/font&gt; 陣地を維持し、遮蔽物を探し、即座に応戦する。&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;リセット:&lt;/font&gt; 標準的なAIの行動に戻る。
+        </Japanese>
+        <Korean>
+&lt;font color='#FF8800'&gt;인터페이스:&lt;/font&gt; 동적 메뉴 (마우스 휠).&lt;br/&gt;
+&lt;font color='#FFD700'&gt;설명:&lt;/font&gt; 분대 전체의 전술적 행동을 즉시 변경합니다.&lt;br/&gt;&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;침투:&lt;/font&gt; 은밀한 이동, 조용하게, 무기 내림.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;순찰:&lt;/font&gt; 표준 이동, 중간 속도, 간격을 둔 진형.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;경계:&lt;/font&gt; 무기 조준, 상황 인식 증가, 사격 준비 완료.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;강습:&lt;/font&gt; 최대 속도, 우위를 점하기 위한 공격적인 행동.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;돌격:&lt;/font&gt; 제압 사격을 무시하고 목표를 향해 빠르고 혼란스러운 이동.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;방어:&lt;/font&gt; 위치 고수, 엄폐물 탐색, 즉각적인 대응 사격.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;초기화:&lt;/font&gt; 표준 AI 행동으로 복귀.
+        </Korean>
+        <Chinese>
+&lt;font color='#FF8800'&gt;界面:&lt;/font&gt; 动态菜单 (鼠标滚轮).&lt;br/&gt;
+&lt;font color='#FFD700'&gt;描述:&lt;/font&gt; 立即改变整个小队的战术行为。&lt;br/&gt;&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;渗透:&lt;/font&gt; 隐蔽移动，保持安静，武器放下。&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;巡逻:&lt;/font&gt; 标准移动，中等速度，分散阵型。&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;警戒:&lt;/font&gt; 举起武器，提高态势感知，准备开火。&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;突击:&lt;/font&gt; 最高速度，采取攻击行为以占据上风。&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;冲锋:&lt;/font&gt; 无视压制火力，快速混乱地向目标移动。&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;防御:&lt;/font&gt; 坚守阵地，寻找掩体，立即还击。&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;重置:&lt;/font&gt; 返回标准 AI 行为。
+        </Chinese>
+    </Key>
+
+    <Key ID="STR_LL_Briefing_1_2_Title">
+        <Original>1.2. Rally (Regroup)</Original>
+        <French>1.2. Regroupement Forcé</French>
+        <English>1.2. Rally (Regroup)</English>
+        <Spanish>1.2. Agruparse (Reagrupar)</Spanish>
+        <Italian>1.2. Raduno (Raggruppamento)</Italian>
+        <German>1.2. Sammeln (Sammelpunkt)</German>
+        <Polish>1.2. Zbiórka (Przegrupowanie)</Polish>
+        <Russian>1.2. Сбор (Перегруппировка)</Russian>
+        <Turkish>1.2. Toplanma</Turkish>
+        <Japanese>1.2. 集合 (再編成)</Japanese>
+        <Korean>1.2. 집결 (재집결)</Korean>
+        <Chinese>1.2. 集合 (重新集结)</Chinese>
+    </Key>
+    <Key ID="STR_LL_Briefing_1_2_Text">
+        <Original>
+&lt;font color='#FF8800'&gt;Interface:&lt;/font&gt; White action 'Squad Rally'.&lt;br/&gt;
+&lt;font color='#00FF00'&gt;Condition:&lt;/font&gt; Must have infantry under your command (excluding vehicles).&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Description:&lt;/font&gt; If the squad is scattered or a soldier is stuck under enemy fire, this order triggers an aggressive behavior reset. They will abandon their current cover to reform in a tight column behind you. Ideal for 'unstucking' a recalcitrant unit.
+        </Original>
+        <French>
+&lt;font color='#FF8800'&gt;Interface :&lt;/font&gt; Action blanche 'Regroupement IA'.&lt;br/&gt;
+&lt;font color='#00FF00'&gt;Condition :&lt;/font&gt; Avoir des fantassins sous vos ordres (hors véhicules).&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Description :&lt;/font&gt; Si l'escouade est dispersée ou si un soldat est bloqué sous le feu ennemi, cet ordre déclenche une réinitialisation agressive de leur comportement. Ils abandonneront leur couverture actuelle pour se reformer en colonne serrée derrière vous. Idéal pour 'débloquer' une unité récalcitrante.
+        </French>
+        <English>
+&lt;font color='#FF8800'&gt;Interface:&lt;/font&gt; White action 'Squad Rally'.&lt;br/&gt;
+&lt;font color='#00FF00'&gt;Condition:&lt;/font&gt; Must have infantry under your command (excluding vehicles).&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Description:&lt;/font&gt; If the squad is scattered or a soldier is stuck under enemy fire, this order triggers an aggressive behavior reset. They will abandon their current cover to reform in a tight column behind you. Ideal for 'unstucking' a recalcitrant unit.
+        </English>
+        <Spanish>
+&lt;font color='#FF8800'&gt;Interfaz:&lt;/font&gt; Acción blanca 'Agruparse'.&lt;br/&gt;
+&lt;font color='#00FF00'&gt;Condición:&lt;/font&gt; Debes tener infantería bajo tu mando (excluyendo vehículos).&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Descripción:&lt;/font&gt; Si el escuadrón está disperso o un soldado está atascado bajo fuego enemigo, esta orden desencadena un reinicio agresivo del comportamiento. Abandonarán su cobertura actual para reformarse en una columna cerrada detrás de ti. Ideal para 'desatascar' a una unidad recalcitrante.
+        </Spanish>
+        <Italian>
+&lt;font color='#FF8800'&gt;Interfaccia:&lt;/font&gt; Azione bianca 'Raduno di squadra'.&lt;br/&gt;
+&lt;font color='#00FF00'&gt;Condizione:&lt;/font&gt; Devi avere fanteria sotto il tuo comando (esclusi veicoli).&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Descrizione:&lt;/font&gt; Se la squadra è dispersa o un soldato è bloccato sotto il fuoco nemico, quest'ordine innesca un ripristino aggressivo del comportamento. Abbandoneranno la loro copertura attuale per riformarsi in una colonna stretta dietro di te. Ideale per 'sbloccare' un'unità recalcitrante.
+        </Italian>
+        <German>
+&lt;font color='#FF8800'&gt;Schnittstelle:&lt;/font&gt; Weiße Aktion 'Trupp sammeln'.&lt;br/&gt;
+&lt;font color='#00FF00'&gt;Bedingung:&lt;/font&gt; Du musst Infanterie unter deinem Kommando haben (Fahrzeuge ausgenommen).&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Beschreibung:&lt;/font&gt; Wenn der Trupp verstreut ist oder ein Soldat unter feindlichem Beschuss feststeckt, löst dieser Befehl einen aggressiven Verhaltens-Reset aus. Sie werden ihre aktuelle Deckung aufgeben, um sich in einer engen Kolonne hinter dir neu zu formieren. Ideal, um eine störrische Einheit 'loszueisen'.
+        </German>
+        <Polish>
+&lt;font color='#FF8800'&gt;Interfejs:&lt;/font&gt; Biała akcja 'Zbiórka oddziału'.&lt;br/&gt;
+&lt;font color='#00FF00'&gt;Warunek:&lt;/font&gt; Musisz mieć piechotę pod swoim dowództwem (nie licząc pojazdów).&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Opis:&lt;/font&gt; Jeśli oddział jest rozproszony lub żołnierz utknął pod ostrzałem wroga, ten rozkaz wyzwala agresywny reset zachowania. Porzucą oni swoją obecną osłonę, aby uformować się w ciasną kolumnę za tobą. Idealne do 'odblokowania' opornej jednostki.
+        </Polish>
+        <Russian>
+&lt;font color='#FF8800'&gt;Интерфейс:&lt;/font&gt; Белое действие 'Сбор отряда'.&lt;br/&gt;
+&lt;font color='#00FF00'&gt;Условие:&lt;/font&gt; В вашем подчинении должна быть пехота (исключая технику).&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Описание:&lt;/font&gt; Если отряд рассеян или солдат застрял под вражеским огнем, этот приказ вызывает агрессивный сброс поведения. Они покинут свое текущее укрытие, чтобы перестроиться в плотную колонну позади вас. Идеально подходит для того, чтобы 'вытащить' непокорного юнита.
+        </Russian>
+        <Turkish>
+&lt;font color='#FF8800'&gt;Arayüz:&lt;/font&gt; Beyaz eylem 'Manga Toplanması'.&lt;br/&gt;
+&lt;font color='#00FF00'&gt;Koşul:&lt;/font&gt; Komutanız altında piyade bulunmalıdır (araçlar hariç).&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Açıklama:&lt;/font&gt; Manga dağılmışsa veya bir asker düşman ateşi altında sıkışmışsa, bu emir agresif bir davranış sıfırlaması tetikler. Arkanızda sıkı bir kol halinde yeniden dizilmek için mevcut siperlerini terk edeceklerdir. İnatçı bir birimi 'kurtarmak' için idealdir.
+        </Turkish>
+        <Japanese>
+&lt;font color='#FF8800'&gt;インターフェース:&lt;/font&gt; 白いアクション '分隊集合'.&lt;br/&gt;
+&lt;font color='#00FF00'&gt;条件:&lt;/font&gt; 指揮下に歩兵がいること (車両を除く).&lt;br/&gt;
+&lt;font color='#FFD700'&gt;説明:&lt;/font&gt; 分隊が散り散りになっている場合や、兵士が敵の攻撃下で動けなくなっている場合、この命令は攻撃的な行動リセットのトリガーとなります。彼らは現在の遮蔽物を放棄し、あなたの後ろに密集した縦隊で再編成されます。言うことを聞かないユニットを「解放」するのに最適です。
+        </Japanese>
+        <Korean>
+&lt;font color='#FF8800'&gt;인터페이스:&lt;/font&gt; 흰색 액션 '분대 집결'.&lt;br/&gt;
+&lt;font color='#00FF00'&gt;조건:&lt;/font&gt; 지휘하에 보병이 있어야 합니다 (차량 제외).&lt;br/&gt;
+&lt;font color='#FFD700'&gt;설명:&lt;/font&gt; 분대가 흩어져 있거나 병사가 적의 공격 아래에 갇혀 있는 경우, 이 명령은 공격적인 행동 초기화를 유발합니다. 그들은 당신 뒤에 촘촘한 종대로 재편성하기 위해 현재 엄폐물을 포기할 것입니다. 말을 듣지 않는 유닛을 '구출'하는 데 이상적입니다.
+        </Korean>
+        <Chinese>
+&lt;font color='#FF8800'&gt;界面:&lt;/font&gt; 白色操作 '小队集合'.&lt;br/&gt;
+&lt;font color='#00FF00'&gt;条件:&lt;/font&gt; 你的指挥下必须有步兵 (不包括车辆).&lt;br/&gt;
+&lt;font color='#FFD700'&gt;描述:&lt;/font&gt; 如果小队分散或一名士兵被困在敌人火力下，此命令会触发攻击行为重置。他们将放弃当前的掩体，在你身后重新排成紧密的纵队。非常适合“解救”顽固的单位。
+        </Chinese>
+    </Key>
+
+    <Key ID="STR_LL_Briefing_1_3_Title">
+        <Original>1.3. Medical Procedure</Original>
+        <French>1.3. Procédure de Soin</French>
+        <English>1.3. Medical Procedure</English>
+        <Spanish>1.3. Procedimiento Médico</Spanish>
+        <Italian>1.3. Procedura Medica</Italian>
+        <German>1.3. Medizinisches Verfahren</German>
+        <Polish>1.3. Procedura medyczna</Polish>
+        <Russian>1.3. Медицинская процедура</Russian>
+        <Turkish>1.3. Tıbbi Prosedür</Turkish>
+        <Japanese>1.3. 医療手順</Japanese>
+        <Korean>1.3. 의료 절차</Korean>
+        <Chinese>1.3. 医疗程序</Chinese>
+    </Key>
+    <Key ID="STR_LL_Briefing_1_3_Text">
+        <Original>
+&lt;font color='#FF8800'&gt;Interface:&lt;/font&gt; Green action 'AI Auto-Heal'.&lt;br/&gt;
+&lt;font color='#00FF00'&gt;Condition:&lt;/font&gt; At least one injured AI in the group AND possessing a FirstAidKit.&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Description:&lt;/font&gt; Orders a halt to the advance for immediate medical treatment. The injured AI will take a knee, holster their weapon, and apply first aid before resuming their place in formation.&lt;br/&gt;
+&lt;font color='#FFA500'&gt;Refusal (Negative):&lt;/font&gt; HQ or the squad will inform you verbally if medical supplies are exhausted.
+        </Original>
+        <French>
+&lt;font color='#FF8800'&gt;Interface :&lt;/font&gt; Action verte 'Soin Automatique IA'.&lt;br/&gt;
+&lt;font color='#00FF00'&gt;Condition :&lt;/font&gt; Au moins une IA blessée dans le groupe ET en possession d'une trousse de premiers secours (FirstAidKit).&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Description :&lt;/font&gt; Ordonne un arrêt de la progression pour traitement médical immédiat. L'IA blessée mettra un genou à terre, rangera son arme et s'appliquera les premiers soins avant de reprendre sa place en formation.&lt;br/&gt;
+&lt;font color='#FFA500'&gt;Refus (Négatif) :&lt;/font&gt; Le QG ou l'escouade vous informera verbalement si les réserves médicales sont épuisées.
+        </French>
+        <English>
+&lt;font color='#FF8800'&gt;Interface:&lt;/font&gt; Green action 'AI Auto-Heal'.&lt;br/&gt;
+&lt;font color='#00FF00'&gt;Condition:&lt;/font&gt; At least one injured AI in the group AND possessing a FirstAidKit.&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Description:&lt;/font&gt; Orders a halt to the advance for immediate medical treatment. The injured AI will take a knee, holster their weapon, and apply first aid before resuming their place in formation.&lt;br/&gt;
+&lt;font color='#FFA500'&gt;Refusal (Negative):&lt;/font&gt; HQ or the squad will inform you verbally if medical supplies are exhausted.
+        </English>
+        <Spanish>
+&lt;font color='#FF8800'&gt;Interfaz:&lt;/font&gt; Acción verde 'Auto-Cura de IA'.&lt;br/&gt;
+&lt;font color='#00FF00'&gt;Condición:&lt;/font&gt; Al menos una IA herida en el grupo Y que posea un botiquín de primeros auxilios (FirstAidKit).&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Descripción:&lt;/font&gt; Ordena un alto en el avance para tratamiento médico inmediato. La IA herida pondrá una rodilla en tierra, enfundará su arma y aplicará primeros auxilios antes de reanudar su lugar en la formación.&lt;br/&gt;
+&lt;font color='#FFA500'&gt;Rechazo (Negativo):&lt;/font&gt; El Cuartel General o el escuadrón te informarán verbalmente si los suministros médicos están agotados.
+        </Spanish>
+        <Italian>
+&lt;font color='#FF8800'&gt;Interfaccia:&lt;/font&gt; Azione verde 'Autocura IA'.&lt;br/&gt;
+&lt;font color='#00FF00'&gt;Condizione:&lt;/font&gt; Almeno un'IA ferita nel gruppo E in possesso di un kit di pronto soccorso (FirstAidKit).&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Descrizione:&lt;/font&gt; Ordina un arresto dell'avanzata per trattamento medico immediato. L'IA ferita si inginocchierà, rinfodererà l'arma e applicherà il primo soccorso prima di riprendere il suo posto in formazione.&lt;br/&gt;
+&lt;font color='#FFA500'&gt;Rifiuto (Negativo):&lt;/font&gt; Il Quartier Generale o la squadra ti informeranno verbalmente se le scorte mediche sono esaurite.
+        </Italian>
+        <German>
+&lt;font color='#FF8800'&gt;Schnittstelle:&lt;/font&gt; Grüne Aktion 'KI-Auto-Heilung'.&lt;br/&gt;
+&lt;font color='#00FF00'&gt;Bedingung:&lt;/font&gt; Mindestens eine verletzte KI in der Gruppe UND im Besitz eines Erste-Hilfe-Kastens (FirstAidKit).&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Beschreibung:&lt;/font&gt; Befiehlt einen Halt des Vorrückens für sofortige medizinische Behandlung. Die verletzte KI kniet nieder, steckt ihre Waffe weg und leistet Erste Hilfe, bevor sie ihren Platz in der Formation wieder einnimmt.&lt;br/&gt;
+&lt;font color='#FFA500'&gt;Ablehnung (Negativ):&lt;/font&gt; Das HQ oder der Trupp wird dich mündlich informieren, wenn die medizinischen Vorräte erschöpft sind.
+        </German>
+        <Polish>
+&lt;font color='#FF8800'&gt;Interfejs:&lt;/font&gt; Zielona akcja 'Auto-leczenie SI'.&lt;br/&gt;
+&lt;font color='#00FF00'&gt;Warunek:&lt;/font&gt; Przynajmniej jedna ranna sztuczna inteligencja w grupie ORAZ posiadająca apteczkę pierwszej pomocy (FirstAidKit).&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Opis:&lt;/font&gt; Zarządza zatrzymanie marszu w celu natychmiastowego leczenia medycznego. Ranna SI uklęknie, schowa broń i zastosuje pierwszą pomoc przed powrotem na swoje miejsce w formacji.&lt;br/&gt;
+&lt;font color='#FFA500'&gt;Odmowa (Negatywna):&lt;/font&gt; Dowództwo lub oddział poinformuje cię słownie, jeśli zapasy medyczne się wyczerpią.
+        </Polish>
+        <Russian>
+&lt;font color='#FF8800'&gt;Интерфейс:&lt;/font&gt; Зеленое действие 'Авто-лечение ИИ'.&lt;br/&gt;
+&lt;font color='#00FF00'&gt;Условие:&lt;/font&gt; Как минимум один раненый бот в группе И наличие аптечки (FirstAidKit).&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Описание:&lt;/font&gt; Приказывает остановить продвижение для немедленного медицинского лечения. Раненый бот встанет на колено, спрячет оружие и применит первую помощь, прежде чем занять свое место в строю.&lt;br/&gt;
+&lt;font color='#FFA500'&gt;Отказ (Отрицательный):&lt;/font&gt; Штаб или отряд устно сообщит вам, если медикаменты исчерпаны.
+        </Russian>
+        <Turkish>
+&lt;font color='#FF8800'&gt;Arayüz:&lt;/font&gt; Yeşil eylem 'Yapay Zeka Otomatik İyileştirme'.&lt;br/&gt;
+&lt;font color='#00FF00'&gt;Koşul:&lt;/font&gt; Grupta en az bir yaralı yapay zeka VE bir İlk Yardım Kiti (FirstAidKit) bulunması.&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Açıklama:&lt;/font&gt; Acil tıbbi tedavi için ilerlemeyi durdurma emri verir. Yaralı yapay zeka diz çökecek, silahını kılıfına sokacak ve dizilimdeki yerine dönmeden önce ilk yardım uygulayacaktır.&lt;br/&gt;
+&lt;font color='#FFA500'&gt;Reddetme (Olumsuz):&lt;/font&gt; Tıbbi malzemeler tükenirse Karargah veya manga sizi sözlü olarak bilgilendirecektir.
+        </Turkish>
+        <Japanese>
+&lt;font color='#FF8800'&gt;インターフェース:&lt;/font&gt; 緑のアクション 'AI自動回復'.&lt;br/&gt;
+&lt;font color='#00FF00'&gt;条件:&lt;/font&gt; グループ内に負傷したAIが少なくとも1人おり、かつ救急キット(FirstAidKit)を所持していること。&lt;br/&gt;
+&lt;font color='#FFD700'&gt;説明:&lt;/font&gt; 即座に医療処置を行うために前進を停止するよう命じます。負傷したAIは膝をつき、武器をホルスターに収め、応急処置を施してから陣形内の自分の位置に戻ります。&lt;br/&gt;
+&lt;font color='#FFA500'&gt;拒否 (ネガティブ):&lt;/font&gt; 医療品が尽きた場合、HQまたは分隊が口頭で通知します。
+        </Japanese>
+        <Korean>
+&lt;font color='#FF8800'&gt;인터페이스:&lt;/font&gt; 녹색 액션 'AI 자동 치료'.&lt;br/&gt;
+&lt;font color='#00FF00'&gt;조건:&lt;/font&gt; 그룹에 부상당한 AI가 한 명 이상 있고 구급 상자(FirstAidKit)를 소지하고 있어야 합니다.&lt;br/&gt;
+&lt;font color='#FFD700'&gt;설명:&lt;/font&gt; 즉각적인 의료 치료를 위해 전진을 멈추도록 명령합니다. 부상당한 AI는 무릎을 꿇고 무기를 집어넣은 다음 응급 처치를 적용한 후 진형 내 자신의 위치로 돌아갑니다.&lt;br/&gt;
+&lt;font color='#FFA500'&gt;거부 (부정):&lt;/font&gt; 의료품이 소진되면 HQ 또는 분대가 구두로 알려줍니다.
+        </Korean>
+        <Chinese>
+&lt;font color='#FF8800'&gt;界面:&lt;/font&gt; 绿色操作 'AI 自动治疗'.&lt;br/&gt;
+&lt;font color='#00FF00'&gt;条件:&lt;/font&gt; 小组中至少有一名受伤的 AI 并且拥有急救包 (FirstAidKit).&lt;br/&gt;
+&lt;font color='#FFD700'&gt;描述:&lt;/font&gt; 命令停止前进以进行立即医疗处理。受伤的 AI 将单膝跪地，收起武器，并进行急救，然后恢复其在阵型中的位置。&lt;br/&gt;
+&lt;font color='#FFA500'&gt;拒绝 (否定):&lt;/font&gt; 如果医疗用品耗尽，总部或小队将口头通知您。
+        </Chinese>
+    </Key>
+
+    <Key ID="STR_LL_Briefing_1_4_Title">
+        <Original>1.4. Sector Clearance (CQB)</Original>
+        <French>1.4. Nettoyage de Secteur (CQB)</French>
+        <English>1.4. Sector Clearance (CQB)</English>
+        <Spanish>1.4. Limpieza de Sector (CQB)</Spanish>
+        <Italian>1.4. Bonifica Settore (CQB)</Italian>
+        <German>1.4. Sektorräumung (CQB)</German>
+        <Polish>1.4. Oczyszczanie Sektora (CQB)</Polish>
+        <Russian>1.4. Зачистка сектора (CQB)</Russian>
+        <Turkish>1.4. Bölge Temizliği (CQB)</Turkish>
+        <Japanese>1.4. セクタークリアランス (CQB)</Japanese>
+        <Korean>1.4. 구역 소탕 (CQB)</Korean>
+        <Chinese>1.4. 区域清理 (CQB)</Chinese>
+    </Key>
+    <Key ID="STR_LL_Briefing_1_4_Text">
+        <Original>
+&lt;font color='#FF8800'&gt;Interface:&lt;/font&gt; Yellow action 'Search buildings'.&lt;br/&gt;
+&lt;font color='#00FF00'&gt;Condition:&lt;/font&gt; Buildings present within 55 meters.&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Description:&lt;/font&gt; Urban assault order. Your men will automatically spread out and infiltrate surrounding buildings. AI will always prioritize high points (roofs and upper floors) before securing the ground floor.&lt;br/&gt;
+&lt;font color='#87CEEB'&gt;Protocol:&lt;/font&gt; Aggressive staggered deployment. Once the point is secured, the unit observes the surroundings for a few seconds then automatically returns to formation on you.
+        </Original>
+        <French>
+&lt;font color='#FF8800'&gt;Interface :&lt;/font&gt; Action jaune 'Fouiller les bâtiments'.&lt;br/&gt;
+&lt;font color='#00FF00'&gt;Condition :&lt;/font&gt; Présence de bâtiments à moins de 55 mètres.&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Description :&lt;/font&gt; Ordre d'assaut urbain. Vos hommes vont automatiquement se répartir et s'infiltrer dans les bâtiments environnants. L'IA priorisera toujours les points hauts (toits et étages) avant de sécuriser le rez-de-chaussée.&lt;br/&gt;
+&lt;font color='#87CEEB'&gt;Protocole :&lt;/font&gt; Déploiement agressif en quinconce. Une fois le point sécurisé, l'unité observe les environs pendant quelques secondes puis retourne automatiquement se placer en formation sur vous.
+        </French>
+        <English>
+&lt;font color='#FF8800'&gt;Interface:&lt;/font&gt; Yellow action 'Search buildings'.&lt;br/&gt;
+&lt;font color='#00FF00'&gt;Condition:&lt;/font&gt; Buildings present within 55 meters.&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Description:&lt;/font&gt; Urban assault order. Your men will automatically spread out and infiltrate surrounding buildings. AI will always prioritize high points (roofs and upper floors) before securing the ground floor.&lt;br/&gt;
+&lt;font color='#87CEEB'&gt;Protocol:&lt;/font&gt; Aggressive staggered deployment. Once the point is secured, the unit observes the surroundings for a few seconds then automatically returns to formation on you.
+        </English>
+        <Spanish>
+&lt;font color='#FF8800'&gt;Interfaz:&lt;/font&gt; Acción amarilla 'Buscar en edificios'.&lt;br/&gt;
+&lt;font color='#00FF00'&gt;Condición:&lt;/font&gt; Edificios presentes a menos de 55 metros.&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Descripción:&lt;/font&gt; Orden de asalto urbano. Tus hombres se dispersarán automáticamente e infiltrarán en los edificios circundantes. La IA siempre priorizará los puntos altos (techos y pisos superiores) antes de asegurar la planta baja.&lt;br/&gt;
+&lt;font color='#87CEEB'&gt;Protocolo:&lt;/font&gt; Despliegue escalonado agresivo. Una vez asegurado el punto, la unidad observa los alrededores durante unos segundos y luego regresa automáticamente a la formación contigo.
+        </Spanish>
+        <Italian>
+&lt;font color='#FF8800'&gt;Interfaccia:&lt;/font&gt; Azione gialla 'Cerca edifici'.&lt;br/&gt;
+&lt;font color='#00FF00'&gt;Condizione:&lt;/font&gt; Edifici presenti entro 55 metri.&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Descrizione:&lt;/font&gt; Ordine di assalto urbano. I tuoi uomini si disperderanno automaticamente e si infiltreranno negli edifici circostanti. L'IA darà sempre la priorità ai punti alti (tetti e piani superiori) prima di mettere in sicurezza il piano terra.&lt;br/&gt;
+&lt;font color='#87CEEB'&gt;Protocollo:&lt;/font&gt; Dispiegamento sfalsato aggressivo. Una volta messo in sicurezza il punto, l'unità osserva i dintorni per alcuni secondi, quindi torna automaticamente in formazione su di te.
+        </Italian>
+        <German>
+&lt;font color='#FF8800'&gt;Schnittstelle:&lt;/font&gt; Gelbe Aktion 'Gebäude durchsuchen'.&lt;br/&gt;
+&lt;font color='#00FF00'&gt;Bedingung:&lt;/font&gt; Gebäude im Umkreis von 55 Metern vorhanden.&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Beschreibung:&lt;/font&gt; Städtischer Angriffsbefehl. Deine Männer schwärmen automatisch aus und infiltrieren umliegende Gebäude. Die KI priorisiert immer hohe Punkte (Dächer und obere Stockwerke), bevor das Erdgeschoss gesichert wird.&lt;br/&gt;
+&lt;font color='#87CEEB'&gt;Protokoll:&lt;/font&gt; Aggressiver gestaffelter Einsatz. Sobald der Punkt gesichert ist, beobachtet die Einheit die Umgebung für ein paar Sekunden und kehrt dann automatisch in die Formation zurück.
+        </German>
+        <Polish>
+&lt;font color='#FF8800'&gt;Interfejs:&lt;/font&gt; Żółta akcja 'Przeszukaj budynki'.&lt;br/&gt;
+&lt;font color='#00FF00'&gt;Warunek:&lt;/font&gt; Obecność budynków w promieniu 55 metrów.&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Opis:&lt;/font&gt; Rozkaz szturmu miejskiego. Twoi ludzie automatycznie rozproszą się i zinfiltrują okoliczne budynki. SI zawsze będzie priorytetyzować wysokie punkty (dachy i wyższe piętra) przed zabezpieczeniem parteru.&lt;br/&gt;
+&lt;font color='#87CEEB'&gt;Protokół:&lt;/font&gt; Agresywne, rozłożone w czasie rozmieszczenie. Po zabezpieczeniu punktu jednostka obserwuje otoczenie przez kilka sekund, a następnie automatycznie wraca do formacji na ciebie.
+        </Polish>
+        <Russian>
+&lt;font color='#FF8800'&gt;Интерфейс:&lt;/font&gt; Желтое действие 'Обыскать здания'.&lt;br/&gt;
+&lt;font color='#00FF00'&gt;Условие:&lt;/font&gt; Здания находятся в радиусе 55 метров.&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Описание:&lt;/font&gt; Приказ о городском штурме. Ваши люди автоматически рассредоточатся и проникнут в окружающие здания. ИИ всегда будет отдавать приоритет высоким точкам (крышам и верхним этажам) перед зачисткой первого этажа.&lt;br/&gt;
+&lt;font color='#87CEEB'&gt;Протокол:&lt;/font&gt; Агрессивное эшелонированное развертывание. Как только точка зачищена, отряд наблюдает за окрестностями несколько секунд, а затем автоматически возвращается в строй на вас.
+        </Russian>
+        <Turkish>
+&lt;font color='#FF8800'&gt;Arayüz:&lt;/font&gt; Sarı eylem 'Binaları ara'.&lt;br/&gt;
+&lt;font color='#00FF00'&gt;Koşul:&lt;/font&gt; 55 metre içinde binalar mevcut.&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Açıklama:&lt;/font&gt; Şehir içi saldırı emri. Adamlarınız otomatik olarak dağılacak ve çevredeki binalara sızacaktır. Yapay zeka, zemin katı güvene almadan önce her zaman yüksek noktalara (çatılar ve üst katlar) öncelik verecektir.&lt;br/&gt;
+&lt;font color='#87CEEB'&gt;Protokol:&lt;/font&gt; Agresif kademeli dağıtım. Nokta güvene alındıktan sonra, birim birkaç saniye çevreyi gözlemler ve ardından otomatik olarak sizinle oluşuma geri döner.
+        </Turkish>
+        <Japanese>
+&lt;font color='#FF8800'&gt;インターフェース:&lt;/font&gt; 黄色のアクション '建物を捜索する'.&lt;br/&gt;
+&lt;font color='#00FF00'&gt;条件:&lt;/font&gt; 55メートル以内に建物があること。&lt;br/&gt;
+&lt;font color='#FFD700'&gt;説明:&lt;/font&gt; 市街地強襲命令。部下たちは自動的に散開し、周囲の建物に潜入します。AIは1階を確保する前に、常に高い場所（屋根や上層階）を優先します。&lt;br/&gt;
+&lt;font color='#87CEEB'&gt;プロトコル:&lt;/font&gt; 攻撃的な時間差展開。ポイントが確保されると、部隊は数秒間周囲を監視し、自動的にあなたの陣形に戻ります。
+        </Japanese>
+        <Korean>
+&lt;font color='#FF8800'&gt;인터페이스:&lt;/font&gt; 노란색 액션 '건물 수색'.&lt;br/&gt;
+&lt;font color='#00FF00'&gt;조건:&lt;/font&gt; 55m 이내에 건물이 있어야 합니다.&lt;br/&gt;
+&lt;font color='#FFD700'&gt;설명:&lt;/font&gt; 시가전 돌격 명령. 부하들은 자동으로 흩어져 주변 건물로 침투합니다. AI는 1층을 확보하기 전에 항상 높은 지점(지붕 및 위층)을 우선순위로 둡니다.&lt;br/&gt;
+&lt;font color='#87CEEB'&gt;프로토콜:&lt;/font&gt; 공격적인 엇갈림 배치. 지점이 확보되면 부대는 몇 초 동안 주변을 관찰한 다음 자동으로 진형으로 복귀합니다.
+        </Korean>
+        <Chinese>
+&lt;font color='#FF8800'&gt;界面:&lt;/font&gt; 黄色操作 '搜索建筑物'.&lt;br/&gt;
+&lt;font color='#00FF00'&gt;条件:&lt;/font&gt; 55 米内有建筑物。&lt;br/&gt;
+&lt;font color='#FFD700'&gt;描述:&lt;/font&gt; 城市突击命令。您的手下将自动散开并渗透到周围的建筑物中。AI 始终会优先考虑制高点（屋顶和高层），然后再确保底层的安全。&lt;br/&gt;
+&lt;font color='#87CEEB'&gt;协议:&lt;/font&gt; 攻击性交错部署。一旦该点被保护，该单位将观察周围几秒钟，然后自动返回您所在的编队。
+        </Chinese>
+    </Key>
+
+    <Key ID="STR_LL_Briefing_2_1_Title">
+        <Original>2.1. HQ Missions</Original>
+        <French>2.1. Les Missions HQ</French>
+        <English>2.1. HQ Missions</English>
+        <Spanish>2.1. Misiones del CG</Spanish>
+        <Italian>2.1. Missioni QG</Italian>
+        <German>2.1. HQ-Missionen</German>
+        <Polish>2.1. Misje HQ</Polish>
+        <Russian>2.1. Миссии штаба</Russian>
+        <Turkish>2.1. Karargah Görevleri</Turkish>
+        <Japanese>2.1. HQミッション</Japanese>
+        <Korean>2.1. HQ 임무</Korean>
+        <Chinese>2.1. 总部任务</Chinese>
+    </Key>
+    <Key ID="STR_LL_Briefing_2_1_Text">
+        <Original>
+High Command has assigned a single UH-60L helicopter to the Zargabad sector. You share this resource with other units. Missions are processed according to a strict priority protocol.&lt;br/&gt;&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Close Air Support (CAS):&lt;/font&gt; The helicopter will perform firing passes (miniguns) on the designated area. (Cooldown: 5 minutes)&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Ammo Supply Drop:&lt;/font&gt; A supply crate drop by the helicopter.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Vehicle Drop:&lt;/font&gt; Heli-lifting of a light transport vehicle. (Limited to 1 use)&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Disembarkation (Reinforcements):&lt;/font&gt; The helicopter will drop an infantry reinforcement squad directly into the area.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Extraction:&lt;/font&gt; The helicopter will land on the designated LZ to evacuate the squad.
+        </Original>
+        <French>
+Le Haut Commandement a affecté un unique hélicoptère UH-60L au secteur de Zargabad. Vous partagez cette ressource avec d'autres unités. Les missions sont traitées selon un protocole de priorité strict.&lt;br/&gt;&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Appui Aérien Rapproché (CAS) :&lt;/font&gt; L'hélicoptère effectuera des passes de tir (miniguns) sur la zone désignée. (Cooldown : 5 minutes)&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Livraison de Munitions :&lt;/font&gt; Largage d'une caisse de ravitaillement par l'hélicoptère.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Livraison de Véhicule :&lt;/font&gt; Héliportage d'un véhicule léger de transport. (Limité à 1 utilisation)&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Débarquement (Renforts) :&lt;/font&gt; L'hélicoptère larguera une escouade de renforts d'infanterie directement sur la zone.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Extraction :&lt;/font&gt; L'hélicoptère se posera sur la LZ désignée pour évacuer l'escouade.
+        </French>
+        <English>
+High Command has assigned a single UH-60L helicopter to the Zargabad sector. You share this resource with other units. Missions are processed according to a strict priority protocol.&lt;br/&gt;&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Close Air Support (CAS):&lt;/font&gt; The helicopter will perform firing passes (miniguns) on the designated area. (Cooldown: 5 minutes)&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Ammo Supply Drop:&lt;/font&gt; A supply crate drop by the helicopter.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Vehicle Drop:&lt;/font&gt; Heli-lifting of a light transport vehicle. (Limited to 1 use)&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Disembarkation (Reinforcements):&lt;/font&gt; The helicopter will drop an infantry reinforcement squad directly into the area.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Extraction:&lt;/font&gt; The helicopter will land on the designated LZ to evacuate the squad.
+        </English>
+        <Spanish>
+El Alto Mando ha asignado un solo helicóptero UH-60L al sector de Zargabad. Compartes este recurso con otras unidades. Las misiones se procesan de acuerdo con un estricto protocolo de prioridad.&lt;br/&gt;&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Apoyo Aéreo Cercano (CAS):&lt;/font&gt; El helicóptero realizará pasadas de tiro (miniguns) en el área designada. (Tiempo de reutilización: 5 minutos)&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Suministro de Munición:&lt;/font&gt; Lanzamiento de una caja de suministros por el helicóptero.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Lanzamiento de Vehículo:&lt;/font&gt; Transporte en helicóptero de un vehículo de transporte ligero. (Limitado a 1 uso)&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Desembarco (Refuerzos):&lt;/font&gt; El helicóptero dejará un escuadrón de refuerzo de infantería directamente en la zona.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Extracción:&lt;/font&gt; El helicóptero aterrizará en la LZ designada para evacuar al escuadrón.
+        </Spanish>
+        <Italian>
+L'Alto Comando ha assegnato un singolo elicottero UH-60L al settore di Zargabad. Condividi questa risorsa con altre unità. Le missioni vengono elaborate secondo un rigido protocollo di priorità.&lt;br/&gt;&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Supporto Aereo Ravvicinato (CAS):&lt;/font&gt; L'elicottero effettuerà passaggi di tiro (minigun) sull'area designata. (Tempo di ricarica: 5 minuti)&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Rifornimento Munizioni:&lt;/font&gt; Lancio di una cassa di rifornimento dall'elicottero.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Lancio Veicolo:&lt;/font&gt; Trasporto in elicottero di un veicolo da trasporto leggero. (Limitato a 1 utilizzo)&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Sbarco (Rinforzi):&lt;/font&gt; L'elicottero sgancerà una squadra di rinforzo di fanteria direttamente nell'area.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Estrazione:&lt;/font&gt; L'elicottero atterrerà sulla LZ designata per evacuare la squadra.
+        </Italian>
+        <German>
+Das Oberkommando hat dem Sektor Zargabad einen einzigen UH-60L-Hubschrauber zugewiesen. Sie teilen sich diese Ressource mit anderen Einheiten. Missionen werden nach einem strengen Prioritätsprotokoll abgewickelt.&lt;br/&gt;&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Luftnahunterstützung (CAS):&lt;/font&gt; Der Hubschrauber führt Feuerüberflüge (Miniguns) auf das vorgesehene Gebiet durch. (Abklingzeit: 5 Minuten)&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Munitionsabwurf:&lt;/font&gt; Abwurf einer Versorgungskiste durch den Hubschrauber.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Fahrzeugabwurf:&lt;/font&gt; Heli-Transport eines leichten Transportfahrzeugs. (Auf 1 Nutzung begrenzt)&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Ausschiffung (Verstärkung):&lt;/font&gt; Der Hubschrauber setzt einen Infanterie-Verstärkungstrupp direkt im Gebiet ab.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Evakuierung:&lt;/font&gt; Der Hubschrauber landet auf der vorgesehenen Landezone, um den Trupp zu evakuieren.
+        </German>
+        <Polish>
+Naczelne Dowództwo przydzieliło do sektora Zargabad pojedynczy helikopter UH-60L. Dzielisz te zasoby z innymi jednostkami. Misje są przetwarzane zgodnie z rygorystycznym protokołem priorytetów.&lt;br/&gt;&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Bezpośrednie Wsparcie Lotnicze (CAS):&lt;/font&gt; Śmigłowiec wykona przeloty ostrzeliwujące (miniguny) na wyznaczonym obszarze. (Czas odnowienia: 5 minut)&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Zrzut Amunicji:&lt;/font&gt; Zrzut skrzyni z zaopatrzeniem przez śmigłowiec.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Zrzut Pojazdu:&lt;/font&gt; Transport helikopterem lekkiego pojazdu transportowego. (Ograniczone do 1 użycia)&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Desant (Posiłki):&lt;/font&gt; Śmigłowiec zrzuci drużynę wsparcia piechoty bezpośrednio na dany obszar.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Ewakuacja:&lt;/font&gt; Śmigłowiec wyląduje na wyznaczonej strefie lądowania, aby ewakuować oddział.
+        </Polish>
+        <Russian>
+Главное командование выделило на сектор Заргабад один вертолет UH-60L. Вы делите этот ресурс с другими подразделениями. Миссии обрабатываются в соответствии со строгим протоколом приоритетов.&lt;br/&gt;&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Непосредственная авиационная поддержка (CAS):&lt;/font&gt; Вертолет выполнит боевые заходы (миниганы) на обозначенный район. (Перезарядка: 5 минут)&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Сброс боеприпасов:&lt;/font&gt; Сброс ящика с припасами с вертолета.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Сброс техники:&lt;/font&gt; Переброска легкого транспортного средства на вертолете. (Ограничено 1 использованием)&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Высадка (Подкрепление):&lt;/font&gt; Вертолет высадит отряд пехотного подкрепления прямо в зону.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Эвакуация:&lt;/font&gt; Вертолет приземлится на указанной зоне посадки, чтобы эвакуировать отряд.
+        </Russian>
+        <Turkish>
+Yüksek Komuta, Zargabad bölgesine tek bir UH-60L helikopteri atadı. Bu kaynağı diğer birimlerle paylaşıyorsunuz. Görevler katı bir öncelik protokolüne göre işlenir.&lt;br/&gt;&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Yakın Hava Desteği (CAS):&lt;/font&gt; Helikopter belirlenen alana ateş geçişleri (minigunlar) gerçekleştirecektir. (Bekleme Süresi: 5 dakika)&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Mühimmat İkmali:&lt;/font&gt; Helikopter tarafından tedarik sandığı atılması.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Araç İkmali:&lt;/font&gt; Hafif bir nakliye aracının helikopterle taşınması. (1 kullanımla sınırlı)&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Çıkarma (Takviyeler):&lt;/font&gt; Helikopter doğrudan bölgeye bir piyade takviye mangası bırakacaktır.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Tahliye:&lt;/font&gt; Helikopter, mangayı tahliye etmek için belirlenen İniş Bölgesine inecektir.
+        </Turkish>
+        <Japanese>
+最高司令部はザルガバード地区にUH-60Lヘリコプターを1機割り当てました。あなたはこのリソースを他の部隊と共有します。ミッションは厳密な優先順位プロトコルに従って処理されます。&lt;br/&gt;&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;近接航空支援 (CAS):&lt;/font&gt; ヘリコプターは指定されたエリアに機銃掃射 (ミニガン) を実行します。(クールダウン: 5分)&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;弾薬投下:&lt;/font&gt; ヘリコプターによる補給箱の投下。&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;車両投下:&lt;/font&gt; 軽輸送車両のヘリコプター輸送。(1回の使用に制限)&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;降車 (増援):&lt;/font&gt; ヘリコプターは歩兵増援部隊を直接エリアに投下します。&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;離脱:&lt;/font&gt; ヘリコプターは分隊を避難させるために指定されたLZに着陸します。
+        </Japanese>
+        <Korean>
+최고 사령부는 자르가바드 구역에 단일 UH-60L 헬리콥터를 할당했습니다. 이 자원을 다른 부대와 공유합니다. 임무는 엄격한 우선순위 프로토콜에 따라 처리됩니다.&lt;br/&gt;&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;근접 항공 지원 (CAS):&lt;/font&gt; 헬리콥터가 지정된 구역에 사격(미니건)을 실시합니다. (재사용 대기시간: 5분)&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;탄약 투하:&lt;/font&gt; 헬리콥터에 의한 보급품 상자 투하.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;차량 투하:&lt;/font&gt; 경수송 차량의 헬기 수송. (1회 사용 제한)&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;하차 (증원):&lt;/font&gt; 헬리콥터가 보병 증원 분대를 구역에 직접 투하합니다.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;철수:&lt;/font&gt; 헬리콥터가 지정된 LZ에 착륙하여 분대를 대피시킵니다.
+        </Korean>
+        <Chinese>
+最高指挥部已向扎尔加巴德区域分配了一架 UH-60L 直升机。您与其他部队共享此资源。任务按照严格的优先协议进行处理。&lt;br/&gt;&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;近距离空中支援 (CAS):&lt;/font&gt; 直升机将在指定区域进行火力扫射 (迷你机枪)。 (冷却时间: 5 分钟)&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;弹药空投:&lt;/font&gt; 直升机空投补给箱。&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;车辆空投:&lt;/font&gt; 直升机吊运轻型运输车辆。 (仅限使用 1 次)&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;下车 (增援):&lt;/font&gt; 直升机将步兵增援小队直接空投到该区域。&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;撤离:&lt;/font&gt; 直升机将降落在指定的降落区以撤离小队。
+        </Chinese>
+    </Key>
+
+    <Key ID="STR_LL_Briefing_2_2_Title">
+        <Original>2.2. Resupply</Original>
+        <French>2.2. Réapprovisionnement</French>
+        <English>2.2. Resupply</English>
+        <Spanish>2.2. Reabastecimiento</Spanish>
+        <Italian>2.2. Rifornimento</Italian>
+        <German>2.2. Nachschub</German>
+        <Polish>2.2. Zaopatrzenie</Polish>
+        <Russian>2.2. Пополнение запасов</Russian>
+        <Turkish>2.2. İkmal</Turkish>
+        <Japanese>2.2. 補給</Japanese>
+        <Korean>2.2. 재보급</Korean>
+        <Chinese>2.2. 补给</Chinese>
+    </Key>
+    <Key ID="STR_LL_Briefing_2_2_Text">
+        <Original>
+&lt;font color='#FF8800'&gt;Interface:&lt;/font&gt; Golden action directly on the dropped ammo crate.&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Description:&lt;/font&gt; Orders your men to help themselves from the crate one by one. The reloading process is complete: primary magazines, handguns, grenades, smoke grenades, and medical kits. The crate remains usable as long as it is not destroyed.
+        </Original>
+        <French>
+&lt;font color='#FF8800'&gt;Interface :&lt;/font&gt; Action dorée directement sur la caisse de munitions larguée.&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Description :&lt;/font&gt; Ordonne à vos hommes de se servir dans la caisse à tour de rôle. Le processus de rechargement est complet : chargeurs principaux, armes de poing, grenades, fumigènes et trousses de soins. La caisse reste exploitable tant qu'elle n'est pas détruite.
+        </French>
+        <English>
+&lt;font color='#FF8800'&gt;Interface:&lt;/font&gt; Golden action directly on the dropped ammo crate.&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Description:&lt;/font&gt; Orders your men to help themselves from the crate one by one. The reloading process is complete: primary magazines, handguns, grenades, smoke grenades, and medical kits. The crate remains usable as long as it is not destroyed.
+        </English>
+        <Spanish>
+&lt;font color='#FF8800'&gt;Interfaz:&lt;/font&gt; Acción dorada directamente en la caja de munición lanzada.&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Descripción:&lt;/font&gt; Ordena a tus hombres que se sirvan de la caja uno por uno. El proceso de recarga es completo: cargadores principales, pistolas, granadas, granadas de humo y botiquines médicos. La caja sigue siendo utilizable mientras no sea destruida.
+        </Spanish>
+        <Italian>
+&lt;font color='#FF8800'&gt;Interfaccia:&lt;/font&gt; Azione dorata direttamente sulla cassa di munizioni lanciata.&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Descrizione:&lt;/font&gt; Ordina ai tuoi uomini di servirsi dalla cassa uno per uno. Il processo di ricarica è completo: caricatori principali, pistole, granate, granate fumogene e kit medici. La cassa rimane utilizzabile finché non viene distrutta.
+        </Italian>
+        <German>
+&lt;font color='#FF8800'&gt;Schnittstelle:&lt;/font&gt; Goldene Aktion direkt an der abgeworfenen Munitionskiste.&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Beschreibung:&lt;/font&gt; Befiehlt deinen Männern, sich nacheinander aus der Kiste zu bedienen. Der Nachladevorgang ist umfassend: Hauptmagazine, Handfeuerwaffen, Granaten, Rauchgranaten und Erste-Hilfe-Kästen. Die Kiste bleibt nutzbar, solange sie nicht zerstört wird.
+        </German>
+        <Polish>
+&lt;font color='#FF8800'&gt;Interfejs:&lt;/font&gt; Złota akcja bezpośrednio na zrzuconej skrzyni z amunicją.&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Opis:&lt;/font&gt; Rozkazuje twoim ludziom częstować się ze skrzyni jeden po drugim. Proces przeładowania jest kompletny: główne magazynki, broń krótka, granaty, granaty dymne i apteczki. Skrzynia pozostaje zdatna do użytku, dopóki nie zostanie zniszczona.
+        </Polish>
+        <Russian>
+&lt;font color='#FF8800'&gt;Интерфейс:&lt;/font&gt; Золотое действие прямо на сброшенном ящике с боеприпасами.&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Описание:&lt;/font&gt; Приказывает вашим людям по очереди брать из ящика. Процесс перезарядки полный: основные магазины, пистолеты, гранаты, дымовые шашки и аптечки. Ящик остается пригодным для использования до тех пор, пока не будет уничтожен.
+        </Russian>
+        <Turkish>
+&lt;font color='#FF8800'&gt;Arayüz:&lt;/font&gt; Doğrudan atılan mühimmat sandığı üzerinde altın eylem.&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Açıklama:&lt;/font&gt; Adamlarınıza sırayla sandıktan almalarını emreder. Yeniden yükleme işlemi tamamlandı: ana şarjörler, tabancalar, el bombaları, sis bombaları ve sağlık kitleri. Sandık yok edilmediği sürece kullanılabilir durumda kalır.
+        </Turkish>
+        <Japanese>
+&lt;font color='#FF8800'&gt;インターフェース:&lt;/font&gt; 投下された弾薬箱に直接表示される金色のアクション。&lt;br/&gt;
+&lt;font color='#FFD700'&gt;説明:&lt;/font&gt; 部下たちに順番に箱から補充するように命じます。リロードプロセスは完全です: メインマガジン、ハンドガン、手榴弾、発煙弾、医療キット。箱は破壊されない限り使用可能なままです。
+        </Japanese>
+        <Korean>
+&lt;font color='#FF8800'&gt;인터페이스:&lt;/font&gt; 투하된 탄약 상자에서 직접 황금색 액션.&lt;br/&gt;
+&lt;font color='#FFD700'&gt;설명:&lt;/font&gt; 부하들에게 차례대로 상자에서 가져가도록 명령합니다. 재장전 프로세스는 완벽합니다. 주 탄창, 권총, 수류탄, 연막탄 및 구급 상자. 상자는 파괴되지 않는 한 계속 사용할 수 있습니다.
+        </Korean>
+        <Chinese>
+&lt;font color='#FF8800'&gt;界面:&lt;/font&gt; 直接在空投弹药箱上的金色操作。&lt;br/&gt;
+&lt;font color='#FFD700'&gt;描述:&lt;/font&gt; 命令您的手下轮流从板条箱中获取帮助。重新装填过程已完成：主弹匣、手枪、手榴弹、烟雾弹和医疗包。板条箱只要未被破坏就可以继续使用。
+        </Chinese>
+    </Key>
+
+    <Key ID="STR_LL_Briefing_2_3_Title">
+        <Original>2.3. Priority Management</Original>
+        <French>2.3. Gestion des Priorités</French>
+        <English>2.3. Priority Management</English>
+        <Spanish>2.3. Gestión de Prioridades</Spanish>
+        <Italian>2.3. Gestione delle Priorità</Italian>
+        <German>2.3. Prioritätenmanagement</German>
+        <Polish>2.3. Zarządzanie Priorytetami</Polish>
+        <Russian>2.3. Управление приоритетами</Russian>
+        <Turkish>2.3. Öncelik Yönetimi</Turkish>
+        <Japanese>2.3. 優先度管理</Japanese>
+        <Korean>2.3. 우선순위 관리</Korean>
+        <Chinese>2.3. 优先级管理</Chinese>
+    </Key>
+    <Key ID="STR_LL_Briefing_2_3_Text">
+        <Original>
+If the network is saturated, your requests may be refused or interrupted.&lt;br/&gt;&lt;br/&gt;
+- &lt;font color='#00FF00'&gt;Low Priority (Level 1):&lt;/font&gt; CAS, Supply Drops, Reinforcements. The helo must have finished its previous task to accept these orders. If the bird is already airborne, you will receive a radio refusal indicating its current mission.&lt;br/&gt;
+- &lt;font color='#FF8800'&gt;High Priority (Level 2):&lt;/font&gt; Extraction. An extraction request will IMMEDIATELY cancel any low-priority mission in progress. The helo will redirect to your LZ without delay.&lt;br/&gt;
+- &lt;font color='#FFD700'&gt;Absolute Priority (Level 3):&lt;/font&gt; Scripted Tasks (Command). HQ can divert the helicopter at any time for a critical priority mission, canceling all your orders.
+        </Original>
+        <French>
+Si le réseau est saturé, vos requêtes peuvent être refusées ou interrompues.&lt;br/&gt;&lt;br/&gt;
+- &lt;font color='#00FF00'&gt;Priorité Basse (Niveau 1) :&lt;/font&gt; CAS, Livraisons, Renforts. L'hélico doit avoir terminé sa tâche précédente pour accepter ces ordres. Si l'oiseau est déjà en vol, vous recevrez un refus radio vous indiquant sa mission en cours.&lt;br/&gt;
+- &lt;font color='#FF8800'&gt;Priorité Haute (Niveau 2) :&lt;/font&gt; L'Extraction. Une demande d'extraction annulera IMMÉDIATEMENT toute mission de priorité basse en cours. L'hélico se réorientera vers votre LZ sans délai.&lt;br/&gt;
+- &lt;font color='#FFD700'&gt;Priorité Absolue (Niveau 3) :&lt;/font&gt; Tâches scénarisées (Commandement). Le QG peut détourner l'hélicoptère à tout moment pour une mission critique prioritaire, annulant tous vos ordres.
+        </French>
+        <English>
+If the network is saturated, your requests may be refused or interrupted.&lt;br/&gt;&lt;br/&gt;
+- &lt;font color='#00FF00'&gt;Low Priority (Level 1):&lt;/font&gt; CAS, Supply Drops, Reinforcements. The helo must have finished its previous task to accept these orders. If the bird is already airborne, you will receive a radio refusal indicating its current mission.&lt;br/&gt;
+- &lt;font color='#FF8800'&gt;High Priority (Level 2):&lt;/font&gt; Extraction. An extraction request will IMMEDIATELY cancel any low-priority mission in progress. The helo will redirect to your LZ without delay.&lt;br/&gt;
+- &lt;font color='#FFD700'&gt;Absolute Priority (Level 3):&lt;/font&gt; Scripted Tasks (Command). HQ can divert the helicopter at any time for a critical priority mission, canceling all your orders.
+        </English>
+        <Spanish>
+Si la red está saturada, tus solicitudes pueden ser rechazadas o interrumpidas.&lt;br/&gt;&lt;br/&gt;
+- &lt;font color='#00FF00'&gt;Baja Prioridad (Nivel 1):&lt;/font&gt; CAS, Entregas, Refuerzos. El helicóptero debe haber terminado su tarea anterior para aceptar estas órdenes. Si el pájaro ya está en el aire, recibirás un rechazo por radio indicando su misión actual.&lt;br/&gt;
+- &lt;font color='#FF8800'&gt;Alta Prioridad (Nivel 2):&lt;/font&gt; Extracción. Una solicitud de extracción cancelará INMEDIATAMENTE cualquier misión de baja prioridad en curso. El helicóptero se redirigirá a tu LZ sin demora.&lt;br/&gt;
+- &lt;font color='#FFD700'&gt;Prioridad Absoluta (Nivel 3):&lt;/font&gt; Tareas de Guión (Mando). El Cuartel General puede desviar el helicóptero en cualquier momento para una misión de prioridad crítica, cancelando todas tus órdenes.
+        </Spanish>
+        <Italian>
+Se la rete è satura, le tue richieste potrebbero essere rifiutate o interrotte.&lt;br/&gt;&lt;br/&gt;
+- &lt;font color='#00FF00'&gt;Priorità Bassa (Livello 1):&lt;/font&gt; CAS, Consegne, Rinforzi. L'elicottero deve aver terminato il suo incarico precedente per accettare questi ordini. Se l'uccello è già in volo, riceverai un rifiuto radio che indica la sua missione attuale.&lt;br/&gt;
+- &lt;font color='#FF8800'&gt;Priorità Alta (Livello 2):&lt;/font&gt; Estrazione. Una richiesta di estrazione annullerà IMMEDIATAMENTE qualsiasi missione a bassa priorità in corso. L'elicottero si reindirizzerà alla tua LZ senza ritardi.&lt;br/&gt;
+- &lt;font color='#FFD700'&gt;Priorità Assoluta (Livello 3):&lt;/font&gt; Incarichi con script (Comando). Il Quartier Generale può dirottare l'elicottero in qualsiasi momento per una missione a priorità critica, annullando tutti i tuoi ordini.
+        </Italian>
+        <German>
+Wenn das Netzwerk ausgelastet ist, können deine Anfragen abgelehnt oder unterbrochen werden.&lt;br/&gt;&lt;br/&gt;
+- &lt;font color='#00FF00'&gt;Niedrige Priorität (Stufe 1):&lt;/font&gt; CAS, Lieferungen, Verstärkung. Der Hubschrauber muss seine vorherige Aufgabe beendet haben, um diese Befehle anzunehmen. Wenn der Vogel bereits in der Luft ist, erhältst du eine Funkabsage mit Angabe seiner aktuellen Mission.&lt;br/&gt;
+- &lt;font color='#FF8800'&gt;Hohe Priorität (Stufe 2):&lt;/font&gt; Evakuierung. Eine Evakuierungsanforderung bricht SOFORT jede laufende Mission mit niedriger Priorität ab. Der Heli wird ohne Verzögerung zu deiner LZ umgeleitet.&lt;br/&gt;
+- &lt;font color='#FFD700'&gt;Absolute Priorität (Stufe 3):&lt;/font&gt; Skriptaufgaben (Kommando). Das HQ kann den Hubschrauber jederzeit für eine kritische Prioritätsmission umleiten und alle deine Befehle stornieren.
+        </German>
+        <Polish>
+Jeśli sieć jest przeciążona, twoje żądania mogą zostać odrzucone lub przerwane.&lt;br/&gt;&lt;br/&gt;
+- &lt;font color='#00FF00'&gt;Niski Priorytet (Poziom 1):&lt;/font&gt; CAS, Zrzuty, Posiłki. Helikopter musi ukończyć swoje poprzednie zadanie, aby przyjąć te rozkazy. Jeśli ptaszek jest już w powietrzu, otrzymasz odmowę radiową ze wskazaniem jego bieżącej misji.&lt;br/&gt;
+- &lt;font color='#FF8800'&gt;Wysoki Priorytet (Poziom 2):&lt;/font&gt; Ewakuacja. Prośba o ewakuację NATYCHMIAST anuluje każdą trwającą misję o niskim priorytecie. Heli przekieruje się do twojej LZ bez opóźnień.&lt;br/&gt;
+- &lt;font color='#FFD700'&gt;Absolutny Priorytet (Poziom 3):&lt;/font&gt; Zadania Oskryptowane (Dowództwo). HQ może w dowolnej chwili przekierować helikopter do krytycznej misji priorytetowej, anulując wszystkie twoje rozkazy.
+        </Polish>
+        <Russian>
+Если сеть перегружена, ваши запросы могут быть отклонены или прерваны.&lt;br/&gt;&lt;br/&gt;
+- &lt;font color='#00FF00'&gt;Низкий Приоритет (Уровень 1):&lt;/font&gt; CAS, Доставки, Подкрепление. Вертолет должен завершить свою предыдущую задачу, чтобы принять эти приказы. Если птичка уже в воздухе, вы получите отказ по рации с указанием ее текущей миссии.&lt;br/&gt;
+- &lt;font color='#FF8800'&gt;Высокий Приоритет (Уровень 2):&lt;/font&gt; Эвакуация. Запрос на эвакуацию НЕМЕДЛЕННО отменит любую текущую миссию низкого приоритета. Вертолет будет перенаправлен на вашу LZ без задержки.&lt;br/&gt;
+- &lt;font color='#FFD700'&gt;Абсолютный Приоритет (Уровень 3):&lt;/font&gt; Скриптовые задачи (Командование). Штаб может перенаправить вертолет в любое время для критически важной приоритетной миссии, отменив все ваши приказы.
+        </Russian>
+        <Turkish>
+Ağ doluysa istekleriniz reddedilebilir veya kesintiye uğrayabilir.&lt;br/&gt;&lt;br/&gt;
+- &lt;font color='#00FF00'&gt;Düşük Öncelik (Seviye 1):&lt;/font&gt; CAS, Teslimatlar, Takviyeler. Helikopterin bu emirleri kabul etmesi için önceki görevini bitirmiş olması gerekir. Kuş zaten havadaysa, mevcut görevini belirten bir telsiz reddi alırsınız.&lt;br/&gt;
+- &lt;font color='#FF8800'&gt;Yüksek Öncelik (Seviye 2):&lt;/font&gt; Çıkarma. Bir çıkarma talebi, devam eden herhangi bir düşük öncelikli görevi DERHAL iptal edecektir. Heli gecikmeden LZ'nize yönlendirilecektir.&lt;br/&gt;
+- &lt;font color='#FFD700'&gt;Mutlak Öncelik (Seviye 3):&lt;/font&gt; Senaryo Görevleri (Komuta). HQ, kritik bir öncelikli görev için helikopteri istediği zaman başka yöne çevirebilir ve tüm emirlerinizi iptal edebilir.
+        </Turkish>
+        <Japanese>
+ネットワークが混雑している場合、あなたの要求は拒否されたり中断されたりする可能性があります。&lt;br/&gt;&lt;br/&gt;
+- &lt;font color='#00FF00'&gt;低優先度 (レベル 1):&lt;/font&gt; CAS、配達、増援。ヘリはこれらの命令を受け入れるために前の任務を完了している必要があります。鳥がすでに空中にいる場合は、現在の任務を示す無線拒否を受け取ります。&lt;br/&gt;
+- &lt;font color='#FF8800'&gt;高優先度 (レベル 2):&lt;/font&gt; 撤収。撤収要請は、進行中の低優先度任務を直ちにキャンセルします。ヘリは遅延なくLZにリダイレクトされます。&lt;br/&gt;
+- &lt;font color='#FFD700'&gt;絶対的優先度 (レベル 3):&lt;/font&gt; スクリプトタスク (コマンド)。HQは重要な優先任務のためにいつでもヘリを迂回させ、あなたのすべての命令をキャンセルすることができます。
+        </Japanese>
+        <Korean>
+네트워크가 포화 상태인 경우 요청이 거부되거나 중단될 수 있습니다.&lt;br/&gt;&lt;br/&gt;
+- &lt;font color='#00FF00'&gt;낮은 우선순위 (레벨 1):&lt;/font&gt; CAS, 배달, 증원. 헬기가 이러한 명령을 수락하려면 이전 작업을 완료해야 합니다. 새가 이미 공중에 있는 경우 현재 임무를 나타내는 무선 거부를 받게 됩니다.&lt;br/&gt;
+- &lt;font color='#FF8800'&gt;높은 우선순위 (레벨 2):&lt;/font&gt; 철수. 철수 요청은 진행 중인 우선 순위가 낮은 임무를 즉시 취소합니다. 헬기는 지체 없이 LZ로 방향을 바꿀 것입니다.&lt;br/&gt;
+- &lt;font color='#FFD700'&gt;절대 우선순위 (레벨 3):&lt;/font&gt; 스크립트 작업 (명령). HQ는 중요한 우선 순위 임무를 위해 언제든지 헬기를 우회하여 모든 명령을 취소할 수 있습니다.
+        </Korean>
+        <Chinese>
+如果网络饱和，您的请求可能会被拒绝或中断。&lt;br/&gt;&lt;br/&gt;
+- &lt;font color='#00FF00'&gt;低优先级 (1级):&lt;/font&gt; CAS，交付，增援。直升机必须完成其先前的任务才能接受这些命令。如果这只鸟已经在空中，您将收到一个表示其当前任务的无线电拒绝。&lt;br/&gt;
+- &lt;font color='#FF8800'&gt;高优先级 (2级):&lt;/font&gt; 撤离。提取请求将立即取消任何正在进行的低优先级任务。直升机将立即重定向到您的 LZ。&lt;br/&gt;
+- &lt;font color='#FFD700'&gt;绝对优先级 (3级):&lt;/font&gt; 脚本任务 (命令)。总部可以随时为关键优先任务转移直升机，取消您的所有命令。
+        </Chinese>
+    </Key>
+
+    <Key ID="STR_LL_Briefing_3_1_Title">
+        <Original>3.1. Drone Deployment</Original>
+        <French>3.1. Déploiement Drone</French>
+        <English>3.1. Drone Deployment</English>
+        <Spanish>3.1. Despliegue de Dron</Spanish>
+        <Italian>3.1. Dispiegamento Drone</Italian>
+        <German>3.1. Drohneneinsatz</German>
+        <Polish>3.1. Rozmieszczenie Drona</Polish>
+        <Russian>3.1. Развертывание дрона</Russian>
+        <Turkish>3.1. Dron Dağıtımı</Turkish>
+        <Japanese>3.1. ドローン展開</Japanese>
+        <Korean>3.1. 드론 배치</Korean>
+        <Chinese>3.1. 无人机部署</Chinese>
+    </Key>
+    <Key ID="STR_LL_Briefing_3_1_Text">
+        <Original>
+&lt;font color='#FF8800'&gt;Interface:&lt;/font&gt; White action 'Request surveillance drone'.&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Description:&lt;/font&gt; Requests the deployment of an orbiting drone at 350m altitude above precise coordinates. The drone will scan the sector (400m radius) for 5 minutes.&lt;br/&gt;
+&lt;font color='#87CEEB'&gt;Data Feed (HUD/Map):&lt;/font&gt; The exact position of living enemy forces will be relayed to you in real-time directly on your mapping equipment (Red markers). Corpses or units leaving the sector will disappear from the radar.&lt;br/&gt;
+&lt;font color='#FFA500'&gt;Refusal / Availability:&lt;/font&gt; The drone must refuel after its flight time (RTB). You will have to wait 2 minutes (cooldown) after its departure before you can request it again.
+        </Original>
+        <French>
+&lt;font color='#FF8800'&gt;Interface :&lt;/font&gt; Action blanche 'Demander un drone de surveillance'.&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Description :&lt;/font&gt; Demande la mise sur orbite d'un drone à 350m d'altitude au-dessus de coordonnées précises. Le drone balaiera le secteur (400m de rayon) pendant 5 minutes.&lt;br/&gt;
+&lt;font color='#87CEEB'&gt;Flux de données (HUD/Carte) :&lt;/font&gt; La position exacte des forces ennemies vivantes vous sera retransmise en temps réel directement sur votre équipement cartographique (Marqueurs rouges). Les cadavres ou unités quittant le secteur disparaîtront du radar.&lt;br/&gt;
+&lt;font color='#FFA500'&gt;Refus / Disponibilité :&lt;/font&gt; Le drone doit faire le plein après son temps de vol (RTB). Vous devrez attendre 2 minutes (cooldown) après son départ avant de pouvoir le solliciter à nouveau.
+        </French>
+        <English>
+&lt;font color='#FF8800'&gt;Interface:&lt;/font&gt; White action 'Request surveillance drone'.&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Description:&lt;/font&gt; Requests the deployment of an orbiting drone at 350m altitude above precise coordinates. The drone will scan the sector (400m radius) for 5 minutes.&lt;br/&gt;
+&lt;font color='#87CEEB'&gt;Data Feed (HUD/Map):&lt;/font&gt; The exact position of living enemy forces will be relayed to you in real-time directly on your mapping equipment (Red markers). Corpses or units leaving the sector will disappear from the radar.&lt;br/&gt;
+&lt;font color='#FFA500'&gt;Refusal / Availability:&lt;/font&gt; The drone must refuel after its flight time (RTB). You will have to wait 2 minutes (cooldown) after its departure before you can request it again.
+        </English>
+        <Spanish>
+&lt;font color='#FF8800'&gt;Interfaz:&lt;/font&gt; Acción blanca 'Solicitar dron de vigilancia'.&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Descripción:&lt;/font&gt; Solicita el despliegue de un dron en órbita a 350 m de altitud sobre coordenadas precisas. El dron escaneará el sector (400 m de radio) durante 5 minutos.&lt;br/&gt;
+&lt;font color='#87CEEB'&gt;Fuente de Datos (HUD/Mapa):&lt;/font&gt; La posición exacta de las fuerzas enemigas vivas se te transmitirá en tiempo real directamente en tu equipo de mapeo (marcadores rojos). Los cadáveres o unidades que abandonen el sector desaparecerán del radar.&lt;br/&gt;
+&lt;font color='#FFA500'&gt;Rechazo / Disponibilidad:&lt;/font&gt; El dron debe repostar después de su tiempo de vuelo (RTB). Deberás esperar 2 minutos (tiempo de reutilización) después de su partida antes de poder solicitarlo nuevamente.
+        </Spanish>
+        <Italian>
+&lt;font color='#FF8800'&gt;Interfaccia:&lt;/font&gt; Azione bianca 'Richiedi drone di sorveglianza'.&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Descrizione:&lt;/font&gt; Richiede il dispiegamento di un drone in orbita a 350m di altitudine sopra coordinate precise. Il drone scansionerà il settore (raggio 400m) per 5 minuti.&lt;br/&gt;
+&lt;font color='#87CEEB'&gt;Flusso di Dati (HUD/Mappa):&lt;/font&gt; La posizione esatta delle forze nemiche vive ti verrà trasmessa in tempo reale direttamente sul tuo equipaggiamento cartografico (marcatori rossi). I cadaveri o le unità che lasciano il settore scompariranno dal radar.&lt;br/&gt;
+&lt;font color='#FFA500'&gt;Rifiuto / Disponibilità:&lt;/font&gt; Il drone deve fare rifornimento dopo il suo tempo di volo (RTB). Dovrai attendere 2 minuti (tempo di ricarica) dopo la sua partenza prima di poterlo richiedere di nuovo.
+        </Italian>
+        <German>
+&lt;font color='#FF8800'&gt;Schnittstelle:&lt;/font&gt; Weiße Aktion 'Überwachungsdrohne anfordern'.&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Beschreibung:&lt;/font&gt; Fordert den Einsatz einer kreisenden Drohne in 350 m Höhe über genauen Koordinaten an. Die Drohne scannt den Sektor (400 m Radius) für 5 Minuten.&lt;br/&gt;
+&lt;font color='#87CEEB'&gt;Datenstrom (HUD/Karte):&lt;/font&gt; Die genaue Position lebender feindlicher Streitkräfte wird dir in Echtzeit direkt auf deine Kartenausrüstung übertragen (rote Markierungen). Leichen oder Einheiten, die den Sektor verlassen, verschwinden vom Radar.&lt;br/&gt;
+&lt;font color='#FFA500'&gt;Ablehnung / Verfügbarkeit:&lt;/font&gt; Die Drohne muss nach ihrer Flugzeit nachtanken (RTB). Du musst 2 Minuten (Abklingzeit) nach ihrem Abflug warten, bevor du sie erneut anfordern kannst.
+        </German>
+        <Polish>
+&lt;font color='#FF8800'&gt;Interfejs:&lt;/font&gt; Biała akcja 'Zażądaj drona obserwacyjnego'.&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Opis:&lt;/font&gt; Żąda rozmieszczenia drona na orbicie na wysokości 350m nad dokładnymi współrzędnymi. Dron będzie skanował sektor (promień 400m) przez 5 minut.&lt;br/&gt;
+&lt;font color='#87CEEB'&gt;Strumień Danych (HUD/Mapa):&lt;/font&gt; Dokładna pozycja żywych sił wroga będzie przekazywana w czasie rzeczywistym bezpośrednio na twój sprzęt kartograficzny (czerwone znaczniki). Zwłoki lub jednostki opuszczające sektor znikną z radaru.&lt;br/&gt;
+&lt;font color='#FFA500'&gt;Odmowa / Dostępność:&lt;/font&gt; Dron musi zatankować po czasie lotu (RTB). Będziesz musiał poczekać 2 minuty (czas odnowienia) po jego odlocie, zanim będziesz mógł o niego ponownie poprosić.
+        </Polish>
+        <Russian>
+&lt;font color='#FF8800'&gt;Интерфейс:&lt;/font&gt; Белое действие 'Запросить разведывательный дрон'.&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Описание:&lt;/font&gt; Запрашивает развертывание дрона на орбите на высоте 350 м над точными координатами. Дрон будет сканировать сектор (радиус 400 м) в течение 5 минут.&lt;br/&gt;
+&lt;font color='#87CEEB'&gt;Поток данных (HUD/Карта):&lt;/font&gt; Точная позиция живых сил противника будет передаваться вам в режиме реального времени прямо на ваше картографическое оборудование (красные маркеры). Трупы или подразделения, покидающие сектор, исчезнут с радара.&lt;br/&gt;
+&lt;font color='#FFA500'&gt;Отказ / Доступность:&lt;/font&gt; Дрону необходимо дозаправиться после полета (RTB). Вам придется подождать 2 минуты (время восстановления) после его отбытия, прежде чем вы сможете снова запросить его.
+        </Russian>
+        <Turkish>
+&lt;font color='#FF8800'&gt;Arayüz:&lt;/font&gt; Beyaz eylem 'Gözetleme dronu iste'.&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Açıklama:&lt;/font&gt; Kesin koordinatların 350m üzerinde yörüngede bir dronun konuşlandırılmasını talep eder. Dron sektörü (400m yarıçap) 5 dakika boyunca tarayacaktır.&lt;br/&gt;
+&lt;font color='#87CEEB'&gt;Veri Akışı (HUD/Harita):&lt;/font&gt; Yaşayan düşman kuvvetlerinin kesin konumu gerçek zamanlı olarak doğrudan haritalama ekipmanınıza iletilecektir (Kırmızı işaretleyiciler). Cesetler veya sektörden ayrılan birimler radardan kaybolacaktır.&lt;br/&gt;
+&lt;font color='#FFA500'&gt;Reddetme / Uygunluk:&lt;/font&gt; Dron uçuş süresinden sonra yakıt ikmali yapmalıdır (RTB). Ayrıldıktan sonra tekrar talep edebilmek için 2 dakika (bekleme süresi) beklemeniz gerekecektir.
+        </Turkish>
+        <Japanese>
+&lt;font color='#FF8800'&gt;インターフェース:&lt;/font&gt; 白いアクション '監視ドローンを要請する'.&lt;br/&gt;
+&lt;font color='#FFD700'&gt;説明:&lt;/font&gt; 正確な座標の上空高度350mで周回ドローンの配備を要求します。ドローンはセクター(半径400m)を5分間スキャンします。&lt;br/&gt;
+&lt;font color='#87CEEB'&gt;データフィード (HUD/マップ):&lt;/font&gt; 生存している敵対勢力の正確な位置が、マッピング機器(赤いマーカー)にリアルタイムで直接中継されます。死体やセクターを離れる部隊はレーダーから消えます。&lt;br/&gt;
+&lt;font color='#FFA500'&gt;拒否 / 可用性:&lt;/font&gt; ドローンは飛行時間後に燃料を補給する必要があります(RTB)。出発後、再要求できるようになるまで2分間(クールダウン)待つ必要があります。
+        </Japanese>
+        <Korean>
+&lt;font color='#FF8800'&gt;인터페이스:&lt;/font&gt; 흰색 액션 '감시 드론 요청'.&lt;br/&gt;
+&lt;font color='#FFD700'&gt;설명:&lt;/font&gt; 정확한 좌표 위 350m 고도에 궤도 드론 배치를 요청합니다. 드론은 5분 동안 구역(반경 400m)을 스캔합니다.&lt;br/&gt;
+&lt;font color='#87CEEB'&gt;데이터 피드 (HUD/지도):&lt;/font&gt; 살아있는 적군의 정확한 위치가 매핑 장비(빨간색 마커)에 실시간으로 직접 중계됩니다. 시체나 구역을 벗어나는 유닛은 레이더에서 사라집니다.&lt;br/&gt;
+&lt;font color='#FFA500'&gt;거부 / 가용성:&lt;/font&gt; 드론은 비행 시간 후 연료를 재보급해야 합니다(RTB). 출발 후 다시 요청하려면 2분(재사용 대기시간)을 기다려야 합니다.
+        </Korean>
+        <Chinese>
+&lt;font color='#FF8800'&gt;界面:&lt;/font&gt; 白色操作 '请求侦察无人机'.&lt;br/&gt;
+&lt;font color='#FFD700'&gt;描述:&lt;/font&gt; 请求在精确坐标上方 350 米的高度部署轨道无人机。无人机将扫描扇区（半径 400 米）5 分钟。&lt;br/&gt;
+&lt;font color='#87CEEB'&gt;数据流 (HUD/地图):&lt;/font&gt; 活着的敌军的准确位置将实时直接传递到您的地图设备（红色标记）。尸体或离开扇区的部队将从雷达上消失。&lt;br/&gt;
+&lt;font color='#FFA500'&gt;拒绝 / 可用性:&lt;/font&gt; 无人机必须在飞行时间后加油 (RTB)。您必须在其离开后等待 2 分钟（冷却时间），然后才能再次请求它。
+        </Chinese>
+    </Key>
+</Keys>

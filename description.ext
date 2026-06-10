@@ -72,6 +72,15 @@ class CfgFunctions {
             file = "Functions\UI";
             class radioMessage {};
         };
+        class Task {
+            file = "Functions\Task";
+            class taskManager {};
+            class task00 {};
+        };
+        class Briefing {
+            file = "Functions\Briefing";
+            class initBriefing {};
+        };
     };
 };
 

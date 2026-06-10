@@ -41,7 +41,7 @@ def main():
             keys_added = False
             
             for file in sorted(os.listdir(folder_path)):
-                if file.endswith('.xml') and file.startswith('fn_'):
+                if file.endswith('.xml') and (file.startswith('fn_') or file.startswith('task')):
                     xml_path = os.path.join(folder_path, file)
                     try:
                         key_tree = ET.parse(xml_path)

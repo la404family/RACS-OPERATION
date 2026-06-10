@@ -18,7 +18,7 @@ tasks/
 
 - Chaque tâche a son propre ensemble de fichiers XML dans `tasks/`.
 - Toute modification des textes se fait dans `tasks/*.xml`, jamais dans `stringtable.xml` directement.
-- Après modification XML, régénérer avec : `python merge_stringtables.py`
+- Après modification XML, régénérer avec : `python compile_stringtable.py`
 - Toujours enregistrer les fichiers XML en **UTF-8 sans BOM**.
 
 ---
@@ -165,10 +165,13 @@ if (_mode == "scenario") exitWith { ... };
 
 ---
 
-## 6. Règles des dialogues et sous-titres
+## 6. Règles des dialogues et de l'interface
+
+### Interdiction des messages système parasites
+Il est **strictement interdit** d'utiliser `hint`, `systemChat` ou `titleText` pour communiquer des informations au joueur dans la version finale (hors scripts de debug temporaires).
 
 ### Toujours via `LL_fnc_showSubtitle`
-Aucun `systemChat` pour les dialogues narratifs ou les paroles de PNJ. Utiliser exclusivement :
+Pour les dialogues narratifs ou les paroles de PNJ, utiliser exclusivement :
 
 ```sqf
 ["STR_LL_Speaker_Chief", "STR_LL_Task_XX_S1_Chief"] remoteExec ["LL_fnc_showSubtitle", 0];
@@ -194,7 +197,9 @@ Chaque scénario doit avoir :
 
 ## 7. Règles de gestion des tâches
 
-### Création de tâche
+### Création de tâche (Pas de marqueur 3D)
+**Interdiction absolue des marqueurs 3D en jeu.** Les marqueurs de tâche ne doivent s'afficher que sur la carte. Le 9ème paramètre de `BIS_fnc_taskCreate` (`show3DMarker`) doit toujours être à `false`.
+
 ```sqf
 [
     independent,
@@ -208,7 +213,8 @@ Chaque scénario doit avoir :
     "AUTOASSIGNED",
     5,
     true,
-    "recon" // icône de tâche
+    "recon", // icône de tâche
+    false    // DÉSACTIVE LE MARQUEUR 3D
 ] call BIS_fnc_taskCreate;
 ```
 

@@ -126,6 +126,19 @@ Le système hélicoptère repose sur un **unique UH-60L** (`CUP_I_UH60L_FFV_RACS
 *   **`fn_radioMessage.sqf` (`LL_fnc_radioMessage`)**
     *   **Rôle :** Affiche des sous-titres dynamiques synchronisés et joue optionnellement les voix radio générées. Composant central pour l'immersion sonore (Hélico, Drone, Actions d'escouade).
 
+### Manuel Opérationnel (`Functions\Briefing\`)
+*   **`fn_initBriefing.sqf` (`LL_fnc_initBriefing`)**
+    *   **Rôle :** Exécuté localement par le joueur au démarrage (`initPlayerLocal.sqf`).
+    *   **Fonctionnement :** Injecte un onglet "Manuel Opérationnel" détaillé dans la carte du joueur. Il charge les textes traduits et mis en forme dynamiquement depuis le `stringtable.xml` expliquant de manière RP (jeu de rôle tactique) l'utilisation des commandes (Règles d'engagement, Soin, CQB, Drone, Hélico, etc.).
+
+### Gestion des Tâches (`Functions\Task\`)
+*   **`fn_taskManager.sqf` (`LL_fnc_taskManager`)**
+    *   **Rôle :** Orchestrateur serveur des objectifs de la mission.
+    *   **Fonctionnement :** Sélectionne et lance une seule tâche à la fois parmi un pool disponible, garantissant la progression scénaristique sans surcharge d'objectifs simultanés. Conçu pour isoler et tester facilement chaque mission.
+*   **`fn_task00.sqf` (`LL_fnc_task00`)** (et suivants)
+    *   **Rôle :** Scripts autonomes gérant la logique d'un objectif spécifique.
+    *   **Fonctionnement :** Gèrent la création de tâches Arma natives (marqueurs sur carte uniquement, aucun marqueur 3D pour forcer la navigation à la boussole), le spawn de l'opposition et la validation des conditions de réussite.
+
 ---
 
 ## 3. Outils de Développement (Python)
