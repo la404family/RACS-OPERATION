@@ -1,0 +1,73 @@
+/*
+    File: description.ext
+    Description: Configuration principale de la mission.
+*/
+
+author = "Kevin / Antigravity";
+onLoadName = "Opération RACS";
+onLoadMission = "Déploiement des forces du RACS sur Zargabad.";
+// loadScreen = "images\loadScreen.jpg";
+
+respawn = "BASE";
+respawnDelay = 10;
+respawnDialog = 0;
+respawnOnStart = -1;
+
+corpseManagerMode = 1;
+corpseLimit = 30;
+corpseRemovalMinTime = 300;
+corpseRemovalMaxTime = 600;
+
+wreckManagerMode = 1;
+wreckLimit = 15;
+wreckRemovalMinTime = 600;
+wreckRemovalMaxTime = 1200;
+
+// Définition des fonctions de la mission
+class CfgFunctions {
+    class LL {
+        class Environment {
+            file = "Functions\Environment";
+            class playEzan {};
+            class randomWeather {};
+            class initSkills {};
+            class doorSecurity {};
+        };
+        class Player {
+            file = "Functions\Player";
+            class applyIdentity {};
+            class applyLoadout {};
+            class initIdentity {};
+            class initLoadout {};
+            class initLocal {};
+            class forceRally {};
+            class addRallyAction {};
+            class addHealAction {};
+            class addSearchAction {};
+            class assignLeader {};
+            class addRoeActions {};
+            class setupUVO {};
+        };
+        class Civilian {
+            file = "Functions\Civilian";
+            class initCivilians {};
+            class applyTemplate {};
+            class spawnPresence {};
+        };
+        class Drone {
+            file = "Functions\Drone";
+            class addDroneAction {};
+            class requestDrone {};
+        };
+    };
+};
+
+// Définition des sons personnalisés
+class CfgSounds {
+    sounds[] = {};
+    class ezan {
+        name = "Appel a la priere (Ezan)";
+        sound[] = {"sounds\ezan.ogg", 2, 1, 2500}; // Assurez-vous d'avoir le fichier dans un dossier "sounds"
+        titles[] = {};
+    };
+};
