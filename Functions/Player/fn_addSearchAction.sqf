@@ -31,7 +31,7 @@ private _fnc_addSearchAction = {
             private _buildings = nearestObjects [_center, ["House", "Building"], 50];
             _buildings = _buildings select { count (_x buildingPos -1) > 1 };
 
-            if (_buildings isEqualTo []) exitWith { systemChat localize "STR_LL_SearchAction_NoBuildings"; };
+            if (_buildings isEqualTo []) exitWith { ["STR_LL_SearchAction_NoBuildings"] call LL_fnc_radioMessage; };
 
             private _markerName = format ["LL_SearchArea_%1", time];
             private _marker = createMarkerLocal [_markerName, _center];
@@ -44,7 +44,7 @@ private _fnc_addSearchAction = {
             private _squadAI = (units group _caller) select { !isPlayer _x && alive _x && vehicle _x == _x };
             if (_squadAI isEqualTo []) exitWith {
                 deleteMarkerLocal _marker;
-                systemChat localize "STR_LL_SearchAction_NoAI";
+                ["STR_LL_SearchAction_NoAI"] call LL_fnc_radioMessage;
             };
 
             [_caller, "gestureAdvance"] remoteExec ["playActionNow", 0];
@@ -181,7 +181,7 @@ private _fnc_addSearchAction = {
                     };
                 } forEach _squadAI;
                 
-                [localize "STR_LL_SearchAction_Secured"] remoteExec ["systemChat", _leader];
+                ["STR_LL_SearchAction_Secured"] remoteExec ["LL_fnc_radioMessage", _leader];
             };
         },
         [],

@@ -9,18 +9,18 @@ if (!hasInterface) exitWith {};
         private _fnc_requestWithMap = {
             params ["_type"];
             if (_type == "VEHICULE" && { missionNamespace getVariable ["TAG_VehicleSupport_Delivered", false] }) exitWith {
-                systemChat localize "STR_LL_Heli_Action_VehicleAlready";
+                ["STR_LL_Heli_Action_VehicleAlready"] call LL_fnc_radioMessage;
             };
             if (_type == "CAS") then {
                 private _cooldown = missionNamespace getVariable ["TAG_CAS_Cooldown_Until", 0];
                 if (time < _cooldown) exitWith {
                     private _remaining = ceil (_cooldown - time);
-                    systemChat format [localize "STR_LL_Heli_Action_CASCooldown", _remaining];
+                    ["STR_LL_Heli_Action_CASCooldown", [_remaining]] call LL_fnc_radioMessage;
                 };
             };
 
             openMap true;
-            systemChat localize "STR_LL_Heli_Action_ClickMap";
+            ["STR_LL_Heli_Action_ClickMap"] call LL_fnc_radioMessage;
             missionNamespace setVariable ["LL_Heli_MapClick", true];
             missionNamespace setVariable ["LL_Heli_PendingType", _type];
 
@@ -32,7 +32,7 @@ if (!hasInterface) exitWith {};
                 openMap false;
                 private _type = missionNamespace getVariable ["LL_Heli_PendingType", ""];
                 [_type, _pos, player] remoteExec ["LL_fnc_requestHelicopter", 2];
-                systemChat format [localize "STR_LL_Heli_Action_EnRoute", round (_pos select 0), round (_pos select 1), _type];
+                ["STR_LL_Heli_Action_EnRoute", [round (_pos select 0), round (_pos select 1), _type]] call LL_fnc_radioMessage;
             }];
         };
 

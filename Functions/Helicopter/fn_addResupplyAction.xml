@@ -1,23 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Keys>
     <Key ID="STR_LL_Action_Resupply">
-        <Original>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Ravitaillement&lt;/t&gt;</Original>
+        <Original>&lt;t color='#FFFFFF'&gt;[SQUAD] Resupply&lt;/t&gt;</Original>
         <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Resupply&lt;/t&gt;</English>
         <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Ravitaillement&lt;/t&gt;</French>
+        <Spanish>&lt;t color='#FFFFFF'&gt;[ESCUADRA] Reabastecimiento&lt;/t&gt;</Spanish>
+        <Italian>&lt;t color='#FFFFFF'&gt;[SQUADRA] Rifornimento&lt;/t&gt;</Italian>
+        <German>&lt;t color='#FFFFFF'&gt;[TRUPP] Nachschub&lt;/t&gt;</German>
+        <Polish>&lt;t color='#FFFFFF'&gt;[DRUŻYNA] Zaopatrzenie&lt;/t&gt;</Polish>
+        <Russian>&lt;t color='#FFFFFF'&gt;[ОТРЯД] Пополнение&lt;/t&gt;</Russian>
+        <Turkish>&lt;t color='#FFFFFF'&gt;[MANGA] İkmal&lt;/t&gt;</Turkish>
+        <Japanese>&lt;t color='#FFFFFF'&gt;[分隊] 補給&lt;/t&gt;</Japanese>
+        <Korean>&lt;t color='#FFFFFF'&gt;[분대] 재보급&lt;/t&gt;</Korean>
+        <Chinese>&lt;t color='#FFFFFF'&gt;[小队] 补给&lt;/t&gt;</Chinese>
     </Key>
     <Key ID="STR_LL_Msg_Resupply_NoAI">
-        <Original>Seuls les joueurs peuvent utiliser cette action.</Original>
-        <English>Only players can use this action.</English>
-        <French>Seuls les joueurs peuvent utiliser cette action.</French>
+        <Original>You can't use this action.</Original>
+        <English>You can't use this action.</English>
+        <French>Vous ne pouvez pas utiliser cette action.</French>
+        <Spanish>No puedes usar esta acción.</Spanish>
+        <Italian>Non puoi usare questa azione.</Italian>
+        <German>Sie können diese Aktion nicht verwenden.</German>
+        <Polish>Nie możesz użyć tej akcji.</Polish>
+        <Russian>Вы не можете использовать это действие.</Russian>
+        <Turkish>Bu eylemi kullanamazsınız.</Turkish>
+        <Japanese>このアクションは使用できません。</Japanese>
+        <Korean>이 작업을 사용할 수 없습니다.</Korean>
+        <Chinese>您无法使用此操作。</Chinese>
     </Key>
     <Key ID="STR_LL_Msg_Resupply_Start">
-        <Original>Ravitaillement en cours...</Original>
+        <Original>Resupply in progress...</Original>
         <English>Resupply in progress...</English>
         <French>Ravitaillement en cours...</French>
+        <Spanish>Reabastecimiento en progreso...</Spanish>
+        <Italian>Rifornimento in corso...</Italian>
+        <German>Nachschub im Gange...</German>
+        <Polish>Zaopatrzenie w toku...</Polish>
+        <Russian>Идет пополнение запасов...</Russian>
+        <Turkish>İkmal devam ediyor...</Turkish>
+        <Japanese>補給進行中...</Japanese>
+        <Korean>재보급 진행 중...</Korean>
+        <Chinese>补给进行中...</Chinese>
     </Key>
     <Key ID="STR_LL_Msg_Resupply_Done">
-        <Original>Ravitaillement terminé.</Original>
+        <Original>Resupply finished.</Original>
         <English>Resupply finished.</English>
         <French>Ravitaillement terminé.</French>
+        <Spanish>Reabastecimiento finalizado.</Spanish>
+        <Italian>Rifornimento terminato.</Italian>
+        <German>Nachschub abgeschlossen.</German>
+        <Polish>Zaopatrzenie zakończone.</Polish>
+        <Russian>Пополнение запасов завершено.</Russian>
+        <Turkish>İkmal tamamlandı.</Turkish>
+        <Japanese>補給完了。</Japanese>
+        <Korean>재보급 완료.</Korean>
+        <Chinese>补给完成。</Chinese>
     </Key>
 </Keys>

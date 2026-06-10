@@ -1,13 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Keys>
     <Key ID="STR_LL_Heli_Dispatch_Cooldown">
-        <Original>QG : Appui aérien en cooldown, encore %1 secondes.</Original>
-        <English>HQ: Air support on cooldown, %1 seconds remaining.</English>
-        <French>QG : Appui aérien en cooldown, encore %1 secondes.</French>
+        <Original>Air support on cooldown, %1 seconds remaining.</Original>
+        <English>Air support on cooldown, %1 seconds remaining.</English>
+        <French>Appui aérien en cooldown, encore %1 secondes.</French>
+        <Spanish>Apoyo aéreo en recarga, quedan %1 segundos.</Spanish>
+        <Italian>Supporto aereo in ricarica, %1 secondi rimanenti.</Italian>
+        <German>Luftunterstützung in Abklingzeit, %1 Sekunden verbleibend.</German>
+        <Polish>Wsparcie lotnicze się ładuje, pozostało %1 sekund.</Polish>
+        <Russian>Поддержка с воздуха недоступна, осталось %1 секунд.</Russian>
+        <Turkish>Hava desteği bekleme süresinde, kalan %1 saniye.</Turkish>
+        <Japanese>航空支援クールダウン中、残り%1秒。</Japanese>
+        <Korean>항공 지원 재사용 대기 중, %1초 남음.</Korean>
+        <Chinese>空中支援冷却中，剩余%1秒。</Chinese>
     </Key>
     <Key ID="STR_LL_Heli_Dispatch_VehicleAlready">
-        <Original>QG : Livraison de véhicule déjà effectuée. Demande refusée.</Original>
-        <English>HQ: Vehicle delivery already completed. Request denied.</English>
-        <French>QG : Livraison de véhicule déjà effectuée. Demande refusée.</French>
+        <Original>Vehicle delivery already completed. Request denied.</Original>
+        <English>Vehicle delivery already completed. Request denied.</English>
+        <French>Livraison de véhicule déjà effectuée. Demande refusée.</French>
+        <Spanish>Entrega de vehículo ya completada. Solicitud denegada.</Spanish>
+        <Italian>Consegna del veicolo già completata. Richiesta respinta.</Italian>
+        <German>Fahrzeuglieferung bereits abgeschlossen. Anfrage abgelehnt.</German>
+        <Polish>Dostawa pojazdu już zakończona. Żądanie odrzucone.</Polish>
+        <Russian>Доставка техники уже завершена. Запрос отклонен.</Russian>
+        <Turkish>Araç teslimatı zaten tamamlandı. İstek reddedildi.</Turkish>
+        <Japanese>車両の配達はすでに完了しています。要求は拒否されました。</Japanese>
+        <Korean>차량 배송이 이미 완료되었습니다. 요청이 거부되었습니다.</Korean>
+        <Chinese>车辆交付已完成。请求被拒绝。</Chinese>
     </Key>
 </Keys>

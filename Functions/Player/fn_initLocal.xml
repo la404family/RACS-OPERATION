@@ -4,40 +4,112 @@
         <Original>Lore</Original>
         <English>Lore</English>
         <French>Lore</French>
+        <Spanish>Lore</Spanish>
+        <Italian>Lore</Italian>
+        <German>Hintergrundgeschichte</German>
+        <Polish>Fabuła</Polish>
+        <Russian>Лор</Russian>
+        <Turkish>Hikaye</Turkish>
+        <Japanese>伝承</Japanese>
+        <Korean>배경 이야기</Korean>
+        <Chinese>背景故事</Chinese>
     </Key>
     <Key ID="STR_LL_Diary_Lore_Text">
-        <Original>Détails de l'histoire.</Original>
+        <Original>Story details.</Original>
         <English>Story details.</English>
         <French>Détails de l'histoire.</French>
+        <Spanish>Detalles de la historia.</Spanish>
+        <Italian>Dettagli della storia.</Italian>
+        <German>Geschichtsdetails.</German>
+        <Polish>Szczegóły historii.</Polish>
+        <Russian>Подробности сюжета.</Russian>
+        <Turkish>Hikaye detayları.</Turkish>
+        <Japanese>ストーリーの詳細。</Japanese>
+        <Korean>이야기 세부 정보.</Korean>
+        <Chinese>故事细节。</Chinese>
     </Key>
     <Key ID="STR_LL_Diary_Factions_Title">
         <Original>Factions</Original>
         <English>Factions</English>
         <French>Factions</French>
+        <Spanish>Facciones</Spanish>
+        <Italian>Fazioni</Italian>
+        <German>Fraktionen</German>
+        <Polish>Frakcje</Polish>
+        <Russian>Фракции</Russian>
+        <Turkish>Gruplar</Turkish>
+        <Japanese>派閥</Japanese>
+        <Korean>세력</Korean>
+        <Chinese>派系</Chinese>
     </Key>
     <Key ID="STR_LL_Diary_Factions_Text">
-        <Original>Détails des factions.</Original>
+        <Original>Factions details.</Original>
         <English>Factions details.</English>
         <French>Détails des factions.</French>
+        <Spanish>Detalles de las facciones.</Spanish>
+        <Italian>Dettagli delle fazioni.</Italian>
+        <German>Fraktionsdetails.</German>
+        <Polish>Szczegóły frakcji.</Polish>
+        <Russian>Подробности о фракциях.</Russian>
+        <Turkish>Grup detayları.</Turkish>
+        <Japanese>派閥の詳細。</Japanese>
+        <Korean>세력 세부 정보.</Korean>
+        <Chinese>派系细节。</Chinese>
     </Key>
     <Key ID="STR_LL_Diary_Context_Title">
-        <Original>Contexte</Original>
+        <Original>Context</Original>
         <English>Context</English>
         <French>Contexte</French>
+        <Spanish>Contexto</Spanish>
+        <Italian>Contesto</Italian>
+        <German>Kontext</German>
+        <Polish>Kontekst</Polish>
+        <Russian>Контекст</Russian>
+        <Turkish>Bağlam</Turkish>
+        <Japanese>コンテキスト</Japanese>
+        <Korean>배경</Korean>
+        <Chinese>背景</Chinese>
     </Key>
     <Key ID="STR_LL_Diary_Context_Text">
-        <Original>Contexte de la mission.</Original>
+        <Original>Mission context.</Original>
         <English>Mission context.</English>
         <French>Contexte de la mission.</French>
+        <Spanish>Contexto de la misión.</Spanish>
+        <Italian>Contesto della missione.</Italian>
+        <German>Missionskontext.</German>
+        <Polish>Kontekst misji.</Polish>
+        <Russian>Контекст миссии.</Russian>
+        <Turkish>Görev bağlamı.</Turkish>
+        <Japanese>ミッションの背景。</Japanese>
+        <Korean>임무 배경.</Korean>
+        <Chinese>任务背景。</Chinese>
     </Key>
     <Key ID="STR_LL_Briefing_Title">
         <Original>Briefing</Original>
         <English>Briefing</English>
         <French>Briefing</French>
+        <Spanish>Sesión informativa</Spanish>
+        <Italian>Briefing</Italian>
+        <German>Briefing</German>
+        <Polish>Odprawa</Polish>
+        <Russian>Инструктаж</Russian>
+        <Turkish>Bilgilendirme</Turkish>
+        <Japanese>ブリーフィング</Japanese>
+        <Korean>브리핑</Korean>
+        <Chinese>简报</Chinese>
     </Key>
     <Key ID="STR_LL_Briefing_Text">
-        <Original>Instructions de mission.</Original>
+        <Original>Mission instructions.</Original>
         <English>Mission instructions.</English>
         <French>Instructions de mission.</French>
+        <Spanish>Instrucciones de la misión.</Spanish>
+        <Italian>Istruzioni della missione.</Italian>
+        <German>Missionsanweisungen.</German>
+        <Polish>Instrukcje misji.</Polish>
+        <Russian>Инструкции к миссии.</Russian>
+        <Turkish>Görev talimatları.</Turkish>
+        <Japanese>ミッションの指示。</Japanese>
+        <Korean>임무 지침.</Korean>
+        <Chinese>任务指示。</Chinese>
     </Key>
 </Keys>

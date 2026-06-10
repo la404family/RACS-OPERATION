@@ -234,7 +234,7 @@ private _fnRTB = {
             if (!isNull _cargo && { !isNull _cargo }) then { deleteVehicle _cargo; };
             missionNamespace setVariable ["LL_HELI_cargo", objNull, true];
         };
-        (localize "STR_LL_Heli_Msg_CargoAborted") remoteExec ["systemChat", 0];
+        ["STR_LL_Heli_Msg_CargoAborted"] remoteExec ["LL_fnc_radioMessage", 0];
     };
 
     if (alive _heli) then {
@@ -275,7 +275,7 @@ private _fnExecCAS = {
         !alive _heli || (_heli distance2D _targetPos < (_loiterRadius + 150)) || call _fnAborted
     };
 
-    (localize "STR_LL_Heli_Msg_Active") remoteExec ["systemChat", _caller];
+    ["STR_LL_Heli_Msg_Active"] remoteExec ["LL_fnc_radioMessage", _caller];
 
     private _endTime    = time + _loiterDuration;
     private _lastReveal = 0;
@@ -452,7 +452,7 @@ private _fnExecDelivery = {
     missionNamespace setVariable ["LL_HELI_cargo", objNull, true];
 
     if (_type == "LIVRAISON") then {
-        (localize "STR_TAG_Msg_Ammo_Dropped") remoteExec ["systemChat", _caller];
+        ["STR_TAG_Msg_Ammo_Dropped"] remoteExec ["LL_fnc_radioMessage", _caller];
         [_cargo] remoteExec ["LL_fnc_addResupplyAction", 0, true];
 
         [_cargo] spawn {
@@ -480,7 +480,7 @@ private _fnExecDelivery = {
             };
         };
     } else {
-        (localize "STR_TAG_Msg_Vehicle_Dropped") remoteExec ["systemChat", _caller];
+        ["STR_TAG_Msg_Vehicle_Dropped"] remoteExec ["LL_fnc_radioMessage", _caller];
         
         missionNamespace setVariable ["vehicule_team", _cargo, true];
     };
@@ -642,7 +642,7 @@ private _fnExecDeploy = {
     } forEach _unitTypes;
 
     sleep 1;
-    (localize "STR_LL_Heli_Msg_Landed_Reinforce") remoteExec ["systemChat", _caller];
+    ["STR_LL_Heli_Msg_Landed_Reinforce"] remoteExec ["LL_fnc_radioMessage", _caller];
 
     private _origBPs = [];
     {
@@ -679,10 +679,10 @@ private _fnExecDeploy = {
     private _playerGroup = if (!isNull _caller) then { group _caller } else { grpNull };
     if (!isNull _playerGroup && { !isNil { _playerGroup } }) then {
         [_reinforcements, _playerGroup] remoteExec ["joinSilent", groupOwner _playerGroup];
-        (localize "STR_LL_Heli_Msg_Squad_Joined") remoteExec ["systemChat", _caller];
+        ["STR_LL_Heli_Msg_Squad_Joined"] remoteExec ["LL_fnc_radioMessage", _caller];
     } else {
         [_infGroup, _targetPos, 150] call BIS_fnc_taskPatrol;
-        (localize "STR_LL_Heli_Msg_Patrol_Started") remoteExec ["systemChat", 0];
+        ["STR_LL_Heli_Msg_Patrol_Started"] remoteExec ["LL_fnc_radioMessage", 0];
     };
 };
 
@@ -749,7 +749,7 @@ private _fnExecExtract = {
     _heli setVehicleLock "UNLOCKED";
     _heli animateSource ["door_rear_source", 1];
     _heli animateDoor   ["door_rear_source", 1];
-    (localize "STR_LL_Heli_Msg_Landed_Extract") remoteExec ["systemChat", 0];
+    ["STR_LL_Heli_Msg_Landed_Extract"] remoteExec ["LL_fnc_radioMessage", 0];
 
     private _task02bHostage   = missionNamespace getVariable ["LL_Task02b_Hostage", objNull];
     private _isTask02bExtract = !isNull _task02bHostage && { alive _task02bHostage } && { !(missionNamespace getVariable ["LL_Task02b_Freed_Done", false]) };
@@ -760,7 +760,7 @@ private _fnExecExtract = {
             params ["_vehicle", "_role", "_unit"];
             if (isPlayer _unit && { alive _unit }) then {
                 moveOut _unit;
-                (localize "STR_LL_Heli_Msg_Extract_Players_Exit_Warning") remoteExec ["systemChat", _unit];
+                ["STR_LL_Heli_Msg_Extract_Players_Exit_Warning"] remoteExec ["LL_fnc_radioMessage", _unit];
             };
         }];
     };
@@ -779,7 +779,7 @@ private _fnExecExtract = {
             {
                 if (isPlayer _x && { alive _x }) then {
                     moveOut _x;
-                    (localize "STR_LL_Heli_Msg_Extract_Players_Exit_Warning") remoteExec ["systemChat", _x];
+                    ["STR_LL_Heli_Msg_Extract_Players_Exit_Warning"] remoteExec ["LL_fnc_radioMessage", _x];
                 };
             } forEach (crew _heli);
 
@@ -829,7 +829,7 @@ private _fnExecExtract = {
     _group setBehaviour "CARELESS";
     _group setCombatMode "RED";
     _group setSpeedMode  "FULL";
-    (localize "STR_LL_Heli_Msg_Departing") remoteExec ["systemChat", 0];
+    ["STR_LL_Heli_Msg_Departing"] remoteExec ["LL_fnc_radioMessage", 0];
 
     private _boardedPlayers = crew _heli select { isPlayer _x && { alive _x } };
 
@@ -910,7 +910,7 @@ while { true } do {
                 case "CAS":      { "STR_TAG_Msg_CAS_Error"     };
                 default          { "STR_TAG_Msg_Ammo_Error"    };
             };
-            (localize _errMsg) remoteExec ["systemChat", _caller];
+            [_errMsg] remoteExec ["LL_fnc_radioMessage", _caller];
             call _fnInitState;
         } else {
             _spawnResult params ["_heli", "_crew", "_group"];
@@ -923,7 +923,7 @@ while { true } do {
             if (!alive _heli) then {
                 
                 deleteMarker _markerName; deleteMarker (_markerName + "_area");
-                (localize "STR_LL_Heli_Msg_Killed") remoteExec ["systemChat", 0];
+                ["STR_LL_Heli_Msg_Killed"] remoteExec ["LL_fnc_radioMessage", 0];
                 if (!isNull _group) then { deleteGroup _group; };
                 call _fnInitState;
             } else {
@@ -951,7 +951,7 @@ while { true } do {
                                 _deadDuringMission = true;
                             } else {
                                 if (!_casAborted) then {
-                                    (localize "STR_TAG_Msg_CAS_RTB") remoteExec ["systemChat", _caller];
+                                    ["STR_TAG_Msg_CAS_RTB"] remoteExec ["LL_fnc_radioMessage", _caller];
                                 };
                                 
                                 [_heli, _group, _crew, _homeBase, _flyHeight, false, !_casAborted] call _fnRTB;
@@ -1005,7 +1005,7 @@ while { true } do {
                     };
 
                     if (_deadDuringMission) then {
-                        (localize "STR_LL_Heli_Msg_Killed") remoteExec ["systemChat", 0];
+                        ["STR_LL_Heli_Msg_Killed"] remoteExec ["LL_fnc_radioMessage", 0];
                         if (!isNull _group) then { deleteGroup _group; };
                     };
 

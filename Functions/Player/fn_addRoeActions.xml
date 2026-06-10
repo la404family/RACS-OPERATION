@@ -1,43 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Keys>
     <Key ID="STR_LL_RoeAction_Changed">
-        <Original>QG : Nouvelles Règles d'Engagement -&gt; %1</Original>
-        <English>HQ: New Rules of Engagement -&gt; %1</English>
-        <French>QG : Nouvelles Règles d'Engagement -&gt; %1</French>
+        <Original>New Rules of Engagement -&gt; %1</Original>
+        <English>New Rules of Engagement -&gt; %1</English>
+        <French>Nouvelles Règles d'Engagement -&gt; %1</French>
+        <Spanish>Nuevas reglas de enfrentamiento -&gt; %1</Spanish>
+        <Italian>Nuove regole di ingaggio -&gt; %1</Italian>
+        <German>Neue Einsatzregeln -&gt; %1</German>
+        <Polish>Nowe zasady zaangażowania -&gt; %1</Polish>
+        <Russian>Новые правила ведения боя -&gt; %1</Russian>
+        <Turkish>Yeni angajman kuralları -&gt; %1</Turkish>
+        <Japanese>新しい交戦規定 -&gt; %1</Japanese>
+        <Korean>새로운 교전 수칙 -&gt; %1</Korean>
+        <Chinese>新交战规则 -&gt; %1</Chinese>
     </Key>
     <Key ID="STR_LL_RoeAction_Infiltration">
-        <Original>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Infiltration&lt;/t&gt;</Original>
+        <Original>&lt;t color='#FFFFFF'&gt;[SQUAD] Infiltration&lt;/t&gt;</Original>
         <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Infiltration&lt;/t&gt;</English>
         <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Infiltration&lt;/t&gt;</French>
+        <Spanish>&lt;t color='#FFFFFF'&gt;[ESCUADRA] Infiltración&lt;/t&gt;</Spanish>
+        <Italian>&lt;t color='#FFFFFF'&gt;[SQUADRA] Infiltrazione&lt;/t&gt;</Italian>
+        <German>&lt;t color='#FFFFFF'&gt;[TRUPP] Infiltration&lt;/t&gt;</German>
+        <Polish>&lt;t color='#FFFFFF'&gt;[DRUŻYNA] Infiltracja&lt;/t&gt;</Polish>
+        <Russian>&lt;t color='#FFFFFF'&gt;[ОТРЯД] Проникновение&lt;/t&gt;</Russian>
+        <Turkish>&lt;t color='#FFFFFF'&gt;[MANGA] Sızma&lt;/t&gt;</Turkish>
+        <Japanese>&lt;t color='#FFFFFF'&gt;[分隊] 潜入&lt;/t&gt;</Japanese>
+        <Korean>&lt;t color='#FFFFFF'&gt;[분대] 침투&lt;/t&gt;</Korean>
+        <Chinese>&lt;t color='#FFFFFF'&gt;[小队] 渗透&lt;/t&gt;</Chinese>
     </Key>
     <Key ID="STR_LL_RoeAction_Patrol">
-        <Original>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Patrouille&lt;/t&gt;</Original>
+        <Original>&lt;t color='#FFFFFF'&gt;[SQUAD] Patrol&lt;/t&gt;</Original>
         <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Patrol&lt;/t&gt;</English>
         <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Patrouille&lt;/t&gt;</French>
+        <Spanish>&lt;t color='#FFFFFF'&gt;[ESCUADRA] Patrulla&lt;/t&gt;</Spanish>
+        <Italian>&lt;t color='#FFFFFF'&gt;[SQUADRA] Pattuglia&lt;/t&gt;</Italian>
+        <German>&lt;t color='#FFFFFF'&gt;[TRUPP] Patrouille&lt;/t&gt;</German>
+        <Polish>&lt;t color='#FFFFFF'&gt;[DRUŻYNA] Patrol&lt;/t&gt;</Polish>
+        <Russian>&lt;t color='#FFFFFF'&gt;[ОТРЯД] Патруль&lt;/t&gt;</Russian>
+        <Turkish>&lt;t color='#FFFFFF'&gt;[MANGA] Devriye&lt;/t&gt;</Turkish>
+        <Japanese>&lt;t color='#FFFFFF'&gt;[分隊] パトロール&lt;/t&gt;</Japanese>
+        <Korean>&lt;t color='#FFFFFF'&gt;[분대] 순찰&lt;/t&gt;</Korean>
+        <Chinese>&lt;t color='#FFFFFF'&gt;[小队] 巡逻&lt;/t&gt;</Chinese>
     </Key>
     <Key ID="STR_LL_RoeAction_Vigilance">
-        <Original>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Vigilance&lt;/t&gt;</Original>
+        <Original>&lt;t color='#FFFFFF'&gt;[SQUAD] Vigilance&lt;/t&gt;</Original>
         <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Vigilance&lt;/t&gt;</English>
         <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Vigilance&lt;/t&gt;</French>
+        <Spanish>&lt;t color='#FFFFFF'&gt;[ESCUADRA] Vigilancia&lt;/t&gt;</Spanish>
+        <Italian>&lt;t color='#FFFFFF'&gt;[SQUADRA] Vigilanza&lt;/t&gt;</Italian>
+        <German>&lt;t color='#FFFFFF'&gt;[TRUPP] Wachsamkeit&lt;/t&gt;</German>
+        <Polish>&lt;t color='#FFFFFF'&gt;[DRUŻYNA] Czujność&lt;/t&gt;</Polish>
+        <Russian>&lt;t color='#FFFFFF'&gt;[ОТРЯД] Бдительность&lt;/t&gt;</Russian>
+        <Turkish>&lt;t color='#FFFFFF'&gt;[MANGA] Teyakkuz&lt;/t&gt;</Turkish>
+        <Japanese>&lt;t color='#FFFFFF'&gt;[分隊] 警戒&lt;/t&gt;</Japanese>
+        <Korean>&lt;t color='#FFFFFF'&gt;[분대] 경계&lt;/t&gt;</Korean>
+        <Chinese>&lt;t color='#FFFFFF'&gt;[小队] 警戒&lt;/t&gt;</Chinese>
     </Key>
     <Key ID="STR_LL_RoeAction_Assault">
-        <Original>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Assaut&lt;/t&gt;</Original>
+        <Original>&lt;t color='#FFFFFF'&gt;[SQUAD] Assault&lt;/t&gt;</Original>
         <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Assault&lt;/t&gt;</English>
         <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Assaut&lt;/t&gt;</French>
+        <Spanish>&lt;t color='#FFFFFF'&gt;[ESCUADRA] Asalto&lt;/t&gt;</Spanish>
+        <Italian>&lt;t color='#FFFFFF'&gt;[SQUADRA] Assalto&lt;/t&gt;</Italian>
+        <German>&lt;t color='#FFFFFF'&gt;[TRUPP] Angriff&lt;/t&gt;</German>
+        <Polish>&lt;t color='#FFFFFF'&gt;[DRUŻYNA] Szturm&lt;/t&gt;</Polish>
+        <Russian>&lt;t color='#FFFFFF'&gt;[ОТРЯД] Штурм&lt;/t&gt;</Russian>
+        <Turkish>&lt;t color='#FFFFFF'&gt;[MANGA] Saldırı&lt;/t&gt;</Turkish>
+        <Japanese>&lt;t color='#FFFFFF'&gt;[分隊] 強襲&lt;/t&gt;</Japanese>
+        <Korean>&lt;t color='#FFFFFF'&gt;[분대] 강습&lt;/t&gt;</Korean>
+        <Chinese>&lt;t color='#FFFFFF'&gt;[小队] 突击&lt;/t&gt;</Chinese>
     </Key>
     <Key ID="STR_LL_RoeAction_Charge">
-        <Original>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Charge&lt;/t&gt;</Original>
+        <Original>&lt;t color='#FFFFFF'&gt;[SQUAD] Charge&lt;/t&gt;</Original>
         <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Charge&lt;/t&gt;</English>
         <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Charge&lt;/t&gt;</French>
+        <Spanish>&lt;t color='#FFFFFF'&gt;[ESCUADRA] Carga&lt;/t&gt;</Spanish>
+        <Italian>&lt;t color='#FFFFFF'&gt;[SQUADRA] Carica&lt;/t&gt;</Italian>
+        <German>&lt;t color='#FFFFFF'&gt;[TRUPP] Ansturm&lt;/t&gt;</German>
+        <Polish>&lt;t color='#FFFFFF'&gt;[DRUŻYNA] Szarża&lt;/t&gt;</Polish>
+        <Russian>&lt;t color='#FFFFFF'&gt;[ОТРЯД] Атака&lt;/t&gt;</Russian>
+        <Turkish>&lt;t color='#FFFFFF'&gt;[MANGA] Hücum&lt;/t&gt;</Turkish>
+        <Japanese>&lt;t color='#FFFFFF'&gt;[分隊] 突撃&lt;/t&gt;</Japanese>
+        <Korean>&lt;t color='#FFFFFF'&gt;[분대] 돌격&lt;/t&gt;</Korean>
+        <Chinese>&lt;t color='#FFFFFF'&gt;[小队] 冲锋&lt;/t&gt;</Chinese>
     </Key>
     <Key ID="STR_LL_RoeAction_Defense">
-        <Original>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Défense&lt;/t&gt;</Original>
+        <Original>&lt;t color='#FFFFFF'&gt;[SQUAD] Defense&lt;/t&gt;</Original>
         <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Defense&lt;/t&gt;</English>
         <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Défense&lt;/t&gt;</French>
+        <Spanish>&lt;t color='#FFFFFF'&gt;[ESCUADRA] Defensa&lt;/t&gt;</Spanish>
+        <Italian>&lt;t color='#FFFFFF'&gt;[SQUADRA] Difesa&lt;/t&gt;</Italian>
+        <German>&lt;t color='#FFFFFF'&gt;[TRUPP] Verteidigung&lt;/t&gt;</German>
+        <Polish>&lt;t color='#FFFFFF'&gt;[DRUŻYNA] Obrona&lt;/t&gt;</Polish>
+        <Russian>&lt;t color='#FFFFFF'&gt;[ОТРЯД] Оборона&lt;/t&gt;</Russian>
+        <Turkish>&lt;t color='#FFFFFF'&gt;[MANGA] Savunma&lt;/t&gt;</Turkish>
+        <Japanese>&lt;t color='#FFFFFF'&gt;[分隊] 防衛&lt;/t&gt;</Japanese>
+        <Korean>&lt;t color='#FFFFFF'&gt;[분대] 방어&lt;/t&gt;</Korean>
+        <Chinese>&lt;t color='#FFFFFF'&gt;[小队] 防御&lt;/t&gt;</Chinese>
     </Key>
     <Key ID="STR_LL_RoeAction_Reset">
-        <Original>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Reset&lt;/t&gt;</Original>
+        <Original>&lt;t color='#FFFFFF'&gt;[SQUAD] Reset&lt;/t&gt;</Original>
         <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Reset&lt;/t&gt;</English>
         <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Reset&lt;/t&gt;</French>
+        <Spanish>&lt;t color='#FFFFFF'&gt;[ESCUADRA] Reiniciar&lt;/t&gt;</Spanish>
+        <Italian>&lt;t color='#FFFFFF'&gt;[SQUADRA] Ripristina&lt;/t&gt;</Italian>
+        <German>&lt;t color='#FFFFFF'&gt;[TRUPP] Zurücksetzen&lt;/t&gt;</German>
+        <Polish>&lt;t color='#FFFFFF'&gt;[DRUŻYNA] Reset&lt;/t&gt;</Polish>
+        <Russian>&lt;t color='#FFFFFF'&gt;[ОТРЯД] Сброс&lt;/t&gt;</Russian>
+        <Turkish>&lt;t color='#FFFFFF'&gt;[MANGA] Sıfırla&lt;/t&gt;</Turkish>
+        <Japanese>&lt;t color='#FFFFFF'&gt;[分隊] リセット&lt;/t&gt;</Japanese>
+        <Korean>&lt;t color='#FFFFFF'&gt;[분대] 초기화&lt;/t&gt;</Korean>
+        <Chinese>&lt;t color='#FFFFFF'&gt;[小队] 重置&lt;/t&gt;</Chinese>
     </Key>
 </Keys>

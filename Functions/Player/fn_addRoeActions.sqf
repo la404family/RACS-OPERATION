@@ -33,7 +33,7 @@ if (isNil "LL_fnc_applyRoE") then {
             default {"Par défaut"};
         };
         
-        systemChat format [localize "STR_LL_RoeAction_Changed", _frName];
+        ["STR_LL_RoeAction_Changed", [_frName]] call LL_fnc_radioMessage;
     };
 };
 

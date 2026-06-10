@@ -1,88 +1,241 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Keys>
     <Key ID="STR_LL_Heli_Msg_CargoAborted">
-        <Original>QG : Largage annulé.</Original>
-        <English>HQ: Drop aborted.</English>
-        <French>QG : Largage annulé.</French>
+        <Original>Drop aborted.</Original>
+        <English>Drop aborted.</English>
+        <French>Largage annulé.</French>
+        <Spanish>Lanzamiento abortado.</Spanish>
+        <Italian>Lancio annullato.</Italian>
+        <German>Abwurf abgebrochen.</German>
+        <Polish>Zrzut przerwany.</Polish>
+        <Russian>Сброс отменен.</Russian>
+        <Turkish>Bırakma iptal edildi.</Turkish>
+        <Japanese>投下中止。</Japanese>
+        <Korean>투하 취소됨.</Korean>
+        <Chinese>空投已中止。</Chinese>
     </Key>
     <Key ID="STR_LL_Heli_Msg_Active">
-        <Original>QG : Hélicoptère déployé.</Original>
-        <English>HQ: Helicopter deployed.</English>
-        <French>QG : Hélicoptère déployé.</French>
+        <Original>Helicopter deployed.</Original>
+        <English>Helicopter deployed.</English>
+        <French>Hélicoptère déployé.</French>
+        <Spanish>Helicóptero desplegado.</Spanish>
+        <Italian>Elicottero dispiegato.</Italian>
+        <German>Helikopter im Einsatz.</German>
+        <Polish>Helikopter rozmieszczony.</Polish>
+        <Russian>Вертолет развернут.</Russian>
+        <Turkish>Helikopter konuşlandırıldı.</Turkish>
+        <Japanese>ヘリコプター展開。</Japanese>
+        <Korean>헬리콥터 배치됨.</Korean>
+        <Chinese>直升机已部署。</Chinese>
     </Key>
     <Key ID="STR_TAG_Msg_Ammo_Dropped">
-        <Original>QG : Munitions larguées.</Original>
-        <English>HQ: Ammo dropped.</English>
-        <French>QG : Munitions larguées.</French>
+        <Original>Ammo dropped.</Original>
+        <English>Ammo dropped.</English>
+        <French>Munitions larguées.</French>
+        <Spanish>Munición lanzada.</Spanish>
+        <Italian>Munizioni lanciate.</Italian>
+        <German>Munition abgeworfen.</German>
+        <Polish>Amunicja zrzucona.</Polish>
+        <Russian>Боеприпасы сброшены.</Russian>
+        <Turkish>Mühimmat bırakıldı.</Turkish>
+        <Japanese>弾薬投下。</Japanese>
+        <Korean>탄약 투하됨.</Korean>
+        <Chinese>弹药已空投。</Chinese>
     </Key>
     <Key ID="STR_TAG_Msg_Vehicle_Dropped">
-        <Original>QG : Véhicule largué.</Original>
-        <English>HQ: Vehicle dropped.</English>
-        <French>QG : Véhicule largué.</French>
+        <Original>Vehicle dropped.</Original>
+        <English>Vehicle dropped.</English>
+        <French>Véhicule largué.</French>
+        <Spanish>Vehículo lanzado.</Spanish>
+        <Italian>Veicolo lanciato.</Italian>
+        <German>Fahrzeug abgeworfen.</German>
+        <Polish>Pojazd zrzucony.</Polish>
+        <Russian>Техника сброшена.</Russian>
+        <Turkish>Araç bırakıldı.</Turkish>
+        <Japanese>車両投下。</Japanese>
+        <Korean>차량 투하됨.</Korean>
+        <Chinese>车辆已空投。</Chinese>
     </Key>
     <Key ID="STR_LL_Heli_Msg_Landed_Reinforce">
-        <Original>QG : Renforts posés.</Original>
-        <English>HQ: Reinforcements landed.</English>
-        <French>QG : Renforts posés.</French>
+        <Original>Reinforcements landed.</Original>
+        <English>Reinforcements landed.</English>
+        <French>Renforts posés.</French>
+        <Spanish>Refuerzos aterrizados.</Spanish>
+        <Italian>Rinforzi atterrati.</Italian>
+        <German>Verstärkung gelandet.</German>
+        <Polish>Posiłki wylądowały.</Polish>
+        <Russian>Подкрепление высадилось.</Russian>
+        <Turkish>Takviyeler indi.</Turkish>
+        <Japanese>増援着陸。</Japanese>
+        <Korean>증원 병력 착륙.</Korean>
+        <Chinese>增援已着陆。</Chinese>
     </Key>
     <Key ID="STR_LL_Heli_Msg_Squad_Joined">
-        <Original>QG : Escouade a rejoint.</Original>
-        <English>HQ: Squad joined.</English>
-        <French>QG : Escouade a rejoint.</French>
+        <Original>Squad joined.</Original>
+        <English>Squad joined.</English>
+        <French>Escouade a rejoint.</French>
+        <Spanish>Escuadra unida.</Spanish>
+        <Italian>Squadra unita.</Italian>
+        <German>Trupp beigetreten.</German>
+        <Polish>Drużyna dołączyła.</Polish>
+        <Russian>Отряд присоединился.</Russian>
+        <Turkish>Manga katıldı.</Turkish>
+        <Japanese>分隊合流。</Japanese>
+        <Korean>분대 합류.</Korean>
+        <Chinese>小队已加入。</Chinese>
     </Key>
     <Key ID="STR_LL_Heli_Msg_Patrol_Started">
-        <Original>QG : Patrouille commencée.</Original>
-        <English>HQ: Patrol started.</English>
-        <French>QG : Patrouille commencée.</French>
+        <Original>Patrol started.</Original>
+        <English>Patrol started.</English>
+        <French>Patrouille commencée.</French>
+        <Spanish>Patrulla iniciada.</Spanish>
+        <Italian>Pattuglia iniziata.</Italian>
+        <German>Patrouille gestartet.</German>
+        <Polish>Patrol rozpoczęty.</Polish>
+        <Russian>Патрулирование начато.</Russian>
+        <Turkish>Devriye başladı.</Turkish>
+        <Japanese>パトロール開始。</Japanese>
+        <Korean>순찰 시작됨.</Korean>
+        <Chinese>巡逻开始。</Chinese>
     </Key>
     <Key ID="STR_LL_Heli_Msg_Landed_Extract">
-        <Original>QG : Hélicoptère posé pour extraction.</Original>
-        <English>HQ: Helicopter landed for extraction.</English>
-        <French>QG : Hélicoptère posé pour extraction.</French>
+        <Original>Helicopter landed for extraction.</Original>
+        <English>Helicopter landed for extraction.</English>
+        <French>Hélicoptère posé pour extraction.</French>
+        <Spanish>Helicóptero aterrizó para extracción.</Spanish>
+        <Italian>Elicottero atterrato per l'estrazione.</Italian>
+        <German>Helikopter zur Extraktion gelandet.</German>
+        <Polish>Helikopter wylądował do ewakuacji.</Polish>
+        <Russian>Вертолет прибыл для эвакуации.</Russian>
+        <Turkish>Helikopter tahliye için indi.</Turkish>
+        <Japanese>ヘリコプターが離脱のため着陸しました。</Japanese>
+        <Korean>헬리콥터가 철수를 위해 착륙했습니다.</Korean>
+        <Chinese>直升机已着陆准备撤离。</Chinese>
     </Key>
     <Key ID="STR_LL_Heli_Msg_Extract_Players_Exit_Warning">
-        <Original>QG : Ne quittez pas l'hélicoptère.</Original>
-        <English>HQ: Do not leave the helicopter.</English>
-        <French>QG : Ne quittez pas l'hélicoptère.</French>
+        <Original>Do not leave the helicopter.</Original>
+        <English>Do not leave the helicopter.</English>
+        <French>Ne quittez pas l'hélicoptère.</French>
+        <Spanish>No abandone el helicóptero.</Spanish>
+        <Italian>Non abbandonare l'elicottero.</Italian>
+        <German>Verlassen Sie den Helikopter nicht.</German>
+        <Polish>Nie opuszczaj helikoptera.</Polish>
+        <Russian>Не покидайте вертолет.</Russian>
+        <Turkish>Helikopterden ayrılmayın.</Turkish>
+        <Japanese>ヘリコプターから離れないでください。</Japanese>
+        <Korean>헬리콥터를 벗어나지 마십시오.</Korean>
+        <Chinese>请勿离开直升机。</Chinese>
     </Key>
     <Key ID="STR_LL_Heli_Msg_Departing">
-        <Original>QG : Hélicoptère en départ.</Original>
-        <English>HQ: Helicopter departing.</English>
-        <French>QG : Hélicoptère en départ.</French>
+        <Original>Helicopter departing.</Original>
+        <English>Helicopter departing.</English>
+        <French>Hélicoptère en départ.</French>
+        <Spanish>Helicóptero partiendo.</Spanish>
+        <Italian>Elicottero in partenza.</Italian>
+        <German>Helikopter im Abflug.</German>
+        <Polish>Helikopter odlatuje.</Polish>
+        <Russian>Вертолет отправляется.</Russian>
+        <Turkish>Helikopter kalkıyor.</Turkish>
+        <Japanese>ヘリコプター出発。</Japanese>
+        <Korean>헬리콥터 출발.</Korean>
+        <Chinese>直升机正在起飞。</Chinese>
     </Key>
     <Key ID="STR_LL_Heli_Msg_Killed">
-        <Original>QG : Hélicoptère détruit.</Original>
-        <English>HQ: Helicopter destroyed.</English>
-        <French>QG : Hélicoptère détruit.</French>
+        <Original>Helicopter destroyed.</Original>
+        <English>Helicopter destroyed.</English>
+        <French>Hélicoptère détruit.</French>
+        <Spanish>Helicóptero destruido.</Spanish>
+        <Italian>Elicottero distrutto.</Italian>
+        <German>Helikopter zerstört.</German>
+        <Polish>Helikopter zniszczony.</Polish>
+        <Russian>Вертолет уничтожен.</Russian>
+        <Turkish>Helikopter yok edildi.</Turkish>
+        <Japanese>ヘリコプター破壊。</Japanese>
+        <Korean>헬리콥터 파괴됨.</Korean>
+        <Chinese>直升机被摧毁。</Chinese>
     </Key>
     <Key ID="STR_TAG_Msg_CAS_RTB">
-        <Original>QG : Appui aérien terminé, retour à la base.</Original>
-        <English>HQ: Air support finished, returning to base.</English>
-        <French>QG : Appui aérien terminé, retour à la base.</French>
+        <Original>Air support finished, returning to base.</Original>
+        <English>Air support finished, returning to base.</English>
+        <French>Appui aérien terminé, retour à la base.</French>
+        <Spanish>Apoyo aéreo finalizado, regresando a base.</Spanish>
+        <Italian>Supporto aereo terminato, ritorno alla base.</Italian>
+        <German>Luftunterstützung beendet, Rückkehr zur Basis.</German>
+        <Polish>Wsparcie lotnicze zakończone, powrót do bazy.</Polish>
+        <Russian>Воздушная поддержка завершена, возвращение на базу.</Russian>
+        <Turkish>Hava desteği bitti, üsse dönülüyor.</Turkish>
+        <Japanese>航空支援終了、基地に帰還します。</Japanese>
+        <Korean>항공 지원 종료, 기지로 복귀 중.</Korean>
+        <Chinese>空中支援结束，返回基地。</Chinese>
     </Key>
     <Key ID="STR_TAG_Marker_Heli_Ammo">
-        <Original>Largage Munitions</Original>
+        <Original>Ammo Drop</Original>
         <English>Ammo Drop</English>
         <French>Largage Munitions</French>
+        <Spanish>Lanzamiento Munición</Spanish>
+        <Italian>Lancio Munizioni</Italian>
+        <German>Munitionsabwurf</German>
+        <Polish>Zrzut amunicji</Polish>
+        <Russian>Сброс боеприпасов</Russian>
+        <Turkish>Mühimmat Bırakma</Turkish>
+        <Japanese>弾薬投下</Japanese>
+        <Korean>탄약 투하</Korean>
+        <Chinese>弹药空投</Chinese>
     </Key>
     <Key ID="STR_TAG_Marker_Heli_Vehicle">
-        <Original>Largage Véhicule</Original>
+        <Original>Vehicle Drop</Original>
         <English>Vehicle Drop</English>
         <French>Largage Véhicule</French>
+        <Spanish>Lanzamiento Vehículo</Spanish>
+        <Italian>Lancio Veicolo</Italian>
+        <German>Fahrzeugabwurf</German>
+        <Polish>Zrzut pojazdu</Polish>
+        <Russian>Сброс техники</Russian>
+        <Turkish>Araç Bırakma</Turkish>
+        <Japanese>車両投下</Japanese>
+        <Korean>차량 투하</Korean>
+        <Chinese>车辆空投</Chinese>
     </Key>
     <Key ID="STR_TAG_Marker_Heli_Debark">
-        <Original>Débarquement</Original>
+        <Original>Disembarkation</Original>
         <English>Disembarkation</English>
         <French>Débarquement</French>
+        <Spanish>Desembarco</Spanish>
+        <Italian>Sbarco</Italian>
+        <German>Ausschiffung</German>
+        <Polish>Wyładunek</Polish>
+        <Russian>Высадка</Russian>
+        <Turkish>Çıkış</Turkish>
+        <Japanese>降車</Japanese>
+        <Korean>하차</Korean>
+        <Chinese>登陆</Chinese>
     </Key>
     <Key ID="STR_TAG_Marker_Heli_Extract">
         <Original>Extraction</Original>
         <English>Extraction</English>
         <French>Extraction</French>
+        <Spanish>Extracción</Spanish>
+        <Italian>Estrazione</Italian>
+        <German>Extraktion</German>
+        <Polish>Ewakuacja</Polish>
+        <Russian>Эвакуация</Russian>
+        <Turkish>Tahliye</Turkish>
+        <Japanese>離脱</Japanese>
+        <Korean>철수</Korean>
+        <Chinese>撤离</Chinese>
     </Key>
     <Key ID="STR_TAG_Marker_Heli_CAS">
-        <Original>Appui Aérien (CAS)</Original>
+        <Original>Air Support (CAS)</Original>
         <English>Air Support (CAS)</English>
         <French>Appui Aérien (CAS)</French>
+        <Spanish>Apoyo Aéreo (CAS)</Spanish>
+        <Italian>Supporto Aereo (CAS)</Italian>
+        <German>Luftunterstützung (CAS)</German>
+        <Polish>Wsparcie Powietrzne (CAS)</Polish>
+        <Russian>Воздушная поддержка (CAS)</Russian>
+        <Turkish>Hava Desteği (CAS)</Turkish>
+        <Japanese>航空支援 (CAS)</Japanese>
+        <Korean>항공 지원 (CAS)</Korean>
+        <Chinese>空中支援 (CAS)</Chinese>
     </Key>
 </Keys>

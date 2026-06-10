@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Keys>
     <Key ID="STR_LL_RallyAction_Title">
-        <Original>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Regroupement&lt;/t&gt;</Original>
+        <Original>&lt;t color='#FFFFFF'&gt;[SQUAD] Rally&lt;/t&gt;</Original>
         <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Rally&lt;/t&gt;</English>
         <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Regroupement&lt;/t&gt;</French>
+        <Spanish>&lt;t color='#FFFFFF'&gt;[ESCUADRA] Agruparse&lt;/t&gt;</Spanish>
+        <Italian>&lt;t color='#FFFFFF'&gt;[SQUADRA] Raduno&lt;/t&gt;</Italian>
+        <German>&lt;t color='#FFFFFF'&gt;[TRUPP] Sammeln&lt;/t&gt;</German>
+        <Polish>&lt;t color='#FFFFFF'&gt;[DRUŻYNA] Zbiórka&lt;/t&gt;</Polish>
+        <Russian>&lt;t color='#FFFFFF'&gt;[ОТРЯД] Сбор&lt;/t&gt;</Russian>
+        <Turkish>&lt;t color='#FFFFFF'&gt;[MANGA] Toplan&lt;/t&gt;</Turkish>
+        <Japanese>&lt;t color='#FFFFFF'&gt;[分隊] 集合&lt;/t&gt;</Japanese>
+        <Korean>&lt;t color='#FFFFFF'&gt;[분대] 집결&lt;/t&gt;</Korean>
+        <Chinese>&lt;t color='#FFFFFF'&gt;[小队] 集合&lt;/t&gt;</Chinese>
     </Key>
 </Keys>

@@ -31,7 +31,7 @@ if (!isServer) exitWith {};
                     private _newLeader = _livingPlayers select 0;
                     _mainGrp selectLeader _newLeader;
                     
-                    [localize "STR_LL_AssignLeader_Changed"] remoteExec ["systemChat", _livingPlayers];
+                    ["STR_LL_AssignLeader_Changed"] remoteExec ["LL_fnc_radioMessage", _livingPlayers];
                 };
             };
         };

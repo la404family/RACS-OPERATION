@@ -1,48 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Keys>
     <Key ID="STR_LL_Heli_Action_VehicleAlready">
-        <Original>QG : Livraison de véhicule déjà effectuée.</Original>
-        <English>HQ: Vehicle delivery already completed.</English>
-        <French>QG : Livraison de véhicule déjà effectuée.</French>
+        <Original>Vehicle delivery already completed.</Original>
+        <English>Vehicle delivery already completed.</English>
+        <French>Livraison de véhicule déjà effectuée.</French>
+        <Spanish>Entrega de vehículo ya completada.</Spanish>
+        <Italian>Consegna del veicolo già completata.</Italian>
+        <German>Fahrzeuglieferung bereits abgeschlossen.</German>
+        <Polish>Dostawa pojazdu już zakończona.</Polish>
+        <Russian>Доставка техники уже завершена.</Russian>
+        <Turkish>Araç teslimatı zaten tamamlandı.</Turkish>
+        <Japanese>車両の配達はすでに完了しています。</Japanese>
+        <Korean>차량 배송이 이미 완료되었습니다.</Korean>
+        <Chinese>车辆交付已完成。</Chinese>
     </Key>
     <Key ID="STR_LL_Heli_Action_CASCooldown">
-        <Original>QG : CAS en cooldown, encore %1s.</Original>
-        <English>HQ: CAS on cooldown, %1s remaining.</English>
-        <French>QG : CAS en cooldown, encore %1s.</French>
+        <Original>C.A.S on cooldown, %1s remaining.</Original>
+        <English>C.A.S on cooldown, %1s remaining.</English>
+        <French>Appui CAS en rechargement, encore %1s.</French>
+        <Spanish>C.A.S en tiempo de recarga, quedan %1s.</Spanish>
+        <Italian>C.A.S in ricarica, %1s rimanenti.</Italian>
+        <German>C.A.S in Abklingzeit, %1s verbleibend.</German>
+        <Polish>C.A.S się ładuje, pozostało %1s.</Polish>
+        <Russian>Поддержка с воздуха недоступна, осталось %1с.</Russian>
+        <Turkish>C.A.S bekleme süresinde, kalan %1s.</Turkish>
+        <Japanese>C.A.Sクールダウン中、残り%1秒。</Japanese>
+        <Korean>C.A.S 재사용 대기 중, %1초 남음.</Korean>
+        <Chinese>近距离空中支援冷却中，剩余%1秒。</Chinese>
     </Key>
     <Key ID="STR_LL_Heli_Action_ClickMap">
-        <Original>QG : Cliquez sur la carte pour définir la zone de l'hélicoptère.</Original>
-        <English>HQ: Click on the map to define the helicopter zone.</English>
-        <French>QG : Cliquez sur la carte pour définir la zone de l'hélicoptère.</French>
+        <Original>Click on the map to define the helicopter zone.</Original>
+        <English>Click on the map to define the helicopter zone.</English>
+        <French>Cliquez sur la carte pour définir la zone de l'hélicoptère.</French>
+        <Spanish>Haz clic en el mapa para definir la zona del helicóptero.</Spanish>
+        <Italian>Clicca sulla mappa per definire la zona dell'elicottero.</Italian>
+        <German>Klicken Sie auf die Karte, um die Helikopterzone zu definieren.</German>
+        <Polish>Kliknij na mapie, aby określić strefę helikoptera.</Polish>
+        <Russian>Нажмите на карту, чтобы определить зону для вертолета.</Russian>
+        <Turkish>Helikopter bölgesini belirlemek için haritaya tıklayın.</Turkish>
+        <Japanese>マップをクリックしてヘリコプターのゾーンを定義してください。</Japanese>
+        <Korean>지도에서 헬리콥터 구역을 설정하려면 클릭하세요.</Korean>
+        <Chinese>在地图上点击以定义直升机区域。</Chinese>
     </Key>
     <Key ID="STR_LL_Heli_Action_EnRoute">
-        <Original>QG : Hélicoptère en route vers [%1, %2]. Type: %3</Original>
-        <English>HQ: Helicopter en route to [%1, %2]. Type: %3</English>
-        <French>QG : Hélicoptère en route vers [%1, %2]. Type: %3</French>
+        <Original>Helicopter on the way to [%1, %2]. Type: %3</Original>
+        <English>Helicopter on the way to [%1, %2]. Type: %3</English>
+        <French>Hélicoptère en route vers [%1, %2]. Type: %3</French>
+        <Spanish>Helicóptero en camino a [%1, %2]. Tipo: %3</Spanish>
+        <Italian>Elicottero in rotta verso [%1, %2]. Tipo: %3</Italian>
+        <German>Helikopter auf dem Weg nach [%1, %2]. Typ: %3</German>
+        <Polish>Helikopter w drodze do [%1, %2]. Typ: %3</Polish>
+        <Russian>Вертолет в пути к [%1, %2]. Тип: %3</Russian>
+        <Turkish>Helikopter [%1, %2] konumuna ilerliyor. Tür: %3</Turkish>
+        <Japanese>ヘリコプターが [%1, %2] に向かっています。タイプ: %3</Japanese>
+        <Korean>헬리콥터가 [%1, %2] 위치로 이동 중. 유형: %3</Korean>
+        <Chinese>直升机正在前往 [%1, %2]。类型: %3</Chinese>
     </Key>
     <Key ID="STR_LL_Heli_Action_Ammo">
-        <Original>&lt;t color='#FFFFFF'&gt;[HELI] Munitions&lt;/t&gt;</Original>
+        <Original>&lt;t color='#FFFFFF'&gt;[HELI] Ammo&lt;/t&gt;</Original>
         <English>&lt;t color='#FFFFFF'&gt;[HELI] Ammo&lt;/t&gt;</English>
         <French>&lt;t color='#FFFFFF'&gt;[HELI] Munitions&lt;/t&gt;</French>
+        <Spanish>&lt;t color='#FFFFFF'&gt;[HELI] Munición&lt;/t&gt;</Spanish>
+        <Italian>&lt;t color='#FFFFFF'&gt;[HELI] Munizioni&lt;/t&gt;</Italian>
+        <German>&lt;t color='#FFFFFF'&gt;[HELI] Munition&lt;/t&gt;</German>
+        <Polish>&lt;t color='#FFFFFF'&gt;[HELI] Amunicja&lt;/t&gt;</Polish>
+        <Russian>&lt;t color='#FFFFFF'&gt;[ВЕРТОЛЕТ] Боеприпасы&lt;/t&gt;</Russian>
+        <Turkish>&lt;t color='#FFFFFF'&gt;[HELI] Mühimmat&lt;/t&gt;</Turkish>
+        <Japanese>&lt;t color='#FFFFFF'&gt;[ヘリ] 弾薬&lt;/t&gt;</Japanese>
+        <Korean>&lt;t color='#FFFFFF'&gt;[헬기] 탄약&lt;/t&gt;</Korean>
+        <Chinese>&lt;t color='#FFFFFF'&gt;[直升机] 弹药&lt;/t&gt;</Chinese>
     </Key>
     <Key ID="STR_LL_Heli_Action_Vehicle">
-        <Original>&lt;t color='#FFFFFF'&gt;[HELI] Véhicule&lt;/t&gt;</Original>
+        <Original>&lt;t color='#FFFFFF'&gt;[HELI] Vehicle&lt;/t&gt;</Original>
         <English>&lt;t color='#FFFFFF'&gt;[HELI] Vehicle&lt;/t&gt;</English>
         <French>&lt;t color='#FFFFFF'&gt;[HELI] Véhicule&lt;/t&gt;</French>
+        <Spanish>&lt;t color='#FFFFFF'&gt;[HELI] Vehículo&lt;/t&gt;</Spanish>
+        <Italian>&lt;t color='#FFFFFF'&gt;[HELI] Veicolo&lt;/t&gt;</Italian>
+        <German>&lt;t color='#FFFFFF'&gt;[HELI] Fahrzeug&lt;/t&gt;</German>
+        <Polish>&lt;t color='#FFFFFF'&gt;[HELI] Pojazd&lt;/t&gt;</Polish>
+        <Russian>&lt;t color='#FFFFFF'&gt;[ВЕРТОЛЕТ] Техника&lt;/t&gt;</Russian>
+        <Turkish>&lt;t color='#FFFFFF'&gt;[HELI] Araç&lt;/t&gt;</Turkish>
+        <Japanese>&lt;t color='#FFFFFF'&gt;[ヘリ] 車両&lt;/t&gt;</Japanese>
+        <Korean>&lt;t color='#FFFFFF'&gt;[헬기] 차량&lt;/t&gt;</Korean>
+        <Chinese>&lt;t color='#FFFFFF'&gt;[直升机] 车辆&lt;/t&gt;</Chinese>
     </Key>
     <Key ID="STR_LL_Heli_Action_CAS">
-        <Original>&lt;t color='#FFFFFF'&gt;[HELI] Appui CAS&lt;/t&gt;</Original>
+        <Original>&lt;t color='#FFFFFF'&gt;[HELI] CAS Support&lt;/t&gt;</Original>
         <English>&lt;t color='#FFFFFF'&gt;[HELI] CAS Support&lt;/t&gt;</English>
         <French>&lt;t color='#FFFFFF'&gt;[HELI] Appui CAS&lt;/t&gt;</French>
+        <Spanish>&lt;t color='#FFFFFF'&gt;[HELI] Apoyo CAS&lt;/t&gt;</Spanish>
+        <Italian>&lt;t color='#FFFFFF'&gt;[HELI] Supporto CAS&lt;/t&gt;</Italian>
+        <German>&lt;t color='#FFFFFF'&gt;[HELI] CAS Unterstützung&lt;/t&gt;</German>
+        <Polish>&lt;t color='#FFFFFF'&gt;[HELI] Wsparcie CAS&lt;/t&gt;</Polish>
+        <Russian>&lt;t color='#FFFFFF'&gt;[ВЕРТОЛЕТ] Поддержка с воздуха&lt;/t&gt;</Russian>
+        <Turkish>&lt;t color='#FFFFFF'&gt;[HELI] CAS Desteği&lt;/t&gt;</Turkish>
+        <Japanese>&lt;t color='#FFFFFF'&gt;[ヘリ] CAS支援&lt;/t&gt;</Japanese>
+        <Korean>&lt;t color='#FFFFFF'&gt;[헬기] CAS 지원&lt;/t&gt;</Korean>
+        <Chinese>&lt;t color='#FFFFFF'&gt;[直升机] 空中支援&lt;/t&gt;</Chinese>
     </Key>
     <Key ID="STR_LL_Heli_Action_Reinforce">
-        <Original>&lt;t color='#FFFFFF'&gt;[HELI] Renforts&lt;/t&gt;</Original>
+        <Original>&lt;t color='#FFFFFF'&gt;[HELI] Reinforcements&lt;/t&gt;</Original>
         <English>&lt;t color='#FFFFFF'&gt;[HELI] Reinforcements&lt;/t&gt;</English>
         <French>&lt;t color='#FFFFFF'&gt;[HELI] Renforts&lt;/t&gt;</French>
+        <Spanish>&lt;t color='#FFFFFF'&gt;[HELI] Refuerzos&lt;/t&gt;</Spanish>
+        <Italian>&lt;t color='#FFFFFF'&gt;[HELI] Rinforzi&lt;/t&gt;</Italian>
+        <German>&lt;t color='#FFFFFF'&gt;[HELI] Verstärkung&lt;/t&gt;</German>
+        <Polish>&lt;t color='#FFFFFF'&gt;[HELI] Posiłki&lt;/t&gt;</Polish>
+        <Russian>&lt;t color='#FFFFFF'&gt;[ВЕРТОЛЕТ] Подкрепление&lt;/t&gt;</Russian>
+        <Turkish>&lt;t color='#FFFFFF'&gt;[HELI] Takviyeler&lt;/t&gt;</Turkish>
+        <Japanese>&lt;t color='#FFFFFF'&gt;[ヘリ] 増援&lt;/t&gt;</Japanese>
+        <Korean>&lt;t color='#FFFFFF'&gt;[헬기] 증원&lt;/t&gt;</Korean>
+        <Chinese>&lt;t color='#FFFFFF'&gt;[直升机] 增援&lt;/t&gt;</Chinese>
     </Key>
     <Key ID="STR_LL_Heli_Action_Extract">
         <Original>&lt;t color='#FFFFFF'&gt;[HELI] Extraction&lt;/t&gt;</Original>
         <English>&lt;t color='#FFFFFF'&gt;[HELI] Extraction&lt;/t&gt;</English>
         <French>&lt;t color='#FFFFFF'&gt;[HELI] Extraction&lt;/t&gt;</French>
+        <Spanish>&lt;t color='#FFFFFF'&gt;[HELI] Extracción&lt;/t&gt;</Spanish>
+        <Italian>&lt;t color='#FFFFFF'&gt;[HELI] Estrazione&lt;/t&gt;</Italian>
+        <German>&lt;t color='#FFFFFF'&gt;[HELI] Extraktion&lt;/t&gt;</German>
+        <Polish>&lt;t color='#FFFFFF'&gt;[HELI] Ewakuacja&lt;/t&gt;</Polish>
+        <Russian>&lt;t color='#FFFFFF'&gt;[ВЕРТОЛЕТ] Эвакуация&lt;/t&gt;</Russian>
+        <Turkish>&lt;t color='#FFFFFF'&gt;[HELI] Tahliye&lt;/t&gt;</Turkish>
+        <Japanese>&lt;t color='#FFFFFF'&gt;[ヘリ] 離脱&lt;/t&gt;</Japanese>
+        <Korean>&lt;t color='#FFFFFF'&gt;[헬기] 철수&lt;/t&gt;</Korean>
+        <Chinese>&lt;t color='#FFFFFF'&gt;[直升机] 撤离&lt;/t&gt;</Chinese>
     </Key>
 </Keys>

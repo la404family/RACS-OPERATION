@@ -22,9 +22,9 @@ if (!hasInterface) exitWith {};
 
                 if (_healers isEqualTo []) exitWith {
                     if (_aiUnits isNotEqualTo []) then {
-                        systemChat localize "STR_LL_HealAction_NoKits";
+                        ["STR_LL_HealAction_NoKits"] call LL_fnc_radioMessage;
                     } else {
-                        systemChat localize "STR_LL_HealAction_NoWounded";
+                        ["STR_LL_HealAction_NoWounded"] call LL_fnc_radioMessage;
                     };
                 };
 
@@ -66,7 +66,7 @@ if (!hasInterface) exitWith {};
                     };
                 } forEach _healers;
 
-                systemChat format [localize "STR_LL_HealAction_Healing", count _healers];
+                ["STR_LL_HealAction_Healing", [count _healers]] call LL_fnc_radioMessage;
             },
             [],
             6.6,

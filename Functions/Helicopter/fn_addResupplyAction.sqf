@@ -21,12 +21,12 @@ _crate addAction [
         };
 
         if (count _squadAI == 0) exitWith {
-            systemChat localize "STR_LL_Msg_Resupply_NoAI";
+            ["STR_LL_Msg_Resupply_NoAI"] call LL_fnc_radioMessage;
             _target setVariable ["LL_Resupply_InProgress", false, true];
         };
 
         _caller playActionNow "gestureAdvance";
-        systemChat localize "STR_LL_Msg_Resupply_Start";
+        ["STR_LL_Msg_Resupply_Start"] call LL_fnc_radioMessage;
 
         _target removeAction _actionId;
 
@@ -124,7 +124,7 @@ _crate addAction [
                 };
             } forEach _squadAI;
 
-            systemChat localize "STR_LL_Msg_Resupply_Done";
+            ["STR_LL_Msg_Resupply_Done"] call LL_fnc_radioMessage;
 
             if (!isNull _crate && { alive _crate }) then {
                 _crate setVariable ["LL_Resupply_InProgress", false, true];

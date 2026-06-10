@@ -1,23 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Keys>
     <Key ID="STR_LL_SearchAction_Title">
-        <Original>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Fouille&lt;/t&gt;</Original>
+        <Original>&lt;t color='#FFFFFF'&gt;[SQUAD] Search&lt;/t&gt;</Original>
         <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Search&lt;/t&gt;</English>
         <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Fouille&lt;/t&gt;</French>
+        <Spanish>&lt;t color='#FFFFFF'&gt;[ESCUADRA] Búsqueda&lt;/t&gt;</Spanish>
+        <Italian>&lt;t color='#FFFFFF'&gt;[SQUADRA] Ricerca&lt;/t&gt;</Italian>
+        <German>&lt;t color='#FFFFFF'&gt;[TRUPP] Durchsuchen&lt;/t&gt;</German>
+        <Polish>&lt;t color='#FFFFFF'&gt;[DRUŻYNA] Przeszukanie&lt;/t&gt;</Polish>
+        <Russian>&lt;t color='#FFFFFF'&gt;[ОТРЯД] Обыск&lt;/t&gt;</Russian>
+        <Turkish>&lt;t color='#FFFFFF'&gt;[MANGA] Arama&lt;/t&gt;</Turkish>
+        <Japanese>&lt;t color='#FFFFFF'&gt;[分隊] 捜索&lt;/t&gt;</Japanese>
+        <Korean>&lt;t color='#FFFFFF'&gt;[분대] 수색&lt;/t&gt;</Korean>
+        <Chinese>&lt;t color='#FFFFFF'&gt;[小队] 搜索&lt;/t&gt;</Chinese>
     </Key>
     <Key ID="STR_LL_SearchAction_NoBuildings">
-        <Original>QG : Aucun bâtiment fouillable à proximité.</Original>
-        <English>HQ: No searchable buildings nearby.</English>
-        <French>QG : Aucun bâtiment fouillable à proximité.</French>
+        <Original>No searchable buildings nearby.</Original>
+        <English>No searchable buildings nearby.</English>
+        <French>Aucun bâtiment fouillable à proximité.</French>
+        <Spanish>No hay edificios para buscar cerca.</Spanish>
+        <Italian>Nessun edificio ispezionabile nelle vicinanze.</Italian>
+        <German>Keine durchsuchbaren Gebäude in der Nähe.</German>
+        <Polish>Brak budynków do przeszukania w pobliżu.</Polish>
+        <Russian>Поблизости нет зданий для обыска.</Russian>
+        <Turkish>Yakında aranabilir bina yok.</Turkish>
+        <Japanese>近くに捜索可能な建物はありません。</Japanese>
+        <Korean>근처에 수색 가능한 건물이 없습니다.</Korean>
+        <Chinese>附近没有可搜索的建筑物。</Chinese>
     </Key>
     <Key ID="STR_LL_SearchAction_NoAI">
-        <Original>QG : Pas d'IA d'infanterie dans l'escouade.</Original>
-        <English>HQ: No infantry AI in the squad.</English>
-        <French>QG : Pas d'IA d'infanterie dans l'escouade.</French>
+        <Original>No infantry AI in the squad.</Original>
+        <English>No infantry AI in the squad.</English>
+        <French>Pas d'IA d'infanterie dans l'escouade.</French>
+        <Spanish>No hay IA de infantería en la escuadra.</Spanish>
+        <Italian>Nessuna IA di fanteria nella squadra.</Italian>
+        <German>Keine Infanterie-KI im Trupp.</German>
+        <Polish>Brak sztucznej inteligencji piechoty w drużynie.</Polish>
+        <Russian>В отряде нет ботов-пехотинцев.</Russian>
+        <Turkish>Mangada piyade yapay zekası yok.</Turkish>
+        <Japanese>分隊に歩兵AIがいません。</Japanese>
+        <Korean>분대에 보병 AI가 없습니다.</Korean>
+        <Chinese>小队中没有步兵 AI。</Chinese>
     </Key>
     <Key ID="STR_LL_SearchAction_Secured">
-        <Original>QG : Bâtiments sécurisés. L'escouade se regroupe.</Original>
-        <English>HQ: Buildings secured. The squad is regrouping.</English>
-        <French>QG : Bâtiments sécurisés. L'escouade se regroupe.</French>
+        <Original>Buildings secured. The squad is regrouping.</Original>
+        <English>Buildings secured. The squad is regrouping.</English>
+        <French>Bâtiments sécurisés. L'escouade se regroupe.</French>
+        <Spanish>Edificios asegurados. La escuadra se está reagrupando.</Spanish>
+        <Italian>Edifici messi in sicurezza. La squadra si sta riorganizzando.</Italian>
+        <German>Gebäude gesichert. Der Trupp sammelt sich.</German>
+        <Polish>Budynki zabezpieczone. Drużyna przegrupowuje się.</Polish>
+        <Russian>Здания зачищены. Отряд перегруппировывается.</Russian>
+        <Turkish>Binalar güvence altına alındı. Manga toparlanıyor.</Turkish>
+        <Japanese>建物は確保されました。分隊は再編成中です。</Japanese>
+        <Korean>건물 확보 완료. 분대가 재집결 중입니다.</Korean>
+        <Chinese>建筑物已安全。小队正在重新集结。</Chinese>
     </Key>
 </Keys>

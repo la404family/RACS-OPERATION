@@ -116,164 +116,452 @@
     </Package>
     <Package name="Helicopter">
         <Key ID="STR_LL_Heli_Action_VehicleAlready">
-            <Original>QG : Livraison de véhicule déjà effectuée.</Original>
-            <English>HQ: Vehicle delivery already completed.</English>
-            <French>QG : Livraison de véhicule déjà effectuée.</French>
+            <Original>Vehicle delivery already completed.</Original>
+            <English>Vehicle delivery already completed.</English>
+            <French>Livraison de véhicule déjà effectuée.</French>
+            <Spanish>Entrega de vehículo ya completada.</Spanish>
+            <Italian>Consegna del veicolo già completata.</Italian>
+            <German>Fahrzeuglieferung bereits abgeschlossen.</German>
+            <Polish>Dostawa pojazdu już zakończona.</Polish>
+            <Russian>Доставка техники уже завершена.</Russian>
+            <Turkish>Araç teslimatı zaten tamamlandı.</Turkish>
+            <Japanese>車両の配達はすでに完了しています。</Japanese>
+            <Korean>차량 배송이 이미 완료되었습니다.</Korean>
+            <Chinese>车辆交付已完成。</Chinese>
         </Key>
         <Key ID="STR_LL_Heli_Action_CASCooldown">
-            <Original>QG : CAS en cooldown, encore %1s.</Original>
-            <English>HQ: CAS on cooldown, %1s remaining.</English>
-            <French>QG : CAS en cooldown, encore %1s.</French>
+            <Original>C.A.S on cooldown, %1s remaining.</Original>
+            <English>C.A.S on cooldown, %1s remaining.</English>
+            <French>Appui CAS en rechargement, encore %1s.</French>
+            <Spanish>C.A.S en tiempo de recarga, quedan %1s.</Spanish>
+            <Italian>C.A.S in ricarica, %1s rimanenti.</Italian>
+            <German>C.A.S in Abklingzeit, %1s verbleibend.</German>
+            <Polish>C.A.S się ładuje, pozostało %1s.</Polish>
+            <Russian>Поддержка с воздуха недоступна, осталось %1с.</Russian>
+            <Turkish>C.A.S bekleme süresinde, kalan %1s.</Turkish>
+            <Japanese>C.A.Sクールダウン中、残り%1秒。</Japanese>
+            <Korean>C.A.S 재사용 대기 중, %1초 남음.</Korean>
+            <Chinese>近距离空中支援冷却中，剩余%1秒。</Chinese>
         </Key>
         <Key ID="STR_LL_Heli_Action_ClickMap">
-            <Original>QG : Cliquez sur la carte pour définir la zone de l'hélicoptère.</Original>
-            <English>HQ: Click on the map to define the helicopter zone.</English>
-            <French>QG : Cliquez sur la carte pour définir la zone de l'hélicoptère.</French>
+            <Original>Click on the map to define the helicopter zone.</Original>
+            <English>Click on the map to define the helicopter zone.</English>
+            <French>Cliquez sur la carte pour définir la zone de l'hélicoptère.</French>
+            <Spanish>Haz clic en el mapa para definir la zona del helicóptero.</Spanish>
+            <Italian>Clicca sulla mappa per definire la zona dell'elicottero.</Italian>
+            <German>Klicken Sie auf die Karte, um die Helikopterzone zu definieren.</German>
+            <Polish>Kliknij na mapie, aby określić strefę helikoptera.</Polish>
+            <Russian>Нажмите на карту, чтобы определить зону для вертолета.</Russian>
+            <Turkish>Helikopter bölgesini belirlemek için haritaya tıklayın.</Turkish>
+            <Japanese>マップをクリックしてヘリコプターのゾーンを定義してください。</Japanese>
+            <Korean>지도에서 헬리콥터 구역을 설정하려면 클릭하세요.</Korean>
+            <Chinese>在地图上点击以定义直升机区域。</Chinese>
         </Key>
         <Key ID="STR_LL_Heli_Action_EnRoute">
-            <Original>QG : Hélicoptère en route vers [%1, %2]. Type: %3</Original>
-            <English>HQ: Helicopter en route to [%1, %2]. Type: %3</English>
-            <French>QG : Hélicoptère en route vers [%1, %2]. Type: %3</French>
+            <Original>Helicopter on the way to [%1, %2]. Type: %3</Original>
+            <English>Helicopter on the way to [%1, %2]. Type: %3</English>
+            <French>Hélicoptère en route vers [%1, %2]. Type: %3</French>
+            <Spanish>Helicóptero en camino a [%1, %2]. Tipo: %3</Spanish>
+            <Italian>Elicottero in rotta verso [%1, %2]. Tipo: %3</Italian>
+            <German>Helikopter auf dem Weg nach [%1, %2]. Typ: %3</German>
+            <Polish>Helikopter w drodze do [%1, %2]. Typ: %3</Polish>
+            <Russian>Вертолет в пути к [%1, %2]. Тип: %3</Russian>
+            <Turkish>Helikopter [%1, %2] konumuna ilerliyor. Tür: %3</Turkish>
+            <Japanese>ヘリコプターが [%1, %2] に向かっています。タイプ: %3</Japanese>
+            <Korean>헬리콥터가 [%1, %2] 위치로 이동 중. 유형: %3</Korean>
+            <Chinese>直升机正在前往 [%1, %2]。类型: %3</Chinese>
         </Key>
         <Key ID="STR_LL_Heli_Action_Ammo">
-            <Original>&lt;t color='#FFFFFF'&gt;[HELI] Munitions&lt;/t&gt;</Original>
+            <Original>&lt;t color='#FFFFFF'&gt;[HELI] Ammo&lt;/t&gt;</Original>
             <English>&lt;t color='#FFFFFF'&gt;[HELI] Ammo&lt;/t&gt;</English>
             <French>&lt;t color='#FFFFFF'&gt;[HELI] Munitions&lt;/t&gt;</French>
+            <Spanish>&lt;t color='#FFFFFF'&gt;[HELI] Munición&lt;/t&gt;</Spanish>
+            <Italian>&lt;t color='#FFFFFF'&gt;[HELI] Munizioni&lt;/t&gt;</Italian>
+            <German>&lt;t color='#FFFFFF'&gt;[HELI] Munition&lt;/t&gt;</German>
+            <Polish>&lt;t color='#FFFFFF'&gt;[HELI] Amunicja&lt;/t&gt;</Polish>
+            <Russian>&lt;t color='#FFFFFF'&gt;[ВЕРТОЛЕТ] Боеприпасы&lt;/t&gt;</Russian>
+            <Turkish>&lt;t color='#FFFFFF'&gt;[HELI] Mühimmat&lt;/t&gt;</Turkish>
+            <Japanese>&lt;t color='#FFFFFF'&gt;[ヘリ] 弾薬&lt;/t&gt;</Japanese>
+            <Korean>&lt;t color='#FFFFFF'&gt;[헬기] 탄약&lt;/t&gt;</Korean>
+            <Chinese>&lt;t color='#FFFFFF'&gt;[直升机] 弹药&lt;/t&gt;</Chinese>
         </Key>
         <Key ID="STR_LL_Heli_Action_Vehicle">
-            <Original>&lt;t color='#FFFFFF'&gt;[HELI] Véhicule&lt;/t&gt;</Original>
+            <Original>&lt;t color='#FFFFFF'&gt;[HELI] Vehicle&lt;/t&gt;</Original>
             <English>&lt;t color='#FFFFFF'&gt;[HELI] Vehicle&lt;/t&gt;</English>
             <French>&lt;t color='#FFFFFF'&gt;[HELI] Véhicule&lt;/t&gt;</French>
+            <Spanish>&lt;t color='#FFFFFF'&gt;[HELI] Vehículo&lt;/t&gt;</Spanish>
+            <Italian>&lt;t color='#FFFFFF'&gt;[HELI] Veicolo&lt;/t&gt;</Italian>
+            <German>&lt;t color='#FFFFFF'&gt;[HELI] Fahrzeug&lt;/t&gt;</German>
+            <Polish>&lt;t color='#FFFFFF'&gt;[HELI] Pojazd&lt;/t&gt;</Polish>
+            <Russian>&lt;t color='#FFFFFF'&gt;[ВЕРТОЛЕТ] Техника&lt;/t&gt;</Russian>
+            <Turkish>&lt;t color='#FFFFFF'&gt;[HELI] Araç&lt;/t&gt;</Turkish>
+            <Japanese>&lt;t color='#FFFFFF'&gt;[ヘリ] 車両&lt;/t&gt;</Japanese>
+            <Korean>&lt;t color='#FFFFFF'&gt;[헬기] 차량&lt;/t&gt;</Korean>
+            <Chinese>&lt;t color='#FFFFFF'&gt;[直升机] 车辆&lt;/t&gt;</Chinese>
         </Key>
         <Key ID="STR_LL_Heli_Action_CAS">
-            <Original>&lt;t color='#FFFFFF'&gt;[HELI] Appui CAS&lt;/t&gt;</Original>
+            <Original>&lt;t color='#FFFFFF'&gt;[HELI] CAS Support&lt;/t&gt;</Original>
             <English>&lt;t color='#FFFFFF'&gt;[HELI] CAS Support&lt;/t&gt;</English>
             <French>&lt;t color='#FFFFFF'&gt;[HELI] Appui CAS&lt;/t&gt;</French>
+            <Spanish>&lt;t color='#FFFFFF'&gt;[HELI] Apoyo CAS&lt;/t&gt;</Spanish>
+            <Italian>&lt;t color='#FFFFFF'&gt;[HELI] Supporto CAS&lt;/t&gt;</Italian>
+            <German>&lt;t color='#FFFFFF'&gt;[HELI] CAS Unterstützung&lt;/t&gt;</German>
+            <Polish>&lt;t color='#FFFFFF'&gt;[HELI] Wsparcie CAS&lt;/t&gt;</Polish>
+            <Russian>&lt;t color='#FFFFFF'&gt;[ВЕРТОЛЕТ] Поддержка с воздуха&lt;/t&gt;</Russian>
+            <Turkish>&lt;t color='#FFFFFF'&gt;[HELI] CAS Desteği&lt;/t&gt;</Turkish>
+            <Japanese>&lt;t color='#FFFFFF'&gt;[ヘリ] CAS支援&lt;/t&gt;</Japanese>
+            <Korean>&lt;t color='#FFFFFF'&gt;[헬기] CAS 지원&lt;/t&gt;</Korean>
+            <Chinese>&lt;t color='#FFFFFF'&gt;[直升机] 空中支援&lt;/t&gt;</Chinese>
         </Key>
         <Key ID="STR_LL_Heli_Action_Reinforce">
-            <Original>&lt;t color='#FFFFFF'&gt;[HELI] Renforts&lt;/t&gt;</Original>
+            <Original>&lt;t color='#FFFFFF'&gt;[HELI] Reinforcements&lt;/t&gt;</Original>
             <English>&lt;t color='#FFFFFF'&gt;[HELI] Reinforcements&lt;/t&gt;</English>
             <French>&lt;t color='#FFFFFF'&gt;[HELI] Renforts&lt;/t&gt;</French>
+            <Spanish>&lt;t color='#FFFFFF'&gt;[HELI] Refuerzos&lt;/t&gt;</Spanish>
+            <Italian>&lt;t color='#FFFFFF'&gt;[HELI] Rinforzi&lt;/t&gt;</Italian>
+            <German>&lt;t color='#FFFFFF'&gt;[HELI] Verstärkung&lt;/t&gt;</German>
+            <Polish>&lt;t color='#FFFFFF'&gt;[HELI] Posiłki&lt;/t&gt;</Polish>
+            <Russian>&lt;t color='#FFFFFF'&gt;[ВЕРТОЛЕТ] Подкрепление&lt;/t&gt;</Russian>
+            <Turkish>&lt;t color='#FFFFFF'&gt;[HELI] Takviyeler&lt;/t&gt;</Turkish>
+            <Japanese>&lt;t color='#FFFFFF'&gt;[ヘリ] 増援&lt;/t&gt;</Japanese>
+            <Korean>&lt;t color='#FFFFFF'&gt;[헬기] 증원&lt;/t&gt;</Korean>
+            <Chinese>&lt;t color='#FFFFFF'&gt;[直升机] 增援&lt;/t&gt;</Chinese>
         </Key>
         <Key ID="STR_LL_Heli_Action_Extract">
             <Original>&lt;t color='#FFFFFF'&gt;[HELI] Extraction&lt;/t&gt;</Original>
             <English>&lt;t color='#FFFFFF'&gt;[HELI] Extraction&lt;/t&gt;</English>
             <French>&lt;t color='#FFFFFF'&gt;[HELI] Extraction&lt;/t&gt;</French>
+            <Spanish>&lt;t color='#FFFFFF'&gt;[HELI] Extracción&lt;/t&gt;</Spanish>
+            <Italian>&lt;t color='#FFFFFF'&gt;[HELI] Estrazione&lt;/t&gt;</Italian>
+            <German>&lt;t color='#FFFFFF'&gt;[HELI] Extraktion&lt;/t&gt;</German>
+            <Polish>&lt;t color='#FFFFFF'&gt;[HELI] Ewakuacja&lt;/t&gt;</Polish>
+            <Russian>&lt;t color='#FFFFFF'&gt;[ВЕРТОЛЕТ] Эвакуация&lt;/t&gt;</Russian>
+            <Turkish>&lt;t color='#FFFFFF'&gt;[HELI] Tahliye&lt;/t&gt;</Turkish>
+            <Japanese>&lt;t color='#FFFFFF'&gt;[ヘリ] 離脱&lt;/t&gt;</Japanese>
+            <Korean>&lt;t color='#FFFFFF'&gt;[헬기] 철수&lt;/t&gt;</Korean>
+            <Chinese>&lt;t color='#FFFFFF'&gt;[直升机] 撤离&lt;/t&gt;</Chinese>
         </Key>
         <Key ID="STR_LL_Action_Resupply">
-            <Original>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Ravitaillement&lt;/t&gt;</Original>
+            <Original>&lt;t color='#FFFFFF'&gt;[SQUAD] Resupply&lt;/t&gt;</Original>
             <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Resupply&lt;/t&gt;</English>
             <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Ravitaillement&lt;/t&gt;</French>
+            <Spanish>&lt;t color='#FFFFFF'&gt;[ESCUADRA] Reabastecimiento&lt;/t&gt;</Spanish>
+            <Italian>&lt;t color='#FFFFFF'&gt;[SQUADRA] Rifornimento&lt;/t&gt;</Italian>
+            <German>&lt;t color='#FFFFFF'&gt;[TRUPP] Nachschub&lt;/t&gt;</German>
+            <Polish>&lt;t color='#FFFFFF'&gt;[DRUŻYNA] Zaopatrzenie&lt;/t&gt;</Polish>
+            <Russian>&lt;t color='#FFFFFF'&gt;[ОТРЯД] Пополнение&lt;/t&gt;</Russian>
+            <Turkish>&lt;t color='#FFFFFF'&gt;[MANGA] İkmal&lt;/t&gt;</Turkish>
+            <Japanese>&lt;t color='#FFFFFF'&gt;[分隊] 補給&lt;/t&gt;</Japanese>
+            <Korean>&lt;t color='#FFFFFF'&gt;[분대] 재보급&lt;/t&gt;</Korean>
+            <Chinese>&lt;t color='#FFFFFF'&gt;[小队] 补给&lt;/t&gt;</Chinese>
         </Key>
         <Key ID="STR_LL_Msg_Resupply_NoAI">
-            <Original>Seuls les joueurs peuvent utiliser cette action.</Original>
-            <English>Only players can use this action.</English>
-            <French>Seuls les joueurs peuvent utiliser cette action.</French>
+            <Original>You can't use this action.</Original>
+            <English>You can't use this action.</English>
+            <French>Vous ne pouvez pas utiliser cette action.</French>
+            <Spanish>No puedes usar esta acción.</Spanish>
+            <Italian>Non puoi usare questa azione.</Italian>
+            <German>Sie können diese Aktion nicht verwenden.</German>
+            <Polish>Nie możesz użyć tej akcji.</Polish>
+            <Russian>Вы не можете использовать это действие.</Russian>
+            <Turkish>Bu eylemi kullanamazsınız.</Turkish>
+            <Japanese>このアクションは使用できません。</Japanese>
+            <Korean>이 작업을 사용할 수 없습니다.</Korean>
+            <Chinese>您无法使用此操作。</Chinese>
         </Key>
         <Key ID="STR_LL_Msg_Resupply_Start">
-            <Original>Ravitaillement en cours...</Original>
+            <Original>Resupply in progress...</Original>
             <English>Resupply in progress...</English>
             <French>Ravitaillement en cours...</French>
+            <Spanish>Reabastecimiento en progreso...</Spanish>
+            <Italian>Rifornimento in corso...</Italian>
+            <German>Nachschub im Gange...</German>
+            <Polish>Zaopatrzenie w toku...</Polish>
+            <Russian>Идет пополнение запасов...</Russian>
+            <Turkish>İkmal devam ediyor...</Turkish>
+            <Japanese>補給進行中...</Japanese>
+            <Korean>재보급 진행 중...</Korean>
+            <Chinese>补给进行中...</Chinese>
         </Key>
         <Key ID="STR_LL_Msg_Resupply_Done">
-            <Original>Ravitaillement terminé.</Original>
+            <Original>Resupply finished.</Original>
             <English>Resupply finished.</English>
             <French>Ravitaillement terminé.</French>
+            <Spanish>Reabastecimiento finalizado.</Spanish>
+            <Italian>Rifornimento terminato.</Italian>
+            <German>Nachschub abgeschlossen.</German>
+            <Polish>Zaopatrzenie zakończone.</Polish>
+            <Russian>Пополнение запасов завершено.</Russian>
+            <Turkish>İkmal tamamlandı.</Turkish>
+            <Japanese>補給完了。</Japanese>
+            <Korean>재보급 완료.</Korean>
+            <Chinese>补给完成。</Chinese>
         </Key>
         <Key ID="STR_LL_Heli_Dispatch_Cooldown">
-            <Original>QG : Appui aérien en cooldown, encore %1 secondes.</Original>
-            <English>HQ: Air support on cooldown, %1 seconds remaining.</English>
-            <French>QG : Appui aérien en cooldown, encore %1 secondes.</French>
+            <Original>Air support on cooldown, %1 seconds remaining.</Original>
+            <English>Air support on cooldown, %1 seconds remaining.</English>
+            <French>Appui aérien en cooldown, encore %1 secondes.</French>
+            <Spanish>Apoyo aéreo en recarga, quedan %1 segundos.</Spanish>
+            <Italian>Supporto aereo in ricarica, %1 secondi rimanenti.</Italian>
+            <German>Luftunterstützung in Abklingzeit, %1 Sekunden verbleibend.</German>
+            <Polish>Wsparcie lotnicze się ładuje, pozostało %1 sekund.</Polish>
+            <Russian>Поддержка с воздуха недоступна, осталось %1 секунд.</Russian>
+            <Turkish>Hava desteği bekleme süresinde, kalan %1 saniye.</Turkish>
+            <Japanese>航空支援クールダウン中、残り%1秒。</Japanese>
+            <Korean>항공 지원 재사용 대기 중, %1초 남음.</Korean>
+            <Chinese>空中支援冷却中，剩余%1秒。</Chinese>
         </Key>
         <Key ID="STR_LL_Heli_Dispatch_VehicleAlready">
-            <Original>QG : Livraison de véhicule déjà effectuée. Demande refusée.</Original>
-            <English>HQ: Vehicle delivery already completed. Request denied.</English>
-            <French>QG : Livraison de véhicule déjà effectuée. Demande refusée.</French>
+            <Original>Vehicle delivery already completed. Request denied.</Original>
+            <English>Vehicle delivery already completed. Request denied.</English>
+            <French>Livraison de véhicule déjà effectuée. Demande refusée.</French>
+            <Spanish>Entrega de vehículo ya completada. Solicitud denegada.</Spanish>
+            <Italian>Consegna del veicolo già completata. Richiesta respinta.</Italian>
+            <German>Fahrzeuglieferung bereits abgeschlossen. Anfrage abgelehnt.</German>
+            <Polish>Dostawa pojazdu już zakończona. Żądanie odrzucone.</Polish>
+            <Russian>Доставка техники уже завершена. Запрос отклонен.</Russian>
+            <Turkish>Araç teslimatı zaten tamamlandı. İstek reddedildi.</Turkish>
+            <Japanese>車両の配達はすでに完了しています。要求は拒否されました。</Japanese>
+            <Korean>차량 배송이 이미 완료되었습니다. 요청이 거부되었습니다.</Korean>
+            <Chinese>车辆交付已完成。请求被拒绝。</Chinese>
         </Key>
         <Key ID="STR_LL_Heli_Msg_CargoAborted">
-            <Original>QG : Largage annulé.</Original>
-            <English>HQ: Drop aborted.</English>
-            <French>QG : Largage annulé.</French>
+            <Original>Drop aborted.</Original>
+            <English>Drop aborted.</English>
+            <French>Largage annulé.</French>
+            <Spanish>Lanzamiento abortado.</Spanish>
+            <Italian>Lancio annullato.</Italian>
+            <German>Abwurf abgebrochen.</German>
+            <Polish>Zrzut przerwany.</Polish>
+            <Russian>Сброс отменен.</Russian>
+            <Turkish>Bırakma iptal edildi.</Turkish>
+            <Japanese>投下中止。</Japanese>
+            <Korean>투하 취소됨.</Korean>
+            <Chinese>空投已中止。</Chinese>
         </Key>
         <Key ID="STR_LL_Heli_Msg_Active">
-            <Original>QG : Hélicoptère déployé.</Original>
-            <English>HQ: Helicopter deployed.</English>
-            <French>QG : Hélicoptère déployé.</French>
+            <Original>Helicopter deployed.</Original>
+            <English>Helicopter deployed.</English>
+            <French>Hélicoptère déployé.</French>
+            <Spanish>Helicóptero desplegado.</Spanish>
+            <Italian>Elicottero dispiegato.</Italian>
+            <German>Helikopter im Einsatz.</German>
+            <Polish>Helikopter rozmieszczony.</Polish>
+            <Russian>Вертолет развернут.</Russian>
+            <Turkish>Helikopter konuşlandırıldı.</Turkish>
+            <Japanese>ヘリコプター展開。</Japanese>
+            <Korean>헬리콥터 배치됨.</Korean>
+            <Chinese>直升机已部署。</Chinese>
         </Key>
         <Key ID="STR_TAG_Msg_Ammo_Dropped">
-            <Original>QG : Munitions larguées.</Original>
-            <English>HQ: Ammo dropped.</English>
-            <French>QG : Munitions larguées.</French>
+            <Original>Ammo dropped.</Original>
+            <English>Ammo dropped.</English>
+            <French>Munitions larguées.</French>
+            <Spanish>Munición lanzada.</Spanish>
+            <Italian>Munizioni lanciate.</Italian>
+            <German>Munition abgeworfen.</German>
+            <Polish>Amunicja zrzucona.</Polish>
+            <Russian>Боеприпасы сброшены.</Russian>
+            <Turkish>Mühimmat bırakıldı.</Turkish>
+            <Japanese>弾薬投下。</Japanese>
+            <Korean>탄약 투하됨.</Korean>
+            <Chinese>弹药已空投。</Chinese>
         </Key>
         <Key ID="STR_TAG_Msg_Vehicle_Dropped">
-            <Original>QG : Véhicule largué.</Original>
-            <English>HQ: Vehicle dropped.</English>
-            <French>QG : Véhicule largué.</French>
+            <Original>Vehicle dropped.</Original>
+            <English>Vehicle dropped.</English>
+            <French>Véhicule largué.</French>
+            <Spanish>Vehículo lanzado.</Spanish>
+            <Italian>Veicolo lanciato.</Italian>
+            <German>Fahrzeug abgeworfen.</German>
+            <Polish>Pojazd zrzucony.</Polish>
+            <Russian>Техника сброшена.</Russian>
+            <Turkish>Araç bırakıldı.</Turkish>
+            <Japanese>車両投下。</Japanese>
+            <Korean>차량 투하됨.</Korean>
+            <Chinese>车辆已空投。</Chinese>
         </Key>
         <Key ID="STR_LL_Heli_Msg_Landed_Reinforce">
-            <Original>QG : Renforts posés.</Original>
-            <English>HQ: Reinforcements landed.</English>
-            <French>QG : Renforts posés.</French>
+            <Original>Reinforcements landed.</Original>
+            <English>Reinforcements landed.</English>
+            <French>Renforts posés.</French>
+            <Spanish>Refuerzos aterrizados.</Spanish>
+            <Italian>Rinforzi atterrati.</Italian>
+            <German>Verstärkung gelandet.</German>
+            <Polish>Posiłki wylądowały.</Polish>
+            <Russian>Подкрепление высадилось.</Russian>
+            <Turkish>Takviyeler indi.</Turkish>
+            <Japanese>増援着陸。</Japanese>
+            <Korean>증원 병력 착륙.</Korean>
+            <Chinese>增援已着陆。</Chinese>
         </Key>
         <Key ID="STR_LL_Heli_Msg_Squad_Joined">
-            <Original>QG : Escouade a rejoint.</Original>
-            <English>HQ: Squad joined.</English>
-            <French>QG : Escouade a rejoint.</French>
+            <Original>Squad joined.</Original>
+            <English>Squad joined.</English>
+            <French>Escouade a rejoint.</French>
+            <Spanish>Escuadra unida.</Spanish>
+            <Italian>Squadra unita.</Italian>
+            <German>Trupp beigetreten.</German>
+            <Polish>Drużyna dołączyła.</Polish>
+            <Russian>Отряд присоединился.</Russian>
+            <Turkish>Manga katıldı.</Turkish>
+            <Japanese>分隊合流。</Japanese>
+            <Korean>분대 합류.</Korean>
+            <Chinese>小队已加入。</Chinese>
         </Key>
         <Key ID="STR_LL_Heli_Msg_Patrol_Started">
-            <Original>QG : Patrouille commencée.</Original>
-            <English>HQ: Patrol started.</English>
-            <French>QG : Patrouille commencée.</French>
+            <Original>Patrol started.</Original>
+            <English>Patrol started.</English>
+            <French>Patrouille commencée.</French>
+            <Spanish>Patrulla iniciada.</Spanish>
+            <Italian>Pattuglia iniziata.</Italian>
+            <German>Patrouille gestartet.</German>
+            <Polish>Patrol rozpoczęty.</Polish>
+            <Russian>Патрулирование начато.</Russian>
+            <Turkish>Devriye başladı.</Turkish>
+            <Japanese>パトロール開始。</Japanese>
+            <Korean>순찰 시작됨.</Korean>
+            <Chinese>巡逻开始。</Chinese>
         </Key>
         <Key ID="STR_LL_Heli_Msg_Landed_Extract">
-            <Original>QG : Hélicoptère posé pour extraction.</Original>
-            <English>HQ: Helicopter landed for extraction.</English>
-            <French>QG : Hélicoptère posé pour extraction.</French>
+            <Original>Helicopter landed for extraction.</Original>
+            <English>Helicopter landed for extraction.</English>
+            <French>Hélicoptère posé pour extraction.</French>
+            <Spanish>Helicóptero aterrizó para extracción.</Spanish>
+            <Italian>Elicottero atterrato per l'estrazione.</Italian>
+            <German>Helikopter zur Extraktion gelandet.</German>
+            <Polish>Helikopter wylądował do ewakuacji.</Polish>
+            <Russian>Вертолет прибыл для эвакуации.</Russian>
+            <Turkish>Helikopter tahliye için indi.</Turkish>
+            <Japanese>ヘリコプターが離脱のため着陸しました。</Japanese>
+            <Korean>헬리콥터가 철수를 위해 착륙했습니다.</Korean>
+            <Chinese>直升机已着陆准备撤离。</Chinese>
         </Key>
         <Key ID="STR_LL_Heli_Msg_Extract_Players_Exit_Warning">
-            <Original>QG : Ne quittez pas l'hélicoptère.</Original>
-            <English>HQ: Do not leave the helicopter.</English>
-            <French>QG : Ne quittez pas l'hélicoptère.</French>
+            <Original>Do not leave the helicopter.</Original>
+            <English>Do not leave the helicopter.</English>
+            <French>Ne quittez pas l'hélicoptère.</French>
+            <Spanish>No abandone el helicóptero.</Spanish>
+            <Italian>Non abbandonare l'elicottero.</Italian>
+            <German>Verlassen Sie den Helikopter nicht.</German>
+            <Polish>Nie opuszczaj helikoptera.</Polish>
+            <Russian>Не покидайте вертолет.</Russian>
+            <Turkish>Helikopterden ayrılmayın.</Turkish>
+            <Japanese>ヘリコプターから離れないでください。</Japanese>
+            <Korean>헬리콥터를 벗어나지 마십시오.</Korean>
+            <Chinese>请勿离开直升机。</Chinese>
         </Key>
         <Key ID="STR_LL_Heli_Msg_Departing">
-            <Original>QG : Hélicoptère en départ.</Original>
-            <English>HQ: Helicopter departing.</English>
-            <French>QG : Hélicoptère en départ.</French>
+            <Original>Helicopter departing.</Original>
+            <English>Helicopter departing.</English>
+            <French>Hélicoptère en départ.</French>
+            <Spanish>Helicóptero partiendo.</Spanish>
+            <Italian>Elicottero in partenza.</Italian>
+            <German>Helikopter im Abflug.</German>
+            <Polish>Helikopter odlatuje.</Polish>
+            <Russian>Вертолет отправляется.</Russian>
+            <Turkish>Helikopter kalkıyor.</Turkish>
+            <Japanese>ヘリコプター出発。</Japanese>
+            <Korean>헬리콥터 출발.</Korean>
+            <Chinese>直升机正在起飞。</Chinese>
         </Key>
         <Key ID="STR_LL_Heli_Msg_Killed">
-            <Original>QG : Hélicoptère détruit.</Original>
-            <English>HQ: Helicopter destroyed.</English>
-            <French>QG : Hélicoptère détruit.</French>
+            <Original>Helicopter destroyed.</Original>
+            <English>Helicopter destroyed.</English>
+            <French>Hélicoptère détruit.</French>
+            <Spanish>Helicóptero destruido.</Spanish>
+            <Italian>Elicottero distrutto.</Italian>
+            <German>Helikopter zerstört.</German>
+            <Polish>Helikopter zniszczony.</Polish>
+            <Russian>Вертолет уничтожен.</Russian>
+            <Turkish>Helikopter yok edildi.</Turkish>
+            <Japanese>ヘリコプター破壊。</Japanese>
+            <Korean>헬리콥터 파괴됨.</Korean>
+            <Chinese>直升机被摧毁。</Chinese>
         </Key>
         <Key ID="STR_TAG_Msg_CAS_RTB">
-            <Original>QG : Appui aérien terminé, retour à la base.</Original>
-            <English>HQ: Air support finished, returning to base.</English>
-            <French>QG : Appui aérien terminé, retour à la base.</French>
+            <Original>Air support finished, returning to base.</Original>
+            <English>Air support finished, returning to base.</English>
+            <French>Appui aérien terminé, retour à la base.</French>
+            <Spanish>Apoyo aéreo finalizado, regresando a base.</Spanish>
+            <Italian>Supporto aereo terminato, ritorno alla base.</Italian>
+            <German>Luftunterstützung beendet, Rückkehr zur Basis.</German>
+            <Polish>Wsparcie lotnicze zakończone, powrót do bazy.</Polish>
+            <Russian>Воздушная поддержка завершена, возвращение на базу.</Russian>
+            <Turkish>Hava desteği bitti, üsse dönülüyor.</Turkish>
+            <Japanese>航空支援終了、基地に帰還します。</Japanese>
+            <Korean>항공 지원 종료, 기지로 복귀 중.</Korean>
+            <Chinese>空中支援结束，返回基地。</Chinese>
         </Key>
         <Key ID="STR_TAG_Marker_Heli_Ammo">
-            <Original>Largage Munitions</Original>
+            <Original>Ammo Drop</Original>
             <English>Ammo Drop</English>
             <French>Largage Munitions</French>
+            <Spanish>Lanzamiento Munición</Spanish>
+            <Italian>Lancio Munizioni</Italian>
+            <German>Munitionsabwurf</German>
+            <Polish>Zrzut amunicji</Polish>
+            <Russian>Сброс боеприпасов</Russian>
+            <Turkish>Mühimmat Bırakma</Turkish>
+            <Japanese>弾薬投下</Japanese>
+            <Korean>탄약 투하</Korean>
+            <Chinese>弹药空投</Chinese>
         </Key>
         <Key ID="STR_TAG_Marker_Heli_Vehicle">
-            <Original>Largage Véhicule</Original>
+            <Original>Vehicle Drop</Original>
             <English>Vehicle Drop</English>
             <French>Largage Véhicule</French>
+            <Spanish>Lanzamiento Vehículo</Spanish>
+            <Italian>Lancio Veicolo</Italian>
+            <German>Fahrzeugabwurf</German>
+            <Polish>Zrzut pojazdu</Polish>
+            <Russian>Сброс техники</Russian>
+            <Turkish>Araç Bırakma</Turkish>
+            <Japanese>車両投下</Japanese>
+            <Korean>차량 투하</Korean>
+            <Chinese>车辆空投</Chinese>
         </Key>
         <Key ID="STR_TAG_Marker_Heli_Debark">
-            <Original>Débarquement</Original>
+            <Original>Disembarkation</Original>
             <English>Disembarkation</English>
             <French>Débarquement</French>
+            <Spanish>Desembarco</Spanish>
+            <Italian>Sbarco</Italian>
+            <German>Ausschiffung</German>
+            <Polish>Wyładunek</Polish>
+            <Russian>Высадка</Russian>
+            <Turkish>Çıkış</Turkish>
+            <Japanese>降車</Japanese>
+            <Korean>하차</Korean>
+            <Chinese>登陆</Chinese>
         </Key>
         <Key ID="STR_TAG_Marker_Heli_Extract">
             <Original>Extraction</Original>
             <English>Extraction</English>
             <French>Extraction</French>
+            <Spanish>Extracción</Spanish>
+            <Italian>Estrazione</Italian>
+            <German>Extraktion</German>
+            <Polish>Ewakuacja</Polish>
+            <Russian>Эвакуация</Russian>
+            <Turkish>Tahliye</Turkish>
+            <Japanese>離脱</Japanese>
+            <Korean>철수</Korean>
+            <Chinese>撤离</Chinese>
         </Key>
         <Key ID="STR_TAG_Marker_Heli_CAS">
-            <Original>Appui Aérien (CAS)</Original>
+            <Original>Air Support (CAS)</Original>
             <English>Air Support (CAS)</English>
             <French>Appui Aérien (CAS)</French>
+            <Spanish>Apoyo Aéreo (CAS)</Spanish>
+            <Italian>Supporto Aereo (CAS)</Italian>
+            <German>Luftunterstützung (CAS)</German>
+            <Polish>Wsparcie Powietrzne (CAS)</Polish>
+            <Russian>Воздушная поддержка (CAS)</Russian>
+            <Turkish>Hava Desteği (CAS)</Turkish>
+            <Japanese>航空支援 (CAS)</Japanese>
+            <Korean>항공 지원 (CAS)</Korean>
+            <Chinese>空中支援 (CAS)</Chinese>
         </Key>
     </Package>
     <Package name="Player">
@@ -284,128 +572,326 @@
         </Key>
         <Key ID="STR_LL_HealAction_NoKits">
             <Original>QG : Négatif ! Personne ne possède de kit de soin.</Original>
-            <English>HQ: Negative! Nobody has a medkit.</English>
+            <English>Negative! Nobody has a medkit.</English>
             <French>QG : Négatif ! Personne ne possède de kit de soin.</French>
         </Key>
         <Key ID="STR_LL_HealAction_NoWounded">
             <Original>QG : Négatif ! Aucun blessé nécessitant des soins.</Original>
-            <English>HQ: Negative! No wounded requiring healing.</English>
+            <English>No wounded requiring healing.</English>
             <French>QG : Négatif ! Aucun blessé nécessitant des soins.</French>
         </Key>
         <Key ID="STR_LL_HealAction_Healing">
             <Original>QG : %1 homme(s) en cours de soins...</Original>
-            <English>HQ: %1 man(men) being healed...</English>
+            <English>... %1 man(men) being healed...</English>
             <French>QG : %1 homme(s) en cours de soins...</French>
         </Key>
         <Key ID="STR_LL_RallyAction_Title">
-            <Original>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Regroupement&lt;/t&gt;</Original>
+            <Original>&lt;t color='#FFFFFF'&gt;[SQUAD] Rally&lt;/t&gt;</Original>
             <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Rally&lt;/t&gt;</English>
             <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Regroupement&lt;/t&gt;</French>
+            <Spanish>&lt;t color='#FFFFFF'&gt;[ESCUADRA] Agruparse&lt;/t&gt;</Spanish>
+            <Italian>&lt;t color='#FFFFFF'&gt;[SQUADRA] Raduno&lt;/t&gt;</Italian>
+            <German>&lt;t color='#FFFFFF'&gt;[TRUPP] Sammeln&lt;/t&gt;</German>
+            <Polish>&lt;t color='#FFFFFF'&gt;[DRUŻYNA] Zbiórka&lt;/t&gt;</Polish>
+            <Russian>&lt;t color='#FFFFFF'&gt;[ОТРЯД] Сбор&lt;/t&gt;</Russian>
+            <Turkish>&lt;t color='#FFFFFF'&gt;[MANGA] Toplan&lt;/t&gt;</Turkish>
+            <Japanese>&lt;t color='#FFFFFF'&gt;[分隊] 集合&lt;/t&gt;</Japanese>
+            <Korean>&lt;t color='#FFFFFF'&gt;[분대] 집결&lt;/t&gt;</Korean>
+            <Chinese>&lt;t color='#FFFFFF'&gt;[小队] 集合&lt;/t&gt;</Chinese>
         </Key>
         <Key ID="STR_LL_RoeAction_Changed">
-            <Original>QG : Nouvelles Règles d'Engagement -&gt; %1</Original>
-            <English>HQ: New Rules of Engagement -&gt; %1</English>
-            <French>QG : Nouvelles Règles d'Engagement -&gt; %1</French>
+            <Original>New Rules of Engagement -&gt; %1</Original>
+            <English>New Rules of Engagement -&gt; %1</English>
+            <French>Nouvelles Règles d'Engagement -&gt; %1</French>
+            <Spanish>Nuevas reglas de enfrentamiento -&gt; %1</Spanish>
+            <Italian>Nuove regole di ingaggio -&gt; %1</Italian>
+            <German>Neue Einsatzregeln -&gt; %1</German>
+            <Polish>Nowe zasady zaangażowania -&gt; %1</Polish>
+            <Russian>Новые правила ведения боя -&gt; %1</Russian>
+            <Turkish>Yeni angajman kuralları -&gt; %1</Turkish>
+            <Japanese>新しい交戦規定 -&gt; %1</Japanese>
+            <Korean>새로운 교전 수칙 -&gt; %1</Korean>
+            <Chinese>新交战规则 -&gt; %1</Chinese>
         </Key>
         <Key ID="STR_LL_RoeAction_Infiltration">
-            <Original>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Infiltration&lt;/t&gt;</Original>
+            <Original>&lt;t color='#FFFFFF'&gt;[SQUAD] Infiltration&lt;/t&gt;</Original>
             <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Infiltration&lt;/t&gt;</English>
             <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Infiltration&lt;/t&gt;</French>
+            <Spanish>&lt;t color='#FFFFFF'&gt;[ESCUADRA] Infiltración&lt;/t&gt;</Spanish>
+            <Italian>&lt;t color='#FFFFFF'&gt;[SQUADRA] Infiltrazione&lt;/t&gt;</Italian>
+            <German>&lt;t color='#FFFFFF'&gt;[TRUPP] Infiltration&lt;/t&gt;</German>
+            <Polish>&lt;t color='#FFFFFF'&gt;[DRUŻYNA] Infiltracja&lt;/t&gt;</Polish>
+            <Russian>&lt;t color='#FFFFFF'&gt;[ОТРЯД] Проникновение&lt;/t&gt;</Russian>
+            <Turkish>&lt;t color='#FFFFFF'&gt;[MANGA] Sızma&lt;/t&gt;</Turkish>
+            <Japanese>&lt;t color='#FFFFFF'&gt;[分隊] 潜入&lt;/t&gt;</Japanese>
+            <Korean>&lt;t color='#FFFFFF'&gt;[분대] 침투&lt;/t&gt;</Korean>
+            <Chinese>&lt;t color='#FFFFFF'&gt;[小队] 渗透&lt;/t&gt;</Chinese>
         </Key>
         <Key ID="STR_LL_RoeAction_Patrol">
-            <Original>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Patrouille&lt;/t&gt;</Original>
+            <Original>&lt;t color='#FFFFFF'&gt;[SQUAD] Patrol&lt;/t&gt;</Original>
             <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Patrol&lt;/t&gt;</English>
             <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Patrouille&lt;/t&gt;</French>
+            <Spanish>&lt;t color='#FFFFFF'&gt;[ESCUADRA] Patrulla&lt;/t&gt;</Spanish>
+            <Italian>&lt;t color='#FFFFFF'&gt;[SQUADRA] Pattuglia&lt;/t&gt;</Italian>
+            <German>&lt;t color='#FFFFFF'&gt;[TRUPP] Patrouille&lt;/t&gt;</German>
+            <Polish>&lt;t color='#FFFFFF'&gt;[DRUŻYNA] Patrol&lt;/t&gt;</Polish>
+            <Russian>&lt;t color='#FFFFFF'&gt;[ОТРЯД] Патруль&lt;/t&gt;</Russian>
+            <Turkish>&lt;t color='#FFFFFF'&gt;[MANGA] Devriye&lt;/t&gt;</Turkish>
+            <Japanese>&lt;t color='#FFFFFF'&gt;[分隊] パトロール&lt;/t&gt;</Japanese>
+            <Korean>&lt;t color='#FFFFFF'&gt;[분대] 순찰&lt;/t&gt;</Korean>
+            <Chinese>&lt;t color='#FFFFFF'&gt;[小队] 巡逻&lt;/t&gt;</Chinese>
         </Key>
         <Key ID="STR_LL_RoeAction_Vigilance">
-            <Original>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Vigilance&lt;/t&gt;</Original>
+            <Original>&lt;t color='#FFFFFF'&gt;[SQUAD] Vigilance&lt;/t&gt;</Original>
             <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Vigilance&lt;/t&gt;</English>
             <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Vigilance&lt;/t&gt;</French>
+            <Spanish>&lt;t color='#FFFFFF'&gt;[ESCUADRA] Vigilancia&lt;/t&gt;</Spanish>
+            <Italian>&lt;t color='#FFFFFF'&gt;[SQUADRA] Vigilanza&lt;/t&gt;</Italian>
+            <German>&lt;t color='#FFFFFF'&gt;[TRUPP] Wachsamkeit&lt;/t&gt;</German>
+            <Polish>&lt;t color='#FFFFFF'&gt;[DRUŻYNA] Czujność&lt;/t&gt;</Polish>
+            <Russian>&lt;t color='#FFFFFF'&gt;[ОТРЯД] Бдительность&lt;/t&gt;</Russian>
+            <Turkish>&lt;t color='#FFFFFF'&gt;[MANGA] Teyakkuz&lt;/t&gt;</Turkish>
+            <Japanese>&lt;t color='#FFFFFF'&gt;[分隊] 警戒&lt;/t&gt;</Japanese>
+            <Korean>&lt;t color='#FFFFFF'&gt;[분대] 경계&lt;/t&gt;</Korean>
+            <Chinese>&lt;t color='#FFFFFF'&gt;[小队] 警戒&lt;/t&gt;</Chinese>
         </Key>
         <Key ID="STR_LL_RoeAction_Assault">
-            <Original>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Assaut&lt;/t&gt;</Original>
+            <Original>&lt;t color='#FFFFFF'&gt;[SQUAD] Assault&lt;/t&gt;</Original>
             <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Assault&lt;/t&gt;</English>
             <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Assaut&lt;/t&gt;</French>
+            <Spanish>&lt;t color='#FFFFFF'&gt;[ESCUADRA] Asalto&lt;/t&gt;</Spanish>
+            <Italian>&lt;t color='#FFFFFF'&gt;[SQUADRA] Assalto&lt;/t&gt;</Italian>
+            <German>&lt;t color='#FFFFFF'&gt;[TRUPP] Angriff&lt;/t&gt;</German>
+            <Polish>&lt;t color='#FFFFFF'&gt;[DRUŻYNA] Szturm&lt;/t&gt;</Polish>
+            <Russian>&lt;t color='#FFFFFF'&gt;[ОТРЯД] Штурм&lt;/t&gt;</Russian>
+            <Turkish>&lt;t color='#FFFFFF'&gt;[MANGA] Saldırı&lt;/t&gt;</Turkish>
+            <Japanese>&lt;t color='#FFFFFF'&gt;[分隊] 強襲&lt;/t&gt;</Japanese>
+            <Korean>&lt;t color='#FFFFFF'&gt;[분대] 강습&lt;/t&gt;</Korean>
+            <Chinese>&lt;t color='#FFFFFF'&gt;[小队] 突击&lt;/t&gt;</Chinese>
         </Key>
         <Key ID="STR_LL_RoeAction_Charge">
-            <Original>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Charge&lt;/t&gt;</Original>
+            <Original>&lt;t color='#FFFFFF'&gt;[SQUAD] Charge&lt;/t&gt;</Original>
             <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Charge&lt;/t&gt;</English>
             <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Charge&lt;/t&gt;</French>
+            <Spanish>&lt;t color='#FFFFFF'&gt;[ESCUADRA] Carga&lt;/t&gt;</Spanish>
+            <Italian>&lt;t color='#FFFFFF'&gt;[SQUADRA] Carica&lt;/t&gt;</Italian>
+            <German>&lt;t color='#FFFFFF'&gt;[TRUPP] Ansturm&lt;/t&gt;</German>
+            <Polish>&lt;t color='#FFFFFF'&gt;[DRUŻYNA] Szarża&lt;/t&gt;</Polish>
+            <Russian>&lt;t color='#FFFFFF'&gt;[ОТРЯД] Атака&lt;/t&gt;</Russian>
+            <Turkish>&lt;t color='#FFFFFF'&gt;[MANGA] Hücum&lt;/t&gt;</Turkish>
+            <Japanese>&lt;t color='#FFFFFF'&gt;[分隊] 突撃&lt;/t&gt;</Japanese>
+            <Korean>&lt;t color='#FFFFFF'&gt;[분대] 돌격&lt;/t&gt;</Korean>
+            <Chinese>&lt;t color='#FFFFFF'&gt;[小队] 冲锋&lt;/t&gt;</Chinese>
         </Key>
         <Key ID="STR_LL_RoeAction_Defense">
-            <Original>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Défense&lt;/t&gt;</Original>
+            <Original>&lt;t color='#FFFFFF'&gt;[SQUAD] Defense&lt;/t&gt;</Original>
             <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Defense&lt;/t&gt;</English>
             <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Défense&lt;/t&gt;</French>
+            <Spanish>&lt;t color='#FFFFFF'&gt;[ESCUADRA] Defensa&lt;/t&gt;</Spanish>
+            <Italian>&lt;t color='#FFFFFF'&gt;[SQUADRA] Difesa&lt;/t&gt;</Italian>
+            <German>&lt;t color='#FFFFFF'&gt;[TRUPP] Verteidigung&lt;/t&gt;</German>
+            <Polish>&lt;t color='#FFFFFF'&gt;[DRUŻYNA] Obrona&lt;/t&gt;</Polish>
+            <Russian>&lt;t color='#FFFFFF'&gt;[ОТРЯД] Оборона&lt;/t&gt;</Russian>
+            <Turkish>&lt;t color='#FFFFFF'&gt;[MANGA] Savunma&lt;/t&gt;</Turkish>
+            <Japanese>&lt;t color='#FFFFFF'&gt;[分隊] 防衛&lt;/t&gt;</Japanese>
+            <Korean>&lt;t color='#FFFFFF'&gt;[분대] 방어&lt;/t&gt;</Korean>
+            <Chinese>&lt;t color='#FFFFFF'&gt;[小队] 防御&lt;/t&gt;</Chinese>
         </Key>
         <Key ID="STR_LL_RoeAction_Reset">
-            <Original>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Reset&lt;/t&gt;</Original>
+            <Original>&lt;t color='#FFFFFF'&gt;[SQUAD] Reset&lt;/t&gt;</Original>
             <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Reset&lt;/t&gt;</English>
             <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Reset&lt;/t&gt;</French>
+            <Spanish>&lt;t color='#FFFFFF'&gt;[ESCUADRA] Reiniciar&lt;/t&gt;</Spanish>
+            <Italian>&lt;t color='#FFFFFF'&gt;[SQUADRA] Ripristina&lt;/t&gt;</Italian>
+            <German>&lt;t color='#FFFFFF'&gt;[TRUPP] Zurücksetzen&lt;/t&gt;</German>
+            <Polish>&lt;t color='#FFFFFF'&gt;[DRUŻYNA] Reset&lt;/t&gt;</Polish>
+            <Russian>&lt;t color='#FFFFFF'&gt;[ОТРЯД] Сброс&lt;/t&gt;</Russian>
+            <Turkish>&lt;t color='#FFFFFF'&gt;[MANGA] Sıfırla&lt;/t&gt;</Turkish>
+            <Japanese>&lt;t color='#FFFFFF'&gt;[分隊] リセット&lt;/t&gt;</Japanese>
+            <Korean>&lt;t color='#FFFFFF'&gt;[분대] 초기화&lt;/t&gt;</Korean>
+            <Chinese>&lt;t color='#FFFFFF'&gt;[小队] 重置&lt;/t&gt;</Chinese>
         </Key>
         <Key ID="STR_LL_SearchAction_Title">
-            <Original>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Fouille&lt;/t&gt;</Original>
+            <Original>&lt;t color='#FFFFFF'&gt;[SQUAD] Search&lt;/t&gt;</Original>
             <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Search&lt;/t&gt;</English>
             <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Fouille&lt;/t&gt;</French>
+            <Spanish>&lt;t color='#FFFFFF'&gt;[ESCUADRA] Búsqueda&lt;/t&gt;</Spanish>
+            <Italian>&lt;t color='#FFFFFF'&gt;[SQUADRA] Ricerca&lt;/t&gt;</Italian>
+            <German>&lt;t color='#FFFFFF'&gt;[TRUPP] Durchsuchen&lt;/t&gt;</German>
+            <Polish>&lt;t color='#FFFFFF'&gt;[DRUŻYNA] Przeszukanie&lt;/t&gt;</Polish>
+            <Russian>&lt;t color='#FFFFFF'&gt;[ОТРЯД] Обыск&lt;/t&gt;</Russian>
+            <Turkish>&lt;t color='#FFFFFF'&gt;[MANGA] Arama&lt;/t&gt;</Turkish>
+            <Japanese>&lt;t color='#FFFFFF'&gt;[分隊] 捜索&lt;/t&gt;</Japanese>
+            <Korean>&lt;t color='#FFFFFF'&gt;[분대] 수색&lt;/t&gt;</Korean>
+            <Chinese>&lt;t color='#FFFFFF'&gt;[小队] 搜索&lt;/t&gt;</Chinese>
         </Key>
         <Key ID="STR_LL_SearchAction_NoBuildings">
-            <Original>QG : Aucun bâtiment fouillable à proximité.</Original>
-            <English>HQ: No searchable buildings nearby.</English>
-            <French>QG : Aucun bâtiment fouillable à proximité.</French>
+            <Original>No searchable buildings nearby.</Original>
+            <English>No searchable buildings nearby.</English>
+            <French>Aucun bâtiment fouillable à proximité.</French>
+            <Spanish>No hay edificios para buscar cerca.</Spanish>
+            <Italian>Nessun edificio ispezionabile nelle vicinanze.</Italian>
+            <German>Keine durchsuchbaren Gebäude in der Nähe.</German>
+            <Polish>Brak budynków do przeszukania w pobliżu.</Polish>
+            <Russian>Поблизости нет зданий для обыска.</Russian>
+            <Turkish>Yakında aranabilir bina yok.</Turkish>
+            <Japanese>近くに捜索可能な建物はありません。</Japanese>
+            <Korean>근처에 수색 가능한 건물이 없습니다.</Korean>
+            <Chinese>附近没有可搜索的建筑物。</Chinese>
         </Key>
         <Key ID="STR_LL_SearchAction_NoAI">
-            <Original>QG : Pas d'IA d'infanterie dans l'escouade.</Original>
-            <English>HQ: No infantry AI in the squad.</English>
-            <French>QG : Pas d'IA d'infanterie dans l'escouade.</French>
+            <Original>No infantry AI in the squad.</Original>
+            <English>No infantry AI in the squad.</English>
+            <French>Pas d'IA d'infanterie dans l'escouade.</French>
+            <Spanish>No hay IA de infantería en la escuadra.</Spanish>
+            <Italian>Nessuna IA di fanteria nella squadra.</Italian>
+            <German>Keine Infanterie-KI im Trupp.</German>
+            <Polish>Brak sztucznej inteligencji piechoty w drużynie.</Polish>
+            <Russian>В отряде нет ботов-пехотинцев.</Russian>
+            <Turkish>Mangada piyade yapay zekası yok.</Turkish>
+            <Japanese>分隊に歩兵AIがいません。</Japanese>
+            <Korean>분대에 보병 AI가 없습니다.</Korean>
+            <Chinese>小队中没有步兵 AI。</Chinese>
         </Key>
         <Key ID="STR_LL_SearchAction_Secured">
-            <Original>QG : Bâtiments sécurisés. L'escouade se regroupe.</Original>
-            <English>HQ: Buildings secured. The squad is regrouping.</English>
-            <French>QG : Bâtiments sécurisés. L'escouade se regroupe.</French>
+            <Original>Buildings secured. The squad is regrouping.</Original>
+            <English>Buildings secured. The squad is regrouping.</English>
+            <French>Bâtiments sécurisés. L'escouade se regroupe.</French>
+            <Spanish>Edificios asegurados. La escuadra se está reagrupando.</Spanish>
+            <Italian>Edifici messi in sicurezza. La squadra si sta riorganizzando.</Italian>
+            <German>Gebäude gesichert. Der Trupp sammelt sich.</German>
+            <Polish>Budynki zabezpieczone. Drużyna przegrupowuje się.</Polish>
+            <Russian>Здания зачищены. Отряд перегруппировывается.</Russian>
+            <Turkish>Binalar güvence altına alındı. Manga toparlanıyor.</Turkish>
+            <Japanese>建物は確保されました。分隊は再編成中です。</Japanese>
+            <Korean>건물 확보 완료. 분대가 재집결 중입니다.</Korean>
+            <Chinese>建筑物已安全。小队正在重新集结。</Chinese>
         </Key>
         <Key ID="STR_LL_AssignLeader_Changed">
-            <Original>QG : Changement de commandement sur le terrain. Un officier humain a repris le lead.</Original>
-            <English>HQ: Field command change. A human officer has taken the lead.</English>
-            <French>QG : Changement de commandement sur le terrain. Un officier humain a repris le lead.</French>
+            <Original>Field command change. A human officer has taken the lead.</Original>
+            <English>Field command change. A human officer has taken the lead.</English>
+            <French>Changement de commandement sur le terrain. Un officier humain a repris le lead.</French>
+            <Spanish>Cambio de mando de campo. Un oficial humano ha tomado la iniciativa.</Spanish>
+            <Italian>Cambio di comando sul campo. Un ufficiale umano ha preso la guida.</Italian>
+            <German>Feldkommando wechselt. Ein menschlicher Offizier hat die Führung übernommen.</German>
+            <Polish>Zmiana dowództwa polowego. Ludzki oficer przejął dowodzenie.</Polish>
+            <Russian>Смена полевого командования. Лидерство взял на себя человек.</Russian>
+            <Turkish>Saha komutası değişikliği. Bir insan subay liderliği devraldı.</Turkish>
+            <Japanese>野戦指揮の変更。人間の将校が指揮を執りました。</Japanese>
+            <Korean>야전 지휘 변경. 인간 장교가 지휘권을 인수했습니다.</Korean>
+            <Chinese>现场指挥权变更。一名人类军官接管了指挥权。</Chinese>
         </Key>
         <Key ID="STR_LL_Diary_Lore_Title">
             <Original>Lore</Original>
             <English>Lore</English>
             <French>Lore</French>
+            <Spanish>Lore</Spanish>
+            <Italian>Lore</Italian>
+            <German>Hintergrundgeschichte</German>
+            <Polish>Fabuła</Polish>
+            <Russian>Лор</Russian>
+            <Turkish>Hikaye</Turkish>
+            <Japanese>伝承</Japanese>
+            <Korean>배경 이야기</Korean>
+            <Chinese>背景故事</Chinese>
         </Key>
         <Key ID="STR_LL_Diary_Lore_Text">
-            <Original>Détails de l'histoire.</Original>
+            <Original>Story details.</Original>
             <English>Story details.</English>
             <French>Détails de l'histoire.</French>
+            <Spanish>Detalles de la historia.</Spanish>
+            <Italian>Dettagli della storia.</Italian>
+            <German>Geschichtsdetails.</German>
+            <Polish>Szczegóły historii.</Polish>
+            <Russian>Подробности сюжета.</Russian>
+            <Turkish>Hikaye detayları.</Turkish>
+            <Japanese>ストーリーの詳細。</Japanese>
+            <Korean>이야기 세부 정보.</Korean>
+            <Chinese>故事细节。</Chinese>
         </Key>
         <Key ID="STR_LL_Diary_Factions_Title">
             <Original>Factions</Original>
             <English>Factions</English>
             <French>Factions</French>
+            <Spanish>Facciones</Spanish>
+            <Italian>Fazioni</Italian>
+            <German>Fraktionen</German>
+            <Polish>Frakcje</Polish>
+            <Russian>Фракции</Russian>
+            <Turkish>Gruplar</Turkish>
+            <Japanese>派閥</Japanese>
+            <Korean>세력</Korean>
+            <Chinese>派系</Chinese>
         </Key>
         <Key ID="STR_LL_Diary_Factions_Text">
-            <Original>Détails des factions.</Original>
+            <Original>Factions details.</Original>
             <English>Factions details.</English>
             <French>Détails des factions.</French>
+            <Spanish>Detalles de las facciones.</Spanish>
+            <Italian>Dettagli delle fazioni.</Italian>
+            <German>Fraktionsdetails.</German>
+            <Polish>Szczegóły frakcji.</Polish>
+            <Russian>Подробности о фракциях.</Russian>
+            <Turkish>Grup detayları.</Turkish>
+            <Japanese>派閥の詳細。</Japanese>
+            <Korean>세력 세부 정보.</Korean>
+            <Chinese>派系细节。</Chinese>
         </Key>
         <Key ID="STR_LL_Diary_Context_Title">
-            <Original>Contexte</Original>
+            <Original>Context</Original>
             <English>Context</English>
             <French>Contexte</French>
+            <Spanish>Contexto</Spanish>
+            <Italian>Contesto</Italian>
+            <German>Kontext</German>
+            <Polish>Kontekst</Polish>
+            <Russian>Контекст</Russian>
+            <Turkish>Bağlam</Turkish>
+            <Japanese>コンテキスト</Japanese>
+            <Korean>배경</Korean>
+            <Chinese>背景</Chinese>
         </Key>
         <Key ID="STR_LL_Diary_Context_Text">
-            <Original>Contexte de la mission.</Original>
+            <Original>Mission context.</Original>
             <English>Mission context.</English>
             <French>Contexte de la mission.</French>
+            <Spanish>Contexto de la misión.</Spanish>
+            <Italian>Contesto della missione.</Italian>
+            <German>Missionskontext.</German>
+            <Polish>Kontekst misji.</Polish>
+            <Russian>Контекст миссии.</Russian>
+            <Turkish>Görev bağlamı.</Turkish>
+            <Japanese>ミッションの背景。</Japanese>
+            <Korean>임무 배경.</Korean>
+            <Chinese>任务背景。</Chinese>
         </Key>
         <Key ID="STR_LL_Briefing_Title">
             <Original>Briefing</Original>
             <English>Briefing</English>
             <French>Briefing</French>
+            <Spanish>Sesión informativa</Spanish>
+            <Italian>Briefing</Italian>
+            <German>Briefing</German>
+            <Polish>Odprawa</Polish>
+            <Russian>Инструктаж</Russian>
+            <Turkish>Bilgilendirme</Turkish>
+            <Japanese>ブリーフィング</Japanese>
+            <Korean>브리핑</Korean>
+            <Chinese>简报</Chinese>
         </Key>
         <Key ID="STR_LL_Briefing_Text">
-            <Original>Instructions de mission.</Original>
+            <Original>Mission instructions.</Original>
             <English>Mission instructions.</English>
             <French>Instructions de mission.</French>
+            <Spanish>Instrucciones de la misión.</Spanish>
+            <Italian>Istruzioni della missione.</Italian>
+            <German>Missionsanweisungen.</German>
+            <Polish>Instrukcje misji.</Polish>
+            <Russian>Инструкции к миссии.</Russian>
+            <Turkish>Görev talimatları.</Turkish>
+            <Japanese>ミッションの指示。</Japanese>
+            <Korean>임무 지침.</Korean>
+            <Chinese>任务指示。</Chinese>
         </Key>
     </Package>
 </Project>

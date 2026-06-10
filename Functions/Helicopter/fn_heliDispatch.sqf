@@ -9,12 +9,12 @@ params [
 
 if (_type == "CAS" && { time < (missionNamespace getVariable ["TAG_CAS_Cooldown_Until", 0]) }) exitWith {
     private _rem = ceil ((missionNamespace getVariable ["TAG_CAS_Cooldown_Until", 0]) - time);
-    (format [localize "STR_LL_Heli_Dispatch_Cooldown", _rem]) remoteExec ["systemChat", _caller];
+    ["STR_LL_Heli_Dispatch_Cooldown", [_rem]] remoteExec ["LL_fnc_radioMessage", _caller];
     diag_log format ["[LL][DISPATCH] CAS refusé — cooldown %1s.", _rem];
 };
 
 if (_type == "VEHICULE" && { missionNamespace getVariable ["TAG_VehicleSupport_Delivered", false] }) exitWith {
-    (localize "STR_LL_Heli_Dispatch_VehicleAlready") remoteExec ["systemChat", _caller];
+    ["STR_LL_Heli_Dispatch_VehicleAlready"] remoteExec ["LL_fnc_radioMessage", _caller];
     diag_log "[LL][DISPATCH] VEHICULE refusé — déjà livré (usage unique).";
 };
 

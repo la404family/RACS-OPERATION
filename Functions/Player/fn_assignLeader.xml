@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Keys>
     <Key ID="STR_LL_AssignLeader_Changed">
-        <Original>QG : Changement de commandement sur le terrain. Un officier humain a repris le lead.</Original>
-        <English>HQ: Field command change. A human officer has taken the lead.</English>
-        <French>QG : Changement de commandement sur le terrain. Un officier humain a repris le lead.</French>
+        <Original>Field command change. A human officer has taken the lead.</Original>
+        <English>Field command change. A human officer has taken the lead.</English>
+        <French>Changement de commandement sur le terrain. Un officier humain a repris le lead.</French>
+        <Spanish>Cambio de mando de campo. Un oficial humano ha tomado la iniciativa.</Spanish>
+        <Italian>Cambio di comando sul campo. Un ufficiale umano ha preso la guida.</Italian>
+        <German>Feldkommando wechselt. Ein menschlicher Offizier hat die Führung übernommen.</German>
+        <Polish>Zmiana dowództwa polowego. Ludzki oficer przejął dowodzenie.</Polish>
+        <Russian>Смена полевого командования. Лидерство взял на себя человек.</Russian>
+        <Turkish>Saha komutası değişikliği. Bir insan subay liderliği devraldı.</Turkish>
+        <Japanese>野戦指揮の変更。人間の将校が指揮を執りました。</Japanese>
+        <Korean>야전 지휘 변경. 인간 장교가 지휘권을 인수했습니다.</Korean>
+        <Chinese>现场指挥权变更。一名人类军官接管了指挥权。</Chinese>
     </Key>
 </Keys>

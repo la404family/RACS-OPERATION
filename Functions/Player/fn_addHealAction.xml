@@ -7,17 +7,17 @@
     </Key>
     <Key ID="STR_LL_HealAction_NoKits">
         <Original>QG : Négatif ! Personne ne possède de kit de soin.</Original>
-        <English>HQ: Negative! Nobody has a medkit.</English>
+        <English>Negative! Nobody has a medkit.</English>
         <French>QG : Négatif ! Personne ne possède de kit de soin.</French>
     </Key>
     <Key ID="STR_LL_HealAction_NoWounded">
         <Original>QG : Négatif ! Aucun blessé nécessitant des soins.</Original>
-        <English>HQ: Negative! No wounded requiring healing.</English>
+        <English>No wounded requiring healing.</English>
         <French>QG : Négatif ! Aucun blessé nécessitant des soins.</French>
     </Key>
     <Key ID="STR_LL_HealAction_Healing">
         <Original>QG : %1 homme(s) en cours de soins...</Original>
-        <English>HQ: %1 man(men) being healed...</English>
+        <English>... %1 man(men) being healed...</English>
         <French>QG : %1 homme(s) en cours de soins...</French>
     </Key>
 </Keys>
