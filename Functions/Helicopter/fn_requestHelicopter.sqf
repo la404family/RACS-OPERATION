@@ -1,5 +1,3 @@
-
-
 if (!isServer) exitWith {};
 
 params [
@@ -17,4 +15,9 @@ if (_supportType == "VEHICULE") then {
     };
 };
 
-[_supportType, _targetPos, _caller, 1] call LL_fnc_heliDispatch;
+private _priority = switch (_supportType) do {
+    case "EMBARQUEMENT": { 2 };
+    default              { 1 };
+};
+
+[_supportType, _targetPos, _caller, _priority] call LL_fnc_heliDispatch;

@@ -7,12 +7,12 @@ if (!hasInterface) exitWith {};
         _unit setVariable ["LL_Rally_Action_Added", true];
 
         _unit addAction [
-            "<t color='#FFFFFF'>Regroupement IA</t>",
+            "<t color='#FFFFFF'>[ESCOUADE] Regroupement</t>",
             {
                 params ["_target", "_caller", "_actionId"];
                 [_caller] call LL_fnc_forceRally;
             },
-            nil, 1.5, false, true, "", "alive _target && leader (group _target) isEqualTo _target && ({!isPlayer _x && alive _x && vehicle _x == _x} count units group _target) > 0"
+            nil, 6.5, false, true, "", "alive _target && leader (group _target) isEqualTo _target && ({!isPlayer _x && alive _x && vehicle _x == _x} count units group _target) > 0"
         ];
     };
 

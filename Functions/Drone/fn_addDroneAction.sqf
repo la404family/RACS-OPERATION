@@ -7,7 +7,7 @@ if (!hasInterface) exitWith {};
         _unit setVariable ["LL_Drone_Action_Added", true];
 
         _unit addAction [
-            "<t color='#FFFFFF'>Demander un drone de surveillance</t>",
+            "<t color='#FFFFFF'>[DRONE] Surveillance</t>",
             {
                 params ["_target", "_caller", "_actionId"];
                 if (missionNamespace getVariable ["LL_Drone_Active", false]) exitWith {
@@ -27,7 +27,7 @@ if (!hasInterface) exitWith {};
                     systemChat format ["QG : Drone en route vers la position [%1, %2].", round (_pos select 0), round (_pos select 1)];
                 }];
             },
-            nil, 3.5, false, true, "", "alive _target && (leader (group _target) isEqualTo _target || _target getVariable ['LL_Spectating', false])"
+            nil, 8.0, false, true, "", "alive _target && (leader (group _target) isEqualTo _target || _target getVariable ['LL_Spectating', false])"
         ];
     };
 

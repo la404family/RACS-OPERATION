@@ -39,46 +39,45 @@ if (!hasInterface) exitWith {};
         missionNamespace setVariable ["LL_fnc_requestWithMap", _fnc_requestWithMap];
 
         _unit addAction [
-            "<t color='#FFFFFF'>Demander une livraison (Heli)</t>",
+            "<t color='#FFFFFF'>[HELI] Munitions</t>",
             {
                 ["LIVRAISON"] call (missionNamespace getVariable ["LL_fnc_requestWithMap", {}]);
             },
-            nil, 3.3, false, true, "", "alive _target && (leader (group _target) isEqualTo _target || _target getVariable ['LL_Spectating', false])"
+            nil, 7.9, false, true, "", "alive _target && (leader (group _target) isEqualTo _target || _target getVariable ['LL_Spectating', false])"
         ];
 
         _unit addAction [
-            "<t color='#FFFFFF'>Demander un véhicule (Heli)</t>",
+            "<t color='#FFFFFF'>[HELI] Véhicule</t>",
             {
                 ["VEHICULE"] call (missionNamespace getVariable ["LL_fnc_requestWithMap", {}]);
             },
-            nil, 3.1, false, true, "", "alive _target && (leader (group _target) isEqualTo _target || _target getVariable ['LL_Spectating', false])"
+            nil, 7.8, false, true, "", "alive _target && (leader (group _target) isEqualTo _target || _target getVariable ['LL_Spectating', false])"
         ];
 
         _unit addAction [
-            "<t color='#FFFFFF'>Demander un appui aérien CAS</t>",
+            "<t color='#FFFFFF'>[HELI] Appui CAS</t>",
             {
                 ["CAS"] call (missionNamespace getVariable ["LL_fnc_requestWithMap", {}]);
             },
-            nil, 2.9, false, true, "", "alive _target && (leader (group _target) isEqualTo _target || _target getVariable ['LL_Spectating', false])"
+            nil, 7.7, false, true, "", "alive _target && (leader (group _target) isEqualTo _target || _target getVariable ['LL_Spectating', false])"
         ];
 
         _unit addAction [
-            "<t color='#FFFFFF'>Demander des renforts (Heli)</t>",
+            "<t color='#FFFFFF'>[HELI] Renforts</t>",
             {
                 ["DEBARQUEMENT"] call (missionNamespace getVariable ["LL_fnc_requestWithMap", {}]);
             },
-            nil, 2.7, false, true, "", "alive _target && (leader (group _target) isEqualTo _target || _target getVariable ['LL_Spectating', false])"
+            nil, 7.6, false, true, "", "alive _target && (leader (group _target) isEqualTo _target || _target getVariable ['LL_Spectating', false])"
         ];
 
         _unit addAction [
-            "<t color='#FFFFFF'>Demander une extraction (Heli)</t>",
+            "<t color='#FFFFFF'>[HELI] Extraction</t>",
             {
                 ["EMBARQUEMENT"] call (missionNamespace getVariable ["LL_fnc_requestWithMap", {}]);
             },
-            nil, 2.5, false, true, "", "alive _target && (leader (group _target) isEqualTo _target || _target getVariable ['LL_Spectating', false])"
+            nil, 7.5, false, true, "", "alive _target && (leader (group _target) isEqualTo _target || _target getVariable ['LL_Spectating', false])"
         ];
 
-        systemChat "[DEBUG] Actions hélicoptère ajoutées avec succès.";
     };
 
     private _lastPlayer = objNull;

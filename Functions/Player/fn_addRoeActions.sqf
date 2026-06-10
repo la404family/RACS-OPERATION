@@ -46,55 +46,55 @@ private _fnc_addRoeActions = {
     private _cond = "alive _target && leader group _target == _target && ({!isPlayer _x && alive _x && vehicle _x == _x} count units group _target > 0)";
 
     _unit addAction [
-        "<t color='#00FF00'>[INFILTRATION] Mode Fantôme</t>",
+        "<t color='#FFFFFF'>[ESCOUADE] Infiltration</t>",
         { ([group (_this select 1)] + (_this select 3)) call LL_fnc_applyRoE; },
         ["BLUE", "STEALTH", "LIMITED", "STAG COLUMN", "MIDDLE", false, "STEALTH"],
+        7.4, false, true, "", _cond
+    ];
+
+    _unit addAction [
+        "<t color='#FFFFFF'>[ESCOUADE] Patrouille</t>",
+        { ([group (_this select 1)] + (_this select 3)) call LL_fnc_applyRoE; },
+        ["GREEN", "SAFE", "NORMAL", "COLUMN", "AUTO", false, "PATROL"],
+        7.3, false, true, "", _cond
+    ];
+
+    _unit addAction [
+        "<t color='#FFFFFF'>[ESCOUADE] Vigilance</t>",
+        { ([group (_this select 1)] + (_this select 3)) call LL_fnc_applyRoE; },
+        ["YELLOW", "AWARE", "NORMAL", "WEDGE", "AUTO", false, "VIGILANT"],
+        7.2, false, true, "", _cond
+    ];
+
+    _unit addAction [
+        "<t color='#FFFFFF'>[ESCOUADE] Assaut</t>",
+        { ([group (_this select 1)] + (_this select 3)) call LL_fnc_applyRoE; },
+        ["RED", "COMBAT", "NORMAL", "WEDGE", "AUTO", false, "ASSAULT"],
+        7.1, false, true, "", _cond
+    ];
+
+    _unit addAction [
+        "<t color='#FFFFFF'>[ESCOUADE] Charge</t>",
+        { ([group (_this select 1)] + (_this select 3)) call LL_fnc_applyRoE; },
+        ["RED", "COMBAT", "FULL", "VEE", "UP", true, "CHARGE"],
         7.0, false, true, "", _cond
     ];
 
     _unit addAction [
-        "<t color='#FFFFFF'>[PATROUILLE] Déplacement discret</t>",
-        { ([group (_this select 1)] + (_this select 3)) call LL_fnc_applyRoE; },
-        ["GREEN", "SAFE", "NORMAL", "COLUMN", "AUTO", false, "PATROL"],
-        6.9, false, true, "", _cond
-    ];
-
-    _unit addAction [
-        "<t color='#FFD700'>[VIGILANCE] Prêt au combat</t>",
-        { ([group (_this select 1)] + (_this select 3)) call LL_fnc_applyRoE; },
-        ["YELLOW", "AWARE", "NORMAL", "WEDGE", "AUTO", false, "VIGILANT"],
-        6.8, false, true, "", _cond
-    ];
-
-    _unit addAction [
-        "<t color='#FF8800'>[ASSAUT] Progression tactique</t>",
-        { ([group (_this select 1)] + (_this select 3)) call LL_fnc_applyRoE; },
-        ["RED", "COMBAT", "NORMAL", "WEDGE", "AUTO", false, "ASSAULT"],
-        6.7, false, true, "", _cond
-    ];
-
-    _unit addAction [
-        "<t color='#FF0000'>[CHARGE] Assaut total</t>",
-        { ([group (_this select 1)] + (_this select 3)) call LL_fnc_applyRoE; },
-        ["RED", "COMBAT", "FULL", "VEE", "UP", true, "CHARGE"],
-        6.6, false, true, "", _cond
-    ];
-
-    _unit addAction [
-        "<t color='#4488FF'>[DÉFENSE] Tenir la position</t>",
+        "<t color='#FFFFFF'>[ESCOUADE] Défense</t>",
         { 
             ([group (_this select 1)] + (_this select 3)) call LL_fnc_applyRoE;
             { if (!isPlayer _x && alive _x) then { _x doWatch (_x getRelPos [30, random 360]); }; } forEach units group (_this select 1);
         },
         ["YELLOW", "COMBAT", "LIMITED", "DIAMOND", "MIDDLE", false, "DEFEND"],
-        6.5, false, true, "", _cond
+        6.9, false, true, "", _cond
     ];
 
     _unit addAction [
-        "<t color='#AAAAAA'>[RESET] Retour aux ordres</t>",
+        "<t color='#FFFFFF'>[ESCOUADE] Reset</t>",
         { ([group (_this select 1)] + (_this select 3)) call LL_fnc_applyRoE; },
         ["YELLOW", "AWARE", "NORMAL", "WEDGE", "AUTO", false, "VIGILANT"],
-        6.4, false, true, "", _cond
+        6.8, false, true, "", _cond
     ];
 };
 

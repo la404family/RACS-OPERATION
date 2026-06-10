@@ -613,9 +613,9 @@ private _fnExecDeploy = {
             };
             private _face = selectRandom _faces;
             private _speaker = switch (_faceType) do {
-                case "White": { "Male01FRE" };
-                case "Black": { "Male02FRE" };
-                default       { "Male03FRE" };
+                case "White": { selectRandom ["Male01ENG", "Male02ENG", "Male03ENG", "Male04ENG"] };
+                case "Black": { selectRandom ["Male05ENG", "Male06ENG", "Male07ENG"] };
+                default { selectRandom ["Male08ENG", "Male09ENG", "Male10ENG", "Male11ENG", "Male12ENG"] };
             };
             private _pitch = 0.90 + random 0.20;
 

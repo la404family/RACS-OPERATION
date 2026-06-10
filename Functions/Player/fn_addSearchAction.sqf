@@ -23,7 +23,7 @@ private _fnc_addSearchAction = {
     _unit setVariable ["LL_Action_Search_Added", true];
 
     _unit addAction [
-        "<t color='#FFD700'>Fouiller les bâtiments proches</t>",
+        "<t color='#FFFFFF'>[ESCOUADE] Fouille</t>",
         {
             params ["_target", "_caller", "_actionId", "_arguments"];
 
@@ -185,7 +185,7 @@ private _fnc_addSearchAction = {
             };
         },
         [],
-        5.3,
+        6.7,
         false,
         true,
         "",

@@ -8,7 +8,7 @@ if (!hasInterface) exitWith {};
         _unit setVariable ["LL_Action_Heal_Added", true];
 
         _unit addAction [
-            "<t color='#00FF00'>Soin Automatique IA</t>",
+            "<t color='#FFFFFF'>[ESCOUADE] Soins</t>",
             {
                 params ["_target", "_caller"];
 
@@ -22,9 +22,9 @@ if (!hasInterface) exitWith {};
 
                 if (_healers isEqualTo []) exitWith {
                     if (_aiUnits isNotEqualTo []) then {
-                        systemChat "QG : Négatif ! Aucune IA ne possède de kit de soin.";
+                        systemChat "QG : Négatif ! Personne ne possède de kit de soin.";
                     } else {
-                        systemChat "QG : Négatif ! Aucune IA blessée nécessitant des soins.";
+                        systemChat "QG : Négatif ! Aucun blessé nécessitant des soins.";
                     };
                 };
 
@@ -66,10 +66,10 @@ if (!hasInterface) exitWith {};
                     };
                 } forEach _healers;
 
-                systemChat format ["QG : %1 IA en cours d'auto-soin...", count _healers];
+                systemChat format ["QG : %1 homme(s) en cours de soins...", count _healers];
             },
             [],
-            5.4,
+            6.6,
             false,
             true,
             "",

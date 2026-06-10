@@ -85,21 +85,42 @@ Toutes les fonctions sont pré-compilées par le moteur Arma 3 au démarrage de 
     *   **Fonctionnement :** Convertit de manière transparente et aléatoire des civils éloignés (300-450m) en insurgés hostiles (OPFOR). Utilise un changement de camp invisible (`joinSilent`) pour que le civil conserve exactement son modèle 3D, ses vêtements civils et sa voix UVO. Pioche ensuite aléatoirement un sac et une arme dans la banque `MISSION_BanditLoadouts` avant de lancer un ordre d'assaut (SAD) sur l'escouade du joueur.
 
 ### Hélicoptère (`Functions\Helicopter\`)
+
+Le système hélicoptère repose sur un **unique UH-60L** (`CUP_I_UH60L_FFV_RACS`) actif sur la carte à tout moment. Jamais deux hélicoptères simultanément.
+
+#### Système de Priorités
+
+| Priorité | Missions | Peut interrompre |
+|---|---|---|
+| **3** (max) | Tâches scénario (otage libéré, etc.) | Tout — interruption violente et immédiate |
+| **2** | Extraction (`EMBARQUEMENT`) | CAS, Livraison, Véhicule, Débarquement |
+| **1** | CAS, Livraison, Véhicule, Débarquement | Rien — doit attendre la fin de la mission en cours |
+
+- **Priorité supérieure → interruption** : Le joueur et l'escouade reçoivent un message d'annulation de la mission en cours + confirmation de la nouvelle.
+- **Priorité égale ou inférieure → refus** : Le joueur reçoit un message explicatif indiquant la raison du refus et la mission en cours.
+- **Tâches du scénario (task)** : S'appellent directement via `["EMBARQUEMENT", _pos, _caller, 3] call LL_fnc_heliDispatch;` avec priorité 3.
+
+#### Fichiers
+
 *   **`fn_addHelicopterActions.sqf` (`LL_fnc_addHelicopterActions`)**
-    *   **Rôle :** Client uniquement. Ajoute un menu d'actions au chef d'escouade permettant de demander un appui aérien (CAS), un largage de logistique/véhicule, ou des renforts/extraction. Le ciblage se fait via clic sur la carte (`MapSingleClick`).
+    *   **Rôle :** Client uniquement. Ajoute 5 actions molette blanches au chef d'escouade : Livraison, Véhicule, CAS, Renforts, Extraction. Au clic, ouvre la carte (`MapSingleClick`) pour sélectionner la zone cible. Utilise le même pattern que `fn_addDroneAction.sqf` (boucle de détection `player`, réapplication automatique après respawn/switch).
+*   **`fn_addResupplyAction.sqf` (`LL_fnc_addResupplyAction`)**
+    *   **Rôle :** Client uniquement. Ajoute une action molette dorée sur la caisse de munitions livrée. Le leader ordonne aux IA de venir se réapprovisionner un par un avec animation immersive (rechargement moteur natif). Recharge armes principales (8 mags), armes de poing (4), secondaires (3), grenades (3), fumigènes (2), soins (3). Réutilisable tant que la caisse existe.
 *   **`fn_requestHelicopter.sqf` (`LL_fnc_requestHelicopter`)**
-    *   **Rôle :** Serveur. Point d'entrée pour relayer les requêtes de joueurs avec la priorité standard au répartiteur central.
+    *   **Rôle :** Serveur. Point d'entrée des requêtes joueurs. Assigne automatiquement la priorité selon le type (Extraction = 2, reste = 1) puis relaye au dispatcher.
 *   **`fn_heliDispatch.sqf` (`LL_fnc_heliDispatch`)**
-    *   **Rôle :** Serveur. Dispatcher de demandes avec système de priorités strict. Les missions du scénario (ex: otage, priorité 2) interrompront de force et en vol toute tâche demandée par un joueur (priorité 1).
+    *   **Rôle :** Serveur. Dispatcher central avec système de priorités à 3 niveaux (voir tableau ci-dessus). Gère l'acceptation, le refus avec raison, et l'interruption en vol des missions. Vérifie le cooldown CAS (300s) et l'unicité de la livraison véhicule. Tous les messages sont envoyés en français directement au joueur concerné.
 *   **`fn_heliManager.sqf` (`LL_fnc_heliManager`)**
-    *   **Rôle :** Serveur. Cerveau gérant le cycle de vie de l'unique hélicoptère UH-60L de la carte. Gère le vol, l'appui, l'insertion de l'IA (en parachute ou posé) et le largage en slingload. 
-    *   **Immersion totale :** L'hélicoptère ne disparaît (RTB) qu'au bord sud-ouest de la carte (`[0,0,0]`) et uniquement s'il se trouve à plus de 1200 mètres de tous les joueurs, empêchant tout "despawn" visible en jeu.
+    *   **Rôle :** Serveur. Cerveau gérant le cycle de vie complet de l'unique hélicoptère UH-60L. Gère le spawn, l'approche, l'exécution de mission (CAS en orbite, livraison en slingload, débarquement en parachute, extraction posée) et le RTB.
+    *   **Immersion totale :** L'hélicoptère ne disparaît (RTB) qu'en se dirigeant vers `[0,0,0]` et uniquement s'il se trouve à **plus de 1200 mètres** de tous les joueurs, empêchant tout "despawn" visible en jeu.
+    *   **Marqueurs carte :** Chaque mission crée un marqueur approprié (icône pour livraison/extraction, ellipse rouge pour CAS). Tous les marqueurs sont systématiquement nettoyés en fin de mission ou en cas d'interruption.
 
 ### Drone (`Functions\Drone\`)
 *   **`fn_addDroneAction.sqf` (`LL_fnc_addDroneAction`)**
     *   **Rôle :** Client uniquement. Ajoute une action molette blanche « Demander un drone de surveillance » au chef d'escouade. Au clic, ouvre la carte pour sélectionner la zone cible. Se réapplique automatiquement après un respawn ou un switch d'unité IA.
 *   **`fn_requestDrone.sqf` (`LL_fnc_requestDrone`)**
-    *   **Rôle :** Serveur uniquement. Spawne un MQ-9 Reaper (`CUP_B_USMC_DYN_MQ9`) à 350m d'altitude, le fait orbiter autour de la zone ciblée (LOITER, rayon 400m). Crée 3 marqueurs carte : zone de surveillance (ellipse bleue), icône aérienne fixe, et position temps-réel du drone (mise à jour toutes les 2s). Durée de mission : 5 minutes. Cooldown de 2 minutes après le retour à la base. Nettoyage automatique (drone + crew + marqueurs + groupe).
+    *   **Rôle :** Serveur uniquement. Spawne un MQ-9 Reaper (`CUP_B_USMC_DYN_MQ9`) à 350m d'altitude, le fait orbiter autour de la zone ciblée (LOITER, rayon 400m). Crée 3 marqueurs carte : zone de surveillance (ellipse bleue), icône aérienne fixe, et position temps-réel du drone. Durée de mission : 5 minutes. Cooldown de 2 minutes après le retour à la base. Nettoyage automatique (drone + crew + marqueurs + groupe).
+    *   **Marqueurs ennemis :** Utilise une HashMap indexée par `netId` pour garantir qu'il n'y a qu'**un seul marqueur rouge par ennemi vivant** (repositionné à chaque scan). Les marqueurs d'ennemis morts ou sortis de la zone sont automatiquement supprimés à chaque cycle.
 
 ---
 
