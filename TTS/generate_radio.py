@@ -25,46 +25,43 @@ def clean_text(text):
     
     return text.strip()
 
-def apply_radio_effect(audio, intensity=1.0, background=None):
-    # Filtrage radio militaire plus agressif
-    radio = audio.high_pass_filter(280).low_pass_filter(3100)
+def apply_radio_effect(audio, intensity=1.5):
+    # 1. Bandpass filter
+    # On laisse passer un peu plus de fréquences pour que la voix reste compréhensible
+    radio = audio.high_pass_filter(400).low_pass_filter(2500)
     
-    # Distorsion + saturation plus réaliste
-    radio = radio + (8 * intensity)
-    radio = radio.compress_dynamic_range(threshold=-20, ratio=6, attack=5, release=50)
+    # 2. Plus de voix et énorme saturation
+    # On monte très fort le gain pour saturer le signal de base
+    radio = radio.apply_gain(15)
     
-    # Bruit de fond + crépitement
-    noise = WhiteNoise().to_audio_segment(duration=len(radio)).high_pass_filter(1800) - (18 * intensity)
-    crackle = (WhiteNoise().to_audio_segment(duration=len(radio))
-               .high_pass_filter(2500)
-               .low_pass_filter(8000) - 12)
+    # 3. Saturation et compression extrêmes pour écraser le son (effet radio cassée)
+    radio = radio + (25 * intensity)
+    radio = radio.compress_dynamic_range(threshold=-30, ratio=20, attack=1, release=20)
     
-    final = radio.overlay(noise).overlay(crackle)
+    # 4. Bruit de fond (statique)
+    noise_dur = len(radio)
+    noise1 = WhiteNoise().to_audio_segment(duration=noise_dur).apply_gain(-15 * intensity)
+    noise2 = WhiteNoise().to_audio_segment(duration=noise_dur).high_pass_filter(2000).apply_gain(-12 * intensity)
     
-    # Squelch plus "militaire"
-    squelch_in = (WhiteNoise().to_audio_segment(45).apply_gain(-6) +
-                  Sine(1800).to_audio_segment(60).apply_gain(-9))
-    squelch_out = (Sine(1200).to_audio_segment(110).apply_gain(-10) +
-                   WhiteNoise().to_audio_segment(40).apply_gain(-7))
+    final = radio.overlay(noise1).overlay(noise2)
+    
+    # 5. Squelch d'entrée et de sortie
+    squelch_in = (WhiteNoise().to_audio_segment(80).apply_gain(-2) +
+                  Sine(1500).to_audio_segment(50).apply_gain(-5))
+    squelch_out = (Sine(1000).to_audio_segment(100).apply_gain(-6) +
+                   WhiteNoise().to_audio_segment(150).apply_gain(-3))
     
     final = squelch_in + final + squelch_out
     
-    # Ajout de bruit de fond contextuel (hélico, vent, moteur, etc.)
-    if background:
-        bg = background[:len(final)].apply_gain(-25)
-        final = final.overlay(bg)
-    
-    # Clipping léger (très caractéristique des vieilles radios militaires)
-    # pydub n'a pas de méthode .clip, on se contente du gain qui forcera le clip à l'export
-    final = final.apply_gain(3)
+    # 6. Écrêtage (clipping) final en forçant le gain
+    final = final.apply_gain(5)
     
     return final
 
 def generate_tts(text, output_path):
-    # Utilisation de edge-tts avec une voix d'homme sérieuse et réaliste
-    voice = "en-US-GuyNeural" # Voix masculine US très naturelle
-    # edge-tts est appelé en ligne de commande
-    cmd = ["edge-tts", "--voice", voice, "--rate", "+0%", "--text", text, "--write-media", output_path]
+    # Utilisation de edge-tts avec voix masculine normale
+    voice = "en-US-GuyNeural"
+    cmd = ["edge-tts", "--voice", voice, "--rate=+0%", "--text", text, "--write-media", output_path]
     subprocess.run(cmd, check=True)
 
 def main():
