@@ -1,16 +1,9 @@
-/*
-    File: fn_addSearchAction.sqf
-    Description: Action de recherche de bâtiments immersive et optimisée (CQB).
-    Logique refondue : bâtiments un par un + mouvement fluide + anti-stuck sans TP
-*/
-
 if (!hasInterface) exitWith {};
 
 if (isNil "LL_Search_BuildingsNearby") then {
     LL_Search_BuildingsNearby = false;
 };
 
-// Détection bâtiments (boucle optimisée)
 [] spawn {
     while {true} do {
         sleep 2;
@@ -40,13 +33,12 @@ private _fnc_addSearchAction = {
 
             if (_buildings isEqualTo []) exitWith { systemChat "QG : Aucun bâtiment fouillable à proximité."; };
 
-            // Ellipse jaune
             private _markerName = format ["LL_SearchArea_%1", time];
             private _marker = createMarkerLocal [_markerName, _center];
             _marker setMarkerShapeLocal "ELLIPSE";
             _marker setMarkerSizeLocal [60, 60];
             _marker setMarkerColorLocal "ColorYellow";
-            _marker setMarkerAlphaLocal 0.15; // Identique au drone
+            _marker setMarkerAlphaLocal 0.15; 
             _marker setMarkerBrushLocal "SolidBorder";
 
             private _squadAI = (units group _caller) select { !isPlayer _x && alive _x && vehicle _x == _x };
@@ -57,27 +49,23 @@ private _fnc_addSearchAction = {
 
             [_caller, "gestureAdvance"] remoteExec ["playActionNow", 0];
 
-            // === Lancement de la fouille CQB ===
             [_buildings, _squadAI, _caller, _marker] spawn {
                 params ["_buildings", "_squadAI", "_leader", "_marker"];
 
                 private _searchStart = time;
-                private _maxTime = 300; // 5 minutes max total
+                private _maxTime = 300; 
 
                 {
                     private _building = _x;
                     if (time - _searchStart > _maxTime) exitWith {};
 
-                    // Positions du bâtiment actuel
                     private _positions = _building buildingPos -1;
                     if (_positions isEqualTo []) then {continue};
 
-                    // Trier les positions du bas vers le haut
                     private _posData = _positions apply { [_x select 2, _x] };
                     _posData sort true;
                     _positions = _posData apply { _x select 1 };
 
-                    // Assigner chaque IA à une position distincte DÈS LE DÉBUT
                     {
                         private _unit = _x;
                         if (alive _unit) then {
@@ -92,15 +80,13 @@ private _fnc_addSearchAction = {
                             if (_positions isNotEqualTo []) then {
                                 _pos = _positions deleteAt 0;
                             } else {
-                                // S'il n'y a plus de place à l'intérieur, sécuriser le périmètre
+                                
                                 _pos = _building getRelPos [8 + random 7, random 360];
                             };
 
-                            // Double ordre pour forcer le pathfinding (recommandé dans Arma)
                             _unit doMove _pos;
                             _unit moveTo _pos;
 
-                            // Thread de vérification individuel
                             [_unit, _pos, _searchStart, _maxTime] spawn {
                                 params ["_unit", "_targetPos", "_searchStart", "_maxTime"];
                                 private _lastPos = getPosATL _unit;
@@ -111,7 +97,7 @@ private _fnc_addSearchAction = {
                                     private _dist = _unit distance _targetPos;
 
                                     if (_dist < 2.5) exitWith { 
-                                        // Arrivé à position : fouille visuelle
+                                        
                                         doStop _unit;
                                         _unit setUnitPos "UP";
                                         for "_k" from 1 to 3 do {
@@ -120,7 +106,6 @@ private _fnc_addSearchAction = {
                                         };
                                     };
 
-                                    // Si l'IA n'avance pas (bloquée)
                                     if (_unit distance _lastPos < 1 && _dist > 3) then {
                                         _stuckCount = _stuckCount + 1;
                                     } else {
@@ -128,7 +113,6 @@ private _fnc_addSearchAction = {
                                     };
                                     _lastPos = getPosATL _unit;
 
-                                    // Reset agressif du pathfinding sans aucune téléportation ni vélocité
                                     if (_stuckCount >= 4) then {
                                         doStop _unit;
                                         sleep 0.2;
@@ -138,21 +122,18 @@ private _fnc_addSearchAction = {
                                     };
                                 };
                             };
-                            sleep 0.5; // Très léger décalage pour ne pas engorger les portes
+                            sleep 0.5; 
                         };
                     } forEach _squadAI;
 
-                    // Attendre que la fouille du bâtiment soit terminée
                     private _buildingTimeout = time + 45;
                     waitUntil {
                         sleep 2;
-                        // On considère le bâtiment terminé si tout le monde est arrivé ou si le temps est écoulé
+                        
                         private _moving = {alive _x && !unitReady _x} count _squadAI;
                         _moving == 0 || time > _buildingTimeout || time - _searchStart > _maxTime
                     };
 
-                    // 3. Phase de redescente sécurisée (Code adaptatif anti-suicide)
-                    // On ordonne aux IA en hauteur de redescendre calmement avant de passer à la suite
                     private _needsDescent = false;
                     private _lowestPos = [];
                     private _allBPos = _building buildingPos -1;
@@ -160,7 +141,7 @@ private _fnc_addSearchAction = {
                     if (_allBPos isNotEqualTo []) then {
                         private _bPosData = _allBPos apply { [_x select 2, _x] };
                         _bPosData sort true;
-                        _lowestPos = (_bPosData select 0) select 1; // Position la plus basse
+                        _lowestPos = (_bPosData select 0) select 1; 
                     } else {
                         _lowestPos = getPosATL _building;
                     };
@@ -182,10 +163,9 @@ private _fnc_addSearchAction = {
                         };
                     };
 
-                    sleep 2; // Pause immersive avant de passer au prochain bâtiment ou de se regrouper
+                    sleep 2; 
                 } forEach _buildings;
 
-                // Fin de l'opération : Regroupement
                 deleteMarkerLocal _marker;
 
                 {
@@ -213,7 +193,6 @@ private _fnc_addSearchAction = {
     ];
 };
 
-// Gestion respawn/switch (isolé dans un thread autonome)
 [_fnc_addSearchAction] spawn {
     params ["_fnc_addSearchAction"];
     private _lastPlayer = objNull;

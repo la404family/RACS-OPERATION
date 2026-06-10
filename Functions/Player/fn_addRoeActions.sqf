@@ -1,12 +1,5 @@
-/*
-    File: fn_addRoeActions.sqf
-    Description: Ajoute des actions molette pour gérer les Règles d'Engagement (RoE) de l'escouade.
-    Locality: Client (Local au joueur)
-*/
-
 if (!hasInterface) exitWith {};
 
-// Déclaration de la fonction helper en variable globale pour être accessible par les actions
 if (isNil "LL_fnc_applyRoE") then {
     LL_fnc_applyRoE = {
         params ["_grp", "_combatMode", "_behaviour", "_speedMode", "_formation", "_unitPos", "_disableAutocombat", "_name"];
@@ -30,7 +23,6 @@ if (isNil "LL_fnc_applyRoE") then {
             };
         } forEach units _grp;
 
-        // Feedback joueur
         private _frName = switch (_name) do {
             case "STEALTH": {"Infiltration"};
             case "PATROL":  {"Patrouille"};
@@ -53,7 +45,6 @@ private _fnc_addRoeActions = {
 
     private _cond = "alive _target && leader group _target == _target && ({!isPlayer _x && alive _x && vehicle _x == _x} count units group _target > 0)";
 
-    // 1. INFILTRATION (Ghost)
     _unit addAction [
         "<t color='#00FF00'>[INFILTRATION] Mode Fantôme</t>",
         { ([group (_this select 1)] + (_this select 3)) call LL_fnc_applyRoE; },
@@ -61,7 +52,6 @@ private _fnc_addRoeActions = {
         7.0, false, true, "", _cond
     ];
 
-    // 2. PATROUILLE
     _unit addAction [
         "<t color='#FFFFFF'>[PATROUILLE] Déplacement discret</t>",
         { ([group (_this select 1)] + (_this select 3)) call LL_fnc_applyRoE; },
@@ -69,7 +59,6 @@ private _fnc_addRoeActions = {
         6.9, false, true, "", _cond
     ];
 
-    // 3. VIGILANCE
     _unit addAction [
         "<t color='#FFD700'>[VIGILANCE] Prêt au combat</t>",
         { ([group (_this select 1)] + (_this select 3)) call LL_fnc_applyRoE; },
@@ -77,7 +66,6 @@ private _fnc_addRoeActions = {
         6.8, false, true, "", _cond
     ];
 
-    // 4. ASSAUT
     _unit addAction [
         "<t color='#FF8800'>[ASSAUT] Progression tactique</t>",
         { ([group (_this select 1)] + (_this select 3)) call LL_fnc_applyRoE; },
@@ -85,7 +73,6 @@ private _fnc_addRoeActions = {
         6.7, false, true, "", _cond
     ];
 
-    // 5. CHARGE (Ultra agressif)
     _unit addAction [
         "<t color='#FF0000'>[CHARGE] Assaut total</t>",
         { ([group (_this select 1)] + (_this select 3)) call LL_fnc_applyRoE; },
@@ -93,7 +80,6 @@ private _fnc_addRoeActions = {
         6.6, false, true, "", _cond
     ];
 
-    // 6. DEFENSE / HOLD
     _unit addAction [
         "<t color='#4488FF'>[DÉFENSE] Tenir la position</t>",
         { 
@@ -104,7 +90,6 @@ private _fnc_addRoeActions = {
         6.5, false, true, "", _cond
     ];
 
-    // 7. Reset / Default
     _unit addAction [
         "<t color='#AAAAAA'>[RESET] Retour aux ordres</t>",
         { ([group (_this select 1)] + (_this select 3)) call LL_fnc_applyRoE; },
@@ -113,7 +98,6 @@ private _fnc_addRoeActions = {
     ];
 };
 
-// ====================== BOUCLE RESPAWN ======================
 [_fnc_addRoeActions] spawn {
     params ["_fnc_addRoeActions"];
     private _lastPlayer = objNull;

@@ -42,8 +42,6 @@ _grp addEventHandler ["EnemyDetected", {
     };
 }];
 
-
-
 private _markerArea = createMarker ["LL_Drone_Area", _targetPos];
 _markerArea setMarkerShape "ELLIPSE";
 _markerArea setMarkerSize [_orbitRadius, _orbitRadius];

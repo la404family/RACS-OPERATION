@@ -84,6 +84,17 @@ Toutes les fonctions sont pré-compilées par le moteur Arma 3 au démarrage de 
     *   **Rôle :** Boucle infinie serveur gérant le système de "Sleeper Cells" (cellules dormantes).
     *   **Fonctionnement :** Convertit de manière transparente et aléatoire des civils éloignés (300-450m) en insurgés hostiles (OPFOR). Utilise un changement de camp invisible (`joinSilent`) pour que le civil conserve exactement son modèle 3D, ses vêtements civils et sa voix UVO. Pioche ensuite aléatoirement un sac et une arme dans la banque `MISSION_BanditLoadouts` avant de lancer un ordre d'assaut (SAD) sur l'escouade du joueur.
 
+### Hélicoptère (`Functions\Helicopter\`)
+*   **`fn_addHelicopterActions.sqf` (`LL_fnc_addHelicopterActions`)**
+    *   **Rôle :** Client uniquement. Ajoute un menu d'actions au chef d'escouade permettant de demander un appui aérien (CAS), un largage de logistique/véhicule, ou des renforts/extraction. Le ciblage se fait via clic sur la carte (`MapSingleClick`).
+*   **`fn_requestHelicopter.sqf` (`LL_fnc_requestHelicopter`)**
+    *   **Rôle :** Serveur. Point d'entrée pour relayer les requêtes de joueurs avec la priorité standard au répartiteur central.
+*   **`fn_heliDispatch.sqf` (`LL_fnc_heliDispatch`)**
+    *   **Rôle :** Serveur. Dispatcher de demandes avec système de priorités strict. Les missions du scénario (ex: otage, priorité 2) interrompront de force et en vol toute tâche demandée par un joueur (priorité 1).
+*   **`fn_heliManager.sqf` (`LL_fnc_heliManager`)**
+    *   **Rôle :** Serveur. Cerveau gérant le cycle de vie de l'unique hélicoptère UH-60L de la carte. Gère le vol, l'appui, l'insertion de l'IA (en parachute ou posé) et le largage en slingload. 
+    *   **Immersion totale :** L'hélicoptère ne disparaît (RTB) qu'au bord sud-ouest de la carte (`[0,0,0]`) et uniquement s'il se trouve à plus de 1200 mètres de tous les joueurs, empêchant tout "despawn" visible en jeu.
+
 ### Drone (`Functions\Drone\`)
 *   **`fn_addDroneAction.sqf` (`LL_fnc_addDroneAction`)**
     *   **Rôle :** Client uniquement. Ajoute une action molette blanche « Demander un drone de surveillance » au chef d'escouade. Au clic, ouvre la carte pour sélectionner la zone cible. Se réapplique automatiquement après un respawn ou un switch d'unité IA.

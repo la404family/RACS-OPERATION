@@ -60,6 +60,14 @@ class CfgFunctions {
             class addDroneAction {};
             class requestDrone {};
         };
+        class Helicopter {
+            file = "Functions\Helicopter";
+            class addHelicopterActions {};
+            class addResupplyAction {};
+            class heliDispatch {};
+            class heliManager {};
+            class requestHelicopter {};
+        };
     };
 };
 

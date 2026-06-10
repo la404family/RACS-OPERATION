@@ -1,23 +1,15 @@
-/*
-    File: fn_doorSecurity.sqf
-    Description: Ouverture/fermeture réaliste et anticipée des portes pour IA non-BLUFOR.
-                 Évite que l'IA ne passe à travers les portes fermées.
-    Locality: Serveur uniquement
-*/
-
 if (!isServer) exitWith {};
 
 [] spawn {
-    private _OPEN_DIST     = 6;      // Distance à laquelle l'IA "ouvre" la porte
-    private _CLOSE_DELAY   = 12;     // Secondes avant fermeture automatique
-    private _CHECK_FREQ    = 0.8;    // Fréquence globale (optimisée)
+    private _OPEN_DIST     = 6;      
+    private _CLOSE_DELAY   = 12;     
+    private _CHECK_FREQ    = 0.8;    
 
-    private _doorCache     = createHashMap;  // [building, [doorAnims, lastOpenedTime]]
+    private _doorCache     = createHashMap;  
 
     while {true} do {
         sleep _CHECK_FREQ;
 
-        // Récupération des IA concernées (non-BLUFOR, vivantes, à pied)
         private _aiUnits = allUnits select {
             alive _x &&
             !isPlayer _x &&
@@ -29,7 +21,6 @@ if (!isServer) exitWith {};
 
         private _currentTime = time;
 
-        // --- Collecte intelligente des bâtiments ---
         private _nearBuildings = [];
         {
             private _pos = getPosATL _x;
@@ -45,7 +36,6 @@ if (!isServer) exitWith {};
             private _bldgKey = hashValue _bldg;
             private _bldgData = _doorCache getOrDefault [_bldgKey, []];
 
-            // Cache des animations de portes
             if (_bldgData isEqualTo []) then {
                 private _anims = (animationNames _bldg) select { (toLowerANSI _x) find "door" >= 0 };
                 _bldgData = [_anims, 0, _bldg]; 
@@ -59,16 +49,15 @@ if (!isServer) exitWith {};
             private _aiNearby = _aiUnits findIf { _x distance _bldg < _OPEN_DIST } != -1;
 
             if (_aiNearby) then {
-                // === OUVERTURE RÉALISTE ===
-                if (_currentTime - _lastOpened > 1.5) then {  // Cooldown anti-spam
+                
+                if (_currentTime - _lastOpened > 1.5) then {  
                     {
                         private _phase = _bldg animationPhase _x;
                         if (_phase < 0.95) then {
-                            // Ouverture progressive + son
+                            
                             _bldg animate [_x, 1, 0.8];           
                             _bldg animateDoor [_x, 1, false];     
 
-                            // Son d'ouverture (localisé)
                             private _soundPos = _bldg modelToWorld (getCenterOfMass _bldg);
                             playSound3D ["A3\Sounds_F\environment\doors\DoorMetalSingleOpen_1.wss", _bldg, false, _soundPos, 1.2, 1, 35];
                         };
@@ -79,22 +68,20 @@ if (!isServer) exitWith {};
                 };
             } 
             else {
-                // === FERMETURE PROGRESSIVE ===
+                
                 if (_currentTime - _lastOpened > _CLOSE_DELAY) then {
                     {
                         if (_bldg animationPhase _x > 0.05) then {
-                            _bldg animate [_x, 0, 0.6];  // Fermeture un peu plus lente
+                            _bldg animate [_x, 0, 0.6];  
                         };
                     } forEach _doorAnims;
 
-                    // Mise à jour du timestamp
                     _bldgData set [1, _currentTime - _CLOSE_DELAY + 3];
                     _doorCache set [_bldgKey, _bldgData];
                 };
             };
         } forEach _nearBuildings;
 
-        // Nettoyage léger du cache (bâtiments trop loin)
         if (count _doorCache > 120) then {
             private _refPos = getPosATL (selectRandom _aiUnits);
             private _toRemove = [];

@@ -1,34 +1,22 @@
-/*
-    File: fn_manageInsurgents.sqf
-    Description: Convertit aléatoirement des civils éloignés en insurgés OPFOR (Sleeper Cells).
-                 Utilise les loadouts bandits dynamiques.
-    Locality: Serveur uniquement
-*/
-
 if (!isServer) exitWith {};
 
-// --- CONFIGURATION ---
 private _INTERVAL_MIN  = 100;
 private _INTERVAL_MAX  = 400;
-private _DIST_MIN      = 300;    // Minimum de distance pour être éligible (loin de la vue du joueur)
-private _DIST_MAX      = 450;    // Maximum pour s'assurer qu'il est dans la zone de présence
-private _REQ_COUNT     = 3;      // Nombre de civils requis dans la zone pour lancer une cellule
+private _DIST_MIN      = 300;    
+private _DIST_MAX      = 450;    
+private _REQ_COUNT     = 3;      
 
-// Attendre l'initialisation du système civil (fn_spawnPresence)
 waitUntil { !isNil "LL_s_civSpawned" };
 sleep 15;
 
 private _fnc_equipBandit = {
     params ["_unit"];
     
-    // Le civil conserve sa tenue (uniform, vest, headgear, facewear) intacte.
-    // On lui ajoute un sac à dos aléatoire
     if (!isNil "MISSION_BanditBackpacks") then {
         removeBackpack _unit;
         _unit addBackpack (selectRandom MISSION_BanditBackpacks);
     };
 
-    // On lui donne des armes de bandit
     if (!isNil "MISSION_BanditLoadouts") then {
         private _bLoadout = selectRandom MISSION_BanditLoadouts;
         _bLoadout params ["_priWep","_priMag","_priMagCount","_secWep","_secMag","_secMagCount","_smoke","_smokeCount","_FAK","_FAKCount"];
@@ -54,19 +42,16 @@ private _fnc_equipBandit = {
 };
 
 while {true} do {
-    // Calculer le prochain délai
+    
     sleep (_INTERVAL_MIN + random (_INTERVAL_MAX - _INTERVAL_MIN));
     
     private _players = allPlayers select { alive _x && !(_x isKindOf "HeadlessClient_F") };
     if (count _players == 0) then { continue; };
     
-    // On sélectionne le joueur de référence
     private _refPlayer = _players select 0;
     
-    // Nettoyer LL_s_civSpawned pour éviter les objNull
     LL_s_civSpawned = LL_s_civSpawned select { !isNull _x && alive _x };
     
-    // Filtrer les civils éligibles (distance 300 - 450m, pas déjà convertis)
     private _eligibleCivs = LL_s_civSpawned select {
         private _dist = _x distance2D _refPlayer;
         _dist >= _DIST_MIN && 
@@ -75,23 +60,19 @@ while {true} do {
     };
     
     if (count _eligibleCivs >= _REQ_COUNT) then {
-        // Sélection de 3 civils
+        
         private _shuffled = _eligibleCivs call BIS_fnc_arrayShuffle;
         private _selected = [_shuffled select 0, _shuffled select 1, _shuffled select 2];
         
-        // Créer un groupe OPFOR
         private _insurgentGrp = createGroup [east, true];
         
         {
             private _civ = _x;
             
-            // Changement de camp invisible (garde le modèle)
             [_civ] joinSilent _insurgentGrp;
             
-            // Équipement
             [_civ] call _fnc_equipBandit;
             
-            // Configuration IA
             _civ setVariable ["LL_isInsurgent", true, true];
             _civ setCombatMode "RED";
             _civ setBehaviour "COMBAT";
@@ -100,14 +81,12 @@ while {true} do {
             
         } forEach _selected;
         
-        // Ordre d'attaque sur la zone du joueur (SAD - Search and Destroy)
         private _wp = _insurgentGrp addWaypoint [getPosATL _refPlayer, 50];
         _wp setWaypointType "SAD";
         _wp setWaypointBehaviour "COMBAT";
         _wp setWaypointCombatMode "RED";
         _wp setWaypointSpeed "FULL";
         
-        // Force l'aggro si les joueurs sont vus
         { _insurgentGrp reveal [_x, 4]; } forEach _players;
     };
 };
