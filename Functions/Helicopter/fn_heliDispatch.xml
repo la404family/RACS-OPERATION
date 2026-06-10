@@ -28,4 +28,107 @@
         <Korean>차량 배송이 이미 완료되었습니다. 요청이 거부되었습니다.</Korean>
         <Chinese>车辆交付已完成。请求被拒绝。</Chinese>
     </Key>
+
+    <!-- APPROVE -->
+    <Key ID="STR_LL_Heli_Dispatch_Approve_LIVRAISON">
+        <Original>Ammo drop approved. Helicopter en route.</Original>
+        <English>Ammo drop approved. Helicopter en route.</English>
+        <French>Livraison de munitions approuvée. Hélicoptère en route.</French>
+    </Key>
+    <Key ID="STR_LL_Heli_Dispatch_Approve_VEHICULE">
+        <Original>Vehicle drop approved. Helicopter en route.</Original>
+        <English>Vehicle drop approved. Helicopter en route.</English>
+        <French>Livraison de véhicule approuvée. Hélicoptère en route.</French>
+    </Key>
+    <Key ID="STR_LL_Heli_Dispatch_Approve_CAS">
+        <Original>Close Air Support approved. Helicopter en route.</Original>
+        <English>Close Air Support approved. Helicopter en route.</English>
+        <French>Appui aérien CAS approuvé. Hélicoptère en route.</French>
+    </Key>
+    <Key ID="STR_LL_Heli_Dispatch_Approve_DEBARQUEMENT">
+        <Original>Reinforcements approved. Helicopter en route with troops.</Original>
+        <English>Reinforcements approved. Helicopter en route with troops.</English>
+        <French>Renforts approuvés. Hélicoptère en route avec des troupes.</French>
+    </Key>
+    <Key ID="STR_LL_Heli_Dispatch_Approve_EMBARQUEMENT">
+        <Original>Extraction approved. Helicopter en route to pickup zone.</Original>
+        <English>Extraction approved. Helicopter en route to pickup zone.</English>
+        <French>Extraction approuvée. Hélicoptère en route vers la zone de pickup.</French>
+    </Key>
+    <Key ID="STR_LL_Heli_Dispatch_Approve_DEFAULT">
+        <Original>Request approved. Helicopter en route.</Original>
+        <English>Request approved. Helicopter en route.</English>
+        <French>Demande approuvée. Hélicoptère en route.</French>
+    </Key>
+
+    <!-- ABORT -->
+    <Key ID="STR_LL_Heli_Dispatch_Abort_CAS">
+        <Original>CAS mission aborted — higher priority task.</Original>
+        <English>CAS mission aborted — higher priority task.</English>
+        <French>Mission CAS annulée — priorité supérieure.</French>
+    </Key>
+    <Key ID="STR_LL_Heli_Dispatch_Abort_LIVRAISON">
+        <Original>Supply drop aborted — priority mission active.</Original>
+        <English>Supply drop aborted — priority mission active.</English>
+        <French>Livraison annulée — mission prioritaire en cours.</French>
+    </Key>
+    <Key ID="STR_LL_Heli_Dispatch_Abort_VEHICULE">
+        <Original>Vehicle drop aborted — priority mission active.</Original>
+        <English>Vehicle drop aborted — priority mission active.</English>
+        <French>Livraison véhicule annulée — mission prioritaire en cours.</French>
+    </Key>
+    <Key ID="STR_LL_Heli_Dispatch_Abort_DEBARQUEMENT">
+        <Original>Reinforcements aborted — priority mission active.</Original>
+        <English>Reinforcements aborted — priority mission active.</English>
+        <French>Renforts annulés — mission prioritaire en cours.</French>
+    </Key>
+    <Key ID="STR_LL_Heli_Dispatch_Abort_DEFAULT">
+        <Original>Current mission aborted — helicopter redirected.</Original>
+        <English>Current mission aborted — helicopter redirected.</English>
+        <French>Mission en cours annulée — redirection de l'hélicoptère.</French>
+    </Key>
+
+    <!-- NEW -->
+    <Key ID="STR_LL_Heli_Dispatch_New_EMBARQUEMENT">
+        <Original>PRIORITY extraction — helicopter redirected immediately.</Original>
+        <English>PRIORITY extraction — helicopter redirected immediately.</English>
+        <French>Extraction PRIORITAIRE — hélicoptère redirigé immédiatement.</French>
+    </Key>
+    <Key ID="STR_LL_Heli_Dispatch_New_DEFAULT">
+        <Original>New priority mission accepted. Helicopter redirected.</Original>
+        <English>New priority mission accepted. Helicopter redirected.</English>
+        <French>Nouvelle mission prioritaire acceptée. Hélicoptère redirigé.</French>
+    </Key>
+
+    <!-- DENY -->
+    <Key ID="STR_LL_Heli_Dispatch_Deny_EMBARQUEMENT">
+        <Original>Extraction already in progress. Request denied.</Original>
+        <English>Extraction already in progress. Request denied.</English>
+        <French>Extraction déjà en cours. Demande refusée.</French>
+    </Key>
+    <Key ID="STR_LL_Heli_Dispatch_Deny_CAS">
+        <Original>Helicopter busy (mission %1 in progress). CAS support denied.</Original>
+        <English>Helicopter busy (mission %1 in progress). CAS support denied.</English>
+        <French>Hélicoptère occupé (mission %1 en cours). Appui CAS refusé.</French>
+    </Key>
+    <Key ID="STR_LL_Heli_Dispatch_Deny_LIVRAISON">
+        <Original>Helicopter busy (mission %1 in progress). Supply drop denied.</Original>
+        <English>Helicopter busy (mission %1 in progress). Supply drop denied.</English>
+        <French>Hélicoptère occupé (mission %1 en cours). Livraison refusée.</French>
+    </Key>
+    <Key ID="STR_LL_Heli_Dispatch_Deny_VEHICULE">
+        <Original>Helicopter busy (mission %1 in progress). Vehicle drop denied.</Original>
+        <English>Helicopter busy (mission %1 in progress). Vehicle drop denied.</English>
+        <French>Hélicoptère occupé (mission %1 en cours). Véhicule refusé.</French>
+    </Key>
+    <Key ID="STR_LL_Heli_Dispatch_Deny_DEBARQUEMENT">
+        <Original>Helicopter busy (mission %1 in progress). Reinforcements denied.</Original>
+        <English>Helicopter busy (mission %1 in progress). Reinforcements denied.</English>
+        <French>Hélicoptère occupé (mission %1 en cours). Renforts refusés.</French>
+    </Key>
+    <Key ID="STR_LL_Heli_Dispatch_Deny_DEFAULT">
+        <Original>Helicopter busy (mission %1 in progress). Request denied.</Original>
+        <English>Helicopter busy (mission %1 in progress). Request denied.</English>
+        <French>Hélicoptère occupé (mission %1 en cours). Demande refusée.</French>
+    </Key>
 </Keys>

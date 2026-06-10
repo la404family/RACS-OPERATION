@@ -34,15 +34,15 @@ if (_priority < _typePriority) then { _priority = _typePriority; };
 switch (true) do {
 
     case (_state == "IDLE"): {
-        private _approveMsg = switch (_type) do {
-            case "LIVRAISON":    { "QG : Livraison de munitions approuvée. Hélicoptère en route."              };
-            case "VEHICULE":     { "QG : Livraison de véhicule approuvée. Hélicoptère en route."               };
-            case "CAS":          { "QG : Appui aérien CAS approuvé. Hélicoptère en route."                     };
-            case "DEBARQUEMENT": { "QG : Renforts approuvés. Hélicoptère en route avec des troupes."           };
-            case "EMBARQUEMENT": { "QG : Extraction approuvée. Hélicoptère en route vers la zone de pickup."   };
-            default              { "QG : Demande approuvée. Hélicoptère en route."                             };
+        private _approveMsgKey = switch (_type) do {
+            case "LIVRAISON":    { "STR_LL_Heli_Dispatch_Approve_LIVRAISON" };
+            case "VEHICULE":     { "STR_LL_Heli_Dispatch_Approve_VEHICULE" };
+            case "CAS":          { "STR_LL_Heli_Dispatch_Approve_CAS" };
+            case "DEBARQUEMENT": { "STR_LL_Heli_Dispatch_Approve_DEBARQUEMENT" };
+            case "EMBARQUEMENT": { "STR_LL_Heli_Dispatch_Approve_EMBARQUEMENT" };
+            default              { "STR_LL_Heli_Dispatch_Approve_DEFAULT" };
         };
-        _approveMsg remoteExec ["systemChat", _caller];
+        [_approveMsgKey] remoteExec ["LL_fnc_radioMessage", _caller];
 
         if (_type == "VEHICULE") then {
             missionNamespace setVariable ["TAG_VehicleSupport_Delivered", true, true];
@@ -53,20 +53,20 @@ switch (true) do {
     };
 
     case (_priority > _curPrio && { _state in _interruptibleStates }): {
-        private _abortMsg = switch (_curType) do {
-            case "CAS":          { "QG : Mission CAS annulée — priorité supérieure."                   };
-            case "LIVRAISON":    { "QG : Livraison annulée — mission prioritaire en cours."            };
-            case "VEHICULE":     { "QG : Livraison véhicule annulée — mission prioritaire en cours."   };
-            case "DEBARQUEMENT": { "QG : Renforts annulés — mission prioritaire en cours."             };
-            default              { "QG : Mission en cours annulée — redirection de l'hélicoptère."     };
+        private _abortMsgKey = switch (_curType) do {
+            case "CAS":          { "STR_LL_Heli_Dispatch_Abort_CAS" };
+            case "LIVRAISON":    { "STR_LL_Heli_Dispatch_Abort_LIVRAISON" };
+            case "VEHICULE":     { "STR_LL_Heli_Dispatch_Abort_VEHICULE" };
+            case "DEBARQUEMENT": { "STR_LL_Heli_Dispatch_Abort_DEBARQUEMENT" };
+            default              { "STR_LL_Heli_Dispatch_Abort_DEFAULT" };
         };
-        _abortMsg remoteExec ["systemChat", 0];
+        [_abortMsgKey] remoteExec ["LL_fnc_radioMessage", 0];
 
-        private _newMsg = switch (_type) do {
-            case "EMBARQUEMENT": { "QG : Extraction PRIORITAIRE — hélicoptère redirigé immédiatement." };
-            default              { "QG : Nouvelle mission prioritaire acceptée. Hélicoptère redirigé." };
+        private _newMsgKey = switch (_type) do {
+            case "EMBARQUEMENT": { "STR_LL_Heli_Dispatch_New_EMBARQUEMENT" };
+            default              { "STR_LL_Heli_Dispatch_New_DEFAULT" };
         };
-        _newMsg remoteExec ["systemChat", _caller];
+        [_newMsgKey] remoteExec ["LL_fnc_radioMessage", _caller];
 
         missionNamespace setVariable ["LL_HELI_abort",   true,                              false];
         missionNamespace setVariable ["LL_HELI_pending", [_type, _pos, _caller, _priority], false];
@@ -75,27 +75,19 @@ switch (true) do {
     };
 
     default {
-        private _denyMsg = switch (true) do {
-            case (_type == "EMBARQUEMENT" && _curType == "EMBARQUEMENT"): {
-                "QG : Extraction déjà en cours. Demande refusée."
-            };
-            case (_type == "CAS"): {
-                format ["QG : Hélicoptère occupé (mission %1 en cours). Appui CAS refusé.", _curType]
-            };
-            case (_type == "LIVRAISON"): {
-                format ["QG : Hélicoptère occupé (mission %1 en cours). Livraison refusée.", _curType]
-            };
-            case (_type == "VEHICULE"): {
-                format ["QG : Hélicoptère occupé (mission %1 en cours). Véhicule refusé.", _curType]
-            };
-            case (_type == "DEBARQUEMENT"): {
-                format ["QG : Hélicoptère occupé (mission %1 en cours). Renforts refusés.", _curType]
-            };
-            default {
-                format ["QG : Hélicoptère occupé (mission %1 en cours). Demande refusée.", _curType]
-            };
+        private _denyMsgKey = switch (true) do {
+            case (_type == "EMBARQUEMENT" && _curType == "EMBARQUEMENT"): { "STR_LL_Heli_Dispatch_Deny_EMBARQUEMENT" };
+            case (_type == "CAS"): { "STR_LL_Heli_Dispatch_Deny_CAS" };
+            case (_type == "LIVRAISON"): { "STR_LL_Heli_Dispatch_Deny_LIVRAISON" };
+            case (_type == "VEHICULE"): { "STR_LL_Heli_Dispatch_Deny_VEHICULE" };
+            case (_type == "DEBARQUEMENT"): { "STR_LL_Heli_Dispatch_Deny_DEBARQUEMENT" };
+            default { "STR_LL_Heli_Dispatch_Deny_DEFAULT" };
         };
-        _denyMsg remoteExec ["systemChat", _caller];
+        if (_type == "EMBARQUEMENT" && _curType == "EMBARQUEMENT") then {
+            [_denyMsgKey] remoteExec ["LL_fnc_radioMessage", _caller];
+        } else {
+            [_denyMsgKey, [_curType]] remoteExec ["LL_fnc_radioMessage", _caller];
+        };
         diag_log format ["[LL][DISPATCH] Refusé: type=%1 état=%2 prio demandé=%3 prio courante=%4",
             _type, _state, _priority, _curPrio];
     };

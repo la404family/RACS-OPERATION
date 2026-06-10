@@ -25,36 +25,40 @@ def clean_text(text):
     
     return text.strip()
 
-def apply_radio_effect(audio):
-    """
-    Applique un effet de radio militaire intense.
-    """
-    # 1. Filtre passe-haut (300Hz) et passe-bas (3000Hz)
-    radio = audio.high_pass_filter(300).low_pass_filter(3000)
+def apply_radio_effect(audio, intensity=1.0, background=None):
+    # Filtrage radio militaire plus agressif
+    radio = audio.high_pass_filter(280).low_pass_filter(3100)
     
-    # 2. Saturation (Overdrive) : On adoucit un peu pour éviter l'effet trop "criard"
-    radio = radio + 10 # Boost modéré
-    radio = radio - 10 # On rebaisse
+    # Distorsion + saturation plus réaliste
+    radio = radio + (8 * intensity)
+    radio = radio.compress_dynamic_range(threshold=-20, ratio=6, attack=5, release=50)
     
-    # 3. Bruit statique (Grésillement réduit)
-    noise = WhiteNoise().to_audio_segment(duration=len(radio)) - 22 # Bruit de fond plus doux
-    # Crépitement moins fort
-    crackle = WhiteNoise().to_audio_segment(duration=len(radio)).high_pass_filter(2000) - 15
-
+    # Bruit de fond + crépitement
+    noise = WhiteNoise().to_audio_segment(duration=len(radio)).high_pass_filter(1800) - (18 * intensity)
+    crackle = (WhiteNoise().to_audio_segment(duration=len(radio))
+               .high_pass_filter(2500)
+               .low_pass_filter(8000) - 12)
     
-    radio_with_noise = radio.overlay(noise).overlay(crackle)
+    final = radio.overlay(noise).overlay(crackle)
     
-    # 4. Squelch (clic radio / bip)
-    beep_start = Sine(1500).to_audio_segment(duration=80).apply_gain(-8)
-    beep_end = Sine(1500).to_audio_segment(duration=120).apply_gain(-8)
-    click = WhiteNoise().to_audio_segment(duration=60).apply_gain(-5)
+    # Squelch plus "militaire"
+    squelch_in = (WhiteNoise().to_audio_segment(45).apply_gain(-6) +
+                  Sine(1800).to_audio_segment(60).apply_gain(-9))
+    squelch_out = (Sine(1200).to_audio_segment(110).apply_gain(-10) +
+                   WhiteNoise().to_audio_segment(40).apply_gain(-7))
     
-    squelch_in = click + beep_start
-    squelch_out = beep_end + click
+    final = squelch_in + final + squelch_out
     
-    final_audio = squelch_in + radio_with_noise + squelch_out
+    # Ajout de bruit de fond contextuel (hélico, vent, moteur, etc.)
+    if background:
+        bg = background[:len(final)].apply_gain(-25)
+        final = final.overlay(bg)
     
-    return final_audio
+    # Clipping léger (très caractéristique des vieilles radios militaires)
+    # pydub n'a pas de méthode .clip, on se contente du gain qui forcera le clip à l'export
+    final = final.apply_gain(3)
+    
+    return final
 
 def generate_tts(text, output_path):
     # Utilisation de edge-tts avec une voix d'homme sérieuse et réaliste

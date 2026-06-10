@@ -138,9 +138,123 @@ class STR_LL_Heli_Action_VehicleAlready {
     titles[] = {};
 };
 
+class STR_LL_Heli_Dispatch_Abort_CAS {
+    name = "STR_LL_Heli_Dispatch_Abort_CAS";
+    sound[] = {"TTS\output\STR_LL_Heli_Dispatch_Abort_CAS.ogg", 2, 1, 100};
+    titles[] = {};
+};
+
+class STR_LL_Heli_Dispatch_Abort_DEBARQUEMENT {
+    name = "STR_LL_Heli_Dispatch_Abort_DEBARQUEMENT";
+    sound[] = {"TTS\output\STR_LL_Heli_Dispatch_Abort_DEBARQUEMENT.ogg", 2, 1, 100};
+    titles[] = {};
+};
+
+class STR_LL_Heli_Dispatch_Abort_DEFAULT {
+    name = "STR_LL_Heli_Dispatch_Abort_DEFAULT";
+    sound[] = {"TTS\output\STR_LL_Heli_Dispatch_Abort_DEFAULT.ogg", 2, 1, 100};
+    titles[] = {};
+};
+
+class STR_LL_Heli_Dispatch_Abort_LIVRAISON {
+    name = "STR_LL_Heli_Dispatch_Abort_LIVRAISON";
+    sound[] = {"TTS\output\STR_LL_Heli_Dispatch_Abort_LIVRAISON.ogg", 2, 1, 100};
+    titles[] = {};
+};
+
+class STR_LL_Heli_Dispatch_Abort_VEHICULE {
+    name = "STR_LL_Heli_Dispatch_Abort_VEHICULE";
+    sound[] = {"TTS\output\STR_LL_Heli_Dispatch_Abort_VEHICULE.ogg", 2, 1, 100};
+    titles[] = {};
+};
+
+class STR_LL_Heli_Dispatch_Approve_CAS {
+    name = "STR_LL_Heli_Dispatch_Approve_CAS";
+    sound[] = {"TTS\output\STR_LL_Heli_Dispatch_Approve_CAS.ogg", 2, 1, 100};
+    titles[] = {};
+};
+
+class STR_LL_Heli_Dispatch_Approve_DEBARQUEMENT {
+    name = "STR_LL_Heli_Dispatch_Approve_DEBARQUEMENT";
+    sound[] = {"TTS\output\STR_LL_Heli_Dispatch_Approve_DEBARQUEMENT.ogg", 2, 1, 100};
+    titles[] = {};
+};
+
+class STR_LL_Heli_Dispatch_Approve_DEFAULT {
+    name = "STR_LL_Heli_Dispatch_Approve_DEFAULT";
+    sound[] = {"TTS\output\STR_LL_Heli_Dispatch_Approve_DEFAULT.ogg", 2, 1, 100};
+    titles[] = {};
+};
+
+class STR_LL_Heli_Dispatch_Approve_EMBARQUEMENT {
+    name = "STR_LL_Heli_Dispatch_Approve_EMBARQUEMENT";
+    sound[] = {"TTS\output\STR_LL_Heli_Dispatch_Approve_EMBARQUEMENT.ogg", 2, 1, 100};
+    titles[] = {};
+};
+
+class STR_LL_Heli_Dispatch_Approve_LIVRAISON {
+    name = "STR_LL_Heli_Dispatch_Approve_LIVRAISON";
+    sound[] = {"TTS\output\STR_LL_Heli_Dispatch_Approve_LIVRAISON.ogg", 2, 1, 100};
+    titles[] = {};
+};
+
+class STR_LL_Heli_Dispatch_Approve_VEHICULE {
+    name = "STR_LL_Heli_Dispatch_Approve_VEHICULE";
+    sound[] = {"TTS\output\STR_LL_Heli_Dispatch_Approve_VEHICULE.ogg", 2, 1, 100};
+    titles[] = {};
+};
+
 class STR_LL_Heli_Dispatch_Cooldown {
     name = "STR_LL_Heli_Dispatch_Cooldown";
     sound[] = {"TTS\output\STR_LL_Heli_Dispatch_Cooldown.ogg", 2, 1, 100};
+    titles[] = {};
+};
+
+class STR_LL_Heli_Dispatch_Deny_CAS {
+    name = "STR_LL_Heli_Dispatch_Deny_CAS";
+    sound[] = {"TTS\output\STR_LL_Heli_Dispatch_Deny_CAS.ogg", 2, 1, 100};
+    titles[] = {};
+};
+
+class STR_LL_Heli_Dispatch_Deny_DEBARQUEMENT {
+    name = "STR_LL_Heli_Dispatch_Deny_DEBARQUEMENT";
+    sound[] = {"TTS\output\STR_LL_Heli_Dispatch_Deny_DEBARQUEMENT.ogg", 2, 1, 100};
+    titles[] = {};
+};
+
+class STR_LL_Heli_Dispatch_Deny_DEFAULT {
+    name = "STR_LL_Heli_Dispatch_Deny_DEFAULT";
+    sound[] = {"TTS\output\STR_LL_Heli_Dispatch_Deny_DEFAULT.ogg", 2, 1, 100};
+    titles[] = {};
+};
+
+class STR_LL_Heli_Dispatch_Deny_EMBARQUEMENT {
+    name = "STR_LL_Heli_Dispatch_Deny_EMBARQUEMENT";
+    sound[] = {"TTS\output\STR_LL_Heli_Dispatch_Deny_EMBARQUEMENT.ogg", 2, 1, 100};
+    titles[] = {};
+};
+
+class STR_LL_Heli_Dispatch_Deny_LIVRAISON {
+    name = "STR_LL_Heli_Dispatch_Deny_LIVRAISON";
+    sound[] = {"TTS\output\STR_LL_Heli_Dispatch_Deny_LIVRAISON.ogg", 2, 1, 100};
+    titles[] = {};
+};
+
+class STR_LL_Heli_Dispatch_Deny_VEHICULE {
+    name = "STR_LL_Heli_Dispatch_Deny_VEHICULE";
+    sound[] = {"TTS\output\STR_LL_Heli_Dispatch_Deny_VEHICULE.ogg", 2, 1, 100};
+    titles[] = {};
+};
+
+class STR_LL_Heli_Dispatch_New_DEFAULT {
+    name = "STR_LL_Heli_Dispatch_New_DEFAULT";
+    sound[] = {"TTS\output\STR_LL_Heli_Dispatch_New_DEFAULT.ogg", 2, 1, 100};
+    titles[] = {};
+};
+
+class STR_LL_Heli_Dispatch_New_EMBARQUEMENT {
+    name = "STR_LL_Heli_Dispatch_New_EMBARQUEMENT";
+    sound[] = {"TTS\output\STR_LL_Heli_Dispatch_New_EMBARQUEMENT.ogg", 2, 1, 100};
     titles[] = {};
 };
 
