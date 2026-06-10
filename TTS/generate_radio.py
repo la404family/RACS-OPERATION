@@ -18,7 +18,9 @@ def clean_text(text):
     if "<t color" in text or text.startswith("["):
         return ""
         
-    text = re.sub(r"%\d+", "something", text)
+    # Le texte %1 et tout ce qu'il y a après ne doit pas être récupéré
+    text = re.split(r"%\d+", text)[0]
+    
     text = re.sub(r"<[^>]+>", "", text)
     
     return text.strip()
@@ -96,11 +98,17 @@ def main():
                 radio_audio.export(out_file, format="ogg")
                 count += 1
                 
+                import time
+                time.sleep(1) # Pause d'une seconde pour éviter le rate-limit de Microsoft Edge TTS
+                
             except Exception as e:
                 print(f"Erreur sur {key_id} : {e}")
                 
     if os.path.exists(temp_file):
-        os.remove(temp_file)
+        try:
+            os.remove(temp_file)
+        except:
+            pass
         
     print(f"\nTerminé ! {count} fichiers audio générés dans {OUTPUT_DIR}")
 

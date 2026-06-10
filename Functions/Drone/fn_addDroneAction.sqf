@@ -11,10 +11,10 @@ if (!hasInterface) exitWith {};
             {
                 params ["_target", "_caller", "_actionId"];
                 if (missionNamespace getVariable ["LL_Drone_Active", false]) exitWith {
-                    systemChat localize "STR_Drone_AlreadyActive_Wait";
+                    ["STR_Drone_AlreadyActive_Wait"] call LL_fnc_radioMessage;
                 };
                 openMap true;
-                systemChat localize "STR_Drone_ClickMap";
+                ["STR_Drone_ClickMap"] call LL_fnc_radioMessage;
                 LL_Drone_MapClick = true;
 
                 private _ehId = addMissionEventHandler ["MapSingleClick", {
@@ -24,7 +24,7 @@ if (!hasInterface) exitWith {};
                     removeMissionEventHandler ["MapSingleClick", _thisEventHandler];
                     openMap false;
                     [player, _pos] remoteExec ["LL_fnc_requestDrone", 2];
-                    systemChat format [localize "STR_Drone_EnRoute", round (_pos select 0), round (_pos select 1)];
+                    ["STR_Drone_EnRoute", [round (_pos select 0), round (_pos select 1)]] call LL_fnc_radioMessage;
                 }];
             },
             nil, 8.0, false, true, "", "alive _target && (leader (group _target) isEqualTo _target || _target getVariable ['LL_Spectating', false])"

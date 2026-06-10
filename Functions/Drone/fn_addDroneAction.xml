@@ -4,20 +4,56 @@
         <Original>&lt;t color='#FFFFFF'&gt;[DRONE] Surveillance&lt;/t&gt;</Original>
         <English>&lt;t color='#FFFFFF'&gt;[DRONE] Surveillance&lt;/t&gt;</English>
         <French>&lt;t color='#FFFFFF'&gt;[DRONE] Surveillance&lt;/t&gt;</French>
+        <Spanish>&lt;t color='#FFFFFF'&gt;[DRON] Vigilancia&lt;/t&gt;</Spanish>
+        <Italian>&lt;t color='#FFFFFF'&gt;[DRONE] Sorveglianza&lt;/t&gt;</Italian>
+        <German>&lt;t color='#FFFFFF'&gt;[DROHNE] Überwachung&lt;/t&gt;</German>
+        <Polish>&lt;t color='#FFFFFF'&gt;[DRON] Obserwacja&lt;/t&gt;</Polish>
+        <Russian>&lt;t color='#FFFFFF'&gt;[ДРОН] Наблюдение&lt;/t&gt;</Russian>
+        <Turkish>&lt;t color='#FFFFFF'&gt;[DRON] Gözetleme&lt;/t&gt;</Turkish>
+        <Japanese>&lt;t color='#FFFFFF'&gt;[ドローン] 監視&lt;/t&gt;</Japanese>
+        <Korean>&lt;t color='#FFFFFF'&gt;[드론] 감시&lt;/t&gt;</Korean>
+        <Chinese>&lt;t color='#FFFFFF'&gt;[无人机] 监视&lt;/t&gt;</Chinese>
     </Key>
     <Key ID="STR_Drone_AlreadyActive_Wait">
-        <Original>QG : Drone déjà en mission. Attendez son retour.</Original>
-        <English>HQ: Drone is already on a mission. Wait for its return.</English>
-        <French>QG : Drone déjà en mission. Attendez son retour.</French>
+        <Original>Drone déjà en mission. Attendez son retour.</Original>
+        <English>Drone is already on a mission. Wait for its return.</English>
+        <French>Drone déjà en mission. Attendez son retour.</French>
+        <Spanish>El dron ya está en una misión. Espera a que regrese.</Spanish>
+        <Italian>Il drone è già in missione. Attendi il suo ritorno.</Italian>
+        <German>Drohne ist bereits auf einer Mission. Warten Sie auf die Rückkehr.</German>
+        <Polish>Dron jest już na misji. Czekaj na jego powrót.</Polish>
+        <Russian>Дрон уже на задании. Ожидайте его возвращения.</Russian>
+        <Turkish>Dron şu anda görevde. Dönmesini bekleyin.</Turkish>
+        <Japanese>ドローンはすでに任務中です。帰還を待ってください。</Japanese>
+        <Korean>드론이 이미 임무 수행 중입니다. 복귀를 기다려주십시오.</Korean>
+        <Chinese>无人机正在执行任务，请等待其返回。</Chinese>
     </Key>
     <Key ID="STR_Drone_ClickMap">
-        <Original>QG : Cliquez sur la carte pour définir la zone de surveillance.</Original>
-        <English>HQ: Click on the map to define the surveillance zone.</English>
-        <French>QG : Cliquez sur la carte pour définir la zone de surveillance.</French>
+        <Original>Cliquez sur la carte pour définir la zone de surveillance.</Original>
+        <English>Define the surveillance zone on your map.</English>
+        <French>Cliquez sur la carte pour définir la zone de surveillance.</French>
+        <Spanish>Define la zona de vigilancia en tu mapa.</Spanish>
+        <Italian>Definisci la zona di sorveglianza sulla tua mappa.</Italian>
+        <German>Definieren Sie die Überwachungszone auf Ihrer Karte.</German>
+        <Polish>Określ strefę obserwacji na mapie.</Polish>
+        <Russian>Определите зону наблюдения на карте.</Russian>
+        <Turkish>Haritanızda gözetleme bölgesini belirleyin.</Turkish>
+        <Japanese>マップ上で監視ゾーンを指定してください。</Japanese>
+        <Korean>지도에서 감시 구역을 지정하십시오.</Korean>
+        <Chinese>在地图上指定监视区域。</Chinese>
     </Key>
     <Key ID="STR_Drone_EnRoute">
-        <Original>QG : Drone en route vers la position [%1, %2].</Original>
-        <English>HQ: Drone en route to position [%1, %2].</English>
-        <French>QG : Drone en route vers la position [%1, %2].</French>
+        <Original>Drone en route vers la position [%1, %2].</Original>
+        <English>Drone en route to position [%1, %2].</English>
+        <French>Drone en route vers la position [%1, %2].</French>
+        <Spanish>Dron en camino a la posición [%1, %2].</Spanish>
+        <Italian>Drone in viaggio verso la posizione [%1, %2].</Italian>
+        <German>Drohne auf dem Weg zur Position [%1, %2].</German>
+        <Polish>Dron w drodze na pozycję [%1, %2].</Polish>
+        <Russian>Дрон направляется на позицию [%1, %2].</Russian>
+        <Turkish>Dron [%1, %2] konumuna ilerliyor.</Turkish>
+        <Japanese>ドローンが位置 [%1, %2] に向かっています。</Japanese>
+        <Korean>드론이 [%1, %2] 위치로 이동 중입니다.</Korean>
+        <Chinese>无人机正在前往位置 [%1, %2]。</Chinese>
     </Key>
 </Keys>

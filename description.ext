@@ -68,6 +68,10 @@ class CfgFunctions {
             class heliManager {};
             class requestHelicopter {};
         };
+        class UI {
+            file = "Functions\UI";
+            class radioMessage {};
+        };
     };
 };
 
@@ -79,4 +83,6 @@ class CfgSounds {
         sound[] = {"sounds\ezan.ogg", 2, 1, 2500}; // Assurez-vous d'avoir le fichier dans un dossier "sounds"
         titles[] = {};
     };
+    
+    #include "CfgSounds.hpp"
 };

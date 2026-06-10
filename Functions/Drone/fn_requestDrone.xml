@@ -1,23 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Keys>
     <Key ID="STR_Drone_AlreadyActive">
-        <Original>QG : Drone déjà en mission.</Original>
-        <English>HQ: Drone is already on a mission.</English>
-        <French>QG : Drone déjà en mission.</French>
+        <Original>Drone déjà en mission.</Original>
+        <English>Drone is already on a mission.</English>
+        <French>Drone déjà en mission.</French>
+        <Spanish>El dron ya está en una misión.</Spanish>
+        <Italian>Il drone è già in missione.</Italian>
+        <German>Drohne ist bereits auf einer Mission.</German>
+        <Polish>Dron jest już na misji.</Polish>
+        <Russian>Дрон уже на задании.</Russian>
+        <Turkish>Dron şu anda görevde.</Turkish>
+        <Japanese>ドローンはすでに任務中です。</Japanese>
+        <Korean>드론이 이미 임무 수행 중입니다.</Korean>
+        <Chinese>无人机正在执行任务。</Chinese>
     </Key>
     <Key ID="STR_Drone_Approach">
-        <Original>QG : MQ-9 Reaper en approche. Surveillance active pendant %1 minutes.</Original>
-        <English>HQ: MQ-9 Reaper on approach. Active surveillance for %1 minutes.</English>
-        <French>QG : MQ-9 Reaper en approche. Surveillance active pendant %1 minutes.</French>
+        <Original>MQ-9 Reaper en approche. Surveillance active pendant %1 minutes.</Original>
+        <English>MQ-9 Reaper on approach. Active surveillance for %1 minutes.</English>
+        <French>MQ-9 Reaper en approche. Surveillance active pendant %1 minutes.</French>
+        <Spanish>MQ-9 Reaper aproximándose. Vigilancia activa por %1 minutos.</Spanish>
+        <Italian>MQ-9 Reaper in avvicinamento. Sorveglianza attiva per %1 minuti.</Italian>
+        <German>MQ-9 Reaper im Anflug. Aktive Überwachung für %1 Minuten.</German>
+        <Polish>MQ-9 Reaper zbliża się. Aktywna obserwacja przez %1 minut.</Polish>
+        <Russian>MQ-9 Reaper на подходе. Активное наблюдение на %1 минут.</Russian>
+        <Turkish>MQ-9 Reaper yaklaşıyor. %1 dakika boyunca aktif gözetleme.</Turkish>
+        <Japanese>MQ-9 Reaperが接近中。%1分間の監視を開始します。</Japanese>
+        <Korean>MQ-9 리퍼 접근 중. %1분 동안 감시 활성화.</Korean>
+        <Chinese>MQ-9死神正在接近。将进行%1分钟的监视。</Chinese>
     </Key>
     <Key ID="STR_Drone_RTB">
-        <Original>QG : Drone de surveillance en retour à la base.</Original>
-        <English>HQ: Surveillance drone returning to base.</English>
-        <French>QG : Drone de surveillance en retour à la base.</French>
+        <Original>Drone de surveillance en retour à la base.</Original>
+        <English>Surveillance drone returning to base.</English>
+        <French>Drone de surveillance en retour à la base.</French>
+        <Spanish>Dron de vigilancia regresando a la base.</Spanish>
+        <Italian>Drone di sorveglianza in ritorno alla base.</Italian>
+        <German>Überwachungsdrohne kehrt zur Basis zurück.</German>
+        <Polish>Dron obserwacyjny wraca do bazy.</Polish>
+        <Russian>Разведывательный дрон возвращается на базу.</Russian>
+        <Turkish>Gözetleme dronu üsse dönüyor.</Turkish>
+        <Japanese>監視ドローンが基地に帰還中。</Japanese>
+        <Korean>감시 드론이 기지로 귀환 중입니다。</Korean>
+        <Chinese>监视无人机正在返回基地。</Chinese>
     </Key>
     <Key ID="STR_Drone_Available">
-        <Original>QG : Drone de nouveau disponible.</Original>
-        <English>HQ: Drone is available again.</English>
-        <French>QG : Drone de nouveau disponible.</French>
+        <Original>Drone de nouveau disponible.</Original>
+        <English>Drone is available again.</English>
+        <French>Drone de nouveau disponible.</French>
+        <Spanish>El dron vuelve a estar disponible.</Spanish>
+        <Italian>Il drone è di nuovo disponibile.</Italian>
+        <German>Drohne ist wieder verfügbar.</German>
+        <Polish>Dron jest ponownie dostępny.</Polish>
+        <Russian>Дрон снова доступен.</Russian>
+        <Turkish>Dron tekrar kullanılabilir.</Turkish>
+        <Japanese>ドローンが再び利用可能です。</Japanese>
+        <Korean>드론을 다시 사용할 수 있습니다。</Korean>
+        <Chinese>无人机再次可用。</Chinese>
     </Key>
 </Keys>
