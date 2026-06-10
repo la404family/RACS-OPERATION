@@ -23,7 +23,7 @@ private _fnc_addSearchAction = {
     _unit setVariable ["LL_Action_Search_Added", true];
 
     _unit addAction [
-        "<t color='#FFFFFF'>[ESCOUADE] Fouille</t>",
+        localize "STR_LL_SearchAction_Title",
         {
             params ["_target", "_caller", "_actionId", "_arguments"];
 
@@ -31,7 +31,7 @@ private _fnc_addSearchAction = {
             private _buildings = nearestObjects [_center, ["House", "Building"], 50];
             _buildings = _buildings select { count (_x buildingPos -1) > 1 };
 
-            if (_buildings isEqualTo []) exitWith { systemChat "QG : Aucun bâtiment fouillable à proximité."; };
+            if (_buildings isEqualTo []) exitWith { systemChat localize "STR_LL_SearchAction_NoBuildings"; };
 
             private _markerName = format ["LL_SearchArea_%1", time];
             private _marker = createMarkerLocal [_markerName, _center];
@@ -44,7 +44,7 @@ private _fnc_addSearchAction = {
             private _squadAI = (units group _caller) select { !isPlayer _x && alive _x && vehicle _x == _x };
             if (_squadAI isEqualTo []) exitWith {
                 deleteMarkerLocal _marker;
-                systemChat "QG : Pas d'IA d'infanterie dans l'escouade.";
+                systemChat localize "STR_LL_SearchAction_NoAI";
             };
 
             [_caller, "gestureAdvance"] remoteExec ["playActionNow", 0];
@@ -181,7 +181,7 @@ private _fnc_addSearchAction = {
                     };
                 } forEach _squadAI;
                 
-                ["QG : Bâtiments sécurisés. L'escouade se regroupe."] remoteExec ["systemChat", _leader];
+                [localize "STR_LL_SearchAction_Secured"] remoteExec ["systemChat", _leader];
             };
         },
         [],

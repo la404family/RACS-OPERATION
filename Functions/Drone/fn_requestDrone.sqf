@@ -7,7 +7,7 @@ params [
 
 if (isNull _caller) exitWith {};
 if (missionNamespace getVariable ["LL_Drone_Active", false]) exitWith {
-    ["QG : Drone déjà en mission."] remoteExec ["systemChat", owner _caller];
+    [localize "STR_Drone_AlreadyActive"] remoteExec ["systemChat", owner _caller];
 };
 
 LL_Drone_Active = true;
@@ -60,7 +60,7 @@ _markerDrone setMarkerType "mil_triangle";
 _markerDrone setMarkerColor "ColorCIV";
 _markerDrone setMarkerSize [0.9, 0.9];
 
-[format ["QG : MQ-9 Reaper en approche. Surveillance active pendant %1 minutes.", round (_duration / 60)]] remoteExec ["systemChat", 0];
+[format [localize "STR_Drone_Approach", round (_duration / 60)]] remoteExec ["systemChat", 0];
 
 [_drone, _targetPos, _orbitRadius, _scanRadius, _duration, _markerArea, _markerIcon, _markerDrone, _grp] spawn {
     params ["_drone", "_center", "_radius", "_scanR", "_dur", "_mArea", "_mIcon", "_mDrone", "_grp"];
@@ -119,7 +119,7 @@ _markerDrone setMarkerSize [0.9, 0.9];
         sleep 3;
     };
 
-    ["QG : Drone de surveillance en retour à la base."] remoteExec ["systemChat", 0];
+    [localize "STR_Drone_RTB"] remoteExec ["systemChat", 0];
 
     { deleteMarker _y; } forEach _enemyMarkers;
     _enemyMarkers = createHashMap;
@@ -146,5 +146,5 @@ _markerDrone setMarkerSize [0.9, 0.9];
     sleep 120;
     LL_Drone_Active = false;
     publicVariable "LL_Drone_Active";
-    ["QG : Drone de nouveau disponible."] remoteExec ["systemChat", 0];
+    [localize "STR_Drone_Available"] remoteExec ["systemChat", 0];
 };

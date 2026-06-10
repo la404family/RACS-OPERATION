@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keys>
+    <Key ID="STR_Drone_Surveillance">
+        <Original>&lt;t color='#FFFFFF'&gt;[DRONE] Surveillance&lt;/t&gt;</Original>
+        <English>&lt;t color='#FFFFFF'&gt;[DRONE] Surveillance&lt;/t&gt;</English>
+        <French>&lt;t color='#FFFFFF'&gt;[DRONE] Surveillance&lt;/t&gt;</French>
+    </Key>
+    <Key ID="STR_Drone_AlreadyActive_Wait">
+        <Original>QG : Drone déjà en mission. Attendez son retour.</Original>
+        <English>HQ: Drone is already on a mission. Wait for its return.</English>
+        <French>QG : Drone déjà en mission. Attendez son retour.</French>
+    </Key>
+    <Key ID="STR_Drone_ClickMap">
+        <Original>QG : Cliquez sur la carte pour définir la zone de surveillance.</Original>
+        <English>HQ: Click on the map to define the surveillance zone.</English>
+        <French>QG : Cliquez sur la carte pour définir la zone de surveillance.</French>
+    </Key>
+    <Key ID="STR_Drone_EnRoute">
+        <Original>QG : Drone en route vers la position [%1, %2].</Original>
+        <English>HQ: Drone en route to position [%1, %2].</English>
+        <French>QG : Drone en route vers la position [%1, %2].</French>
+    </Key>
+</Keys>

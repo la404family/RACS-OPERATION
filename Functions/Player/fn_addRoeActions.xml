@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keys>
+    <Key ID="STR_LL_RoeAction_Changed">
+        <Original>QG : Nouvelles Règles d'Engagement -&gt; %1</Original>
+        <English>HQ: New Rules of Engagement -&gt; %1</English>
+        <French>QG : Nouvelles Règles d'Engagement -&gt; %1</French>
+    </Key>
+    <Key ID="STR_LL_RoeAction_Infiltration">
+        <Original>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Infiltration&lt;/t&gt;</Original>
+        <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Infiltration&lt;/t&gt;</English>
+        <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Infiltration&lt;/t&gt;</French>
+    </Key>
+    <Key ID="STR_LL_RoeAction_Patrol">
+        <Original>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Patrouille&lt;/t&gt;</Original>
+        <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Patrol&lt;/t&gt;</English>
+        <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Patrouille&lt;/t&gt;</French>
+    </Key>
+    <Key ID="STR_LL_RoeAction_Vigilance">
+        <Original>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Vigilance&lt;/t&gt;</Original>
+        <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Vigilance&lt;/t&gt;</English>
+        <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Vigilance&lt;/t&gt;</French>
+    </Key>
+    <Key ID="STR_LL_RoeAction_Assault">
+        <Original>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Assaut&lt;/t&gt;</Original>
+        <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Assault&lt;/t&gt;</English>
+        <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Assaut&lt;/t&gt;</French>
+    </Key>
+    <Key ID="STR_LL_RoeAction_Charge">
+        <Original>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Charge&lt;/t&gt;</Original>
+        <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Charge&lt;/t&gt;</English>
+        <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Charge&lt;/t&gt;</French>
+    </Key>
+    <Key ID="STR_LL_RoeAction_Defense">
+        <Original>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Défense&lt;/t&gt;</Original>
+        <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Defense&lt;/t&gt;</English>
+        <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Défense&lt;/t&gt;</French>
+    </Key>
+    <Key ID="STR_LL_RoeAction_Reset">
+        <Original>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Reset&lt;/t&gt;</Original>
+        <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Reset&lt;/t&gt;</English>
+        <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Reset&lt;/t&gt;</French>
+    </Key>
+</Keys>

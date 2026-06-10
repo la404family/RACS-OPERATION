@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keys>
+    <Key ID="STR_LL_AssignLeader_Changed">
+        <Original>QG : Changement de commandement sur le terrain. Un officier humain a repris le lead.</Original>
+        <English>HQ: Field command change. A human officer has taken the lead.</English>
+        <French>QG : Changement de commandement sur le terrain. Un officier humain a repris le lead.</French>
+    </Key>
+</Keys>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keys>
+    <Key ID="STR_LL_SearchAction_Title">
+        <Original>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Fouille&lt;/t&gt;</Original>
+        <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Search&lt;/t&gt;</English>
+        <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Fouille&lt;/t&gt;</French>
+    </Key>
+    <Key ID="STR_LL_SearchAction_NoBuildings">
+        <Original>QG : Aucun bâtiment fouillable à proximité.</Original>
+        <English>HQ: No searchable buildings nearby.</English>
+        <French>QG : Aucun bâtiment fouillable à proximité.</French>
+    </Key>
+    <Key ID="STR_LL_SearchAction_NoAI">
+        <Original>QG : Pas d'IA d'infanterie dans l'escouade.</Original>
+        <English>HQ: No infantry AI in the squad.</English>
+        <French>QG : Pas d'IA d'infanterie dans l'escouade.</French>
+    </Key>
+    <Key ID="STR_LL_SearchAction_Secured">
+        <Original>QG : Bâtiments sécurisés. L'escouade se regroupe.</Original>
+        <English>HQ: Buildings secured. The squad is regrouping.</English>
+        <French>QG : Bâtiments sécurisés. L'escouade se regroupe.</French>
+    </Key>
+</Keys>

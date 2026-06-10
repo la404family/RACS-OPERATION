@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keys>
+    <Key ID="STR_LL_Heli_Action_VehicleAlready">
+        <Original>QG : Livraison de véhicule déjà effectuée.</Original>
+        <English>HQ: Vehicle delivery already completed.</English>
+        <French>QG : Livraison de véhicule déjà effectuée.</French>
+    </Key>
+    <Key ID="STR_LL_Heli_Action_CASCooldown">
+        <Original>QG : CAS en cooldown, encore %1s.</Original>
+        <English>HQ: CAS on cooldown, %1s remaining.</English>
+        <French>QG : CAS en cooldown, encore %1s.</French>
+    </Key>
+    <Key ID="STR_LL_Heli_Action_ClickMap">
+        <Original>QG : Cliquez sur la carte pour définir la zone de l'hélicoptère.</Original>
+        <English>HQ: Click on the map to define the helicopter zone.</English>
+        <French>QG : Cliquez sur la carte pour définir la zone de l'hélicoptère.</French>
+    </Key>
+    <Key ID="STR_LL_Heli_Action_EnRoute">
+        <Original>QG : Hélicoptère en route vers [%1, %2]. Type: %3</Original>
+        <English>HQ: Helicopter en route to [%1, %2]. Type: %3</English>
+        <French>QG : Hélicoptère en route vers [%1, %2]. Type: %3</French>
+    </Key>
+    <Key ID="STR_LL_Heli_Action_Ammo">
+        <Original>&lt;t color='#FFFFFF'&gt;[HELI] Munitions&lt;/t&gt;</Original>
+        <English>&lt;t color='#FFFFFF'&gt;[HELI] Ammo&lt;/t&gt;</English>
+        <French>&lt;t color='#FFFFFF'&gt;[HELI] Munitions&lt;/t&gt;</French>
+    </Key>
+    <Key ID="STR_LL_Heli_Action_Vehicle">
+        <Original>&lt;t color='#FFFFFF'&gt;[HELI] Véhicule&lt;/t&gt;</Original>
+        <English>&lt;t color='#FFFFFF'&gt;[HELI] Vehicle&lt;/t&gt;</English>
+        <French>&lt;t color='#FFFFFF'&gt;[HELI] Véhicule&lt;/t&gt;</French>
+    </Key>
+    <Key ID="STR_LL_Heli_Action_CAS">
+        <Original>&lt;t color='#FFFFFF'&gt;[HELI] Appui CAS&lt;/t&gt;</Original>
+        <English>&lt;t color='#FFFFFF'&gt;[HELI] CAS Support&lt;/t&gt;</English>
+        <French>&lt;t color='#FFFFFF'&gt;[HELI] Appui CAS&lt;/t&gt;</French>
+    </Key>
+    <Key ID="STR_LL_Heli_Action_Reinforce">
+        <Original>&lt;t color='#FFFFFF'&gt;[HELI] Renforts&lt;/t&gt;</Original>
+        <English>&lt;t color='#FFFFFF'&gt;[HELI] Reinforcements&lt;/t&gt;</English>
+        <French>&lt;t color='#FFFFFF'&gt;[HELI] Renforts&lt;/t&gt;</French>
+    </Key>
+    <Key ID="STR_LL_Heli_Action_Extract">
+        <Original>&lt;t color='#FFFFFF'&gt;[HELI] Extraction&lt;/t&gt;</Original>
+        <English>&lt;t color='#FFFFFF'&gt;[HELI] Extraction&lt;/t&gt;</English>
+        <French>&lt;t color='#FFFFFF'&gt;[HELI] Extraction&lt;/t&gt;</French>
+    </Key>
+</Keys>

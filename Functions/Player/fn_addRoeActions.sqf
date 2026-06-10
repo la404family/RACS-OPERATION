@@ -33,7 +33,7 @@ if (isNil "LL_fnc_applyRoE") then {
             default {"Par défaut"};
         };
         
-        systemChat format ["QG : Nouvelles Règles d'Engagement -> %1", _frName];
+        systemChat format [localize "STR_LL_RoeAction_Changed", _frName];
     };
 };
 
@@ -46,42 +46,42 @@ private _fnc_addRoeActions = {
     private _cond = "alive _target && leader group _target == _target && ({!isPlayer _x && alive _x && vehicle _x == _x} count units group _target > 0)";
 
     _unit addAction [
-        "<t color='#FFFFFF'>[ESCOUADE] Infiltration</t>",
+        localize "STR_LL_RoeAction_Infiltration",
         { ([group (_this select 1)] + (_this select 3)) call LL_fnc_applyRoE; },
         ["BLUE", "STEALTH", "LIMITED", "STAG COLUMN", "MIDDLE", false, "STEALTH"],
         7.4, false, true, "", _cond
     ];
 
     _unit addAction [
-        "<t color='#FFFFFF'>[ESCOUADE] Patrouille</t>",
+        localize "STR_LL_RoeAction_Patrol",
         { ([group (_this select 1)] + (_this select 3)) call LL_fnc_applyRoE; },
         ["GREEN", "SAFE", "NORMAL", "COLUMN", "AUTO", false, "PATROL"],
         7.3, false, true, "", _cond
     ];
 
     _unit addAction [
-        "<t color='#FFFFFF'>[ESCOUADE] Vigilance</t>",
+        localize "STR_LL_RoeAction_Vigilance",
         { ([group (_this select 1)] + (_this select 3)) call LL_fnc_applyRoE; },
         ["YELLOW", "AWARE", "NORMAL", "WEDGE", "AUTO", false, "VIGILANT"],
         7.2, false, true, "", _cond
     ];
 
     _unit addAction [
-        "<t color='#FFFFFF'>[ESCOUADE] Assaut</t>",
+        localize "STR_LL_RoeAction_Assault",
         { ([group (_this select 1)] + (_this select 3)) call LL_fnc_applyRoE; },
         ["RED", "COMBAT", "NORMAL", "WEDGE", "AUTO", false, "ASSAULT"],
         7.1, false, true, "", _cond
     ];
 
     _unit addAction [
-        "<t color='#FFFFFF'>[ESCOUADE] Charge</t>",
+        localize "STR_LL_RoeAction_Charge",
         { ([group (_this select 1)] + (_this select 3)) call LL_fnc_applyRoE; },
         ["RED", "COMBAT", "FULL", "VEE", "UP", true, "CHARGE"],
         7.0, false, true, "", _cond
     ];
 
     _unit addAction [
-        "<t color='#FFFFFF'>[ESCOUADE] Défense</t>",
+        localize "STR_LL_RoeAction_Defense",
         { 
             ([group (_this select 1)] + (_this select 3)) call LL_fnc_applyRoE;
             { if (!isPlayer _x && alive _x) then { _x doWatch (_x getRelPos [30, random 360]); }; } forEach units group (_this select 1);
@@ -91,7 +91,7 @@ private _fnc_addRoeActions = {
     ];
 
     _unit addAction [
-        "<t color='#FFFFFF'>[ESCOUADE] Reset</t>",
+        localize "STR_LL_RoeAction_Reset",
         { ([group (_this select 1)] + (_this select 3)) call LL_fnc_applyRoE; },
         ["YELLOW", "AWARE", "NORMAL", "WEDGE", "AUTO", false, "VIGILANT"],
         6.8, false, true, "", _cond

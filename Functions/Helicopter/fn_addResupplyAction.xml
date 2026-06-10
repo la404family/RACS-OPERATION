@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keys>
+    <Key ID="STR_LL_Action_Resupply">
+        <Original>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Ravitaillement&lt;/t&gt;</Original>
+        <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Resupply&lt;/t&gt;</English>
+        <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Ravitaillement&lt;/t&gt;</French>
+    </Key>
+    <Key ID="STR_LL_Msg_Resupply_NoAI">
+        <Original>Seuls les joueurs peuvent utiliser cette action.</Original>
+        <English>Only players can use this action.</English>
+        <French>Seuls les joueurs peuvent utiliser cette action.</French>
+    </Key>
+    <Key ID="STR_LL_Msg_Resupply_Start">
+        <Original>Ravitaillement en cours...</Original>
+        <English>Resupply in progress...</English>
+        <French>Ravitaillement en cours...</French>
+    </Key>
+    <Key ID="STR_LL_Msg_Resupply_Done">
+        <Original>Ravitaillement terminé.</Original>
+        <English>Resupply finished.</English>
+        <French>Ravitaillement terminé.</French>
+    </Key>
+</Keys>

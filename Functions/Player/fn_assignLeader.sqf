@@ -31,7 +31,7 @@ if (!isServer) exitWith {};
                     private _newLeader = _livingPlayers select 0;
                     _mainGrp selectLeader _newLeader;
                     
-                    ["QG : Changement de commandement sur le terrain. Un officier humain a repris le lead."] remoteExec ["systemChat", _livingPlayers];
+                    [localize "STR_LL_AssignLeader_Changed"] remoteExec ["systemChat", _livingPlayers];
                 };
             };
         };

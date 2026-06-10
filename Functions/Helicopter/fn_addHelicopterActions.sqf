@@ -9,18 +9,18 @@ if (!hasInterface) exitWith {};
         private _fnc_requestWithMap = {
             params ["_type"];
             if (_type == "VEHICULE" && { missionNamespace getVariable ["TAG_VehicleSupport_Delivered", false] }) exitWith {
-                systemChat "QG : Livraison de véhicule déjà effectuée.";
+                systemChat localize "STR_LL_Heli_Action_VehicleAlready";
             };
             if (_type == "CAS") then {
                 private _cooldown = missionNamespace getVariable ["TAG_CAS_Cooldown_Until", 0];
                 if (time < _cooldown) exitWith {
                     private _remaining = ceil (_cooldown - time);
-                    systemChat format ["QG : CAS en cooldown, encore %1s.", _remaining];
+                    systemChat format [localize "STR_LL_Heli_Action_CASCooldown", _remaining];
                 };
             };
 
             openMap true;
-            systemChat "QG : Cliquez sur la carte pour définir la zone de l'hélicoptère.";
+            systemChat localize "STR_LL_Heli_Action_ClickMap";
             missionNamespace setVariable ["LL_Heli_MapClick", true];
             missionNamespace setVariable ["LL_Heli_PendingType", _type];
 
@@ -32,14 +32,14 @@ if (!hasInterface) exitWith {};
                 openMap false;
                 private _type = missionNamespace getVariable ["LL_Heli_PendingType", ""];
                 [_type, _pos, player] remoteExec ["LL_fnc_requestHelicopter", 2];
-                systemChat format ["QG : Hélicoptère en route vers [%1, %2]. Type: %3", round (_pos select 0), round (_pos select 1), _type];
+                systemChat format [localize "STR_LL_Heli_Action_EnRoute", round (_pos select 0), round (_pos select 1), _type];
             }];
         };
 
         missionNamespace setVariable ["LL_fnc_requestWithMap", _fnc_requestWithMap];
 
         _unit addAction [
-            "<t color='#FFFFFF'>[HELI] Munitions</t>",
+            localize "STR_LL_Heli_Action_Ammo",
             {
                 ["LIVRAISON"] call (missionNamespace getVariable ["LL_fnc_requestWithMap", {}]);
             },
@@ -47,7 +47,7 @@ if (!hasInterface) exitWith {};
         ];
 
         _unit addAction [
-            "<t color='#FFFFFF'>[HELI] Véhicule</t>",
+            localize "STR_LL_Heli_Action_Vehicle",
             {
                 ["VEHICULE"] call (missionNamespace getVariable ["LL_fnc_requestWithMap", {}]);
             },
@@ -55,7 +55,7 @@ if (!hasInterface) exitWith {};
         ];
 
         _unit addAction [
-            "<t color='#FFFFFF'>[HELI] Appui CAS</t>",
+            localize "STR_LL_Heli_Action_CAS",
             {
                 ["CAS"] call (missionNamespace getVariable ["LL_fnc_requestWithMap", {}]);
             },
@@ -63,7 +63,7 @@ if (!hasInterface) exitWith {};
         ];
 
         _unit addAction [
-            "<t color='#FFFFFF'>[HELI] Renforts</t>",
+            localize "STR_LL_Heli_Action_Reinforce",
             {
                 ["DEBARQUEMENT"] call (missionNamespace getVariable ["LL_fnc_requestWithMap", {}]);
             },
@@ -71,7 +71,7 @@ if (!hasInterface) exitWith {};
         ];
 
         _unit addAction [
-            "<t color='#FFFFFF'>[HELI] Extraction</t>",
+            localize "STR_LL_Heli_Action_Extract",
             {
                 ["EMBARQUEMENT"] call (missionNamespace getVariable ["LL_fnc_requestWithMap", {}]);
             },

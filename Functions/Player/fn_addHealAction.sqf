@@ -8,7 +8,7 @@ if (!hasInterface) exitWith {};
         _unit setVariable ["LL_Action_Heal_Added", true];
 
         _unit addAction [
-            "<t color='#FFFFFF'>[ESCOUADE] Soins</t>",
+            localize "STR_LL_HealAction_Title",
             {
                 params ["_target", "_caller"];
 
@@ -22,9 +22,9 @@ if (!hasInterface) exitWith {};
 
                 if (_healers isEqualTo []) exitWith {
                     if (_aiUnits isNotEqualTo []) then {
-                        systemChat "QG : Négatif ! Personne ne possède de kit de soin.";
+                        systemChat localize "STR_LL_HealAction_NoKits";
                     } else {
-                        systemChat "QG : Négatif ! Aucun blessé nécessitant des soins.";
+                        systemChat localize "STR_LL_HealAction_NoWounded";
                     };
                 };
 
@@ -66,7 +66,7 @@ if (!hasInterface) exitWith {};
                     };
                 } forEach _healers;
 
-                systemChat format ["QG : %1 homme(s) en cours de soins...", count _healers];
+                systemChat format [localize "STR_LL_HealAction_Healing", count _healers];
             },
             [],
             6.6,

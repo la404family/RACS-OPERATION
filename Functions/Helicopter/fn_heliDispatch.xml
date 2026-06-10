@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keys>
+    <Key ID="STR_LL_Heli_Dispatch_Cooldown">
+        <Original>QG : Appui aérien en cooldown, encore %1 secondes.</Original>
+        <English>HQ: Air support on cooldown, %1 seconds remaining.</English>
+        <French>QG : Appui aérien en cooldown, encore %1 secondes.</French>
+    </Key>
+    <Key ID="STR_LL_Heli_Dispatch_VehicleAlready">
+        <Original>QG : Livraison de véhicule déjà effectuée. Demande refusée.</Original>
+        <English>HQ: Vehicle delivery already completed. Request denied.</English>
+        <French>QG : Livraison de véhicule déjà effectuée. Demande refusée.</French>
+    </Key>
+</Keys>

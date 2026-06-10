@@ -7,7 +7,7 @@ if (!hasInterface) exitWith {};
         _unit setVariable ["LL_Rally_Action_Added", true];
 
         _unit addAction [
-            "<t color='#FFFFFF'>[ESCOUADE] Regroupement</t>",
+            localize "STR_LL_RallyAction_Title",
             {
                 params ["_target", "_caller", "_actionId"];
                 [_caller] call LL_fnc_forceRally;

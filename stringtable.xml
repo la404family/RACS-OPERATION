@@ -1,0 +1,339 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Project name="Mission">
+    <Package name="Drone">
+        <Key ID="STR_Drone_Surveillance">
+            <Original>&lt;t color='#FFFFFF'&gt;[DRONE] Surveillance&lt;/t&gt;</Original>
+            <English>&lt;t color='#FFFFFF'&gt;[DRONE] Surveillance&lt;/t&gt;</English>
+            <French>&lt;t color='#FFFFFF'&gt;[DRONE] Surveillance&lt;/t&gt;</French>
+        </Key>
+        <Key ID="STR_Drone_AlreadyActive_Wait">
+            <Original>QG : Drone déjà en mission. Attendez son retour.</Original>
+            <English>HQ: Drone is already on a mission. Wait for its return.</English>
+            <French>QG : Drone déjà en mission. Attendez son retour.</French>
+        </Key>
+        <Key ID="STR_Drone_ClickMap">
+            <Original>QG : Cliquez sur la carte pour définir la zone de surveillance.</Original>
+            <English>HQ: Click on the map to define the surveillance zone.</English>
+            <French>QG : Cliquez sur la carte pour définir la zone de surveillance.</French>
+        </Key>
+        <Key ID="STR_Drone_EnRoute">
+            <Original>QG : Drone en route vers la position [%1, %2].</Original>
+            <English>HQ: Drone en route to position [%1, %2].</English>
+            <French>QG : Drone en route vers la position [%1, %2].</French>
+        </Key>
+        <Key ID="STR_Drone_AlreadyActive">
+            <Original>QG : Drone déjà en mission.</Original>
+            <English>HQ: Drone is already on a mission.</English>
+            <French>QG : Drone déjà en mission.</French>
+        </Key>
+        <Key ID="STR_Drone_Approach">
+            <Original>QG : MQ-9 Reaper en approche. Surveillance active pendant %1 minutes.</Original>
+            <English>HQ: MQ-9 Reaper on approach. Active surveillance for %1 minutes.</English>
+            <French>QG : MQ-9 Reaper en approche. Surveillance active pendant %1 minutes.</French>
+        </Key>
+        <Key ID="STR_Drone_RTB">
+            <Original>QG : Drone de surveillance en retour à la base.</Original>
+            <English>HQ: Surveillance drone returning to base.</English>
+            <French>QG : Drone de surveillance en retour à la base.</French>
+        </Key>
+        <Key ID="STR_Drone_Available">
+            <Original>QG : Drone de nouveau disponible.</Original>
+            <English>HQ: Drone is available again.</English>
+            <French>QG : Drone de nouveau disponible.</French>
+        </Key>
+    </Package>
+    <Package name="Helicopter">
+        <Key ID="STR_LL_Heli_Action_VehicleAlready">
+            <Original>QG : Livraison de véhicule déjà effectuée.</Original>
+            <English>HQ: Vehicle delivery already completed.</English>
+            <French>QG : Livraison de véhicule déjà effectuée.</French>
+        </Key>
+        <Key ID="STR_LL_Heli_Action_CASCooldown">
+            <Original>QG : CAS en cooldown, encore %1s.</Original>
+            <English>HQ: CAS on cooldown, %1s remaining.</English>
+            <French>QG : CAS en cooldown, encore %1s.</French>
+        </Key>
+        <Key ID="STR_LL_Heli_Action_ClickMap">
+            <Original>QG : Cliquez sur la carte pour définir la zone de l'hélicoptère.</Original>
+            <English>HQ: Click on the map to define the helicopter zone.</English>
+            <French>QG : Cliquez sur la carte pour définir la zone de l'hélicoptère.</French>
+        </Key>
+        <Key ID="STR_LL_Heli_Action_EnRoute">
+            <Original>QG : Hélicoptère en route vers [%1, %2]. Type: %3</Original>
+            <English>HQ: Helicopter en route to [%1, %2]. Type: %3</English>
+            <French>QG : Hélicoptère en route vers [%1, %2]. Type: %3</French>
+        </Key>
+        <Key ID="STR_LL_Heli_Action_Ammo">
+            <Original>&lt;t color='#FFFFFF'&gt;[HELI] Munitions&lt;/t&gt;</Original>
+            <English>&lt;t color='#FFFFFF'&gt;[HELI] Ammo&lt;/t&gt;</English>
+            <French>&lt;t color='#FFFFFF'&gt;[HELI] Munitions&lt;/t&gt;</French>
+        </Key>
+        <Key ID="STR_LL_Heli_Action_Vehicle">
+            <Original>&lt;t color='#FFFFFF'&gt;[HELI] Véhicule&lt;/t&gt;</Original>
+            <English>&lt;t color='#FFFFFF'&gt;[HELI] Vehicle&lt;/t&gt;</English>
+            <French>&lt;t color='#FFFFFF'&gt;[HELI] Véhicule&lt;/t&gt;</French>
+        </Key>
+        <Key ID="STR_LL_Heli_Action_CAS">
+            <Original>&lt;t color='#FFFFFF'&gt;[HELI] Appui CAS&lt;/t&gt;</Original>
+            <English>&lt;t color='#FFFFFF'&gt;[HELI] CAS Support&lt;/t&gt;</English>
+            <French>&lt;t color='#FFFFFF'&gt;[HELI] Appui CAS&lt;/t&gt;</French>
+        </Key>
+        <Key ID="STR_LL_Heli_Action_Reinforce">
+            <Original>&lt;t color='#FFFFFF'&gt;[HELI] Renforts&lt;/t&gt;</Original>
+            <English>&lt;t color='#FFFFFF'&gt;[HELI] Reinforcements&lt;/t&gt;</English>
+            <French>&lt;t color='#FFFFFF'&gt;[HELI] Renforts&lt;/t&gt;</French>
+        </Key>
+        <Key ID="STR_LL_Heli_Action_Extract">
+            <Original>&lt;t color='#FFFFFF'&gt;[HELI] Extraction&lt;/t&gt;</Original>
+            <English>&lt;t color='#FFFFFF'&gt;[HELI] Extraction&lt;/t&gt;</English>
+            <French>&lt;t color='#FFFFFF'&gt;[HELI] Extraction&lt;/t&gt;</French>
+        </Key>
+        <Key ID="STR_LL_Action_Resupply">
+            <Original>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Ravitaillement&lt;/t&gt;</Original>
+            <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Resupply&lt;/t&gt;</English>
+            <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Ravitaillement&lt;/t&gt;</French>
+        </Key>
+        <Key ID="STR_LL_Msg_Resupply_NoAI">
+            <Original>Seuls les joueurs peuvent utiliser cette action.</Original>
+            <English>Only players can use this action.</English>
+            <French>Seuls les joueurs peuvent utiliser cette action.</French>
+        </Key>
+        <Key ID="STR_LL_Msg_Resupply_Start">
+            <Original>Ravitaillement en cours...</Original>
+            <English>Resupply in progress...</English>
+            <French>Ravitaillement en cours...</French>
+        </Key>
+        <Key ID="STR_LL_Msg_Resupply_Done">
+            <Original>Ravitaillement terminé.</Original>
+            <English>Resupply finished.</English>
+            <French>Ravitaillement terminé.</French>
+        </Key>
+        <Key ID="STR_LL_Heli_Dispatch_Cooldown">
+            <Original>QG : Appui aérien en cooldown, encore %1 secondes.</Original>
+            <English>HQ: Air support on cooldown, %1 seconds remaining.</English>
+            <French>QG : Appui aérien en cooldown, encore %1 secondes.</French>
+        </Key>
+        <Key ID="STR_LL_Heli_Dispatch_VehicleAlready">
+            <Original>QG : Livraison de véhicule déjà effectuée. Demande refusée.</Original>
+            <English>HQ: Vehicle delivery already completed. Request denied.</English>
+            <French>QG : Livraison de véhicule déjà effectuée. Demande refusée.</French>
+        </Key>
+        <Key ID="STR_LL_Heli_Msg_CargoAborted">
+            <Original>QG : Largage annulé.</Original>
+            <English>HQ: Drop aborted.</English>
+            <French>QG : Largage annulé.</French>
+        </Key>
+        <Key ID="STR_LL_Heli_Msg_Active">
+            <Original>QG : Hélicoptère déployé.</Original>
+            <English>HQ: Helicopter deployed.</English>
+            <French>QG : Hélicoptère déployé.</French>
+        </Key>
+        <Key ID="STR_TAG_Msg_Ammo_Dropped">
+            <Original>QG : Munitions larguées.</Original>
+            <English>HQ: Ammo dropped.</English>
+            <French>QG : Munitions larguées.</French>
+        </Key>
+        <Key ID="STR_TAG_Msg_Vehicle_Dropped">
+            <Original>QG : Véhicule largué.</Original>
+            <English>HQ: Vehicle dropped.</English>
+            <French>QG : Véhicule largué.</French>
+        </Key>
+        <Key ID="STR_LL_Heli_Msg_Landed_Reinforce">
+            <Original>QG : Renforts posés.</Original>
+            <English>HQ: Reinforcements landed.</English>
+            <French>QG : Renforts posés.</French>
+        </Key>
+        <Key ID="STR_LL_Heli_Msg_Squad_Joined">
+            <Original>QG : Escouade a rejoint.</Original>
+            <English>HQ: Squad joined.</English>
+            <French>QG : Escouade a rejoint.</French>
+        </Key>
+        <Key ID="STR_LL_Heli_Msg_Patrol_Started">
+            <Original>QG : Patrouille commencée.</Original>
+            <English>HQ: Patrol started.</English>
+            <French>QG : Patrouille commencée.</French>
+        </Key>
+        <Key ID="STR_LL_Heli_Msg_Landed_Extract">
+            <Original>QG : Hélicoptère posé pour extraction.</Original>
+            <English>HQ: Helicopter landed for extraction.</English>
+            <French>QG : Hélicoptère posé pour extraction.</French>
+        </Key>
+        <Key ID="STR_LL_Heli_Msg_Extract_Players_Exit_Warning">
+            <Original>QG : Ne quittez pas l'hélicoptère.</Original>
+            <English>HQ: Do not leave the helicopter.</English>
+            <French>QG : Ne quittez pas l'hélicoptère.</French>
+        </Key>
+        <Key ID="STR_LL_Heli_Msg_Departing">
+            <Original>QG : Hélicoptère en départ.</Original>
+            <English>HQ: Helicopter departing.</English>
+            <French>QG : Hélicoptère en départ.</French>
+        </Key>
+        <Key ID="STR_LL_Heli_Msg_Killed">
+            <Original>QG : Hélicoptère détruit.</Original>
+            <English>HQ: Helicopter destroyed.</English>
+            <French>QG : Hélicoptère détruit.</French>
+        </Key>
+        <Key ID="STR_TAG_Msg_CAS_RTB">
+            <Original>QG : Appui aérien terminé, retour à la base.</Original>
+            <English>HQ: Air support finished, returning to base.</English>
+            <French>QG : Appui aérien terminé, retour à la base.</French>
+        </Key>
+        <Key ID="STR_TAG_Marker_Heli_Ammo">
+            <Original>Largage Munitions</Original>
+            <English>Ammo Drop</English>
+            <French>Largage Munitions</French>
+        </Key>
+        <Key ID="STR_TAG_Marker_Heli_Vehicle">
+            <Original>Largage Véhicule</Original>
+            <English>Vehicle Drop</English>
+            <French>Largage Véhicule</French>
+        </Key>
+        <Key ID="STR_TAG_Marker_Heli_Debark">
+            <Original>Débarquement</Original>
+            <English>Disembarkation</English>
+            <French>Débarquement</French>
+        </Key>
+        <Key ID="STR_TAG_Marker_Heli_Extract">
+            <Original>Extraction</Original>
+            <English>Extraction</English>
+            <French>Extraction</French>
+        </Key>
+        <Key ID="STR_TAG_Marker_Heli_CAS">
+            <Original>Appui Aérien (CAS)</Original>
+            <English>Air Support (CAS)</English>
+            <French>Appui Aérien (CAS)</French>
+        </Key>
+    </Package>
+    <Package name="Player">
+        <Key ID="STR_LL_HealAction_Title">
+            <Original>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Soins&lt;/t&gt;</Original>
+            <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Heal&lt;/t&gt;</English>
+            <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Soins&lt;/t&gt;</French>
+        </Key>
+        <Key ID="STR_LL_HealAction_NoKits">
+            <Original>QG : Négatif ! Personne ne possède de kit de soin.</Original>
+            <English>HQ: Negative! Nobody has a medkit.</English>
+            <French>QG : Négatif ! Personne ne possède de kit de soin.</French>
+        </Key>
+        <Key ID="STR_LL_HealAction_NoWounded">
+            <Original>QG : Négatif ! Aucun blessé nécessitant des soins.</Original>
+            <English>HQ: Negative! No wounded requiring healing.</English>
+            <French>QG : Négatif ! Aucun blessé nécessitant des soins.</French>
+        </Key>
+        <Key ID="STR_LL_HealAction_Healing">
+            <Original>QG : %1 homme(s) en cours de soins...</Original>
+            <English>HQ: %1 man(men) being healed...</English>
+            <French>QG : %1 homme(s) en cours de soins...</French>
+        </Key>
+        <Key ID="STR_LL_RallyAction_Title">
+            <Original>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Regroupement&lt;/t&gt;</Original>
+            <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Rally&lt;/t&gt;</English>
+            <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Regroupement&lt;/t&gt;</French>
+        </Key>
+        <Key ID="STR_LL_RoeAction_Changed">
+            <Original>QG : Nouvelles Règles d'Engagement -&gt; %1</Original>
+            <English>HQ: New Rules of Engagement -&gt; %1</English>
+            <French>QG : Nouvelles Règles d'Engagement -&gt; %1</French>
+        </Key>
+        <Key ID="STR_LL_RoeAction_Infiltration">
+            <Original>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Infiltration&lt;/t&gt;</Original>
+            <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Infiltration&lt;/t&gt;</English>
+            <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Infiltration&lt;/t&gt;</French>
+        </Key>
+        <Key ID="STR_LL_RoeAction_Patrol">
+            <Original>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Patrouille&lt;/t&gt;</Original>
+            <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Patrol&lt;/t&gt;</English>
+            <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Patrouille&lt;/t&gt;</French>
+        </Key>
+        <Key ID="STR_LL_RoeAction_Vigilance">
+            <Original>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Vigilance&lt;/t&gt;</Original>
+            <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Vigilance&lt;/t&gt;</English>
+            <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Vigilance&lt;/t&gt;</French>
+        </Key>
+        <Key ID="STR_LL_RoeAction_Assault">
+            <Original>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Assaut&lt;/t&gt;</Original>
+            <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Assault&lt;/t&gt;</English>
+            <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Assaut&lt;/t&gt;</French>
+        </Key>
+        <Key ID="STR_LL_RoeAction_Charge">
+            <Original>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Charge&lt;/t&gt;</Original>
+            <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Charge&lt;/t&gt;</English>
+            <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Charge&lt;/t&gt;</French>
+        </Key>
+        <Key ID="STR_LL_RoeAction_Defense">
+            <Original>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Défense&lt;/t&gt;</Original>
+            <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Defense&lt;/t&gt;</English>
+            <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Défense&lt;/t&gt;</French>
+        </Key>
+        <Key ID="STR_LL_RoeAction_Reset">
+            <Original>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Reset&lt;/t&gt;</Original>
+            <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Reset&lt;/t&gt;</English>
+            <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Reset&lt;/t&gt;</French>
+        </Key>
+        <Key ID="STR_LL_SearchAction_Title">
+            <Original>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Fouille&lt;/t&gt;</Original>
+            <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Search&lt;/t&gt;</English>
+            <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Fouille&lt;/t&gt;</French>
+        </Key>
+        <Key ID="STR_LL_SearchAction_NoBuildings">
+            <Original>QG : Aucun bâtiment fouillable à proximité.</Original>
+            <English>HQ: No searchable buildings nearby.</English>
+            <French>QG : Aucun bâtiment fouillable à proximité.</French>
+        </Key>
+        <Key ID="STR_LL_SearchAction_NoAI">
+            <Original>QG : Pas d'IA d'infanterie dans l'escouade.</Original>
+            <English>HQ: No infantry AI in the squad.</English>
+            <French>QG : Pas d'IA d'infanterie dans l'escouade.</French>
+        </Key>
+        <Key ID="STR_LL_SearchAction_Secured">
+            <Original>QG : Bâtiments sécurisés. L'escouade se regroupe.</Original>
+            <English>HQ: Buildings secured. The squad is regrouping.</English>
+            <French>QG : Bâtiments sécurisés. L'escouade se regroupe.</French>
+        </Key>
+        <Key ID="STR_LL_AssignLeader_Changed">
+            <Original>QG : Changement de commandement sur le terrain. Un officier humain a repris le lead.</Original>
+            <English>HQ: Field command change. A human officer has taken the lead.</English>
+            <French>QG : Changement de commandement sur le terrain. Un officier humain a repris le lead.</French>
+        </Key>
+        <Key ID="STR_LL_Diary_Lore_Title">
+            <Original>Lore</Original>
+            <English>Lore</English>
+            <French>Lore</French>
+        </Key>
+        <Key ID="STR_LL_Diary_Lore_Text">
+            <Original>Détails de l'histoire.</Original>
+            <English>Story details.</English>
+            <French>Détails de l'histoire.</French>
+        </Key>
+        <Key ID="STR_LL_Diary_Factions_Title">
+            <Original>Factions</Original>
+            <English>Factions</English>
+            <French>Factions</French>
+        </Key>
+        <Key ID="STR_LL_Diary_Factions_Text">
+            <Original>Détails des factions.</Original>
+            <English>Factions details.</English>
+            <French>Détails des factions.</French>
+        </Key>
+        <Key ID="STR_LL_Diary_Context_Title">
+            <Original>Contexte</Original>
+            <English>Context</English>
+            <French>Contexte</French>
+        </Key>
+        <Key ID="STR_LL_Diary_Context_Text">
+            <Original>Contexte de la mission.</Original>
+            <English>Mission context.</English>
+            <French>Contexte de la mission.</French>
+        </Key>
+        <Key ID="STR_LL_Briefing_Title">
+            <Original>Briefing</Original>
+            <English>Briefing</English>
+            <French>Briefing</French>
+        </Key>
+        <Key ID="STR_LL_Briefing_Text">
+            <Original>Instructions de mission.</Original>
+            <English>Mission instructions.</English>
+            <French>Instructions de mission.</French>
+        </Key>
+    </Package>
+</Project>

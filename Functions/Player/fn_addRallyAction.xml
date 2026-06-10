@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keys>
+    <Key ID="STR_LL_RallyAction_Title">
+        <Original>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Regroupement&lt;/t&gt;</Original>
+        <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Rally&lt;/t&gt;</English>
+        <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Regroupement&lt;/t&gt;</French>
+    </Key>
+</Keys>

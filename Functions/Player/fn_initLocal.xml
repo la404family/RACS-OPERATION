@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keys>
+    <Key ID="STR_LL_Diary_Lore_Title">
+        <Original>Lore</Original>
+        <English>Lore</English>
+        <French>Lore</French>
+    </Key>
+    <Key ID="STR_LL_Diary_Lore_Text">
+        <Original>Détails de l'histoire.</Original>
+        <English>Story details.</English>
+        <French>Détails de l'histoire.</French>
+    </Key>
+    <Key ID="STR_LL_Diary_Factions_Title">
+        <Original>Factions</Original>
+        <English>Factions</English>
+        <French>Factions</French>
+    </Key>
+    <Key ID="STR_LL_Diary_Factions_Text">
+        <Original>Détails des factions.</Original>
+        <English>Factions details.</English>
+        <French>Détails des factions.</French>
+    </Key>
+    <Key ID="STR_LL_Diary_Context_Title">
+        <Original>Contexte</Original>
+        <English>Context</English>
+        <French>Contexte</French>
+    </Key>
+    <Key ID="STR_LL_Diary_Context_Text">
+        <Original>Contexte de la mission.</Original>
+        <English>Mission context.</English>
+        <French>Contexte de la mission.</French>
+    </Key>
+    <Key ID="STR_LL_Briefing_Title">
+        <Original>Briefing</Original>
+        <English>Briefing</English>
+        <French>Briefing</French>
+    </Key>
+    <Key ID="STR_LL_Briefing_Text">
+        <Original>Instructions de mission.</Original>
+        <English>Mission instructions.</English>
+        <French>Instructions de mission.</French>
+    </Key>
+</Keys>

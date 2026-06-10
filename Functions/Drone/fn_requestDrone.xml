@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keys>
+    <Key ID="STR_Drone_AlreadyActive">
+        <Original>QG : Drone déjà en mission.</Original>
+        <English>HQ: Drone is already on a mission.</English>
+        <French>QG : Drone déjà en mission.</French>
+    </Key>
+    <Key ID="STR_Drone_Approach">
+        <Original>QG : MQ-9 Reaper en approche. Surveillance active pendant %1 minutes.</Original>
+        <English>HQ: MQ-9 Reaper on approach. Active surveillance for %1 minutes.</English>
+        <French>QG : MQ-9 Reaper en approche. Surveillance active pendant %1 minutes.</French>
+    </Key>
+    <Key ID="STR_Drone_RTB">
+        <Original>QG : Drone de surveillance en retour à la base.</Original>
+        <English>HQ: Surveillance drone returning to base.</English>
+        <French>QG : Drone de surveillance en retour à la base.</French>
+    </Key>
+    <Key ID="STR_Drone_Available">
+        <Original>QG : Drone de nouveau disponible.</Original>
+        <English>HQ: Drone is available again.</English>
+        <French>QG : Drone de nouveau disponible.</French>
+    </Key>
+</Keys>

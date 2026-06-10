@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keys>
+    <Key ID="STR_LL_Heli_Msg_CargoAborted">
+        <Original>QG : Largage annulé.</Original>
+        <English>HQ: Drop aborted.</English>
+        <French>QG : Largage annulé.</French>
+    </Key>
+    <Key ID="STR_LL_Heli_Msg_Active">
+        <Original>QG : Hélicoptère déployé.</Original>
+        <English>HQ: Helicopter deployed.</English>
+        <French>QG : Hélicoptère déployé.</French>
+    </Key>
+    <Key ID="STR_TAG_Msg_Ammo_Dropped">
+        <Original>QG : Munitions larguées.</Original>
+        <English>HQ: Ammo dropped.</English>
+        <French>QG : Munitions larguées.</French>
+    </Key>
+    <Key ID="STR_TAG_Msg_Vehicle_Dropped">
+        <Original>QG : Véhicule largué.</Original>
+        <English>HQ: Vehicle dropped.</English>
+        <French>QG : Véhicule largué.</French>
+    </Key>
+    <Key ID="STR_LL_Heli_Msg_Landed_Reinforce">
+        <Original>QG : Renforts posés.</Original>
+        <English>HQ: Reinforcements landed.</English>
+        <French>QG : Renforts posés.</French>
+    </Key>
+    <Key ID="STR_LL_Heli_Msg_Squad_Joined">
+        <Original>QG : Escouade a rejoint.</Original>
+        <English>HQ: Squad joined.</English>
+        <French>QG : Escouade a rejoint.</French>
+    </Key>
+    <Key ID="STR_LL_Heli_Msg_Patrol_Started">
+        <Original>QG : Patrouille commencée.</Original>
+        <English>HQ: Patrol started.</English>
+        <French>QG : Patrouille commencée.</French>
+    </Key>
+    <Key ID="STR_LL_Heli_Msg_Landed_Extract">
+        <Original>QG : Hélicoptère posé pour extraction.</Original>
+        <English>HQ: Helicopter landed for extraction.</English>
+        <French>QG : Hélicoptère posé pour extraction.</French>
+    </Key>
+    <Key ID="STR_LL_Heli_Msg_Extract_Players_Exit_Warning">
+        <Original>QG : Ne quittez pas l'hélicoptère.</Original>
+        <English>HQ: Do not leave the helicopter.</English>
+        <French>QG : Ne quittez pas l'hélicoptère.</French>
+    </Key>
+    <Key ID="STR_LL_Heli_Msg_Departing">
+        <Original>QG : Hélicoptère en départ.</Original>
+        <English>HQ: Helicopter departing.</English>
+        <French>QG : Hélicoptère en départ.</French>
+    </Key>
+    <Key ID="STR_LL_Heli_Msg_Killed">
+        <Original>QG : Hélicoptère détruit.</Original>
+        <English>HQ: Helicopter destroyed.</English>
+        <French>QG : Hélicoptère détruit.</French>
+    </Key>
+    <Key ID="STR_TAG_Msg_CAS_RTB">
+        <Original>QG : Appui aérien terminé, retour à la base.</Original>
+        <English>HQ: Air support finished, returning to base.</English>
+        <French>QG : Appui aérien terminé, retour à la base.</French>
+    </Key>
+    <Key ID="STR_TAG_Marker_Heli_Ammo">
+        <Original>Largage Munitions</Original>
+        <English>Ammo Drop</English>
+        <French>Largage Munitions</French>
+    </Key>
+    <Key ID="STR_TAG_Marker_Heli_Vehicle">
+        <Original>Largage Véhicule</Original>
+        <English>Vehicle Drop</English>
+        <French>Largage Véhicule</French>
+    </Key>
+    <Key ID="STR_TAG_Marker_Heli_Debark">
+        <Original>Débarquement</Original>
+        <English>Disembarkation</English>
+        <French>Débarquement</French>
+    </Key>
+    <Key ID="STR_TAG_Marker_Heli_Extract">
+        <Original>Extraction</Original>
+        <English>Extraction</English>
+        <French>Extraction</French>
+    </Key>
+    <Key ID="STR_TAG_Marker_Heli_CAS">
+        <Original>Appui Aérien (CAS)</Original>
+        <English>Air Support (CAS)</English>
+        <French>Appui Aérien (CAS)</French>
+    </Key>
+</Keys>
