@@ -59,7 +59,7 @@ if (!isServer) exitWith {};
                             _bldg animateDoor [_x, 1, false];     
 
                             private _soundPos = _bldg modelToWorld (getCenterOfMass _bldg);
-                            playSound3D ["A3\Sounds_F\environment\doors\DoorMetalSingleOpen_1.wss", _bldg, false, _soundPos, 1.2, 1, 35];
+                            playSound3D ["A3\Sounds_F\environment\doors\DoorMetalSingleOpen_1.wss", _bldg, false, _soundPos, 0.25, 0.8, 20];
                         };
                     } forEach _doorAnims;
 
