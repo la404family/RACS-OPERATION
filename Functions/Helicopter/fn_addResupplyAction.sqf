@@ -7,7 +7,7 @@ if (isNull _crate) exitWith {};
 _crate setVariable ["LL_Resupply_InProgress", false, true];
 
 _crate addAction [
-    localize "STR_LL_Action_Resupply",
+    format ["<t color='#FFFF00'>%1</t>", localize "STR_LL_Action_Resupply"],
     {
         params ["_target", "_caller", "_actionId"];
 

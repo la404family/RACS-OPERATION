@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keys>
+    <Key ID="STR_LL_Diary_Task00_Title">
+        <Original>OPORD : Exfiltration d'otage</Original>
+        <French>OPORD : Exfiltration d'otage</French>
+        <English>OPORD: Hostage Exfiltration</English>
+        <Turkish>OPORD: Rehine Tahliyesi</Turkish>
+        <Korean>OPORD: 인질 구출</Korean>
+        <Spanish>OPORD: Extracción de rehén</Spanish>
+        <Japanese>OPORD: 人質救出</Japanese>
+        <Chinese>OPORD: 人质撤离</Chinese>
+        <Russian>OPORD: Эвакуация заложника</Russian>
+        <German>OPORD: Geiselexfiltration</German>
+        <Italian>OPORD: Esfiltrazione ostaggio</Italian>
+        <Polish>OPORD: Ewakuacja zakładnika</Polish>
+    </Key>
+    <Key ID="STR_LL_Diary_Task00_Text">
+        <Original>Un civil allié a été capturé. Nous avons identifié des zones de détention probables. Localisez-le, sécurisez la zone et libérez-le. L'hélicoptère viendra le chercher dès que vous l'aurez trouvé.</Original>
+        <French>Un civil allié a été capturé. Nous avons identifié des zones de détention probables. Localisez-le, sécurisez la zone et libérez-le. L'hélicoptère viendra le chercher dès que vous l'aurez trouvé.</French>
+        <English>An allied civilian has been captured. We have identified several probable detention zones. Locate him, secure the area and free him. The helicopter will pick him up once rescued.</English>
+        <Turkish>Müttefik bir sivil esir alındı. Muhtemel birkaç gözaltı bölgesi tespit ettik. Onu bulun, bölgeyi güvenceye alın ve serbest bırakın. Kurtarıldıktan sonra helikopter onu alacak.</Turkish>
+        <Korean>아군 민간인이 포로로 잡혔습니다. 구금될 가능성이 있는 곳을 여러 군데 확인했습니다. 위치를 파악하고 지역을 확보하여 구출하십시오. 구조되면 헬리콥터가 데리러 올 것입니다.</Korean>
+        <Spanish>Un civil aliado ha sido capturado. Hemos identificado varias zonas de detención probables. Localízalo, asegura el área y libéralo. El helicóptero lo recogerá una vez rescatado.</Spanish>
+        <Japanese>同盟国の民間人が捕らえられました。いくつか拘束されている可能性のある場所を特定しました。見つけてエリアを確保し、解放してください。救出後、ヘリコプターが迎えに来ます。</Japanese>
+        <Chinese>一名盟军平民被俘。我们已经确定了几个可能的关押区。找到他，确保该区域的安全并释放他。获救后直升机会来接他。</Chinese>
+        <Russian>Союзный гражданский был захвачен в плен. Мы определили несколько вероятных зон содержания. Найдите его, обезопасьте район и освободите. Как только он будет спасен, за ним прилетит вертолет.</Russian>
+        <German>Ein alliierter Zivilist wurde gefangen genommen. Wir haben mehrere wahrscheinliche Haftzonen identifiziert. Lokalisieren Sie ihn, sichern Sie das Gebiet und befreien Sie ihn. Der Hubschrauber wird ihn nach der Rettung abholen.</German>
+        <Italian>Un civile alleato è stato catturato. Abbiamo identificato diverse probabili zone di detenzione. Individualo, metti al sicuro l'area e liberalo. L'elicottero lo verrà a prendere una volta salvato.</Italian>
+        <Polish>Sojuszniczy cywil został schwytany. Zidentyfikowaliśmy kilka prawdopodobnych stref przetrzymywania. Zlokalizuj go, zabezpiecz obszar i uwolnij. Po uratowaniu odbierze go helikopter.</Polish>
+    </Key>
+</Keys>

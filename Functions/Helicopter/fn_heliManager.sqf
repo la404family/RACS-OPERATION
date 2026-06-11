@@ -761,8 +761,11 @@ private _fnExecExtract = {
     private _task02bHostage   = missionNamespace getVariable ["LL_Task02b_Hostage", objNull];
     private _isTask02bExtract = !isNull _task02bHostage && { alive _task02bHostage } && { !(missionNamespace getVariable ["LL_Task02b_Freed_Done", false]) };
 
+    private _task00Hostage    = missionNamespace getVariable ["LL_Task00_Hostage", objNull];
+    private _isTask00Extract  = !isNull _task00Hostage && { alive _task00Hostage } && { missionNamespace getVariable ["LL_g_taskInProgress", false] };
+
     private _ejectEH = -1;
-    if (_isTask02bExtract) then {
+    if (_isTask02bExtract || _isTask00Extract) then {
         _ejectEH = _heli addEventHandler ["GetIn", {
             params ["_vehicle", "_role", "_unit"];
             if (isPlayer _unit && { alive _unit }) then {
@@ -779,9 +782,11 @@ private _fnExecExtract = {
         private _allHumans     = allPlayers select { alive _x };
         private _playersInHeli = { isPlayer _x && { alive _x } } count (crew _heli);
 
-        if (_isTask02bExtract) then {
+        if (_isTask02bExtract || _isTask00Extract) then {
 
-            private _hostage = missionNamespace getVariable ["LL_Task02b_Hostage", objNull];
+            private _hostage = objNull;
+            if (_isTask02bExtract) then { _hostage = missionNamespace getVariable ["LL_Task02b_Hostage", objNull]; };
+            if (_isTask00Extract) then { _hostage = missionNamespace getVariable ["LL_Task00_Hostage", objNull]; };
 
             {
                 if (isPlayer _x && { alive _x }) then {
@@ -815,11 +820,16 @@ private _fnExecExtract = {
             if (time > _timeout && { _playersInHeli == 0 }) then { _shouldLeave = true; };
         };
 
-        !alive _heli || _shouldLeave
+        !alive _heli || _shouldLeave || call _fnAborted
     };
 
     if (_ejectEH >= 0) then {
         _heli removeEventHandler ["GetIn", _ejectEH];
+    };
+
+    if (call _fnAborted) exitWith {
+        "" remoteExec ["hintSilent", 0];
+        false
     };
 
     if (!alive _heli) exitWith {
@@ -862,14 +872,18 @@ private _fnExecExtract = {
         _heli doMove _homeBase;
         _heli lock 2; 
 
-        private _hostage = missionNamespace getVariable ["LL_Task02b_Hostage", objNull];
-        if (!isNull _hostage) then {
-            [_hostage] spawn {
-                params ["_h"];
-                sleep 15;
-                if (!isNull _h) then { deleteVehicle _h; };
+        private _hostage2b = missionNamespace getVariable ["LL_Task02b_Hostage", objNull];
+        private _hostage00 = missionNamespace getVariable ["LL_Task00_Hostage", objNull];
+        {
+            private _h = _x;
+            if (!isNull _h) then {
+                [_h] spawn {
+                    params ["_unit"];
+                    sleep 15;
+                    if (!isNull _unit) then { deleteVehicle _unit; };
+                };
             };
-        };
+        } forEach [_hostage2b, _hostage00];
 
         false
     };

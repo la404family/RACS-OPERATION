@@ -258,73 +258,73 @@
 &lt;font color='#FF8800'&gt;Interface:&lt;/font&gt; Green action 'AI Auto-Heal'.&lt;br/&gt;
 &lt;font color='#00FF00'&gt;Condition:&lt;/font&gt; At least one injured AI in the group AND possessing a FirstAidKit.&lt;br/&gt;
 &lt;font color='#FFD700'&gt;Description:&lt;/font&gt; Orders a halt to the advance for immediate medical treatment. The injured AI will take a knee, holster their weapon, and apply first aid before resuming their place in formation.&lt;br/&gt;
-&lt;font color='#FFA500'&gt;Refusal (Negative):&lt;/font&gt; HQ or the squad will inform you verbally if medical supplies are exhausted.
+&lt;font color='#FFA500'&gt;Refusal (Negative):&lt;/font&gt; The squad will inform you verbally if medical supplies are exhausted.
         </Original>
             <French>
 &lt;font color='#FF8800'&gt;Interface :&lt;/font&gt; Action verte 'Soin Automatique IA'.&lt;br/&gt;
 &lt;font color='#00FF00'&gt;Condition :&lt;/font&gt; Au moins une IA blessée dans le groupe ET en possession d'une trousse de premiers secours (FirstAidKit).&lt;br/&gt;
 &lt;font color='#FFD700'&gt;Description :&lt;/font&gt; Ordonne un arrêt de la progression pour traitement médical immédiat. L'IA blessée mettra un genou à terre, rangera son arme et s'appliquera les premiers soins avant de reprendre sa place en formation.&lt;br/&gt;
-&lt;font color='#FFA500'&gt;Refus (Négatif) :&lt;/font&gt; Le QG ou l'escouade vous informera verbalement si les réserves médicales sont épuisées.
+&lt;font color='#FFA500'&gt;Refus (Négatif) :&lt;/font&gt; L'escouade vous informera verbalement si les réserves médicales sont épuisées.
         </French>
             <English>
 &lt;font color='#FF8800'&gt;Interface:&lt;/font&gt; Green action 'AI Auto-Heal'.&lt;br/&gt;
 &lt;font color='#00FF00'&gt;Condition:&lt;/font&gt; At least one injured AI in the group AND possessing a FirstAidKit.&lt;br/&gt;
 &lt;font color='#FFD700'&gt;Description:&lt;/font&gt; Orders a halt to the advance for immediate medical treatment. The injured AI will take a knee, holster their weapon, and apply first aid before resuming their place in formation.&lt;br/&gt;
-&lt;font color='#FFA500'&gt;Refusal (Negative):&lt;/font&gt; HQ or the squad will inform you verbally if medical supplies are exhausted.
+&lt;font color='#FFA500'&gt;Refusal (Negative):&lt;/font&gt; The squad will inform you verbally if medical supplies are exhausted.
         </English>
             <Spanish>
 &lt;font color='#FF8800'&gt;Interfaz:&lt;/font&gt; Acción verde 'Auto-Cura de IA'.&lt;br/&gt;
 &lt;font color='#00FF00'&gt;Condición:&lt;/font&gt; Al menos una IA herida en el grupo Y que posea un botiquín de primeros auxilios (FirstAidKit).&lt;br/&gt;
 &lt;font color='#FFD700'&gt;Descripción:&lt;/font&gt; Ordena un alto en el avance para tratamiento médico inmediato. La IA herida pondrá una rodilla en tierra, enfundará su arma y aplicará primeros auxilios antes de reanudar su lugar en la formación.&lt;br/&gt;
-&lt;font color='#FFA500'&gt;Rechazo (Negativo):&lt;/font&gt; El Cuartel General o el escuadrón te informarán verbalmente si los suministros médicos están agotados.
+&lt;font color='#FFA500'&gt;Rechazo (Negativo):&lt;/font&gt; El escuadrón te informará verbalmente si los suministros médicos están agotados.
         </Spanish>
             <Italian>
 &lt;font color='#FF8800'&gt;Interfaccia:&lt;/font&gt; Azione verde 'Autocura IA'.&lt;br/&gt;
 &lt;font color='#00FF00'&gt;Condizione:&lt;/font&gt; Almeno un'IA ferita nel gruppo E in possesso di un kit di pronto soccorso (FirstAidKit).&lt;br/&gt;
 &lt;font color='#FFD700'&gt;Descrizione:&lt;/font&gt; Ordina un arresto dell'avanzata per trattamento medico immediato. L'IA ferita si inginocchierà, rinfodererà l'arma e applicherà il primo soccorso prima di riprendere il suo posto in formazione.&lt;br/&gt;
-&lt;font color='#FFA500'&gt;Rifiuto (Negativo):&lt;/font&gt; Il Quartier Generale o la squadra ti informeranno verbalmente se le scorte mediche sono esaurite.
+&lt;font color='#FFA500'&gt;Rifiuto (Negativo):&lt;/font&gt; La squadra ti informerà verbalmente se le scorte mediche sono esaurite.
         </Italian>
             <German>
 &lt;font color='#FF8800'&gt;Schnittstelle:&lt;/font&gt; Grüne Aktion 'KI-Auto-Heilung'.&lt;br/&gt;
 &lt;font color='#00FF00'&gt;Bedingung:&lt;/font&gt; Mindestens eine verletzte KI in der Gruppe UND im Besitz eines Erste-Hilfe-Kastens (FirstAidKit).&lt;br/&gt;
 &lt;font color='#FFD700'&gt;Beschreibung:&lt;/font&gt; Befiehlt einen Halt des Vorrückens für sofortige medizinische Behandlung. Die verletzte KI kniet nieder, steckt ihre Waffe weg und leistet Erste Hilfe, bevor sie ihren Platz in der Formation wieder einnimmt.&lt;br/&gt;
-&lt;font color='#FFA500'&gt;Ablehnung (Negativ):&lt;/font&gt; Das HQ oder der Trupp wird dich mündlich informieren, wenn die medizinischen Vorräte erschöpft sind.
+&lt;font color='#FFA500'&gt;Ablehnung (Negativ):&lt;/font&gt; Der Trupp wird dich mündlich informieren, wenn die medizinischen Vorräte erschöpft sind.
         </German>
             <Polish>
 &lt;font color='#FF8800'&gt;Interfejs:&lt;/font&gt; Zielona akcja 'Auto-leczenie SI'.&lt;br/&gt;
 &lt;font color='#00FF00'&gt;Warunek:&lt;/font&gt; Przynajmniej jedna ranna sztuczna inteligencja w grupie ORAZ posiadająca apteczkę pierwszej pomocy (FirstAidKit).&lt;br/&gt;
 &lt;font color='#FFD700'&gt;Opis:&lt;/font&gt; Zarządza zatrzymanie marszu w celu natychmiastowego leczenia medycznego. Ranna SI uklęknie, schowa broń i zastosuje pierwszą pomoc przed powrotem na swoje miejsce w formacji.&lt;br/&gt;
-&lt;font color='#FFA500'&gt;Odmowa (Negatywna):&lt;/font&gt; Dowództwo lub oddział poinformuje cię słownie, jeśli zapasy medyczne się wyczerpią.
+&lt;font color='#FFA500'&gt;Odmowa (Negatywna):&lt;/font&gt; Oddział poinformuje cię słownie, jeśli zapasy medyczne się wyczerpią.
         </Polish>
             <Russian>
 &lt;font color='#FF8800'&gt;Интерфейс:&lt;/font&gt; Зеленое действие 'Авто-лечение ИИ'.&lt;br/&gt;
 &lt;font color='#00FF00'&gt;Условие:&lt;/font&gt; Как минимум один раненый бот в группе И наличие аптечки (FirstAidKit).&lt;br/&gt;
 &lt;font color='#FFD700'&gt;Описание:&lt;/font&gt; Приказывает остановить продвижение для немедленного медицинского лечения. Раненый бот встанет на колено, спрячет оружие и применит первую помощь, прежде чем занять свое место в строю.&lt;br/&gt;
-&lt;font color='#FFA500'&gt;Отказ (Отрицательный):&lt;/font&gt; Штаб или отряд устно сообщит вам, если медикаменты исчерпаны.
+&lt;font color='#FFA500'&gt;Отказ (Отрицательный):&lt;/font&gt; Отряд устно сообщит вам, если медикаменты исчерпаны.
         </Russian>
             <Turkish>
 &lt;font color='#FF8800'&gt;Arayüz:&lt;/font&gt; Yeşil eylem 'Yapay Zeka Otomatik İyileştirme'.&lt;br/&gt;
 &lt;font color='#00FF00'&gt;Koşul:&lt;/font&gt; Grupta en az bir yaralı yapay zeka VE bir İlk Yardım Kiti (FirstAidKit) bulunması.&lt;br/&gt;
 &lt;font color='#FFD700'&gt;Açıklama:&lt;/font&gt; Acil tıbbi tedavi için ilerlemeyi durdurma emri verir. Yaralı yapay zeka diz çökecek, silahını kılıfına sokacak ve dizilimdeki yerine dönmeden önce ilk yardım uygulayacaktır.&lt;br/&gt;
-&lt;font color='#FFA500'&gt;Reddetme (Olumsuz):&lt;/font&gt; Tıbbi malzemeler tükenirse Karargah veya manga sizi sözlü olarak bilgilendirecektir.
+&lt;font color='#FFA500'&gt;Reddetme (Olumsuz):&lt;/font&gt; Tıbbi malzemeler tükenirse manga sizi sözlü olarak bilgilendirecektir.
         </Turkish>
             <Japanese>
 &lt;font color='#FF8800'&gt;インターフェース:&lt;/font&gt; 緑のアクション 'AI自動回復'.&lt;br/&gt;
 &lt;font color='#00FF00'&gt;条件:&lt;/font&gt; グループ内に負傷したAIが少なくとも1人おり、かつ救急キット(FirstAidKit)を所持していること。&lt;br/&gt;
 &lt;font color='#FFD700'&gt;説明:&lt;/font&gt; 即座に医療処置を行うために前進を停止するよう命じます。負傷したAIは膝をつき、武器をホルスターに収め、応急処置を施してから陣形内の自分の位置に戻ります。&lt;br/&gt;
-&lt;font color='#FFA500'&gt;拒否 (ネガティブ):&lt;/font&gt; 医療品が尽きた場合、HQまたは分隊が口頭で通知します。
+&lt;font color='#FFA500'&gt;拒否 (ネガティブ):&lt;/font&gt; 医療品が尽きた場合、分隊が口頭で通知します。
         </Japanese>
             <Korean>
 &lt;font color='#FF8800'&gt;인터페이스:&lt;/font&gt; 녹색 액션 'AI 자동 치료'.&lt;br/&gt;
 &lt;font color='#00FF00'&gt;조건:&lt;/font&gt; 그룹에 부상당한 AI가 한 명 이상 있고 구급 상자(FirstAidKit)를 소지하고 있어야 합니다.&lt;br/&gt;
 &lt;font color='#FFD700'&gt;설명:&lt;/font&gt; 즉각적인 의료 치료를 위해 전진을 멈추도록 명령합니다. 부상당한 AI는 무릎을 꿇고 무기를 집어넣은 다음 응급 처치를 적용한 후 진형 내 자신의 위치로 돌아갑니다.&lt;br/&gt;
-&lt;font color='#FFA500'&gt;거부 (부정):&lt;/font&gt; 의료품이 소진되면 HQ 또는 분대가 구두로 알려줍니다.
+&lt;font color='#FFA500'&gt;거부 (부정):&lt;/font&gt; 의료품이 소진되면 분대가 구두로 알려줍니다.
         </Korean>
             <Chinese>
 &lt;font color='#FF8800'&gt;界面:&lt;/font&gt; 绿色操作 'AI 自动治疗'.&lt;br/&gt;
 &lt;font color='#00FF00'&gt;条件:&lt;/font&gt; 小组中至少有一名受伤的 AI 并且拥有急救包 (FirstAidKit).&lt;br/&gt;
 &lt;font color='#FFD700'&gt;描述:&lt;/font&gt; 命令停止前进以进行立即医疗处理。受伤的 AI 将单膝跪地，收起武器，并进行急救，然后恢复其在阵型中的位置。&lt;br/&gt;
-&lt;font color='#FFA500'&gt;拒绝 (否定):&lt;/font&gt; 如果医疗用品耗尽，总部或小队将口头通知您。
+&lt;font color='#FFA500'&gt;拒绝 (否定):&lt;/font&gt; 如果医疗用品耗尽，小队将口头通知您。
         </Chinese>
         </Key>
         <Key ID="STR_LL_Briefing_1_4_Title">
@@ -416,18 +416,18 @@
         </Chinese>
         </Key>
         <Key ID="STR_LL_Briefing_2_1_Title">
-            <Original>2.1. HQ Missions</Original>
-            <French>2.1. Les Missions HQ</French>
-            <English>2.1. HQ Missions</English>
-            <Spanish>2.1. Misiones del CG</Spanish>
-            <Italian>2.1. Missioni QG</Italian>
-            <German>2.1. HQ-Missionen</German>
-            <Polish>2.1. Misje HQ</Polish>
-            <Russian>2.1. Миссии штаба</Russian>
-            <Turkish>2.1. Karargah Görevleri</Turkish>
-            <Japanese>2.1. HQミッション</Japanese>
-            <Korean>2.1. HQ 임무</Korean>
-            <Chinese>2.1. 总部任务</Chinese>
+            <Original>2.1. Missions</Original>
+            <French>2.1. Les Missions</French>
+            <English>2.1. Missions</English>
+            <Spanish>2.1. Misiones</Spanish>
+            <Italian>2.1. Missioni</Italian>
+            <German>2.1. Missionen</German>
+            <Polish>2.1. Misje</Polish>
+            <Russian>2.1. Миссии</Russian>
+            <Turkish>2.1. Görevler</Turkish>
+            <Japanese>2.1. ミッション</Japanese>
+            <Korean>2.1. 임무</Korean>
+            <Chinese>2.1. 任务</Chinese>
         </Key>
         <Key ID="STR_LL_Briefing_2_1_Text">
             <Original>
@@ -610,73 +610,73 @@ Yüksek Komuta, Zargabad bölgesine tek bir UH-60L helikopteri atadı. Bu kayna�
 If the network is saturated, your requests may be refused or interrupted.&lt;br/&gt;&lt;br/&gt;
 - &lt;font color='#00FF00'&gt;Low Priority (Level 1):&lt;/font&gt; CAS, Supply Drops, Reinforcements. The helo must have finished its previous task to accept these orders. If the bird is already airborne, you will receive a radio refusal indicating its current mission.&lt;br/&gt;
 - &lt;font color='#FF8800'&gt;High Priority (Level 2):&lt;/font&gt; Extraction. An extraction request will IMMEDIATELY cancel any low-priority mission in progress. The helo will redirect to your LZ without delay.&lt;br/&gt;
-- &lt;font color='#FFD700'&gt;Absolute Priority (Level 3):&lt;/font&gt; Scripted Tasks (Command). HQ can divert the helicopter at any time for a critical priority mission, canceling all your orders.
+- &lt;font color='#FFD700'&gt;Absolute Priority (Level 3):&lt;/font&gt; Scripted Tasks (Command). The helicopter can be diverted at any time for a critical priority mission, canceling all your orders.
         </Original>
             <French>
 Si le réseau est saturé, vos requêtes peuvent être refusées ou interrompues.&lt;br/&gt;&lt;br/&gt;
 - &lt;font color='#00FF00'&gt;Priorité Basse (Niveau 1) :&lt;/font&gt; CAS, Livraisons, Renforts. L'hélico doit avoir terminé sa tâche précédente pour accepter ces ordres. Si l'oiseau est déjà en vol, vous recevrez un refus radio vous indiquant sa mission en cours.&lt;br/&gt;
 - &lt;font color='#FF8800'&gt;Priorité Haute (Niveau 2) :&lt;/font&gt; L'Extraction. Une demande d'extraction annulera IMMÉDIATEMENT toute mission de priorité basse en cours. L'hélico se réorientera vers votre LZ sans délai.&lt;br/&gt;
-- &lt;font color='#FFD700'&gt;Priorité Absolue (Niveau 3) :&lt;/font&gt; Tâches scénarisées (Commandement). Le QG peut détourner l'hélicoptère à tout moment pour une mission critique prioritaire, annulant tous vos ordres.
+- &lt;font color='#FFD700'&gt;Priorité Absolue (Niveau 3) :&lt;/font&gt; Tâches scénarisées (Commandement). L'hélicoptère peut être détourné à tout moment pour une mission critique prioritaire, annulant tous vos ordres.
         </French>
             <English>
 If the network is saturated, your requests may be refused or interrupted.&lt;br/&gt;&lt;br/&gt;
 - &lt;font color='#00FF00'&gt;Low Priority (Level 1):&lt;/font&gt; CAS, Supply Drops, Reinforcements. The helo must have finished its previous task to accept these orders. If the bird is already airborne, you will receive a radio refusal indicating its current mission.&lt;br/&gt;
 - &lt;font color='#FF8800'&gt;High Priority (Level 2):&lt;/font&gt; Extraction. An extraction request will IMMEDIATELY cancel any low-priority mission in progress. The helo will redirect to your LZ without delay.&lt;br/&gt;
-- &lt;font color='#FFD700'&gt;Absolute Priority (Level 3):&lt;/font&gt; Scripted Tasks (Command). HQ can divert the helicopter at any time for a critical priority mission, canceling all your orders.
+- &lt;font color='#FFD700'&gt;Absolute Priority (Level 3):&lt;/font&gt; Scripted Tasks (Command). The helicopter can be diverted at any time for a critical priority mission, canceling all your orders.
         </English>
             <Spanish>
 Si la red está saturada, tus solicitudes pueden ser rechazadas o interrumpidas.&lt;br/&gt;&lt;br/&gt;
 - &lt;font color='#00FF00'&gt;Baja Prioridad (Nivel 1):&lt;/font&gt; CAS, Entregas, Refuerzos. El helicóptero debe haber terminado su tarea anterior para aceptar estas órdenes. Si el pájaro ya está en el aire, recibirás un rechazo por radio indicando su misión actual.&lt;br/&gt;
 - &lt;font color='#FF8800'&gt;Alta Prioridad (Nivel 2):&lt;/font&gt; Extracción. Una solicitud de extracción cancelará INMEDIATAMENTE cualquier misión de baja prioridad en curso. El helicóptero se redirigirá a tu LZ sin demora.&lt;br/&gt;
-- &lt;font color='#FFD700'&gt;Prioridad Absoluta (Nivel 3):&lt;/font&gt; Tareas de Guión (Mando). El Cuartel General puede desviar el helicóptero en cualquier momento para una misión de prioridad crítica, cancelando todas tus órdenes.
+- &lt;font color='#FFD700'&gt;Prioridad Absoluta (Nivel 3):&lt;/font&gt; Tareas de Guión (Mando). El helicóptero puede ser desviado en cualquier momento para una misión de prioridad crítica, cancelando todas tus órdenes.
         </Spanish>
             <Italian>
 Se la rete è satura, le tue richieste potrebbero essere rifiutate o interrotte.&lt;br/&gt;&lt;br/&gt;
 - &lt;font color='#00FF00'&gt;Priorità Bassa (Livello 1):&lt;/font&gt; CAS, Consegne, Rinforzi. L'elicottero deve aver terminato il suo incarico precedente per accettare questi ordini. Se l'uccello è già in volo, riceverai un rifiuto radio che indica la sua missione attuale.&lt;br/&gt;
 - &lt;font color='#FF8800'&gt;Priorità Alta (Livello 2):&lt;/font&gt; Estrazione. Una richiesta di estrazione annullerà IMMEDIATAMENTE qualsiasi missione a bassa priorità in corso. L'elicottero si reindirizzerà alla tua LZ senza ritardi.&lt;br/&gt;
-- &lt;font color='#FFD700'&gt;Priorità Assoluta (Livello 3):&lt;/font&gt; Incarichi con script (Comando). Il Quartier Generale può dirottare l'elicottero in qualsiasi momento per una missione a priorità critica, annullando tutti i tuoi ordini.
+- &lt;font color='#FFD700'&gt;Priorità Assoluta (Livello 3):&lt;/font&gt; Incarichi con script (Comando). L'elicottero può essere dirottato in qualsiasi momento per una missione a priorità critica, annullando tutti i tuoi ordini.
         </Italian>
             <German>
 Wenn das Netzwerk ausgelastet ist, können deine Anfragen abgelehnt oder unterbrochen werden.&lt;br/&gt;&lt;br/&gt;
 - &lt;font color='#00FF00'&gt;Niedrige Priorität (Stufe 1):&lt;/font&gt; CAS, Lieferungen, Verstärkung. Der Hubschrauber muss seine vorherige Aufgabe beendet haben, um diese Befehle anzunehmen. Wenn der Vogel bereits in der Luft ist, erhältst du eine Funkabsage mit Angabe seiner aktuellen Mission.&lt;br/&gt;
 - &lt;font color='#FF8800'&gt;Hohe Priorität (Stufe 2):&lt;/font&gt; Evakuierung. Eine Evakuierungsanforderung bricht SOFORT jede laufende Mission mit niedriger Priorität ab. Der Heli wird ohne Verzögerung zu deiner LZ umgeleitet.&lt;br/&gt;
-- &lt;font color='#FFD700'&gt;Absolute Priorität (Stufe 3):&lt;/font&gt; Skriptaufgaben (Kommando). Das HQ kann den Hubschrauber jederzeit für eine kritische Prioritätsmission umleiten und alle deine Befehle stornieren.
+- &lt;font color='#FFD700'&gt;Absolute Priorität (Stufe 3):&lt;/font&gt; Skriptaufgaben (Kommando). Der Hubschrauber kann jederzeit für eine kritische Prioritätsmission umleiten und alle deine Befehle stornieren.
         </German>
             <Polish>
 Jeśli sieć jest przeciążona, twoje żądania mogą zostać odrzucone lub przerwane.&lt;br/&gt;&lt;br/&gt;
 - &lt;font color='#00FF00'&gt;Niski Priorytet (Poziom 1):&lt;/font&gt; CAS, Zrzuty, Posiłki. Helikopter musi ukończyć swoje poprzednie zadanie, aby przyjąć te rozkazy. Jeśli ptaszek jest już w powietrzu, otrzymasz odmowę radiową ze wskazaniem jego bieżącej misji.&lt;br/&gt;
 - &lt;font color='#FF8800'&gt;Wysoki Priorytet (Poziom 2):&lt;/font&gt; Ewakuacja. Prośba o ewakuację NATYCHMIAST anuluje każdą trwającą misję o niskim priorytecie. Heli przekieruje się do twojej LZ bez opóźnień.&lt;br/&gt;
-- &lt;font color='#FFD700'&gt;Absolutny Priorytet (Poziom 3):&lt;/font&gt; Zadania Oskryptowane (Dowództwo). HQ może w dowolnej chwili przekierować helikopter do krytycznej misji priorytetowej, anulując wszystkie twoje rozkazy.
+- &lt;font color='#FFD700'&gt;Absolutny Priorytet (Poziom 3):&lt;/font&gt; Zadania Oskryptowane (Dowództwo). Helikopter może w dowolnej chwili zostać przekierowany do krytycznej misji priorytetowej, anulując wszystkie twoje rozkazy.
         </Polish>
             <Russian>
 Если сеть перегружена, ваши запросы могут быть отклонены или прерваны.&lt;br/&gt;&lt;br/&gt;
 - &lt;font color='#00FF00'&gt;Низкий Приоритет (Уровень 1):&lt;/font&gt; CAS, Доставки, Подкрепление. Вертолет должен завершить свою предыдущую задачу, чтобы принять эти приказы. Если птичка уже в воздухе, вы получите отказ по рации с указанием ее текущей миссии.&lt;br/&gt;
 - &lt;font color='#FF8800'&gt;Высокий Приоритет (Уровень 2):&lt;/font&gt; Эвакуация. Запрос на эвакуацию НЕМЕДЛЕННО отменит любую текущую миссию низкого приоритета. Вертолет будет перенаправлен на вашу LZ без задержки.&lt;br/&gt;
-- &lt;font color='#FFD700'&gt;Абсолютный Приоритет (Уровень 3):&lt;/font&gt; Скриптовые задачи (Командование). Штаб может перенаправить вертолет в любое время для критически важной приоритетной миссии, отменив все ваши приказы.
+- &lt;font color='#FFD700'&gt;Абсолютный Приоритет (Уровень 3):&lt;/font&gt; Скриптовые задачи (Командование). Вертолет может быть перенаправлен в любое время для критически важной приоритетной миссии, отменив все ваши приказы.
         </Russian>
             <Turkish>
 Ağ doluysa istekleriniz reddedilebilir veya kesintiye uğrayabilir.&lt;br/&gt;&lt;br/&gt;
 - &lt;font color='#00FF00'&gt;Düşük Öncelik (Seviye 1):&lt;/font&gt; CAS, Teslimatlar, Takviyeler. Helikopterin bu emirleri kabul etmesi için önceki görevini bitirmiş olması gerekir. Kuş zaten havadaysa, mevcut görevini belirten bir telsiz reddi alırsınız.&lt;br/&gt;
 - &lt;font color='#FF8800'&gt;Yüksek Öncelik (Seviye 2):&lt;/font&gt; Çıkarma. Bir çıkarma talebi, devam eden herhangi bir düşük öncelikli görevi DERHAL iptal edecektir. Heli gecikmeden LZ'nize yönlendirilecektir.&lt;br/&gt;
-- &lt;font color='#FFD700'&gt;Mutlak Öncelik (Seviye 3):&lt;/font&gt; Senaryo Görevleri (Komuta). HQ, kritik bir öncelikli görev için helikopteri istediği zaman başka yöne çevirebilir ve tüm emirlerinizi iptal edebilir.
+- &lt;font color='#FFD700'&gt;Mutlak Öncelik (Seviye 3):&lt;/font&gt; Senaryo Görevleri (Komuta). Helikopter, kritik bir öncelikli görev için istediği zaman başka yöne çevrilebilir ve tüm emirlerinizi iptal edebilir.
         </Turkish>
             <Japanese>
 ネットワークが混雑している場合、あなたの要求は拒否されたり中断されたりする可能性があります。&lt;br/&gt;&lt;br/&gt;
 - &lt;font color='#00FF00'&gt;低優先度 (レベル 1):&lt;/font&gt; CAS、配達、増援。ヘリはこれらの命令を受け入れるために前の任務を完了している必要があります。鳥がすでに空中にいる場合は、現在の任務を示す無線拒否を受け取ります。&lt;br/&gt;
 - &lt;font color='#FF8800'&gt;高優先度 (レベル 2):&lt;/font&gt; 撤収。撤収要請は、進行中の低優先度任務を直ちにキャンセルします。ヘリは遅延なくLZにリダイレクトされます。&lt;br/&gt;
-- &lt;font color='#FFD700'&gt;絶対的優先度 (レベル 3):&lt;/font&gt; スクリプトタスク (コマンド)。HQは重要な優先任務のためにいつでもヘリを迂回させ、あなたのすべての命令をキャンセルすることができます。
+- &lt;font color='#FFD700'&gt;絶対的優先度 (レベル 3):&lt;/font&gt; スクリプトタスク (コマンド)。ヘリは重要な優先任務のためにいつでも迂回させられ、あなたのすべての命令をキャンセルすることができます。
         </Japanese>
             <Korean>
 네트워크가 포화 상태인 경우 요청이 거부되거나 중단될 수 있습니다.&lt;br/&gt;&lt;br/&gt;
 - &lt;font color='#00FF00'&gt;낮은 우선순위 (레벨 1):&lt;/font&gt; CAS, 배달, 증원. 헬기가 이러한 명령을 수락하려면 이전 작업을 완료해야 합니다. 새가 이미 공중에 있는 경우 현재 임무를 나타내는 무선 거부를 받게 됩니다.&lt;br/&gt;
 - &lt;font color='#FF8800'&gt;높은 우선순위 (레벨 2):&lt;/font&gt; 철수. 철수 요청은 진행 중인 우선 순위가 낮은 임무를 즉시 취소합니다. 헬기는 지체 없이 LZ로 방향을 바꿀 것입니다.&lt;br/&gt;
-- &lt;font color='#FFD700'&gt;절대 우선순위 (레벨 3):&lt;/font&gt; 스크립트 작업 (명령). HQ는 중요한 우선 순위 임무를 위해 언제든지 헬기를 우회하여 모든 명령을 취소할 수 있습니다.
+- &lt;font color='#FFD700'&gt;절대 우선순위 (레벨 3):&lt;/font&gt; 스크립트 작업 (명령). 헬기는 중요한 우선 순위 임무를 위해 언제든지 우회될 수 있으며, 모든 명령을 취소할 수 있습니다.
         </Korean>
             <Chinese>
 如果网络饱和，您的请求可能会被拒绝或中断。&lt;br/&gt;&lt;br/&gt;
 - &lt;font color='#00FF00'&gt;低优先级 (1级):&lt;/font&gt; CAS，交付，增援。直升机必须完成其先前的任务才能接受这些命令。如果这只鸟已经在空中，您将收到一个表示其当前任务的无线电拒绝。&lt;br/&gt;
 - &lt;font color='#FF8800'&gt;高优先级 (2级):&lt;/font&gt; 撤离。提取请求将立即取消任何正在进行的低优先级任务。直升机将立即重定向到您的 LZ。&lt;br/&gt;
-- &lt;font color='#FFD700'&gt;绝对优先级 (3级):&lt;/font&gt; 脚本任务 (命令)。总部可以随时为关键优先任务转移直升机，取消您的所有命令。
+- &lt;font color='#FFD700'&gt;绝对优先级 (3级):&lt;/font&gt; 脚本任务 (命令)。直升机可以随时为关键优先任务转移，取消您的所有命令。
         </Chinese>
         </Key>
         <Key ID="STR_LL_Briefing_3_1_Title">
@@ -1773,21 +1773,57 @@ Ağ doluysa istekleriniz reddedilebilir veya kesintiye uğrayabilir.&lt;br/&gt;&
             <Original>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Soins&lt;/t&gt;</Original>
             <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Heal&lt;/t&gt;</English>
             <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Soins&lt;/t&gt;</French>
+            <Turkish>&lt;t color='#FFFFFF'&gt;[MANGA] İyileştir&lt;/t&gt;</Turkish>
+            <Korean>&lt;t color='#FFFFFF'&gt;[분대] 치료&lt;/t&gt;</Korean>
+            <Spanish>&lt;t color='#FFFFFF'&gt;[ESCUADRÓN] Curar&lt;/t&gt;</Spanish>
+            <Japanese>&lt;t color='#FFFFFF'&gt;[分隊] 治療&lt;/t&gt;</Japanese>
+            <Chinese>&lt;t color='#FFFFFF'&gt;[小队] 治疗&lt;/t&gt;</Chinese>
+            <Russian>&lt;t color='#FFFFFF'&gt;[ОТРЯД] Лечение&lt;/t&gt;</Russian>
+            <German>&lt;t color='#FFFFFF'&gt;[TRUPP] Heilen&lt;/t&gt;</German>
+            <Italian>&lt;t color='#FFFFFF'&gt;[SQUADRA] Cura&lt;/t&gt;</Italian>
+            <Polish>&lt;t color='#FFFFFF'&gt;[DRUŻYNA] Leczenie&lt;/t&gt;</Polish>
         </Key>
         <Key ID="STR_LL_HealAction_NoKits">
-            <Original>QG : Négatif ! Personne ne possède de kit de soin.</Original>
-            <English>Negative! Nobody has a medkit.</English>
-            <French>QG : Négatif ! Personne ne possède de kit de soin.</French>
+            <Original> Personne ne possède de kit de soin.</Original>
+            <English> No one has a medkit.</English>
+            <French> Personne ne possède de kit de soin.</French>
+            <Turkish> Kimsede ilk yardım çantası yok.</Turkish>
+            <Korean> 구급상자를 가진 사람이 없습니다.</Korean>
+            <Spanish> Nadie tiene un botiquín.</Spanish>
+            <Japanese> 誰も医療キットを持っていません。</Japanese>
+            <Chinese> 没有人有医疗包。</Chinese>
+            <Russian> Ни у кого нет аптечки.</Russian>
+            <German> Niemand hat ein Medikit.</German>
+            <Italian> Nessuno ha un kit medico.</Italian>
+            <Polish> Nikt nie ma apteczki.</Polish>
         </Key>
         <Key ID="STR_LL_HealAction_NoWounded">
-            <Original>QG : Négatif ! Aucun blessé nécessitant des soins.</Original>
-            <English>No wounded requiring healing.</English>
-            <French>QG : Négatif ! Aucun blessé nécessitant des soins.</French>
+            <Original> Aucun blessé nécessitant des soins.</Original>
+            <English> No wounded requiring healing.</English>
+            <French> Aucun blessé nécessitant des soins.</French>
+            <Turkish> İyileşmesi gereken yaralı yok.</Turkish>
+            <Korean> 치료가 필요한 부상자가 없습니다.</Korean>
+            <Spanish> No hay heridos que requieran curación.</Spanish>
+            <Japanese> 治療が必要な負傷者はいません。</Japanese>
+            <Chinese> 没有需要治疗的伤员。</Chinese>
+            <Russian> Нет раненых, нуждающихся в лечении.</Russian>
+            <German> Keine Verwundeten, die geheilt werden müssen.</German>
+            <Italian> Nessun ferito che richieda cure.</Italian>
+            <Polish> Brak rannych wymagających leczenia.</Polish>
         </Key>
         <Key ID="STR_LL_HealAction_Healing">
-            <Original>QG : %1 homme(s) en cours de soins...</Original>
+            <Original> %1 homme(s) en cours de soins...</Original>
             <English>... %1 man(men) being healed...</English>
-            <French>QG : %1 homme(s) en cours de soins...</French>
+            <French> %1 homme(s) en cours de soins...</French>
+            <Turkish>... %1 adam iyileştiriliyor...</Turkish>
+            <Korean>... %1명이 치료받고 있습니다...</Korean>
+            <Spanish>... %1 hombre(s) siendo curado(s)...</Spanish>
+            <Japanese>... %1人が治療中です...</Japanese>
+            <Chinese>... %1 人正在接受治疗...</Chinese>
+            <Russian>... %1 человек(а) лечат...</Russian>
+            <German>... %1 Mann (Männer) werden geheilt...</German>
+            <Italian>... %1 uomo(i) in cura...</Italian>
+            <Polish>... %1 żołnierz(y) jest leczonych...</Polish>
         </Key>
         <Key ID="STR_LL_RallyAction_Title">
             <Original>&lt;t color='#FFFFFF'&gt;[SQUAD] Rally&lt;/t&gt;</Original>
@@ -2099,6 +2135,118 @@ Ağ doluysa istekleriniz reddedilebilir veya kesintiye uğrayabilir.&lt;br/&gt;&
         </Key>
     </Package>
     <Package name="Task">
+        <Key ID="STR_LL_Diary_Task00_Title">
+            <Original>OPORD : Exfiltration d'otage</Original>
+            <French>OPORD : Exfiltration d'otage</French>
+            <English>OPORD: Hostage Exfiltration</English>
+            <Turkish>OPORD: Rehine Tahliyesi</Turkish>
+            <Korean>OPORD: 인질 구출</Korean>
+            <Spanish>OPORD: Extracción de rehén</Spanish>
+            <Japanese>OPORD: 人質救出</Japanese>
+            <Chinese>OPORD: 人质撤离</Chinese>
+            <Russian>OPORD: Эвакуация заложника</Russian>
+            <German>OPORD: Geiselexfiltration</German>
+            <Italian>OPORD: Esfiltrazione ostaggio</Italian>
+            <Polish>OPORD: Ewakuacja zakładnika</Polish>
+        </Key>
+        <Key ID="STR_LL_Diary_Task00_Text">
+            <Original>Un civil allié a été capturé. Nous avons identifié des zones de détention probables. Localisez-le, sécurisez la zone et libérez-le. L'hélicoptère viendra le chercher dès que vous l'aurez trouvé.</Original>
+            <French>Un civil allié a été capturé. Nous avons identifié des zones de détention probables. Localisez-le, sécurisez la zone et libérez-le. L'hélicoptère viendra le chercher dès que vous l'aurez trouvé.</French>
+            <English>An allied civilian has been captured. We have identified several probable detention zones. Locate him, secure the area and free him. The helicopter will pick him up once rescued.</English>
+            <Turkish>Müttefik bir sivil esir alındı. Muhtemel birkaç gözaltı bölgesi tespit ettik. Onu bulun, bölgeyi güvenceye alın ve serbest bırakın. Kurtarıldıktan sonra helikopter onu alacak.</Turkish>
+            <Korean>아군 민간인이 포로로 잡혔습니다. 구금될 가능성이 있는 곳을 여러 군데 확인했습니다. 위치를 파악하고 지역을 확보하여 구출하십시오. 구조되면 헬리콥터가 데리러 올 것입니다.</Korean>
+            <Spanish>Un civil aliado ha sido capturado. Hemos identificado varias zonas de detención probables. Localízalo, asegura el área y libéralo. El helicóptero lo recogerá una vez rescatado.</Spanish>
+            <Japanese>同盟国の民間人が捕らえられました。いくつか拘束されている可能性のある場所を特定しました。見つけてエリアを確保し、解放してください。救出後、ヘリコプターが迎えに来ます。</Japanese>
+            <Chinese>一名盟军平民被俘。我们已经确定了几个可能的关押区。找到他，确保该区域的安全并释放他。获救后直升机会来接他。</Chinese>
+            <Russian>Союзный гражданский был захвачен в плен. Мы определили несколько вероятных зон содержания. Найдите его, обезопасьте район и освободите. Как только он будет спасен, за ним прилетит вертолет.</Russian>
+            <German>Ein alliierter Zivilist wurde gefangen genommen. Wir haben mehrere wahrscheinliche Haftzonen identifiziert. Lokalisieren Sie ihn, sichern Sie das Gebiet und befreien Sie ihn. Der Hubschrauber wird ihn nach der Rettung abholen.</German>
+            <Italian>Un civile alleato è stato catturato. Abbiamo identificato diverse probabili zone di detenzione. Individualo, metti al sicuro l'area e liberalo. L'elicottero lo verrà a prendere una volta salvato.</Italian>
+            <Polish>Sojuszniczy cywil został schwytany. Zidentyfikowaliśmy kilka prawdopodobnych stref przetrzymywania. Zlokalizuj go, zabezpiecz obszar i uwolnij. Po uratowaniu odbierze go helikopter.</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_00_Action">
+            <Original>Libérer l'otage</Original>
+            <French>Libérer l'otage</French>
+            <English>Free hostage</English>
+            <Turkish>Rehineyi serbest bırak</Turkish>
+            <Korean>인질 구출</Korean>
+            <Spanish>Liberar rehén</Spanish>
+            <Japanese>人質を解放する</Japanese>
+            <Chinese>释放人质</Chinese>
+            <Russian>Освободить заложника</Russian>
+            <German>Geisel befreien</German>
+            <Italian>Libera l'ostaggio</Italian>
+            <Polish>Uwolnij zakładnika</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_00_ExtractAction">
+            <Original>Embarquer l'otage</Original>
+            <French>Embarquer l'otage</French>
+            <English>Extract Hostage</English>
+            <Turkish>Rehineyi tahliye et</Turkish>
+            <Korean>인질 구출</Korean>
+            <Spanish>Extraer rehén</Spanish>
+            <Japanese>人質を回収する</Japanese>
+            <Chinese>撤离人质</Chinese>
+            <Russian>Эвакуировать заложника</Russian>
+            <German>Geisel extrahieren</German>
+            <Italian>Estrai l'ostaggio</Italian>
+            <Polish>Ewakuuj zakładnika</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_00_Title">
+            <Original>Exfiltration d'otage</Original>
+            <French>Exfiltration d'otage</French>
+            <English>Hostage Exfiltration</English>
+            <Turkish>Rehine Tahliyesi</Turkish>
+            <Korean>인질 구출</Korean>
+            <Spanish>Extracción de rehén</Spanish>
+            <Japanese>人質救出</Japanese>
+            <Chinese>人质撤离</Chinese>
+            <Russian>Эвакуация заложника</Russian>
+            <German>Geiselexfiltration</German>
+            <Italian>Esfiltrazione ostaggio</Italian>
+            <Polish>Ewakuacja zakładnika</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_00_Desc">
+            <Original>Localisez et extrayez l'otage retenu dans l'une des zones de recherche indiquées sur votre carte. Appelez ensuite l'hélicoptère d'extraction.</Original>
+            <French>Localisez et extrayez l'otage retenu dans l'une des zones de recherche indiquées sur votre carte. Appelez ensuite l'hélicoptère d'extraction.</French>
+            <English>Locate and extract the hostage held in one of the search zones indicated on your map. Then call for extraction helicopter.</English>
+            <Turkish>Haritanızda belirtilen arama bölgelerinden birinde tutulan rehineyi bulun ve kurtarın. Ardından tahliye helikopteri çağırın.</Turkish>
+            <Korean>지도에 표시된 수색 구역 중 한 곳에 억류된 인질을 찾아 구출하십시오. 그런 다음 구출 헬기를 호출하십시오.</Korean>
+            <Spanish>Localiza y extrae al rehén retenido en una de las zonas de búsqueda indicadas en tu mapa. Luego llama al helicóptero de extracción.</Spanish>
+            <Japanese>マップに示された捜索ゾーンのいずれかに捕らわれている人質を見つけて救出してください。その後、救出ヘリコプターを呼んでください。</Japanese>
+            <Chinese>找到并营救被关押在地图上指示的搜索区域之一的人质。然后呼叫撤离直升机。</Chinese>
+            <Russian>Найдите и эвакуируйте заложника, удерживаемого в одной из зон поиска, указанных на вашей карте. Затем вызовите эвакуационный вертолет.</Russian>
+            <German>Lokalisieren und extrahieren Sie die Geisel, die in einer der auf Ihrer Karte markierten Suchzonen festgehalten wird. Rufen Sie dann den Evakuierungshubschrauber.</German>
+            <Italian>Individua ed estrai l'ostaggio tenuto in una delle zone di ricerca indicate sulla mappa. Quindi chiama l'elicottero di estrazione.</Italian>
+            <Polish>Zlokalizuj i ewakuuj zakładnika przetrzymywanego w jednej ze stref poszukiwań wskazanych na mapie. Następnie wezwij śmigłowiec ewakuacyjny.</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_00_Marker">
+            <Original>Zone de Recherche</Original>
+            <French>Zone de Recherche</French>
+            <English>Search Zone</English>
+            <Turkish>Arama Bölgesi</Turkish>
+            <Korean>수색 구역</Korean>
+            <Spanish>Zona de búsqueda</Spanish>
+            <Japanese>捜索ゾーン</Japanese>
+            <Chinese>搜索区域</Chinese>
+            <Russian>Зона поиска</Russian>
+            <German>Suchzone</German>
+            <Italian>Zona di ricerca</Italian>
+            <Polish>Strefa poszukiwań</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_00_MarkerMain">
+            <Original>Secteur d'opération</Original>
+            <French>Secteur d'opération</French>
+            <English>Area of operations</English>
+            <Turkish>Operasyon bölgesi</Turkish>
+            <Korean>작전 지역</Korean>
+            <Spanish>Área de operaciones</Spanish>
+            <Japanese>作戦エリア</Japanese>
+            <Chinese>行动区域</Chinese>
+            <Russian>Район операции</Russian>
+            <German>Einsatzgebiet</German>
+            <Italian>Area di operazione</Italian>
+            <Polish>Obszar operacji</Polish>
+        </Key>
         <Key ID="STR_LL_Diary_Task01_Title">
             <Original>OPORD : Opération Cibles Multiples</Original>
             <French>OPORD : Opération Cibles Multiples</French>
@@ -2196,6 +2344,20 @@ Ağ doluysa istekleriniz reddedilebilir veya kesintiye uğrayabilir.&lt;br/&gt;&
             <German>Offizier durchsuchen</German>
             <Italian>Perquisisci ufficiale</Italian>
             <Polish>Przeszukaj oficera</Polish>
+        </Key>
+        <Key ID="STR_LL_Action_RequestTask">
+            <Original>Demander votre tâche</Original>
+            <French>Demander votre tâche</French>
+            <English>Request your task</English>
+            <Turkish>Görevinizi talep edin</Turkish>
+            <Korean>임무 요청</Korean>
+            <Spanish>Solicitar su tarea</Spanish>
+            <Japanese>任務を要請する</Japanese>
+            <Chinese>请求您的任务</Chinese>
+            <Russian>Запросить задание</Russian>
+            <German>Aufgabe anfordern</German>
+            <Italian>Richiedi il tuo incarico</Italian>
+            <Polish>Poproś o zadanie</Polish>
         </Key>
         <Key ID="STR_LL_Task_Assigned">
             <Original>Lisez votre briefing de tache</Original>

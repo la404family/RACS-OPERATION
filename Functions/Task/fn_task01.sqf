@@ -18,15 +18,45 @@ if (_mode == "init") exitWith {
         diag_log "[LL] task01 ERROR: Aucun M_Dans_Bat_ trouvé sur la carte.";
     };
 
-    // 2. Sélectionner 2 à 4 lieux aléatoires
-    private _numSpawns = (2 + floor (random 3)) min (count _allLogics);
+    // 2. Sélectionner 2 à 4 lieux aléatoires (règle des 250m)
+    private _targetNumSpawns = 2 + floor (random 3);
     private _selectedLogics = [];
-    private _logicsPool = +_allLogics;
+    private _logicsPool = _allLogics call BIS_fnc_arrayShuffle;
+    private _alivePlayers = allPlayers select { alive _x };
     
-    for "_i" from 1 to _numSpawns do {
-        private _logic = selectRandom _logicsPool;
-        _logicsPool = _logicsPool - [_logic];
-        _selectedLogics pushBack _logic;
+    {
+        private _candidate = _x;
+        private _candidatePos = getPosASL _candidate;
+        private _valid = true;
+
+        // Règle 1 : >= 250m des joueurs
+        {
+            if (_x distance2D _candidatePos < 250) exitWith { _valid = false; };
+        } forEach _alivePlayers;
+
+        if (_valid) then {
+            // Règle 2 : >= 250m des autres lieux de la tâche
+            {
+                if ((getPosASL _x) distance2D _candidatePos < 250) exitWith { _valid = false; };
+            } forEach _selectedLogics;
+        };
+
+        if (_valid) then {
+            _selectedLogics pushBack _candidate;
+        };
+
+        if (count _selectedLogics >= _targetNumSpawns) exitWith {};
+    } forEach _logicsPool;
+
+    private _numSpawns = count _selectedLogics;
+    
+    // Sécurité si on n'en a pas trouvé au moins 2 à cause des distances
+    if (_numSpawns < 2) exitWith {
+        diag_log "[LL] task01 ERROR: Impossible de trouver assez de lieux à >250m. Relance dans 15s.";
+        [[], "LL_fnc_task01"] spawn {
+            sleep 15;
+            ["init"] spawn LL_fnc_task01;
+        };
     };
 
     // 3. Choix de la cible possédant les documents
@@ -150,6 +180,7 @@ if (_mode == "collect") exitWith {
 
     // Fin de tâche
     ["task_01_assassinat", "SUCCEEDED", true] call BIS_fnc_taskSetState;
+    missionNamespace setVariable ["LL_g_taskInProgress", false, true];
     deleteMarker "mkr_task01_doc";
     
     // Nettoyer les marqueurs de cible

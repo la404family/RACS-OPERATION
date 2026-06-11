@@ -56,6 +56,11 @@ _unit allowDamage false;
 [_unit] spawn { sleep 3; (_this select 0) allowDamage true; };
 ```
 
+### Distance minimale de sécurité (250m)
+Toute tâche générée aléatoirement doit respecter des règles strictes de distance pour éviter le spawn sous les yeux des joueurs :
+- **Minimum 250m** entre le lieu de la tâche et n'importe quel joueur vivant sur le serveur.
+- S'il y a plusieurs lieux pour une même tâche, ils doivent être espacés d'au moins **250m** entre eux.
+
 ### Ordre de spawn : secondaires avant principal
 Quand une scène comporte une unité principale (chef de milice, otage, cible, bombe...) et des unités secondaires (gardes, sentinelles...) :
 

@@ -3,9 +3,9 @@
     Description: Configuration principale de la mission.
 */
 
-author = "Kevin / Antigravity";
+author = "KDC - The Legend";
 onLoadName = "Opération RACS";
-onLoadMission = "Déploiement des forces du RACS sur Zargabad.";
+onLoadMission = "Déploiement des forces du RACS.";
 // loadScreen = "images\loadScreen.jpg";
 
 respawn = "BASE";
@@ -76,8 +76,10 @@ class CfgFunctions {
             file = "Functions\Task";
             class taskManager {};
             class task00 {};
+            class task00_addAction {};
             class task01 {};
             class task01_addAction {};
+            class addTaskAction {};
         };
         class Briefing {
             file = "Functions\Briefing";

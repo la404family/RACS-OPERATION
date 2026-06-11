@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keys>
+    <Key ID="STR_LL_Task_00_Action">
+        <Original>Libérer l'otage</Original>
+        <French>Libérer l'otage</French>
+        <English>Free hostage</English>
+        <Turkish>Rehineyi serbest bırak</Turkish>
+        <Korean>인질 구출</Korean>
+        <Spanish>Liberar rehén</Spanish>
+        <Japanese>人質を解放する</Japanese>
+        <Chinese>释放人质</Chinese>
+        <Russian>Освободить заложника</Russian>
+        <German>Geisel befreien</German>
+        <Italian>Libera l'ostaggio</Italian>
+        <Polish>Uwolnij zakładnika</Polish>
+    </Key>
+    <Key ID="STR_LL_Task_00_ExtractAction">
+        <Original>Embarquer l'otage</Original>
+        <French>Embarquer l'otage</French>
+        <English>Extract Hostage</English>
+        <Turkish>Rehineyi tahliye et</Turkish>
+        <Korean>인질 구출</Korean>
+        <Spanish>Extraer rehén</Spanish>
+        <Japanese>人質を回収する</Japanese>
+        <Chinese>撤离人质</Chinese>
+        <Russian>Эвакуировать заложника</Russian>
+        <German>Geisel extrahieren</German>
+        <Italian>Estrai l'ostaggio</Italian>
+        <Polish>Ewakuuj zakładnika</Polish>
+    </Key>
+    <Key ID="STR_LL_Task_00_Title">
+        <Original>Exfiltration d'otage</Original>
+        <French>Exfiltration d'otage</French>
+        <English>Hostage Exfiltration</English>
+        <Turkish>Rehine Tahliyesi</Turkish>
+        <Korean>인질 구출</Korean>
+        <Spanish>Extracción de rehén</Spanish>
+        <Japanese>人質救出</Japanese>
+        <Chinese>人质撤离</Chinese>
+        <Russian>Эвакуация заложника</Russian>
+        <German>Geiselexfiltration</German>
+        <Italian>Esfiltrazione ostaggio</Italian>
+        <Polish>Ewakuacja zakładnika</Polish>
+    </Key>
+    <Key ID="STR_LL_Task_00_Desc">
+        <Original>Localisez et extrayez l'otage retenu dans l'une des zones de recherche indiquées sur votre carte. Appelez ensuite l'hélicoptère d'extraction.</Original>
+        <French>Localisez et extrayez l'otage retenu dans l'une des zones de recherche indiquées sur votre carte. Appelez ensuite l'hélicoptère d'extraction.</French>
+        <English>Locate and extract the hostage held in one of the search zones indicated on your map. Then call for extraction helicopter.</English>
+        <Turkish>Haritanızda belirtilen arama bölgelerinden birinde tutulan rehineyi bulun ve kurtarın. Ardından tahliye helikopteri çağırın.</Turkish>
+        <Korean>지도에 표시된 수색 구역 중 한 곳에 억류된 인질을 찾아 구출하십시오. 그런 다음 구출 헬기를 호출하십시오.</Korean>
+        <Spanish>Localiza y extrae al rehén retenido en una de las zonas de búsqueda indicadas en tu mapa. Luego llama al helicóptero de extracción.</Spanish>
+        <Japanese>マップに示された捜索ゾーンのいずれかに捕らわれている人質を見つけて救出してください。その後、救出ヘリコプターを呼んでください。</Japanese>
+        <Chinese>找到并营救被关押在地图上指示的搜索区域之一的人质。然后呼叫撤离直升机。</Chinese>
+        <Russian>Найдите и эвакуируйте заложника, удерживаемого в одной из зон поиска, указанных на вашей карте. Затем вызовите эвакуационный вертолет.</Russian>
+        <German>Lokalisieren und extrahieren Sie die Geisel, die in einer der auf Ihrer Karte markierten Suchzonen festgehalten wird. Rufen Sie dann den Evakuierungshubschrauber.</German>
+        <Italian>Individua ed estrai l'ostaggio tenuto in una delle zone di ricerca indicate sulla mappa. Quindi chiama l'elicottero di estrazione.</Italian>
+        <Polish>Zlokalizuj i ewakuuj zakładnika przetrzymywanego w jednej ze stref poszukiwań wskazanych na mapie. Następnie wezwij śmigłowiec ewakuacyjny.</Polish>
+    </Key>
+    <Key ID="STR_LL_Task_00_Marker">
+        <Original>Zone de Recherche</Original>
+        <French>Zone de Recherche</French>
+        <English>Search Zone</English>
+        <Turkish>Arama Bölgesi</Turkish>
+        <Korean>수색 구역</Korean>
+        <Spanish>Zona de búsqueda</Spanish>
+        <Japanese>捜索ゾーン</Japanese>
+        <Chinese>搜索区域</Chinese>
+        <Russian>Зона поиска</Russian>
+        <German>Suchzone</German>
+        <Italian>Zona di ricerca</Italian>
+        <Polish>Strefa poszukiwań</Polish>
+    </Key>
+    <Key ID="STR_LL_Task_00_MarkerMain">
+        <Original>Secteur d'opération</Original>
+        <French>Secteur d'opération</French>
+        <English>Area of operations</English>
+        <Turkish>Operasyon bölgesi</Turkish>
+        <Korean>작전 지역</Korean>
+        <Spanish>Área de operaciones</Spanish>
+        <Japanese>作戦エリア</Japanese>
+        <Chinese>行动区域</Chinese>
+        <Russian>Район операции</Russian>
+        <German>Einsatzgebiet</German>
+        <Italian>Area di operazione</Italian>
+        <Polish>Obszar operacji</Polish>
+    </Key>
+</Keys>

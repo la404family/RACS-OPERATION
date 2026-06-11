@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Keys>
+    <Key ID="STR_LL_Action_RequestTask">
+        <Original>Demander votre tâche</Original>
+        <French>Demander votre tâche</French>
+        <English>Request your task</English>
+        <Turkish>Görevinizi talep edin</Turkish>
+        <Korean>임무 요청</Korean>
+        <Spanish>Solicitar su tarea</Spanish>
+        <Japanese>任務を要請する</Japanese>
+        <Chinese>请求您的任务</Chinese>
+        <Russian>Запросить задание</Russian>
+        <German>Aufgabe anfordern</German>
+        <Italian>Richiedi il tuo incarico</Italian>
+        <Polish>Poproś o zadanie</Polish>
+    </Key>
     <Key ID="STR_LL_Task_Assigned">
         <Original>Lisez votre briefing de tache</Original>
         <French>Lisez votre briefing de tache</French>

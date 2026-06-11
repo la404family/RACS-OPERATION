@@ -4,20 +4,56 @@
         <Original>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Soins&lt;/t&gt;</Original>
         <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Heal&lt;/t&gt;</English>
         <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Soins&lt;/t&gt;</French>
+        <Turkish>&lt;t color='#FFFFFF'&gt;[MANGA] İyileştir&lt;/t&gt;</Turkish>
+        <Korean>&lt;t color='#FFFFFF'&gt;[분대] 치료&lt;/t&gt;</Korean>
+        <Spanish>&lt;t color='#FFFFFF'&gt;[ESCUADRÓN] Curar&lt;/t&gt;</Spanish>
+        <Japanese>&lt;t color='#FFFFFF'&gt;[分隊] 治療&lt;/t&gt;</Japanese>
+        <Chinese>&lt;t color='#FFFFFF'&gt;[小队] 治疗&lt;/t&gt;</Chinese>
+        <Russian>&lt;t color='#FFFFFF'&gt;[ОТРЯД] Лечение&lt;/t&gt;</Russian>
+        <German>&lt;t color='#FFFFFF'&gt;[TRUPP] Heilen&lt;/t&gt;</German>
+        <Italian>&lt;t color='#FFFFFF'&gt;[SQUADRA] Cura&lt;/t&gt;</Italian>
+        <Polish>&lt;t color='#FFFFFF'&gt;[DRUŻYNA] Leczenie&lt;/t&gt;</Polish>
     </Key>
     <Key ID="STR_LL_HealAction_NoKits">
-        <Original>QG : Négatif ! Personne ne possède de kit de soin.</Original>
-        <English>Negative! Nobody has a medkit.</English>
-        <French>QG : Négatif ! Personne ne possède de kit de soin.</French>
+        <Original> Personne ne possède de kit de soin.</Original>
+        <English> No one has a medkit.</English>
+        <French> Personne ne possède de kit de soin.</French>
+        <Turkish> Kimsede ilk yardım çantası yok.</Turkish>
+        <Korean> 구급상자를 가진 사람이 없습니다.</Korean>
+        <Spanish> Nadie tiene un botiquín.</Spanish>
+        <Japanese> 誰も医療キットを持っていません。</Japanese>
+        <Chinese> 没有人有医疗包。</Chinese>
+        <Russian> Ни у кого нет аптечки.</Russian>
+        <German> Niemand hat ein Medikit.</German>
+        <Italian> Nessuno ha un kit medico.</Italian>
+        <Polish> Nikt nie ma apteczki.</Polish>
     </Key>
     <Key ID="STR_LL_HealAction_NoWounded">
-        <Original>QG : Négatif ! Aucun blessé nécessitant des soins.</Original>
-        <English>No wounded requiring healing.</English>
-        <French>QG : Négatif ! Aucun blessé nécessitant des soins.</French>
+        <Original> Aucun blessé nécessitant des soins.</Original>
+        <English> No wounded requiring healing.</English>
+        <French> Aucun blessé nécessitant des soins.</French>
+        <Turkish> İyileşmesi gereken yaralı yok.</Turkish>
+        <Korean> 치료가 필요한 부상자가 없습니다.</Korean>
+        <Spanish> No hay heridos que requieran curación.</Spanish>
+        <Japanese> 治療が必要な負傷者はいません。</Japanese>
+        <Chinese> 没有需要治疗的伤员。</Chinese>
+        <Russian> Нет раненых, нуждающихся в лечении.</Russian>
+        <German> Keine Verwundeten, die geheilt werden müssen.</German>
+        <Italian> Nessun ferito che richieda cure.</Italian>
+        <Polish> Brak rannych wymagających leczenia.</Polish>
     </Key>
     <Key ID="STR_LL_HealAction_Healing">
-        <Original>QG : %1 homme(s) en cours de soins...</Original>
+        <Original> %1 homme(s) en cours de soins...</Original>
         <English>... %1 man(men) being healed...</English>
-        <French>QG : %1 homme(s) en cours de soins...</French>
+        <French> %1 homme(s) en cours de soins...</French>
+        <Turkish>... %1 adam iyileştiriliyor...</Turkish>
+        <Korean>... %1명이 치료받고 있습니다...</Korean>
+        <Spanish>... %1 hombre(s) siendo curado(s)...</Spanish>
+        <Japanese>... %1人が治療中です...</Japanese>
+        <Chinese>... %1 人正在接受治疗...</Chinese>
+        <Russian>... %1 человек(а) лечат...</Russian>
+        <German>... %1 Mann (Männer) werden geheilt...</German>
+        <Italian>... %1 uomo(i) in cura...</Italian>
+        <Polish>... %1 żołnierz(y) jest leczonych...</Polish>
     </Key>
 </Keys>

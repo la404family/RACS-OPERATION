@@ -135,8 +135,11 @@ Le système hélicoptère repose sur un **unique UH-60L** (`CUP_I_UH60L_FFV_RACS
 *   **`fn_taskManager.sqf` (`LL_fnc_taskManager`)**
     *   **Rôle :** Orchestrateur serveur des objectifs de la mission.
     *   **Fonctionnement :** Sélectionne et lance une seule tâche à la fois parmi un pool disponible, garantissant la progression scénaristique sans surcharge d'objectifs simultanés. Conçu pour isoler et tester facilement chaque mission.
-*   **`fn_task00.sqf` (`LL_fnc_task00`)** (et suivants)
-    *   **Rôle :** Scripts autonomes gérant la logique d'un objectif spécifique.
+*   **`fn_task00.sqf` (`LL_fnc_task00`)**
+    *   **Rôle :** Tâche 00 - Exfiltration d'otage. Script autonome gérant la logique de ce premier objectif.
+    *   **Fonctionnement :** Sélectionne dynamiquement une zone de recherche avec spawn aléatoire de gardes en patrouille. Gère la libération de l'otage via `addAction` localisée puis l'embarquement coordonné dans l'hélicoptère d'extraction via un second `addAction` direct sur l'appareil (sans terminer la mission globale). Inclut le pattern de dissolution (suppression hors de vue) des ennemis restants à l'issue de la mission.
+*   **`fn_taskXX.sqf` (`LL_fnc_taskXX`)**
+    *   **Rôle :** Scripts autonomes gérant la logique des autres objectifs spécifiques.
     *   **Fonctionnement :** Gèrent la création de tâches Arma natives (marqueurs sur carte uniquement, aucun marqueur 3D pour forcer la navigation à la boussole), le spawn de l'opposition et la validation des conditions de réussite.
 
 ---
