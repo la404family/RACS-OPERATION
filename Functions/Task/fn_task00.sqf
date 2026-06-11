@@ -1,26 +1,20 @@
-/*
-    LL_fnc_task00
-    Serveur uniquement.
-    Task 00 : Exfiltration d'otage
-*/
 params [["_mode", "init", [""]], ["_args", [], [[]]]];
 
 if (!isServer) exitWith {};
 
 if (_mode == "init") exitWith {
-    // 1. Trouver les logiques de spawn M_Dans_Bat_
+
     private _allLogics = (allMissionObjects "Logic") select { (vehicleVarName _x) select [0, 11] == "M_Dans_Bat_" };
     if (count _allLogics < 2) exitWith {
         diag_log "[LL] task00 ERROR: Pas assez de M_Dans_Bat_ sur la carte.";
         missionNamespace setVariable ["LL_g_taskInProgress", false, true];
     };
 
-    // 2. Sélectionner 2 à 4 lieux (règle des 250m)
     private _targetNumZones = 2 + floor (random 3);
     private _selectedLogics = [];
     private _logicsPool = _allLogics call BIS_fnc_arrayShuffle;
     private _alivePlayers = allPlayers select { alive _x };
-    
+
     {
         private _candidate = _x;
         private _candidatePos = getPosASL _candidate;
@@ -46,13 +40,11 @@ if (_mode == "init") exitWith {
     missionNamespace setVariable ["LL_Task00_AllUnits", [], true];
     private _allUnits = [];
 
-    // 3. Boucle de spawn
     for "_i" from 0 to (_numZones - 1) do {
         private _logic = _selectedLogics select _i;
         private _spawnPos = getPosASL _logic;
         _spawnPos set [2, (_spawnPos select 2) + 0.2];
 
-        // Gardes (4 à 8 par zone)
         private _grp = createGroup [east, true];
         _grp setBehaviour "SAFE";
         _grp setCombatMode "RED";
@@ -65,21 +57,18 @@ if (_mode == "init") exitWith {
             _guard allowDamage false;
             [_guard] spawn { sleep 3; (_this select 0) allowDamage true; };
             _allUnits pushBack _guard;
-            
-            // Patrouille locale (4-25m en AWARE)
+
             _guard setBehaviour "AWARE";
             private _patrolPos = _spawnPos getPos [4 + random 21, random 360];
             _guard doMove _patrolPos;
         };
 
-        // Marqueurs zone
         private _mkrName = format ["mkr_task00_zone_%1", _i];
         createMarker [_mkrName, _spawnPos getPos [random 50, random 360]];
         _mkrName setMarkerType "hd_unknown";
         _mkrName setMarkerColor "ColorOrange";
         _mkrName setMarkerText format ["%1 %2", localize "STR_LL_Task_00_Marker", _i + 1];
 
-        // Otage (en dernier)
         if (_i == _hostageIndex) then {
             sleep 0.7;
             private _grpCiv = createGroup [civilian, true];
@@ -96,7 +85,6 @@ if (_mode == "init") exitWith {
             _hostage setVariable ["LL_Task_Status", "WAIT", true];
             missionNamespace setVariable ["LL_Task00_Hostage", _hostage, true];
 
-            // Boucle d'attente otage
             _hostage disableAI "MOVE";
             _hostage disableAI "ANIM";
             _hostage setUnitPos "UP";
@@ -109,22 +97,17 @@ if (_mode == "init") exitWith {
                 };
             }];
 
-            // Pas de rotation pour l'otage car il est fixé
-
-            // Event handler de mort
             _hostage addEventHandler ["Killed", {
                 ["task_00_exfiltration", "FAILED", true] call BIS_fnc_taskSetState;
                 missionNamespace setVariable ["LL_g_taskInProgress", false, true];
             }];
 
-            // AddAction client
             [_hostage] remoteExec ["LL_fnc_task00_addAction", 0, true];
         };
     };
 
     missionNamespace setVariable ["LL_Task00_AllUnits", _allUnits, true];
 
-    // 4. Création de la tâche
     [
         independent,
         ["task_00_exfiltration"],
@@ -140,11 +123,9 @@ if (_mode == "init") exitWith {
         "search",
         false
     ] call BIS_fnc_taskCreate;
-    
-    // Briefing
+
     [[], { player createDiaryRecord ["diary", [localize "STR_LL_Diary_Task00_Title", localize "STR_LL_Diary_Task00_Text"]]; }] remoteExec ["spawn", 0, true];
 
-    // Notification
     ["STR_LL_Task_Assigned"] remoteExec ["LL_fnc_radioMessage", 0];
 };
 
@@ -157,12 +138,11 @@ if (_mode == "free") exitWith {
     _hostage setCaptive false;
     { _hostage enableAI _x; } forEach ["ANIM", "MOVE", "AUTOTARGET", "TARGET"];
     [_hostage, "Acts_ExecutionVictim_Unbow"] remoteExec ["switchMove", 0];
-    
+
     sleep 8.5;
 
     [_hostage, ""] remoteExec ["switchMove", 0];
-    
-    // Réactiver le mouvement, l'informateur se relève
+
     _hostage enableAI "MOVE";
     _hostage setUnitPos "UP";
     _hostage setBehaviour "CARELESS";
@@ -170,37 +150,31 @@ if (_mode == "free") exitWith {
     _hostage setSkill ["courage", 1];
     _hostage allowFleeing 0;
 
-    // --- VOIX NATIVE IMMERSIVE (parle en perse — on ne comprend pas mais c'est immersif) ---
-    // Pas d'animation de dialogue (c'est un otage libéré, pas un orateur)
-    // On crée un soldat fantôme dans son groupe pour forcer le moteur à générer sa voix native
     private _hostageGrp = group _hostage;
     private _dummy = _hostageGrp createUnit ["I_G_Soldier_F", getPos _hostage, [], 0, "NONE"];
     _dummy hideObjectGlobal true;
     _dummy allowDamage false;
     _dummy disableAI "ALL";
-    _hostageGrp selectLeader _hostage; // CORRECTIF : syntaxe group selectLeader unit
+    _hostageGrp selectLeader _hostage; 
 
-    // L'informateur "donne un ordre" au fantôme → le moteur génère sa voix native !
     _dummy commandMove (getPos _hostage getPos [500, random 360]);
 
-    sleep 3; // Laisser le temps à l'otage de parler
-    deleteVehicle _dummy; // Nettoyage du fantôme
+    sleep 3; 
+    deleteVehicle _dummy; 
 
     [_hostage] joinSilent (group _caller);
 
     for "_i" from 0 to 3 do { deleteMarker format ["mkr_task00_zone_%1", _i]; };
 
-    // Hélicoptère (Appel direct via système existant)
     ["EMBARQUEMENT", getPos _hostage, _caller, 3] spawn LL_fnc_heliDispatch;
 
-    // Attente de la création de l'hélico pour y attacher l'action
     [_hostage] spawn {
         params ["_hostage"];
         waitUntil {
             sleep 1;
             !alive _hostage || !isNull (missionNamespace getVariable ["LL_HELI_obj", objNull])
         };
-        
+
         if (alive _hostage) then {
             private _heli = missionNamespace getVariable ["LL_HELI_obj", objNull];
             if (!isNull _heli) then {
@@ -211,9 +185,9 @@ if (_mode == "free") exitWith {
                         {
                             params ["_target", "_caller", "_actionId", "_arguments"];
                             private _hostage = _arguments select 0;
-                            
+
                             _target removeAction _actionId;
-                            
+
                             [_hostage] joinSilent (group _target);
                             _hostage assignAsCargo _target;
                             [_hostage] orderGetIn true;
@@ -230,7 +204,6 @@ if (_mode == "free") exitWith {
         };
     };
 
-    // On attend l'embarquement ou la mort
     waitUntil {
         sleep 2;
         !alive _hostage || vehicle _hostage != _hostage
@@ -242,17 +215,16 @@ if (_mode == "free") exitWith {
     } else {
         ["task_00_exfiltration", "FAILED", true] call BIS_fnc_taskSetState;
         missionNamespace setVariable ["LL_g_taskInProgress", false, true];
-        
+
         if (missionNamespace getVariable ["LL_HELI_type", ""] == "EMBARQUEMENT") then {
             missionNamespace setVariable ["LL_HELI_abort", true, false];
             ["STR_LL_Heli_Dispatch_Abort_DEFAULT"] remoteExec ["LL_fnc_radioMessage", 0];
         };
     };
 
-    // Dissolution
     private _allUnits = missionNamespace getVariable ["LL_Task00_AllUnits", []];
     private _guards = _allUnits select { _x != _hostage && alive _x };
-    
+
     if (count _guards > 0) then {
         private _dissolveGrp = createGroup [east, true];
         {
@@ -261,7 +233,7 @@ if (_mode == "free") exitWith {
             _x setSpeedMode "FULL";
             _x setVariable ["LL_TaskXX_Escaping", true, true];
         } forEach _guards;
-        
+
         _guards joinSilent _dissolveGrp;
 
         [_guards, _dissolveGrp] spawn {

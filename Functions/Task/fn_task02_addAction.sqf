@@ -1,7 +1,3 @@
-/*
-    LL_fnc_task02_addAction
-    Client uniquement.
-*/
 params ["_bomb"];
 
 if (!hasInterface) exitWith {};

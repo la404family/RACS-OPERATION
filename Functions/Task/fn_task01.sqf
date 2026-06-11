@@ -1,8 +1,3 @@
-/*
-    LL_fnc_task01
-    Serveur uniquement.
-    Task 01 : Assassinat et récupération de documents.
-*/
 params [["_mode", "init", [""]], ["_args", [], [[]]]];
 
 if (!isServer) exitWith {};
@@ -12,30 +7,28 @@ if (missionNamespace getVariable ["DEBUG_MODE", true]) then {
 };
 
 if (_mode == "init") exitWith {
-    // 1. Trouver les logiques de spawn M_Dans_Bat_
+
     private _allLogics = (allMissionObjects "Logic") select { (vehicleVarName _x) select [0, 11] == "M_Dans_Bat_" };
     if (count _allLogics == 0) exitWith {
         diag_log "[LL] task01 ERROR: Aucun M_Dans_Bat_ trouvé sur la carte.";
     };
 
-    // 2. Sélectionner 2 à 4 lieux aléatoires (règle des 250m)
     private _targetNumSpawns = 2 + floor (random 3);
     private _selectedLogics = [];
     private _logicsPool = _allLogics call BIS_fnc_arrayShuffle;
     private _alivePlayers = allPlayers select { alive _x };
-    
+
     {
         private _candidate = _x;
         private _candidatePos = getPosASL _candidate;
         private _valid = true;
 
-        // Règle 1 : >= 250m des joueurs
         {
             if (_x distance2D _candidatePos < 250) exitWith { _valid = false; };
         } forEach _alivePlayers;
 
         if (_valid) then {
-            // Règle 2 : >= 250m des autres lieux de la tâche
+
             {
                 if ((getPosASL _x) distance2D _candidatePos < 250) exitWith { _valid = false; };
             } forEach _selectedLogics;
@@ -49,8 +42,7 @@ if (_mode == "init") exitWith {
     } forEach _logicsPool;
 
     private _numSpawns = count _selectedLogics;
-    
-    // Sécurité si on n'en a pas trouvé au moins 2 à cause des distances
+
     if (_numSpawns < 2) exitWith {
         diag_log "[LL] task01 ERROR: Impossible de trouver assez de lieux à >250m. Relance dans 15s.";
         [[], "LL_fnc_task01"] spawn {
@@ -59,13 +51,10 @@ if (_mode == "init") exitWith {
         };
     };
 
-    // 3. Choix de la cible possédant les documents
     private _targetIndex = floor random _numSpawns;
 
-    // Tableaux de suivi
     missionNamespace setVariable ["LL_Task01_AllUnits", [], true];
 
-    // 4. Boucle de spawn
     for "_i" from 0 to (_numSpawns - 1) do {
         private _logic = _selectedLogics select _i;
         private _spawnPos = getPosASL _logic;
@@ -75,7 +64,6 @@ if (_mode == "init") exitWith {
         _grp setBehaviour "SAFE";
         _grp setCombatMode "RED";
 
-        // Gardes (3 à 5)
         private _numGuards = 3 + floor (random 3);
         private _guards = [];
         for "_g" from 1 to _numGuards do {
@@ -86,14 +74,12 @@ if (_mode == "init") exitWith {
             _guard allowDamage false;
             [_guard] spawn { sleep 3; (_this select 0) allowDamage true; };
             _guards pushBack _guard;
-            
-            // Patrouille locale
+
             private _patrolPos = _spawnPos getPos [random 25, random 360];
             _guard doMove _patrolPos;
             _guard setSpeedMode "LIMITED";
         };
 
-        // Officier (en dernier)
         sleep 0.7;
         private _officer = _grp createUnit ["CUP_O_TK_Officer", _spawnPos, [], 0, "NONE"];
         _officer setPosASL _spawnPos;
@@ -101,54 +87,45 @@ if (_mode == "init") exitWith {
         [_officer] spawn { sleep 3; (_this select 0) allowDamage true; };
         _officer setRank "COLONEL";
 
-        // Marqueurs carte
         private _mkrName = format ["mkr_task01_target_%1", _i];
         createMarker [_mkrName, _spawnPos];
         _mkrName setMarkerType "mil_destroy";
         _mkrName setMarkerColor "ColorRed";
         _mkrName setMarkerText format ["%1 %2", localize "STR_LL_Task_01_Marker", _i + 1];
 
-        // Mémorisation
         private _allUnits = missionNamespace getVariable ["LL_Task01_AllUnits", []];
         _allUnits append _guards;
         _allUnits pushBack _officer;
         missionNamespace setVariable ["LL_Task01_AllUnits", _allUnits, true];
 
-        // Est-ce la cible ?
         if (_i == _targetIndex) then {
             _officer setVariable ["LL_hasDocuments", true, true];
         } else {
             _officer setVariable ["LL_hasDocuments", false, true];
         };
 
-        // Event handler de mort pour l'officier
         _officer addEventHandler ["Killed", {
             params ["_unit", "_killer", "_instigator", "_useEffects"];
-            
-            // Si c'est le porteur de documents
+
             if (_unit getVariable ["LL_hasDocuments", false]) then {
-                private _pos = getPosATL _unit; // On utilise ATL pour les objets au sol
+                private _pos = getPosATL _unit; 
                 _pos set [2, (_pos select 2) + 0.05];
-                
+
                 private _doc = createVehicle ["SecretDocuments_01_F", _pos, [], 0, "CAN_COLLIDE"];
                 _doc setPosATL _pos;
-                
-                // Mettre à jour la tâche
+
                 ["task_01_assassinat", _pos] call BIS_fnc_taskSetDestination;
 
-                // Marqueur visuel
                 private _mkrDoc = createMarker ["mkr_task01_doc", _pos];
                 _mkrDoc setMarkerType "mil_objective";
                 _mkrDoc setMarkerColor "ColorWhite";
                 _mkrDoc setMarkerText (localize "STR_LL_Task_01_MarkerDoc");
 
-                // Ajouter l'action au cadavre (pour tous les clients)
                 [_unit, _doc] remoteExec ["LL_fnc_task01_addAction", 0, true];
             };
         }];
     };
 
-    // 5. Création de la tâche Arma 3
     [
         independent,
         ["task_01_assassinat"],
@@ -164,8 +141,7 @@ if (_mode == "init") exitWith {
         "kill",
         false
     ] call BIS_fnc_taskCreate;
-    
-    // Notification générique (Radio + Texte)
+
     ["STR_LL_Task_Assigned"] remoteExec ["LL_fnc_radioMessage", 0];
 };
 
@@ -175,31 +151,27 @@ if (_mode == "collect") exitWith {
     if (missionNamespace getVariable ["LL_Task01_Completed", false]) exitWith {};
     missionNamespace setVariable ["LL_Task01_Completed", true, true];
 
-    // Supprimer le document
     if (!isNull _doc) then { deleteVehicle _doc; };
 
-    // Fin de tâche
     ["task_01_assassinat", "SUCCEEDED", true] call BIS_fnc_taskSetState;
     missionNamespace setVariable ["LL_g_taskInProgress", false, true];
     deleteMarker "mkr_task01_doc";
-    
-    // Nettoyer les marqueurs de cible
+
     for "_i" from 0 to 3 do {
         deleteMarker format ["mkr_task01_target_%1", _i];
     };
 
-    // Dissolution des IA restantes (TASK_RULES §14)
     private _allUnits = missionNamespace getVariable ["LL_Task01_AllUnits", []];
     private _dissolveGrp = createGroup [east, true];
     private _alive = _allUnits select { alive _x };
-    
+
     if (count _alive > 0) then {
         {
             _x enableAI "MOVE";
             _x setBehaviour "SAFE";
             _x setSpeedMode "FULL";
         } forEach _alive;
-        
+
         _alive joinSilent _dissolveGrp;
 
         [_alive, _dissolveGrp] spawn {

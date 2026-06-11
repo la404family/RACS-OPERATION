@@ -1,8 +1,3 @@
-/*
-    LL_fnc_task02
-    Serveur uniquement.
-    Task 02 : Désamorçage de bombes (IED)
-*/
 params [["_mode", "init", [""]], ["_args", [], [[]]]];
 
 if (!isServer) exitWith {};
@@ -14,11 +9,11 @@ if (_mode == "init") exitWith {
         missionNamespace setVariable ["LL_g_taskInProgress", false, true];
     };
 
-    private _targetNumZones = 2 + floor (random 3); // 2 à 4
+    private _targetNumZones = 2 + floor (random 3); 
     private _selectedLogics = [];
     private _logicsPool = _allLogics call BIS_fnc_arrayShuffle;
     private _alivePlayers = allPlayers select { alive _x };
-    
+
     {
         private _candidate = _x;
         private _candidatePos = getPosASL _candidate;
@@ -44,13 +39,11 @@ if (_mode == "init") exitWith {
     private _allUnits = [];
     private _bombs = [];
 
-    // Boucle de spawn
     for "_i" from 0 to (_numZones - 1) do {
         private _logic = _selectedLogics select _i;
         private _spawnPos = getPosASL _logic;
         _spawnPos set [2, (_spawnPos select 2) + 0.2];
 
-        // Gardes (4 à 8 par zone)
         private _grp = createGroup [east, true];
         _grp setBehaviour "SAFE";
         _grp setCombatMode "RED";
@@ -63,75 +56,61 @@ if (_mode == "init") exitWith {
             _guard allowDamage false;
             [_guard] spawn { sleep 3; (_this select 0) allowDamage true; };
             _allUnits pushBack _guard;
-            
-            // Patrouille locale (4-25m en AWARE)
+
             _guard setBehaviour "AWARE";
             private _patrolPos = _spawnPos getPos [4 + random 21, random 360];
             _guard doMove _patrolPos;
         };
 
-        // Marqueurs zone
         private _mkrName = format ["mkr_task02_zone_%1", _i];
         createMarker [_mkrName, _spawnPos getPos [random 50, random 360]];
         _mkrName setMarkerType "hd_unknown";
         _mkrName setMarkerColor "ColorOrange";
         _mkrName setMarkerText format ["%1 %2", localize "STR_LL_Task_02_Marker", _i + 1];
 
-        // Bombe (Petite caisse de grenades avec bip)
         sleep 0.7;
-        
-        // IMPORTANT : On respecte STRICTEMENT la règle du Z + 0.2 de TASK_RULES.md pour les intérieurs
-        // Sans cela, la caisse s'enfonce dans le sol, et la charge posée dessus est engloutie par la géométrie !
+
         private _bomb = createVehicle ["Box_East_Grenades_F", [0,0,0], [], 0, "CAN_COLLIDE"];
         _bomb setPosASL _spawnPos;
         _bomb setDir (random 360);
         _bomb setVariable ["LL_Bomb_Status", "WAIT", true];
-        
-        // Eviter la destruction immédiate lors du placement
+
         _bomb allowDamage false;
         [_bomb] spawn { sleep 3; (_this select 0) allowDamage true; };
 
-        // Ajout de la charge explosive posée sur la caisse
-        // On n'utilise PLUS de WeaponHolder car le moteur d'Arma le force à tomber par terre (comme vu sur ta capture) !
-        // DemoCharge_F est un prop statique valide dans Eden, on l'utilise directement à la bonne hauteur.
         private _charge = createVehicle ["DemoCharge_F", _spawnPos vectorAdd [0, 0, 1], [], 0, "CAN_COLLIDE"];
-        _charge attachTo [_bomb, [0, 0, 0.22]]; // 0.22 est le haut exact du modèle Box_East_Grenades_F
+        _charge attachTo [_bomb, [0, 0, 0.32]]; 
         _charge setVectorUp [0, 0, 1];
-        
-        // Ajout de la petite lumière clignotante orange (faible intensité)
+
         private _light = "#lightpoint" createVehicle [0,0,0];
-        _light attachTo [_bomb, [0, 0, 0.22]]; // Même hauteur que la charge
-        _light setLightColor [1, 0.2, 0]; // Orange rouge
-        _light setLightAmbient [0, 0, 0]; // AUCUNE lumière d'ambiance pour ne pas éclairer le bâtiment
+        _light attachTo [_bomb, [0, 0, 0.31]]; 
+        _light setLightColor [1, 0.2, 0]; 
+        _light setLightAmbient [0, 0, 0]; 
         _light setLightUseFlare true;
-        _light setLightFlareSize 0.1; // Tout petit flare
+        _light setLightFlareSize 0.1; 
         _light setLightFlareMaxDistance 50;
-        _light setLightAttenuation [0.1, 0, 100, 100]; // Coupure drastique de la lumière
+        _light setLightAttenuation [0.1, 0, 100, 100]; 
         _light setLightBrightness 0;
 
-        // Si quelqu'un tire dessus
         _bomb addEventHandler ["Killed", {
             params ["_unit", "_killer", "_instigator", "_useEffects"];
             _unit setVariable ["LL_Bomb_Status", "EXPLODED", true];
-            // Explosion physique mortelle
+
             "Bo_GBU12_LGB" createVehicle (getPos _unit);
         }];
 
-        // Son immersif et clignotement synchronisé
         [_bomb, _light, _charge] spawn {
             params ["_bomb", "_light", "_charge"];
             while { alive _bomb && (_bomb getVariable ["LL_Bomb_Status", "WAIT"]) == "WAIT" } do {
                 playSound3D ["A3\Sounds_F\sfx\beep_target.wss", _bomb, false, getPosASL _bomb, 1, 1, 50];
-                _light setLightBrightness 0.5; // Toute petite intensité pour une LED
+                _light setLightBrightness 0.5; 
                 sleep 0.1;
-                _light setLightBrightness 0; // Eteint la lumière
+                _light setLightBrightness 0; 
                 sleep 1.9;
             };
-            
-            // Nettoyage de la lumière à la fin (désamorcage ou explosion)
+
             if (!isNull _light) then { deleteVehicle _light; };
-            
-            // Si c'est désamorcé, on fait disparaître la charge explosive pour donner un retour visuel clair
+
             if (alive _bomb && (_bomb getVariable ["LL_Bomb_Status", "WAIT"]) == "DEFUSED") then {
                 if (!isNull _charge) then { deleteVehicle _charge; };
             };
@@ -139,14 +118,12 @@ if (_mode == "init") exitWith {
 
         _bombs pushBack _bomb;
 
-        // AddAction client pour désamorcer
         [_bomb] remoteExec ["LL_fnc_task02_addAction", 0, true];
     };
 
     missionNamespace setVariable ["LL_Task02_AllUnits", _allUnits, true];
     missionNamespace setVariable ["LL_Task02_Bombs", _bombs, true];
 
-    // Création de la tâche
     [
         independent,
         ["task_02_bombs"],
@@ -162,33 +139,29 @@ if (_mode == "init") exitWith {
         "mine",
         false
     ] call BIS_fnc_taskCreate;
-    
-    // Briefing
+
     [[], { player createDiaryRecord ["diary", [localize "STR_LL_Diary_Task02_Title", localize "STR_LL_Diary_Task02_Text"]]; }] remoteExec ["spawn", 0, true];
 
-    // Notification
     ["STR_LL_Task_Assigned"] remoteExec ["LL_fnc_radioMessage", 0];
 
-    // Lancement du thread de surveillance
-    private _timerMinutes = 25 + floor(random 21); // 25 à 45 minutes
+    private _timerMinutes = 25 + floor(random 21); 
     [_timerMinutes, _bombs, _numZones] spawn {
         params ["_timerMinutes", "_bombs", "_numZones"];
         private _endTime = time + (_timerMinutes * 60);
         private _taskDone = false;
 
         while { !_taskDone } do {
-            sleep 1; // Passage à 1 seconde pour une fluidité du timer
+            sleep 1; 
             private _defusedCount = 0;
             private _explodedCount = 0;
 
             {
                 private _status = _x getVariable ["LL_Bomb_Status", "WAIT"];
                 if (_status == "DEFUSED") then { _defusedCount = _defusedCount + 1; };
-                // On utilise uniquement le statut explicite pour éviter les faux positifs d'objNull
+
                 if (_status == "EXPLODED") then { _explodedCount = _explodedCount + 1; };
             } forEach _bombs;
 
-            // Mise à jour du Timer sur les marqueurs
             private _remaining = round (_endTime - time);
             if (_remaining < 0) then { _remaining = 0; };
             private _mins = floor (_remaining / 60);
@@ -198,7 +171,7 @@ if (_mode == "init") exitWith {
             for "_i" from 0 to (_numZones - 1) do {
                 private _mkrName = format ["mkr_task02_zone_%1", _i];
                 private _bombStatus = (_bombs select _i) getVariable ["LL_Bomb_Status", "WAIT"];
-                
+
                 if (_bombStatus == "DEFUSED") then {
                     _mkrName setMarkerText format ["%1 %2 - DESAMORCE", localize "STR_LL_Task_02_Marker", _i + 1];
                     _mkrName setMarkerColor "ColorGreen";
@@ -212,25 +185,22 @@ if (_mode == "init") exitWith {
                 };
             };
 
-            // Timer écoulé : on fait sauter les bombes restantes
             if (time > _endTime) then {
                 {
                     if ((_x getVariable ["LL_Bomb_Status", "WAIT"]) == "WAIT") then {
-                        _x setDamage 1; // Déclenche l'explosion et le status EXPLODED
+                        _x setDamage 1; 
                     };
                 } forEach _bombs;
-                sleep 2; // Attendre l'explosion
+                sleep 2; 
                 _explodedCount = 0;
                 {
                     if ((_x getVariable ["LL_Bomb_Status", "WAIT"]) == "EXPLODED" || !alive _x) then { _explodedCount = _explodedCount + 1; };
                 } forEach _bombs;
             };
 
-            // Condition de fin
             if ((_defusedCount + _explodedCount) >= _numZones) then {
                 _taskDone = true;
-                
-                // Échec seulement si TOUTES les bombes ont explosé
+
                 if (_explodedCount == _numZones) then {
                     ["task_02_bombs", "FAILED", true] call BIS_fnc_taskSetState;
                 } else {
@@ -239,13 +209,11 @@ if (_mode == "init") exitWith {
 
                 missionNamespace setVariable ["LL_g_taskInProgress", false, true];
 
-                // Nettoyage marqueurs
                 for "_i" from 0 to (_numZones - 1) do { deleteMarker format ["mkr_task02_zone_%1", _i]; };
 
-                // Dissolution
                 private _allUnits = missionNamespace getVariable ["LL_Task02_AllUnits", []];
                 private _guards = _allUnits select { alive _x };
-                
+
                 if (count _guards > 0) then {
                     private _dissolveGrp = createGroup [east, true];
                     {
@@ -254,7 +222,7 @@ if (_mode == "init") exitWith {
                         _x setSpeedMode "FULL";
                         _x setVariable ["LL_TaskXX_Escaping", true, true];
                     } forEach _guards;
-                    
+
                     _guards joinSilent _dissolveGrp;
 
                     [_guards, _dissolveGrp] spawn {
@@ -318,7 +286,6 @@ if (_mode == "defuse") exitWith {
     _bomb removeAllEventHandlers "Killed";
     _bomb allowDamage false;
 
-    // Animation / Message local
     _caller playMove "AinvPknlMstpSnonWnonDnon_medic_1";
     [_caller, "STR_LL_Task_02_Defused"] remoteExec ["systemChat", 0];
 };

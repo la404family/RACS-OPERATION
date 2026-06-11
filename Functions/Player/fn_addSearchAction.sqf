@@ -84,7 +84,7 @@ private _fnc_addSearchAction = {
                         {
                             if (_candidate distance _x < 4) exitWith { _tooClose = true; };
                         } forEach _assignedPositions;
-                        
+
                         if (!_tooClose) exitWith {
                             _targetPos = _candidate;
                             _posIndex = _forEachIndex;
