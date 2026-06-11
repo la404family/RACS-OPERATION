@@ -284,6 +284,28 @@ Un groupe ennemi activé ne doit pas rester statique. Implémenter une patrouill
 Les gardes d'un PNJ allié doivent patrouiller **aléatoirement autour du lieu de rencontre** (rayon 4–18 m) en mode `LIMITED` / `SAFE`, et non rester figés. 
 Les gardes d'un PNJ ennemis doivent patrouiller **aléatoirement autour du lieu de rencontre** (rayon 4–25 m) pas en mode 'SAFE'
 
+### Voix Native Immersive (PNJ)
+Pour simuler qu'un PNJ civil, un otage ou un informateur parle dans sa langue natale au moment d'une interaction clé (comme donner des coordonnées), sans utiliser d'animation de dialogue classique, on force le moteur à générer l'audio natif en lui faisant donner un ordre à un "soldat fantôme" temporaire.
+
+**Pattern obligatoire :**
+```sqf
+// --- VOIX NATIVE IMMERSIVE ---
+private _pnjGrp = group _pnj;
+private _dummy = _pnjGrp createUnit ["I_G_Soldier_F", getPos _pnj, [], 0, "NONE"];
+_dummy hideObjectGlobal true;
+_dummy allowDamage false;
+_dummy disableAI "ALL";
+_pnjGrp selectLeader _pnj;
+
+// Le PNJ "donne un ordre" au fantôme → le moteur génère sa voix native !
+_dummy commandMove (getPos _pnj getPos [500, random 360]);
+
+// Laisser le temps au PNJ de prononcer sa phrase (2 à 3 secondes)
+sleep 3;
+deleteVehicle _dummy; // Nettoyage
+```
+_Note : Ce code s'exécute sur le serveur et le groupe du PNJ doit être conservé intact le temps que le son soit joué, avant tout changement de camp (`joinSilent`)._
+
 ---
 
 ## 12. Règles de debug

@@ -17,8 +17,9 @@ if (_mode == "REQUEST") exitWith {
     private _availableTasks = [];
     
     // Pour tester, décommentez les tâches que vous voulez rendre disponibles
-    _availableTasks pushBack "task00";
+    //_availableTasks pushBack "task00";
     // _availableTasks pushBack "task01";
+    _availableTasks pushBack "task02";
 
     private _lastTask = missionNamespace getVariable ["LL_g_lastTask", ""];
     

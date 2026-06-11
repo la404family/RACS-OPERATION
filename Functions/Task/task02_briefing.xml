@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keys>
+    <Key ID="STR_LL_Diary_Task02_Title">
+        <Original>OPORD: Opération Bouclier</Original>
+        <French>OPORD: Opération Bouclier</French>
+        <English>OPORD: Operation Shield</English>
+        <Turkish>OPORD: Kalkan Operasyonu</Turkish>
+        <Korean>작전 명령: 방패 작전</Korean>
+        <Spanish>OPORD: Operación Escudo</Spanish>
+        <Japanese>作戦命令: シールド作戦</Japanese>
+        <Chinese>作战命令：盾牌行动</Chinese>
+        <Russian>Боевой приказ: Операция Щит</Russian>
+        <German>OPORD: Operation Schild</German>
+        <Italian>OPORD: Operazione Scudo</Italian>
+        <Polish>OPORD: Operacja Tarcza</Polish>
+    </Key>
+    <Key ID="STR_LL_Diary_Task02_Text">
+        <Original>Les services de renseignement indiquent que les forces ennemies ont piégé plusieurs bâtiments avec des IED. Votre escouade doit sécuriser la zone et désamorcer les engins. Vous avez entre 25 et 45 minutes avant qu'ils n'explosent. Engagez les gardes ennemis avec prudence pour éviter de déclencher les explosifs prématurément.</Original>
+        <French>Les services de renseignement indiquent que les forces ennemies ont piégé plusieurs bâtiments avec des IED. Votre escouade doit sécuriser la zone et désamorcer les engins. Vous avez entre 25 et 45 minutes avant qu'ils n'explosent. Engagez les gardes ennemis avec prudence pour éviter de déclencher les explosifs prématurément.</French>
+        <English>Intelligence reports indicate that enemy forces have rigged several buildings with IEDs. Your squad must secure the area and defuse the devices. You have an estimated 25 to 45 minutes before they detonate. Engage enemy guards with caution to avoid triggering the explosives prematurely.</English>
+        <Turkish>İstihbarat raporları, düşman güçlerinin birkaç binaya el yapımı patlayıcılar (IED) tuzakladığını gösteriyor. Ekibiniz bölgeyi güven altına almalı ve cihazları etkisiz hale getirmelidir. Patlamadan önce tahmini 25 ila 45 dakikanız var. Patlayıcıları erken tetiklememek için düşman muhafızlarıyla dikkatlice çatışmaya girin.</Turkish>
+        <Korean>정보 보고에 따르면 적군이 여러 건물에 IED를 설치했습니다. 귀하의 분대는 해당 지역을 확보하고 장치를 해체해야 합니다. 폭발하기 전까지 약 25분에서 45분의 시간이 있습니다. 폭발물이 조기에 터지는 것을 방지하기 위해 주의해서 적 경비병과 교전하십시오.</Korean>
+        <Spanish>Los informes de inteligencia indican que las fuerzas enemigas han manipulado varios edificios con IEDs. Tu escuadrón debe asegurar la zona y desactivar los dispositivos. Tienes un estimado de 25 a 45 minutos antes de que detonen. Enfrenta a los guardias enemigos con precaución para evitar activar los explosivos prematuramente.</Spanish>
+        <Japanese>情報報告によると、敵部隊が複数の建物にIEDを仕掛けたようだ。君の分隊はエリアを確保し、装置を解除しなければならない。爆発まで推定25〜45分の猶予がある。爆発物を誤爆させないよう、敵の警備兵とは慎重に交戦せよ。</Japanese>
+        <Chinese>情报报告显示，敌军在几栋建筑物中布置了简易爆炸装置。你的小队必须控制该区域并拆除这些装置。在它们引爆前，你大约有 25 到 45 分钟的时间。谨慎交战以避免提前引爆炸药。</Chinese>
+        <Russian>По данным разведки, вражеские силы заминировали несколько зданий с помощью СВУ. Ваш отряд должен обезопасить район и обезвредить устройства. У вас есть примерно 25-45 минут до их детонации. Вступайте в бой с вражеской охраной с осторожностью, чтобы избежать преждевременного срабатывания взрывчатки.</Russian>
+        <German>Geheimdienstberichte deuten darauf hin, dass feindliche Truppen mehrere Gebäude mit Sprengsätzen versehen haben. Dein Trupp muss das Gebiet sichern und die Geräte entschärfen. Du hast schätzungsweise 25 bis 45 Minuten, bevor sie detonieren. Greife feindliche Wachen mit Vorsicht an, um zu vermeiden, dass die Sprengstoffe vorzeitig ausgelöst werden.</German>
+        <Italian>I rapporti dell'intelligence indicano che le forze nemiche hanno minato diversi edifici con IED. La tua squadra deve mettere al sicuro l'area e disinnescare gli ordigni. Hai dai 25 ai 45 minuti prima che esplodano. Affronta le guardie nemiche con cautela per evitare di innescare prematuramente gli esplosivi.</Italian>
+        <Polish>Raporty wywiadu wskazują, że siły wroga zaminowały kilka budynków ładunkami IED. Twój oddział musi zabezpieczyć obszar i rozbroić ładunki. Macie szacunkowo od 25 do 45 minut, zanim wybuchną. Angażuj się w walkę ze strażnikami z ostrożnością, aby uniknąć przedwczesnego odpalenia materiałów wybuchowych.</Polish>
+    </Key>
+</Keys>

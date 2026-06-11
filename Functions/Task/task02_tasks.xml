@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keys>
+    <Key ID="STR_LL_Task_02_Title">
+        <Original>Désamorcer les Explosifs</Original>
+        <French>Désamorcer les Explosifs</French>
+        <English>Defuse the Explosives</English>
+        <Turkish>Patlayıcıları Etkisiz Hale Getir</Turkish>
+        <Korean>폭발물 해체</Korean>
+        <Spanish>Desactivar los explosivos</Spanish>
+        <Japanese>爆発物を解除せよ</Japanese>
+        <Chinese>拆除爆炸物</Chinese>
+        <Russian>Обезвредить взрывчатку</Russian>
+        <German>Entschärfen Sie die Sprengstoffe</German>
+        <Italian>Disinnesca gli esplosivi</Italian>
+        <Polish>Rozbrój materiały wybuchowe</Polish>
+    </Key>
+    <Key ID="STR_LL_Task_02_Desc">
+        <Original>Des IED ont été posés dans la zone. Localisez-les et désamorcez-les avant la fin du temps imparti. En cas d'échec, ils exploseront.</Original>
+        <French>Des IED ont été posés dans la zone. Localisez-les et désamorcez-les avant la fin du temps imparti. En cas d'échec, ils exploseront.</French>
+        <English>IEDs have been planted in the area. Locate and defuse them before the timer runs out. Failure to defuse them will result in an explosion.</English>
+        <Turkish>Bölgeye IED'ler yerleştirildi. Süre dolmadan onları bulun ve etkisiz hale getirin. Etkisiz hale getirilmezlerse patlayacaklar.</Turkish>
+        <Korean>이 지역에 IED가 설치되었습니다. 타이머가 끝나기 전에 그것들을 찾아 해체하십시오. 해체하지 못하면 폭발할 것입니다.</Korean>
+        <Spanish>Se han plantado IEDs en la zona. Localízalos y desactívalos antes de que se agote el tiempo. Si no los desactivas, se producirá una explosión.</Spanish>
+        <Japanese>エリアにIEDが設置された。制限時間が切れる前に発見して解除せよ。解除に失敗すると爆発する。</Japanese>
+        <Chinese>该区域安放了简易爆炸装置。在计时器结束前找到并拆除它们。如果未能拆除，将导致爆炸。</Chinese>
+        <Russian>В этом районе были заложены СВУ. Найдите и обезвредьте их до истечения времени. Неспособность обезвредить их приведет к взрыву.</Russian>
+        <German>In der Gegend wurden Sprengsätze platziert. Lokalisieren und entschärfen Sie diese, bevor der Timer abläuft. Wenn Sie sie nicht entschärfen, kommt es zu einer Explosion.</German>
+        <Italian>Degli IED sono stati piazzati nell'area. Individuali e disinnescali prima dello scadere del tempo. Il mancato disinnesco causerà un'esplosione.</Italian>
+        <Polish>W okolicy podłożono IED. Zlokalizuj je i rozbrój przed upływem czasu. Niepowodzenie doprowadzi do wybuchu.</Polish>
+    </Key>
+    <Key ID="STR_LL_Task_02_MarkerMain">
+        <Original>Zone de désamorçage</Original>
+        <French>Zone de désamorçage</French>
+        <English>Defusal Zone</English>
+        <Turkish>Etkisiz Hale Getirme Bölgesi</Turkish>
+        <Korean>해체 구역</Korean>
+        <Spanish>Zona de desactivación</Spanish>
+        <Japanese>解除ゾーン</Japanese>
+        <Chinese>拆除区域</Chinese>
+        <Russian>Зона обезвреживания</Russian>
+        <German>Entschärfungszone</German>
+        <Italian>Zona di disinnesco</Italian>
+        <Polish>Strefa rozbrajania</Polish>
+    </Key>
+    <Key ID="STR_LL_Task_02_Marker">
+        <Original>Zone Suspecte</Original>
+        <French>Zone Suspecte</French>
+        <English>Suspect Area</English>
+        <Turkish>Şüpheli Bölge</Turkish>
+        <Korean>의심 구역</Korean>
+        <Spanish>Área sospechosa</Spanish>
+        <Japanese>疑わしいエリア</Japanese>
+        <Chinese>可疑区域</Chinese>
+        <Russian>Подозрительная зона</Russian>
+        <German>Verdächtiger Bereich</German>
+        <Italian>Area sospetta</Italian>
+        <Polish>Podejrzany obszar</Polish>
+    </Key>
+    <Key ID="STR_LL_Task_02_Action">
+        <Original>Désamorcer l'IED</Original>
+        <French>Désamorcer l'IED</French>
+        <English>Defuse IED</English>
+        <Turkish>IED'yi Etkisiz Hale Getir</Turkish>
+        <Korean>IED 해체</Korean>
+        <Spanish>Desactivar IED</Spanish>
+        <Japanese>IEDを解除</Japanese>
+        <Chinese>拆除简易爆炸装置</Chinese>
+        <Russian>Обезвредить СВУ</Russian>
+        <German>IED entschärfen</German>
+        <Italian>Disinnesca IED</Italian>
+        <Polish>Rozbrój IED</Polish>
+    </Key>
+    <Key ID="STR_LL_Task_02_Defused">
+        <Original>IED désamorcé avec succès.</Original>
+        <French>IED désamorcé avec succès.</French>
+        <English>IED Defused successfully.</English>
+        <Turkish>IED başarıyla etkisiz hale getirildi.</Turkish>
+        <Korean>IED가 성공적으로 해체되었습니다.</Korean>
+        <Spanish>IED desactivado con éxito.</Spanish>
+        <Japanese>IEDの解除に成功した。</Japanese>
+        <Chinese>简易爆炸装置已成功拆除。</Chinese>
+        <Russian>СВУ успешно обезврежено.</Russian>
+        <German>IED erfolgreich entschärft.</German>
+        <Italian>IED disinnescato con successo.</Italian>
+        <Polish>IED rozbrojone pomyślnie.</Polish>
+    </Key>
+</Keys>

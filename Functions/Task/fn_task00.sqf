@@ -161,10 +161,30 @@ if (_mode == "free") exitWith {
     sleep 8.5;
 
     [_hostage, ""] remoteExec ["switchMove", 0];
-    _hostage setBehaviour "CARELESS";
+    
+    // Réactiver le mouvement, l'informateur se relève
+    _hostage enableAI "MOVE";
     _hostage setUnitPos "UP";
+    _hostage setBehaviour "CARELESS";
+    _hostage setSpeedMode "LIMITED";
     _hostage setSkill ["courage", 1];
     _hostage allowFleeing 0;
+
+    // --- VOIX NATIVE IMMERSIVE (parle en perse — on ne comprend pas mais c'est immersif) ---
+    // Pas d'animation de dialogue (c'est un otage libéré, pas un orateur)
+    // On crée un soldat fantôme dans son groupe pour forcer le moteur à générer sa voix native
+    private _hostageGrp = group _hostage;
+    private _dummy = _hostageGrp createUnit ["I_G_Soldier_F", getPos _hostage, [], 0, "NONE"];
+    _dummy hideObjectGlobal true;
+    _dummy allowDamage false;
+    _dummy disableAI "ALL";
+    _hostageGrp selectLeader _hostage; // CORRECTIF : syntaxe group selectLeader unit
+
+    // L'informateur "donne un ordre" au fantôme → le moteur génère sa voix native !
+    _dummy commandMove (getPos _hostage getPos [500, random 360]);
+
+    sleep 3; // Laisser le temps à l'otage de parler
+    deleteVehicle _dummy; // Nettoyage du fantôme
 
     [_hostage] joinSilent (group _caller);
 
