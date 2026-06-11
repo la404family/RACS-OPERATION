@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keys>
+    <Key ID="STR_LL_Diary_Task01_Title">
+        <Original>OPORD : Opération Cibles Multiples</Original>
+        <French>OPORD : Opération Cibles Multiples</French>
+        <English>OPORD: Operation Multiple Targets</English>
+        <Turkish>Harekât Emri: Çoklu Hedefler Operasyonu</Turkish>
+        <Korean>작전 명령: 다중 목표 작전</Korean>
+        <Spanish>OPORD: Operación Múltiples Objetivos</Spanish>
+        <Japanese>作戦命令: 複数ターゲット作戦</Japanese>
+        <Chinese>作战命令：多个目标行动</Chinese>
+        <Russian>Боевой приказ: Операция "Множественные цели"</Russian>
+        <German>OPORD: Operation Mehrere Ziele</German>
+        <Italian>OPORD: Operazione Obiettivi Multipli</Italian>
+        <Polish>OPORD: Operacja Wiele Celów</Polish>
+    </Key>
+    <Key ID="STR_LL_Diary_Task01_Text">
+        <Original>Le commandement a identifié plusieurs officiers ennemis dans la zone. Nous pensons que l'un d'entre eux transporte des documents hautement confidentiels. Procédez à l'élimination des cibles et fouillez les corps pour sécuriser les renseignements.</Original>
+        <French>Le commandement a identifié plusieurs officiers ennemis dans la zone. Nous pensons que l'un d'entre eux transporte des documents hautement confidentiels. Procédez à l'élimination des cibles et fouillez les corps pour sécuriser les renseignements.</French>
+        <English>Command has identified several enemy officers in the area. We believe one of them is carrying highly classified documents. Eliminate the targets and search their bodies to secure the intelligence.</English>
+        <Turkish>Komuta merkezi bölgede birkaç düşman subayı tespit etti. Bunlardan birinin son derece gizli belgeler taşıdığına inanıyoruz. Hedefleri etkisiz hale getirin ve istihbaratı güvenceye almak için cesetleri arayın.</Turkish>
+        <Korean>사령부가 해당 지역에서 여러 명의 적 장교를 식별했습니다. 그들 중 한 명이 최고 기밀 문서를 소지하고 있을 것으로 추정됩니다. 목표를 제거하고 시체를 수색하여 정보 자료를 확보하십시오.</Korean>
+        <Spanish>El mando ha identificado a varios oficiales enemigos en la zona. Creemos que uno de ellos lleva documentos altamente clasificados. Elimine los objetivos y registre sus cuerpos para asegurar la información.</Spanish>
+        <Japanese>司令部がエリア内に複数の敵将校を確認した。そのうちの1人が最高機密書類を持っていると考えられる。標的を排除し、死体を捜索して機密情報を確保せよ。</Japanese>
+        <Chinese>指挥部在防区发现了多名敌方军官。我们认为其中一人携带了绝密文件。消灭目标并搜查尸体以获取情报。</Chinese>
+        <Russian>Командование выявило в этом районе нескольких вражеских офицеров. Мы полагаем, что один из них перевозит строго секретные документы. Устраните цели и обыщите их тела, чтобы заполучить разведданные.</Russian>
+        <German>Das Kommando hat mehrere feindliche Offiziere im Gebiet ausgemacht. Wir gehen davon aus, dass einer von ihnen streng geheime Dokumente bei sich trägt. Schalten Sie die Ziele aus und durchsuchen Sie die Leichen, um die Informationen zu sichern.</German>
+        <Italian>Il comando ha individuato diversi ufficiali nemici nell'area. Crediamo che uno di loro abbia dei documenti altamente classificati. Eliminate i bersagli e perquisite i cadaveri per recuperare le informazioni.</Italian>
+        <Polish>Dowództwo zidentyfikowało w okolicy kilku wrogich oficerów. Uważamy, że jeden z nich przenosi wysoce tajne dokumenty. Zlikwiduj cele i przeszukaj zwłoki, aby zabezpieczyć dane wywiadowcze.</Polish>
+    </Key>
+</Keys>

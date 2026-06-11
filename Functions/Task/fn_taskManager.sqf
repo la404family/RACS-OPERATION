@@ -4,7 +4,7 @@ private _availableTasks = [];
 
 // Pour tester, décommentez les tâches que vous voulez rendre disponibles
 // _availableTasks pushBack "task00";
-// _availableTasks pushBack "task01";
+_availableTasks pushBack "task01";
 
 // S'assure de ne sélectionner qu'une seule tâche au hasard parmi celles disponibles
 if (count _availableTasks > 0) then {

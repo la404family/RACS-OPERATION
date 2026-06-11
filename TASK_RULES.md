@@ -165,33 +165,15 @@ if (_mode == "scenario") exitWith { ... };
 
 ---
 
-## 6. Règles des dialogues et de l'interface
+## 6. Règles des messages et de l'interface
 
-### Interdiction des messages système parasites
-Il est **strictement interdit** d'utiliser `hint`, `systemChat` ou `titleText` pour communiquer des informations au joueur dans la version finale (hors scripts de debug temporaires).
+### Assignation des tâches
+Il est **strictement interdit** de créer des dialogues personnalisés ou des fichiers `taskXX_dialogues.xml` pour les tâches.
+Toutes les tâches utilisent **un seul et unique audio/message** lors de leur assignation :
+- **Audio (en anglais)** : "Une nouvelle mission vous est assigné"
+- **Texte affiché** : "Lisez votre briefing de tache"
 
-### Toujours via `LL_fnc_showSubtitle`
-Pour les dialogues narratifs ou les paroles de PNJ, utiliser exclusivement :
-
-```sqf
-["STR_LL_Speaker_Chief", "STR_LL_Task_XX_S1_Chief"] remoteExec ["LL_fnc_showSubtitle", 0];
-sleep 5; // Toujours laisser le temps de lire avant le suivant
-```
-
-### Séquence narrative obligatoire
-Chaque scénario doit avoir :
-1. Un sous-titre du **PNJ** (parole en jeu).
-2. Un sous-titre du **Narrateur** qui contextualise l'issue.
-3. Un `sleep 5` entre chaque sous-titre.
-
-### Speakers disponibles
-| Clé STR | Rôle |
-|---|---|
-| `STR_LL_Speaker_Narrator` | Voix off / QG — encadre les événements |
-| `STR_LL_Speaker_Chief` | Chef de milice PNJ |
-| `STR_LL_Speaker_Guards` | Gardes / Miliciens |
-| `STR_LL_Speaker_Informateur` | Informateur RACS (task02b) |
-| `STR_LL_Speaker_Intermediaire` | Intermédiaire financier (task02c) |
+Aucun autre sous-titre de narrateur ou dialogue de PNJ ne doit être généré pour les tâches.
 
 ---
 

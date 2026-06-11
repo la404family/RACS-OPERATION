@@ -2098,4 +2098,118 @@ Ağ doluysa istekleriniz reddedilebilir veya kesintiye uğrayabilir.&lt;br/&gt;&
             <Chinese>任务指示。</Chinese>
         </Key>
     </Package>
+    <Package name="Task">
+        <Key ID="STR_LL_Diary_Task01_Title">
+            <Original>OPORD : Opération Cibles Multiples</Original>
+            <French>OPORD : Opération Cibles Multiples</French>
+            <English>OPORD: Operation Multiple Targets</English>
+            <Turkish>Harekât Emri: Çoklu Hedefler Operasyonu</Turkish>
+            <Korean>작전 명령: 다중 목표 작전</Korean>
+            <Spanish>OPORD: Operación Múltiples Objetivos</Spanish>
+            <Japanese>作戦命令: 複数ターゲット作戦</Japanese>
+            <Chinese>作战命令：多个目标行动</Chinese>
+            <Russian>Боевой приказ: Операция "Множественные цели"</Russian>
+            <German>OPORD: Operation Mehrere Ziele</German>
+            <Italian>OPORD: Operazione Obiettivi Multipli</Italian>
+            <Polish>OPORD: Operacja Wiele Celów</Polish>
+        </Key>
+        <Key ID="STR_LL_Diary_Task01_Text">
+            <Original>Le commandement a identifié plusieurs officiers ennemis dans la zone. Nous pensons que l'un d'entre eux transporte des documents hautement confidentiels. Procédez à l'élimination des cibles et fouillez les corps pour sécuriser les renseignements.</Original>
+            <French>Le commandement a identifié plusieurs officiers ennemis dans la zone. Nous pensons que l'un d'entre eux transporte des documents hautement confidentiels. Procédez à l'élimination des cibles et fouillez les corps pour sécuriser les renseignements.</French>
+            <English>Command has identified several enemy officers in the area. We believe one of them is carrying highly classified documents. Eliminate the targets and search their bodies to secure the intelligence.</English>
+            <Turkish>Komuta merkezi bölgede birkaç düşman subayı tespit etti. Bunlardan birinin son derece gizli belgeler taşıdığına inanıyoruz. Hedefleri etkisiz hale getirin ve istihbaratı güvenceye almak için cesetleri arayın.</Turkish>
+            <Korean>사령부가 해당 지역에서 여러 명의 적 장교를 식별했습니다. 그들 중 한 명이 최고 기밀 문서를 소지하고 있을 것으로 추정됩니다. 목표를 제거하고 시체를 수색하여 정보 자료를 확보하십시오.</Korean>
+            <Spanish>El mando ha identificado a varios oficiales enemigos en la zona. Creemos que uno de ellos lleva documentos altamente clasificados. Elimine los objetivos y registre sus cuerpos para asegurar la información.</Spanish>
+            <Japanese>司令部がエリア内に複数の敵将校を確認した。そのうちの1人が最高機密書類を持っていると考えられる。標的を排除し、死体を捜索して機密情報を確保せよ。</Japanese>
+            <Chinese>指挥部在防区发现了多名敌方军官。我们认为其中一人携带了绝密文件。消灭目标并搜查尸体以获取情报。</Chinese>
+            <Russian>Командование выявило в этом районе нескольких вражеских офицеров. Мы полагаем, что один из них перевозит строго секретные документы. Устраните цели и обыщите их тела, чтобы заполучить разведданные.</Russian>
+            <German>Das Kommando hat mehrere feindliche Offiziere im Gebiet ausgemacht. Wir gehen davon aus, dass einer von ihnen streng geheime Dokumente bei sich trägt. Schalten Sie die Ziele aus und durchsuchen Sie die Leichen, um die Informationen zu sichern.</German>
+            <Italian>Il comando ha individuato diversi ufficiali nemici nell'area. Crediamo che uno di loro abbia dei documenti altamente classificati. Eliminate i bersagli e perquisite i cadaveri per recuperare le informazioni.</Italian>
+            <Polish>Dowództwo zidentyfikowało w okolicy kilku wrogich oficerów. Uważamy, że jeden z nich przenosi wysoce tajne dokumenty. Zlikwiduj cele i przeszukaj zwłoki, aby zabezpieczyć dane wywiadowcze.</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_01_Title">
+            <Original>Cibles Multiples</Original>
+            <French>Cibles Multiples</French>
+            <English>Multiple Targets</English>
+            <Turkish>Çoklu Hedefler</Turkish>
+            <Korean>다중 목표</Korean>
+            <Spanish>Múltiples Objetivos</Spanish>
+            <Japanese>複数ターゲット</Japanese>
+            <Chinese>多个目标</Chinese>
+            <Russian>Множественные цели</Russian>
+            <German>Mehrere Ziele</German>
+            <Italian>Obiettivi Multipli</Italian>
+            <Polish>Wiele celów</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_01_Desc">
+            <Original>Des officiers ennemis ont été localisés dans le secteur. L'un d'eux détient des documents classifiés. Neutralisez les officiers et récupérez les documents sur le bon cadavre.</Original>
+            <French>Des officiers ennemis ont été localisés dans le secteur. L'un d'eux détient des documents classifiés. Neutralisez les officiers et récupérez les documents sur le bon cadavre.</French>
+            <English>Enemy officers have been located in the sector. One of them holds classified documents. Neutralize the officers and retrieve the documents from the right corpse.</English>
+            <Turkish>Bölgede düşman subayları tespit edildi. İçlerinden birinde gizli belgeler var. Subayları etkisiz hale getirin ve doğru cesetten belgeleri alın.</Turkish>
+            <Korean>구역 내에 적 장교들이 위치해 있습니다. 그들 중 한 명이 기밀 문서를 소지하고 있습니다. 장교들을 무력화하고 올바른 시체에서 문서를 회수하십시오.</Korean>
+            <Spanish>Se han localizado oficiales enemigos en el sector. Uno de ellos tiene documentos clasificados. Neutraliza a los oficiales y recupera los documentos del cadáver correcto.</Spanish>
+            <Japanese>セクター内で敵の将校が発見された。彼らのうちの1人が機密書類を持っている。将校たちを無力化し、正しい死体から書類を回収しろ。</Japanese>
+            <Chinese>在防区发现了敌方军官。其中一人持有绝密文件。消灭军官并从正确的尸体上取回文件。</Chinese>
+            <Russian>В секторе обнаружены вражеские офицеры. У одного из них есть секретные документы. Нейтрализуйте офицеров и заберите документы с нужного трупа.</Russian>
+            <German>Feindliche Offiziere wurden im Sektor gesichtet. Einer von ihnen trägt Geheimdokumente bei sich. Schalten Sie die Offiziere aus und sichern Sie die Dokumente vom richtigen Leichnam.</German>
+            <Italian>Sono stati individuati ufficiali nemici nel settore. Uno di loro è in possesso di documenti classificati. Neutralizza gli ufficiali e recupera i documenti dal cadavere giusto.</Italian>
+            <Polish>W sektorze zlokalizowano wrogich oficerów. Jeden z nich ma tajne dokumenty. Zneutralizuj oficerów i odzyskaj dokumenty z właściwych zwłok.</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_01_Marker">
+            <Original>Officier Cible</Original>
+            <French>Officier Cible</French>
+            <English>Target Officer</English>
+            <Turkish>Hedef Subay</Turkish>
+            <Korean>목표 장교</Korean>
+            <Spanish>Oficial Objetivo</Spanish>
+            <Japanese>標的の将校</Japanese>
+            <Chinese>目标军官</Chinese>
+            <Russian>Офицер-цель</Russian>
+            <German>Ziel-Offizier</German>
+            <Italian>Ufficiale Bersaglio</Italian>
+            <Polish>Cel: Oficer</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_01_MarkerDoc">
+            <Original>Documents</Original>
+            <French>Documents</French>
+            <English>Documents</English>
+            <Turkish>Belgeler</Turkish>
+            <Korean>문서</Korean>
+            <Spanish>Documentos</Spanish>
+            <Japanese>書類</Japanese>
+            <Chinese>文件</Chinese>
+            <Russian>Документы</Russian>
+            <German>Dokumente</German>
+            <Italian>Documenti</Italian>
+            <Polish>Dokumenty</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_01_Action">
+            <Original>Fouiller l'officier</Original>
+            <French>Fouiller l'officier</French>
+            <English>Search officer</English>
+            <Turkish>Subayı ara</Turkish>
+            <Korean>장교 수색</Korean>
+            <Spanish>Registrar oficial</Spanish>
+            <Japanese>将校を捜索</Japanese>
+            <Chinese>搜查军官</Chinese>
+            <Russian>Обыскать офицера</Russian>
+            <German>Offizier durchsuchen</German>
+            <Italian>Perquisisci ufficiale</Italian>
+            <Polish>Przeszukaj oficera</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_Assigned">
+            <Original>Lisez votre briefing de tache</Original>
+            <French>Lisez votre briefing de tache</French>
+            <English>A new mission has been assigned to you</English>
+            <Turkish>Yeni bir görev atandı, görev brifingini okuyun</Turkish>
+            <Korean>새로운 임무가 할당되었습니다. 임무 브리핑을 읽어주세요</Korean>
+            <Spanish>Se le ha asignado una nueva misión. Lea las instrucciones de la tarea.</Spanish>
+            <Japanese>新しい任務が割り当てられました。任務のブリーフィングを読んでください</Japanese>
+            <Chinese>已分配新任务，请阅读任务简报</Chinese>
+            <Russian>Вам назначено новое задание. Прочтите инструктаж.</Russian>
+            <German>Ihnen wurde eine neue Mission zugewiesen. Lesen Sie das Aufgaben-Briefing.</German>
+            <Italian>Ti è stata assegnata una nuova missione. Leggi il briefing del compito.</Italian>
+            <Polish>Otrzymałeś nową misję. Przeczytaj odprawę zadania.</Polish>
+        </Key>
+    </Package>
 </Project>

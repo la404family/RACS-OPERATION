@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keys>
+    <Key ID="STR_LL_Task_Assigned">
+        <Original>Lisez votre briefing de tache</Original>
+        <French>Lisez votre briefing de tache</French>
+        <English>A new mission has been assigned to you</English>
+        <Turkish>Yeni bir görev atandı, görev brifingini okuyun</Turkish>
+        <Korean>새로운 임무가 할당되었습니다. 임무 브리핑을 읽어주세요</Korean>
+        <Spanish>Se le ha asignado una nueva misión. Lea las instrucciones de la tarea.</Spanish>
+        <Japanese>新しい任務が割り当てられました。任務のブリーフィングを読んでください</Japanese>
+        <Chinese>已分配新任务，请阅读任务简报</Chinese>
+        <Russian>Вам назначено новое задание. Прочтите инструктаж.</Russian>
+        <German>Ihnen wurde eine neue Mission zugewiesen. Lesen Sie das Aufgaben-Briefing.</German>
+        <Italian>Ti è stata assegnata una nuova missione. Leggi il briefing del compito.</Italian>
+        <Polish>Otrzymałeś nową misję. Przeczytaj odprawę zadania.</Polish>
+    </Key>
+</Keys>

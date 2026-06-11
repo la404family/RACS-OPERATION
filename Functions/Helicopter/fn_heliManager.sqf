@@ -303,8 +303,7 @@ private _fnExecDelivery = {
 
     private _cargoClass = "B_supplyCrate_F";
     if (_type == "VEHICULE") then {
-        private _vt = missionNamespace getVariable ["vehicule_team", objNull];
-        _cargoClass = if (!isNull _vt && { alive _vt }) then { typeOf _vt } else { "CUP_I_LR_Transport_RACS" };
+        _cargoClass = "CUP_I_LR_MG_RACS";
     };
 
     private _cargo = createVehicle [_cargoClass, [0,0,0], [], 0, "NONE"];
@@ -413,10 +412,20 @@ private _fnExecDelivery = {
         false
     };
 
+    if (_type == "VEHICULE") then {
+        private _enemies = _targetPos nearEntities [["Man", "Car", "Tank"], 50] select { side _x == east };
+        if (count _enemies > 0) then {
+            _abort = true;
+            "La LZ n'est pas sécurisée ! Retour à la base." remoteExec ["systemChat", _caller];
+        };
+    };
+
+    if (_abort) exitWith { true };
+
     doStop _heli;
-    private _minH        = if (_type == "VEHICULE") then { 7 } else { 5 };
-    private _cargoThresh = if (_type == "VEHICULE") then { 5 } else { 3 };
-    private _heliThresh  = if (_type == "VEHICULE") then { 6 } else { 4 };
+    private _minH        = if (_type == "VEHICULE") then { 3 } else { 5 };
+    private _cargoThresh = if (_type == "VEHICULE") then { 0.5 } else { 3 };
+    private _heliThresh  = if (_type == "VEHICULE") then { 3 } else { 4 };
     private _descTimer   = 0;
 
     waitUntil {

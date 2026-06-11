@@ -11,7 +11,7 @@
 - ezan_00 à ezan_XX sont des Loudspeaker dans le jeu qui produise l'appel a la prière.
 - Heliport_00 à Heliport_XX sont des heliports invisible
 - La variable du drone est : CUP_B_USMC_DYN_MQ9
-- vehicule_team est le véhicule des joueurs en début de mission. (nom de variable du véhicule : CUP_I_LR_Transport_RACS)
+- vehicule_team est le véhicule des joueurs en début de mission. (nom de classe du véhicule : CUP_B_Mastiff_HMG_GB_D - Mastiff PPV HMG Desert)
 - l'hélicoptère allié est un UH-60L (CUP_I_UH60L_FFV_RACS)
 
 

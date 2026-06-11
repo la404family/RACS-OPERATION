@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keys>
+    <Key ID="STR_LL_Task_01_Title">
+        <Original>Cibles Multiples</Original>
+        <French>Cibles Multiples</French>
+        <English>Multiple Targets</English>
+        <Turkish>Çoklu Hedefler</Turkish>
+        <Korean>다중 목표</Korean>
+        <Spanish>Múltiples Objetivos</Spanish>
+        <Japanese>複数ターゲット</Japanese>
+        <Chinese>多个目标</Chinese>
+        <Russian>Множественные цели</Russian>
+        <German>Mehrere Ziele</German>
+        <Italian>Obiettivi Multipli</Italian>
+        <Polish>Wiele celów</Polish>
+    </Key>
+    <Key ID="STR_LL_Task_01_Desc">
+        <Original>Des officiers ennemis ont été localisés dans le secteur. L'un d'eux détient des documents classifiés. Neutralisez les officiers et récupérez les documents sur le bon cadavre.</Original>
+        <French>Des officiers ennemis ont été localisés dans le secteur. L'un d'eux détient des documents classifiés. Neutralisez les officiers et récupérez les documents sur le bon cadavre.</French>
+        <English>Enemy officers have been located in the sector. One of them holds classified documents. Neutralize the officers and retrieve the documents from the right corpse.</English>
+        <Turkish>Bölgede düşman subayları tespit edildi. İçlerinden birinde gizli belgeler var. Subayları etkisiz hale getirin ve doğru cesetten belgeleri alın.</Turkish>
+        <Korean>구역 내에 적 장교들이 위치해 있습니다. 그들 중 한 명이 기밀 문서를 소지하고 있습니다. 장교들을 무력화하고 올바른 시체에서 문서를 회수하십시오.</Korean>
+        <Spanish>Se han localizado oficiales enemigos en el sector. Uno de ellos tiene documentos clasificados. Neutraliza a los oficiales y recupera los documentos del cadáver correcto.</Spanish>
+        <Japanese>セクター内で敵の将校が発見された。彼らのうちの1人が機密書類を持っている。将校たちを無力化し、正しい死体から書類を回収しろ。</Japanese>
+        <Chinese>在防区发现了敌方军官。其中一人持有绝密文件。消灭军官并从正确的尸体上取回文件。</Chinese>
+        <Russian>В секторе обнаружены вражеские офицеры. У одного из них есть секретные документы. Нейтрализуйте офицеров и заберите документы с нужного трупа.</Russian>
+        <German>Feindliche Offiziere wurden im Sektor gesichtet. Einer von ihnen trägt Geheimdokumente bei sich. Schalten Sie die Offiziere aus und sichern Sie die Dokumente vom richtigen Leichnam.</German>
+        <Italian>Sono stati individuati ufficiali nemici nel settore. Uno di loro è in possesso di documenti classificati. Neutralizza gli ufficiali e recupera i documenti dal cadavere giusto.</Italian>
+        <Polish>W sektorze zlokalizowano wrogich oficerów. Jeden z nich ma tajne dokumenty. Zneutralizuj oficerów i odzyskaj dokumenty z właściwych zwłok.</Polish>
+    </Key>
+    <Key ID="STR_LL_Task_01_Marker">
+        <Original>Officier Cible</Original>
+        <French>Officier Cible</French>
+        <English>Target Officer</English>
+        <Turkish>Hedef Subay</Turkish>
+        <Korean>목표 장교</Korean>
+        <Spanish>Oficial Objetivo</Spanish>
+        <Japanese>標的の将校</Japanese>
+        <Chinese>目标军官</Chinese>
+        <Russian>Офицер-цель</Russian>
+        <German>Ziel-Offizier</German>
+        <Italian>Ufficiale Bersaglio</Italian>
+        <Polish>Cel: Oficer</Polish>
+    </Key>
+    <Key ID="STR_LL_Task_01_MarkerDoc">
+        <Original>Documents</Original>
+        <French>Documents</French>
+        <English>Documents</English>
+        <Turkish>Belgeler</Turkish>
+        <Korean>문서</Korean>
+        <Spanish>Documentos</Spanish>
+        <Japanese>書類</Japanese>
+        <Chinese>文件</Chinese>
+        <Russian>Документы</Russian>
+        <German>Dokumente</German>
+        <Italian>Documenti</Italian>
+        <Polish>Dokumenty</Polish>
+    </Key>
+    <Key ID="STR_LL_Task_01_Action">
+        <Original>Fouiller l'officier</Original>
+        <French>Fouiller l'officier</French>
+        <English>Search officer</English>
+        <Turkish>Subayı ara</Turkish>
+        <Korean>장교 수색</Korean>
+        <Spanish>Registrar oficial</Spanish>
+        <Japanese>将校を捜索</Japanese>
+        <Chinese>搜查军官</Chinese>
+        <Russian>Обыскать офицера</Russian>
+        <German>Offizier durchsuchen</German>
+        <Italian>Perquisisci ufficiale</Italian>
+        <Polish>Przeszukaj oficera</Polish>
+    </Key>
+</Keys>

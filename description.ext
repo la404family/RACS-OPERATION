@@ -76,6 +76,8 @@ class CfgFunctions {
             file = "Functions\Task";
             class taskManager {};
             class task00 {};
+            class task01 {};
+            class task01_addAction {};
         };
         class Briefing {
             file = "Functions\Briefing";
