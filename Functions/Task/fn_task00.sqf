@@ -135,56 +135,77 @@ if (_mode == "free") exitWith {
     if ((_hostage getVariable ["LL_Task_Status", "WAIT"]) != "WAIT") exitWith {};
     _hostage setVariable ["LL_Task_Status", "ACTION", true];
 
+    // Sauvegarder la position et direction exactes pour verrouillage pendant l'animation
+    private _hostageFixedPos = getPosASL _hostage;
+    private _hostageFixedDir = getDir _hostage;
+
     _hostage setCaptive false;
-    { _hostage enableAI _x; } forEach ["ANIM", "MOVE", "AUTOTARGET", "TARGET"];
+    // Activer uniquement ANIM — MOVE reste désactivé pour empêcher tout déplacement
+    _hostage enableAI "ANIM";
     [_hostage, "Acts_ExecutionVictim_Unbow"] remoteExec ["switchMove", 0];
+
+    // Boucle de verrouillage position pendant toute la durée de l'animation (serveur local)
+    [_hostage, _hostageFixedPos, _hostageFixedDir] spawn {
+        params ["_h", "_pos", "_dir"];
+        private _tStart = time;
+        while { alive _h && (_h getVariable ["LL_Task_Status", "WAIT"]) == "ACTION" && (time - _tStart) < 10 } do {
+            _h setPosASL _pos;
+            _h setDir _dir;
+            sleep 0.05;
+        };
+    };
 
     sleep 8.5;
 
+    // Fin animation : repositionner précisément et effacer l'animation résiduelle
+    _hostage setPosASL _hostageFixedPos;
+    _hostage setDir _hostageFixedDir;
     [_hostage, ""] remoteExec ["switchMove", 0];
 
-    _hostage enableAI "MOVE";
+    // Voix native immersive — dummy fantôme dans le groupe de l'otage
+    private _hostageGrp = group _hostage;
+    private _dummy = _hostageGrp createUnit ["I_G_Soldier_F", getPosASL _hostage, [], 0, "NONE"];
+    _dummy hideObjectGlobal true;
+    _dummy allowDamage false;
+    _dummy disableAI "ALL";
+    _hostageGrp selectLeader _hostage;
+    _dummy commandMove (getPos _hostage getPos [500, random 360]);
+    sleep 3;
+    deleteVehicle _dummy;
+
+    // Intégrer l'otage dans le groupe du caller AVANT d'activer son déplacement
+    [_hostage] joinSilent (group _caller);
+
+    // Activer le comportement de suivi maintenant qu'il est dans le bon groupe
+    { _hostage enableAI _x; } forEach ["MOVE", "AUTOTARGET", "TARGET"];
     _hostage setUnitPos "UP";
     _hostage setBehaviour "CARELESS";
     _hostage setSpeedMode "LIMITED";
     _hostage setSkill ["courage", 1];
     _hostage allowFleeing 0;
 
-    private _hostageGrp = group _hostage;
-    private _dummy = _hostageGrp createUnit ["I_G_Soldier_F", getPos _hostage, [], 0, "NONE"];
-    _dummy hideObjectGlobal true;
-    _dummy allowDamage false;
-    _dummy disableAI "ALL";
-    _hostageGrp selectLeader _hostage; 
-
-    _dummy commandMove (getPos _hostage getPos [500, random 360]);
-
-    sleep 3; 
-    deleteVehicle _dummy; 
-
-    [_hostage] joinSilent (group _caller);
-
-    private _guardsOnAlert = (missionNamespace getVariable ["LL_Task00_AllUnits", []]) select { _x != _hostage && alive _x };
-    if (count _guardsOnAlert > 0) then {
-        private _alivePlayers = allPlayers select { alive _x };
+    // TOUS les OPFOR vivants sur la carte chargent vers le BLUFOR le plus proche (joueurs + IA alliées)
+    private _allBlufor = allUnits select { side _x == west && alive _x };
+    private _allOpfor  = allUnits select { side _x == east && alive _x && _x != _hostage };
+    if (count _allOpfor > 0 && count _allBlufor > 0) then {
         private _grpsProcessed = [];
         {
-            private _guard = _x;
-            _guard setBehaviour "COMBAT";
-            _guard setCombatMode "RED";
-            _guard setSpeedMode "FULL";
-            { _guard reveal [_x, 4]; } forEach _alivePlayers;
+            private _enemy = _x;
+            _enemy setBehaviour "COMBAT";
+            _enemy setCombatMode "RED";
+            _enemy setSpeedMode "FULL";
+            { _enemy reveal [_x, 4]; } forEach _allBlufor;
 
-            private _grp = group _guard;
+            private _grp = group _enemy;
             if !(_grp in _grpsProcessed) then {
                 _grpsProcessed pushBack _grp;
-                if (count _alivePlayers > 0) then {
-                    private _grpPos = getPosATL (leader _grp);
-                    private _nearest = _alivePlayers select [{ _x distance2D _grpPos }, "ASCEND"] select 0;
-                    (leader _grp) commandMove (getPosATL _nearest);
-                };
+                private _grpPos = getPosATL (leader _grp);
+                private _nearest = _allBlufor select 0;
+                private _nearestDist = _nearest distance2D _grpPos;
+                { private _d = _x distance2D _grpPos; if (_d < _nearestDist) then { _nearestDist = _d; _nearest = _x; }; } forEach _allBlufor;
+                (leader _grp) commandMove (getPosATL _nearest);
             };
-        } forEach _guardsOnAlert;
+        } forEach _allOpfor;
     };
 
     for "_i" from 0 to 3 do { deleteMarker format ["mkr_task00_zone_%1", _i]; };

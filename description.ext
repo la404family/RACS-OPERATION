@@ -8,10 +8,18 @@ onLoadName = "Opération RACS";
 onLoadMission = "Déploiement des forces du RACS.";
 // loadScreen = "images\loadScreen.jpg";
 
-respawn = "BASE";
-respawnDelay = 10;
+respawn = "BIRD";
+respawnDelay = -1;
 respawnDialog = 0;
 respawnOnStart = -1;
+
+class Revive {
+    mode                        = 1;
+    requiredItems               = 0;
+    spontaneousRecoveryDuration = 18;
+    medicSpeedMultiplier        = 2.0;
+    forceRespawnTimeout         = 3;
+};
 
 corpseManagerMode = 1;
 corpseLimit = 30;
@@ -47,6 +55,9 @@ class CfgFunctions {
             class assignLeader {};
             class addRoeActions {};
             class setupUVO {};
+            class initRespawn {};
+            class registerDeadPlayer {};
+            class unregisterDeadPlayer {};
         };
         class Civilian {
             file = "Functions\Civilian";

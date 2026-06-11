@@ -38,9 +38,15 @@ Toutes les fonctions sont pré-compilées par le moteur Arma 3 au démarrage de 
     *   **Fonctionnement :** Le serveur calcule (avec le très rapide `distanceSqr`) quels joueurs sont à portée (< 2500m) et envoie un `remoteExecCall` pour jouer le son localement en 3D.
 *   **`fn_doorSecurity.sqf` (`LL_fnc_doorSecurity`)**
     *   **Rôle :** Exécuté côté serveur. Gère dynamiquement l'ouverture et la fermeture des portes pour les IA ennemies et civiles (non-BLUFOR).
-    *   **Fonctionnement :** Scanne les bâtiments proches des IA. Ouvre de manière anticipée et fluide les portes sur leur chemin en jouant un son localisé, et les referme après un délai (12s). Empêche les bots de traverser les murs fermés et améliore drastiquement l'immersion des combats urbains.
+    *   **Fonctionnement :** Scanne les bâtiments proches des IA. Ouvre de manière anticipée et fluide les portes sur leur chemin en jouant un son localisé. La fermeture est conditionnée à un délai de **25 secondes** depuis l'ouverture ET l'absence de toute unité (IA non-BLUFOR ou joueur) dans un périmètre élargi de **20m**. Un flag `_isDoorOpen` dans le cache HashMap évite les tentatives de re-fermeture répétées. Empêche les bots de traverser les murs fermés et améliore drastiquement l'immersion des combats urbains.
 
 ### Joueurs (`Functions\Player\`)
+*   **`fn_initRespawn.sqf` (`LL_fnc_initRespawn`)**
+    *   **Rôle :** Exécuté côté serveur au démarrage. Initialise le registre global `LL_g_deadPlayers = []` diffusé à tous les clients via `publicVariable`. Prérequis du système de secondes vies multijoueur.
+*   **`fn_registerDeadPlayer.sqf` (`LL_fnc_registerDeadPlayer`)**
+    *   **Rôle :** Exécuté côté serveur. Reçoit le `netId` d'un joueur mort (envoyé depuis son `Killed` EventHandler local), récupère l'objet via `objectFromNetId` et l'ajoute à `LL_g_deadPlayers`. Variable re-broadcastée via `publicVariable`.
+*   **`fn_unregisterDeadPlayer.sqf` (`LL_fnc_unregisterDeadPlayer`)**
+    *   **Rôle :** Exécuté côté serveur. Retire le joueur de `LL_g_deadPlayers` à sa réanimation ou lors de l'assignation à une IA de renfort. Variable re-broadcastée via `publicVariable`.
 *   **`fn_initIdentity.sqf` (`LL_fnc_initIdentity`)**
     *   **Rôle :** Exécuté par le serveur. Assigne dynamiquement un nom complet, un type de visage (Africain, Arabe, Asiatique, Pacifique, Européen) et une voix native anglaise (Arma 3 Vanilla) à chaque joueur de l'escouade.
 *   **`fn_applyIdentity.sqf` (`LL_fnc_applyIdentity`)**
@@ -61,7 +67,7 @@ Toutes les fonctions sont pré-compilées par le moteur Arma 3 au démarrage de 
     *   **Rôle :** Exécuté localement. Ajoute une action molette verte "Soin Automatique IA" au chef d'escouade. Vérifie l'état de santé de toutes les IA du groupe. Si blessées et équipées de FirstAidKit, l'IA se met à genou, stoppe ses mouvements et se soigne automatiquement de manière forcée avant de reprendre sa place. Affiche "Négatif" si manque de matériel.
 *   **`fn_addSearchAction.sqf` (`LL_fnc_addSearchAction`)**
     *   **Rôle :** Exécuté localement. Ajoute une action molette jaune pour ordonner à son escouade IA de fouiller les bâtiments proches. L'action est conditionnée par la présence de bâtiments à moins de 55m et la présence d'infanterie IA sous les ordres du leader.
-    *   **Fonctionnement :** Génère un marqueur de zone jaune sur la carte (respectant la transparence standard), joue une animation synchronisée en multijoueur (`remoteExec`), puis déploie les IA de manière agressive (`AWARE`, `FULL`, `YELLOW`) vers les positions intérieures. Inclut un système d'anti-stuck par unité et un délai maximal d'opération de 3 minutes avant de reprendre la formation automatiquement.
+    *   **Fonctionnement :** Les bâtiments détectés sont mélangés (`BIS_fnc_arrayShuffle`) et **chaque unité reçoit un bâtiment unique** depuis le pool. Comportement agressif : `COMBAT` / `RED` / `FULL`. Après avoir atteint sa position, l'IA surveille 2–3 angles aléatoires puis fouille une deuxième position dans le même bâtiment si disponible. Anti-stuck par position relative au bâtiment (`getRelPos`). Délai maximal 3 minutes, puis retour en `AWARE`/`YELLOW` et formation.
 *   **`fn_assignLeader.sqf` (`LL_fnc_assignLeader`)**
     *   **Rôle :** Exécuté par le serveur. Boucle de surveillance continue garantissant qu'un joueur humain garde toujours le commandement de l'escouade.
     *   **Fonctionnement :** Rapatrie automatiquement les joueurs éparpillés dans le groupe principal (`player_00`). Si le leader devient une I.A (suite à une mort ou déconnexion), le script réassigne instantanément le lead au premier joueur humain disponible et en notifie l'escouade.
@@ -82,7 +88,7 @@ Toutes les fonctions sont pré-compilées par le moteur Arma 3 au démarrage de 
     *   **Rôle :** Boucle infinie serveur gérant la présence civile dynamique. Spawne des civils dans les bâtiments proches des joueurs (rayon 500m, minimum 50m) et supprime ceux au-delà de 1200m. Maximum 55 civils simultanés. Chaque civil reçoit un template et une patrouille aléatoire.
 *   **`fn_manageInsurgents.sqf` (`LL_fnc_manageInsurgents`)**
     *   **Rôle :** Boucle infinie serveur gérant le système de "Sleeper Cells" (cellules dormantes).
-    *   **Fonctionnement :** Convertit de manière transparente et aléatoire des civils éloignés (300-450m) en insurgés hostiles (OPFOR). Utilise un changement de camp invisible (`joinSilent`) pour que le civil conserve exactement son modèle 3D, ses vêtements civils et sa voix UVO. Pioche ensuite aléatoirement un sac et une arme dans la banque `MISSION_BanditLoadouts` avant de lancer un ordre d'assaut (SAD) sur l'escouade du joueur.
+    *   **Fonctionnement :** Convertit de manière transparente et aléatoire des civils éloignés (300-450m) en insurgés hostiles (OPFOR). Utilise `joinSilent` pour conserver le modèle civil. En **MP multi-joueurs**, le joueur de référence est tiré aléatoirement (`selectRandom _players`) et les civils éligibles sont ceux dans le bon rayon par rapport à **n'importe quel joueur** de la liste. Le centroïde du groupe est calculé pour cibler le **joueur le plus proche** (`commandMove` immédiat sur le leader). Un waypoint SAD est également posé comme comportement persistant.
 
 ### Hélicoptère (`Functions\Helicopter\`)
 
@@ -114,6 +120,7 @@ Le système hélicoptère repose sur un **unique UH-60L** (`CUP_I_UH60L_FFV_RACS
     *   **Rôle :** Serveur. Cerveau gérant le cycle de vie complet de l'unique hélicoptère UH-60L. Gère le spawn, l'approche, l'exécution de mission (CAS en orbite, livraison en slingload, débarquement en parachute, extraction posée) et le RTB.
     *   **Immersion totale :** L'hélicoptère ne disparaît (RTB) qu'en se dirigeant vers `[0,0,0]` et uniquement s'il se trouve à **plus de 1200 mètres** de tous les joueurs, empêchant tout "despawn" visible en jeu.
     *   **Marqueurs carte :** Chaque mission crée un marqueur approprié (icône pour livraison/extraction, ellipse rouge pour CAS). Tous les marqueurs sont systématiquement nettoyés en fin de mission ou en cas d'interruption.
+    *   **Renforts dynamiques (SP/MP) :** Le nombre d'IA parachutées est calculé dynamiquement avec `(count _deadPlayers) max 2` — toujours au minimum 2, même en solo ou si aucun joueur n'est mort. `_deadPlayers` est filtré avec `isPlayer _x` pour n'inclure que de vrais joueurs humains (nil-guard si `LL_g_deadPlayers` n'est pas encore initialisé). Après l'atterrissage, `selectPlayer _aiUnit` est envoyé via `remoteExec` ciblant `owner _deadPlayer` (l'ID réseau de la machine cliente) — plus fiable que l'objet mort dont la localité peut avoir migré vers le serveur. 3 secondes d'invulnérabilité anti-spawn-kill après prise de contrôle. L'IA est retirée du registre via `LL_fnc_unregisterDeadPlayer`.
 
 ### Drone (`Functions\Drone\`)
 *   **`fn_addDroneAction.sqf` (`LL_fnc_addDroneAction`)**
@@ -155,7 +162,7 @@ Le système hélicoptère repose sur un **unique UH-60L** (`CUP_I_UH60L_FFV_RACS
 *   **`fn_task02.sqf` (`LL_fnc_task02`)**
     *   **Rôle :** Tâche 02 — Désamorçage d'IED sous contrainte de temps.
     *   **Mode `init` (serveur) :** Spawne 2–4 zones avec gardes et une caisse IED (`Box_East_Grenades_F`) par zone. Chaque IED est matérialisé par une `DemoCharge_F` attachée et une lumière rouge clignotante. Timer aléatoire (25–45 min). **À 7 minutes restantes**, déclenche l'assaut de tous les gardes survivants (`COMBAT`/`RED`/`commandMove`) via le flag `_alertTriggered` (one-shot). À l'expiration du timer, les IED non désamorcés explosent (`setDamage 1` → `Bo_GBU12_LGB`). Valide `SUCCEEDED` ou `FAILED` selon le ratio désamorcé/explosé.
-    *   **Mode `defuse` (serveur) :** Marque l'IED `"DEFUSED"`, supprime la charge et la lumière, met à jour le marqueur de zone en vert.
+    *   **Mode `defuse` (serveur) :** Marque l'IED `"DEFUSED"`, supprime la charge et la lumière, met à jour le marqueur de zone en vert. La caisse `Box_East_Grenades_F` reste visible **20 secondes** puis un fumigène blanc (`SmokeShellWhite`) est spawné à sa position avant la suppression 3 secondes plus tard, masquant la disparition.
 *   **`fn_task02_addAction.sqf`**
     *   **Rôle :** Client uniquement. Reçoit la bombe par `remoteExec`. Ajoute l'`addAction` jaune "Désamorcer" sur l'IED (condition : bombe vivante, statut `"WAIT"`, distance < 4m). Envoie `["defuse", [_bomb, _caller]]` au serveur.
 
@@ -172,8 +179,33 @@ Afin d'automatiser et d'améliorer la production de la mission (Génération des
 
 ---
 
-## 4. Normes de Code & Bonnes Pratiques
+## 4. Système Multijoueur — Réanimation & Secondes Vies
+
+Voir `MULTI.md` pour le guide d'implémentation complet.
+
+### Réanimation native (`description.ext`)
+- `respawn = "BIRD"` — à la mort, le joueur passe en caméra libre flottante (spectateur natif Arma 3)
+- `respawnDelay = -1` — aucun respawn automatique
+- `class Revive` — 18 secondes pour être réanimé par un coéquipier, médecin 2× plus rapide
+
+### Registre des joueurs morts (serveur)
+- `LL_g_deadPlayers` — variable globale (`publicVariable`) listant les objets joueurs morts en attente de seconde vie
+- Alimenté par l'EH `Killed` de chaque joueur (`initPlayerLocal.sqf`) via `LL_fnc_registerDeadPlayer`
+- Vidé à la réanimation ou à l'assignation d'une IA via `LL_fnc_unregisterDeadPlayer`
+
+### Secondes vies via renforts hélico
+- À la demande de renforts (`DEBARQUEMENT`), `fn_heliManager` calcule `(count _deadPlayers) max 2` IA à parachuter (toujours ≥ 2 en solo et MP)
+- `_deadPlayers` filtre avec `isPlayer _x` (humans uniquement) et nil-guard sur `LL_g_deadPlayers`
+- Après atterrissage, `selectPlayer _aiUnit` est envoyé via `remoteExec` à `owner _deadPlayer` (ID machine cliente, pas l'objet) — résistant aux migrations de localité
+- 3 secondes d'invulnérabilité anti-spawn-kill après prise de contrôle
+- Les IA sans joueur mort associé rejoignent simplement le groupe comme IA normales
+
+---
+
+## 5. Normes de Code & Bonnes Pratiques
 
 - **Zéro Commentaire in-game :** Les fichiers `.sqf` ont été expurgés de tout commentaire afin de réduire (bien que de manière marginale) la taille des fichiers envoyés sur le réseau lors de la connexion des joueurs et pour conserver un code strictement minimaliste. La documentation est centralisée ici.
 - **Performances Réseau :** L'usage exclusif de `remoteExecCall` (pas de suspension d'environnement) et la séparation Serveur/Local (`init` vs `apply`) assurent une synchronisation sans faille en multijoueur tout en supportant les connexions tardives (JIP).
+- **Boucle min-distance SQF :** Le pattern `array select [{ code }, "ASCEND"]` est invalide en SQF. La recherche du plus proche utilise une boucle `forEach` avec variable `_nearestDist` mise à jour incrémentalement.
+- **Insurgents MP :** Le joueur de référence pour les Sleeper Cells est tiré aléatoirement et les civils éligibles sont vérifiés contre tous les joueurs actifs, garantissant une répartition équitable en COOP.
 # RACS-OPERATION

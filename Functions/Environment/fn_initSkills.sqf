@@ -11,8 +11,8 @@ if (!isServer) exitWith {};
                 private _role = toLower (roleDescription _unit);
 
                 if (_side == east) then {
-                    _unit setSkill ["aimingAccuracy", 0.12 + random 0.18];
-                    _unit setSkill ["aimingShake",    0.15 + random 0.25];
+                    _unit setSkill ["aimingAccuracy", 0.10 + random 0.15];
+                    _unit setSkill ["aimingShake",    0.10 + random 0.20];
                     _unit setSkill ["aimingSpeed",    0.20 + random 0.35];
                     _unit setSkill ["spotDistance",   0.45 + random 0.40];
                     _unit setSkill ["spotTime",       0.30 + random 0.40];
@@ -28,8 +28,8 @@ if (!isServer) exitWith {};
                         private _isMG = _weapon find "lmg" >= 0 || _weapon find "mmg" >= 0 || _type find "ar" >= 0 || _type find "mg" >= 0;
 
                         if (_isSniper) then {
-                            _unit setSkill ["aimingAccuracy", 0.65 + random 0.20];
-                            _unit setSkill ["aimingShake",    0.70 + random 0.20];
+                            _unit setSkill ["aimingAccuracy", 0.85 + random 0.10];
+                            _unit setSkill ["aimingShake",    0.75 + random 0.20];
                             _unit setSkill ["spotDistance",   0.85 + random 0.10];
                             _unit setSkill ["spotTime",       0.75 + random 0.15];
                             _unit setSkill ["general",        0.85];
@@ -41,7 +41,7 @@ if (!isServer) exitWith {};
                             } else {
                                 _unit setSkill ["aimingAccuracy", 0.45 + random 0.22];
                                 _unit setSkill ["aimingShake",    0.50 + random 0.20];
-                                _unit setSkill ["aimingSpeed",    0.55 + random 0.20];
+                                _unit setSkill ["aimingSpeed",    0.75 + random 0.20];
                                 _unit setSkill ["spotDistance",   0.65 + random 0.20];
                                 _unit setSkill ["general",        0.70];
                             };

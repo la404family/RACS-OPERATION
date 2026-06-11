@@ -88,7 +88,9 @@ while {true} do {
         { _grpCenter = _grpCenter vectorAdd (getPosATL _x); } forEach _selected;
         _grpCenter = _grpCenter vectorMultiply (1 / count _selected);
 
-        private _nearestPlayer = _players select [{ _x distance2D _grpCenter }, "ASCEND"] select 0;
+        private _nearestPlayer = _players select 0;
+        private _nearestPlayerDist = _nearestPlayer distance2D _grpCenter;
+        { private _d = _x distance2D _grpCenter; if (_d < _nearestPlayerDist) then { _nearestPlayerDist = _d; _nearestPlayer = _x; }; } forEach _players;
         private _targetPos = getPosATL _nearestPlayer;
 
         private _wp = _insurgentGrp addWaypoint [_targetPos, 50];

@@ -186,7 +186,9 @@ if (_mode == "init") exitWith {
                         if !(_grp in _grpsProcessed) then {
                             _grpsProcessed pushBack _grp;
                             private _grpPos = getPosATL (leader _grp);
-                            private _nearest = _alivePlayers select [{ _x distance2D _grpPos }, "ASCEND"] select 0;
+                            private _nearest = _alivePlayers select 0;
+                            private _nearestDist = _nearest distance2D _grpPos;
+                            { private _d = _x distance2D _grpPos; if (_d < _nearestDist) then { _nearestDist = _d; _nearest = _x; }; } forEach _alivePlayers;
                             (leader _grp) commandMove (getPosATL _nearest);
                         };
                     } forEach _guards;
@@ -313,4 +315,17 @@ if (_mode == "defuse") exitWith {
 
     _caller playMove "AinvPknlMstpSnonWnonDnon_medic_1";
     [_caller, "STR_LL_Task_02_Defused"] remoteExec ["systemChat", 0];
+
+    [_bomb] spawn {
+        params ["_bomb"];
+        sleep 20;
+        if (isNull _bomb) exitWith {};
+
+        private _smokePos = getPosASL _bomb;
+        private _smoke = "SmokeShellWhite" createVehicle (ASLToAGL _smokePos);
+        _smoke setPosASL _smokePos;
+
+        sleep 3;
+        if (!isNull _bomb) then { deleteVehicle _bomb; };
+    };
 };

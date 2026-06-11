@@ -52,74 +52,48 @@ private _fnc_addSearchAction = {
             [_buildings, _squadAI, _caller, _marker] spawn {
                 params ["_buildings", "_squadAI", "_leader", "_marker"];
 
-                private _allPositions = [];
-                {
-                    private _bPos = _x buildingPos -1;
-                    if (_bPos isNotEqualTo []) then {
-                        _allPositions append _bPos;
-                    };
-                } forEach _buildings;
+                // Mélanger les bâtiments et en assigner un unique par unité
+                private _buildingPool = _buildings call BIS_fnc_arrayShuffle;
 
-                if (_allPositions isEqualTo []) exitWith {
-                    deleteMarkerLocal _marker;
-                    ["STR_LL_SearchAction_Secured", [], 6, false] remoteExec ["LL_fnc_radioMessage", _leader];
-                };
-
-                private _posData = _allPositions apply { [- (_x select 2), _x] };
-                _posData sort true;
-                _allPositions = _posData apply { _x select 1 };
-
-                private _assignedPositions = [];
                 private _searchStart = time;
 
                 {
                     private _unit = _x;
                     if (!alive _unit) then {continue};
 
-                    private _targetPos = [];
-                    private _posIndex = -1;
-                    {
-                        private _candidate = _x;
-                        private _tooClose = false;
-                        {
-                            if (_candidate distance _x < 4) exitWith { _tooClose = true; };
-                        } forEach _assignedPositions;
-
-                        if (!_tooClose) exitWith {
-                            _targetPos = _candidate;
-                            _posIndex = _forEachIndex;
-                        };
-                    } forEach _allPositions;
-
-                    if (_targetPos isEqualTo []) then {
-                        if (_allPositions isNotEqualTo []) then {
-                            _targetPos = _allPositions select 0;
-                            _posIndex = 0;
-                        } else {
-                            private _b = selectRandom _buildings;
-                            _targetPos = _b getRelPos [8 + random 7, random 360];
-                        };
+                    // Chaque unité obtient son propre bâtiment dans le pool
+                    private _assignedBuilding = if (count _buildingPool > 0) then {
+                        private _b = _buildingPool select 0;
+                        _buildingPool deleteAt 0;
+                        _b
+                    } else {
+                        // Fallback : reboucler sur les bâtiments si plus que d'unités
+                        selectRandom _buildings
                     };
 
-                    if (_posIndex != -1) then {
-                        _allPositions deleteAt _posIndex;
+                    // Choisir une position intérieure aléatoire dans le bâtiment assigné
+                    private _bPosList = _assignedBuilding buildingPos -1;
+                    private _targetPos = if (count _bPosList > 0) then {
+                        selectRandom _bPosList
+                    } else {
+                        _assignedBuilding getRelPos [3 + random 6, random 360]
                     };
-                    _assignedPositions pushBack _targetPos;
 
                     _unit setVariable ["LL_IsSearching", true];
 
+                    // Comportement agressif : COMBAT, debout, à toute vitesse
                     _unit disableAI "AUTOCOMBAT";
                     _unit disableAI "SUPPRESSION";
                     _unit setUnitPos "UP";
-                    _unit setBehaviour "AWARE";
+                    _unit setBehaviour "COMBAT";
                     _unit setSpeedMode "FULL";
-                    _unit setCombatMode "YELLOW";
+                    _unit setCombatMode "RED";
 
                     _unit doMove _targetPos;
                     _unit moveTo _targetPos;
 
-                    [_unit, _targetPos, _leader] spawn {
-                        params ["_unit", "_targetPos", "_leader"];
+                    [_unit, _targetPos, _leader, _assignedBuilding, _bPosList] spawn {
+                        params ["_unit", "_targetPos", "_leader", "_building", "_bPosList"];
                         private _startTime = time;
                         private _lastPos = getPosATL _unit;
                         private _stuckCount = 0;
@@ -130,18 +104,31 @@ private _fnc_addSearchAction = {
 
                             if (currentCommand _unit == "STOP" || currentCommand _unit == "FOLLOW") exitWith {};
 
-                            private _dist = _unit distance _targetPos;
+                            private _dist = _unit distance2D _targetPos;
 
                             if (_dist < 2.5 || unitReady _unit) exitWith {
                                 doStop _unit;
                                 _unit setUnitPos "UP";
-                                for "_k" from 1 to 2 do {
-                                    _unit doWatch (_unit getRelPos [20, (random 180) - 90]);
-                                    sleep (2 + random 3);
+                                // Surveiller activement 2-3 angles différents du bâtiment
+                                private _watchCount = 2 + floor random 2;
+                                for "_k" from 1 to _watchCount do {
+                                    private _watchPos = _unit getRelPos [10 + random 15, (random 360)];
+                                    _unit doWatch _watchPos;
+                                    sleep (1.5 + random 2);
+                                };
+                                // Si d'autres positions dans le bâtiment, en fouiller une autre
+                                if (count _bPosList > 1) then {
+                                    private _nextPos = selectRandom (_bPosList select { _x distance2D _targetPos > 3 });
+                                    if (!isNil "_nextPos") then {
+                                        _unit doMove _nextPos;
+                                        _unit moveTo _nextPos;
+                                        sleep (3 + random 4);
+                                        doStop _unit;
+                                    };
                                 };
                             };
 
-                            if (_unit distance _lastPos < 1 && _dist > 3) then {
+                            if (_unit distance2D _lastPos < 1 && _dist > 3) then {
                                 _stuckCount = _stuckCount + 1;
                             } else {
                                 _stuckCount = 0;
@@ -151,8 +138,9 @@ private _fnc_addSearchAction = {
                             if (_stuckCount >= 4) then {
                                 doStop _unit;
                                 sleep 0.2;
-                                _unit commandMove _targetPos;
-                                _unit moveTo _targetPos;
+                                private _altPos = _building getRelPos [4 + random 8, random 360];
+                                _unit commandMove _altPos;
+                                _unit moveTo _altPos;
                                 _stuckCount = 0;
                             };
                         };
@@ -163,6 +151,7 @@ private _fnc_addSearchAction = {
                             _unit setUnitPos "AUTO";
                             _unit setSpeedMode "NORMAL";
                             _unit setBehaviour "AWARE";
+                            _unit setCombatMode "YELLOW";
                             doStop _unit;
                             sleep 0.1;
                             _unit doFollow _leader;
@@ -170,7 +159,7 @@ private _fnc_addSearchAction = {
                         _unit setVariable ["LL_IsSearching", false];
                     };
 
-                    sleep 0.5;
+                    sleep 0.3;
                 } forEach _squadAI;
 
                 private _timeout = time + 200;

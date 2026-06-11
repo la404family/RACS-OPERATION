@@ -536,8 +536,28 @@ private _fnExecDeploy = {
                            "CUP_U_B_USMC_MCCUU_des"];
     private _cagoules   = ["CUP_G_Tan_Scarf_GPS","CUP_G_TK_RoundGlasses_blk","CUP_G_Oakleys_Drk",
                            "CUP_G_Scarf_Face_Tan","G_Aviator","CUP_G_ESS_KHK_Facewrap_Tan","G_Bandana_khk"];
-    private _unitTypes  = ["CUP_I_RACS_Soldier_SL","CUP_I_RACS_Soldier_Medic",
-                           "CUP_I_RACS_Soldier_MG","CUP_I_RACS_Soldier_LAT","CUP_I_RACS_Soldier"];
+    // SP : toujours 2 renforts IA
+    // Joueurs morts en attente de seconde vie (MP uniquement)
+    private _pendingDead = [];
+    if (isMultiplayer && !isNil "LL_g_deadPlayers") then {
+        _pendingDead = LL_g_deadPlayers select { !isNull _x && !alive _x };
+    };
+    // Solo : escouade complète de 5 rôles (immersif)  MP : max(2, nb morts)
+    private _availableTypes = [
+        "CUP_I_RACS_Soldier_SL",
+        "CUP_I_RACS_Soldier_Medic",
+        "CUP_I_RACS_Soldier_MG",
+        "CUP_I_RACS_Soldier_LAT",
+        "CUP_I_RACS_Soldier"
+    ];
+    private _unitTypes = if (!isMultiplayer) then {
+        _availableTypes
+    } else {
+        private _num = (count _pendingDead) max 2;
+        private _t = [];
+        for "_i" from 0 to (_num - 1) do { _t pushBack (_availableTypes select (_i mod count _availableTypes)); };
+        _t
+    };
 
     private _fnAddMags = {
         params ["_u","_w","_n"];
@@ -684,7 +704,26 @@ private _fnExecDeploy = {
     } forEach _reinforcements;
 
     private _playerGroup = if (!isNull _caller) then { group _caller } else { grpNull };
-    if (!isNull _playerGroup && { !isNil { _playerGroup } }) then {
+
+    // MP : assigner chaque joueur mort à une IA de renfort (selectPlayer)
+    if (isMultiplayer && count _pendingDead > 0) then {
+        {
+            private _aiUnit = _x;
+            private _aiIdx  = _forEachIndex;
+            if (_aiIdx < count _pendingDead) then {
+                private _deadPlayer = _pendingDead select _aiIdx;
+                if (!isNull _deadPlayer && !alive _deadPlayer) then {
+                    [_aiUnit] remoteExec ["selectPlayer", _deadPlayer];
+                    [netId _deadPlayer] call LL_fnc_unregisterDeadPlayer;
+                    ["Vous avez rejoint un renfort. Retournez au combat."] remoteExec ["systemChat", _deadPlayer];
+                    _aiUnit allowDamage false;
+                    [_aiUnit] spawn { sleep 3; (_this select 0) allowDamage true; };
+                };
+            };
+        } forEach _reinforcements;
+    };
+
+    if (!isNull _playerGroup) then {
         [_reinforcements, _playerGroup] remoteExec ["joinSilent", groupOwner _playerGroup];
         ["STR_LL_Heli_Msg_Squad_Joined"] remoteExec ["LL_fnc_radioMessage", _caller];
     } else {

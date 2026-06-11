@@ -1,11 +1,13 @@
 if (!isServer) exitWith {};
 
 [] spawn {
-    private _OPEN_DIST     = 6;      
-    private _CLOSE_DELAY   = 12;     
-    private _CHECK_FREQ    = 0.8;    
+    private _OPEN_DIST       = 6;    // Distance déclenchement ouverture (inchangé)
+    private _CLOSE_SAFE_DIST = 20;   // Rayon de sécurité : aucune unité dans ce périmètre pour autoriser la fermeture
+    private _CLOSE_DELAY     = 25;   // Délai minimum (secondes) depuis l'ouverture avant de pouvoir refermer
+    private _CHECK_FREQ      = 0.8;
 
-    private _doorCache     = createHashMap;  
+    // Cache : [_doorAnims, _lastOpenedTime, _cachedBldg, _isDoorOpen]
+    private _doorCache = createHashMap;
 
     while {true} do {
         sleep _CHECK_FREQ;
@@ -21,6 +23,7 @@ if (!isServer) exitWith {};
 
         private _currentTime = time;
 
+        // Collecter les bâtiments proches de toutes les IA
         private _nearBuildings = [];
         {
             private _pos = getPosATL _x;
@@ -38,50 +41,71 @@ if (!isServer) exitWith {};
 
             if (_bldgData isEqualTo []) then {
                 private _anims = (animationNames _bldg) select { (toLowerANSI _x) find "door" >= 0 };
-                _bldgData = [_anims, 0, _bldg]; 
+                // [anims, lastOpenedTime, cachedBldg, isDoorOpen]
+                _bldgData = [_anims, 0, _bldg, false];
                 _doorCache set [_bldgKey, _bldgData];
             };
 
-            _bldgData params ["_doorAnims", "_lastOpened", "_cachedBldg"];
+            _bldgData params ["_doorAnims", "_lastOpened", "_cachedBldg", "_isDoorOpen"];
 
             if (_doorAnims isEqualTo []) then { continue; };
 
-            private _aiNearby = _aiUnits findIf { _x distance _bldg < _OPEN_DIST } != -1;
+            // Vérifier si une IA non-BLUFOR est à portée d'ouverture
+            private _aiNearDoor = _aiUnits findIf { _x distance _bldg < _OPEN_DIST } != -1;
 
-            if (_aiNearby) then {
-
-                if (_currentTime - _lastOpened > 1.5) then {  
+            if (_aiNearDoor) then {
+                // Ouvrir si fermée ou si porte pas encore complètement ouverte
+                if (!_isDoorOpen || _currentTime - _lastOpened > 2) then {
                     {
                         private _phase = _bldg animationPhase _x;
                         if (_phase < 0.95) then {
-
-                            _bldg animate [_x, 1, 0.8];           
-                            _bldg animateDoor [_x, 1, false];     
-
+                            _bldg animate [_x, 1, 0.8];
+                            _bldg animateDoor [_x, 1, false];
                             private _soundPos = _bldg modelToWorld (getCenterOfMass _bldg);
                             playSound3D ["A3\Sounds_F\environment\doors\DoorMetalSingleOpen_1.wss", _bldg, false, _soundPos, 0.25, 0.8, 20];
                         };
                     } forEach _doorAnims;
 
+                    // Marquer porte ouverte + horodater
                     _bldgData set [1, _currentTime];
+                    _bldgData set [3, true];
                     _doorCache set [_bldgKey, _bldgData];
                 };
-            } 
+            }
             else {
+                // Ne fermer que si :
+                //   1. La porte est actuellement ouverte
+                //   2. Assez de temps s'est écoulé depuis l'ouverture
+                //   3. Aucune unité (IA non-BLUFOR OU joueur) dans le périmètre de sécurité élargi
+                if (_isDoorOpen && _currentTime - _lastOpened > _CLOSE_DELAY) then {
 
-                if (_currentTime - _lastOpened > _CLOSE_DELAY) then {
-                    {
-                        if (_bldg animationPhase _x > 0.05) then {
-                            _bldg animate [_x, 0, 0.6];  
-                        };
-                    } forEach _doorAnims;
+                    private _anyUnitNear = false;
 
-                    _bldgData set [1, _currentTime - _CLOSE_DELAY + 3];
-                    _doorCache set [_bldgKey, _bldgData];
+                    // Vérifier toutes les IA non-BLUFOR dans la zone élargie
+                    { if (_x distance _bldg < _CLOSE_SAFE_DIST) exitWith { _anyUnitNear = true; }; } forEach _aiUnits;
+
+                    // Vérifier les joueurs vivants de toutes factions
+                    if (!_anyUnitNear) then {
+                        { if (alive _x && _x distance _bldg < _CLOSE_SAFE_DIST) exitWith { _anyUnitNear = true; }; } forEach allPlayers;
+                    };
+
+                    if (!_anyUnitNear) then {
+                        {
+                            if (_bldg animationPhase _x > 0.05) then {
+                                _bldg animate [_x, 0, 0.6];
+                            };
+                        } forEach _doorAnims;
+
+                        // Marquer porte fermée — lastOpened remis à 0, pas de re-tentative immédiate
+                        _bldgData set [1, 0];
+                        _bldgData set [3, false];
+                        _doorCache set [_bldgKey, _bldgData];
+                    };
                 };
             };
         } forEach _nearBuildings;
 
+        // Nettoyage du cache si trop de bâtiments en mémoire
         if (count _doorCache > 120) then {
             private _refPos = getPosATL (selectRandom _aiUnits);
             private _toRemove = [];

@@ -139,7 +139,9 @@ if (_mode == "init") exitWith {
                         if !(_grp in _grpsProcessed) then {
                             _grpsProcessed pushBack _grp;
                             private _grpPos = getPosATL (leader _grp);
-                            private _nearest = _alivePlayers select [{ _x distance2D _grpPos }, "ASCEND"] select 0;
+                            private _nearest = _alivePlayers select 0;
+                            private _nearestDist = _nearest distance2D _grpPos;
+                            { private _d = _x distance2D _grpPos; if (_d < _nearestDist) then { _nearestDist = _d; _nearest = _x; }; } forEach _alivePlayers;
                             (leader _grp) commandMove (getPosATL _nearest);
                         };
                     } forEach _guards;
