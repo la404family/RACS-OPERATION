@@ -48,15 +48,18 @@ while {true} do {
     private _players = allPlayers select { alive _x && !(_x isKindOf "HeadlessClient_F") };
     if (count _players == 0) then { continue; };
 
-    private _refPlayer = _players select 0;
+    private _refPlayer = selectRandom _players;
 
     LL_s_civSpawned = LL_s_civSpawned select { !isNull _x && alive _x };
 
     private _eligibleCivs = LL_s_civSpawned select {
-        private _dist = _x distance2D _refPlayer;
-        _dist >= _DIST_MIN && 
-        _dist <= _DIST_MAX &&
-        !(_x getVariable ["LL_isInsurgent", false])
+        private _civ = _x;
+        private _nearAnyPlayer = false;
+        {
+            private _dist = _civ distance2D _x;
+            if (_dist >= _DIST_MIN && _dist <= _DIST_MAX) exitWith { _nearAnyPlayer = true; };
+        } forEach _players;
+        _nearAnyPlayer && !(_civ getVariable ["LL_isInsurgent", false])
     };
 
     if (count _eligibleCivs >= _REQ_COUNT) then {
@@ -81,12 +84,21 @@ while {true} do {
 
         } forEach _selected;
 
-        private _wp = _insurgentGrp addWaypoint [getPosATL _refPlayer, 50];
+        private _grpCenter = [0,0,0];
+        { _grpCenter = _grpCenter vectorAdd (getPosATL _x); } forEach _selected;
+        _grpCenter = _grpCenter vectorMultiply (1 / count _selected);
+
+        private _nearestPlayer = _players select [{ _x distance2D _grpCenter }, "ASCEND"] select 0;
+        private _targetPos = getPosATL _nearestPlayer;
+
+        private _wp = _insurgentGrp addWaypoint [_targetPos, 50];
         _wp setWaypointType "SAD";
         _wp setWaypointBehaviour "COMBAT";
         _wp setWaypointCombatMode "RED";
         _wp setWaypointSpeed "FULL";
 
         { _insurgentGrp reveal [_x, 4]; } forEach _players;
+
+        (leader _insurgentGrp) commandMove _targetPos;
     };
 };

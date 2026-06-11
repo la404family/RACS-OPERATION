@@ -149,6 +149,7 @@ if (_mode == "init") exitWith {
         params ["_timerMinutes", "_bombs", "_numZones"];
         private _endTime = time + (_timerMinutes * 60);
         private _taskDone = false;
+        private _alertTriggered = false;
 
         while { !_taskDone } do {
             sleep 1; 
@@ -167,6 +168,30 @@ if (_mode == "init") exitWith {
             private _mins = floor (_remaining / 60);
             private _secs = _remaining mod 60;
             private _timeStr = format ["%1:%2", if (_mins < 10) then {"0"+str _mins} else {str _mins}, if (_secs < 10) then {"0"+str _secs} else {str _secs}];
+
+            if (!_alertTriggered && _remaining <= 420) then {
+                _alertTriggered = true;
+                private _alivePlayers = allPlayers select { alive _x };
+                private _guards = (missionNamespace getVariable ["LL_Task02_AllUnits", []]) select { alive _x };
+                if (count _guards > 0 && count _alivePlayers > 0) then {
+                    private _grpsProcessed = [];
+                    {
+                        private _guard = _x;
+                        _guard setBehaviour "COMBAT";
+                        _guard setCombatMode "RED";
+                        _guard setSpeedMode "FULL";
+                        { _guard reveal [_x, 4]; } forEach _alivePlayers;
+
+                        private _grp = group _guard;
+                        if !(_grp in _grpsProcessed) then {
+                            _grpsProcessed pushBack _grp;
+                            private _grpPos = getPosATL (leader _grp);
+                            private _nearest = _alivePlayers select [{ _x distance2D _grpPos }, "ASCEND"] select 0;
+                            (leader _grp) commandMove (getPosATL _nearest);
+                        };
+                    } forEach _guards;
+                };
+            };
 
             for "_i" from 0 to (_numZones - 1) do {
                 private _mkrName = format ["mkr_task02_zone_%1", _i];

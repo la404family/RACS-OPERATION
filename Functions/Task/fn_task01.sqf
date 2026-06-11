@@ -122,6 +122,28 @@ if (_mode == "init") exitWith {
                 _mkrDoc setMarkerText (localize "STR_LL_Task_01_MarkerDoc");
 
                 [_unit, _doc] remoteExec ["LL_fnc_task01_addAction", 0, true];
+
+                private _alivePlayers = allPlayers select { alive _x };
+                private _allTaskUnits = missionNamespace getVariable ["LL_Task01_AllUnits", []];
+                private _guards = _allTaskUnits select { alive _x && _x != _unit };
+                if (count _guards > 0 && count _alivePlayers > 0) then {
+                    private _grpsProcessed = [];
+                    {
+                        private _guard = _x;
+                        _guard setBehaviour "COMBAT";
+                        _guard setCombatMode "RED";
+                        _guard setSpeedMode "FULL";
+                        { _guard reveal [_x, 4]; } forEach _alivePlayers;
+
+                        private _grp = group _guard;
+                        if !(_grp in _grpsProcessed) then {
+                            _grpsProcessed pushBack _grp;
+                            private _grpPos = getPosATL (leader _grp);
+                            private _nearest = _alivePlayers select [{ _x distance2D _grpPos }, "ASCEND"] select 0;
+                            (leader _grp) commandMove (getPosATL _nearest);
+                        };
+                    } forEach _guards;
+                };
             };
         }];
     };

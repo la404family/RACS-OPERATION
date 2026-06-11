@@ -130,17 +130,34 @@ Le système hélicoptère repose sur un **unique UH-60L** (`CUP_I_UH60L_FFV_RACS
 *   **`fn_initBriefing.sqf` (`LL_fnc_initBriefing`)**
     *   **Rôle :** Exécuté localement par le joueur au démarrage (`initPlayerLocal.sqf`).
     *   **Fonctionnement :** Injecte un onglet "Manuel Opérationnel" détaillé dans la carte du joueur. Il charge les textes traduits et mis en forme dynamiquement depuis le `stringtable.xml` expliquant de manière RP (jeu de rôle tactique) l'utilisation des commandes (Règles d'engagement, Soin, CQB, Drone, Hélico, etc.).
+*   **`fn_initContext.sqf` (`LL_fnc_initContext`)**
+    *   **Rôle :** Exécuté localement par le joueur au démarrage. Crée l'onglet "Contexte" dans le journal (Diary) et y injecte 3 entrées narratives (contexte géopolitique, ordre de mission, règles d'engagement RP) via `createDiaryRecord`. Les entrées sont insérées en ordre inverse pour respecter l'affichage chronologique d'Arma 3.
 
 ### Gestion des Tâches (`Functions\Task\`)
 *   **`fn_taskManager.sqf` (`LL_fnc_taskManager`)**
     *   **Rôle :** Orchestrateur serveur des objectifs de la mission.
-    *   **Fonctionnement :** Sélectionne et lance une seule tâche à la fois parmi un pool disponible, garantissant la progression scénaristique sans surcharge d'objectifs simultanés. Conçu pour isoler et tester facilement chaque mission.
+    *   **Fonctionnement :** Deux modes : `init` (réinitialise les variables globales `LL_g_taskInProgress` et `LL_g_lastTask` au démarrage) et `REQUEST` (déclenché par le joueur via `fn_addTaskAction`). En mode REQUEST, pioche aléatoirement une tâche dans le pool `[task00, task01, task02]` en excluant la dernière tâche jouée pour éviter la répétition. Lance la tâche sélectionnée via `call LL_fnc_taskXX`.
+*   **`fn_addTaskAction.sqf` (`LL_fnc_addTaskAction`)**
+    *   **Rôle :** Client uniquement. Ajoute une action molette jaune "Demander une mission" au leader de l'escouade.
+    *   **Fonctionnement :** Boucle de détection `player` (résistante aux respawns/switch). La condition vérifie que le joueur est bien le leader et qu'aucune tâche n'est déjà en cours (`LL_g_taskInProgress`). Au clic, envoie `["REQUEST"] remoteExec ["LL_fnc_taskManager", 2]` pour déclencher la sélection serveur.
 *   **`fn_task00.sqf` (`LL_fnc_task00`)**
-    *   **Rôle :** Tâche 00 - Exfiltration d'otage. Script autonome gérant la logique de ce premier objectif.
-    *   **Fonctionnement :** Sélectionne dynamiquement une zone de recherche avec spawn aléatoire de gardes en patrouille. Gère la libération de l'otage via `addAction` localisée puis l'embarquement coordonné dans l'hélicoptère d'extraction via un second `addAction` direct sur l'appareil (sans terminer la mission globale). Inclut le pattern de dissolution (suppression hors de vue) des ennemis restants à l'issue de la mission.
-*   **`fn_taskXX.sqf` (`LL_fnc_taskXX`)**
-    *   **Rôle :** Scripts autonomes gérant la logique des autres objectifs spécifiques.
-    *   **Fonctionnement :** Gèrent la création de tâches Arma natives (marqueurs sur carte uniquement, aucun marqueur 3D pour forcer la navigation à la boussole), le spawn de l'opposition et la validation des conditions de réussite.
+    *   **Rôle :** Tâche 00 — Exfiltration d'otage.
+    *   **Mode `init` (serveur) :** Sélectionne 2–4 zones `M_Dans_Bat_` à >250m des joueurs. Spawne des gardes en patrouille locale dans chaque zone. Dans une zone aléatoire, spawne un otage civil en animation `Acts_ExecutionVictim_Loop` avec variable de statut `"WAIT"`. Crée la tâche Arma native sans marqueur 3D. Diffuse l'`addAction` de libération aux clients via `remoteExec`.
+    *   **Mode `free` (serveur, déclenché depuis le client) :** Libère l'otage (animation de relevé, rejoint le groupe du caller). **Déclenche immédiatement l'assaut de tous les gardes survivants** (`COMBAT`/`RED`/`commandMove` vers le joueur le plus proche). Lance l'extraction hélico priorité 3. Surveille l'embarquement de l'otage pour valider `SUCCEEDED` ou `FAILED`. Nettoie les unités par dissolution hors de vue.
+*   **`fn_task00_addAction.sqf`**
+    *   **Rôle :** Client uniquement (`hasInterface`). Reçoit l'otage par `remoteExec`. Ajoute l'`addAction` jaune "Libérer l'otage" sur l'otage (distance < 4m). Anti double-déclenchement via `LL_Task00_Triggered`. Envoie `["free", [_hostage, _caller]]` au serveur.
+*   **`fn_task01.sqf` (`LL_fnc_task01`)**
+    *   **Rôle :** Tâche 01 — Neutralisation de cibles multiples / récupération de documents.
+    *   **Mode `init` (serveur) :** Spawne 2–4 groupes ennemis avec officier (`CUP_O_TK_Officer`) dans des zones `M_Dans_Bat_` distinctes. Un seul officier aléatoire (`_targetIndex`) porte le flag `LL_hasDocuments = true`. À la mort de cet officier, un objet `SecretDocuments_01_F` apparaît sur son cadavre, un marqueur carte est créé et l'`addAction` de collecte est diffusée. **Déclenche immédiatement l'assaut de tous les gardes survivants** (`COMBAT`/`RED`/`commandMove` vers le joueur le plus proche).
+    *   **Mode `collect` (serveur) :** Valide `SUCCEEDED`, supprime le marqueur doc, nettoie toutes les unités par dissolution.
+*   **`fn_task01_addAction.sqf`**
+    *   **Rôle :** Client uniquement. Reçoit le cadavre et l'objet document par `remoteExec`. Ajoute l'`addAction` jaune "Récupérer les documents" sur le cadavre (condition : unité morte, distance < 4m). Envoie `["collect", [_corpse, _doc]]` au serveur.
+*   **`fn_task02.sqf` (`LL_fnc_task02`)**
+    *   **Rôle :** Tâche 02 — Désamorçage d'IED sous contrainte de temps.
+    *   **Mode `init` (serveur) :** Spawne 2–4 zones avec gardes et une caisse IED (`Box_East_Grenades_F`) par zone. Chaque IED est matérialisé par une `DemoCharge_F` attachée et une lumière rouge clignotante. Timer aléatoire (25–45 min). **À 7 minutes restantes**, déclenche l'assaut de tous les gardes survivants (`COMBAT`/`RED`/`commandMove`) via le flag `_alertTriggered` (one-shot). À l'expiration du timer, les IED non désamorcés explosent (`setDamage 1` → `Bo_GBU12_LGB`). Valide `SUCCEEDED` ou `FAILED` selon le ratio désamorcé/explosé.
+    *   **Mode `defuse` (serveur) :** Marque l'IED `"DEFUSED"`, supprime la charge et la lumière, met à jour le marqueur de zone en vert.
+*   **`fn_task02_addAction.sqf`**
+    *   **Rôle :** Client uniquement. Reçoit la bombe par `remoteExec`. Ajoute l'`addAction` jaune "Désamorcer" sur l'IED (condition : bombe vivante, statut `"WAIT"`, distance < 4m). Envoie `["defuse", [_bomb, _caller]]` au serveur.
 
 ---
 

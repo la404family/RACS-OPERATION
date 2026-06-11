@@ -164,6 +164,29 @@ if (_mode == "free") exitWith {
 
     [_hostage] joinSilent (group _caller);
 
+    private _guardsOnAlert = (missionNamespace getVariable ["LL_Task00_AllUnits", []]) select { _x != _hostage && alive _x };
+    if (count _guardsOnAlert > 0) then {
+        private _alivePlayers = allPlayers select { alive _x };
+        private _grpsProcessed = [];
+        {
+            private _guard = _x;
+            _guard setBehaviour "COMBAT";
+            _guard setCombatMode "RED";
+            _guard setSpeedMode "FULL";
+            { _guard reveal [_x, 4]; } forEach _alivePlayers;
+
+            private _grp = group _guard;
+            if !(_grp in _grpsProcessed) then {
+                _grpsProcessed pushBack _grp;
+                if (count _alivePlayers > 0) then {
+                    private _grpPos = getPosATL (leader _grp);
+                    private _nearest = _alivePlayers select [{ _x distance2D _grpPos }, "ASCEND"] select 0;
+                    (leader _grp) commandMove (getPosATL _nearest);
+                };
+            };
+        } forEach _guardsOnAlert;
+    };
+
     for "_i" from 0 to 3 do { deleteMarker format ["mkr_task00_zone_%1", _i]; };
 
     ["EMBARQUEMENT", getPos _hostage, _caller, 3] spawn LL_fnc_heliDispatch;
