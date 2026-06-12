@@ -6,8 +6,8 @@ if (!isServer) exitWith {};
     private _CLOSE_DELAY     = 25;   // Délai minimum (secondes) depuis l'ouverture avant de pouvoir refermer
     private _CHECK_FREQ      = 0.8;
 
-    // Cache : [_doorAnims, _lastOpenedTime, _cachedBldg, _isDoorOpen]
-    private _doorCache = createHashMap;
+    // Cache : [[_bldg, [_doorAnims, _lastOpenedTime, _cachedBldg, _isDoorOpen]], ...]
+    private _doorCache = [];
 
     while {true} do {
         sleep _CHECK_FREQ;
@@ -36,17 +36,23 @@ if (!isServer) exitWith {};
 
         {
             private _bldg = _x;
-            private _bldgKey = hashValue _bldg;
-            private _bldgData = _doorCache getOrDefault [_bldgKey, []];
+            private _idx = _doorCache findIf { (_x select 0) == _bldg };
+            private _bldgData = if (_idx != -1) then { (_doorCache select _idx) select 1 } else { [] };
 
             if (_bldgData isEqualTo []) then {
                 private _anims = (animationNames _bldg) select { (toLowerANSI _x) find "door" >= 0 };
                 // [anims, lastOpenedTime, cachedBldg, isDoorOpen]
                 _bldgData = [_anims, 0, _bldg, false];
-                _doorCache set [_bldgKey, _bldgData];
+                _doorCache pushBack [_bldg, _bldgData];
+                _idx = count _doorCache - 1;
             };
 
-            _bldgData params ["_doorAnims", "_lastOpened", "_cachedBldg", "_isDoorOpen"];
+            _bldgData params [
+                ["_doorAnims", [], [[]]],
+                ["_lastOpened", 0, [0]],
+                ["_cachedBldg", objNull, [objNull]],
+                ["_isDoorOpen", false, [false]]
+            ];
 
             if (_doorAnims isEqualTo []) then { continue; };
 
@@ -69,7 +75,6 @@ if (!isServer) exitWith {};
                     // Marquer porte ouverte + horodater
                     _bldgData set [1, _currentTime];
                     _bldgData set [3, true];
-                    _doorCache set [_bldgKey, _bldgData];
                 };
             }
             else {
@@ -99,7 +104,6 @@ if (!isServer) exitWith {};
                         // Marquer porte fermée — lastOpened remis à 0, pas de re-tentative immédiate
                         _bldgData set [1, 0];
                         _bldgData set [3, false];
-                        _doorCache set [_bldgKey, _bldgData];
                     };
                 };
             };
@@ -110,14 +114,12 @@ if (!isServer) exitWith {};
             private _refPos = getPosATL (selectRandom _aiUnits);
             private _toRemove = [];
             {
-                private _key = _x;
-                private _data = _y;
-                private _cachedObj = _data select 2;
+                private _cachedObj = _x select 0;
                 if (isNull _cachedObj || { _cachedObj distance2D _refPos > 300 }) then {
-                    _toRemove pushBack _key;
+                    _toRemove pushBack _x;
                 };
             } forEach _doorCache;
-            { _doorCache deleteAt _x; } forEach _toRemove;
+            _doorCache = _doorCache - _toRemove;
         };
     };
 };

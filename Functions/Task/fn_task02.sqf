@@ -38,6 +38,9 @@ if (_mode == "init") exitWith {
     missionNamespace setVariable ["LL_Task02_AllUnits", [], true];
     private _allUnits = [];
     private _bombs = [];
+    private _statuses = [];
+    for "_i" from 0 to (_numZones - 1) do { _statuses pushBack "WAIT"; };
+    missionNamespace setVariable ["LL_Task02_BombStatuses", _statuses, true];
 
     for "_i" from 0 to (_numZones - 1) do {
         private _logic = _selectedLogics select _i;
@@ -74,6 +77,7 @@ if (_mode == "init") exitWith {
         _bomb setPosASL _spawnPos;
         _bomb setDir (random 360);
         _bomb setVariable ["LL_Bomb_Status", "WAIT", true];
+        _bomb setVariable ["LL_Bomb_Index", _i, true];
 
         _bomb allowDamage false;
         [_bomb] spawn { sleep 3; (_this select 0) allowDamage true; };
@@ -95,6 +99,12 @@ if (_mode == "init") exitWith {
         _bomb addEventHandler ["Killed", {
             params ["_unit", "_killer", "_instigator", "_useEffects"];
             _unit setVariable ["LL_Bomb_Status", "EXPLODED", true];
+            private _idx = _unit getVariable ["LL_Bomb_Index", -1];
+            if (_idx != -1) then {
+                private _statuses = missionNamespace getVariable ["LL_Task02_BombStatuses", []];
+                _statuses set [_idx, "EXPLODED"];
+                missionNamespace setVariable ["LL_Task02_BombStatuses", _statuses, true];
+            };
 
             "Bo_GBU12_LGB" createVehicle (getPos _unit);
         }];
@@ -155,13 +165,12 @@ if (_mode == "init") exitWith {
             sleep 1; 
             private _defusedCount = 0;
             private _explodedCount = 0;
+            private _statuses = missionNamespace getVariable ["LL_Task02_BombStatuses", []];
 
             {
-                private _status = _x getVariable ["LL_Bomb_Status", "WAIT"];
-                if (_status == "DEFUSED") then { _defusedCount = _defusedCount + 1; };
-
-                if (_status == "EXPLODED") then { _explodedCount = _explodedCount + 1; };
-            } forEach _bombs;
+                if (_x == "DEFUSED") then { _defusedCount = _defusedCount + 1; };
+                if (_x == "EXPLODED") then { _explodedCount = _explodedCount + 1; };
+            } forEach _statuses;
 
             private _remaining = round (_endTime - time);
             if (_remaining < 0) then { _remaining = 0; };
@@ -197,7 +206,7 @@ if (_mode == "init") exitWith {
 
             for "_i" from 0 to (_numZones - 1) do {
                 private _mkrName = format ["mkr_task02_zone_%1", _i];
-                private _bombStatus = (_bombs select _i) getVariable ["LL_Bomb_Status", "WAIT"];
+                private _bombStatus = _statuses select _i;
 
                 if (_bombStatus == "DEFUSED") then {
                     _mkrName setMarkerText format ["%1 %2 - DESAMORCE", localize "STR_LL_Task_02_Marker", _i + 1];
@@ -214,15 +223,16 @@ if (_mode == "init") exitWith {
 
             if (time > _endTime) then {
                 {
-                    if ((_x getVariable ["LL_Bomb_Status", "WAIT"]) == "WAIT") then {
+                    if (!isNull _x && { (_x getVariable ["LL_Bomb_Status", "WAIT"]) == "WAIT" }) then {
                         _x setDamage 1; 
                     };
                 } forEach _bombs;
                 sleep 2; 
                 _explodedCount = 0;
+                private _currentStatuses = missionNamespace getVariable ["LL_Task02_BombStatuses", []];
                 {
-                    if ((_x getVariable ["LL_Bomb_Status", "WAIT"]) == "EXPLODED" || !alive _x) then { _explodedCount = _explodedCount + 1; };
-                } forEach _bombs;
+                    if (_x == "EXPLODED") then { _explodedCount = _explodedCount + 1; };
+                } forEach _currentStatuses;
             };
 
             if ((_defusedCount + _explodedCount) >= _numZones) then {
@@ -310,6 +320,13 @@ if (_mode == "defuse") exitWith {
     if ((_bomb getVariable ["LL_Bomb_Status", "WAIT"]) != "WAIT") exitWith {};
     _bomb setVariable ["LL_Bomb_Status", "DEFUSED", true];
 
+    private _idx = _bomb getVariable ["LL_Bomb_Index", -1];
+    if (_idx != -1) then {
+        private _statuses = missionNamespace getVariable ["LL_Task02_BombStatuses", []];
+        _statuses set [_idx, "DEFUSED"];
+        missionNamespace setVariable ["LL_Task02_BombStatuses", _statuses, true];
+    };
+
     _bomb removeAllEventHandlers "Killed";
     _bomb allowDamage false;
 
@@ -327,14 +344,14 @@ if (_mode == "defuse") exitWith {
             private _smoke = "#particlesource" createVehicleLocal _pos;
             _smoke setParticleClass "SmokeShellWhite"; // Fumée blanche extrêmement dense
             
-            // On stoppe l'émetteur localement après 20 secondes
+            // On stoppe l'émetteur localement après 35 secondes (laisse du temps après la disparition)
             [_smoke] spawn {
-                sleep 20;
+                sleep 35;
                 deleteVehicle (_this select 0);
             };
         }] remoteExec ["spawn", 0];
 
-        sleep 4; // On laisse 4 secondes au nuage de fumée pour masquer totalement la caisse
+        sleep 20; // On attend 20 secondes sous la fumée avant de faire disparaître la caisse
         if (!isNull _bomb) then { deleteVehicle _bomb; };
     };
 };
