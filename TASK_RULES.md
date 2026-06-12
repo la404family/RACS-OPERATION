@@ -270,13 +270,6 @@ Créer d'abord les sections secondaires (contexte, factions), puis la section pr
 
 ## 11. Immersion et rejouabilité
 
-### Scénarios sous formes d'arbre aléatoire 
-
-La task00 amene vers la task01 qui comporte 3 issues possibles il y a donc un arbre de mission a respecter : 
-task02a - task02b - task02c 
-
-Toujours mettre à jour le fichier TASK_TREE.md
-
 ### Comportement ennemi actif
 Un groupe ennemi activé ne doit pas rester statique. Implémenter une patrouille des unités autour du lieu de la mission.
 

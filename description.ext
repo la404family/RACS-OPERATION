@@ -92,6 +92,8 @@ class CfgFunctions {
             class task01_addAction {};
             class task02 {};
             class task02_addAction {};
+            class task03 {};
+            class task03_addAction {};
             class addTaskAction {};
         };
         class Briefing {

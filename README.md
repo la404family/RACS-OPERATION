@@ -169,7 +169,13 @@ Le système hélicoptère repose sur un **unique UH-60L** (`CUP_I_UH60L_FFV_RACS
     *   **Mode `init` (serveur) :** Spawne 2–4 zones avec gardes et une caisse IED (`Box_East_Grenades_F`) par zone. Chaque IED est matérialisé par une `DemoCharge_F` attachée et une lumière rouge clignotante. Timer aléatoire (25–45 min). **À 7 minutes restantes**, déclenche l'assaut de tous les gardes survivants (`COMBAT`/`RED`/`commandMove`) via le flag `_alertTriggered` (one-shot). À l'expiration du timer, les IED non désamorcés explosent (`setDamage 1` → `Bo_GBU12_LGB`). Valide `SUCCEEDED` ou `FAILED` selon le ratio désamorcé/explosé.
     *   **Mode `defuse` (serveur) :** Marque l'IED `"DEFUSED"`, supprime la charge et la lumière, met à jour le marqueur de zone en vert. La caisse `Box_East_Grenades_F` reste visible **20 secondes** puis un fumigène blanc (`SmokeShellWhite`) est spawné à sa position avant la suppression 3 secondes plus tard, masquant la disparition.
 *   **`fn_task02_addAction.sqf`**
-    *   **Rôle :** Client uniquement. Reçoit la bombe par `remoteExec`. Ajoute l'`addAction` jaune "Désamorcer" sur l'IED (condition : bombe vivante, statut `"WAIT"`, distance < 4m). Envoie `["defuse", [_bomb, _caller]]` au serveur.
+    *   **Rôle :** Client uniquement. Reçoit l'IED et ajoute l'`addAction` jaune "Désamorcer l'IED" (distance < 4m). Envoie `["defuse", [_bomb, _caller]]` au serveur. Joue l'animation de désamorçage sur le client et déclenche un effet fumigène.
+*   **`fn_task03.sqf` (`LL_fnc_task03`)**
+    *   **Rôle :** Tâche 03 — Sabotage de matériel de communication.
+    *   **Mode `init` (serveur) :** Scanne les `Heliport_` invisibles, en sélectionne 1 à 4 (distance > 250m) et spawne un terminal radio renforcé par zone. Protégé par 4 à 8 gardes en patrouille locale agressive. Assigne la tâche de destruction et déclenche les `addAction`.
+    *   **Mode `plant` (serveur) :** Lancé par l'action du joueur. Attache un explosif virtuel (`DemoCharge_F`) sur le terminal, lance un compte à rebours de 40 secondes, détruit le relais, valide `SUCCEEDED` si tous les terminaux sont détruits, puis ordonne aux gardes survivants de battre en retraite vers le point de dissolution.
+*   **`fn_task03_addAction.sqf`**
+    *   **Rôle :** Client uniquement. Ajoute l'`addAction` jaune "Poser un explosif (40s)" sur les terminaux (distance < 4m). Déclenche un sous-titre `fn_radioMessage` ("Ecartez-vous !"), et lance la séquence de pose côté serveur.
 
 ---
 

@@ -318,14 +318,23 @@ if (_mode == "defuse") exitWith {
 
     [_bomb] spawn {
         params ["_bomb"];
-        sleep 20;
         if (isNull _bomb) exitWith {};
 
-        private _smokePos = getPosASL _bomb;
-        private _smoke = "SmokeShellWhite" createVehicle (ASLToAGL _smokePos);
-        _smoke setPosASL _smokePos;
+        // Le système de module d'Arma est buggé via script (erreur _emitter indéfinie).
+        // On utilise le système natif #particlesource en remoteExec : 100% garanti, ultra épais et sans physique.
+        [[getPosATL _bomb], {
+            params ["_pos"];
+            private _smoke = "#particlesource" createVehicleLocal _pos;
+            _smoke setParticleClass "SmokeShellWhite"; // Fumée blanche extrêmement dense
+            
+            // On stoppe l'émetteur localement après 20 secondes
+            [_smoke] spawn {
+                sleep 20;
+                deleteVehicle (_this select 0);
+            };
+        }] remoteExec ["spawn", 0];
 
-        sleep 3;
+        sleep 4; // On laisse 4 secondes au nuage de fumée pour masquer totalement la caisse
         if (!isNull _bomb) then { deleteVehicle _bomb; };
     };
 };

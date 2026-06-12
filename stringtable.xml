@@ -2457,6 +2457,132 @@ Ağ doluysa istekleriniz reddedilebilir veya kesintiye uğrayabilir.&lt;br/&gt;&
             <Italian>IED disinnescato con successo.</Italian>
             <Polish>IED rozbrojone pomyślnie.</Polish>
         </Key>
+        <Key ID="STR_LL_Diary_Task03_Title">
+            <Original>OPORD: Opération Silence</Original>
+            <French>OPORD: Opération Silence</French>
+            <English>OPORD: Operation Silence</English>
+            <Turkish>OPORD: Sessizlik Operasyonu</Turkish>
+            <Korean>작전 명령: 침묵 작전</Korean>
+            <Spanish>OPORD: Operación Silencio</Spanish>
+            <Japanese>作戦命令: サイレンス作戦</Japanese>
+            <Chinese>作战命令：寂静行动</Chinese>
+            <Russian>Боевой приказ: Операция Тишина</Russian>
+            <German>OPORD: Operation Stille</German>
+            <Italian>OPORD: Operazione Silenzio</Italian>
+            <Polish>OPORD: Operacja Cisza</Polish>
+        </Key>
+        <Key ID="STR_LL_Diary_Task03_Text">
+            <Original>L'ennemi a déployé des postes de communication avancés dans la région pour coordonner ses attaques. Votre objectif est de trouver ces terminaux radio et de les détruire. Approchez-vous de chaque relais, posez une charge explosive (40 secondes de délai) et mettez-vous à l'abri. Attendez-vous à une forte résistance autour des terminaux.</Original>
+            <French>L'ennemi a déployé des postes de communication avancés dans la région pour coordonner ses attaques. Votre objectif est de trouver ces terminaux radio et de les détruire. Approchez-vous de chaque relais, posez une charge explosive (40 secondes de délai) et mettez-vous à l'abri. Attendez-vous à une forte résistance autour des terminaux.</French>
+            <English>The enemy has deployed advanced communication outposts in the region to coordinate their attacks. Your objective is to find these radio terminals and destroy them. Approach each relay, plant an explosive charge (40 seconds timer), and take cover. Expect heavy resistance around the terminals.</English>
+            <Turkish>Düşman, saldırılarını koordine etmek için bölgede gelişmiş iletişim karakolları kurdu. Amacınız bu radyo terminallerini bulmak ve yok etmektir. Her röleye yaklaşın, patlayıcı bir şarj (40 saniyelik zamanlayıcı) yerleştirin ve siper alın. Terminallerin etrafında şiddetli bir direniş bekleyin.</Turkish>
+            <Korean>적군이 공격을 조율하기 위해 이 지역에 첨단 통신 전초기지를 배치했습니다. 귀하의 목표는 이 무전기 단말기를 찾아 파괴하는 것입니다. 각 중계소에 접근하여 폭발물(40초 타이머)을 설치하고 엄폐하십시오. 단말기 주변에서 강력한 저항이 예상됩니다.</Korean>
+            <Spanish>El enemigo ha desplegado puestos de comunicación avanzados en la región para coordinar sus ataques. Tu objetivo es encontrar estas terminales de radio y destruirlas. Acércate a cada relé, coloca una carga explosiva (temporizador de 40 segundos) y ponte a cubierto. Espera una fuerte resistencia alrededor de las terminales.</Spanish>
+            <Japanese>敵は攻撃を調整するために、この地域に高度な通信前哨基地を配備した。君の目標はこれらの無線端末を発見し破壊することだ。各中継所に接近し、爆薬（40秒タイマー）を設置して身を隠せ。端末周辺では激しい抵抗が予想される。</Japanese>
+            <Chinese>敌军在该地区部署了先进的通讯前哨站以协调进攻。你的目标是找到这些无线电终端并将其摧毁。靠近每个中继站，安放炸药（40秒计时器），然后寻找掩护。预计终端周围会有强烈抵抗。</Chinese>
+            <Russian>Противник развернул передовые узлы связи в этом районе для координации своих атак. Ваша цель — найти эти радиотерминалы и уничтожить их. Подойдите к каждому реле, установите заряд взрывчатки (таймер 40 секунд) и укройтесь. Ожидайте сильного сопротивления вокруг терминалов.</Russian>
+            <German>Der Feind hat in der Region fortschrittliche Kommunikationsaußenposten eingerichtet, um seine Angriffe zu koordinieren. Ihr Ziel ist es, diese Funkterminals zu finden und zu zerstören. Nähern Sie sich jedem Relais, platzieren Sie eine Sprengladung (40 Sekunden Timer) und gehen Sie in Deckung. Erwarten Sie starken Widerstand um die Terminals.</German>
+            <Italian>Il nemico ha dispiegato avamposti di comunicazione avanzati nella regione per coordinare i propri attacchi. Il tuo obiettivo è trovare questi terminali radio e distruggerli. Avvicinati a ogni relè, piazza una carica esplosiva (timer di 40 secondi) e mettiti al riparo. Aspettati una forte resistenza attorno ai terminali.</Italian>
+            <Polish>Wróg rozmieścił w regionie zaawansowane placówki komunikacyjne, aby koordynować swoje ataki. Twoim celem jest znalezienie tych terminali radiowych i ich zniszczenie. Podejdź do każdego przekaźnika, podłóż ładunek wybuchowy (zapalnik 40-sekundowy) i schowaj się. Spodziewaj się silnego oporu wokół terminali.</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_03_Title">
+            <Original>Détruire le Matériel Radio</Original>
+            <French>Détruire le Matériel Radio</French>
+            <English>Destroy Radio Equipment</English>
+            <Turkish>Radyo Ekipmanını Yok Et</Turkish>
+            <Korean>무전기 장비 파괴</Korean>
+            <Spanish>Destruir el equipo de radio</Spanish>
+            <Japanese>無線設備を破壊せよ</Japanese>
+            <Chinese>摧毁无线电通讯设备</Chinese>
+            <Russian>Уничтожить радиооборудование</Russian>
+            <German>Funkgeräte zerstören</German>
+            <Italian>Distruggi l'equipaggiamento radio</Italian>
+            <Polish>Zniszcz sprzęt radiowy</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_03_Desc">
+            <Original>Les forces ennemies ont mis en place des terminaux radio renforcés dans la zone. Localisez-les et détruisez-les pour couper leurs communications.</Original>
+            <French>Les forces ennemies ont mis en place des terminaux radio renforcés dans la zone. Localisez-les et détruisez-les pour couper leurs communications.</French>
+            <English>Enemy forces have set up rugged radio terminals in the area. Locate and destroy them to cut off their communications.</English>
+            <Turkish>Düşman kuvvetleri bölgede güçlendirilmiş radyo terminalleri kurdu. İletişimlerini kesmek için onları bulun ve yok edin.</Turkish>
+            <Korean>적군이 이 지역에 견고한 무전기 단말기를 설치했습니다. 통신을 차단하기 위해 그것들을 찾아 파괴하십시오.</Korean>
+            <Spanish>Las fuerzas enemigas han establecido terminales de radio reforzadas en la zona. Localízalas y destrúyelas para cortar sus comunicaciones.</Spanish>
+            <Japanese>敵部隊がエリアに強化無線端末を設置した。通信を遮断するためにそれらを発見し、破壊せよ。</Japanese>
+            <Chinese>敌军在该区域设置了坚固的无线电终端。找到并摧毁它们以切断他们的通讯。</Chinese>
+            <Russian>Вражеские силы установили в этом районе укрепленные радиотерминалы. Найдите и уничтожьте их, чтобы прервать их связь.</Russian>
+            <German>Feindliche Truppen haben in dem Gebiet verstärkte Funkterminals eingerichtet. Lokalisieren und zerstören Sie sie, um ihre Kommunikation zu unterbrechen.</German>
+            <Italian>Le forze nemiche hanno allestito terminali radio rinforzati nell'area. Individuali e distruggili per interrompere le loro comunicazioni.</Italian>
+            <Polish>Siły wroga założyły w okolicy wzmocnione terminale radiowe. Zlokalizuj je i zniszcz, aby odciąć ich komunikację.</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_03_MarkerMain">
+            <Original>Zone d'Opération</Original>
+            <French>Zone d'Opération</French>
+            <English>Area of Operations</English>
+            <Turkish>Operasyon Bölgesi</Turkish>
+            <Korean>작전 구역</Korean>
+            <Spanish>Área de operaciones</Spanish>
+            <Japanese>作戦エリア</Japanese>
+            <Chinese>作战区域</Chinese>
+            <Russian>Зона операций</Russian>
+            <German>Einsatzgebiet</German>
+            <Italian>Area delle operazioni</Italian>
+            <Polish>Strefa operacji</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_03_Marker">
+            <Original>Relais Radio</Original>
+            <French>Relais Radio</French>
+            <English>Radio Relay</English>
+            <Turkish>Radyo Rölesi</Turkish>
+            <Korean>무전기 중계소</Korean>
+            <Spanish>Relé de radio</Spanish>
+            <Japanese>無線中継所</Japanese>
+            <Chinese>无线电中继站</Chinese>
+            <Russian>Радиорелейная станция</Russian>
+            <German>Funkrelais</German>
+            <Italian>Ponte radio</Italian>
+            <Polish>Przekaźnik radiowy</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_03_Marker_Destroyed">
+            <Original>Détruit</Original>
+            <French>Détruit</French>
+            <English>Destroyed</English>
+            <Turkish>Yok Edildi</Turkish>
+            <Korean>파괴됨</Korean>
+            <Spanish>Destruido</Spanish>
+            <Japanese>破壊完了</Japanese>
+            <Chinese>已摧毁</Chinese>
+            <Russian>Уничтожено</Russian>
+            <German>Zerstört</German>
+            <Italian>Distrutto</Italian>
+            <Polish>Zniszczono</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_03_Action">
+            <Original>Poser un explosif (40s)</Original>
+            <French>Poser un explosif (40s)</French>
+            <English>Plant explosive (40s)</English>
+            <Turkish>Patlayıcı yerleştir (40s)</Turkish>
+            <Korean>폭발물 설치 (40초)</Korean>
+            <Spanish>Colocar explosivo (40s)</Spanish>
+            <Japanese>爆薬を設置 (40秒)</Japanese>
+            <Chinese>安放炸药 (40秒)</Chinese>
+            <Russian>Установить взрывчатку (40с)</Russian>
+            <German>Sprengstoff platzieren (40s)</German>
+            <Italian>Piazza esplosivo (40s)</Italian>
+            <Polish>Podłóż ładunek wybuchowy (40s)</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_03_Warning">
+            <Original>Écartez-vous !</Original>
+            <French>Écartez-vous !</French>
+            <English>Get back!</English>
+            <Turkish>Geri çekilin!</Turkish>
+            <Korean>물러서십시오!</Korean>
+            <Spanish>¡Atrás!</Spanish>
+            <Japanese>下がれ！</Japanese>
+            <Chinese>退后！</Chinese>
+            <Russian>Отойдите!</Russian>
+            <German>Zurücktreten!</German>
+            <Italian>Indietro!</Italian>
+            <Polish>Cofnij się!</Polish>
+        </Key>
         <Key ID="STR_LL_Action_RequestTask">
             <Original>Demander votre tâche</Original>
             <French>Demander votre tâche</French>
