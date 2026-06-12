@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keys>
+    <Key ID="STR_LL_Diary_Task06_Title">
+        <Original>OPORD : Capture de HVT</Original>
+        <French>OPORD : Capture de HVT</French>
+        <English>OPORD: HVT Capture</English>
+    </Key>
+    <Key ID="STR_LL_Diary_Task06_Text">
+        <Original>Un officier ennemi clé a été repéré dans un bâtiment du secteur. Infiltrez la zone, neutralisez sa garde rapprochée, capturez le suspect vivant et extrayez-le par hélicoptère.</Original>
+        <French>Un officier ennemi clé a été repéré dans un bâtiment du secteur. Infiltrez la zone, neutralisez sa garde rapprochée, capturez le suspect vivant et extrayez-le par hélicoptère.</French>
+        <English>A key enemy officer has been spotted in a building in the sector. Infiltrate the area, neutralize his close protection, capture the suspect alive and extract him by helicopter.</English>
+    </Key>
+</Keys>

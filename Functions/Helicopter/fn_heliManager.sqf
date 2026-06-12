@@ -803,13 +803,22 @@ private _fnExecExtract = {
     private _task00Hostage    = missionNamespace getVariable ["LL_Task00_Hostage", objNull];
     private _isTask00Extract  = !isNull _task00Hostage && { alive _task00Hostage } && { missionNamespace getVariable ["LL_g_taskInProgress", false] };
 
+    private _task06HVT        = missionNamespace getVariable ["LL_Task06_HVT", objNull];
+    private _isTask06Extract  = !isNull _task06HVT && { alive _task06HVT } && { missionNamespace getVariable ["LL_g_taskInProgress", false] };
+
     private _ejectEH = -1;
-    if (_isTask02bExtract || _isTask00Extract) then {
+    if (_isTask02bExtract || _isTask00Extract || _isTask06Extract) then {
         _ejectEH = _heli addEventHandler ["GetIn", {
             params ["_vehicle", "_role", "_unit"];
-            if (isPlayer _unit && { alive _unit }) then {
+            private _h00 = missionNamespace getVariable ["LL_Task00_Hostage", objNull];
+            private _h2b = missionNamespace getVariable ["LL_Task02b_Hostage", objNull];
+            private _h06 = missionNamespace getVariable ["LL_Task06_HVT", objNull];
+            // Éjecter toute unité qui n'est pas l'otage/HVT ciblé et qui n'appartient pas à l'équipage de l'hélico (joueurs et I.A. amicales)
+            if (_unit != _h00 && _unit != _h2b && _unit != _h06 && { group _unit != group driver _vehicle }) then {
                 moveOut _unit;
-                ["STR_LL_Heli_Msg_Extract_Players_Exit_Warning"] remoteExec ["LL_fnc_radioMessage", _unit];
+                if (isPlayer _unit) then {
+                    ["STR_LL_Heli_Msg_Extract_Players_Exit_Warning"] remoteExec ["LL_fnc_radioMessage", _unit];
+                };
             };
         }];
     };
@@ -821,16 +830,17 @@ private _fnExecExtract = {
         private _allHumans     = allPlayers select { alive _x };
         private _playersInHeli = { isPlayer _x && { alive _x } } count (crew _heli);
 
-        if (_isTask02bExtract || _isTask00Extract) then {
+        if (_isTask02bExtract || _isTask00Extract || _isTask06Extract) then {
 
             private _hostage = objNull;
             if (_isTask02bExtract) then { _hostage = missionNamespace getVariable ["LL_Task02b_Hostage", objNull]; };
             if (_isTask00Extract) then { _hostage = missionNamespace getVariable ["LL_Task00_Hostage", objNull]; };
+            if (_isTask06Extract) then { _hostage = missionNamespace getVariable ["LL_Task06_HVT", objNull]; };
 
+            // Éjecter en boucle tout intrus non-HVT / non-équipage (sécurité supplémentaire)
             {
-                if (isPlayer _x && { alive _x }) then {
+                if (_x != _hostage && { group _x != group driver _heli }) then {
                     moveOut _x;
-                    ["STR_LL_Heli_Msg_Extract_Players_Exit_Warning"] remoteExec ["LL_fnc_radioMessage", _x];
                 };
             } forEach (crew _heli);
 
@@ -913,6 +923,7 @@ private _fnExecExtract = {
 
         private _hostage2b = missionNamespace getVariable ["LL_Task02b_Hostage", objNull];
         private _hostage00 = missionNamespace getVariable ["LL_Task00_Hostage", objNull];
+        private _hvt06     = missionNamespace getVariable ["LL_Task06_HVT", objNull];
         {
             private _h = _x;
             if (!isNull _h) then {
@@ -922,7 +933,7 @@ private _fnExecExtract = {
                     if (!isNull _unit) then { deleteVehicle _unit; };
                 };
             };
-        } forEach [_hostage2b, _hostage00];
+        } forEach [_hostage2b, _hostage00, _hvt06];
 
         false
     };

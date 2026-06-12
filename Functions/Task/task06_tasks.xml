@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keys>
+    <Key ID="STR_LL_Task_06_Action">
+        <Original>Capturer le HVT</Original>
+        <French>Capturer le HVT</French>
+        <English>Capture HVT</English>
+    </Key>
+    <Key ID="STR_LL_Task_06_ExtractAction">
+        <Original>Embarquer le HVT</Original>
+        <French>Embarquer le HVT</French>
+        <English>Board HVT</English>
+    </Key>
+    <Key ID="STR_LL_Task_06_Title">
+        <Original>Capture de HVT</Original>
+        <French>Capture de HVT</French>
+        <English>HVT Capture</English>
+    </Key>
+    <Key ID="STR_LL_Task_06_Desc">
+        <Original>Localisez le chef de guerre ennemi (HVT), éliminez sa garde, forcez-le à se rendre à votre approche, sécurisez-le et extrayez-le vivant par hélicoptère.</Original>
+        <French>Localisez le chef de guerre ennemi (HVT), éliminez sa garde, forcez-le à se rendre à votre approche, sécurisez-le et extrayez-le vivant par hélicoptère.</French>
+        <English>Locate the enemy warlord (HVT), eliminate his guard, force him to surrender upon approach, secure him and extract him alive by helicopter.</English>
+    </Key>
+    <Key ID="STR_LL_Task_06_Marker">
+        <Original>Zone suspecte HVT</Original>
+        <French>Zone suspecte HVT</French>
+        <English>Suspected HVT Zone</English>
+    </Key>
+    <Key ID="STR_LL_Task_06_MarkerMain">
+        <Original>Chef de guerre ennemi (HVT)</Original>
+        <French>Chef de guerre ennemi (HVT)</French>
+        <English>Enemy Warlord (HVT)</English>
+    </Key>
+</Keys>
