@@ -9,7 +9,6 @@ if (isNull _veh) exitWith {};
 
 if (!isServer) exitWith {};
 
-// Vider le vehicule
 clearWeaponCargoGlobal _veh;
 clearMagazineCargoGlobal _veh;
 clearItemCargoGlobal _veh;
@@ -44,7 +43,6 @@ for "_i" from 0 to 99 do {
     } forEach _weaponsToCheck;
 } forEach _units;
 
-// Ajouter au vehicule
 {
     private _weapon = _x;
     private _mag = _y;

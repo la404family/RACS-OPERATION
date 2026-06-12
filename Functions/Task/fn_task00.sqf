@@ -135,16 +135,14 @@ if (_mode == "free") exitWith {
     if ((_hostage getVariable ["LL_Task_Status", "WAIT"]) != "WAIT") exitWith {};
     _hostage setVariable ["LL_Task_Status", "ACTION", true];
 
-    // Sauvegarder la position et direction exactes pour verrouillage pendant l'animation
     private _hostageFixedPos = getPosASL _hostage;
     private _hostageFixedDir = getDir _hostage;
 
     _hostage setCaptive false;
-    // Activer uniquement ANIM — MOVE reste désactivé pour empêcher tout déplacement
+
     _hostage enableAI "ANIM";
     [_hostage, "Acts_ExecutionVictim_Unbow"] remoteExec ["switchMove", 0];
 
-    // Boucle de verrouillage position pendant toute la durée de l'animation (serveur local)
     [_hostage, _hostageFixedPos, _hostageFixedDir] spawn {
         params ["_h", "_pos", "_dir"];
         private _tStart = time;
@@ -157,12 +155,10 @@ if (_mode == "free") exitWith {
 
     sleep 8.5;
 
-    // Fin animation : repositionner précisément et effacer l'animation résiduelle
     _hostage setPosASL _hostageFixedPos;
     _hostage setDir _hostageFixedDir;
     [_hostage, ""] remoteExec ["switchMove", 0];
 
-    // Voix native immersive — dummy fantôme dans le groupe de l'otage
     private _hostageGrp = group _hostage;
     private _dummy = _hostageGrp createUnit ["I_G_Soldier_F", getPosASL _hostage, [], 0, "NONE"];
     _dummy hideObjectGlobal true;
@@ -173,10 +169,8 @@ if (_mode == "free") exitWith {
     sleep 3;
     deleteVehicle _dummy;
 
-    // Intégrer l'otage dans le groupe du caller AVANT d'activer son déplacement
     [_hostage] joinSilent (group _caller);
 
-    // Activer le comportement de suivi maintenant qu'il est dans le bon groupe
     { _hostage enableAI _x; } forEach ["MOVE", "AUTOTARGET", "TARGET"];
     _hostage setUnitPos "UP";
     _hostage setBehaviour "CARELESS";
@@ -184,7 +178,6 @@ if (_mode == "free") exitWith {
     _hostage setSkill ["courage", 1];
     _hostage allowFleeing 0;
 
-    // TOUS les OPFOR vivants sur la carte chargent vers le BLUFOR le plus proche (joueurs + IA alliées)
     private _allBlufor = allUnits select { side _x == west && alive _x };
     private _allOpfor  = allUnits select { side _x == east && alive _x && _x != _hostage };
     if (count _allOpfor > 0 && count _allBlufor > 0) then {

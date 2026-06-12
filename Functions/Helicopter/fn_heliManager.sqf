@@ -536,13 +536,12 @@ private _fnExecDeploy = {
                            "CUP_U_B_USMC_MCCUU_des"];
     private _cagoules   = ["CUP_G_Tan_Scarf_GPS","CUP_G_TK_RoundGlasses_blk","CUP_G_Oakleys_Drk",
                            "CUP_G_Scarf_Face_Tan","G_Aviator","CUP_G_ESS_KHK_Facewrap_Tan","G_Bandana_khk"];
-    // SP : toujours 2 renforts IA
-    // Joueurs morts en attente de seconde vie (MP uniquement)
+
     private _pendingDead = [];
     if (isMultiplayer && !isNil "LL_g_deadPlayers") then {
         _pendingDead = LL_g_deadPlayers select { !isNull _x && !alive _x };
     };
-    // Solo : escouade complète de 5 rôles (immersif)  MP : max(2, nb morts)
+
     private _availableTypes = [
         "CUP_I_RACS_Soldier_SL",
         "CUP_I_RACS_Soldier_Medic",
@@ -705,7 +704,6 @@ private _fnExecDeploy = {
 
     private _playerGroup = if (!isNull _caller) then { group _caller } else { grpNull };
 
-    // MP : assigner chaque joueur mort à une IA de renfort (selectPlayer)
     if (isMultiplayer && count _pendingDead > 0) then {
         {
             private _aiUnit = _x;
@@ -813,7 +811,7 @@ private _fnExecExtract = {
             private _h00 = missionNamespace getVariable ["LL_Task00_Hostage", objNull];
             private _h2b = missionNamespace getVariable ["LL_Task02b_Hostage", objNull];
             private _h06 = missionNamespace getVariable ["LL_Task06_HVT", objNull];
-            // Éjecter toute unité qui n'est pas l'otage/HVT ciblé et qui n'appartient pas à l'équipage de l'hélico (joueurs et I.A. amicales)
+
             if (_unit != _h00 && _unit != _h2b && _unit != _h06 && { group _unit != group driver _vehicle }) then {
                 moveOut _unit;
                 if (isPlayer _unit) then {
@@ -837,7 +835,6 @@ private _fnExecExtract = {
             if (_isTask00Extract) then { _hostage = missionNamespace getVariable ["LL_Task00_Hostage", objNull]; };
             if (_isTask06Extract) then { _hostage = missionNamespace getVariable ["LL_Task06_HVT", objNull]; };
 
-            // Éjecter en boucle tout intrus non-HVT / non-équipage (sécurité supplémentaire)
             {
                 if (_x != _hostage && { group _x != group driver _heli }) then {
                     moveOut _x;

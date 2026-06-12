@@ -9,7 +9,7 @@ if (_mode == "init") exitWith {
         missionNamespace setVariable ["LL_g_taskInProgress", false, true];
     };
 
-    private _targetNumChiefs = 2 + floor (random 3); // 2 à 4 chefs
+    private _targetNumChiefs = 2 + floor (random 3); 
     private _selectedLogics = [];
     private _logicsPool = _allLogics call BIS_fnc_arrayShuffle;
     private _alivePlayers = allPlayers select { alive _x };
@@ -39,7 +39,7 @@ if (_mode == "init") exitWith {
     missionNamespace setVariable ["LL_Task05_Killed", 0, true];
     missionNamespace setVariable ["LL_Task05_Total", _numChiefs, true];
     missionNamespace setVariable ["LL_Task05_AlertTriggered", false, true];
-    
+
     private _allUnits = [];
     private _chiefsData = [];
 
@@ -50,9 +50,8 @@ if (_mode == "init") exitWith {
 
         private _grp = createGroup [east, true];
         _grp setBehaviour "SAFE";
-        
-        // --- Spawn Gardes ---
-        private _numGuards = 3 + floor (random 3); // 3 à 5 gardes
+
+        private _numGuards = 3 + floor (random 3); 
         for "_g" from 1 to _numGuards do {
             sleep 0.7;
             private _guardClass = selectRandom ["CUP_O_TK_Soldier", "CUP_O_TK_Soldier_GL", "CUP_O_TK_Soldier_AR"];
@@ -63,7 +62,6 @@ if (_mode == "init") exitWith {
             _allUnits pushBack _guard;
         };
 
-        // --- Spawn Chef ---
         sleep 0.7;
         private _chiefClass = selectRandom ["CUP_O_TK_Commander", "CUP_O_TK_Officer"];
         private _chief = _grp createUnit [_chiefClass, _spawnPos, [], 0, "NONE"];
@@ -71,10 +69,9 @@ if (_mode == "init") exitWith {
         _chief allowDamage false;
         [_chief] spawn { sleep 3; (_this select 0) allowDamage true; };
         _allUnits pushBack _chief;
-        
+
         _grp selectLeader _chief;
 
-        // --- Marqueur ---
         private _mkrName = format ["mkr_task05_chief_%1", _i];
         createMarker [_mkrName, _spawnPos];
         _mkrName setMarkerType "o_hq";
@@ -83,11 +80,9 @@ if (_mode == "init") exitWith {
 
         _chiefsData pushBack [_chief, _grp, _mkrName];
 
-        // --- Event Handler ---
         _chief addEventHandler ["Killed", {
             params ["_unit", "_killer"];
-            
-            // Retirer le marqueur du mort
+
             private _mkr = _unit getVariable ["LL_Task05_Marker", ""];
             if (_mkr != "") then {
                 _mkr setMarkerColor "ColorBlack";
@@ -97,27 +92,23 @@ if (_mode == "init") exitWith {
 
             private _killed = (missionNamespace getVariable ["LL_Task05_Killed", 0]) + 1;
             missionNamespace setVariable ["LL_Task05_Killed", _killed, true];
-            
+
             private _total = missionNamespace getVariable ["LL_Task05_Total", 1];
 
-            // Alerte globale au premier mort
             if (_killed == 1 && _total > 1) then {
                 missionNamespace setVariable ["LL_Task05_AlertTriggered", true, true];
             };
 
-            // Vérification de victoire
             if (_killed >= _total) then {
                 ["task_05_hunt", "SUCCEEDED", true] call BIS_fnc_taskSetState;
                 missionNamespace setVariable ["LL_g_taskInProgress", false, true];
-                
-                // Dissolution après victoire
+
                 [] spawn {
                     sleep 10;
-                    // Nettoyage marqueurs
+
                     private _cTotal = missionNamespace getVariable ["LL_Task05_Total", 0];
                     for "_m" from 0 to (_cTotal - 1) do { deleteMarker format ["mkr_task05_chief_%1", _m]; };
 
-                    // Dissolution hors de vue
                     private _allU = missionNamespace getVariable ["LL_Task05_AllUnits", []];
                     private _guards = _allU select { alive _x };
                     if (count _guards > 0) then {
@@ -201,10 +192,9 @@ if (_mode == "init") exitWith {
 
     ["STR_LL_Task_Assigned"] remoteExec ["LL_fnc_radioMessage", 0];
 
-    // --- Boucle globale de gestion des chefs (Patrouille et Traque) ---
     [_chiefsData, _allLogics] spawn {
         params ["_chiefsData", "_logicsPool"];
-        
+
         private _alertSent = false;
 
         while { missionNamespace getVariable ["LL_g_taskInProgress", false] } do {
@@ -212,18 +202,18 @@ if (_mode == "init") exitWith {
 
             if (_isAlerted && !_alertSent) then {
                 _alertSent = true;
-                // Envoyer notification de traque
+
                 ["STR_LL_Task_05_Alert"] remoteExec ["LL_fnc_radioMessage", 0];
             };
 
             {
                 _x params ["_chief", "_grp", "_mkr"];
                 if (alive _chief) then {
-                    // Update Marker
+
                     _mkr setMarkerPos (getPos _chief);
-                    
+
                     if (_isAlerted) then {
-                        // Comportement de traque
+
                         _mkr setMarkerColor "ColorRed";
                         _grp setBehaviour "COMBAT";
                         _grp setSpeedMode "FULL";
@@ -239,7 +229,7 @@ if (_mode == "init") exitWith {
                                     _nearest = _x;
                                 };
                             } forEach _players;
-                            
+
                             if (!isNull _nearest) then {
                                 while { count waypoints _grp > 0 } do { deleteWaypoint [_grp, 0]; };
                                 private _wp = _grp addWaypoint [getPos _nearest, 0];
@@ -247,7 +237,7 @@ if (_mode == "init") exitWith {
                             };
                         };
                     } else {
-                        // Patrouille entre les M_Dans_Bat_
+
                         if (unitReady _chief || count waypoints _grp == 0) then {
                             private _nextLogic = selectRandom _logicsPool;
                             while { count waypoints _grp > 0 } do { deleteWaypoint [_grp, 0]; };
@@ -260,7 +250,6 @@ if (_mode == "init") exitWith {
                 };
             } forEach _chiefsData;
 
-            // Fréquence de mise à jour (5s si calme, 10s si traque pour laisser l'IA faire son chemin)
             if (_isAlerted) then { sleep 10; } else { sleep 5; };
         };
     };

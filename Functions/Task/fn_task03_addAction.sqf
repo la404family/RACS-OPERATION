@@ -8,9 +8,9 @@ _radio addAction [
         params ["_target", "_caller", "_actionId", "_arguments"];
         if (missionNamespace getVariable ["LL_Task03_Triggered_" + (_target call BIS_fnc_netId), false]) exitWith {};
         missionNamespace setVariable ["LL_Task03_Triggered_" + (_target call BIS_fnc_netId), true, true];
-        
+
         _target removeAction _actionId;
-        
+
         ["plant", [_target, _caller]] remoteExec ["LL_fnc_task03", 2];
     },
     nil,

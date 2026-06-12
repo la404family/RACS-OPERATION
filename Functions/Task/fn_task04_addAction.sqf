@@ -8,7 +8,7 @@ _truck addAction [
         params ["_target", "_caller", "_actionId"];
         if (_target getVariable ["LL_Task04_Triggered", false]) exitWith {};
         _target setVariable ["LL_Task04_Triggered", true, true];
-        
+
         removeAllActions _target;
         _caller playActionNow "PutDown";
 

@@ -52,7 +52,6 @@ private _fnc_addSearchAction = {
             [_buildings, _squadAI, _caller, _marker] spawn {
                 params ["_buildings", "_squadAI", "_leader", "_marker"];
 
-                // Mélanger les bâtiments et en assigner un unique par unité
                 private _buildingPool = _buildings call BIS_fnc_arrayShuffle;
 
                 private _searchStart = time;
@@ -61,17 +60,15 @@ private _fnc_addSearchAction = {
                     private _unit = _x;
                     if (!alive _unit) then {continue};
 
-                    // Chaque unité obtient son propre bâtiment dans le pool
                     private _assignedBuilding = if (count _buildingPool > 0) then {
                         private _b = _buildingPool select 0;
                         _buildingPool deleteAt 0;
                         _b
                     } else {
-                        // Fallback : reboucler sur les bâtiments si plus que d'unités
+
                         selectRandom _buildings
                     };
 
-                    // Choisir une position intérieure aléatoire dans le bâtiment assigné
                     private _bPosList = _assignedBuilding buildingPos -1;
                     private _targetPos = if (count _bPosList > 0) then {
                         selectRandom _bPosList
@@ -81,7 +78,6 @@ private _fnc_addSearchAction = {
 
                     _unit setVariable ["LL_IsSearching", true];
 
-                    // Comportement agressif : COMBAT, debout, à toute vitesse
                     _unit disableAI "AUTOCOMBAT";
                     _unit disableAI "SUPPRESSION";
                     _unit setUnitPos "UP";
@@ -109,14 +105,14 @@ private _fnc_addSearchAction = {
                             if (_dist < 2.5 || unitReady _unit) exitWith {
                                 doStop _unit;
                                 _unit setUnitPos "UP";
-                                // Surveiller activement 2-3 angles différents du bâtiment
+
                                 private _watchCount = 2 + floor random 2;
                                 for "_k" from 1 to _watchCount do {
                                     private _watchPos = _unit getRelPos [10 + random 15, (random 360)];
                                     _unit doWatch _watchPos;
                                     sleep (1.5 + random 2);
                                 };
-                                // Si d'autres positions dans le bâtiment, en fouiller une autre
+
                                 if (count _bPosList > 1) then {
                                     private _nextPos = selectRandom (_bPosList select { _x distance2D _targetPos > 3 });
                                     if (!isNil "_nextPos") then {

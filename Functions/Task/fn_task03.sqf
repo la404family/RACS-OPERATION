@@ -44,7 +44,7 @@ if (_mode == "init") exitWith {
     missionNamespace setVariable ["LL_Task03_AllUnits", [], true];
     missionNamespace setVariable ["LL_Task03_Destroyed", 0, true];
     missionNamespace setVariable ["LL_Task03_Total", _numRadios, true];
-    
+
     private _allUnits = [];
     private _radios = [];
 
@@ -124,54 +124,49 @@ if (_mode == "plant") exitWith {
     _radio setVariable ["LL_Task_Status", "ACTION", true];
 
     _caller playMove "AinvPknlMstpSnonWnonDnon_medic_1";
-    
-    // Alerte le joueur
+
     ["STR_LL_Task_03_Warning"] remoteExec ["LL_fnc_radioMessage", 0];
 
-    // Création de l'explosif visuel
     private _charge = createVehicle ["DemoCharge_F", getPosASL _radio, [], 0, "CAN_COLLIDE"];
     _charge attachTo [_radio, [0, 0, 0.2]]; 
     _charge setVectorUp [0, 0, 1];
 
     [_radio, _charge] spawn {
         params ["_radio", "_charge"];
-        
-        sleep 40; // Compte à rebours de 40s
-        
+
+        sleep 40; 
+
         if (!isNull _charge) then { deleteVehicle _charge; };
-        
+
         private _pos = getPos _radio;
         private _mkrName = _radio getVariable ["LL_Radio_Marker", ""];
-        
-        // Explosion
+
         "Bo_GBU12_LGB" createVehicle _pos;
-        
+
         if (!isNull _radio) then { deleteVehicle _radio; };
-        
+
         if (_mkrName != "") then {
             _mkrName setMarkerColor "ColorBlack";
             _mkrName setMarkerText (localize "STR_LL_Task_03_Marker_Destroyed");
         };
-        
+
         private _destroyed = (missionNamespace getVariable ["LL_Task03_Destroyed", 0]) + 1;
         missionNamespace setVariable ["LL_Task03_Destroyed", _destroyed, true];
         private _total = missionNamespace getVariable ["LL_Task03_Total", 1];
-        
+
         if (_destroyed >= _total) then {
             ["task_03_radio", "SUCCEEDED", true] call BIS_fnc_taskSetState;
             missionNamespace setVariable ["LL_g_taskInProgress", false, true];
-            
-            // Nettoyage des marqueurs après 10s
+
             [] spawn {
                 sleep 10;
                 private _radios = missionNamespace getVariable ["LL_Task03_Radios", []];
                 for "_i" from 0 to ((count _radios) - 1) do { deleteMarker format ["mkr_task03_zone_%1", _i]; };
             };
-            
-            // Dissolution hors de vue - TASK_RULES §14
+
             private _allUnits = missionNamespace getVariable ["LL_Task03_AllUnits", []];
             private _guards = _allUnits select { alive _x };
-            
+
             if (count _guards > 0) then {
                 private _dissolveGrp = createGroup [east, true];
                 {

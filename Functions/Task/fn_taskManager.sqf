@@ -22,7 +22,7 @@ if (_mode == "REQUEST") exitWith {
     _availableTasks pushBack "task04";
     _availableTasks pushBack "task05"; 
     _availableTasks pushBack "task06";
-    
+
     private _lastTask = missionNamespace getVariable ["LL_g_lastTask", ""];
 
     private _validTasks = _availableTasks;

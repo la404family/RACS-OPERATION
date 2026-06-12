@@ -32,7 +32,6 @@ if (_mode == "init") exitWith {
     private _spawnPos = getPosASL _selectedLogic;
     _spawnPos set [2, (_spawnPos select 2) + 0.2];
 
-    // --- Spawn Gardes (OPFOR) ---
     private _grpInner = createGroup [east, true];
     _grpInner setBehaviour "SAFE";
     _grpInner setCombatMode "RED";
@@ -53,11 +52,9 @@ if (_mode == "init") exitWith {
         _allUnits pushBack _guard;
     };
 
-    // Lancer les patrouilles avec BIS_fnc_taskPatrol (rapprochée à 30m et périmétrique à 90m)
     [_grpInner, _spawnPos, 30] call BIS_fnc_taskPatrol;
     [_grpOuter, _spawnPos, 90] call BIS_fnc_taskPatrol;
 
-    // --- Spawn HVT (dans le groupe intérieur) ---
     sleep 0.5;
     private _hvtClass = "CUP_O_TK_Commander";
     private _hvt = _grpInner createUnit [_hvtClass, _spawnPos, [], 0, "NONE"];
@@ -66,15 +63,13 @@ if (_mode == "init") exitWith {
     [_hvt] spawn { sleep 3; (_this select 0) allowDamage true; };
     _allUnits pushBack _hvt;
 
-    _hvt setCaptive true; // Protégé de l'IA amicale (ignorer les tirs)
-    _hvt disableAI "MOVE"; // Reste fixe dans le bâtiment
-    // On laisse ANIM activé pour qu'il garde sa posture de combat standard au fusil
+    _hvt setCaptive true; 
+    _hvt disableAI "MOVE"; 
 
     _hvt setVariable ["LL_Task_Status", "WAIT", true];
     missionNamespace setVariable ["LL_Task06_HVT", _hvt, true];
     missionNamespace setVariable ["LL_Task06_Triggered", false, true];
 
-    // --- Gestion de la Reddition à l'approche (5 mètres) ---
     [_hvt] spawn {
         params ["_hvt"];
         waitUntil {
@@ -84,9 +79,9 @@ if (_mode == "init") exitWith {
         };
 
         if (alive _hvt) then {
-            // Se rend : lâche son arme, se lève droit et lève les mains
+
             removeAllWeapons _hvt;
-            
+
             _hvt disableAI "MOVE";
             _hvt enableAI "ANIM";
             _hvt setUnitPos "UP";
@@ -94,19 +89,15 @@ if (_mode == "init") exitWith {
 
             _hvt setVariable ["LL_Task_Status", "READY_TO_CAPTURE", true];
 
-            // Transférer dans un groupe civil neutre
             private _civGrp = createGroup [civilian, true];
             [_hvt] joinSilent _civGrp;
 
-            // Diagnostic
             ["[SERVER] HVT s'est rendu. Envoi de l'action de capture aux clients..."] remoteExec ["systemChat", 0];
 
-            // Ajouter l'action de capture
             [_hvt] remoteExec ["LL_fnc_task06_addAction", 0, true];
         };
     };
 
-    // --- Gestion Mort du HVT ---
     _hvt addEventHandler ["Killed", {
         params ["_unit"];
         private _parent = attachedTo _unit;
@@ -128,7 +119,6 @@ if (_mode == "init") exitWith {
         deleteMarker "mkr_task06_zone";
     }];
 
-    // --- Création Marqueur et Tâche ---
     private _mkrName = "mkr_task06_zone";
     createMarker [_mkrName, _spawnPos getPos [random 40, random 360]];
     _mkrName setMarkerType "hd_unknown";
@@ -164,24 +154,19 @@ if (_mode == "escort") exitWith {
     if ((_hvt getVariable ["LL_Task_Status", ""]) != "READY_TO_CAPTURE") exitWith {};
     _hvt setVariable ["LL_Task_Status", "ESCORTED", true];
 
-    // Désactiver le déplacement autonome et l'orienter/l'attacher au joueur
     _hvt disableAI "MOVE";
     _hvt disableAI "FSM";
-    _hvt attachTo [_caller, [0.5, 0.4, 0]]; // Escorte flanc droit, légèrement en avant
+    _hvt attachTo [_caller, [0.5, 0.4, 0]]; 
     [_hvt, 0] remoteExec ["setDir", 0, true];
 
-    // Désactiver les collisions
     [_hvt, _caller] remoteExec ["disableCollisionWith", 0, true];
     [_caller, _hvt] remoteExec ["disableCollisionWith", 0, true];
 
-    // Forcer la marche sur le joueur
     [_caller, true] remoteExec ["forceWalk", _caller];
 
-    // Lancer la première initialisation de tâche et d'hélicoptère si non fait
     if !(missionNamespace getVariable ["LL_Task06_Triggered", false]) then {
         missionNamespace setVariable ["LL_Task06_Triggered", true, true];
 
-        // Voix native immersive
         private _hvtGrp = group _hvt;
         private _dummy = _hvtGrp createUnit ["I_G_Soldier_F", getPosASL _hvt, [], 0, "NONE"];
         _dummy hideObjectGlobal true;
@@ -191,13 +176,10 @@ if (_mode == "escort") exitWith {
         _dummy commandMove (getPos _hvt getPos [500, random 360]);
         [_dummy] spawn { sleep 3; deleteVehicle (_this select 0); };
 
-        // Lancer l'hélicoptère d'extraction
         ["EMBARQUEMENT", getPos _hvt, _caller, 3] spawn LL_fnc_heliDispatch;
 
-        // Supprimer le marqueur de recherche
         deleteMarker "mkr_task06_zone";
 
-        // --- Attacher l'action d'embarquement à l'hélicoptère ---
         [_hvt] spawn {
             params ["_hvt"];
             waitUntil {
@@ -218,10 +200,8 @@ if (_mode == "escort") exitWith {
 
                                 _target removeAction _actionId;
 
-                                // Arrêter le script d'escorte
                                 _hvt setVariable ["LL_Task_Status", "DONE", true];
-                                
-                                // Rétablir la collision et libérer le joueur
+
                                 private _parent = attachedTo _hvt;
                                 if (!isNull _parent) then {
                                     [_parent, false] remoteExec ["forceWalk", _parent];
@@ -230,7 +210,6 @@ if (_mode == "escort") exitWith {
                                 };
                                 detach _hvt;
 
-                                // Faire monter le prisonnier dans l'hélicoptère cargo
                                 [_hvt] joinSilent (group _target);
                                 _hvt assignAsCargo _target;
                                 [_hvt] orderGetIn true;
@@ -248,7 +227,6 @@ if (_mode == "escort") exitWith {
             };
         };
 
-        // --- Attendre que le HVT soit dans l'hélico (Réussite) ou meure (Échec) ---
         [_hvt] spawn {
             params ["_hvt"];
             waitUntil {
@@ -265,7 +243,6 @@ if (_mode == "escort") exitWith {
                 missionNamespace setVariable ["LL_g_taskInProgress", false, true];
             };
 
-            // --- Dissolution des gardes restants ---
             private _allUnits = missionNamespace getVariable ["LL_Task06_AllUnits", []];
             private _guards = _allUnits select { _x != _hvt && alive _x };
 
@@ -330,7 +307,6 @@ if (_mode == "escort") exitWith {
         };
     };
 
-    // --- Boucle de gestion des animations captives pendant l'escorte (serveur) ---
     if !(_hvt getVariable ["LL_Task06_LoopRunning", false]) then {
         _hvt setVariable ["LL_Task06_LoopRunning", true, true];
         [_hvt] spawn {
@@ -353,7 +329,7 @@ if (_mode == "escort") exitWith {
                             };
                         };
                     } else {
-                        // Escorteur mort ou déconnecté
+
                         detach _hvt;
                         _hvt setVariable ["LL_Task_Status", "READY_TO_CAPTURE", true];
                         [_hvt, "AmovPercMstpSsurWnonDnon"] remoteExec ["playMoveNow", 0];
@@ -372,16 +348,12 @@ if (_mode == "release") exitWith {
     if ((_hvt getVariable ["LL_Task_Status", ""]) != "ESCORTED") exitWith {};
     _hvt setVariable ["LL_Task_Status", "READY_TO_CAPTURE", true];
 
-    // Détacher
     detach _hvt;
 
-    // Rétablir la collision
     [_hvt, _caller] remoteExec ["enableCollisionWith", 0, true];
     [_caller, _hvt] remoteExec ["enableCollisionWith", 0, true];
 
-    // Libérer la vitesse du joueur
     [_caller, false] remoteExec ["forceWalk", _caller];
 
-    // Replacer le HVT en posture mains sur la tête
     [_hvt, "AmovPercMstpSsurWnonDnon"] remoteExec ["playMoveNow", 0];
 };

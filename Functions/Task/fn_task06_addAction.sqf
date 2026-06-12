@@ -3,10 +3,9 @@ if (!hasInterface) exitWith {};
 _this spawn {
     params [["_hvt", objNull, [objNull]]];
 
-    // Diagnostic et attente de réplication de l'objet HVT sur le client
     private _timeout = time + 10;
     waitUntil { !isNull _hvt || time > _timeout };
-    
+
     if (isNull _hvt) exitWith {
         systemChat "[CLIENT] ERREUR : Le HVT reçu par addAction est null (problème de réplication).";
     };
@@ -20,7 +19,6 @@ _this spawn {
     private _titleRelease = localize "STR_LL_Task_06_ReleaseAction";
     if (_titleRelease == "" || _titleRelease == "STR_LL_Task_06_ReleaseAction") then { _titleRelease = "Relâcher le HVT"; };
 
-    // Action : Escorter le HVT
     _hvt addAction [
         format ["<t color='#FFFF00'>%1</t>", _titleEscort],
         {
@@ -31,7 +29,6 @@ _this spawn {
         "alive _target && _this distance _target < 4 && (_target getVariable ['LL_Task_Status', '']) == 'READY_TO_CAPTURE'"
     ];
 
-    // Action : Relâcher le HVT
     _hvt addAction [
         format ["<t color='#FF8800'>%1</t>", _titleRelease],
         {
