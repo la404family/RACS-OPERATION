@@ -38,6 +38,15 @@ if (_hWeapon != "") then {
     };
 };
 
+private _sMag = "";
+if (_sWeapon != "") then {
+    private _m = secondaryWeaponMagazine _unit;
+    if (count _m > 0) then { _sMag = _m select 0; } else {
+        private _c2 = [_sWeapon] call BIS_fnc_compatibleMagazines;
+        if (count _c2 > 0) then { _sMag = _c2 select 0; };
+    };
+};
+
 private _pItems = primaryWeaponItems _unit;
 private _hItems = handgunItems _unit;
 
@@ -58,6 +67,7 @@ _unit addGoggles _c;
 
 if (_pMag != "") then { for "_i" from 1 to 5 do { _unit addMagazine _pMag; }; };
 if (_hMag != "") then { for "_i" from 1 to 3 do { _unit addMagazine _hMag; }; };
+if (_sMag != "") then { for "_i" from 1 to 2 do { _unit addMagazine _sMag; }; };
 
 for "_i" from 1 to 2 do { _unit addMagazine "HandGrenade"; };
 for "_i" from 1 to 2 do { _unit addMagazine "SmokeShell"; };

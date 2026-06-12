@@ -14,7 +14,7 @@ La racine de la mission respecte scrupuleusement les standards de développement
   - La bibliothèque de fonctions personnalisées `CfgFunctions` (préfixe `LL_fnc_`).
   - La bibliothèque des sons `CfgSounds` pour l'Ezan.
 
-- **`init.sqf`** : Exécuté partout et avant le lancement final. C'est ici que sont appelées les fonctions serveurs vitales (Météo et Ezan) encapsulées dans un `if (isServer)`. Ce choix d'architecture garantit un fonctionnement irréprochable en mode "Singleplayer" (Éditeur) et en multijoueur.
+- **`init.sqf`** : Exécuté partout et avant le lancement final. C'est ici que sont appelées les fonctions serveurs vitales (Météo, Ezan, gestion de l'inventaire du véhicule de départ) encapsulées dans un `if (isServer)`. Ce choix d'architecture garantit un fonctionnement irréprochable en mode "Singleplayer" (Éditeur) et en multijoueur.
 
 - **`initServer.sqf`** : Prévu pour les tâches purement dédiées au serveur multijoueur (IA, objectifs, triggers globaux). Actuellement vide suite au portage des fonctions environnementales vers l'`init.sqf` pour la compatibilité SP absolue.
 
@@ -55,7 +55,7 @@ Toutes les fonctions sont pré-compilées par le moteur Arma 3 au démarrage de 
     *   **Rôle :** Orchestrateur serveur. Collecte les unités joueurs (`player_00` à `player_99`), puis pour chacune tire au hasard (`selectRandom`) un uniforme, gilet, sac, casque et cagoule parmi les listes définies (voir `INFO.md`). Transmet le résultat au client propriétaire via `remoteExec` ou l'applique directement si l'unité est locale (mode SP).
     *   **Équipement randomisé :** Uniformes USMC désert (12 variantes), gilets JPC Coyote (9 variantes), casques OpsCore (6 variantes), sacs à dos (3 variantes), cagoules/lunettes (10 variantes).
 *   **`fn_applyLoadout.sqf` (`LL_fnc_applyLoadout`)**
-    *   **Rôle :** Exécuté localement sur le client propriétaire de l'unité. Procède à un strip total de l'unité (`removeAllWeapons`, `removeAllItems`, `removeAllAssignedItems`, suppression de chaque conteneur) puis reconstruit tout de zéro : conteneurs → magazines (5 primaires, 3 pistolet) → grenades M67 (×2) → fumigènes blancs (×2) → soins (×3) → armes avec accessoires → jumelles CUP_LRTV → NVG → items assignés (carte, boussole, montre, radio).
+    *   **Rôle :** Exécuté localement sur le client propriétaire de l'unité. Procède à un strip total de l'unité (`removeAllWeapons`, `removeAllItems`, `removeAllAssignedItems`, suppression de chaque conteneur) puis reconstruit tout de zéro : conteneurs → magazines (5 primaires, 3 pistolet, 2 lanceur si équipé) → grenades M67 (×2) → fumigènes blancs (×2) → soins (×3) → armes avec accessoires → jumelles CUP_LRTV → NVG → items assignés (carte, boussole, montre, radio).
     *   **Mécanisme clé :** Les armes et accessoires sont lus localement (`primaryWeapon`, `primaryWeaponItems`) *avant* le strip, puis ré-appliqués après la mise en place des conteneurs, garantissant que les magazines disposent d'un espace d'inventaire réel.
 *   **`fn_initLocal.sqf` (`LL_fnc_initLocal`)**
     *   **Rôle :** Exécuté par le client (`initPlayerLocal.sqf`). Initialise le Briefing (Diary) et attend la réception de l'identité envoyée par le serveur avant de l'appliquer localement.
@@ -77,6 +77,11 @@ Toutes les fonctions sont pré-compilées par le moteur Arma 3 au démarrage de 
 *   **`fn_setupUVO.sqf` (`LL_fnc_setupUVO`)**
     *   **Rôle :** Exécuté dynamiquement à la création d'une unité. Assure la compatibilité totale et automatique avec le mod audio *Unit Voice-Overs (UVO)* s'il est activé.
     *   **Fonctionnement :** Force la langue des joueurs RACS en Anglais, et la langue des ennemis/civils (OPFOR/Civil) aléatoirement en Arabe ou en Perse. Bloque les systèmes de détection automatique du mod pour éviter les conflits d'assignation.
+
+### Véhicules (`Functions\Vehicle\`)
+*   **`fn_initVehicleLoadout.sqf` (`LL_fnc_initVehicleLoadout`)**
+    *   **Rôle :** Exécuté par le serveur au démarrage (`init.sqf`).
+    *   **Fonctionnement :** Vide l'inventaire par défaut du véhicule de l'équipe (`vehicule_team`). Scanne toutes les unités actives (`player_00` à `player_99`) pour répertorier leurs armes principales et secondaires (lanceurs/bazookas). Remplit ensuite dynamiquement le véhicule avec **2 exemplaires** de chaque arme unique trouvée, **2 chargeurs/roquettes** par arme, ainsi que du matériel médical (6 FirstAidKit), grenades (4) et fumigènes (4).
 
 ### Civils (`Functions\Civilian\`)
 *   **`fn_initCivilians.sqf` (`LL_fnc_initCivilians`)**

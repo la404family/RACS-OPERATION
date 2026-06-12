@@ -71,21 +71,3 @@ Always consult and cite these sources when providing answers:
 | CBA_A3 Framework | https://github.com/CBATeam/CBA_A3/wiki |
 
 ---
-
-### Supported Languages
-
-| Tag | Language |
-|---|---|
-| `<English>` | English |
-| `<French>` | French |
-| `<Turkish>` | Turkish |
-| `<Korean>` | Korean |
-|`<Spanish>` | Spanish |
-|`<Japanese>` | Japanese |
-|`<Chinese>` | Chinese |
-|`<Russian>` | Russian |
-|`<German>` | German |
-|`<Italian>` | Italian |
-|`<Polish>` | Polish |
-
-```

@@ -99,6 +99,10 @@ class CfgFunctions {
             class initBriefing {};
             class initContext {};
         };
+        class Vehicle {
+            file = "Functions\Vehicle";
+            class initVehicleLoadout {};
+        };
     };
 };
 

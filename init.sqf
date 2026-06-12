@@ -11,4 +11,5 @@ if (isServer) then {
     [] spawn LL_fnc_spawnPresence;
 
     [] spawn LL_fnc_assignLeader;
+    [] spawn LL_fnc_initVehicleLoadout;
 };
