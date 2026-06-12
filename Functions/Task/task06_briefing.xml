@@ -4,10 +4,28 @@
         <Original>OPORD : Capture de HVT</Original>
         <French>OPORD : Capture de HVT</French>
         <English>OPORD: HVT Capture</English>
+        <Turkish>OPORD: HVT Yakalama</Turkish>
+        <Korean>OPORD: HVT 포획</Korean>
+        <Spanish>OPORD: Captura de HVT</Spanish>
+        <Japanese>OPORD: HVTの捕獲</Japanese>
+        <Chinese>OPORD：抓捕HVT</Chinese>
+        <Russian>OPORD: Захват HVT</Russian>
+        <German>OPORD: HVT-Gefangennahme</German>
+        <Italian>OPORD: Cattura di HVT</Italian>
+        <Polish>OPORD: Pojmanie HVT</Polish>
     </Key>
     <Key ID="STR_LL_Diary_Task06_Text">
         <Original>Un officier ennemi clé a été repéré dans un bâtiment du secteur. Infiltrez la zone, neutralisez sa garde rapprochée, capturez le suspect vivant et extrayez-le par hélicoptère.</Original>
         <French>Un officier ennemi clé a été repéré dans un bâtiment du secteur. Infiltrez la zone, neutralisez sa garde rapprochée, capturez le suspect vivant et extrayez-le par hélicoptère.</French>
         <English>A key enemy officer has been spotted in a building in the sector. Infiltrate the area, neutralize his close protection, capture the suspect alive and extract him by helicopter.</English>
+        <Turkish>Bölgedeki bir binada önemli bir düşman subayı tespit edildi. Bölgeye sızın, yakın korumasını etkisiz hale getirin, şüpheliyi canlı olarak yakalayın ve helikopterle tahliye edin.</Turkish>
+        <Korean>핵심 적 장교가 해당 구역의 한 건물에서 목격되었습니다. 지역에 침투하여 근접 경호를 무력화하고, 용의자를 생포하여 헬리콥터로 구출하십시오.</Korean>
+        <Spanish>Un oficial enemigo clave ha sido localizado en un edificio del sector. Infíltrese en la zona, neutralice a su escolta, capture al sospechoso con vida y extráigalo en helicóptero.</Spanish>
+        <Japanese>セクター内の建物で重要な敵将校が発見されました。エリアに潜入し、近接護衛を無力化し、容疑者を生け捕りにしてヘリコプターで回収してください。</Japanese>
+        <Chinese>该区域的一栋建筑物内发现了一名关键的敌方军官。潜入该地区，消除他的近身保护，活捉嫌疑人，并通过直升机将其撤离。</Chinese>
+        <Russian>В одном из зданий сектора замечен ключевой офицер противника. Проникните в этот район, нейтрализуйте его личную охрану, захватите подозреваемого живым и эвакуируйте его на вертолете.</Russian>
+        <German>Ein wichtiger feindlicher Offizier wurde in einem Gebäude des Sektors gesichtet. Infiltrieren Sie das Gebiet, schalten Sie seinen Personenschutz aus, nehmen Sie den Verdächtigen lebend gefangen und evakuieren Sie ihn per Hubschrauber.</German>
+        <Italian>Un ufficiale nemico chiave è stato avvistato in un edificio del settore. Infiltrati nell'area, neutralizza la sua scorta, cattura il sospetto vivo ed estrailo in elicottero.</Italian>
+        <Polish>Kluczowy oficer wroga został zauważony w budynku w tym sektorze. Zinfiltruj obszar, zneutralizuj jego ochronę, schwytaj podejrzanego żywego i ewakuuj go helikopterem.</Polish>
     </Key>
 </Keys>

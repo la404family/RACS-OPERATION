@@ -99,6 +99,7 @@ class CfgFunctions {
             class task05 {};
             class task06 {};
             class task06_addAction {};
+            class intro {};
             class addTaskAction {};
         };
         class Briefing {
@@ -123,4 +124,11 @@ class CfgSounds {
     };
     
     #include "CfgSounds.hpp"
+};
+
+class CfgMusic {
+    class Music_Intro {
+        name = "Music Intro";
+        sound[] = {"music\intro.ogg", 1.0, 1.0};
+    };
 };

@@ -2135,6 +2135,31 @@ Ağ doluysa istekleriniz reddedilebilir veya kesintiye uğrayabilir.&lt;br/&gt;&
         </Key>
     </Package>
     <Package name="Task">
+        <Key ID="STR_LL_Intro_Author">
+            <Original>KDC - The Legend</Original>
+            <French>KDC - The Legend</French>
+            <English>KDC - The Legend</English>
+        </Key>
+        <Key ID="STR_LL_Intro_Presents">
+            <Original>presents</Original>
+            <French>présente</French>
+            <English>presents</English>
+        </Key>
+        <Key ID="STR_LL_Intro_Title">
+            <Original>OPERATION RACS</Original>
+            <French>OPÉRATION RACS</French>
+            <English>OPERATION RACS</English>
+        </Key>
+        <Key ID="STR_LL_Intro_Location">
+            <Original>ZARGABAD, SHAHRANI REGION</Original>
+            <French>ZARGABAD, RÉGION DE SHAHRANI</French>
+            <English>ZARGABAD, SHAHRANI REGION</English>
+        </Key>
+        <Key ID="STR_LL_Intro_MissionStartSubtitle">
+            <Original>Initial deployment of the RACS contingent...</Original>
+            <French>Déploiement initial du contingent RACS...</French>
+            <English>Initial deployment of the RACS contingent...</English>
+        </Key>
         <Key ID="STR_LL_Diary_Task00_Title">
             <Original>OPORD : Exfiltration d'otage</Original>
             <French>OPORD : Exfiltration d'otage</French>
@@ -2917,41 +2942,113 @@ OSTRZEŻENIE: Jeśli odkryją, że jeden z nich został zabity, pozostali dowód
             <Original>OPORD : Capture de HVT</Original>
             <French>OPORD : Capture de HVT</French>
             <English>OPORD: HVT Capture</English>
+            <Turkish>OPORD: HVT Yakalama</Turkish>
+            <Korean>OPORD: HVT 포획</Korean>
+            <Spanish>OPORD: Captura de HVT</Spanish>
+            <Japanese>OPORD: HVTの捕獲</Japanese>
+            <Chinese>OPORD：抓捕HVT</Chinese>
+            <Russian>OPORD: Захват HVT</Russian>
+            <German>OPORD: HVT-Gefangennahme</German>
+            <Italian>OPORD: Cattura di HVT</Italian>
+            <Polish>OPORD: Pojmanie HVT</Polish>
         </Key>
         <Key ID="STR_LL_Diary_Task06_Text">
             <Original>Un officier ennemi clé a été repéré dans un bâtiment du secteur. Infiltrez la zone, neutralisez sa garde rapprochée, capturez le suspect vivant et extrayez-le par hélicoptère.</Original>
             <French>Un officier ennemi clé a été repéré dans un bâtiment du secteur. Infiltrez la zone, neutralisez sa garde rapprochée, capturez le suspect vivant et extrayez-le par hélicoptère.</French>
             <English>A key enemy officer has been spotted in a building in the sector. Infiltrate the area, neutralize his close protection, capture the suspect alive and extract him by helicopter.</English>
+            <Turkish>Bölgedeki bir binada önemli bir düşman subayı tespit edildi. Bölgeye sızın, yakın korumasını etkisiz hale getirin, şüpheliyi canlı olarak yakalayın ve helikopterle tahliye edin.</Turkish>
+            <Korean>핵심 적 장교가 해당 구역의 한 건물에서 목격되었습니다. 지역에 침투하여 근접 경호를 무력화하고, 용의자를 생포하여 헬리콥터로 구출하십시오.</Korean>
+            <Spanish>Un oficial enemigo clave ha sido localizado en un edificio del sector. Infíltrese en la zona, neutralice a su escolta, capture al sospechoso con vida y extráigalo en helicóptero.</Spanish>
+            <Japanese>セクター内の建物で重要な敵将校が発見されました。エリアに潜入し、近接護衛を無力化し、容疑者を生け捕りにしてヘリコプターで回収してください。</Japanese>
+            <Chinese>该区域的一栋建筑物内发现了一名关键的敌方军官。潜入该地区，消除他的近身保护，活捉嫌疑人，并通过直升机将其撤离。</Chinese>
+            <Russian>В одном из зданий сектора замечен ключевой офицер противника. Проникните в этот район, нейтрализуйте его личную охрану, захватите подозреваемого живым и эвакуируйте его на вертолете.</Russian>
+            <German>Ein wichtiger feindlicher Offizier wurde in einem Gebäude des Sektors gesichtet. Infiltrieren Sie das Gebiet, schalten Sie seinen Personenschutz aus, nehmen Sie den Verdächtigen lebend gefangen und evakuieren Sie ihn per Hubschrauber.</German>
+            <Italian>Un ufficiale nemico chiave è stato avvistato in un edificio del settore. Infiltrati nell'area, neutralizza la sua scorta, cattura il sospetto vivo ed estrailo in elicottero.</Italian>
+            <Polish>Kluczowy oficer wroga został zauważony w budynku w tym sektorze. Zinfiltruj obszar, zneutralizuj jego ochronę, schwytaj podejrzanego żywego i ewakuuj go helikopterem.</Polish>
         </Key>
         <Key ID="STR_LL_Task_06_Action">
             <Original>Capturer le HVT</Original>
             <French>Capturer le HVT</French>
             <English>Capture HVT</English>
+            <Turkish>HVT'yi Yakala</Turkish>
+            <Korean>HVT 포획</Korean>
+            <Spanish>Capturar HVT</Spanish>
+            <Japanese>HVTの捕獲</Japanese>
+            <Chinese>抓捕HVT</Chinese>
+            <Russian>Захватить HVT</Russian>
+            <German>HVT gefangen nehmen</German>
+            <Italian>Cattura HVT</Italian>
+            <Polish>Pojmij HVT</Polish>
         </Key>
         <Key ID="STR_LL_Task_06_ExtractAction">
             <Original>Embarquer le HVT</Original>
             <French>Embarquer le HVT</French>
             <English>Board HVT</English>
+            <Turkish>HVT'yi Bindir</Turkish>
+            <Korean>HVT 탑승</Korean>
+            <Spanish>Embarcar HVT</Spanish>
+            <Japanese>HVTの搭乗</Japanese>
+            <Chinese>押送HVT登机</Chinese>
+            <Russian>Посадить HVT</Russian>
+            <German>HVT an Bord bringen</German>
+            <Italian>Imbarca HVT</Italian>
+            <Polish>Umieść HVT na pokładzie</Polish>
         </Key>
         <Key ID="STR_LL_Task_06_Title">
             <Original>Capture de HVT</Original>
             <French>Capture de HVT</French>
             <English>HVT Capture</English>
+            <Turkish>HVT Yakalama</Turkish>
+            <Korean>HVT 포획</Korean>
+            <Spanish>Captura de HVT</Spanish>
+            <Japanese>HVTの捕獲</Japanese>
+            <Chinese>抓捕HVT</Chinese>
+            <Russian>Захват HVT</Russian>
+            <German>HVT-Gefangennahme</German>
+            <Italian>Cattura di HVT</Italian>
+            <Polish>Pojmanie HVT</Polish>
         </Key>
         <Key ID="STR_LL_Task_06_Desc">
             <Original>Localisez le chef de guerre ennemi (HVT), éliminez sa garde, forcez-le à se rendre à votre approche, sécurisez-le et extrayez-le vivant par hélicoptère.</Original>
             <French>Localisez le chef de guerre ennemi (HVT), éliminez sa garde, forcez-le à se rendre à votre approche, sécurisez-le et extrayez-le vivant par hélicoptère.</French>
             <English>Locate the enemy warlord (HVT), eliminate his guard, force him to surrender upon approach, secure him and extract him alive by helicopter.</English>
+            <Turkish>Düşman savaş ağasının (HVT) yerini tespit edin, korumalarını ortadan kaldırın, yaklaştığınızda teslim olmaya zorlayın, onu güvence altına alın ve helikopterle canlı olarak tahliye edin.</Turkish>
+            <Korean>적 군벌(HVT)의 위치를 파악하고, 경호원을 제거하며, 접근 시 항복하도록 강제한 후 확보하여 헬리콥터로 생포 구출하십시오.</Korean>
+            <Spanish>Localice al señor de la guerra enemigo (HVT), elimine a su guardia, obligue a que se rinda al acercarse, asegúrelo y extráigalo con vida en helicóptero.</Spanish>
+            <Japanese>敵の将軍(HVT)を特定し、護衛を排除し、接近時に降伏を強要し、身柄を確保してヘリコプターで生け捕りにしたまま回収してください。</Japanese>
+            <Chinese>找到敌方军阀（HVT）的位置，消灭他的守卫，在靠近时迫使他投降，将他控制住并通过直升机活着撤离。</Chinese>
+            <Russian>Найдите вражеского полевого командира (HVT), устраните его охрану, заставьте его сдаться при приближении, обеспечьте его безопасность и эвакуируйте живым на вертолете.</Russian>
+            <German>Lokalisieren Sie den feindlichen Kriegsherrn (HVT), eliminieren Sie seine Wache, zwingen Sie ihn bei Annäherung zur Aufgabe, sichern Sie ihn und evakuieren Sie ihn lebend per Hubschrauber.</German>
+            <Italian>Individua il signore della guerra nemico (HVT), elimina la sua guardia, costringilo ad arrendersi al tuo avvicinamento, mettilo in sicurezza ed estrailo vivo in elicottero.</Italian>
+            <Polish>Zlokalizuj wrogiego watażkę (HVT), wyeliminuj jego straż, zmuś go do poddania się po zbliżeniu, zabezpiecz go i ewakuuj żywego helikopterem.</Polish>
         </Key>
         <Key ID="STR_LL_Task_06_Marker">
             <Original>Zone suspecte HVT</Original>
             <French>Zone suspecte HVT</French>
             <English>Suspected HVT Zone</English>
+            <Turkish>Şüpheli HVT Bölgesi</Turkish>
+            <Korean>의심되는 HVT 구역</Korean>
+            <Spanish>Zona sospechosa de HVT</Spanish>
+            <Japanese>HVT疑いのある区域</Japanese>
+            <Chinese>疑似HVT区域</Chinese>
+            <Russian>Предполагаемая зона HVT</Russian>
+            <German>Verdächtige HVT-Zone</German>
+            <Italian>Zona sospetta HVT</Italian>
+            <Polish>Podejrzana strefa HVT</Polish>
         </Key>
         <Key ID="STR_LL_Task_06_MarkerMain">
             <Original>Chef de guerre ennemi (HVT)</Original>
             <French>Chef de guerre ennemi (HVT)</French>
             <English>Enemy Warlord (HVT)</English>
+            <Turkish>Düşman Savaş Ağası (HVT)</Turkish>
+            <Korean>적 군벌(HVT)</Korean>
+            <Spanish>Señor de la guerra enemigo (HVT)</Spanish>
+            <Japanese>敵の将軍(HVT)</Japanese>
+            <Chinese>敌方军阀（HVT）</Chinese>
+            <Russian>Вражеский полевой командир (HVT)</Russian>
+            <German>Feindlicher Kriegsherr (HVT)</German>
+            <Italian>Signore della guerra nemico (HVT)</Italian>
+            <Polish>Wrogi watażka (HVT)</Polish>
         </Key>
         <Key ID="STR_LL_Action_RequestTask">
             <Original>Demander votre tâche</Original>

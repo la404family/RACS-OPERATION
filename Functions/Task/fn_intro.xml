@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keys>
+    <Key ID="STR_LL_Intro_Author">
+        <Original>KDC - The Legend</Original>
+        <French>KDC - The Legend</French>
+        <English>KDC - The Legend</English>
+    </Key>
+    <Key ID="STR_LL_Intro_Presents">
+        <Original>presents</Original>
+        <French>présente</French>
+        <English>presents</English>
+    </Key>
+    <Key ID="STR_LL_Intro_Title">
+        <Original>OPERATION RACS</Original>
+        <French>OPÉRATION RACS</French>
+        <English>OPERATION RACS</English>
+    </Key>
+    <Key ID="STR_LL_Intro_Location">
+        <Original>ZARGABAD, SHAHRANI REGION</Original>
+        <French>ZARGABAD, RÉGION DE SHAHRANI</French>
+        <English>ZARGABAD, SHAHRANI REGION</English>
+    </Key>
+    <Key ID="STR_LL_Intro_MissionStartSubtitle">
+        <Original>Initial deployment of the RACS contingent...</Original>
+        <French>Déploiement initial du contingent RACS...</French>
+        <English>Initial deployment of the RACS contingent...</English>
+    </Key>
+</Keys>
