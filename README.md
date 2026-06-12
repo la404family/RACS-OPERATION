@@ -177,11 +177,11 @@ Le système hélicoptère repose sur un **unique UH-60L** (`CUP_I_UH60L_FFV_RACS
 *   **`fn_task03_addAction.sqf`**
     *   **Rôle :** Client uniquement. Ajoute l'`addAction` jaune "Poser un explosif (40s)" sur les terminaux (distance < 4m). Déclenche un sous-titre `fn_radioMessage` ("Ecartez-vous !"), et lance la séquence de pose côté serveur.
 *   **`fn_task04.sqf` (`LL_fnc_task04`)**
-    *   **Rôle :** Tâche 04 — Capture d'Informateur (HVT).
-    *   **Mode `init` (serveur) :** Sélectionne une zone `M_Dans_Bat_XXX` (> 250m). Spawne un informateur désarmé et captif dans un groupe civil, protégé par un groupe de 6 à 9 gardes OPFOR en patrouille. L'informateur reste figé jusqu'à ce qu'un joueur s'approche à **moins de 5 mètres**, déclenchant alors son animation de reddition fluide (`playMoveNow`). Un **marqueur GPS précis** suit ses mouvements en temps réel sur la carte. Assigne la tâche et déclenche l'`addAction`. En cas de mort prématurée, la tâche échoue, le marqueur disparaît et les gardes fuient.
-    *   **Mode `capture` (serveur) :** Lancé par l'action "Menotter et Capturer". L'informateur stoppe son animation, rejoint le groupe du joueur et reste captif (pour ne pas être abattu par les alliés). **Déclenche une traque globale : tous les ennemis convergent vers la position du joueur.** Un hélicoptère d'extraction (Priorité 3) est automatiquement appelé. Valide `SUCCEEDED` si l'informateur embarque vivant, `FAILED` s'il meurt en cours d'escorte.
+    *   **Rôle :** Tâche 04 — Interception d'un Convoi Chimique.
+    *   **Mode `init` (serveur) :** Sélectionne un héliport à > 250m. Spawne un camion-citerne aléatoire bloqué (moteur HS) et une escorte d'infanterie en patrouille. Un système de dégâts dynamique crée une fuite de gaz toxique verte si le camion est touché. Si le camion explose, une énorme éruption de fumée se produit, les gardes fuient (dissolution) et la tâche est en ECHEC.
+    *   **Mode `extract` (serveur) :** Lancé par le joueur via l'action du camion. Fait spawner un hélicoptère allié (UH-60L) qui s'approche de façon cinématique, descend à 35m d'altitude et treuille (Slingload) le camion. La tâche est validée en REUSSITE une fois le camion soulevé.
 *   **`fn_task04_addAction.sqf`**
-    *   **Rôle :** Client uniquement. Ajoute l'`addAction` jaune "Menotter et Capturer" sur l'informateur (distance < 4m). Envoie l'ordre de capture au serveur et joue l'animation `PutDown` sur le client.
+    *   **Rôle :** Client uniquement. Ajoute l'`addAction` jaune "Demander l'extraction du camion (Treuillage)" sur le camion (distance < 15m). Envoie l'ordre au serveur.
 *   **`fn_task05.sqf` (`LL_fnc_task05`)**
     *   **Rôle :** Tâche 05 — Traque des chefs de milice.
     *   **Mode `init` (serveur) :** Scanne les `M_Dans_Bat_XXX`, tire 2 à 4 chefs et leur donne une escorte de 3 à 5 gardes. Chaque groupe patrouille aléatoirement entre les bâtiments. Un marqueur dynamique suit chaque chef en temps réel.

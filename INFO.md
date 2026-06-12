@@ -10,6 +10,7 @@
 - template_01 ... template_XX sont des personnages dans l'éditeur qui servent de gabarit de personnage pour des missions ou des civils...
 - ezan_00 à ezan_XX sont des Loudspeaker dans le jeu qui produise l'appel a la prière.
 - Heliport_00 à Heliport_XX sont des heliports invisible
+- le camion ennemi est : Le camion sera tiré au sort parmi : CUP_O_V3S_Refuel_TKA, CUP_O_Ural_Refuel_TKA et CUP_I_T810_Refuel_LDF.
 - La variable du drone est : CUP_B_USMC_DYN_MQ9
 - vehicule_team est le véhicule des joueurs en début de mission. (nom de classe du véhicule : CUP_B_Mastiff_HMG_GB_D - Mastiff PPV HMG Desert)
 - l'hélicoptère allié est un UH-60L (CUP_I_UH60L_FFV_RACS)

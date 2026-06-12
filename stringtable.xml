@@ -2583,6 +2583,200 @@ Ağ doluysa istekleriniz reddedilebilir veya kesintiye uğrayabilir.&lt;br/&gt;&
             <Italian>Indietro!</Italian>
             <Polish>Cofnij się!</Polish>
         </Key>
+        <Key ID="STR_LL_Diary_Task04_Title">
+            <Original>OPORD : Convoi Chimique</Original>
+            <French>OPORD : Convoi Chimique</French>
+            <English>OPORD: Chemical Convoy</English>
+            <Spanish>OPORD: Convoy Químico</Spanish>
+            <Italian>OPORD: Convoglio Chimico</Italian>
+            <German>OPORD: Chemiekonvoi</German>
+            <Portuguese>OPORD: Comboio Químico</Portuguese>
+            <Polish>OPORD: Konwój Chemiczny</Polish>
+            <Russian>OPORD: Химический конвой</Russian>
+            <Czech>OPORD: Chemický konvoj</Czech>
+            <Turkish>OPORD: Kimyasal Konvoy</Turkish>
+            <Korean>작전 명령: 화학 수송대</Korean>
+            <Japanese>作戦命令: 化学コンボイ</Japanese>
+            <Chinese>作战命令：化学车队</Chinese>
+        </Key>
+        <Key ID="STR_LL_Diary_Task04_Text">
+            <Original>&lt;font size='16' color='#ff8800'&gt;SITUATION :&lt;/font&gt;&lt;br/&gt;
+Un camion contenant des agents chimiques toxiques est actuellement immobilisé dans la région. L'ennemi a mis en place un périmètre de défense composé d'unités d'infanterie.&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff8800'&gt;MISSION :&lt;/font&gt;&lt;br/&gt;
+1. Éliminez l'escorte à pied.&lt;br/&gt;
+2. Protégez le camion à tout prix. Ne tirez pas dessus avec des armes lourdes ou explosives. Toute fuite provoquera un nuage toxique.&lt;br/&gt;
+3. Utilisez l'ordinateur de bord du camion pour appeler l'extraction par hélicoptère (Slingload).&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff0000'&gt;RÈGLES D'ENGAGEMENT :&lt;/font&gt;&lt;br/&gt;
+Interdiction absolue d'utiliser des explosifs près du véhicule cible.</Original>
+            <French>&lt;font size='16' color='#ff8800'&gt;SITUATION :&lt;/font&gt;&lt;br/&gt;
+Un camion contenant des agents chimiques toxiques est actuellement immobilisé dans la région. L'ennemi a mis en place un périmètre de défense composé d'unités d'infanterie.&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff8800'&gt;MISSION :&lt;/font&gt;&lt;br/&gt;
+1. Éliminez l'escorte à pied.&lt;br/&gt;
+2. Protégez le camion à tout prix. Ne tirez pas dessus avec des armes lourdes ou explosives. Toute fuite provoquera un nuage toxique.&lt;br/&gt;
+3. Utilisez l'ordinateur de bord du camion pour appeler l'extraction par hélicoptère (Slingload).&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff0000'&gt;RÈGLES D'ENGAGEMENT :&lt;/font&gt;&lt;br/&gt;
+Interdiction absolue d'utiliser des explosifs près du véhicule cible.</French>
+            <English>&lt;font size='16' color='#ff8800'&gt;SITUATION:&lt;/font&gt;&lt;br/&gt;
+A truck containing toxic chemical agents is currently immobilized in the region. The enemy has set up a defensive perimeter consisting of infantry units.&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff8800'&gt;MISSION:&lt;/font&gt;&lt;br/&gt;
+1. Eliminate the foot escort.&lt;br/&gt;
+2. Protect the truck at all costs. Do not fire upon it with heavy weapons or explosives. Any leak will cause a toxic cloud.&lt;br/&gt;
+3. Use the truck's onboard computer to call in the helicopter extraction (Slingload).&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff0000'&gt;RULES OF ENGAGEMENT:&lt;/font&gt;&lt;br/&gt;
+Strictly forbidden to use explosives near the target vehicle.</English>
+            <Spanish>&lt;font size='16' color='#ff8800'&gt;SITUACIÓN:&lt;/font&gt;&lt;br/&gt;
+Un camión con agentes químicos tóxicos está inmovilizado en la zona. El enemigo ha establecido un perímetro defensivo de infantería.&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff8800'&gt;MISIÓN:&lt;/font&gt;&lt;br/&gt;
+1. Elimina la escolta.&lt;br/&gt;
+2. Protege el camión a toda costa. No utilices armas pesadas ni explosivos contra él. Cualquier fuga generará una nube tóxica.&lt;br/&gt;
+3. Usa la radio del camión para pedir la extracción en helicóptero (Eslingado).&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff0000'&gt;REGLAS DE ENFRENTAMIENTO:&lt;/font&gt;&lt;br/&gt;
+Prohibido el uso de explosivos cerca del vehículo objetivo.</Spanish>
+            <Italian>&lt;font size='16' color='#ff8800'&gt;SITUAZIONE:&lt;/font&gt;&lt;br/&gt;
+Un camion contenente agenti chimici tossici è attualmente bloccato nella regione. Il nemico ha stabilito un perimetro difensivo composto da fanteria.&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff8800'&gt;MISSIONE:&lt;/font&gt;&lt;br/&gt;
+1. Elimina la scorta.&lt;br/&gt;
+2. Proteggi il camion a tutti i costi. Non sparare con armi pesanti o esplosivi. Qualsiasi perdita provocherà una nube tossica.&lt;br/&gt;
+3. Utilizza la radio del camion per chiamare l'estrazione in elicottero.&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff0000'&gt;REGOLE D'INGAGGIO:&lt;/font&gt;&lt;br/&gt;
+Assolutamente vietato utilizzare esplosivi vicino al bersaglio.</Italian>
+            <German>&lt;font size='16' color='#ff8800'&gt;LAGE:&lt;/font&gt;&lt;br/&gt;
+Ein LKW mit giftigen chemischen Kampfstoffen ist in der Region liegen geblieben. Der Feind hat einen Verteidigungsparameter mit Infanterie eingerichtet.&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff8800'&gt;AUFTRAG:&lt;/font&gt;&lt;br/&gt;
+1. Schalten Sie die Eskorte aus.&lt;br/&gt;
+2. Schützen Sie den LKW um jeden Preis. Verwenden Sie keine schweren Waffen oder Sprengstoff in seiner Nähe. Jedes Leck führt zu einer giftigen Wolke.&lt;br/&gt;
+3. Benutzen Sie das Funkgerät des LKWs, um die Hubschrauberevakuierung anzufordern.&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff0000'&gt;EINSATZREGELN:&lt;/font&gt;&lt;br/&gt;
+Absolutes Sprengstoffverbot in der Nähe des Zielfahrzeugs.</German>
+            <Portuguese>&lt;font size='16' color='#ff8800'&gt;SITUAÇÃO:&lt;/font&gt;&lt;br/&gt;
+Um caminhão contendo agentes químicos tóxicos está imobilizado na região. O inimigo montou um perímetro defensivo de infantaria.&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff8800'&gt;MISSÃO:&lt;/font&gt;&lt;br/&gt;
+1. Elimine a escolta.&lt;br/&gt;
+2. Proteja o caminhão a todo custo. Não atire nele com armas pesadas ou explosivos. Qualquer vazamento causará uma nuvem tóxica.&lt;br/&gt;
+3. Use o rádio do caminhão para chamar a extração de helicóptero.&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff0000'&gt;REGRAS DE ENGAJAMENTO:&lt;/font&gt;&lt;br/&gt;
+Proibido o uso de explosivos perto do alvo.</Portuguese>
+            <Polish>&lt;font size='16' color='#ff8800'&gt;SYTUACJA:&lt;/font&gt;&lt;br/&gt;
+Ciężarówka z toksycznymi środkami chemicznymi jest obecnie unieruchomiona w regionie. Wróg ustawił perymetr obronny złożony z piechoty.&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff8800'&gt;ZADANIE:&lt;/font&gt;&lt;br/&gt;
+1. Zlikwiduj eskortę.&lt;br/&gt;
+2. Chroń ciężarówkę za wszelką cenę. Nie strzelaj do niej z broni ciężkiej ani materiałów wybuchowych. Każdy wyciek spowoduje toksyczną chmurę.&lt;br/&gt;
+3. Użyj radia w ciężarówce, aby wezwać helikopter ewakuacyjny.&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff0000'&gt;ZASADY UŻYCIA BRONI:&lt;/font&gt;&lt;br/&gt;
+Całkowity zakaz używania materiałów wybuchowych w pobliżu celu.</Polish>
+            <Russian>&lt;font size='16' color='#ff8800'&gt;ОБСТАНОВКА:&lt;/font&gt;&lt;br/&gt;
+Грузовик с токсичными химическими веществами обездвижен в этом районе. Противник создал оборонительный периметр из пехоты.&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff8800'&gt;ЗАДАЧА:&lt;/font&gt;&lt;br/&gt;
+1. Уничтожить конвой.&lt;br/&gt;
+2. Защитить грузовик любой ценой. Не стреляйте по нему из тяжелого оружия и не используйте взрывчатку. Любая утечка вызовет токсичное облако.&lt;br/&gt;
+3. Используйте бортовой компьютер грузовика для вызова эвакуационного вертолета.&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff0000'&gt;ПРАВИЛА ПРИМЕНЕНИЯ ОРУЖИЯ:&lt;/font&gt;&lt;br/&gt;
+Строго запрещено использовать взрывчатку вблизи целевого автомобиля.</Russian>
+            <Czech>&lt;font size='16' color='#ff8800'&gt;SITUACE:&lt;/font&gt;&lt;br/&gt;
+Náklaďák obsahující toxické chemické látky je momentálně v oblasti imobilizován. Nepřítel vytvořil obranný perimetr skládající se z pěchoty.&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff8800'&gt;ÚKOL:&lt;/font&gt;&lt;br/&gt;
+1. Zlikvidujte eskortu.&lt;br/&gt;
+2. Chraňte náklaďák za každou cenu. Nestřílejte na něj těžkými zbraněmi ani výbušninami. Jakýkoli únik způsobí toxický mrak.&lt;br/&gt;
+3. Pomocí palubního počítače náklaďáku zavolejte extrakční vrtulník.&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff0000'&gt;PRAVIDLA NASAZENÍ:&lt;/font&gt;&lt;br/&gt;
+Přísný zákaz používání výbušnin v blízkosti cílového vozidla.</Czech>
+            <Turkish>&lt;font size='16' color='#ff8800'&gt;DURUM:&lt;/font&gt;&lt;br/&gt;
+Zehirli kimyasal maddeler içeren bir kamyon şu anda bölgede hareketsiz durumda. Düşman, piyade birliklerinden oluşan bir savunma çemberi oluşturdu.&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff8800'&gt;GÖREV:&lt;/font&gt;&lt;br/&gt;
+1. Yaya eskortunu ortadan kaldırın.&lt;br/&gt;
+2. Kamyonu ne pahasına olursa olsun koruyun. Üzerine ağır silahlarla veya patlayıcılarla ateş etmeyin. Herhangi bir sızıntı zehirli bir buluta neden olacaktır.&lt;br/&gt;
+3. Helikopter tahliyesi istemek için kamyonun telsizini kullanın.&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff0000'&gt;ÇATIŞMA KURALLARI:&lt;/font&gt;&lt;br/&gt;
+Hedef aracın yakınında patlayıcı kullanmak kesinlikle yasaktır.</Turkish>
+            <Korean>&lt;font size='16' color='#ff8800'&gt;상황:&lt;/font&gt;&lt;br/&gt;
+독성 화학 물질을 실은 트럭이 현재 해당 지역에 고립되어 있습니다. 적은 보병 부대로 방어선을 구축했습니다.&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff8800'&gt;임무:&lt;/font&gt;&lt;br/&gt;
+1. 보병 호위대를 제거하십시오.&lt;br/&gt;
+2. 트럭을 무조건 보호하십시오. 중화기나 폭발물로 사격하지 마십시오. 유출 시 독성 구름이 발생합니다.&lt;br/&gt;
+3. 트럭의 무전기를 사용하여 헬리콥터 탈출을 요청하십시오.&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff0000'&gt;교전 수칙:&lt;/font&gt;&lt;br/&gt;
+목표 차량 근처에서 폭발물 사용은 절대 금지됩니다.</Korean>
+            <Japanese>&lt;font size='16' color='#ff8800'&gt;状況:&lt;/font&gt;&lt;br/&gt;
+有毒な化学物質を積んだトラックが現在この地域で立ち往生している。敵は歩兵部隊による防衛線を張っている。&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff8800'&gt;任務:&lt;/font&gt;&lt;br/&gt;
+1. 徒歩の護衛を排除しろ。&lt;br/&gt;
+2. 何としてもトラックを保護しろ。重火器や爆発物で攻撃するな。漏洩すれば有毒な雲が発生する。&lt;br/&gt;
+3. トラックの無線機を使ってヘリコプターの抽出を要請しろ。&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff0000'&gt;交戦規定:&lt;/font&gt;&lt;br/&gt;
+目標車両付近での爆発物の使用は厳格に禁止する。</Japanese>
+            <Chinese>&lt;font size='16' color='#ff8800'&gt;情况：&lt;/font&gt;&lt;br/&gt;
+一辆装有有毒化学物质的卡车目前被困在该地区。敌人已经建立了一个由步兵组成的防御圈。&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff8800'&gt;任务：&lt;/font&gt;&lt;br/&gt;
+1. 消灭步兵护卫。&lt;br/&gt;
+2. 不惜一切代价保护卡车。不要使用重武器或爆炸物向其射击。任何泄漏都会导致毒云。&lt;br/&gt;
+3. 使用卡车上的无线电呼叫直升机撤离。&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16' color='#ff0000'&gt;交战规则：&lt;/font&gt;&lt;br/&gt;
+严禁在目标车辆附近使用爆炸物。</Chinese>
+        </Key>
+        <Key ID="STR_LL_Task_04_Title">
+            <Original>Interception de Convoi Chimique</Original>
+            <French>Interception de Convoi Chimique</French>
+            <English>Chemical Convoy Interception</English>
+            <Spanish>Intercepción de Convoy Químico</Spanish>
+            <Italian>Intercettazione di Convoglio Chimico</Italian>
+            <German>Abfangen eines Chemiekonvois</German>
+            <Portuguese>Interceção de Comboio Químico</Portuguese>
+            <Polish>Przechwycenie Konwoju Chemicznego</Polish>
+            <Russian>Перехват химического конвоя</Russian>
+            <Czech>Zadržení chemického konvoje</Czech>
+            <Turkish>Kimyasal Konvoy Önlemesi</Turkish>
+            <Korean>화학물질 수송대 요격</Korean>
+            <Japanese>化学物質コンボイの迎撃</Japanese>
+            <Chinese>化学运输车队拦截</Chinese>
+        </Key>
+        <Key ID="STR_LL_Task_04_Desc">
+            <Original>Un camion-citerne ennemi transportant des produits chimiques hautement toxiques a été repéré et bloqué suite à un incident mécanique. L'ennemi a déployé une escorte d'infanterie pour le protéger en attendant des renforts.&lt;br/&gt;&lt;br/&gt;Sécurisez la zone autour du camion. &lt;font color='#ff0000'&gt;ATTENTION : NE DÉTRUISEZ SURTOUT PAS LE CAMION.&lt;/font&gt; Toute explosion libérera un nuage chimique mortel. Une fois la zone sécurisée, demandez l'extraction par hélicoptère pour rapatrier le véhicule.</Original>
+            <French>Un camion-citerne ennemi transportant des produits chimiques hautement toxiques a été repéré et bloqué suite à un incident mécanique. L'ennemi a déployé une escorte d'infanterie pour le protéger en attendant des renforts.&lt;br/&gt;&lt;br/&gt;Sécurisez la zone autour du camion. &lt;font color='#ff0000'&gt;ATTENTION : NE DÉTRUISEZ SURTOUT PAS LE CAMION.&lt;/font&gt; Toute explosion libérera un nuage chimique mortel. Une fois la zone sécurisée, demandez l'extraction par hélicoptère pour rapatrier le véhicule.</French>
+            <English>An enemy tanker truck carrying highly toxic chemicals has been spotted and blocked following a mechanical incident. The enemy has deployed an infantry escort to protect it while awaiting reinforcements.&lt;br/&gt;&lt;br/&gt;Secure the area around the truck. &lt;font color='#ff0000'&gt;WARNING: DO NOT DESTROY THE TRUCK.&lt;/font&gt; Any explosion will release a deadly chemical cloud. Once the area is secure, request a helicopter extraction to recover the vehicle.</English>
+            <Spanish>Un camión cisterna enemigo que transporta productos químicos altamente tóxicos ha sido localizado y bloqueado tras un incidente mecánico. El enemigo ha desplegado una escolta de infantería para protegerlo mientras espera refuerzos.&lt;br/&gt;&lt;br/&gt;Asegura la zona alrededor del camión. &lt;font color='#ff0000'&gt;ATENCIÓN: NO DESTRUYAS EL CAMIÓN.&lt;/font&gt; Cualquier explosión liberará una nube química letal. Una vez asegurada la zona, solicita extracción en helicóptero para recuperar el vehículo.</Spanish>
+            <Italian>Un'autobotte nemica che trasporta sostanze chimiche altamente tossiche è stata individuata e bloccata a seguito di un guasto meccanico. Il nemico ha schierato una scorta di fanteria per proteggerla in attesa di rinforzi.&lt;br/&gt;&lt;br/&gt;Metti in sicurezza l'area attorno al camion. &lt;font color='#ff0000'&gt;ATTENZIONE: NON DISTRUGGERE IL CAMION.&lt;/font&gt; Qualsiasi esplosione rilascerà una nube chimica mortale. Una volta messa in sicurezza l'area, richiedi l'estrazione in elicottero per recuperare il veicolo.</Italian>
+            <German>Ein feindlicher Tankwagen, der hochgiftige Chemikalien transportiert, wurde nach einem mechanischen Zwischenfall entdeckt und blockiert. Der Feind hat eine Infanterie-Eskorte eingesetzt, um ihn bis zum Eintreffen von Verstärkung zu schützen.&lt;br/&gt;&lt;br/&gt;Sichern Sie das Gebiet um den LKW. &lt;font color='#ff0000'&gt;ACHTUNG: ZERSTÖREN SIE DEN LKW NICHT.&lt;/font&gt; Jede Explosion wird eine tödliche chemische Wolke freisetzen. Sobald das Gebiet gesichert ist, fordern Sie eine Hubschrauberevakuierung an, um das Fahrzeug zu bergen.</German>
+            <Portuguese>Um caminhão-cisterna inimigo transportando produtos químicos altamente tóxicos foi localizado e bloqueado após um incidente mecânico. O inimigo mobilizou uma escolta de infantaria para protegê-lo enquanto aguarda reforços.&lt;br/&gt;&lt;br/&gt;Proteja a área ao redor do caminhão. &lt;font color='#ff0000'&gt;AVISO: NÃO DESTRUA O CAMINHÃO.&lt;/font&gt; Qualquer explosão liberará uma nuvem química mortal. Assim que a área estiver segura, solicite uma extração de helicóptero para recuperar o veículo.</Portuguese>
+            <Polish>Wrogi cysterna przewożąca wysoce toksyczne chemikalia została zauważona i unieruchomiona z powodu awarii mechanicznej. Wróg rozmieścił eskortę piechoty, aby jej strzec w oczekiwaniu na posiłki.&lt;br/&gt;&lt;br/&gt;Zabezpiecz teren wokół ciężarówki. &lt;font color='#ff0000'&gt;UWAGA: NIE NISZCZ CIĘŻARÓWKI.&lt;/font&gt; Każda eksplozja uwolni zabójczą chmurę chemiczną. Po zabezpieczeniu terenu wezwij helikopter do ewakuacji pojazdu.</Polish>
+            <Russian>Вражеская автоцистерна с высокотоксичными химикатами была обнаружена и заблокирована в результате механической поломки. В ожидании подкрепления противник выставил пехотное охранение.&lt;br/&gt;&lt;br/&gt;Обезопасьте территорию вокруг грузовика. &lt;font color='#ff0000'&gt;ВНИМАНИЕ: НЕ УНИЧТОЖАЙТЕ ГРУЗОВИК.&lt;/font&gt; Любой взрыв приведет к выбросу смертельно опасного химического облака. Как только зона будет зачищена, запросите эвакуацию на вертолете, чтобы забрать машину.</Russian>
+            <Czech>Nepřátelská cisterna převážející vysoce toxické chemikálie byla zpozorována a zablokována v důsledku mechanické závady. Nepřítel nasadil pěchotní eskortu, aby ji chránila, zatímco čeká na posily.&lt;br/&gt;&lt;br/&gt;Zajistěte oblast kolem náklaďáku. &lt;font color='#ff0000'&gt;VAROVÁNÍ: NENIČTE NÁKLAĎÁK.&lt;/font&gt; Jakákoli exploze uvolní smrtící chemický oblak. Jakmile bude oblast bezpečná, požádejte o extrakci vrtulníkem pro odvoz vozidla.</Czech>
+            <Turkish>Yüksek derecede zehirli kimyasallar taşıyan bir düşman tankeri, mekanik bir arızanın ardından tespit edildi ve bloke edildi. Düşman, takviye beklerken onu korumak için bir piyade eskortu konuşlandırdı.&lt;br/&gt;&lt;br/&gt;Kamyonun etrafındaki alanı güvene alın. &lt;font color='#ff0000'&gt;DİKKAT: KAMYONU KESİNLİKLE YOK ETMEYİN.&lt;/font&gt; Herhangi bir patlama ölümcül bir kimyasal bulut salacaktır. Alan güvene alındıktan sonra aracı kurtarmak için helikopter tahliyesi isteyin.</Turkish>
+            <Korean>맹독성 화학물질을 실은 적의 유조차량(탱크로리)이 기계적 결함으로 정지된 상태로 발견되었습니다. 적은 증원군을 기다리는 동안 차량을 보호하기 위해 보병 호위를 배치했습니다.&lt;br/&gt;&lt;br/&gt;트럭 주변 지역을 확보하십시오. &lt;font color='#ff0000'&gt;경고: 트럭을 절대 파괴하지 마십시오.&lt;/font&gt; 폭발 시 치명적인 화학 구름이 방출됩니다. 지역이 안전해지면 차량을 회수하기 위해 헬리콥터 탈출을 요청하십시오.</Korean>
+            <Japanese>猛毒の化学物質を積んだ敵のタンクローリーが、機械的トラブルにより立ち往生しているのが発見された。敵は増援を待つ間、車両を保護するために歩兵の護衛を配置している。&lt;br/&gt;&lt;br/&gt;トラック周辺を制圧しろ。&lt;font color='#ff0000'&gt;警告：絶対にトラックを破壊するな。&lt;/font&gt;爆発すれば致命的な化学物質の雲が放出される。周囲の安全が確保されたら、車両回収のためにヘリによる抽出を要請しろ。</Japanese>
+            <Chinese>一辆装载着剧毒化学品的敌方油罐车因机械故障被发现并困在原地。敌方已部署步兵护卫进行保护，并等待增援。&lt;br/&gt;&lt;br/&gt;确保卡车周围区域的安全。&lt;font color='#ff0000'&gt;警告：绝对不能摧毁卡车。&lt;/font&gt;任何爆炸都会释放致命的化学毒云。一旦区域安全，请请求直升机撤离以回收车辆。</Chinese>
+        </Key>
+        <Key ID="STR_LL_Task_04_MarkerMain">
+            <Original>Camion Chimique</Original>
+            <French>Camion Chimique</French>
+            <English>Chemical Truck</English>
+            <Spanish>Camión Químico</Spanish>
+            <Italian>Camion Chimico</Italian>
+            <German>Chemie-LKW</German>
+            <Portuguese>Caminhão Químico</Portuguese>
+            <Polish>Ciężarówka Chemiczna</Polish>
+            <Russian>Химический грузовик</Russian>
+            <Czech>Chemický náklaďák</Czech>
+            <Turkish>Kimyasal Kamyon</Turkish>
+            <Korean>화학 트럭</Korean>
+            <Japanese>化学トラック</Japanese>
+            <Chinese>化学卡车</Chinese>
+        </Key>
+        <Key ID="STR_LL_Task_04_Action">
+            <Original>Demander l'extraction du camion (Treuillage)</Original>
+            <French>Demander l'extraction du camion (Treuillage)</French>
+            <English>Request truck extraction (Slingload)</English>
+            <Spanish>Solicitar extracción del camión (Eslingado)</Spanish>
+            <Italian>Richiedi estrazione camion (Trazione)</Italian>
+            <German>LKW-Evakuierung anfordern (Slingload)</German>
+            <Portuguese>Solicitar extração do caminhão (Slingload)</Portuguese>
+            <Polish>Wezwij ewakuację ciężarówki (Podwieszenie)</Polish>
+            <Russian>Запросить эвакуацию грузовика (на подвесе)</Russian>
+            <Czech>Požádat o vyzvednutí náklaďáku (Podvěs)</Czech>
+            <Turkish>Kamyon tahliyesi iste (Askı yükü)</Turkish>
+            <Korean>트럭 탈출 요청 (슬링로드)</Korean>
+            <Japanese>トラックの抽出を要請（スリングロード）</Japanese>
+            <Chinese>请求卡车撤离（吊挂）</Chinese>
+        </Key>
         <Key ID="STR_LL_Diary_Task05_Title">
             <Original>OPORD: Opération Décapitation</Original>
             <French>OPORD: Opération Décapitation</French>
