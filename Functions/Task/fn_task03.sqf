@@ -3,13 +3,19 @@ params [["_mode", "init", [""]], ["_args", [], [[]]]];
 if (!isServer) exitWith {};
 
 if (_mode == "init") exitWith {
-    private _allHeliports = (allMissionObjects "Logic") select { (vehicleVarName _x) select [0, 9] == "Heliport_" };
+    private _allHeliports = [];
+    {
+        if ((_x select [0, 9]) == "Heliport_") then {
+            private _obj = missionNamespace getVariable [_x, objNull];
+            if (!isNull _obj) then { _allHeliports pushBack _obj; };
+        };
+    } forEach (allVariables missionNamespace);
     if (count _allHeliports < 1) exitWith {
         if (missionNamespace getVariable ["DEBUG_MODE", true]) then { diag_log "[LL] task03 ERROR: Pas de Heliport_ trouvé."; };
         missionNamespace setVariable ["LL_g_taskInProgress", false, true];
     };
 
-    private _targetNumRadios = 1 + floor (random 4); 
+    private _targetNumRadios = 2 + floor (random 3); 
     private _selectedRadios = [];
     private _logicsPool = _allHeliports call BIS_fnc_arrayShuffle;
     private _alivePlayers = allPlayers select { alive _x };

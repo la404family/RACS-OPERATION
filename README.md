@@ -172,10 +172,20 @@ Le système hélicoptère repose sur un **unique UH-60L** (`CUP_I_UH60L_FFV_RACS
     *   **Rôle :** Client uniquement. Reçoit l'IED et ajoute l'`addAction` jaune "Désamorcer l'IED" (distance < 4m). Envoie `["defuse", [_bomb, _caller]]` au serveur. Joue l'animation de désamorçage sur le client et déclenche un effet fumigène.
 *   **`fn_task03.sqf` (`LL_fnc_task03`)**
     *   **Rôle :** Tâche 03 — Sabotage de matériel de communication.
-    *   **Mode `init` (serveur) :** Scanne les `Heliport_` invisibles, en sélectionne 1 à 4 (distance > 250m) et spawne un terminal radio renforcé par zone. Protégé par 4 à 8 gardes en patrouille locale agressive. Assigne la tâche de destruction et déclenche les `addAction`.
+    *   **Mode `init` (serveur) :** Scanne les `Heliport_` invisibles, en sélectionne 2 à 4 (distance > 250m) et spawne un terminal radio renforcé par zone. Protégé par 4 à 8 gardes en patrouille locale agressive. Assigne la tâche de destruction et déclenche les `addAction`.
     *   **Mode `plant` (serveur) :** Lancé par l'action du joueur. Attache un explosif virtuel (`DemoCharge_F`) sur le terminal, lance un compte à rebours de 40 secondes, détruit le relais, valide `SUCCEEDED` si tous les terminaux sont détruits, puis ordonne aux gardes survivants de battre en retraite vers le point de dissolution.
 *   **`fn_task03_addAction.sqf`**
     *   **Rôle :** Client uniquement. Ajoute l'`addAction` jaune "Poser un explosif (40s)" sur les terminaux (distance < 4m). Déclenche un sous-titre `fn_radioMessage` ("Ecartez-vous !"), et lance la séquence de pose côté serveur.
+*   **`fn_task04.sqf` (`LL_fnc_task04`)**
+    *   **Rôle :** Tâche 04 — Capture d'Informateur (HVT).
+    *   **Mode `init` (serveur) :** Sélectionne une zone `M_Dans_Bat_XXX` (> 250m). Spawne un informateur désarmé et captif dans un groupe civil, protégé par un groupe de 6 à 9 gardes OPFOR en patrouille. L'informateur reste figé jusqu'à ce qu'un joueur s'approche à **moins de 5 mètres**, déclenchant alors son animation de reddition fluide (`playMoveNow`). Un **marqueur GPS précis** suit ses mouvements en temps réel sur la carte. Assigne la tâche et déclenche l'`addAction`. En cas de mort prématurée, la tâche échoue, le marqueur disparaît et les gardes fuient.
+    *   **Mode `capture` (serveur) :** Lancé par l'action "Menotter et Capturer". L'informateur stoppe son animation, rejoint le groupe du joueur et reste captif (pour ne pas être abattu par les alliés). **Déclenche une traque globale : tous les ennemis convergent vers la position du joueur.** Un hélicoptère d'extraction (Priorité 3) est automatiquement appelé. Valide `SUCCEEDED` si l'informateur embarque vivant, `FAILED` s'il meurt en cours d'escorte.
+*   **`fn_task04_addAction.sqf`**
+    *   **Rôle :** Client uniquement. Ajoute l'`addAction` jaune "Menotter et Capturer" sur l'informateur (distance < 4m). Envoie l'ordre de capture au serveur et joue l'animation `PutDown` sur le client.
+*   **`fn_task05.sqf` (`LL_fnc_task05`)**
+    *   **Rôle :** Tâche 05 — Traque des chefs de milice.
+    *   **Mode `init` (serveur) :** Scanne les `M_Dans_Bat_XXX`, tire 2 à 4 chefs et leur donne une escorte de 3 à 5 gardes. Chaque groupe patrouille aléatoirement entre les bâtiments. Un marqueur dynamique suit chaque chef en temps réel.
+    *   **Événement (serveur) :** Dès qu'un chef est tué, une alerte globale retentit. Tous les autres chefs cessent leur patrouille et convergent agressivement vers les joueurs (waypoint SAD) en mode combat. Valide `SUCCEEDED` quand tous sont morts.
 
 ---
 

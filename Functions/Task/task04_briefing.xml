@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="Arma3">
+  <Package name="Task04_Briefing">
+    <Container name="Task04_Briefing">
+      <Key ID="STR_LL_Diary_Task04_Title">
+        <English>OPORD: Capture Informant</English>
+        <French>OPORD: Capture Informateur</French>
+        <German>OPORD: Informant fangen</German>
+        <Italian>OPORD: Cattura Informatore</Italian>
+        <Spanish>OPORD: Capturar Informante</Spanish>
+        <Czech>OPORD: Zajmout Informátora</Czech>
+        <Polish>OPORD: Pojmać Informatora</Polish>
+        <Russian>OPORD: Захватить Информатора</Russian>
+        <Turkish>OPORD: Muhbiri Yakala</Turkish>
+        <Japanese>OPORD: 情報提供者捕獲</Japanese>
+        <Chinese>OPORD: 捕获线人</Chinese>
+      </Key>
+      <Key ID="STR_LL_Diary_Task04_Text">
+        <English>HQ has located a High Value Target (HVT) willing to cooperate. Approach him to trigger surrender, handcuff him, and escort him to the extraction point. Enemy forces will attempt to kill him.</English>
+        <French>Le QG a localisé un informateur HVT prêt à coopérer. Approchez-vous pour qu'il se rende, menottez-le et escortez-le jusqu'au point d'extraction. Les forces ennemies tenteront de l'éliminer.</French>
+        <German>Das HQ hat einen informanten gefunden. Nähern Sie sich ihm, legen Sie ihm Handschellen an und bringen Sie ihn zur Extraktion.</German>
+        <Italian>HQ ha localizzato un informatore. Avvicinati, ammanettalo e portalo all'estrazione. I nemici cercheranno di ucciderlo.</Italian>
+        <Spanish>El cuartel general ha localizado un informante. Acércate, espósalo y llévalo a la extracción.</Spanish>
+        <Czech>Velitelství lokalizovalo informátora. Přibližte se k němu, spoutejte ho a odveďte k extrakci.</Czech>
+        <Polish>Dowództwo zlokalizowało informatora. Podejdź, zakuj go i odstaw do ewakuacji.</Polish>
+        <Russian>Штаб обнаружил информатора. Подойдите к нему, наденьте наручники и эвакуируйте.</Russian>
+        <Turkish>Karargah bir muhbir buldu. Yaklaş, kelepçele ve tahliye noktasına götür.</Turkish>
+        <Japanese>HQが情報提供者を特定しました。接近して手錠をかけ、脱出地点まで護衛してください。</Japanese>
+        <Chinese>指挥部已定位线人。靠近他，戴上手铐并护送至撤离点。</Chinese>
+      </Key>
+    </Container>
+  </Package>
+</Project>

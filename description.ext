@@ -94,6 +94,9 @@ class CfgFunctions {
             class task02_addAction {};
             class task03 {};
             class task03_addAction {};
+            class task04 {};
+            class task04_addAction {};
+            class task05 {};
             class addTaskAction {};
         };
         class Briefing {
@@ -113,7 +116,7 @@ class CfgSounds {
     sounds[] = {};
     class ezan {
         name = "Appel a la priere (Ezan)";
-        sound[] = {"sounds\ezan.ogg", 2, 1, 2500}; // Assurez-vous d'avoir le fichier dans un dossier "sounds"
+        sound[] = {"music\ezan.ogg", 2, 1, 2500}; 
         titles[] = {};
     };
     

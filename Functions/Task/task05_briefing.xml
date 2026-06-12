@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keys>
+    <Key ID="STR_LL_Diary_Task05_Title">
+        <Original>OPORD: Opération Décapitation</Original>
+        <French>OPORD: Opération Décapitation</French>
+        <English>OPORD: Operation Decapitation</English>
+        <Turkish>OPORD: Başkesme Operasyonu</Turkish>
+        <Korean>작전 명령: 참수 작전</Korean>
+        <Spanish>OPORD: Operación Decapitación</Spanish>
+        <Japanese>作戦命令: ディキャピテーション作戦</Japanese>
+        <Chinese>作战命令：斩首行动</Chinese>
+        <Russian>Боевой приказ: Операция Обезглавливание</Russian>
+        <German>OPORD: Operation Enthauptung</German>
+        <Italian>OPORD: Operazione Decapitazione</Italian>
+        <Polish>OPORD: Operacja Dekapitacja</Polish>
+    </Key>
+    <Key ID="STR_LL_Diary_Task05_Text">
+        <Original>Les forces rebelles ont dépêché plusieurs commandants sur le terrain pour superviser l'occupation des bâtiments clés. Votre ordre de mission est d'éliminer chaque chef de milice présent dans la zone. Ces cibles sont mobiles et se déplacent d'un complexe à l'autre avec leurs escortes armées.
+
+ATTENTION : S'ils découvrent l'un des leurs abattu, la coordination des commandants restants s'enclenchera et ils passeront à l'offensive pour vous traquer activement. Préparez-vous à une contre-attaque violente après le premier coup de feu.</Original>
+        <French>Les forces rebelles ont dépêché plusieurs commandants sur le terrain pour superviser l'occupation des bâtiments clés. Votre ordre de mission est d'éliminer chaque chef de milice présent dans la zone. Ces cibles sont mobiles et se déplacent d'un complexe à l'autre avec leurs escortes armées.
+
+ATTENTION : S'ils découvrent l'un des leurs abattu, la coordination des commandants restants s'enclenchera et ils passeront à l'offensive pour vous traquer activement. Préparez-vous à une contre-attaque violente après le premier coup de feu.</French>
+        <English>Rebel forces have dispatched several commanders to the field to oversee the occupation of key buildings. Your mission order is to eliminate every militia chief present in the area. These High-Value Targets are mobile, moving from complex to complex with their armed escorts.
+
+WARNING: If they discover one of their own has been killed, the remaining commanders will coordinate an offensive to actively hunt you down. Prepare for a violent counter-attack after the first shot.</English>
+        <Turkish>İsyancı güçler, kilit binaların işgalini denetlemek için sahaya birkaç komutan gönderdi. Görev emriniz bölgedeki her milis şefini ortadan kaldırmaktır. Bu Önemli Hedefler hareketlidir ve silahlı eskortlarıyla kompleksten komplekse hareket ederler.
+
+UYARI: İçlerinden birinin öldürüldüğünü fark ederlerse, kalan komutanlar sizi aktif olarak avlamak için bir saldırı koordine edeceklerdir. İlk atıştan sonra şiddetli bir karşı saldırıya hazırlanın.</Turkish>
+        <Korean>반군 부대는 주요 건물 점거를 감독하기 위해 여러 명의 지휘관을 현장에 파견했습니다. 귀하의 임무는 해당 지역의 모든 민병대 우두머리를 제거하는 것입니다. 이 주요 표적들은 무장 호위병과 함께 건물에서 건물로 이동합니다.
+
+경고: 그들 중 한 명이 살해된 것을 발견하면 나머지 지휘관들은 즉각적으로 공격 태세로 전환하여 여러분을 추적할 것입니다. 첫 발포 후 강력한 반격에 대비하십시오.</Korean>
+        <Spanish>Las fuerzas rebeldes han enviado a varios comandantes al terreno para supervisar la ocupación de edificios clave. Tu orden de misión es eliminar a cada jefe de la milicia presente en la zona. Estos Objetivos de Alto Valor son móviles y se desplazan de un complejo a otro con sus escoltas armados.
+
+ADVERTENCIA: Si descubren que uno de los suyos ha caído, los comandantes restantes coordinarán una ofensiva para cazarte activamente. Prepárate para un violento contraataque después del primer disparo.</Spanish>
+        <Japanese>反乱軍は重要な建物の占拠を監督するため、複数の司令官を現地に派遣した。君の任務はエリアにいる全ての民兵の指導者を排除することだ。これらの重要ターゲットは移動しており、武装した護衛と共に施設間を行き来している。
+
+警告：味方が倒されたことを彼らが発見した場合、残りの司令官は攻撃を調整し、君たちを積極的に追跡するだろう。最初の一撃の後の激しい反撃に備えよ。</Japanese>
+        <Chinese>叛军已派遣数名指挥官到现场监督关键建筑物的占领工作。你的任务命令是消灭该区域内的每一名民兵头目。这些高价值目标是移动的，在武装护卫的陪伴下从一个建筑群移动到另一个建筑群。
+
+警告：如果他们发现自己人被击毙，剩下的指挥官将协调进攻并主动追捕你。准备在开第一枪后迎接猛烈的反击。</Chinese>
+        <Russian>Повстанческие силы направили на места несколько командиров для руководства захватом ключевых зданий. Ваша задача — ликвидировать всех главарей боевиков в этом районе. Эти важные цели мобильны и перемещаются из одного комплекса в другой вместе со своей вооруженной охраной.
+
+ВНИМАНИЕ: Если они узнают, что один из них убит, оставшиеся командиры скоординируют наступление, чтобы активно охотиться на вас. Будьте готовы к мощной контратаке после первого же выстрела.</Russian>
+        <German>Rebellentruppen haben mehrere Kommandanten ins Feld geschickt, um die Besetzung von Schlüsselgebäuden zu überwachen. Ihr Einsatzbefehl lautet, jeden Milizenführer in diesem Gebiet zu eliminieren. Diese HVT (High-Value Targets) sind mobil und bewegen sich mit bewaffneten Eskorten von einem Komplex zum anderen.
+
+WARNUNG: Wenn sie entdecken, dass einer der Ihren gefallen ist, werden die verbleibenden Kommandanten eine Offensive koordinieren, um Sie aktiv zu jagen. Bereiten Sie sich nach dem ersten Schuss auf einen heftigen Gegenangriff vor.</German>
+        <Italian>Le forze ribelli hanno inviato diversi comandanti sul campo per supervisionare l'occupazione degli edifici chiave. Il tuo ordine di missione è di eliminare ogni capo della milizia presente nell'area. Questi obiettivi di alto valore sono mobili e si spostano da un complesso all'altro con le loro scorte armate.
+
+ATTENZIONE: Se scoprono che uno di loro è stato ucciso, i comandanti rimanenti coordineranno un'offensiva per darti attivamente la caccia. Preparati a un violento contrattacco dopo il primo colpo.</Italian>
+        <Polish>Siły rebeliantów wysłały na miejsce kilkudziesięciu dowódców, aby nadzorowali okupację kluczowych budynków. Twoim rozkazem jest wyeliminowanie każdego dowódcy bojówki w tym rejonie. Te ważne cele są mobilne, przemieszczają się z kompleksu do kompleksu ze swoją zbrojną eskortą.
+
+OSTRZEŻENIE: Jeśli odkryją, że jeden z nich został zabity, pozostali dowódcy skoordynują ofensywę i zaczną cię aktywnie tropić. Przygotuj się na brutalny kontratak po oddaniu pierwszego strzału.</Polish>
+    </Key>
+</Keys>

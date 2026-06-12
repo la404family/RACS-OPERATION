@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="Arma3">
+  <Package name="Task04_Tasks">
+    <Container name="Task04_Texts">
+      <Key ID="STR_LL_Task_04_Title">
+        <English>Capture the Informant</English>
+        <French>Capturer l'Informateur</French>
+        <German>Fange den Informanten</German>
+        <Italian>Cattura l'Informatore</Italian>
+        <Spanish>Capturar al Informante</Spanish>
+        <Czech>Zajmout Informátora</Czech>
+        <Polish>Pojmać Informatora</Polish>
+        <Russian>Захватить Информатора</Russian>
+        <Turkish>Muhbiri Yakala</Turkish>
+        <Japanese>情報提供者を捕獲する</Japanese>
+        <Chinese>捕获线人</Chinese>
+      </Key>
+      <Key ID="STR_LL_Task_04_Desc">
+        <English>An informant holds critical intel. Secure him and wait for extraction. He must survive.</English>
+        <French>Un informateur détient des informations vitales. Menottez-le et extrayez-le vivant.</French>
+        <German>Ein Informant hat wichtige Infos. Sichern Sie ihn und warten Sie auf Extraktion.</German>
+        <Italian>Un informatore ha dati cruciali. Mettilo in sicurezza ed estrailo vivo.</Italian>
+        <Spanish>Un informante tiene inteligencia crítica. Asegúrelo y extraigalo con vida.</Spanish>
+        <Czech>Informátor má klíčové informace. Zajistěte ho a čekejte na extrakci.</Czech>
+        <Polish>Informator posiada kluczowe dane. Zabezpiecz go i wyciągnij żywego.</Polish>
+        <Russian>Информатор владеет важными данными. Захватите его живым.</Russian>
+        <Turkish>Bir muhbir kritik istihbarata sahip. Onu sağ olarak tahliye edin.</Turkish>
+        <Japanese>情報提供者が重要な情報を持っています。彼を確保し、生きたまま脱出させてください。</Japanese>
+        <Chinese>线人掌握着重要情报。确保他的安全并活着撤离他。</Chinese>
+      </Key>
+      <Key ID="STR_LL_Task_04_MarkerMain">
+        <English>Capture Informant</English>
+        <French>Capturer Informateur</French>
+        <German>Informant fangen</German>
+        <Italian>Cattura Informatore</Italian>
+        <Spanish>Capturar Informante</Spanish>
+        <Czech>Zajmout Informátora</Czech>
+        <Polish>Pojmać Informatora</Polish>
+        <Russian>Захватить Информатора</Russian>
+        <Turkish>Muhbiri Yakala</Turkish>
+        <Japanese>情報提供者捕獲</Japanese>
+        <Chinese>捕获线人</Chinese>
+      </Key>
+      <Key ID="STR_LL_Task_04_Marker">
+        <English>Informant location</English>
+        <French>Position de l'informateur</French>
+        <German>Standort des Informanten</German>
+        <Italian>Posizione informatore</Italian>
+        <Spanish>Ubicación del informante</Spanish>
+        <Czech>Pozice informátora</Czech>
+        <Polish>Pozycja informatora</Polish>
+        <Russian>Позиция информатора</Russian>
+        <Turkish>Muhbirin konumu</Turkish>
+        <Japanese>情報提供者の位置</Japanese>
+        <Chinese>线人位置</Chinese>
+      </Key>
+      <Key ID="STR_LL_Task_04_Action">
+        <English>Handcuff and Capture</English>
+        <French>Menotter et Capturer</French>
+        <German>Handschellen anlegen und Festnehmen</German>
+        <Italian>Amanetta e Cattura</Italian>
+        <Spanish>Esposar y Capturar</Spanish>
+        <Czech>Spoutat a Zajmout</Czech>
+        <Polish>Zakuć i Pojmać</Polish>
+        <Russian>Надеть наручники и Захватить</Russian>
+        <Turkish>Kelepçele ve Yakala</Turkish>
+        <Japanese>手錠をかけて捕獲する</Japanese>
+        <Chinese>戴上手铐并捕获</Chinese>
+      </Key>
+      <Key ID="STR_LL_Task_04_ExtractAction">
+        <English>Board Informant into Helicopter</English>
+        <French>Embarquer l'informateur dans l'hélicoptère</French>
+        <German>Informant in den Hubschrauber bringen</German>
+        <Italian>Imbarca informatore sull'elicottero</Italian>
+        <Spanish>Embarcar informante en el helicóptero</Spanish>
+        <Czech>Naložit informátora do vrtulníku</Czech>
+        <Polish>Wprowadź informatora do helikoptera</Polish>
+        <Russian>Посадить информатора в вертолет</Russian>
+        <Turkish>Muhbiri Helikoptere Bindir</Turkish>
+        <Japanese>情報提供者をヘリコプターに乗せる</Japanese>
+        <Chinese>让线人登直升机</Chinese>
+      </Key>
+    </Container>
+  </Package>
+</Project>

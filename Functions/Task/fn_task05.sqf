@@ -1,0 +1,267 @@
+params [["_mode", "init", [""]], ["_args", [], [[]]]];
+
+if (!isServer) exitWith {};
+
+if (_mode == "init") exitWith {
+    private _allLogics = (allMissionObjects "Logic") select { (vehicleVarName _x) select [0, 11] == "M_Dans_Bat_" };
+    if (count _allLogics < 1) exitWith {
+        if (missionNamespace getVariable ["DEBUG_MODE", true]) then { diag_log "[LL] task05 ERROR: Pas de M_Dans_Bat_ trouvé."; };
+        missionNamespace setVariable ["LL_g_taskInProgress", false, true];
+    };
+
+    private _targetNumChiefs = 2 + floor (random 3); // 2 à 4 chefs
+    private _selectedLogics = [];
+    private _logicsPool = _allLogics call BIS_fnc_arrayShuffle;
+    private _alivePlayers = allPlayers select { alive _x };
+
+    {
+        private _candidate = _x;
+        private _candidatePos = getPosASL _candidate;
+        private _valid = true;
+
+        { if (_x distance2D _candidatePos < 250) exitWith { _valid = false; }; } forEach _alivePlayers;
+
+        if (_valid) then {
+            { if ((getPosASL _x) distance2D _candidatePos < 100) exitWith { _valid = false; }; } forEach _selectedLogics;
+        };
+
+        if (_valid) then { _selectedLogics pushBack _candidate; };
+        if (count _selectedLogics >= _targetNumChiefs) exitWith {};
+    } forEach _logicsPool;
+
+    private _numChiefs = count _selectedLogics;
+    if (_numChiefs < 1) exitWith {
+        if (missionNamespace getVariable ["DEBUG_MODE", true]) then { diag_log "[LL] task05 ERROR: Impossible de trouver des emplacements valides à >250m. Relance dans 15s."; };
+        [[], "LL_fnc_task05"] spawn { sleep 15; ["init"] spawn LL_fnc_task05; };
+    };
+
+    missionNamespace setVariable ["LL_Task05_AllUnits", [], true];
+    missionNamespace setVariable ["LL_Task05_Killed", 0, true];
+    missionNamespace setVariable ["LL_Task05_Total", _numChiefs, true];
+    missionNamespace setVariable ["LL_Task05_AlertTriggered", false, true];
+    
+    private _allUnits = [];
+    private _chiefsData = [];
+
+    for "_i" from 0 to (_numChiefs - 1) do {
+        private _logic = _selectedLogics select _i;
+        private _spawnPos = getPosASL _logic;
+        _spawnPos set [2, (_spawnPos select 2) + 0.2];
+
+        private _grp = createGroup [east, true];
+        _grp setBehaviour "SAFE";
+        
+        // --- Spawn Gardes ---
+        private _numGuards = 3 + floor (random 3); // 3 à 5 gardes
+        for "_g" from 1 to _numGuards do {
+            sleep 0.7;
+            private _guardClass = selectRandom ["CUP_O_TK_Soldier", "CUP_O_TK_Soldier_GL", "CUP_O_TK_Soldier_AR"];
+            private _guard = _grp createUnit [_guardClass, _spawnPos, [], 0, "NONE"];
+            _guard setPosASL _spawnPos;
+            _guard allowDamage false;
+            [_guard] spawn { sleep 3; (_this select 0) allowDamage true; };
+            _allUnits pushBack _guard;
+        };
+
+        // --- Spawn Chef ---
+        sleep 0.7;
+        private _chiefClass = selectRandom ["CUP_O_TK_Commander", "CUP_O_TK_Officer"];
+        private _chief = _grp createUnit [_chiefClass, _spawnPos, [], 0, "NONE"];
+        _chief setPosASL _spawnPos;
+        _chief allowDamage false;
+        [_chief] spawn { sleep 3; (_this select 0) allowDamage true; };
+        _allUnits pushBack _chief;
+        
+        _grp selectLeader _chief;
+
+        // --- Marqueur ---
+        private _mkrName = format ["mkr_task05_chief_%1", _i];
+        createMarker [_mkrName, _spawnPos];
+        _mkrName setMarkerType "o_hq";
+        _mkrName setMarkerColor "ColorOrange";
+        _mkrName setMarkerText format ["%1", localize "STR_LL_Task_05_Marker"];
+
+        _chiefsData pushBack [_chief, _grp, _mkrName];
+
+        // --- Event Handler ---
+        _chief addEventHandler ["Killed", {
+            params ["_unit", "_killer"];
+            
+            // Retirer le marqueur du mort
+            private _mkr = _unit getVariable ["LL_Task05_Marker", ""];
+            if (_mkr != "") then {
+                _mkr setMarkerColor "ColorBlack";
+                _mkr setMarkerType "hd_destroy";
+                _mkr setMarkerText localize "STR_LL_Task_05_Marker_Dead";
+            };
+
+            private _killed = (missionNamespace getVariable ["LL_Task05_Killed", 0]) + 1;
+            missionNamespace setVariable ["LL_Task05_Killed", _killed, true];
+            
+            private _total = missionNamespace getVariable ["LL_Task05_Total", 1];
+
+            // Alerte globale au premier mort
+            if (_killed == 1 && _total > 1) then {
+                missionNamespace setVariable ["LL_Task05_AlertTriggered", true, true];
+            };
+
+            // Vérification de victoire
+            if (_killed >= _total) then {
+                ["task_05_hunt", "SUCCEEDED", true] call BIS_fnc_taskSetState;
+                missionNamespace setVariable ["LL_g_taskInProgress", false, true];
+                
+                // Dissolution après victoire
+                [] spawn {
+                    sleep 10;
+                    // Nettoyage marqueurs
+                    private _cTotal = missionNamespace getVariable ["LL_Task05_Total", 0];
+                    for "_m" from 0 to (_cTotal - 1) do { deleteMarker format ["mkr_task05_chief_%1", _m]; };
+
+                    // Dissolution hors de vue
+                    private _allU = missionNamespace getVariable ["LL_Task05_AllUnits", []];
+                    private _guards = _allU select { alive _x };
+                    if (count _guards > 0) then {
+                        private _dissolveGrp = createGroup [east, true];
+                        {
+                            _x enableAI "MOVE";
+                            _x setBehaviour "SAFE";
+                            _x setSpeedMode "FULL";
+                            _x setVariable ["LL_TaskXX_Escaping", true, true];
+                        } forEach _guards;
+                        _guards joinSilent _dissolveGrp;
+
+                        [_guards, _dissolveGrp] spawn {
+                            params ["_units", "_grp"];
+                            private _alive = _units select { alive _x };
+                            if (count _alive == 0) exitWith {};
+
+                            private _running = true;
+                            while { _running && ({ alive _x } count _alive) > 0 } do {
+                                private _refPos  = getPos (leader _grp);
+                                private _dissolvePos = [];
+                                private _attempts    = 0;
+
+                                while { count _dissolvePos == 0 && _attempts < 30 } do {
+                                    _attempts = _attempts + 1;
+                                    private _candidate = _refPos getPos [200 + random 300, random 360];
+                                    private _valid = true;
+                                    { if (_x distance2D _candidate <= 150) exitWith { _valid = false; }; } forEach (allPlayers select { alive _x });
+                                    if (_valid) then { _dissolvePos = _candidate; };
+                                };
+
+                                if (count _dissolvePos == 0) then { _dissolvePos = _refPos getPos [400, random 360]; };
+
+                                while { count waypoints _grp > 0 } do { deleteWaypoint [_grp, 0]; };
+                                private _wp = _grp addWaypoint [_dissolvePos, 5];
+                                _wp setWaypointType "MOVE";
+                                _wp setWaypointSpeed "FULL";
+                                _wp setWaypointBehaviour "SAFE";
+
+                                waitUntil { sleep 1; ({ alive _x } count _alive) == 0 || (leader _grp distance2D _dissolvePos <= 5) };
+
+                                if (({ alive _x } count _alive) == 0) exitWith { _running = false; };
+
+                                private _allFar = true;
+                                { if (_x distance2D _dissolvePos <= 150) exitWith { _allFar = false; }; } forEach (allPlayers select { alive _x });
+
+                                if (_allFar) then {
+                                    { if (!isNull _x && alive _x) then { deleteVehicle _x; }; } forEach _alive;
+                                    if (!isNull _grp) then { deleteGroup _grp; };
+                                    _running = false;
+                                };
+                            };
+                        };
+                    };
+                };
+            };
+        }];
+
+        _chief setVariable ["LL_Task05_Marker", _mkrName, true];
+    };
+
+    missionNamespace setVariable ["LL_Task05_AllUnits", _allUnits, true];
+
+    [
+        independent,
+        ["task_05_hunt"],
+        [
+            localize "STR_LL_Task_05_Desc",
+            localize "STR_LL_Task_05_Title",
+            localize "STR_LL_Task_05_MarkerMain"
+        ],
+        objNull,
+        "AUTOASSIGNED",
+        5,
+        true,
+        "kill",
+        false
+    ] call BIS_fnc_taskCreate;
+
+    [[], { player createDiaryRecord ["diary", [localize "STR_LL_Diary_Task05_Title", localize "STR_LL_Diary_Task05_Text"]]; }] remoteExec ["spawn", 0, true];
+
+    ["STR_LL_Task_Assigned"] remoteExec ["LL_fnc_radioMessage", 0];
+
+    // --- Boucle globale de gestion des chefs (Patrouille et Traque) ---
+    [_chiefsData, _allLogics] spawn {
+        params ["_chiefsData", "_logicsPool"];
+        
+        private _alertSent = false;
+
+        while { missionNamespace getVariable ["LL_g_taskInProgress", false] } do {
+            private _isAlerted = missionNamespace getVariable ["LL_Task05_AlertTriggered", false];
+
+            if (_isAlerted && !_alertSent) then {
+                _alertSent = true;
+                // Envoyer notification de traque
+                ["STR_LL_Task_05_Alert"] remoteExec ["LL_fnc_radioMessage", 0];
+            };
+
+            {
+                _x params ["_chief", "_grp", "_mkr"];
+                if (alive _chief) then {
+                    // Update Marker
+                    _mkr setMarkerPos (getPos _chief);
+                    
+                    if (_isAlerted) then {
+                        // Comportement de traque
+                        _mkr setMarkerColor "ColorRed";
+                        _grp setBehaviour "COMBAT";
+                        _grp setSpeedMode "FULL";
+
+                        private _players = allPlayers select { alive _x };
+                        if (count _players > 0) then {
+                            private _nearest = objNull;
+                            private _minDist = 999999;
+                            {
+                                private _d = _x distance2D _chief;
+                                if (_d < _minDist) then {
+                                    _minDist = _d;
+                                    _nearest = _x;
+                                };
+                            } forEach _players;
+                            
+                            if (!isNull _nearest) then {
+                                while { count waypoints _grp > 0 } do { deleteWaypoint [_grp, 0]; };
+                                private _wp = _grp addWaypoint [getPos _nearest, 0];
+                                _wp setWaypointType "SAD";
+                            };
+                        };
+                    } else {
+                        // Patrouille entre les M_Dans_Bat_
+                        if (unitReady _chief || count waypoints _grp == 0) then {
+                            private _nextLogic = selectRandom _logicsPool;
+                            while { count waypoints _grp > 0 } do { deleteWaypoint [_grp, 0]; };
+                            private _wp = _grp addWaypoint [getPosASL _nextLogic, 0];
+                            _wp setWaypointType "MOVE";
+                            _grp setBehaviour "SAFE";
+                            _grp setSpeedMode "LIMITED";
+                        };
+                    };
+                };
+            } forEach _chiefsData;
+
+            // Fréquence de mise à jour (5s si calme, 10s si traque pour laisser l'IA faire son chemin)
+            if (_isAlerted) then { sleep 10; } else { sleep 5; };
+        };
+    };
+};

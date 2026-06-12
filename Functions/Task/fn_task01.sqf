@@ -98,6 +98,8 @@ if (_mode == "init") exitWith {
         _allUnits pushBack _officer;
         missionNamespace setVariable ["LL_Task01_AllUnits", _allUnits, true];
 
+        _officer setVariable ["LL_Task01_Marker", _mkrName];
+
         if (_i == _targetIndex) then {
             _officer setVariable ["LL_hasDocuments", true, true];
         } else {
@@ -106,6 +108,11 @@ if (_mode == "init") exitWith {
 
         _officer addEventHandler ["Killed", {
             params ["_unit", "_killer", "_instigator", "_useEffects"];
+
+            private _mkr = _unit getVariable ["LL_Task01_Marker", ""];
+            if (_mkr != "") then {
+                deleteMarker _mkr;
+            };
 
             if (_unit getVariable ["LL_hasDocuments", false]) then {
                 private _pos = getPosATL _unit; 

@@ -15,10 +15,12 @@ if (_mode == "REQUEST") exitWith {
     };
 
     private _availableTasks = [];
-    _availableTasks pushBack "task00";
-    _availableTasks pushBack "task01";
-    _availableTasks pushBack "task02";
-    _availableTasks pushBack "task03";
+    //_availableTasks pushBack "task00";
+   // _availableTasks pushBack "task01";
+    //_availableTasks pushBack "task02";
+   // _availableTasks pushBack "task03";
+    _availableTasks pushBack "task04";
+   //_availableTasks pushBack "task05"; 
     
     private _lastTask = missionNamespace getVariable ["LL_g_lastTask", ""];
 
