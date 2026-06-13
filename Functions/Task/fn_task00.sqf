@@ -208,7 +208,13 @@ if (_mode == "free") exitWith {
                 private _nearest = _allBlufor select 0;
                 private _nearestDist = _nearest distance2D _grpPos;
                 { private _d = _x distance2D _grpPos; if (_d < _nearestDist) then { _nearestDist = _d; _nearest = _x; }; } forEach _allBlufor;
-                (leader _grp) commandMove (getPosATL _nearest);
+                
+                // Delete active patrol waypoints and assign a Search and Destroy (SAD) waypoint targeting the nearest player
+                while { count waypoints _grp > 0 } do { deleteWaypoint [_grp, 0]; };
+                private _wp = _grp addWaypoint [getPosATL _nearest, 10];
+                _wp setWaypointType "SAD";
+                _wp setWaypointSpeed "FULL";
+                _wp setWaypointBehaviour "COMBAT";
             };
         } forEach _allOpfor;
     };

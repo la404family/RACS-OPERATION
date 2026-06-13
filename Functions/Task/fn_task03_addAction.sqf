@@ -6,8 +6,8 @@ _radio addAction [
     format ["<t color='#FFFF00'>%1</t>", localize "STR_LL_Task_03_Action"],
     {
         params ["_target", "_caller", "_actionId", "_arguments"];
-        if (missionNamespace getVariable ["LL_Task03_Triggered_" + (_target call BIS_fnc_netId), false]) exitWith {};
-        missionNamespace setVariable ["LL_Task03_Triggered_" + (_target call BIS_fnc_netId), true, true];
+        if (_target getVariable ["LL_Task03_Triggered", false]) exitWith {};
+        _target setVariable ["LL_Task03_Triggered", true, true];
 
         _target removeAction _actionId;
 

@@ -500,7 +500,7 @@ private _fnExecDeploy = {
     params ["_heli", "_group", "_crew", "_caller", "_targetPos", "_homeBase", "_side"];
     ["DEPLOYING"] call _fnSetState;
 
-    _heli flyInHeight 25;
+    _heli flyInHeight 50;
     while { count (waypoints _group) > 0 } do { deleteWaypoint [_group, 0]; };
     private _wpDeb = _group addWaypoint [_targetPos, 0];
     _wpDeb setWaypointType       "MOVE";
