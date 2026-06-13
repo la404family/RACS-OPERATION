@@ -120,8 +120,8 @@ if (_mode == "init") exitWith {
     }];
 
     private _mkrName = "mkr_task06_zone";
-    createMarker [_mkrName, _spawnPos getPos [random 40, random 360]];
-    _mkrName setMarkerType "hd_unknown";
+    createMarker [_mkrName, _spawnPos];
+    _mkrName setMarkerType "mil_objective";
     _mkrName setMarkerColor "ColorOrange";
     _mkrName setMarkerText localize "STR_LL_Task_06_Marker";
 

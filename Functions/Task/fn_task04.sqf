@@ -60,36 +60,35 @@ if (_mode == "init") exitWith {
         private _selectedLogic = _x;
         private _spawnPos = getPosASL _selectedLogic;
         _spawnPos set [2, (_spawnPos select 2) + 0.2];
-
-        private _numGuards = 3 + floor(random 4); 
-        private _guardsLeft = _numGuards;
-
-        while { _guardsLeft > 0 } do {
-            private _grpSize = (2 + floor(random 2)) min _guardsLeft;
-            private _grpOpfor = createGroup [east, true];
-            _grpOpfor setBehaviour "SAFE";
-
-            for "_g" from 1 to _grpSize do {
-                sleep 0.7;
-                private _guardClass = selectRandom ["CUP_O_TK_Soldier", "CUP_O_TK_Soldier_GL", "CUP_O_TK_Soldier_AR"];
-                private _patrolPos = _spawnPos getPos [10 + random 15, random 360];
-                private _guard = _grpOpfor createUnit [_guardClass, _patrolPos, [], 0, "NONE"];
-                _guard allowDamage false;
-                [_guard] spawn { sleep 3; (_this select 0) allowDamage true; };
-                _allUnits pushBack _guard;
-            };
-
-            private _wp = _grpOpfor addWaypoint [_spawnPos, 25];
-            _wp setWaypointType "MOVE";
-            _wp setWaypointBehaviour "SAFE";
-            _wp setWaypointSpeed "LIMITED";
-            private _wp2 = _grpOpfor addWaypoint [_spawnPos, 25];
-            _wp2 setWaypointType "MOVE";
-            private _wp3 = _grpOpfor addWaypoint [_spawnPos, 20];
-            _wp3 setWaypointType "CYCLE";
-
-            _guardsLeft = _guardsLeft - _grpSize;
+        private _grpInner = createGroup [east, true];
+        _grpInner setBehaviour "SAFE";
+        _grpInner setCombatMode "RED";
+        private _numInner = 2 + floor (random 2); // 2 or 3 units
+        for "_g" from 1 to _numInner do {
+            sleep 0.5;
+            private _guardClass = selectRandom ["CUP_O_TK_Soldier", "CUP_O_TK_Soldier_GL", "CUP_O_TK_Soldier_AR"];
+            private _guard = _grpInner createUnit [_guardClass, _spawnPos, [], 0, "NONE"];
+            _guard setPosASL _spawnPos;
+            _guard allowDamage false;
+            [_guard] spawn { sleep 3; (_this select 0) allowDamage true; };
+            _allUnits pushBack _guard;
         };
+        [_grpInner, _spawnPos, 20] call BIS_fnc_taskPatrol;
+
+        private _grpOuter = createGroup [east, true];
+        _grpOuter setBehaviour "SAFE";
+        _grpOuter setCombatMode "RED";
+        private _numOuter = 2 + floor (random 2); // 2 or 3 units
+        for "_g" from 1 to _numOuter do {
+            sleep 0.5;
+            private _guardClass = selectRandom ["CUP_O_TK_Soldier", "CUP_O_TK_Soldier_GL", "CUP_O_TK_Soldier_AR"];
+            private _guard = _grpOuter createUnit [_guardClass, _spawnPos, [], 0, "NONE"];
+            _guard setPosASL _spawnPos;
+            _guard allowDamage false;
+            [_guard] spawn { sleep 3; (_this select 0) allowDamage true; };
+            _allUnits pushBack _guard;
+        };
+        [_grpOuter, _spawnPos, 60] call BIS_fnc_taskPatrol;
 
         sleep 0.7;
         private _truckClasses = ["CUP_O_V3S_Refuel_TKA", "CUP_O_Ural_Refuel_TKA", "CUP_I_T810_Refuel_LDF"];
@@ -268,7 +267,7 @@ if (_mode == "init") exitWith {
         private _idx = count _allTrucks;
         private _mkrName = format ["mkr_task04_truck_%1", _idx];
         createMarker [_mkrName, getPosASL _truck];
-        _mkrName setMarkerType "o_support";
+        _mkrName setMarkerType "mil_objective";
         _mkrName setMarkerColor "ColorOrange";
         _mkrName setMarkerText (format ["%1 (%2/%3)", localize "STR_LL_Task_04_MarkerMain", _idx, _numTrucks]);
 

@@ -74,7 +74,7 @@ if (_mode == "init") exitWith {
 
         private _mkrName = format ["mkr_task05_chief_%1", _i];
         createMarker [_mkrName, _spawnPos];
-        _mkrName setMarkerType "o_hq";
+        _mkrName setMarkerType "mil_objective";
         _mkrName setMarkerColor "ColorOrange";
         _mkrName setMarkerText format ["%1", localize "STR_LL_Task_05_Marker"];
 

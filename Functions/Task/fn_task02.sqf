@@ -47,27 +47,39 @@ if (_mode == "init") exitWith {
         private _spawnPos = getPosASL _logic;
         _spawnPos set [2, (_spawnPos select 2) + 0.2];
 
-        private _grp = createGroup [east, true];
-        _grp setBehaviour "SAFE";
-        _grp setCombatMode "RED";
-        private _numGuards = 4 + floor (random 5);
-        for "_g" from 1 to _numGuards do {
-            sleep 0.7;
+        private _grpInner = createGroup [east, true];
+        _grpInner setBehaviour "SAFE";
+        _grpInner setCombatMode "RED";
+        private _numInner = 2 + floor (random 2); // 2 or 3 units
+        for "_g" from 1 to _numInner do {
+            sleep 0.5;
             private _guardClass = selectRandom ["CUP_O_TK_Soldier", "CUP_O_TK_Soldier_GL", "CUP_O_TK_Soldier_AR"];
-            private _guard = _grp createUnit [_guardClass, _spawnPos, [], 0, "NONE"];
+            private _guard = _grpInner createUnit [_guardClass, _spawnPos, [], 0, "NONE"];
             _guard setPosASL _spawnPos;
             _guard allowDamage false;
             [_guard] spawn { sleep 3; (_this select 0) allowDamage true; };
             _allUnits pushBack _guard;
-
-            _guard setBehaviour "AWARE";
-            private _patrolPos = _spawnPos getPos [4 + random 21, random 360];
-            _guard doMove _patrolPos;
         };
+        [_grpInner, _spawnPos, 20] call BIS_fnc_taskPatrol;
+
+        private _grpOuter = createGroup [east, true];
+        _grpOuter setBehaviour "SAFE";
+        _grpOuter setCombatMode "RED";
+        private _numOuter = 2 + floor (random 2); // 2 or 3 units
+        for "_g" from 1 to _numOuter do {
+            sleep 0.5;
+            private _guardClass = selectRandom ["CUP_O_TK_Soldier", "CUP_O_TK_Soldier_GL", "CUP_O_TK_Soldier_AR"];
+            private _guard = _grpOuter createUnit [_guardClass, _spawnPos, [], 0, "NONE"];
+            _guard setPosASL _spawnPos;
+            _guard allowDamage false;
+            [_guard] spawn { sleep 3; (_this select 0) allowDamage true; };
+            _allUnits pushBack _guard;
+        };
+        [_grpOuter, _spawnPos, 60] call BIS_fnc_taskPatrol;
 
         private _mkrName = format ["mkr_task02_zone_%1", _i];
-        createMarker [_mkrName, _spawnPos getPos [random 50, random 360]];
-        _mkrName setMarkerType "hd_unknown";
+        createMarker [_mkrName, _spawnPos];
+        _mkrName setMarkerType "mil_objective";
         _mkrName setMarkerColor "ColorOrange";
         _mkrName setMarkerText format ["%1 %2", localize "STR_LL_Task_02_Marker", _i + 1];
 
