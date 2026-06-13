@@ -114,7 +114,11 @@ if (_mode == "init") exitWith {
                 missionNamespace setVariable ["LL_g_taskInProgress", false, true];
             }];
 
-            [_hostage] remoteExec ["LL_fnc_task00_addAction", 0, true];
+            private _varName = format ["LL_Task00_Hostage_%1_%2", _i, round(random 100000)];
+            _hostage setVehicleVarName _varName;
+            missionNamespace setVariable [_varName, _hostage, true];
+
+            [_varName] remoteExec ["LL_fnc_task00_addAction", 0, true];
         };
     };
 

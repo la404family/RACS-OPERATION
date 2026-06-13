@@ -1,10 +1,16 @@
 if (!hasInterface) exitWith {};
 
 _this spawn {
-    params [["_hostage", objNull, [objNull]]];
+    params [["_hostageParam", objNull, [objNull, ""]]];
 
-    private _timeout = time + 15;
-    waitUntil { !isNull _hostage || time > _timeout };
+    private _hostage = objNull;
+    if (_hostageParam isEqualType "") then {
+        private _timeout = time + 15;
+        waitUntil { !isNull (missionNamespace getVariable [_hostageParam, objNull]) || time > _timeout };
+        _hostage = missionNamespace getVariable [_hostageParam, objNull];
+    } else {
+        _hostage = _hostageParam;
+    };
 
     if (isNull _hostage) exitWith {};
 
@@ -20,6 +26,6 @@ _this spawn {
 
             ["free", [_target, _caller]] remoteExec ["LL_fnc_task00", 2];
         },
-        nil, 6.0, true, true, "", "alive _target && _this distance _target < 4"
+        nil, 6.0, true, true, "", "alive _target && _this distance _target < 4", 4
     ];
 };

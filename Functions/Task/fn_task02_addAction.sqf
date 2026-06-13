@@ -1,10 +1,16 @@
 if (!hasInterface) exitWith {};
 
 _this spawn {
-    params [["_bomb", objNull, [objNull]]];
+    params [["_bombParam", objNull, [objNull, ""]]];
 
-    private _timeout = time + 15;
-    waitUntil { !isNull _bomb || time > _timeout };
+    private _bomb = objNull;
+    if (_bombParam isEqualType "") then {
+        private _timeout = time + 15;
+        waitUntil { !isNull (missionNamespace getVariable [_bombParam, objNull]) || time > _timeout };
+        _bomb = missionNamespace getVariable [_bombParam, objNull];
+    } else {
+        _bomb = _bombParam;
+    };
 
     if (isNull _bomb) exitWith {};
 
@@ -20,6 +26,7 @@ _this spawn {
         true,
         true,
         "",
-        "alive _target && _this distance _target < 4 && (_target getVariable ['LL_Bomb_Status', 'WAIT']) == 'WAIT'"
+        "alive _target && _this distance _target < 4 && (_target getVariable ['LL_Bomb_Status', 'WAIT']) == 'WAIT'",
+        4
     ];
 };

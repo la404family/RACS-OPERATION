@@ -1,10 +1,25 @@
 if (!hasInterface) exitWith {};
 
 _this spawn {
-    params [["_corpse", objNull, [objNull]], ["_doc", objNull, [objNull]]];
+    params [["_corpseParam", objNull, [objNull, ""]], ["_docParam", objNull, [objNull, ""]]];
 
-    private _timeout = time + 15;
-    waitUntil { (!isNull _corpse && !isNull _doc) || time > _timeout };
+    private _corpse = objNull;
+    if (_corpseParam isEqualType "") then {
+        private _timeout = time + 15;
+        waitUntil { !isNull (missionNamespace getVariable [_corpseParam, objNull]) || time > _timeout };
+        _corpse = missionNamespace getVariable [_corpseParam, objNull];
+    } else {
+        _corpse = _corpseParam;
+    };
+
+    private _doc = objNull;
+    if (_docParam isEqualType "") then {
+        private _timeout = time + 15;
+        waitUntil { !isNull (missionNamespace getVariable [_docParam, objNull]) || time > _timeout };
+        _doc = missionNamespace getVariable [_docParam, objNull];
+    } else {
+        _doc = _docParam;
+    };
 
     if (isNull _corpse || isNull _doc) exitWith {};
 
@@ -27,6 +42,7 @@ _this spawn {
         true,
         true,
         "",
-        "alive _target == false && _this distance _target < 4"
+        "alive _target == false && _this distance _target < 4",
+        4
     ];
 };

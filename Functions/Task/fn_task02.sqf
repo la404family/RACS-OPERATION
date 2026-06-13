@@ -140,7 +140,11 @@ if (_mode == "init") exitWith {
 
         _bombs pushBack _bomb;
 
-        [_bomb] remoteExec ["LL_fnc_task02_addAction", 0, true];
+        private _varName = format ["LL_Task02_Bomb_%1_%2", _i, round(random 100000)];
+        _bomb setVehicleVarName _varName;
+        missionNamespace setVariable [_varName, _bomb, true];
+
+        [_varName] remoteExec ["LL_fnc_task02_addAction", 0, true];
     };
 
     missionNamespace setVariable ["LL_Task02_AllUnits", _allUnits, true];

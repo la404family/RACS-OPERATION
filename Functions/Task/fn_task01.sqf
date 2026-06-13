@@ -144,7 +144,15 @@ if (_mode == "init") exitWith {
                 _mkrDoc setMarkerColor "ColorWhite";
                 _mkrDoc setMarkerText (localize "STR_LL_Task_01_MarkerDoc");
 
-                [_unit, _doc] remoteExec ["LL_fnc_task01_addAction", 0, true];
+                private _varCorpse = format ["LL_Task01_Corpse_%1_%2", _i, round(random 100000)];
+                _unit setVehicleVarName _varCorpse;
+                missionNamespace setVariable [_varCorpse, _unit, true];
+
+                private _varDoc = format ["LL_Task01_Doc_%1_%2", _i, round(random 100000)];
+                _doc setVehicleVarName _varDoc;
+                missionNamespace setVariable [_varDoc, _doc, true];
+
+                [_varCorpse, _varDoc] remoteExec ["LL_fnc_task01_addAction", 0, true];
 
                 private _alivePlayers = allPlayers select { alive _x };
                 private _allTaskUnits = missionNamespace getVariable ["LL_Task01_AllUnits", []];

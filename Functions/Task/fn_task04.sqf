@@ -273,7 +273,11 @@ if (_mode == "init") exitWith {
 
         _truck setVariable ["LL_Task04_Marker", _mkrName, true];
 
-        [_truck] remoteExec ["LL_fnc_task04_addAction", 0, true];
+        private _varName = format ["LL_Task04_Truck_%1_%2", _idx, round(random 100000)];
+        _truck setVehicleVarName _varName;
+        missionNamespace setVariable [_varName, _truck, true];
+
+        [_varName] remoteExec ["LL_fnc_task04_addAction", 0, true];
 
     } forEach _selectedLogics;
 

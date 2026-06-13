@@ -1,10 +1,16 @@
 if (!hasInterface) exitWith {};
 
 _this spawn {
-    params [["_radio", objNull, [objNull]]];
+    params [["_radioParam", objNull, [objNull, ""]]];
 
-    private _timeout = time + 15;
-    waitUntil { !isNull _radio || time > _timeout };
+    private _radio = objNull;
+    if (_radioParam isEqualType "") then {
+        private _timeout = time + 15;
+        waitUntil { !isNull (missionNamespace getVariable [_radioParam, objNull]) || time > _timeout };
+        _radio = missionNamespace getVariable [_radioParam, objNull];
+    } else {
+        _radio = _radioParam;
+    };
 
     if (isNull _radio) exitWith {};
 
@@ -24,6 +30,7 @@ _this spawn {
         true,
         true,
         "",
-        "alive _target && _this distance _target < 4 && (_target getVariable ['LL_Task_Status', 'WAIT'] == 'WAIT')"
+        "alive _target && _this distance _target < 4 && (_target getVariable ['LL_Task_Status', 'WAIT'] == 'WAIT')",
+        4
     ];
 };

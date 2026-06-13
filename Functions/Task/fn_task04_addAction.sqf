@@ -1,10 +1,16 @@
 if (!hasInterface) exitWith {};
 
 _this spawn {
-    params [["_truck", objNull, [objNull]]];
+    params [["_truckParam", objNull, [objNull, ""]]];
 
-    private _timeout = time + 15;
-    waitUntil { !isNull _truck || time > _timeout };
+    private _truck = objNull;
+    if (_truckParam isEqualType "") then {
+        private _timeout = time + 15;
+        waitUntil { !isNull (missionNamespace getVariable [_truckParam, objNull]) || time > _timeout };
+        _truck = missionNamespace getVariable [_truckParam, objNull];
+    } else {
+        _truck = _truckParam;
+    };
 
     if (isNull _truck) exitWith {};
 
@@ -20,6 +26,6 @@ _this spawn {
 
             ["extract", [_target, _caller]] remoteExec ["LL_fnc_task04", 2];
         },
-        nil, 6.0, true, true, "", "alive _target && _this distance _target < 15"
+        nil, 6.0, true, true, "", "alive _target && _this distance _target < 15", 15
     ];
 };

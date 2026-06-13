@@ -103,7 +103,11 @@ if (_mode == "init") exitWith {
 
         _radios pushBack _radio;
 
-        [_radio] remoteExec ["LL_fnc_task03_addAction", 0, true];
+        private _varName = format ["LL_Task03_Radio_%1_%2", _i, round(random 100000)];
+        _radio setVehicleVarName _varName;
+        missionNamespace setVariable [_varName, _radio, true];
+
+        [_varName] remoteExec ["LL_fnc_task03_addAction", 0, true];
     };
 
     missionNamespace setVariable ["LL_Task03_AllUnits", _allUnits, true];
