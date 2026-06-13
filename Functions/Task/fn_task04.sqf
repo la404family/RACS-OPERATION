@@ -146,9 +146,9 @@ if (_mode == "init") exitWith {
 
                                 private _sizeMultiplier = (1 + (_lvl * 0.15)) * _timeFactor;
                                 _emitter setParticleParams [
-                                    ["\A3\data_f\ParticleEffects\Universal\Universal", 16, 7, 48, 1], "", "Billboard", 1, 12,
-                                    [0, 0, 0.2], [0, 0, 0.3], 0, 1.28, 1, 0.05, [1.5 * _sizeMultiplier, 3 * _sizeMultiplier, 5 * _sizeMultiplier],
-                                    [[0.6, 0.7, 0.2, 0.25 * _timeFactor], [0.5, 0.6, 0.15, 0.15 * _timeFactor], [0.4, 0.5, 0.1, 0]], [0.125], 1, 0, "", "", _truck
+                                     ["\A3\data_f\ParticleEffects\Universal\Universal", 16, 7, 48, 1], "", "Billboard", 1, 12,
+                                     [0, 0, 0.2], [0, 0, 0.3], 0, 1.28, 1, 0.05, [1.5 * _sizeMultiplier, 3 * _sizeMultiplier, 5 * _sizeMultiplier],
+                                     [[0.9, 0.85, 0.1, 0.25 * _timeFactor], [0.8, 0.75, 0.08, 0.15 * _timeFactor], [0.6, 0.55, 0.05, 0]], [0.125], 1, 0, "", "", _truck
                                 ];
                                 _emitter setParticleRandom [3, [2, 2, 0.2], [0.8, 0.8, 0.3], 1, 0.3, [0, 0, 0, 0.05], 0, 0];
                             };
@@ -199,7 +199,7 @@ if (_mode == "init") exitWith {
             private _posASL = getPosASL _unit;
 
             // Déclencher l'effet visuel de l'onde de choc (anneau de fumée) sur tous les clients
-            [_posATL, 80, 8, [0.6, 0.7, 0.2, 0.8]] remoteExec ["LL_fnc_createSmokeRing", 0];
+            [_posATL, 80, 8, [0.9, 0.85, 0.1, 0.8]] remoteExec ["LL_fnc_createSmokeRing", 0];
 
             // Gérer les dégâts de l'onde de choc et l'effet de souffle physique sur le serveur
             [_posASL] spawn {

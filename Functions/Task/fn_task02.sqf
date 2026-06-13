@@ -358,18 +358,25 @@ if (_mode == "defuse") exitWith {
         params ["_bomb"];
         if (isNull _bomb) exitWith {};
 
-        [[getPosATL _bomb], {
-            params ["_pos"];
-            private _smoke = "#particlesource" createVehicleLocal _pos;
-            _smoke setParticleClass "SmokeShellWhite"; 
-
-            [_smoke] spawn {
-                sleep 35;
-                deleteVehicle (_this select 0);
-            };
-        }] remoteExec ["spawn", 0];
-
         sleep 20; 
-        if (!isNull _bomb) then { deleteVehicle _bomb; };
+
+        if (!isNull _bomb) then {
+            private _pos = getPosATL _bomb;
+
+            // Déclencher un écran de fumée blanche locale sur les clients à la position de la caisse
+            [_pos, {
+                params ["_pos"];
+                private _smoke = "#particlesource" createVehicleLocal _pos;
+                _smoke setParticleClass "SmokeShell"; 
+
+                [_smoke] spawn {
+                    sleep 10;
+                    deleteVehicle (_this select 0);
+                };
+            }] remoteExec ["spawn", 0];
+
+            sleep 0.5; // Laisser la fumée envelopper la caisse
+            deleteVehicle _bomb;
+        };
     };
 };
