@@ -103,26 +103,16 @@ if (hasInterface) then {
 
         titleText [
             format [
-                "<t size='2.2' color='#e0e0e0' font='PuristaBold' shadow='2' align='center'>%1</t><br/>" +
-                "<t size='1.0' color='#909090' font='PuristaLight' align='center' letterSpacing='0.15'>%2</t>",
+                "<t size='3.2' color='#ffffff' font='PuristaBold' shadow='2' align='center'>%1</t><br/>" +
+                "<t size='1.5' color='#d0d0d0' font='PuristaLight' align='center' letterSpacing='0.15'>%2</t>",
                 toUpper (localize "STR_LL_Intro_Author"),
                 localize "STR_LL_Intro_Presents"
             ],
             "PLAIN", 1, true, true
         ];
-        sleep 4;
+        sleep 6;
         titleText ["", "PLAIN", 0.5];
-        sleep 0.5;
-
-        titleText [
-            format [
-                "<t size='2.6' color='#ffffff' font='PuristaBold' shadow='2' align='center'>%1</t>",
-                localize "STR_LL_Intro_Title"
-            ],
-            "PLAIN", 1, true, true
-        ];
-        sleep 4;
-        titleText ["", "PLAIN", 0.5];
+        sleep 5.5;
 
         cutText ["", "BLACK FADED", 1];
         sleep 1.5;
@@ -258,7 +248,7 @@ if (hasInterface) then {
         cutText ["", "BLACK IN", 1];
 
         private _plan5Start = time;
-        while { !isTouchingGround _camHeli && { (getPosATL _camHeli select 2) > 1 } } do {
+        while { !isTouchingGround _camHeli && { (getPosATL _camHeli select 2) > 3.5 } } do {
             private _prog = ((time - _plan5Start) / 12) min 1;
             _cam camSetPos [
                 (_lzPos select 0) + 30 + (sin (time * 0.8) * 8),
@@ -294,7 +284,7 @@ if (hasInterface) then {
 
         [
             format [
-                "<t size='1.0' color='#bbbbbb' font='PuristaLight' align='center'>%2</t>",
+                "<t size='1.0' color='#bbbbbb' font='PuristaLight' align='center'>%1</t>",
                 localize "STR_LL_Intro_MissionStartSubtitle"
             ],
             -1, -1, 5, 1, 0, 793

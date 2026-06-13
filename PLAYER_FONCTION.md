@@ -45,7 +45,7 @@ Vos hommes sont des professionnels, mais ils attendent vos ordres. Utilisez ces 
 
 ## 2. APPUI AÉRIEN ET LOGISTIQUE (HQ)
 
-Le Haut Commandement a affecté **un unique hélicoptère UH-60L** au secteur de Zargabad. Vous partagez cette ressource avec d'autres unités. Les missions sont traitées selon un protocole de priorité strict.
+Le Haut Commandement a affecté **un unique hélicoptère UH-60L** au secteur opérationnel. Vous partagez cette ressource avec d'autres unités. Les missions sont traitées selon un protocole de priorité strict.
 
 * **Interface :** Action blanche pour ouvrir le canal radio, puis clic sur la carte (`M`) pour désigner les coordonnées (LZ/DZ/Cible).
 

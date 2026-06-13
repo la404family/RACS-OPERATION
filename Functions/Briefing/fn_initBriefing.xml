@@ -435,7 +435,7 @@
     </Key>
     <Key ID="STR_LL_Briefing_2_1_Text">
         <Original>
-High Command has assigned a single UH-60L helicopter to the Zargabad sector. You share this resource with other units. Missions are processed according to a strict priority protocol.&lt;br/&gt;&lt;br/&gt;
+High Command has assigned a single UH-60L helicopter to the operational sector. You share this resource with other units. Missions are processed according to a strict priority protocol.&lt;br/&gt;&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Close Air Support (CAS):&lt;/font&gt; The helicopter will perform firing passes (miniguns) on the designated area. (Cooldown: 5 minutes)&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Ammo Supply Drop:&lt;/font&gt; A supply crate drop by the helicopter.&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Vehicle Drop:&lt;/font&gt; Heli-lifting of a light transport vehicle. (Limited to 1 use)&lt;br/&gt;
@@ -443,7 +443,7 @@ High Command has assigned a single UH-60L helicopter to the Zargabad sector. You
 - &lt;font color='#87CEEB'&gt;Extraction:&lt;/font&gt; The helicopter will land on the designated LZ to evacuate the squad.
         </Original>
         <French>
-Le Haut Commandement a affecté un unique hélicoptère UH-60L au secteur de Zargabad. Vous partagez cette ressource avec d'autres unités. Les missions sont traitées selon un protocole de priorité strict.&lt;br/&gt;&lt;br/&gt;
+Le Haut Commandement a affecté un unique hélicoptère UH-60L au secteur opérationnel. Vous partagez cette ressource avec d'autres unités. Les missions sont traitées selon un protocole de priorité strict.&lt;br/&gt;&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Appui Aérien Rapproché (CAS) :&lt;/font&gt; L'hélicoptère effectuera des passes de tir (miniguns) sur la zone désignée. (Cooldown : 5 minutes)&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Livraison de Munitions :&lt;/font&gt; Largage d'une caisse de ravitaillement par l'hélicoptère.&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Livraison de Véhicule :&lt;/font&gt; Héliportage d'un véhicule léger de transport. (Limité à 1 utilisation)&lt;br/&gt;
@@ -451,7 +451,7 @@ Le Haut Commandement a affecté un unique hélicoptère UH-60L au secteur de Zar
 - &lt;font color='#87CEEB'&gt;Extraction :&lt;/font&gt; L'hélicoptère se posera sur la LZ désignée pour évacuer l'escouade.
         </French>
         <English>
-High Command has assigned a single UH-60L helicopter to the Zargabad sector. You share this resource with other units. Missions are processed according to a strict priority protocol.&lt;br/&gt;&lt;br/&gt;
+High Command has assigned a single UH-60L helicopter to the operational sector. You share this resource with other units. Missions are processed according to a strict priority protocol.&lt;br/&gt;&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Close Air Support (CAS):&lt;/font&gt; The helicopter will perform firing passes (miniguns) on the designated area. (Cooldown: 5 minutes)&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Ammo Supply Drop:&lt;/font&gt; A supply crate drop by the helicopter.&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Vehicle Drop:&lt;/font&gt; Heli-lifting of a light transport vehicle. (Limited to 1 use)&lt;br/&gt;
@@ -459,7 +459,7 @@ High Command has assigned a single UH-60L helicopter to the Zargabad sector. You
 - &lt;font color='#87CEEB'&gt;Extraction:&lt;/font&gt; The helicopter will land on the designated LZ to evacuate the squad.
         </English>
         <Spanish>
-El Alto Mando ha asignado un solo helicóptero UH-60L al sector de Zargabad. Compartes este recurso con otras unidades. Las misiones se procesan de acuerdo con un estricto protocolo de prioridad.&lt;br/&gt;&lt;br/&gt;
+El Alto Mando ha asignado un solo helicóptero UH-60L al sector operacional. Compartes este recurso con otras unidades. Las misiones se procesan de acuerdo con un estricto protocolo de prioridad.&lt;br/&gt;&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Apoyo Aéreo Cercano (CAS):&lt;/font&gt; El helicóptero realizará pasadas de tiro (miniguns) en el área designada. (Tiempo de reutilización: 5 minutos)&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Suministro de Munición:&lt;/font&gt; Lanzamiento de una caja de suministros por el helicóptero.&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Lanzamiento de Vehículo:&lt;/font&gt; Transporte en helicóptero de un vehículo de transporte ligero. (Limitado a 1 uso)&lt;br/&gt;
@@ -467,7 +467,7 @@ El Alto Mando ha asignado un solo helicóptero UH-60L al sector de Zargabad. Com
 - &lt;font color='#87CEEB'&gt;Extracción:&lt;/font&gt; El helicóptero aterrizará en la LZ designada para evacuar al escuadrón.
         </Spanish>
         <Italian>
-L'Alto Comando ha assegnato un singolo elicottero UH-60L al settore di Zargabad. Condividi questa risorsa con altre unità. Le missioni vengono elaborate secondo un rigido protocollo di priorità.&lt;br/&gt;&lt;br/&gt;
+L'Alto Comando ha assegnato un singolo elicottero UH-60L al settore operativo. Condividi questa risorsa con altre unità. Le missioni vengono elaborate secondo un rigido protocollo di priorità.&lt;br/&gt;&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Supporto Aereo Ravvicinato (CAS):&lt;/font&gt; L'elicottero effettuerà passaggi di tiro (minigun) sull'area designata. (Tempo di ricarica: 5 minuti)&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Rifornimento Munizioni:&lt;/font&gt; Lancio di una cassa di rifornimento dall'elicottero.&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Lancio Veicolo:&lt;/font&gt; Trasporto in elicottero di un veicolo da trasporto leggero. (Limitato a 1 utilizzo)&lt;br/&gt;
@@ -475,7 +475,7 @@ L'Alto Comando ha assegnato un singolo elicottero UH-60L al settore di Zargabad.
 - &lt;font color='#87CEEB'&gt;Estrazione:&lt;/font&gt; L'elicottero atterrerà sulla LZ designata per evacuare la squadra.
         </Italian>
         <German>
-Das Oberkommando hat dem Sektor Zargabad einen einzigen UH-60L-Hubschrauber zugewiesen. Sie teilen sich diese Ressource mit anderen Einheiten. Missionen werden nach einem strengen Prioritätsprotokoll abgewickelt.&lt;br/&gt;&lt;br/&gt;
+Das Oberkommando hat dem operativen Sektor einen einzigen UH-60L-Hubschrauber zugewiesen. Sie teilen sich diese Ressource mit anderen Einheiten. Missionen werden nach einem strengen Prioritätsprotokoll abgewickelt.&lt;br/&gt;&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Luftnahunterstützung (CAS):&lt;/font&gt; Der Hubschrauber führt Feuerüberflüge (Miniguns) auf das vorgesehene Gebiet durch. (Abklingzeit: 5 Minuten)&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Munitionsabwurf:&lt;/font&gt; Abwurf einer Versorgungskiste durch den Hubschrauber.&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Fahrzeugabwurf:&lt;/font&gt; Heli-Transport eines leichten Transportfahrzeugs. (Auf 1 Nutzung begrenzt)&lt;br/&gt;
@@ -483,7 +483,7 @@ Das Oberkommando hat dem Sektor Zargabad einen einzigen UH-60L-Hubschrauber zuge
 - &lt;font color='#87CEEB'&gt;Evakuierung:&lt;/font&gt; Der Hubschrauber landet auf der vorgesehenen Landezone, um den Trupp zu evakuieren.
         </German>
         <Polish>
-Naczelne Dowództwo przydzieliło do sektora Zargabad pojedynczy helikopter UH-60L. Dzielisz te zasoby z innymi jednostkami. Misje są przetwarzane zgodnie z rygorystycznym protokołem priorytetów.&lt;br/&gt;&lt;br/&gt;
+Naczelne Dowództwo przydzieliło do sektora operacyjnego pojedynczy helikopter UH-60L. Dzielisz te zasoby z innymi jednostkami. Misje są przetwarzane zgodnie z rygorystycznym protokołem priorytetów.&lt;br/&gt;&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Bezpośrednie Wsparcie Lotnicze (CAS):&lt;/font&gt; Śmigłowiec wykona przeloty ostrzeliwujące (miniguny) na wyznaczonym obszarze. (Czas odnowienia: 5 minut)&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Zrzut Amunicji:&lt;/font&gt; Zrzut skrzyni z zaopatrzeniem przez śmigłowiec.&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Zrzut Pojazdu:&lt;/font&gt; Transport helikopterem lekkiego pojazdu transportowego. (Ograniczone do 1 użycia)&lt;br/&gt;
@@ -499,7 +499,7 @@ Naczelne Dowództwo przydzieliło do sektora Zargabad pojedynczy helikopter UH-6
 - &lt;font color='#87CEEB'&gt;Эвакуация:&lt;/font&gt; Вертолет приземлится на указанной зоне посадки, чтобы эвакуировать отряд.
         </Russian>
         <Turkish>
-Yüksek Komuta, Zargabad bölgesine tek bir UH-60L helikopteri atadı. Bu kaynağı diğer birimlerle paylaşıyorsunuz. Görevler katı bir öncelik protokolüne göre işlenir.&lt;br/&gt;&lt;br/&gt;
+Yüksek Komuta, AO bölgesine tek bir UH-60L helikopteri atadı. Bu kaynağı diğer birimlerle paylaşıyorsunuz. Görevler katı bir öncelik protokolüne göre işlenir.&lt;br/&gt;&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Yakın Hava Desteği (CAS):&lt;/font&gt; Helikopter belirlenen alana ateş geçişleri (minigunlar) gerçekleştirecektir. (Bekleme Süresi: 5 dakika)&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Mühimmat İkmali:&lt;/font&gt; Helikopter tarafından tedarik sandığı atılması.&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Araç İkmali:&lt;/font&gt; Hafif bir nakliye aracının helikopterle taşınması. (1 kullanımla sınırlı)&lt;br/&gt;

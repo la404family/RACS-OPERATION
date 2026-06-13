@@ -1,28 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Keys>
     <Key ID="STR_LL_Intro_Author">
-        <Original>KDC - The Legend</Original>
-        <French>KDC - The Legend</French>
-        <English>KDC - The Legend</English>
+        <Original>Operation Royal Alliance</Original>
+        <French>Operation Royal Alliance</French>
+        <English>Operation Royal Alliance</English>
+        <Spanish>Operation Royal Alliance</Spanish>
+        <Italian>Operation Royal Alliance</Italian>
+        <German>Operation Royal Alliance</German>
+        <Polish>Operation Royal Alliance</Polish>
+        <Russian>Operation Royal Alliance</Russian>
+        <Turkish>Operation Royal Alliance</Turkish>
+        <Japanese>Operation Royal Alliance</Japanese>
+        <Korean>Operation Royal Alliance</Korean>
+        <Chinese>Operation Royal Alliance</Chinese>
     </Key>
     <Key ID="STR_LL_Intro_Presents">
-        <Original>presents</Original>
-        <French>présente</French>
-        <English>presents</English>
-    </Key>
-    <Key ID="STR_LL_Intro_Title">
-        <Original>OPERATION RACS</Original>
-        <French>OPÉRATION RACS</French>
-        <English>OPERATION RACS</English>
+        <Original>The game mode for Arma III veterans</Original>
+        <French>Le mode de jeu pour les vétérans de Arma III</French>
+        <English>The game mode for Arma III veterans</English>
+        <Spanish>El modo de juego para veteranos de Arma III</Spanish>
+        <Italian>La modalità di gioco per i veterani di Arma III</Italian>
+        <German>Der Spielmodus für Arma III-Veteranen</German>
+        <Polish>Tryb gry dla weteranów Arma III</Polish>
+        <Russian>Режим игры для ветеранов Arma III</Russian>
+        <Turkish>Arma III gazileri için oyun modu</Turkish>
+        <Japanese>Arma IIIベテラン向けゲームモード</Japanese>
+        <Korean>Arma III 베테랑을 위한 게임 모드</Korean>
+        <Chinese>适合Arma III老玩家的游戏模式</Chinese>
     </Key>
     <Key ID="STR_LL_Intro_Location">
-        <Original>ZARGABAD, SHAHRANI REGION</Original>
-        <French>ZARGABAD, RÉGION DE SHAHRANI</French>
-        <English>ZARGABAD, SHAHRANI REGION</English>
+        <Original>June 29, 2026</Original>
+        <French>29 Juin 2026</French>
+        <English>June 29, 2026</English>
+        <Spanish>29 de Junio de 2026</Spanish>
+        <Italian>29 Giugno 2026</Italian>
+        <German>29. Juni 2026</German>
+        <Polish>29 Czerwca 2026</Polish>
+        <Russian>29 июня 2026 г.</Russian>
+        <Turkish>29 Haziran 2026</Turkish>
+        <Japanese>2026年6月29日</Japanese>
+        <Korean>2026년 6월 29일</Korean>
+        <Chinese>2026年6月29日</Chinese>
     </Key>
     <Key ID="STR_LL_Intro_MissionStartSubtitle">
-        <Original>Initial deployment of the RACS contingent...</Original>
-        <French>Déploiement initial du contingent RACS...</French>
-        <English>Initial deployment of the RACS contingent...</English>
+        <Original>Review the operational briefing if you value your life.</Original>
+        <French>Consultez le briefing opérationnel si vous tenez à votre peau.</French>
+        <English>Review the operational briefing if you value your life.</English>
+        <Spanish>Consulte el informe operativo si valora su vida.</Spanish>
+        <Italian>Consulta il briefing operativo se tieni alla pelle.</Italian>
+        <German>Missionsbriefing lesen, wenn Sie am Leben bleiben wollen.</German>
+        <Polish>Zapoznaj się z odprawą operacyjną, jeśli zależy ci na życiu.</Polish>
+        <Russian>Ознакомьтесь с оперативным брифингом, если хотите остаться в живых.</Russian>
+        <Turkish>Hayatta kalmak istiyorsanız operasyonel brifingi inceleyin.</Turkish>
+        <Japanese>命が惜しければ作戦説明を確認せよ。</Japanese>
+        <Korean>살고 싶다면 작전 브리핑을 정독하십시오.</Korean>
+        <Chinese>如果想活命，请仔细阅读作战简报。</Chinese>
     </Key>
 </Keys>
