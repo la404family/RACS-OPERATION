@@ -1,36 +1,44 @@
 if (!hasInterface) exitWith {};
 
-_this spawn {
-    params [["_radioParam", objNull, [objNull, ""]]];
+[] spawn {
+    private _fnc_addAction = {
+        params ["_unit"];
+        if (_unit getVariable ["LL_Task03_Action_Added", false]) exitWith {};
+        _unit setVariable ["LL_Task03_Action_Added", true];
 
-    private _radio = objNull;
-    if (_radioParam isEqualType "") then {
-        private _timeout = time + 15;
-        waitUntil { !isNull (missionNamespace getVariable [_radioParam, objNull]) || time > _timeout };
-        _radio = missionNamespace getVariable [_radioParam, objNull];
-    } else {
-        _radio = _radioParam;
+        _unit addAction [
+            format ["<t color='#FFFF00'>%1</t>", localize "STR_LL_Task_03_Action"],
+            {
+                params ["_target", "_caller", "_actionId"];
+                private _radios = (missionNamespace getVariable ["LL_Task03_Radios", []]) select {
+                    !isNull _x && alive _x && _caller distance _x < 4 && (_x getVariable ["LL_Task_Status", "WAIT"] == "WAIT")
+                };
+                if (count _radios == 0) exitWith {};
+                private _radio = _radios select 0;
+
+                if (_radio getVariable ["LL_Task03_Triggered", false]) exitWith {};
+                _radio setVariable ["LL_Task03_Triggered", true, true];
+
+                ["plant", [_radio, _caller]] remoteExec ["LL_fnc_task03", 2];
+            },
+            nil,
+            6,
+            true,
+            true,
+            "",
+            "alive _target && {
+                private _radios = (missionNamespace getVariable ['LL_Task03_Radios', []]) select {
+                    !isNull _x && alive _x && _target distance _x < 4 && (_x getVariable ['LL_Task_Status', 'WAIT'] == 'WAIT')
+                };
+                count _radios > 0
+            }"
+        ];
     };
 
-    if (isNull _radio) exitWith {};
-
-    _radio addAction [
-        format ["<t color='#FFFF00'>%1</t>", localize "STR_LL_Task_03_Action"],
-        {
-            params ["_target", "_caller", "_actionId", "_arguments"];
-            if (_target getVariable ["LL_Task03_Triggered", false]) exitWith {};
-            _target setVariable ["LL_Task03_Triggered", true, true];
-
-            _target removeAction _actionId;
-
-            ["plant", [_target, _caller]] remoteExec ["LL_fnc_task03", 2];
-        },
-        nil,
-        6,
-        true,
-        true,
-        "",
-        "alive _target && _this distance _target < 4 && (_target getVariable ['LL_Task_Status', 'WAIT'] == 'WAIT')",
-        4
-    ];
+    private _lastPlayer = objNull;
+    while { true } do {
+        waitUntil { sleep 1; player != _lastPlayer && !isNull player };
+        _lastPlayer = player;
+        [_lastPlayer] call _fnc_addAction;
+    };
 };

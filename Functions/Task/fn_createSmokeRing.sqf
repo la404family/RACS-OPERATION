@@ -13,7 +13,7 @@ params [
     ["_color", [0.8, 0.8, 0.8, 1], [[]]]
 ];
 
-private _source = "#particlesource" createVehicleLocal _center;
+private _source = createVehicleLocal ["#particlesource", _center];
 
 // Paramètres de base de dispersion et cercle
 _source setParticleCircle [0.1, [2, 2, 0.1]];

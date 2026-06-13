@@ -358,24 +358,34 @@ if (_mode == "defuse") exitWith {
         params ["_bomb"];
         if (isNull _bomb) exitWith {};
 
-        sleep 20; 
+        private _pos = getPosATL _bomb;
 
-        if (!isNull _bomb) then {
-            private _pos = getPosATL _bomb;
-
-            // Déclencher un écran de fumée blanche locale sur les clients à la position de la caisse
-            [_pos, {
+        // Déclencher un écran de fumée blanche très épaisse (particules) localement sur tous les clients
+        [[_pos], {
+            params ["_pos"];
+            [_pos] spawn {
                 params ["_pos"];
-                private _smoke = "#particlesource" createVehicleLocal _pos;
-                _smoke setParticleClass "SmokeShell"; 
+                private _emitter = "#particlesource" createVehicleLocal _pos;
+                _emitter setParticleCircle [0.1, [0.1, 0.1, 0]];
+                _emitter setParticleRandom [2, [0.4, 0.4, 0.2], [0.5, 0.5, 0.3], 1, 0.2, [0, 0, 0, 0.05], 0, 0];
+                _emitter setParticleParams [
+                    ["\A3\data_f\ParticleEffects\Universal\Universal", 16, 7, 48, 1], "", "Billboard",
+                    1, 8, [0, 0, 0.1], [0, 0, 0.4], 0, 1.27, 1, 0.05,
+                    [1, 3.5, 6.5], // Expansion rapide de la fumée pour masquer la caisse
+                    [[0.9, 0.9, 0.9, 0.85], [0.95, 0.95, 0.95, 0.55], [0.95, 0.95, 0.95, 0]],
+                    [0.5], 0.1, 0, "", "", _emitter
+                ];
+                _emitter setDropInterval 0.005; // Densité extrême
+                sleep 25; // Dure 25 secondes pour couvrir la suppression à 20s
+                deleteVehicle _emitter;
+            };
+        }] remoteExec ["spawn", 0];
 
-                [_smoke] spawn {
-                    sleep 10;
-                    deleteVehicle (_this select 0);
-                };
-            }] remoteExec ["spawn", 0];
+        // Attendre 20 secondes conformément à la logique d'origine
+        sleep 20;
 
-            sleep 0.5; // Laisser la fumée envelopper la caisse
+        // Supprimer la caisse sous couverture de la fumée épaisse
+        if (!isNull _bomb) then {
             deleteVehicle _bomb;
         };
     };
