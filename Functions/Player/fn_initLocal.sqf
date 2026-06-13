@@ -1,8 +1,5 @@
 if (!hasInterface) exitWith {};
 
-player createDiaryRecord ["diary", [localize "STR_LL_Diary_Lore_Title", localize "STR_LL_Diary_Lore_Text"]];
-player createDiaryRecord ["diary", [localize "STR_LL_Diary_Factions_Title", localize "STR_LL_Diary_Factions_Text"]];
-player createDiaryRecord ["diary", [localize "STR_LL_Diary_Context_Title", localize "STR_LL_Diary_Context_Text"]];
 player createDiaryRecord ["diary", [localize "STR_LL_Briefing_Title", localize "STR_LL_Briefing_Text"]];
 
 [] spawn {
