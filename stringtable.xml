@@ -1938,18 +1938,18 @@ Ağ doluysa istekleriniz reddedilebilir veya kesintiye uğrayabilir.&lt;br/&gt;&
             <Chinese>&lt;t color='#FFFFFF'&gt;[小队] 防御&lt;/t&gt;</Chinese>
         </Key>
         <Key ID="STR_LL_RoeAction_Reset">
-            <Original>&lt;t color='#FFFFFF'&gt;[SQUAD] Reset&lt;/t&gt;</Original>
-            <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Reset&lt;/t&gt;</English>
-            <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Reset&lt;/t&gt;</French>
-            <Spanish>&lt;t color='#FFFFFF'&gt;[ESCUADRA] Reiniciar&lt;/t&gt;</Spanish>
-            <Italian>&lt;t color='#FFFFFF'&gt;[SQUADRA] Ripristina&lt;/t&gt;</Italian>
-            <German>&lt;t color='#FFFFFF'&gt;[TRUPP] Zurücksetzen&lt;/t&gt;</German>
-            <Polish>&lt;t color='#FFFFFF'&gt;[DRUŻYNA] Reset&lt;/t&gt;</Polish>
-            <Russian>&lt;t color='#FFFFFF'&gt;[ОТРЯД] Сброс&lt;/t&gt;</Russian>
-            <Turkish>&lt;t color='#FFFFFF'&gt;[MANGA] Sıfırla&lt;/t&gt;</Turkish>
-            <Japanese>&lt;t color='#FFFFFF'&gt;[分隊] リセット&lt;/t&gt;</Japanese>
-            <Korean>&lt;t color='#FFFFFF'&gt;[분대] 초기화&lt;/t&gt;</Korean>
-            <Chinese>&lt;t color='#FFFFFF'&gt;[小队] 重置&lt;/t&gt;</Chinese>
+            <Original>&lt;t color='#FFFFFF'&gt;[SQUAD] Normal&lt;/t&gt;</Original>
+            <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Normal&lt;/t&gt;</English>
+            <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Normal&lt;/t&gt;</French>
+            <Spanish>&lt;t color='#FFFFFF'&gt;[ESCUADRA] Normal&lt;/t&gt;</Spanish>
+            <Italian>&lt;t color='#FFFFFF'&gt;[SQUADRA] Normale&lt;/t&gt;</Italian>
+            <German>&lt;t color='#FFFFFF'&gt;[TRUPP] Normal&lt;/t&gt;</German>
+            <Polish>&lt;t color='#FFFFFF'&gt;[DRUŻYNA] Normalny&lt;/t&gt;</Polish>
+            <Russian>&lt;t color='#FFFFFF'&gt;[ОТРЯД] Обычный&lt;/t&gt;</Russian>
+            <Turkish>&lt;t color='#FFFFFF'&gt;[MANGA] Normal&lt;/t&gt;</Turkish>
+            <Japanese>&lt;t color='#FFFFFF'&gt;[分隊] ノーマル&lt;/t&gt;</Japanese>
+            <Korean>&lt;t color='#FFFFFF'&gt;[분대] 보통&lt;/t&gt;</Korean>
+            <Chinese>&lt;t color='#FFFFFF'&gt;[小队] 正常&lt;/t&gt;</Chinese>
         </Key>
         <Key ID="STR_LL_SearchAction_Title">
             <Original>&lt;t color='#FFFFFF'&gt;[SQUAD] Search&lt;/t&gt;</Original>

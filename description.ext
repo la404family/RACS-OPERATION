@@ -48,8 +48,6 @@ class CfgFunctions {
             class initIdentity {};
             class initLoadout {};
             class initLocal {};
-            class forceRally {};
-            class addRallyAction {};
             class addHealAction {};
             class addSearchAction {};
             class assignLeader {};
