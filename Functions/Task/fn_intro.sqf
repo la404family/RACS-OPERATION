@@ -104,8 +104,9 @@ if (hasInterface) then {
         titleText [
             format [
                 "<t size='3.2' color='#ffffff' font='PuristaBold' shadow='2' align='center'>%1</t><br/>" +
-                "<t size='1.5' color='#d0d0d0' font='PuristaLight' align='center' letterSpacing='0.15'>%2</t>",
-                toUpper (localize "STR_LL_Intro_Author"),
+                "<t size='1.5' color='#E5B729' font='PuristaSemiBold' align='center' letterSpacing='0.15'>%2</t><br/>" +
+                "<t size='1.5' color='#1D8340' font='PuristaBold' align='center'>- - - - - - * * * * * - - - - - -</t>",
+                "<t color='#12778A'>O</t>PERATION <t color='#12778A'>R</t>OYAL <t color='#12778A'>A</t>LLIANCE",
                 localize "STR_LL_Intro_Presents"
             ],
             "PLAIN", 1, true, true
@@ -183,9 +184,9 @@ if (hasInterface) then {
             missionNamespace setVariable ["MISSION_intro_finished", true, true];
         };
 
-        _ppColor ppEffectAdjust [0.9, 0.85, 0.1, [0.3, 0.3, 0.35, 0.15], [0.65, 0.65, 0.75, 0.5], [0.15, 0.15, 0.25, 0.1]];
+        _ppColor ppEffectAdjust [1, 0.95, 0.05, [0.15, 0.15, 0.2, 0.0], [0.85, 0.85, 0.9, 0.6], [0.1, 0.1, 0.15, 0]];
         _ppColor ppEffectCommit 1.5;
-        _ppGrain ppEffectAdjust [0.18, 1.3, 1.2, 0.18, 1.2, false];
+        _ppGrain ppEffectAdjust [0, 0, 0, 0, 0, false];
         _ppGrain ppEffectCommit 1.5;
 
         detach _cam;

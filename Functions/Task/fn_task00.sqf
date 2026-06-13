@@ -48,7 +48,7 @@ if (_mode == "init") exitWith {
         private _grpInner = createGroup [east, true];
         _grpInner setBehaviour "SAFE";
         _grpInner setCombatMode "RED";
-        private _numInner = 2 + floor (random 2); // 2 or 3 units
+        private _numInner = 2 + floor (random 2); 
         for "_g" from 1 to _numInner do {
             sleep 0.5;
             private _guardClass = selectRandom ["CUP_O_TK_Soldier", "CUP_O_TK_Soldier_GL", "CUP_O_TK_Soldier_AR"];
@@ -63,7 +63,7 @@ if (_mode == "init") exitWith {
         private _grpOuter = createGroup [east, true];
         _grpOuter setBehaviour "SAFE";
         _grpOuter setCombatMode "RED";
-        private _numOuter = 2 + floor (random 2); // 2 or 3 units
+        private _numOuter = 2 + floor (random 2); 
         for "_g" from 1 to _numOuter do {
             sleep 0.5;
             private _guardClass = selectRandom ["CUP_O_TK_Soldier", "CUP_O_TK_Soldier_GL", "CUP_O_TK_Soldier_AR"];
@@ -212,8 +212,7 @@ if (_mode == "free") exitWith {
                 private _nearest = _allBlufor select 0;
                 private _nearestDist = _nearest distance2D _grpPos;
                 { private _d = _x distance2D _grpPos; if (_d < _nearestDist) then { _nearestDist = _d; _nearest = _x; }; } forEach _allBlufor;
-                
-                // Delete active patrol waypoints and assign a Search and Destroy (SAD) waypoint targeting the nearest player
+
                 while { count waypoints _grp > 0 } do { deleteWaypoint [_grp, 0]; };
                 private _wp = _grp addWaypoint [getPosATL _nearest, 10];
                 _wp setWaypointType "SAD";
@@ -265,7 +264,8 @@ if (_mode == "free") exitWith {
 
     waitUntil {
         sleep 2;
-        !alive _hostage || vehicle _hostage != _hostage
+        private _heli = missionNamespace getVariable ["LL_HELI_obj", objNull];
+        !alive _hostage || (!isNull _heli && {vehicle _hostage == _heli})
     };
 
     if (alive _hostage) then {

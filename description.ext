@@ -101,6 +101,7 @@ class CfgFunctions {
             class task06_addAction {};
             class intro {};
             class addTaskAction {};
+            class createSmokeRing {};
         };
         class Briefing {
             file = "Functions\Briefing";

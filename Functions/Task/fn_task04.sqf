@@ -63,7 +63,7 @@ if (_mode == "init") exitWith {
         private _grpInner = createGroup [east, true];
         _grpInner setBehaviour "SAFE";
         _grpInner setCombatMode "RED";
-        private _numInner = 2 + floor (random 2); // 2 or 3 units
+        private _numInner = 2 + floor (random 2); 
         for "_g" from 1 to _numInner do {
             sleep 0.5;
             private _guardClass = selectRandom ["CUP_O_TK_Soldier", "CUP_O_TK_Soldier_GL", "CUP_O_TK_Soldier_AR"];
@@ -78,7 +78,7 @@ if (_mode == "init") exitWith {
         private _grpOuter = createGroup [east, true];
         _grpOuter setBehaviour "SAFE";
         _grpOuter setCombatMode "RED";
-        private _numOuter = 2 + floor (random 2); // 2 or 3 units
+        private _numOuter = 2 + floor (random 2); 
         for "_g" from 1 to _numOuter do {
             sleep 0.5;
             private _guardClass = selectRandom ["CUP_O_TK_Soldier", "CUP_O_TK_Soldier_GL", "CUP_O_TK_Soldier_AR"];
@@ -195,26 +195,48 @@ if (_mode == "init") exitWith {
                 };
             } forEach _remaining;
 
-            private _pos = getPos _unit;
-            private _emitter = "#particlesource" createVehicle _pos;
-            _emitter setParticleParams [
-                ["\A3\data_f\ParticleEffects\Universal\Universal", 16, 7, 48, 1], "", "Billboard", 1, 30,
-                [0, 0, 0.5], [0, 0, 0.5], 0, 1.28, 1, 0.05, [3, 10, 18],
-                [[0.7, 0.8, 0.2, 0.35], [0.6, 0.7, 0.15, 0.2], [0.4, 0.5, 0.1, 0]], [0.125], 1, 0, "", "", _unit
-            ];
-            _emitter setParticleRandom [8, [8, 8, 0.5], [1, 1, 0.2], 2, 0.6, [0, 0, 0, 0.05], 0, 0];
-            _emitter setDropInterval 0.035;
+            private _posATL = getPosATL _unit;
+            private _posASL = getPosASL _unit;
 
-            [_pos] spawn {
+            // Déclencher l'effet visuel de l'onde de choc (anneau de fumée) sur tous les clients
+            [_posATL, 80, 8, [0.6, 0.7, 0.2, 0.8]] remoteExec ["LL_fnc_createSmokeRing", 0];
+
+            // Gérer les dégâts de l'onde de choc et l'effet de souffle physique sur le serveur
+            [_posASL] spawn {
                 params ["_pos"];
-                for "_i" from 1 to 40 do {
+                private _maxRadius = 80;
+                private _duration = 8;
+                private _startTime = time;
+                private _damagedUnits = [];
+
+                while { (time - _startTime) < _duration } do {
+                    private _progress = (time - _startTime) / _duration;
+                    private _currentRadius = _maxRadius * _progress;
+
                     {
-                        if (alive _x && _x distance2D _pos < 30) then {
-                            private _damage = damage _x;
-                            _x setDamage (_damage + 0.10); 
+                        if (alive _x && !(_x in _damagedUnits)) then {
+                            private _dist = _x distance _pos;
+                            if (_dist <= _currentRadius) then {
+                                _damagedUnits pushBack _x;
+                                private _damageFactor = 1 - (_dist / _maxRadius);
+                                if (_damageFactor > 0) then {
+                                    // Dégâts de souffle proportionnels
+                                    private _dmg = 1.2 * _damageFactor;
+                                    _x setDamage (damage _x + _dmg);
+
+                                    // Poussée physique (effet de souffle)
+                                    if (_x isKindOf "Man") then {
+                                        private _dir = _pos vectorFromTo (getPosASL _x);
+                                        _dir set [2, 0.15]; // légère élévation
+                                        private _vel = velocity _x;
+                                        _x setVelocity (_vel vectorAdd (_dir vectorMultiply (15 * _damageFactor)));
+                                    };
+                                };
+                            };
                         };
-                    } forEach allUnits; 
-                    sleep 1;
+                    } forEach (allUnits select { alive _x });
+
+                    sleep 0.05;
                 };
             };
 
