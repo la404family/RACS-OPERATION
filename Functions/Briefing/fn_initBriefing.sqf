@@ -8,7 +8,7 @@ player createDiaryRecord ["Manuel", [localize "STR_LL_Briefing_3_1_Title", local
 player createDiaryRecord ["Manuel", [localize "STR_LL_Briefing_2_3_Title", localize "STR_LL_Briefing_2_3_Text"]];
 player createDiaryRecord ["Manuel", [localize "STR_LL_Briefing_2_2_Title", localize "STR_LL_Briefing_2_2_Text"]];
 player createDiaryRecord ["Manuel", [localize "STR_LL_Briefing_2_1_Title", localize "STR_LL_Briefing_2_1_Text"]];
-player createDiaryRecord ["Manuel", [localize "STR_LL_Briefing_1_4_Title", localize "STR_LL_Briefing_1_4_Text"]];
 player createDiaryRecord ["Manuel", [localize "STR_LL_Briefing_1_3_Title", localize "STR_LL_Briefing_1_3_Text"]];
-player createDiaryRecord ["Manuel", [localize "STR_LL_Briefing_1_2_Title", localize "STR_LL_Briefing_1_2_Text"]];
 player createDiaryRecord ["Manuel", [localize "STR_LL_Briefing_1_1_Title", localize "STR_LL_Briefing_1_1_Text"]];
+
+

@@ -91,7 +91,7 @@ if (_mode == "init") exitWith {
 
         sleep 0.7;
 
-        private _radioClass = selectRandom ["RuggedTerminal_01_communications_hub_F", "RuggedTerminal_01_communications_F"];
+        private _radioClass = "RuggedTerminal_01_communications_F";
         private _radio = createVehicle [_radioClass, [0,0,0], [], 0, "CAN_COLLIDE"];
         _radio setPosASL _spawnPos;
         _radio setDir (random 360);
@@ -101,13 +101,7 @@ if (_mode == "init") exitWith {
         _radio allowDamage false;
         [_radio] spawn { sleep 3; (_this select 0) allowDamage true; };
 
-        _radios pushBack _radio;
-
-        private _varName = format ["LL_Task03_Radio_%1_%2", _i, round(random 100000)];
-        _radio setVehicleVarName _varName;
-        missionNamespace setVariable [_varName, _radio, true];
-
-        [_varName] remoteExec ["LL_fnc_task03_addAction", 0, true];
+        _radios pushBack (netId _radio);
     };
 
     missionNamespace setVariable ["LL_Task03_AllUnits", _allUnits, true];
@@ -144,9 +138,9 @@ if (_mode == "plant") exitWith {
 
     ["STR_LL_Task_03_Warning"] remoteExec ["LL_fnc_radioMessage", 0];
 
-    private _charge = createVehicle ["DemoCharge_F", getPosASL _radio, [], 0, "CAN_COLLIDE"];
-    _charge attachTo [_radio, [0, 0, 0.2]]; 
-    _charge setVectorUp [0, 0, 1];
+    private _pos = getPosATL _radio;
+    private _charge = createVehicle ["DemoCharge_F", _pos, [], 0, "CAN_COLLIDE"];
+    _charge setPosATL _pos;
 
     [_radio, _charge] spawn {
         params ["_radio", "_charge"];

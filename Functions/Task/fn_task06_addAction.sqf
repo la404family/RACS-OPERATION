@@ -1,10 +1,17 @@
 if (!hasInterface) exitWith {};
 
 _this spawn {
-    params [["_hvt", objNull, [objNull]]];
+    params [["_hvtParam", objNull, [objNull]], ["_netId", "", [""]]];
 
-    private _timeout = time + 10;
-    waitUntil { !isNull _hvt || time > _timeout };
+    private _hvt = _hvtParam;
+    if (isNull _hvt) then {
+        waitUntil {
+            sleep 0.5;
+            if (_netId != "") then { _hvt = objectFromNetId _netId; };
+            if (isNull _hvt) then { _hvt = missionNamespace getVariable ["LL_Task06_HVT", objNull]; };
+            !isNull _hvt
+        };
+    };
 
     if (isNull _hvt) exitWith {
         systemChat "[CLIENT] ERREUR : Le HVT reçu par addAction est null (problème de réplication).";

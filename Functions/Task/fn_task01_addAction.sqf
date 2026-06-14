@@ -1,24 +1,29 @@
 if (!hasInterface) exitWith {};
 
 _this spawn {
-    params [["_corpseParam", objNull, [objNull, ""]], ["_docParam", objNull, [objNull, ""]]];
+    params [
+        ["_corpseParam", objNull, [objNull]], ["_corpseNetId", "", [""]], ["_corpseVar", "", [""]],
+        ["_docParam", objNull, [objNull]], ["_docNetId", "", [""]], ["_docVar", "", [""]]
+    ];
 
-    private _corpse = objNull;
-    if (_corpseParam isEqualType "") then {
-        private _timeout = time + 15;
-        waitUntil { !isNull (missionNamespace getVariable [_corpseParam, objNull]) || time > _timeout };
-        _corpse = missionNamespace getVariable [_corpseParam, objNull];
-    } else {
-        _corpse = _corpseParam;
+    private _corpse = _corpseParam;
+    if (isNull _corpse) then {
+        waitUntil {
+            sleep 0.5;
+            if (_corpseNetId != "") then { _corpse = objectFromNetId _corpseNetId; };
+            if (isNull _corpse && _corpseVar != "") then { _corpse = missionNamespace getVariable [_corpseVar, objNull]; };
+            !isNull _corpse
+        };
     };
 
-    private _doc = objNull;
-    if (_docParam isEqualType "") then {
-        private _timeout = time + 15;
-        waitUntil { !isNull (missionNamespace getVariable [_docParam, objNull]) || time > _timeout };
-        _doc = missionNamespace getVariable [_docParam, objNull];
-    } else {
-        _doc = _docParam;
+    private _doc = _docParam;
+    if (isNull _doc) then {
+        waitUntil {
+            sleep 0.5;
+            if (_docNetId != "") then { _doc = objectFromNetId _docNetId; };
+            if (isNull _doc && _docVar != "") then { _doc = missionNamespace getVariable [_docVar, objNull]; };
+            !isNull _doc
+        };
     };
 
     if (isNull _corpse || isNull _doc) exitWith {};

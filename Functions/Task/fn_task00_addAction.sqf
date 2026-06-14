@@ -1,15 +1,16 @@
 if (!hasInterface) exitWith {};
 
 _this spawn {
-    params [["_hostageParam", objNull, [objNull, ""]]];
+    params [["_hostageParam", objNull, [objNull]], ["_netId", "", [""]], ["_varName", "", [""]]];
 
-    private _hostage = objNull;
-    if (_hostageParam isEqualType "") then {
-        private _timeout = time + 15;
-        waitUntil { !isNull (missionNamespace getVariable [_hostageParam, objNull]) || time > _timeout };
-        _hostage = missionNamespace getVariable [_hostageParam, objNull];
-    } else {
-        _hostage = _hostageParam;
+    private _hostage = _hostageParam;
+    if (isNull _hostage) then {
+        waitUntil {
+            sleep 0.5;
+            if (_netId != "") then { _hostage = objectFromNetId _netId; };
+            if (isNull _hostage && _varName != "") then { _hostage = missionNamespace getVariable [_varName, objNull]; };
+            !isNull _hostage
+        };
     };
 
     if (isNull _hostage) exitWith {};

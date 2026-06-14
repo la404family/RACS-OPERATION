@@ -118,7 +118,7 @@ if (_mode == "init") exitWith {
             _hostage setVehicleVarName _varName;
             missionNamespace setVariable [_varName, _hostage, true];
 
-            [_varName] remoteExec ["LL_fnc_task00_addAction", 0, true];
+            [_hostage, netId _hostage, _varName] remoteExec ["LL_fnc_task00_addAction", 0, true];
         };
     };
 

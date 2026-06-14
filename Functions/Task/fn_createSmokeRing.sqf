@@ -7,7 +7,7 @@ params [
     ["_color", [0.8, 0.8, 0.8, 1], [[]]]
 ];
 
-private _source = "#particlesource" createVehicleLocal _center;
+private _source = createVehicleLocal ["#particlesource", _center];
 
 _source setParticleCircle [0.1, [2, 2, 0.1]];
 _source setParticleRandom [0.3, [0.2, 0.2, 0.1], [0.3, 0.3, 0.1], 0, 0.3, [0,0,0,0.05], 0, 0];

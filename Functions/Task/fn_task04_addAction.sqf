@@ -1,15 +1,16 @@
 if (!hasInterface) exitWith {};
 
 _this spawn {
-    params [["_truckParam", objNull, [objNull, ""]]];
+    params [["_truckParam", objNull, [objNull]], ["_netId", "", [""]], ["_varName", "", [""]]];
 
-    private _truck = objNull;
-    if (_truckParam isEqualType "") then {
-        private _timeout = time + 15;
-        waitUntil { !isNull (missionNamespace getVariable [_truckParam, objNull]) || time > _timeout };
-        _truck = missionNamespace getVariable [_truckParam, objNull];
-    } else {
-        _truck = _truckParam;
+    private _truck = _truckParam;
+    if (isNull _truck) then {
+        waitUntil {
+            sleep 0.5;
+            if (_netId != "") then { _truck = objectFromNetId _netId; };
+            if (isNull _truck && _varName != "") then { _truck = missionNamespace getVariable [_varName, objNull]; };
+            !isNull _truck
+        };
     };
 
     if (isNull _truck) exitWith {};

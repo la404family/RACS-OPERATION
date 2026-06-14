@@ -1,15 +1,16 @@
 if (!hasInterface) exitWith {};
 
 _this spawn {
-    params [["_bombParam", objNull, [objNull, ""]]];
+    params [["_bombParam", objNull, [objNull]], ["_netId", "", [""]], ["_varName", "", [""]]];
 
-    private _bomb = objNull;
-    if (_bombParam isEqualType "") then {
-        private _timeout = time + 15;
-        waitUntil { !isNull (missionNamespace getVariable [_bombParam, objNull]) || time > _timeout };
-        _bomb = missionNamespace getVariable [_bombParam, objNull];
-    } else {
-        _bomb = _bombParam;
+    private _bomb = _bombParam;
+    if (isNull _bomb) then {
+        waitUntil {
+            sleep 0.5;
+            if (_netId != "") then { _bomb = objectFromNetId _netId; };
+            if (isNull _bomb && _varName != "") then { _bomb = missionNamespace getVariable [_varName, objNull]; };
+            !isNull _bomb
+        };
     };
 
     if (isNull _bomb) exitWith {};

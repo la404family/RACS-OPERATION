@@ -28,230 +28,104 @@
             <Japanese>1.1. 交戦規定</Japanese>
             <Korean>1.1. 교전 수칙</Korean>
             <Chinese>1.1. 交战规则</Chinese>
-        </Key>
-        <Key ID="STR_LL_Briefing_1_1_Text">
-            <Original>
-&lt;font color='#FF8800'&gt;Interface:&lt;/font&gt; Dynamic menu (Scroll action).&lt;br/&gt;
+        </Key>    <Key ID="STR_LL_Briefing_1_1_Text">
+        <Original>
+&lt;font color='#FF8800'&gt;Interface:&lt;/font&gt; Dynamic menu (scroll wheel).&lt;br/&gt;
 &lt;font color='#FFD700'&gt;Description:&lt;/font&gt; Instantly modifies the tactical behavior of your entire squad.&lt;br/&gt;&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Infiltration:&lt;/font&gt; Stealthy movement, silent, weapons lowered.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Patrol:&lt;/font&gt; Standard movement, moderate speed, spaced formation.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Vigilance:&lt;/font&gt; Weapons raised, increased situational awareness, ready to fire.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Assault:&lt;/font&gt; Maximum speed, aggressive behavior to gain the upper hand.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Charge:&lt;/font&gt; Fast chaotic movement towards the objective, ignoring suppressive fire.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Defense:&lt;/font&gt; Hold position, seek cover, immediate return of fire.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Reset:&lt;/font&gt; Return to standard AI behavior.
+- &lt;font color='#87CEEB'&gt;Infiltration:&lt;/font&gt; Stealthy movement, silent, crouching posture.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Normal:&lt;/font&gt; Standard AI behavior, moderate speed, search cover.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Assault:&lt;/font&gt; Maximum speed, aggressive push-forward, standing posture.
         </Original>
-            <French>
-&lt;font color='#FF8800'&gt;Interface :&lt;/font&gt; Menu dynamique (Action molette).&lt;br/&gt;
+        <French>
+&lt;font color='#FF8800'&gt;Interface :&lt;/font&gt; Menu dynamique (molette de la souris).&lt;br/&gt;
 &lt;font color='#FFD700'&gt;Description :&lt;/font&gt; Modifie instantanément le comportement tactique de l'ensemble de votre escouade.&lt;br/&gt;&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Infiltration :&lt;/font&gt; Déplacement furtif, silencieux, armes baissées.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Patrouille :&lt;/font&gt; Déplacement standard, vitesse modérée, formation espacée.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Vigilance :&lt;/font&gt; Armes levées, conscience situationnelle accrue, prêts à faire feu.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Assaut :&lt;/font&gt; Vitesse maximale, comportement agressif pour prendre l'ascendant.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Charge :&lt;/font&gt; Mouvement désordonné et ultra-rapide vers l'objectif, ignorer les tirs de suppression.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Défense :&lt;/font&gt; Tenir la position, chercher un couvert, riposte immédiate.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Reset :&lt;/font&gt; Retour au comportement standard de l'IA.
+- &lt;font color='#87CEEB'&gt;Infiltration :&lt;/font&gt; Déplacement furtif, silencieux, posture accroupie.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Normal :&lt;/font&gt; Comportement IA standard, vitesse modérée, recherche de couverture.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Assaut :&lt;/font&gt; Vitesse maximale, progression agressive, posture debout.
         </French>
-            <English>
-&lt;font color='#FF8800'&gt;Interface:&lt;/font&gt; Dynamic menu (Scroll action).&lt;br/&gt;
+        <English>
+&lt;font color='#FF8800'&gt;Interface:&lt;/font&gt; Dynamic menu (scroll wheel).&lt;br/&gt;
 &lt;font color='#FFD700'&gt;Description:&lt;/font&gt; Instantly modifies the tactical behavior of your entire squad.&lt;br/&gt;&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Infiltration:&lt;/font&gt; Stealthy movement, silent, weapons lowered.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Patrol:&lt;/font&gt; Standard movement, moderate speed, spaced formation.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Vigilance:&lt;/font&gt; Weapons raised, increased situational awareness, ready to fire.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Assault:&lt;/font&gt; Maximum speed, aggressive behavior to gain the upper hand.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Charge:&lt;/font&gt; Fast chaotic movement towards the objective, ignoring suppressive fire.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Defense:&lt;/font&gt; Hold position, seek cover, immediate return of fire.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Reset:&lt;/font&gt; Return to standard AI behavior.
+- &lt;font color='#87CEEB'&gt;Infiltration:&lt;/font&gt; Stealthy movement, silent, crouching posture.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Normal:&lt;/font&gt; Standard AI behavior, moderate speed, search cover.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Assault:&lt;/font&gt; Maximum speed, aggressive push-forward, standing posture.
         </English>
-            <Spanish>
-&lt;font color='#FF8800'&gt;Interfaz:&lt;/font&gt; Menú dinámico (Acción rueda del ratón).&lt;br/&gt;
-&lt;font color='#FFD700'&gt;Descripción:&lt;/font&gt; Modifica instantáneamente el comportamiento táctico de toda tu escuadra.&lt;br/&gt;&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Infiltración:&lt;/font&gt; Movimiento sigiloso, silencioso, armas bajas.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Patrulla:&lt;/font&gt; Movimiento estándar, velocidad moderada, formación espaciada.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Vigilancia:&lt;/font&gt; Armas en alto, mayor conciencia situacional, listos para disparar.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Asalto:&lt;/font&gt; Velocidad máxima, comportamiento agresivo para ganar ventaja.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Carga:&lt;/font&gt; Movimiento rápido y caótico hacia el objetivo, ignorando el fuego de supresión.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Defensa:&lt;/font&gt; Mantener posición, buscar cobertura, devolver el fuego inmediatamente.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Reinicio:&lt;/font&gt; Volver al comportamiento estándar de la IA.
+        <Spanish>
+&lt;font color='#FF8800'&gt;Interfaz:&lt;/font&gt; Menú dinámico (rueda del ratón).&lt;br/&gt;
+&lt;font color='#FFD700'&gt;Descripción:&lt;/font&gt; Modifica al instante el comportamiento táctico de todo tu equipo.&lt;br/&gt;&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Infiltración:&lt;/font&gt; Movimiento sigiloso, silencioso, postura agachada.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Normal:&lt;/font&gt; Comportamiento estándar de la IA, velocidad moderada, buscar cobertura.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Asalto:&lt;/font&gt; Velocidad máxima, avance agresivo, postura de pie.
         </Spanish>
-            <Italian>
-&lt;font color='#FF8800'&gt;Interfaccia:&lt;/font&gt; Menu dinamico (Rotellina del mouse).&lt;br/&gt;
+        <Italian>
+&lt;font color='#FF8800'&gt;Interfaccia:&lt;/font&gt; Menu dinamico (rotellina del mouse).&lt;br/&gt;
 &lt;font color='#FFD700'&gt;Descrizione:&lt;/font&gt; Modifica istantaneamente il comportamento tattico dell'intera squadra.&lt;br/&gt;&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Infiltrazione:&lt;/font&gt; Movimento furtivo, silenzioso, armi abbassate.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Pattuglia:&lt;/font&gt; Movimento standard, velocità moderata, formazione distanziata.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Vigilanza:&lt;/font&gt; Armi alzate, maggiore consapevolezza situazionale, pronti al fuoco.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Assalto:&lt;/font&gt; Massima velocità, comportamento aggressivo per avere la meglio.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Carica:&lt;/font&gt; Movimento veloce e caotico verso l'obiettivo, ignorando il fuoco di soppressione.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Difesa:&lt;/font&gt; Mantenere la posizione, cercare riparo, rispondere immediatamente al fuoco.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Ripristino:&lt;/font&gt; Torna al comportamento IA standard.
+- &lt;font color='#87CEEB'&gt;Infiltrazione:&lt;/font&gt; Movimento furtivo, silenzioso, postura accovacciata.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Normale:&lt;/font&gt; Comportamento standard dell'IA, velocità moderata, ricerca di riparo.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Assalto:&lt;/font&gt; Massima velocità, avanzamento aggressivo, postura eretta.
         </Italian>
-            <German>
+        <German>
 &lt;font color='#FF8800'&gt;Schnittstelle:&lt;/font&gt; Dynamisches Menü (Mausrad).&lt;br/&gt;
 &lt;font color='#FFD700'&gt;Beschreibung:&lt;/font&gt; Ändert sofort das taktische Verhalten deines gesamten Trupps.&lt;br/&gt;&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Infiltration:&lt;/font&gt; Heimliche Bewegung, leise, Waffen gesenkt.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Patrouille:&lt;/font&gt; Standardbewegung, moderate Geschwindigkeit, weite Formation.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Wachsamkeit:&lt;/font&gt; Waffen erhoben, erhöhtes Situationsbewusstsein, feuerbereit.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Angriff:&lt;/font&gt; Maximale Geschwindigkeit, aggressives Verhalten, um die Oberhand zu gewinnen.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Ansturm:&lt;/font&gt; Schnelle chaotische Bewegung auf das Ziel zu, ignoriert Unterdrückungsfeuer.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Verteidigung:&lt;/font&gt; Position halten, Deckung suchen, sofort das Feuer erwidern.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Zurücksetzen:&lt;/font&gt; Zurück zum Standard-KI-Verhalten.
+- &lt;font color='#87CEEB'&gt;Infiltration:&lt;/font&gt; Heimliche Bewegung, leise, geduckte Haltung.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Normal:&lt;/font&gt; Standard-KI-Verhalten, moderate Geschwindigkeit, Deckung suchen.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Angriff:&lt;/font&gt; Maximale Geschwindigkeit, aggressives Vordringen, aufrechte Haltung.
         </German>
-            <Polish>
+        <Polish>
 &lt;font color='#FF8800'&gt;Interfejs:&lt;/font&gt; Dynamiczne menu (kółko myszy).&lt;br/&gt;
 &lt;font color='#FFD700'&gt;Opis:&lt;/font&gt; Błyskawicznie modyfikuje zachowanie taktyczne całego twojego oddziału.&lt;br/&gt;&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Infiltracja:&lt;/font&gt; Ruch z ukrycia, cicho, opuszczona broń.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Patrol:&lt;/font&gt; Standardowy ruch, umiarkowana prędkość, rozproszona formacja.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Czujność:&lt;/font&gt; Podniesiona broń, zwiększona świadomość sytuacyjna, gotowość do strzału.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Szturm:&lt;/font&gt; Maksymalna prędkość, agresywne zachowanie w celu zdobycia przewagi.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Szarża:&lt;/font&gt; Szybki, chaotyczny ruch w stronę celu, ignorujący ogień zaporowy.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Obrona:&lt;/font&gt; Utrzymanie pozycji, szukanie osłony, natychmiastowe otwarcie ognia.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Reset:&lt;/font&gt; Powrót do standardowego zachowania SI.
+- &lt;font color='#87CEEB'&gt;Infiltracja:&lt;/font&gt; Ruch z ukrycia, cicho, pozycja kucająca.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Normalny:&lt;/font&gt; Standardowe zachowanie SI, umiarkowana prędkość, szukanie osłony.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Szturm:&lt;/font&gt; Maksymalna prędkość, agresywne parcie naprzód, pozycja stojąca.
         </Polish>
-            <Russian>
-&lt;font color='#FF8800'&gt;Интерфейс:&lt;/font&gt; Динамическое меню (Колесико мыши).&lt;br/&gt;
+        <Russian>
+&lt;font color='#FF8800'&gt;Интерфейс:&lt;/font&gt; Динамическое меню (колесико мыши).&lt;br/&gt;
 &lt;font color='#FFD700'&gt;Описание:&lt;/font&gt; Мгновенно изменяет тактическое поведение всего вашего отряда.&lt;br/&gt;&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Проникновение:&lt;/font&gt; Скрытное передвижение, тишина, оружие опущено.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Патруль:&lt;/font&gt; Стандартное передвижение, средняя скорость, рассредоточенное построение.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Бдительность:&lt;/font&gt; Оружие наготове, повышенная осведомленность, готовность открыть огонь.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Штурм:&lt;/font&gt; Максимальная скорость, агрессивное поведение для получения преимущества.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Атака:&lt;/font&gt; Быстрое хаотичное движение к цели, игнорируя подавляющий огонь.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Оборона:&lt;/font&gt; Удерживать позицию, искать укрытие, немедленный ответный огонь.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Сброс:&lt;/font&gt; Возврат к стандартному поведению ИИ.
+- &lt;font color='#87CEEB'&gt;Скрытность:&lt;/font&gt; Скрытное передвижение, бесшумно, пригнувшись.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Обычный:&lt;/font&gt; Стандартное поведение ИИ, умеренная скорость, поиск укрытия.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Штурм:&lt;/font&gt; Максимальная скорость, агрессивное продвижение, стоячая поза.
         </Russian>
-            <Turkish>
-&lt;font color='#FF8800'&gt;Arayüz:&lt;/font&gt; Dinamik menü (Fare tekerleği).&lt;br/&gt;
+        <Turkish>
+&lt;font color='#FF8800'&gt;Arayüz:&lt;/font&gt; Dinamik menü (fare tekerleği).&lt;br/&gt;
 &lt;font color='#FFD700'&gt;Açıklama:&lt;/font&gt; Tüm manganızın taktiksel davranışını anında değiştirir.&lt;br/&gt;&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Sızma:&lt;/font&gt; Gizli hareket, sessiz, silahlar aşağıda.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Devriye:&lt;/font&gt; Standart hareket, orta hız, aralıklı dizilim.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Teyakkuz:&lt;/font&gt; Silahlar yukarıda, durumsal farkındalık artmış, ateşe hazır.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Saldırı:&lt;/font&gt; Maksimum hız, üstünlük sağlamak için agresif davranış.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Hücum:&lt;/font&gt; Baskı ateşini görmezden gelerek hedefe doğru hızlı kaotik hareket.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Savunma:&lt;/font&gt; Pozisyonu koru, siper al, ateşe anında karşılık ver.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;Sıfırla:&lt;/font&gt; Standart yapay zeka davranışına dön.
+- &lt;font color='#87CEEB'&gt;Sızma:&lt;/font&gt; Gizli hareket, sessiz, çömelme duruşu.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Normal:&lt;/font&gt; Standart yapay zeka davranışı, orta hız, siper arama.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;Saldırı:&lt;/font&gt; Maksimum hız, agresif ilerleme, ayakta duruş.
         </Turkish>
-            <Japanese>
+        <Japanese>
 &lt;font color='#FF8800'&gt;インターフェース:&lt;/font&gt; ダイナミックメニュー (マウスホイール).&lt;br/&gt;
 &lt;font color='#FFD700'&gt;説明:&lt;/font&gt; 分隊全体の戦術的行動を即座に変更します。&lt;br/&gt;&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;潜入:&lt;/font&gt; 隠密行動、静粛、武器を下げる。&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;パトロール:&lt;/font&gt; 標準的な移動、中程度の速度、間隔を空けた陣形。&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;警戒:&lt;/font&gt; 武器を構え、状況認識を高め、発砲準備完了。&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;強襲:&lt;/font&gt; 最高速度、優位に立つための攻撃的な行動。&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;突撃:&lt;/font&gt; 制圧射撃を無視して、目標に向かって高速で混沌とした移動。&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;防衛:&lt;/font&gt; 陣地を維持し、遮蔽物を探し、即座に応戦する。&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;リセット:&lt;/font&gt; 標準的なAIの行動に戻る。
+- &lt;font color='#87CEEB'&gt;潜入:&lt;/font&gt; 隠密行動、静粛、しゃがみ姿勢。&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;通常:&lt;/font&gt; 標準的なAIの行動、中程度の速度、遮蔽物の捜索。&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;強襲:&lt;/font&gt; 最高速度、攻撃的な前進、立ち姿勢。
         </Japanese>
-            <Korean>
+        <Korean>
 &lt;font color='#FF8800'&gt;인터페이스:&lt;/font&gt; 동적 메뉴 (마우스 휠).&lt;br/&gt;
 &lt;font color='#FFD700'&gt;설명:&lt;/font&gt; 분대 전체의 전술적 행동을 즉시 변경합니다.&lt;br/&gt;&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;침투:&lt;/font&gt; 은밀한 이동, 조용하게, 무기 내림.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;순찰:&lt;/font&gt; 표준 이동, 중간 속도, 간격을 둔 진형.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;경계:&lt;/font&gt; 무기 조준, 상황 인식 증가, 사격 준비 완료.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;강습:&lt;/font&gt; 최대 속도, 우위를 점하기 위한 공격적인 행동.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;돌격:&lt;/font&gt; 제압 사격을 무시하고 목표를 향해 빠르고 혼란스러운 이동.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;방어:&lt;/font&gt; 위치 고수, 엄폐물 탐색, 즉각적인 대응 사격.&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;초기화:&lt;/font&gt; 표준 AI 행동으로 복귀.
+- &lt;font color='#87CEEB'&gt;침투:&lt;/font&gt; 은밀한 이동, 조용하게, 앉은 자세.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;보통:&lt;/font&gt; 표준 AI 행동, 중간 속도, 엄폐물 탐색.&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;강습:&lt;/font&gt; 최대 속도, 공격적인 전진, 선 자세.
         </Korean>
-            <Chinese>
+        <Chinese>
 &lt;font color='#FF8800'&gt;界面:&lt;/font&gt; 动态菜单 (鼠标滚轮).&lt;br/&gt;
 &lt;font color='#FFD700'&gt;描述:&lt;/font&gt; 立即改变整个小队的战术行为。&lt;br/&gt;&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;渗透:&lt;/font&gt; 隐蔽移动，保持安静，武器放下。&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;巡逻:&lt;/font&gt; 标准移动，中等速度，分散阵型。&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;警戒:&lt;/font&gt; 举起武器，提高态势感知，准备开火。&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;突击:&lt;/font&gt; 最高速度，采取攻击行为以占据上风。&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;冲锋:&lt;/font&gt; 无视压制火力，快速混乱地向目标移动。&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;防御:&lt;/font&gt; 坚守阵地，寻找掩体，立即还击。&lt;br/&gt;
-- &lt;font color='#87CEEB'&gt;重置:&lt;/font&gt; 返回标准 AI 行为。
+- &lt;font color='#87CEEB'&gt;渗透:&lt;/font&gt; 隐蔽移动，保持安静，蹲姿。&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;常规:&lt;/font&gt; 标准 AI 行为，中等速度，寻找掩体。&lt;br/&gt;
+- &lt;font color='#87CEEB'&gt;突击:&lt;/font&gt; 最高速度，侵略性推进，站姿。
         </Chinese>
-        </Key>
-        <Key ID="STR_LL_Briefing_1_2_Title">
-            <Original>1.2. Rally (Regroup)</Original>
-            <French>1.2. Regroupement Forcé</French>
-            <English>1.2. Rally (Regroup)</English>
-            <Spanish>1.2. Agruparse (Reagrupar)</Spanish>
-            <Italian>1.2. Raduno (Raggruppamento)</Italian>
-            <German>1.2. Sammeln (Sammelpunkt)</German>
-            <Polish>1.2. Zbiórka (Przegrupowanie)</Polish>
-            <Russian>1.2. Сбор (Перегруппировка)</Russian>
-            <Turkish>1.2. Toplanma</Turkish>
-            <Japanese>1.2. 集合 (再編成)</Japanese>
-            <Korean>1.2. 집결 (재집결)</Korean>
-            <Chinese>1.2. 集合 (重新集结)</Chinese>
-        </Key>
-        <Key ID="STR_LL_Briefing_1_2_Text">
-            <Original>
-&lt;font color='#FF8800'&gt;Interface:&lt;/font&gt; White action 'Squad Rally'.&lt;br/&gt;
-&lt;font color='#00FF00'&gt;Condition:&lt;/font&gt; Must have infantry under your command (excluding vehicles).&lt;br/&gt;
-&lt;font color='#FFD700'&gt;Description:&lt;/font&gt; If the squad is scattered or a soldier is stuck under enemy fire, this order triggers an aggressive behavior reset. They will abandon their current cover to reform in a tight column behind you. Ideal for 'unstucking' a recalcitrant unit.
-        </Original>
-            <French>
-&lt;font color='#FF8800'&gt;Interface :&lt;/font&gt; Action blanche 'Regroupement IA'.&lt;br/&gt;
-&lt;font color='#00FF00'&gt;Condition :&lt;/font&gt; Avoir des fantassins sous vos ordres (hors véhicules).&lt;br/&gt;
-&lt;font color='#FFD700'&gt;Description :&lt;/font&gt; Si l'escouade est dispersée ou si un soldat est bloqué sous le feu ennemi, cet ordre déclenche une réinitialisation agressive de leur comportement. Ils abandonneront leur couverture actuelle pour se reformer en colonne serrée derrière vous. Idéal pour 'débloquer' une unité récalcitrante.
-        </French>
-            <English>
-&lt;font color='#FF8800'&gt;Interface:&lt;/font&gt; White action 'Squad Rally'.&lt;br/&gt;
-&lt;font color='#00FF00'&gt;Condition:&lt;/font&gt; Must have infantry under your command (excluding vehicles).&lt;br/&gt;
-&lt;font color='#FFD700'&gt;Description:&lt;/font&gt; If the squad is scattered or a soldier is stuck under enemy fire, this order triggers an aggressive behavior reset. They will abandon their current cover to reform in a tight column behind you. Ideal for 'unstucking' a recalcitrant unit.
-        </English>
-            <Spanish>
-&lt;font color='#FF8800'&gt;Interfaz:&lt;/font&gt; Acción blanca 'Agruparse'.&lt;br/&gt;
-&lt;font color='#00FF00'&gt;Condición:&lt;/font&gt; Debes tener infantería bajo tu mando (excluyendo vehículos).&lt;br/&gt;
-&lt;font color='#FFD700'&gt;Descripción:&lt;/font&gt; Si el escuadrón está disperso o un soldado está atascado bajo fuego enemigo, esta orden desencadena un reinicio agresivo del comportamiento. Abandonarán su cobertura actual para reformarse en una columna cerrada detrás de ti. Ideal para 'desatascar' a una unidad recalcitrante.
-        </Spanish>
-            <Italian>
-&lt;font color='#FF8800'&gt;Interfaccia:&lt;/font&gt; Azione bianca 'Raduno di squadra'.&lt;br/&gt;
-&lt;font color='#00FF00'&gt;Condizione:&lt;/font&gt; Devi avere fanteria sotto il tuo comando (esclusi veicoli).&lt;br/&gt;
-&lt;font color='#FFD700'&gt;Descrizione:&lt;/font&gt; Se la squadra è dispersa o un soldato è bloccato sotto il fuoco nemico, quest'ordine innesca un ripristino aggressivo del comportamento. Abbandoneranno la loro copertura attuale per riformarsi in una colonna stretta dietro di te. Ideale per 'sbloccare' un'unità recalcitrante.
-        </Italian>
-            <German>
-&lt;font color='#FF8800'&gt;Schnittstelle:&lt;/font&gt; Weiße Aktion 'Trupp sammeln'.&lt;br/&gt;
-&lt;font color='#00FF00'&gt;Bedingung:&lt;/font&gt; Du musst Infanterie unter deinem Kommando haben (Fahrzeuge ausgenommen).&lt;br/&gt;
-&lt;font color='#FFD700'&gt;Beschreibung:&lt;/font&gt; Wenn der Trupp verstreut ist oder ein Soldat unter feindlichem Beschuss feststeckt, löst dieser Befehl einen aggressiven Verhaltens-Reset aus. Sie werden ihre aktuelle Deckung aufgeben, um sich in einer engen Kolonne hinter dir neu zu formieren. Ideal, um eine störrische Einheit 'loszueisen'.
-        </German>
-            <Polish>
-&lt;font color='#FF8800'&gt;Interfejs:&lt;/font&gt; Biała akcja 'Zbiórka oddziału'.&lt;br/&gt;
-&lt;font color='#00FF00'&gt;Warunek:&lt;/font&gt; Musisz mieć piechotę pod swoim dowództwem (nie licząc pojazdów).&lt;br/&gt;
-&lt;font color='#FFD700'&gt;Opis:&lt;/font&gt; Jeśli oddział jest rozproszony lub żołnierz utknął pod ostrzałem wroga, ten rozkaz wyzwala agresywny reset zachowania. Porzucą oni swoją obecną osłonę, aby uformować się w ciasną kolumnę za tobą. Idealne do 'odblokowania' opornej jednostki.
-        </Polish>
-            <Russian>
-&lt;font color='#FF8800'&gt;Интерфейс:&lt;/font&gt; Белое действие 'Сбор отряда'.&lt;br/&gt;
-&lt;font color='#00FF00'&gt;Условие:&lt;/font&gt; В вашем подчинении должна быть пехота (исключая технику).&lt;br/&gt;
-&lt;font color='#FFD700'&gt;Описание:&lt;/font&gt; Если отряд рассеян или солдат застрял под вражеским огнем, этот приказ вызывает агрессивный сброс поведения. Они покинут свое текущее укрытие, чтобы перестроиться в плотную колонну позади вас. Идеально подходит для того, чтобы 'вытащить' непокорного юнита.
-        </Russian>
-            <Turkish>
-&lt;font color='#FF8800'&gt;Arayüz:&lt;/font&gt; Beyaz eylem 'Manga Toplanması'.&lt;br/&gt;
-&lt;font color='#00FF00'&gt;Koşul:&lt;/font&gt; Komutanız altında piyade bulunmalıdır (araçlar hariç).&lt;br/&gt;
-&lt;font color='#FFD700'&gt;Açıklama:&lt;/font&gt; Manga dağılmışsa veya bir asker düşman ateşi altında sıkışmışsa, bu emir agresif bir davranış sıfırlaması tetikler. Arkanızda sıkı bir kol halinde yeniden dizilmek için mevcut siperlerini terk edeceklerdir. İnatçı bir birimi 'kurtarmak' için idealdir.
-        </Turkish>
-            <Japanese>
-&lt;font color='#FF8800'&gt;インターフェース:&lt;/font&gt; 白いアクション '分隊集合'.&lt;br/&gt;
-&lt;font color='#00FF00'&gt;条件:&lt;/font&gt; 指揮下に歩兵がいること (車両を除く).&lt;br/&gt;
-&lt;font color='#FFD700'&gt;説明:&lt;/font&gt; 分隊が散り散りになっている場合や、兵士が敵の攻撃下で動けなくなっている場合、この命令は攻撃的な行動リセットのトリガーとなります。彼らは現在の遮蔽物を放棄し、あなたの後ろに密集した縦隊で再編成されます。言うことを聞かないユニットを「解放」するのに最適です。
-        </Japanese>
-            <Korean>
-&lt;font color='#FF8800'&gt;인터페이스:&lt;/font&gt; 흰색 액션 '분대 집결'.&lt;br/&gt;
-&lt;font color='#00FF00'&gt;조건:&lt;/font&gt; 지휘하에 보병이 있어야 합니다 (차량 제외).&lt;br/&gt;
-&lt;font color='#FFD700'&gt;설명:&lt;/font&gt; 분대가 흩어져 있거나 병사가 적의 공격 아래에 갇혀 있는 경우, 이 명령은 공격적인 행동 초기화를 유발합니다. 그들은 당신 뒤에 촘촘한 종대로 재편성하기 위해 현재 엄폐물을 포기할 것입니다. 말을 듣지 않는 유닛을 '구출'하는 데 이상적입니다.
-        </Korean>
-            <Chinese>
-&lt;font color='#FF8800'&gt;界面:&lt;/font&gt; 白色操作 '小队集合'.&lt;br/&gt;
-&lt;font color='#00FF00'&gt;条件:&lt;/font&gt; 你的指挥下必须有步兵 (不包括车辆).&lt;br/&gt;
-&lt;font color='#FFD700'&gt;描述:&lt;/font&gt; 如果小队分散或一名士兵被困在敌人火力下，此命令会触发攻击行为重置。他们将放弃当前的掩体，在你身后重新排成紧密的纵队。非常适合“解救”顽固的单位。
-        </Chinese>
-        </Key>
-        <Key ID="STR_LL_Briefing_1_3_Title">
-            <Original>1.3. Medical Procedure</Original>
-            <French>1.3. Procédure de Soin</French>
-            <English>1.3. Medical Procedure</English>
-            <Spanish>1.3. Procedimiento Médico</Spanish>
-            <Italian>1.3. Procedura Medica</Italian>
-            <German>1.3. Medizinisches Verfahren</German>
-            <Polish>1.3. Procedura medyczna</Polish>
-            <Russian>1.3. Медицинская процедура</Russian>
-            <Turkish>1.3. Tıbbi Prosedür</Turkish>
-            <Japanese>1.3. 医療手順</Japanese>
-            <Korean>1.3. 의료 절차</Korean>
-            <Chinese>1.3. 医疗程序</Chinese>
+    </Key><Key ID="STR_LL_Briefing_1_3_Title">
+            <Original>1.2. Medical Procedure</Original>
+            <French>1.2. Procédure de Soin</French>
+            <English>1.2. Medical Procedure</English>
+            <Spanish>1.2. Procedimiento Médico</Spanish>
+            <Italian>1.2. Procedura Medica</Italian>
+            <German>1.2. Medizinisches Verfahren</German>
+            <Polish>1.2. Procedura medyczna</Polish>
+            <Russian>1.2. Медицинская процедура</Russian>
+            <Turkish>1.2. Tıbbi Prosedür</Turkish>
+            <Japanese>1.2. 医療手順</Japanese>
+            <Korean>1.2. 의료 절차</Korean>
+            <Chinese>1.2. 医疗程序</Chinese>
         </Key>
         <Key ID="STR_LL_Briefing_1_3_Text">
             <Original>
@@ -314,105 +188,17 @@
 &lt;font color='#FFD700'&gt;説明:&lt;/font&gt; 即座に医療処置を行うために前進を停止するよう命じます。負傷したAIは膝をつき、武器をホルスターに収め、応急処置を施してから陣形内の自分の位置に戻ります。&lt;br/&gt;
 &lt;font color='#FFA500'&gt;拒否 (ネガティブ):&lt;/font&gt; 医療品が尽きた場合、分隊が口頭で通知します。
         </Japanese>
-            <Korean>
+        <Korean>
 &lt;font color='#FF8800'&gt;인터페이스:&lt;/font&gt; 녹색 액션 'AI 자동 치료'.&lt;br/&gt;
 &lt;font color='#00FF00'&gt;조건:&lt;/font&gt; 그룹에 부상당한 AI가 한 명 이상 있고 구급 상자(FirstAidKit)를 소지하고 있어야 합니다.&lt;br/&gt;
 &lt;font color='#FFD700'&gt;설명:&lt;/font&gt; 즉각적인 의료 치료를 위해 전진을 멈추도록 명령합니다. 부상당한 AI는 무릎을 꿇고 무기를 집어넣은 다음 응급 처치를 적용한 후 진형 내 자신의 위치로 돌아갑니다.&lt;br/&gt;
 &lt;font color='#FFA500'&gt;거부 (부정):&lt;/font&gt; 의료품이 소진되면 분대가 구두로 알려줍니다.
         </Korean>
-            <Chinese>
+        <Chinese>
 &lt;font color='#FF8800'&gt;界面:&lt;/font&gt; 绿色操作 'AI 自动治疗'.&lt;br/&gt;
 &lt;font color='#00FF00'&gt;条件:&lt;/font&gt; 小组中至少有一名受伤的 AI 并且拥有急救包 (FirstAidKit).&lt;br/&gt;
 &lt;font color='#FFD700'&gt;描述:&lt;/font&gt; 命令停止前进以进行立即医疗处理。受伤的 AI 将单膝跪地，收起武器，并进行急救，然后恢复其在阵型中的位置。&lt;br/&gt;
 &lt;font color='#FFA500'&gt;拒绝 (否定):&lt;/font&gt; 如果医疗用品耗尽，小队将口头通知您。
-        </Chinese>
-        </Key>
-        <Key ID="STR_LL_Briefing_1_4_Title">
-            <Original>1.4. Sector Clearance (CQB)</Original>
-            <French>1.4. Nettoyage de Secteur (CQB)</French>
-            <English>1.4. Sector Clearance (CQB)</English>
-            <Spanish>1.4. Limpieza de Sector (CQB)</Spanish>
-            <Italian>1.4. Bonifica Settore (CQB)</Italian>
-            <German>1.4. Sektorräumung (CQB)</German>
-            <Polish>1.4. Oczyszczanie Sektora (CQB)</Polish>
-            <Russian>1.4. Зачистка сектора (CQB)</Russian>
-            <Turkish>1.4. Bölge Temizliği (CQB)</Turkish>
-            <Japanese>1.4. セクタークリアランス (CQB)</Japanese>
-            <Korean>1.4. 구역 소탕 (CQB)</Korean>
-            <Chinese>1.4. 区域清理 (CQB)</Chinese>
-        </Key>
-        <Key ID="STR_LL_Briefing_1_4_Text">
-            <Original>
-&lt;font color='#FF8800'&gt;Interface:&lt;/font&gt; Yellow action 'Search buildings'.&lt;br/&gt;
-&lt;font color='#00FF00'&gt;Condition:&lt;/font&gt; Buildings present within 55 meters.&lt;br/&gt;
-&lt;font color='#FFD700'&gt;Description:&lt;/font&gt; Urban assault order. Your men will automatically spread out and infiltrate surrounding buildings. AI will always prioritize high points (roofs and upper floors) before securing the ground floor.&lt;br/&gt;
-&lt;font color='#87CEEB'&gt;Protocol:&lt;/font&gt; Aggressive staggered deployment. Once the point is secured, the unit observes the surroundings for a few seconds then automatically returns to formation on you.
-        </Original>
-            <French>
-&lt;font color='#FF8800'&gt;Interface :&lt;/font&gt; Action jaune 'Fouiller les bâtiments'.&lt;br/&gt;
-&lt;font color='#00FF00'&gt;Condition :&lt;/font&gt; Présence de bâtiments à moins de 55 mètres.&lt;br/&gt;
-&lt;font color='#FFD700'&gt;Description :&lt;/font&gt; Ordre d'assaut urbain. Vos hommes vont automatiquement se répartir et s'infiltrer dans les bâtiments environnants. L'IA priorisera toujours les points hauts (toits et étages) avant de sécuriser le rez-de-chaussée.&lt;br/&gt;
-&lt;font color='#87CEEB'&gt;Protocole :&lt;/font&gt; Déploiement agressif en quinconce. Une fois le point sécurisé, l'unité observe les environs pendant quelques secondes puis retourne automatiquement se placer en formation sur vous.
-        </French>
-            <English>
-&lt;font color='#FF8800'&gt;Interface:&lt;/font&gt; Yellow action 'Search buildings'.&lt;br/&gt;
-&lt;font color='#00FF00'&gt;Condition:&lt;/font&gt; Buildings present within 55 meters.&lt;br/&gt;
-&lt;font color='#FFD700'&gt;Description:&lt;/font&gt; Urban assault order. Your men will automatically spread out and infiltrate surrounding buildings. AI will always prioritize high points (roofs and upper floors) before securing the ground floor.&lt;br/&gt;
-&lt;font color='#87CEEB'&gt;Protocol:&lt;/font&gt; Aggressive staggered deployment. Once the point is secured, the unit observes the surroundings for a few seconds then automatically returns to formation on you.
-        </English>
-            <Spanish>
-&lt;font color='#FF8800'&gt;Interfaz:&lt;/font&gt; Acción amarilla 'Buscar en edificios'.&lt;br/&gt;
-&lt;font color='#00FF00'&gt;Condición:&lt;/font&gt; Edificios presentes a menos de 55 metros.&lt;br/&gt;
-&lt;font color='#FFD700'&gt;Descripción:&lt;/font&gt; Orden de asalto urbano. Tus hombres se dispersarán automáticamente e infiltrarán en los edificios circundantes. La IA siempre priorizará los puntos altos (techos y pisos superiores) antes de asegurar la planta baja.&lt;br/&gt;
-&lt;font color='#87CEEB'&gt;Protocolo:&lt;/font&gt; Despliegue escalonado agresivo. Una vez asegurado el punto, la unidad observa los alrededores durante unos segundos y luego regresa automáticamente a la formación contigo.
-        </Spanish>
-            <Italian>
-&lt;font color='#FF8800'&gt;Interfaccia:&lt;/font&gt; Azione gialla 'Cerca edifici'.&lt;br/&gt;
-&lt;font color='#00FF00'&gt;Condizione:&lt;/font&gt; Edifici presenti entro 55 metri.&lt;br/&gt;
-&lt;font color='#FFD700'&gt;Descrizione:&lt;/font&gt; Ordine di assalto urbano. I tuoi uomini si disperderanno automaticamente e si infiltreranno negli edifici circostanti. L'IA darà sempre la priorità ai punti alti (tetti e piani superiori) prima di mettere in sicurezza il piano terra.&lt;br/&gt;
-&lt;font color='#87CEEB'&gt;Protocollo:&lt;/font&gt; Dispiegamento sfalsato aggressivo. Una volta messo in sicurezza il punto, l'unità osserva i dintorni per alcuni secondi, quindi torna automaticamente in formazione su di te.
-        </Italian>
-            <German>
-&lt;font color='#FF8800'&gt;Schnittstelle:&lt;/font&gt; Gelbe Aktion 'Gebäude durchsuchen'.&lt;br/&gt;
-&lt;font color='#00FF00'&gt;Bedingung:&lt;/font&gt; Gebäude im Umkreis von 55 Metern vorhanden.&lt;br/&gt;
-&lt;font color='#FFD700'&gt;Beschreibung:&lt;/font&gt; Städtischer Angriffsbefehl. Deine Männer schwärmen automatisch aus und infiltrieren umliegende Gebäude. Die KI priorisiert immer hohe Punkte (Dächer und obere Stockwerke), bevor das Erdgeschoss gesichert wird.&lt;br/&gt;
-&lt;font color='#87CEEB'&gt;Protokoll:&lt;/font&gt; Aggressiver gestaffelter Einsatz. Sobald der Punkt gesichert ist, beobachtet die Einheit die Umgebung für ein paar Sekunden und kehrt dann automatisch in die Formation zurück.
-        </German>
-            <Polish>
-&lt;font color='#FF8800'&gt;Interfejs:&lt;/font&gt; Żółta akcja 'Przeszukaj budynki'.&lt;br/&gt;
-&lt;font color='#00FF00'&gt;Warunek:&lt;/font&gt; Obecność budynków w promieniu 55 metrów.&lt;br/&gt;
-&lt;font color='#FFD700'&gt;Opis:&lt;/font&gt; Rozkaz szturmu miejskiego. Twoi ludzie automatycznie rozproszą się i zinfiltrują okoliczne budynki. SI zawsze będzie priorytetyzować wysokie punkty (dachy i wyższe piętra) przed zabezpieczeniem parteru.&lt;br/&gt;
-&lt;font color='#87CEEB'&gt;Protokół:&lt;/font&gt; Agresywne, rozłożone w czasie rozmieszczenie. Po zabezpieczeniu punktu jednostka obserwuje otoczenie przez kilka sekund, a następnie automatycznie wraca do formacji na ciebie.
-        </Polish>
-            <Russian>
-&lt;font color='#FF8800'&gt;Интерфейс:&lt;/font&gt; Желтое действие 'Обыскать здания'.&lt;br/&gt;
-&lt;font color='#00FF00'&gt;Условие:&lt;/font&gt; Здания находятся в радиусе 55 метров.&lt;br/&gt;
-&lt;font color='#FFD700'&gt;Описание:&lt;/font&gt; Приказ о городском штурме. Ваши люди автоматически рассредоточатся и проникнут в окружающие здания. ИИ всегда будет отдавать приоритет высоким точкам (крышам и верхним этажам) перед зачисткой первого этажа.&lt;br/&gt;
-&lt;font color='#87CEEB'&gt;Протокол:&lt;/font&gt; Агрессивное эшелонированное развертывание. Как только точка зачищена, отряд наблюдает за окрестностями несколько секунд, а затем автоматически возвращается в строй на вас.
-        </Russian>
-            <Turkish>
-&lt;font color='#FF8800'&gt;Arayüz:&lt;/font&gt; Sarı eylem 'Binaları ara'.&lt;br/&gt;
-&lt;font color='#00FF00'&gt;Koşul:&lt;/font&gt; 55 metre içinde binalar mevcut.&lt;br/&gt;
-&lt;font color='#FFD700'&gt;Açıklama:&lt;/font&gt; Şehir içi saldırı emri. Adamlarınız otomatik olarak dağılacak ve çevredeki binalara sızacaktır. Yapay zeka, zemin katı güvene almadan önce her zaman yüksek noktalara (çatılar ve üst katlar) öncelik verecektir.&lt;br/&gt;
-&lt;font color='#87CEEB'&gt;Protokol:&lt;/font&gt; Agresif kademeli dağıtım. Nokta güvene alındıktan sonra, birim birkaç saniye çevreyi gözlemler ve ardından otomatik olarak sizinle oluşuma geri döner.
-        </Turkish>
-            <Japanese>
-&lt;font color='#FF8800'&gt;インターフェース:&lt;/font&gt; 黄色のアクション '建物を捜索する'.&lt;br/&gt;
-&lt;font color='#00FF00'&gt;条件:&lt;/font&gt; 55メートル以内に建物があること。&lt;br/&gt;
-&lt;font color='#FFD700'&gt;説明:&lt;/font&gt; 市街地強襲命令。部下たちは自動的に散開し、周囲の建物に潜入します。AIは1階を確保する前に、常に高い場所（屋根や上層階）を優先します。&lt;br/&gt;
-&lt;font color='#87CEEB'&gt;プロトコル:&lt;/font&gt; 攻撃的な時間差展開。ポイントが確保されると、部隊は数秒間周囲を監視し、自動的にあなたの陣形に戻ります。
-        </Japanese>
-            <Korean>
-&lt;font color='#FF8800'&gt;인터페이스:&lt;/font&gt; 노란색 액션 '건물 수색'.&lt;br/&gt;
-&lt;font color='#00FF00'&gt;조건:&lt;/font&gt; 55m 이내에 건물이 있어야 합니다.&lt;br/&gt;
-&lt;font color='#FFD700'&gt;설명:&lt;/font&gt; 시가전 돌격 명령. 부하들은 자동으로 흩어져 주변 건물로 침투합니다. AI는 1층을 확보하기 전에 항상 높은 지점(지붕 및 위층)을 우선순위로 둡니다.&lt;br/&gt;
-&lt;font color='#87CEEB'&gt;프로토콜:&lt;/font&gt; 공격적인 엇갈림 배치. 지점이 확보되면 부대는 몇 초 동안 주변을 관찰한 다음 자동으로 진형으로 복귀합니다.
-        </Korean>
-            <Chinese>
-&lt;font color='#FF8800'&gt;界面:&lt;/font&gt; 黄色操作 '搜索建筑物'.&lt;br/&gt;
-&lt;font color='#00FF00'&gt;条件:&lt;/font&gt; 55 米内有建筑物。&lt;br/&gt;
-&lt;font color='#FFD700'&gt;描述:&lt;/font&gt; 城市突击命令。您的手下将自动散开并渗透到周围的建筑物中。AI 始终会优先考虑制高点（屋顶和高层），然后再确保底层的安全。&lt;br/&gt;
-&lt;font color='#87CEEB'&gt;协议:&lt;/font&gt; 攻击性交错部署。一旦该点被保护，该单位将观察周围几秒钟，然后自动返回您所在的编队。
         </Chinese>
         </Key>
         <Key ID="STR_LL_Briefing_2_1_Title">
