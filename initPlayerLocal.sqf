@@ -1,5 +1,5 @@
 params ["_player", "_didJIP"];
-[] spawn LL_fnc_intro;
+[_didJIP] spawn LL_fnc_intro;
 [] spawn LL_fnc_initLocal;
 [] spawn LL_fnc_addDroneAction;
 [] spawn LL_fnc_addHelicopterActions;

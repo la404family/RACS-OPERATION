@@ -28,92 +28,94 @@
             <Japanese>1.1. 交戦規定</Japanese>
             <Korean>1.1. 교전 수칙</Korean>
             <Chinese>1.1. 交战规则</Chinese>
-        </Key>    <Key ID="STR_LL_Briefing_1_1_Text">
-        <Original>
+        </Key>
+        <Key ID="STR_LL_Briefing_1_1_Text">
+            <Original>
 &lt;font color='#FF8800'&gt;Interface:&lt;/font&gt; Dynamic menu (scroll wheel).&lt;br/&gt;
 &lt;font color='#FFD700'&gt;Description:&lt;/font&gt; Instantly modifies the tactical behavior of your entire squad.&lt;br/&gt;&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Infiltration:&lt;/font&gt; Stealthy movement, silent, crouching posture.&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Normal:&lt;/font&gt; Standard AI behavior, moderate speed, search cover.&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Assault:&lt;/font&gt; Maximum speed, aggressive push-forward, standing posture.
         </Original>
-        <French>
+            <French>
 &lt;font color='#FF8800'&gt;Interface :&lt;/font&gt; Menu dynamique (molette de la souris).&lt;br/&gt;
 &lt;font color='#FFD700'&gt;Description :&lt;/font&gt; Modifie instantanément le comportement tactique de l'ensemble de votre escouade.&lt;br/&gt;&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Infiltration :&lt;/font&gt; Déplacement furtif, silencieux, posture accroupie.&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Normal :&lt;/font&gt; Comportement IA standard, vitesse modérée, recherche de couverture.&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Assaut :&lt;/font&gt; Vitesse maximale, progression agressive, posture debout.
         </French>
-        <English>
+            <English>
 &lt;font color='#FF8800'&gt;Interface:&lt;/font&gt; Dynamic menu (scroll wheel).&lt;br/&gt;
 &lt;font color='#FFD700'&gt;Description:&lt;/font&gt; Instantly modifies the tactical behavior of your entire squad.&lt;br/&gt;&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Infiltration:&lt;/font&gt; Stealthy movement, silent, crouching posture.&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Normal:&lt;/font&gt; Standard AI behavior, moderate speed, search cover.&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Assault:&lt;/font&gt; Maximum speed, aggressive push-forward, standing posture.
         </English>
-        <Spanish>
+            <Spanish>
 &lt;font color='#FF8800'&gt;Interfaz:&lt;/font&gt; Menú dinámico (rueda del ratón).&lt;br/&gt;
 &lt;font color='#FFD700'&gt;Descripción:&lt;/font&gt; Modifica al instante el comportamiento táctico de todo tu equipo.&lt;br/&gt;&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Infiltración:&lt;/font&gt; Movimiento sigiloso, silencioso, postura agachada.&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Normal:&lt;/font&gt; Comportamiento estándar de la IA, velocidad moderada, buscar cobertura.&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Asalto:&lt;/font&gt; Velocidad máxima, avance agresivo, postura de pie.
         </Spanish>
-        <Italian>
+            <Italian>
 &lt;font color='#FF8800'&gt;Interfaccia:&lt;/font&gt; Menu dinamico (rotellina del mouse).&lt;br/&gt;
 &lt;font color='#FFD700'&gt;Descrizione:&lt;/font&gt; Modifica istantaneamente il comportamento tattico dell'intera squadra.&lt;br/&gt;&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Infiltrazione:&lt;/font&gt; Movimento furtivo, silenzioso, postura accovacciata.&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Normale:&lt;/font&gt; Comportamento standard dell'IA, velocità moderata, ricerca di riparo.&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Assalto:&lt;/font&gt; Massima velocità, avanzamento aggressivo, postura eretta.
         </Italian>
-        <German>
+            <German>
 &lt;font color='#FF8800'&gt;Schnittstelle:&lt;/font&gt; Dynamisches Menü (Mausrad).&lt;br/&gt;
 &lt;font color='#FFD700'&gt;Beschreibung:&lt;/font&gt; Ändert sofort das taktische Verhalten deines gesamten Trupps.&lt;br/&gt;&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Infiltration:&lt;/font&gt; Heimliche Bewegung, leise, geduckte Haltung.&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Normal:&lt;/font&gt; Standard-KI-Verhalten, moderate Geschwindigkeit, Deckung suchen.&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Angriff:&lt;/font&gt; Maximale Geschwindigkeit, aggressives Vordringen, aufrechte Haltung.
         </German>
-        <Polish>
+            <Polish>
 &lt;font color='#FF8800'&gt;Interfejs:&lt;/font&gt; Dynamiczne menu (kółko myszy).&lt;br/&gt;
 &lt;font color='#FFD700'&gt;Opis:&lt;/font&gt; Błyskawicznie modyfikuje zachowanie taktyczne całego twojego oddziału.&lt;br/&gt;&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Infiltracja:&lt;/font&gt; Ruch z ukrycia, cicho, pozycja kucająca.&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Normalny:&lt;/font&gt; Standardowe zachowanie SI, umiarkowana prędkość, szukanie osłony.&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Szturm:&lt;/font&gt; Maksymalna prędkość, agresywne parcie naprzód, pozycja stojąca.
         </Polish>
-        <Russian>
+            <Russian>
 &lt;font color='#FF8800'&gt;Интерфейс:&lt;/font&gt; Динамическое меню (колесико мыши).&lt;br/&gt;
 &lt;font color='#FFD700'&gt;Описание:&lt;/font&gt; Мгновенно изменяет тактическое поведение всего вашего отряда.&lt;br/&gt;&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Скрытность:&lt;/font&gt; Скрытное передвижение, бесшумно, пригнувшись.&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Обычный:&lt;/font&gt; Стандартное поведение ИИ, умеренная скорость, поиск укрытия.&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Штурм:&lt;/font&gt; Максимальная скорость, агрессивное продвижение, стоячая поза.
         </Russian>
-        <Turkish>
+            <Turkish>
 &lt;font color='#FF8800'&gt;Arayüz:&lt;/font&gt; Dinamik menü (fare tekerleği).&lt;br/&gt;
 &lt;font color='#FFD700'&gt;Açıklama:&lt;/font&gt; Tüm manganızın taktiksel davranışını anında değiştirir.&lt;br/&gt;&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Sızma:&lt;/font&gt; Gizli hareket, sessiz, çömelme duruşu.&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Normal:&lt;/font&gt; Standart yapay zeka davranışı, orta hız, siper arama.&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;Saldırı:&lt;/font&gt; Maksimum hız, agresif ilerleme, ayakta duruş.
         </Turkish>
-        <Japanese>
+            <Japanese>
 &lt;font color='#FF8800'&gt;インターフェース:&lt;/font&gt; ダイナミックメニュー (マウスホイール).&lt;br/&gt;
 &lt;font color='#FFD700'&gt;説明:&lt;/font&gt; 分隊全体の戦術的行動を即座に変更します。&lt;br/&gt;&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;潜入:&lt;/font&gt; 隠密行動、静粛、しゃがみ姿勢。&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;通常:&lt;/font&gt; 標準的なAIの行動、中程度の速度、遮蔽物の捜索。&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;強襲:&lt;/font&gt; 最高速度、攻撃的な前進、立ち姿勢。
         </Japanese>
-        <Korean>
+            <Korean>
 &lt;font color='#FF8800'&gt;인터페이스:&lt;/font&gt; 동적 메뉴 (마우스 휠).&lt;br/&gt;
 &lt;font color='#FFD700'&gt;설명:&lt;/font&gt; 분대 전체의 전술적 행동을 즉시 변경합니다.&lt;br/&gt;&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;침투:&lt;/font&gt; 은밀한 이동, 조용하게, 앉은 자세.&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;보통:&lt;/font&gt; 표준 AI 행동, 중간 속도, 엄폐물 탐색.&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;강습:&lt;/font&gt; 최대 속도, 공격적인 전진, 선 자세.
         </Korean>
-        <Chinese>
+            <Chinese>
 &lt;font color='#FF8800'&gt;界面:&lt;/font&gt; 动态菜单 (鼠标滚轮).&lt;br/&gt;
 &lt;font color='#FFD700'&gt;描述:&lt;/font&gt; 立即改变整个小队的战术行为。&lt;br/&gt;&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;渗透:&lt;/font&gt; 隐蔽移动，保持安静，蹲姿。&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;常规:&lt;/font&gt; 标准 AI 行为，中等速度，寻找掩体。&lt;br/&gt;
 - &lt;font color='#87CEEB'&gt;突击:&lt;/font&gt; 最高速度，侵略性推进，站姿。
         </Chinese>
-    </Key><Key ID="STR_LL_Briefing_1_3_Title">
+        </Key>
+        <Key ID="STR_LL_Briefing_1_3_Title">
             <Original>1.2. Medical Procedure</Original>
             <French>1.2. Procédure de Soin</French>
             <English>1.2. Medical Procedure</English>
@@ -188,13 +190,13 @@
 &lt;font color='#FFD700'&gt;説明:&lt;/font&gt; 即座に医療処置を行うために前進を停止するよう命じます。負傷したAIは膝をつき、武器をホルスターに収め、応急処置を施してから陣形内の自分の位置に戻ります。&lt;br/&gt;
 &lt;font color='#FFA500'&gt;拒否 (ネガティブ):&lt;/font&gt; 医療品が尽きた場合、分隊が口頭で通知します。
         </Japanese>
-        <Korean>
+            <Korean>
 &lt;font color='#FF8800'&gt;인터페이스:&lt;/font&gt; 녹색 액션 'AI 자동 치료'.&lt;br/&gt;
 &lt;font color='#00FF00'&gt;조건:&lt;/font&gt; 그룹에 부상당한 AI가 한 명 이상 있고 구급 상자(FirstAidKit)를 소지하고 있어야 합니다.&lt;br/&gt;
 &lt;font color='#FFD700'&gt;설명:&lt;/font&gt; 즉각적인 의료 치료를 위해 전진을 멈추도록 명령합니다. 부상당한 AI는 무릎을 꿇고 무기를 집어넣은 다음 응급 처치를 적용한 후 진형 내 자신의 위치로 돌아갑니다.&lt;br/&gt;
 &lt;font color='#FFA500'&gt;거부 (부정):&lt;/font&gt; 의료품이 소진되면 분대가 구두로 알려줍니다.
         </Korean>
-        <Chinese>
+            <Chinese>
 &lt;font color='#FF8800'&gt;界面:&lt;/font&gt; 绿色操作 'AI 自动治疗'.&lt;br/&gt;
 &lt;font color='#00FF00'&gt;条件:&lt;/font&gt; 小组中至少有一名受伤的 AI 并且拥有急救包 (FirstAidKit).&lt;br/&gt;
 &lt;font color='#FFD700'&gt;描述:&lt;/font&gt; 命令停止前进以进行立即医疗处理。受伤的 AI 将单膝跪地，收起武器，并进行急救，然后恢复其在阵型中的位置。&lt;br/&gt;
@@ -1611,20 +1613,6 @@ Ağ doluysa istekleriniz reddedilebilir veya kesintiye uğrayabilir.&lt;br/&gt;&
             <Italian>... %1 uomo(i) in cura...</Italian>
             <Polish>... %1 żołnierz(y) jest leczonych...</Polish>
         </Key>
-        <Key ID="STR_LL_RallyAction_Title">
-            <Original>&lt;t color='#FFFFFF'&gt;[SQUAD] Rally&lt;/t&gt;</Original>
-            <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Rally&lt;/t&gt;</English>
-            <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Regroupement&lt;/t&gt;</French>
-            <Spanish>&lt;t color='#FFFFFF'&gt;[ESCUADRA] Agruparse&lt;/t&gt;</Spanish>
-            <Italian>&lt;t color='#FFFFFF'&gt;[SQUADRA] Raduno&lt;/t&gt;</Italian>
-            <German>&lt;t color='#FFFFFF'&gt;[TRUPP] Sammeln&lt;/t&gt;</German>
-            <Polish>&lt;t color='#FFFFFF'&gt;[DRUŻYNA] Zbiórka&lt;/t&gt;</Polish>
-            <Russian>&lt;t color='#FFFFFF'&gt;[ОТРЯД] Сбор&lt;/t&gt;</Russian>
-            <Turkish>&lt;t color='#FFFFFF'&gt;[MANGA] Toplan&lt;/t&gt;</Turkish>
-            <Japanese>&lt;t color='#FFFFFF'&gt;[分隊] 集合&lt;/t&gt;</Japanese>
-            <Korean>&lt;t color='#FFFFFF'&gt;[분대] 집결&lt;/t&gt;</Korean>
-            <Chinese>&lt;t color='#FFFFFF'&gt;[小队] 集合&lt;/t&gt;</Chinese>
-        </Key>
         <Key ID="STR_LL_RoeAction_Changed">
             <Original>New Rules of Engagement -&gt; %1</Original>
             <English>New Rules of Engagement -&gt; %1</English>
@@ -1724,88 +1712,74 @@ Ağ doluysa istekleriniz reddedilebilir veya kesintiye uğrayabilir.&lt;br/&gt;&
             <Chinese>&lt;t color='#FFFFFF'&gt;[小队] 防御&lt;/t&gt;</Chinese>
         </Key>
         <Key ID="STR_LL_RoeAction_Reset">
-            <Original>&lt;t color='#FFFFFF'&gt;[SQUAD] Normal&lt;/t&gt;</Original>
-            <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Normal&lt;/t&gt;</English>
-            <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Normal&lt;/t&gt;</French>
-            <Spanish>&lt;t color='#FFFFFF'&gt;[ESCUADRA] Normal&lt;/t&gt;</Spanish>
-            <Italian>&lt;t color='#FFFFFF'&gt;[SQUADRA] Normale&lt;/t&gt;</Italian>
-            <German>&lt;t color='#FFFFFF'&gt;[TRUPP] Normal&lt;/t&gt;</German>
-            <Polish>&lt;t color='#FFFFFF'&gt;[DRUŻYNA] Normalny&lt;/t&gt;</Polish>
-            <Russian>&lt;t color='#FFFFFF'&gt;[ОТРЯД] Обычный&lt;/t&gt;</Russian>
-            <Turkish>&lt;t color='#FFFFFF'&gt;[MANGA] Normal&lt;/t&gt;</Turkish>
-            <Japanese>&lt;t color='#FFFFFF'&gt;[分隊] ノーマル&lt;/t&gt;</Japanese>
-            <Korean>&lt;t color='#FFFFFF'&gt;[분대] 보통&lt;/t&gt;</Korean>
-            <Chinese>&lt;t color='#FFFFFF'&gt;[小队] 正常&lt;/t&gt;</Chinese>
+            <Original>&lt;t color='#FFFFFF'&gt;[SQUAD] Reset&lt;/t&gt;</Original>
+            <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Reset&lt;/t&gt;</English>
+            <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Reset&lt;/t&gt;</French>
+            <Spanish>&lt;t color='#FFFFFF'&gt;[ESCUADRA] Reiniciar&lt;/t&gt;</Spanish>
+            <Italian>&lt;t color='#FFFFFF'&gt;[SQUADRA] Ripristina&lt;/t&gt;</Italian>
+            <German>&lt;t color='#FFFFFF'&gt;[TRUPP] Zurücksetzen&lt;/t&gt;</German>
+            <Polish>&lt;t color='#FFFFFF'&gt;[DRUŻYNA] Reset&lt;/t&gt;</Polish>
+            <Russian>&lt;t color='#FFFFFF'&gt;[ОТРЯД] Сброс&lt;/t&gt;</Russian>
+            <Turkish>&lt;t color='#FFFFFF'&gt;[MANGA] Sıfırla&lt;/t&gt;</Turkish>
+            <Japanese>&lt;t color='#FFFFFF'&gt;[分隊] リセット&lt;/t&gt;</Japanese>
+            <Korean>&lt;t color='#FFFFFF'&gt;[분대] 초기화&lt;/t&gt;</Korean>
+            <Chinese>&lt;t color='#FFFFFF'&gt;[小队] 重置&lt;/t&gt;</Chinese>
         </Key>
-        <Key ID="STR_LL_SearchAction_Title">
-            <Original>&lt;t color='#FFFFFF'&gt;[SQUAD] Search&lt;/t&gt;</Original>
-            <English>&lt;t color='#FFFFFF'&gt;[SQUAD] Search&lt;/t&gt;</English>
-            <French>&lt;t color='#FFFFFF'&gt;[ESCOUADE] Fouille&lt;/t&gt;</French>
-            <Spanish>&lt;t color='#FFFFFF'&gt;[ESCUADRA] Búsqueda&lt;/t&gt;</Spanish>
-            <Italian>&lt;t color='#FFFFFF'&gt;[SQUADRA] Ricerca&lt;/t&gt;</Italian>
-            <German>&lt;t color='#FFFFFF'&gt;[TRUPP] Durchsuchen&lt;/t&gt;</German>
-            <Polish>&lt;t color='#FFFFFF'&gt;[DRUŻYNA] Przeszukanie&lt;/t&gt;</Polish>
-            <Russian>&lt;t color='#FFFFFF'&gt;[ОТРЯД] Обыск&lt;/t&gt;</Russian>
-            <Turkish>&lt;t color='#FFFFFF'&gt;[MANGA] Arama&lt;/t&gt;</Turkish>
-            <Japanese>&lt;t color='#FFFFFF'&gt;[分隊] 捜索&lt;/t&gt;</Japanese>
-            <Korean>&lt;t color='#FFFFFF'&gt;[분대] 수색&lt;/t&gt;</Korean>
-            <Chinese>&lt;t color='#FFFFFF'&gt;[小队] 搜索&lt;/t&gt;</Chinese>
+        <Key ID="STR_LL_RoeAction_Name_Stealth">
+            <Original>Infiltration</Original>
+            <English>Infiltration</English>
+            <French>Infiltration</French>
+            <Spanish>Infiltración</Spanish>
+            <Italian>Infiltrazione</Italian>
+            <German>Infiltration</German>
+            <Polish>Infiltracja</Polish>
+            <Russian>Проникновение</Russian>
+            <Turkish>Sızma</Turkish>
+            <Japanese>潜入</Japanese>
+            <Korean>침투</Korean>
+            <Chinese>渗透</Chinese>
         </Key>
-        <Key ID="STR_LL_SearchAction_NoBuildings">
-            <Original>No searchable buildings nearby.</Original>
-            <English>No searchable buildings nearby.</English>
-            <French>Aucun bâtiment fouillable à proximité.</French>
-            <Spanish>No hay edificios para buscar cerca.</Spanish>
-            <Italian>Nessun edificio ispezionabile nelle vicinanze.</Italian>
-            <German>Keine durchsuchbaren Gebäude in der Nähe.</German>
-            <Polish>Brak budynków do przeszukania w pobliżu.</Polish>
-            <Russian>Поблизости нет зданий для обыска.</Russian>
-            <Turkish>Yakında aranabilir bina yok.</Turkish>
-            <Japanese>近くに捜索可能な建物はありません。</Japanese>
-            <Korean>근처에 수색 가능한 건물이 없습니다.</Korean>
-            <Chinese>附近没有可搜索的建筑物。</Chinese>
+        <Key ID="STR_LL_RoeAction_Name_Normal">
+            <Original>Normal</Original>
+            <English>Normal</English>
+            <French>Normal</French>
+            <Spanish>Normal</Spanish>
+            <Italian>Normale</Italian>
+            <German>Normal</German>
+            <Polish>Normalny</Polish>
+            <Russian>Нормальный</Russian>
+            <Turkish>Normal</Turkish>
+            <Japanese>通常</Japanese>
+            <Korean>보통</Korean>
+            <Chinese>正常</Chinese>
         </Key>
-        <Key ID="STR_LL_SearchAction_NoAI">
-            <Original>No infantry AI in the squad.</Original>
-            <English>No infantry AI in the squad.</English>
-            <French>Pas d'IA d'infanterie dans l'escouade.</French>
-            <Spanish>No hay IA de infantería en la escuadra.</Spanish>
-            <Italian>Nessuna IA di fanteria nella squadra.</Italian>
-            <German>Keine Infanterie-KI im Trupp.</German>
-            <Polish>Brak sztucznej inteligencji piechoty w drużynie.</Polish>
-            <Russian>В отряде нет ботов-пехотинцев.</Russian>
-            <Turkish>Mangada piyade yapay zekası yok.</Turkish>
-            <Japanese>分隊に歩兵AIがいません。</Japanese>
-            <Korean>분대에 보병 AI가 없습니다.</Korean>
-            <Chinese>小队中没有步兵 AI。</Chinese>
-        </Key>
-        <Key ID="STR_LL_SearchAction_Secured">
-            <Original>Buildings secured. The squad is regrouping.</Original>
-            <English>Buildings secured. The squad is regrouping.</English>
-            <French>Bâtiments sécurisés. L'escouade se regroupe.</French>
-            <Spanish>Edificios asegurados. La escuadra se está reagrupando.</Spanish>
-            <Italian>Edifici messi in sicurezza. La squadra si sta riorganizzando.</Italian>
-            <German>Gebäude gesichert. Der Trupp sammelt sich.</German>
-            <Polish>Budynki zabezpieczone. Drużyna przegrupowuje się.</Polish>
-            <Russian>Здания зачищены. Отряд перегруппировывается.</Russian>
-            <Turkish>Binalar güvence altına alındı. Manga toparlanıyor.</Turkish>
-            <Japanese>建物は確保されました。分隊は再編成中です。</Japanese>
-            <Korean>건물 확보 완료. 분대가 재집결 중입니다.</Korean>
-            <Chinese>建筑物已安全。小队正在重新集结。</Chinese>
+        <Key ID="STR_LL_RoeAction_Name_Assault">
+            <Original>Assault</Original>
+            <English>Assault</English>
+            <French>Assaut agressif</French>
+            <Spanish>Asalto</Spanish>
+            <Italian>Assalto</Italian>
+            <German>Angriff</German>
+            <Polish>Szturm</Polish>
+            <Russian>Штурм</Russian>
+            <Turkish>Saldırı</Turkish>
+            <Japanese>強襲</Japanese>
+            <Korean>강습</Korean>
+            <Chinese>突击</Chinese>
         </Key>
         <Key ID="STR_LL_AssignLeader_Changed">
-            <Original>Field command change. A human officer has taken the lead.</Original>
-            <English>Field command change. A human officer has taken the lead.</English>
-            <French>Changement de commandement sur le terrain. Un officier humain a repris le lead.</French>
-            <Spanish>Cambio de mando de campo. Un oficial humano ha tomado la iniciativa.</Spanish>
-            <Italian>Cambio di comando sul campo. Un ufficiale umano ha preso la guida.</Italian>
-            <German>Feldkommando wechselt. Ein menschlicher Offizier hat die Führung übernommen.</German>
-            <Polish>Zmiana dowództwa polowego. Ludzki oficer przejął dowodzenie.</Polish>
-            <Russian>Смена полевого командования. Лидерство взял на себя человек.</Russian>
-            <Turkish>Saha komutası değişikliği. Bir insan subay liderliği devraldı.</Turkish>
-            <Japanese>野戦指揮の変更。人間の将校が指揮を執りました。</Japanese>
-            <Korean>야전 지휘 변경. 인간 장교가 지휘권을 인수했습니다.</Korean>
-            <Chinese>现场指挥权变更。一名人类军官接管了指挥权。</Chinese>
+            <Original>Tactical command has been transferred.</Original>
+            <English>Tactical command has been transferred.</English>
+            <French>Le commandement tactique a été transféré.</French>
+            <Spanish>El mando táctico ha sido transferido.</Spanish>
+            <Italian>Il comando tattico è stato trasferito.</Italian>
+            <German>Das taktische Kommando wurde übertragen.</German>
+            <Polish>Dowództwo taktyczne zostało przekazane.</Polish>
+            <Russian>Тактическое командование передано.</Russian>
+            <Turkish>Taktik komuta devredildi.</Turkish>
+            <Japanese>戦術指揮が移譲されました。</Japanese>
+            <Korean>전술 지휘권이 이양되었습니다.</Korean>
+            <Chinese>战术指挥权已移交。</Chinese>
         </Key>
         <Key ID="STR_LL_Diary_Lore_Title">
             <Original>Lore</Original>

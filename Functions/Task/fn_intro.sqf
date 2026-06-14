@@ -1,8 +1,14 @@
+params [["_isJip", false, [true]]];
+
 #define DEBUG_MODE (missionNamespace getVariable ["DEBUG_MODE", true])
 
 if (hasInterface) then {
     if (missionNamespace getVariable ["MISSION_intro_cl", false]) exitWith {};
     missionNamespace setVariable ["MISSION_intro_cl", true];
+
+    if (_isJip) exitWith {
+        if (DEBUG_MODE) then { diag_log "[LL][intro] JIP détecté : introduction ignorée."; };
+    };
 
     [] spawn {
         waitUntil { time > 0.1 };

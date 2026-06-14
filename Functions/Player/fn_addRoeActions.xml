@@ -112,4 +112,46 @@
         <Korean>&lt;t color='#FFFFFF'&gt;[분대] 초기화&lt;/t&gt;</Korean>
         <Chinese>&lt;t color='#FFFFFF'&gt;[小队] 重置&lt;/t&gt;</Chinese>
     </Key>
+    <Key ID="STR_LL_RoeAction_Name_Stealth">
+        <Original>Infiltration</Original>
+        <English>Infiltration</English>
+        <French>Infiltration</French>
+        <Spanish>Infiltración</Spanish>
+        <Italian>Infiltrazione</Italian>
+        <German>Infiltration</German>
+        <Polish>Infiltracja</Polish>
+        <Russian>Проникновение</Russian>
+        <Turkish>Sızma</Turkish>
+        <Japanese>潜入</Japanese>
+        <Korean>침투</Korean>
+        <Chinese>渗透</Chinese>
+    </Key>
+    <Key ID="STR_LL_RoeAction_Name_Normal">
+        <Original>Normal</Original>
+        <English>Normal</English>
+        <French>Normal</French>
+        <Spanish>Normal</Spanish>
+        <Italian>Normale</Italian>
+        <German>Normal</German>
+        <Polish>Normalny</Polish>
+        <Russian>Нормальный</Russian>
+        <Turkish>Normal</Turkish>
+        <Japanese>通常</Japanese>
+        <Korean>보통</Korean>
+        <Chinese>正常</Chinese>
+    </Key>
+    <Key ID="STR_LL_RoeAction_Name_Assault">
+        <Original>Assault</Original>
+        <English>Assault</English>
+        <French>Assaut agressif</French>
+        <Spanish>Asalto</Spanish>
+        <Italian>Assalto</Italian>
+        <German>Angriff</German>
+        <Polish>Szturm</Polish>
+        <Russian>Штурм</Russian>
+        <Turkish>Saldırı</Turkish>
+        <Japanese>強襲</Japanese>
+        <Korean>강습</Korean>
+        <Chinese>突击</Chinese>
+    </Key>
 </Keys>

@@ -48,54 +48,6 @@ class STR_LL_AssignLeader_Changed {
     titles[] = {};
 };
 
-class STR_LL_Briefing_Text {
-    name = "STR_LL_Briefing_Text";
-    sound[] = {"TTS\output\STR_LL_Briefing_Text.ogg", 2, 1, 100};
-    titles[] = {};
-};
-
-class STR_LL_Briefing_Title {
-    name = "STR_LL_Briefing_Title";
-    sound[] = {"TTS\output\STR_LL_Briefing_Title.ogg", 2, 1, 100};
-    titles[] = {};
-};
-
-class STR_LL_Diary_Context_Text {
-    name = "STR_LL_Diary_Context_Text";
-    sound[] = {"TTS\output\STR_LL_Diary_Context_Text.ogg", 2, 1, 100};
-    titles[] = {};
-};
-
-class STR_LL_Diary_Context_Title {
-    name = "STR_LL_Diary_Context_Title";
-    sound[] = {"TTS\output\STR_LL_Diary_Context_Title.ogg", 2, 1, 100};
-    titles[] = {};
-};
-
-class STR_LL_Diary_Factions_Text {
-    name = "STR_LL_Diary_Factions_Text";
-    sound[] = {"TTS\output\STR_LL_Diary_Factions_Text.ogg", 2, 1, 100};
-    titles[] = {};
-};
-
-class STR_LL_Diary_Factions_Title {
-    name = "STR_LL_Diary_Factions_Title";
-    sound[] = {"TTS\output\STR_LL_Diary_Factions_Title.ogg", 2, 1, 100};
-    titles[] = {};
-};
-
-class STR_LL_Diary_Lore_Text {
-    name = "STR_LL_Diary_Lore_Text";
-    sound[] = {"TTS\output\STR_LL_Diary_Lore_Text.ogg", 2, 1, 100};
-    titles[] = {};
-};
-
-class STR_LL_Diary_Lore_Title {
-    name = "STR_LL_Diary_Lore_Title";
-    sound[] = {"TTS\output\STR_LL_Diary_Lore_Title.ogg", 2, 1, 100};
-    titles[] = {};
-};
-
 class STR_LL_HealAction_Healing {
     name = "STR_LL_HealAction_Healing";
     sound[] = {"TTS\output\STR_LL_HealAction_Healing.ogg", 2, 1, 100};
@@ -342,51 +294,21 @@ class STR_LL_RoeAction_Changed {
     titles[] = {};
 };
 
-class STR_LL_SearchAction_NoAI {
-    name = "STR_LL_SearchAction_NoAI";
-    sound[] = {"TTS\output\STR_LL_SearchAction_NoAI.ogg", 2, 1, 100};
+class STR_LL_Task_03_Warning {
+    name = "STR_LL_Task_03_Warning";
+    sound[] = {"TTS\output\STR_LL_Task_03_Warning.ogg", 2, 1, 100};
     titles[] = {};
 };
 
-class STR_LL_SearchAction_NoBuildings {
-    name = "STR_LL_SearchAction_NoBuildings";
-    sound[] = {"TTS\output\STR_LL_SearchAction_NoBuildings.ogg", 2, 1, 100};
+class STR_LL_Task_05_Alert {
+    name = "STR_LL_Task_05_Alert";
+    sound[] = {"TTS\output\STR_LL_Task_05_Alert.ogg", 2, 1, 100};
     titles[] = {};
 };
 
-class STR_LL_SearchAction_Secured {
-    name = "STR_LL_SearchAction_Secured";
-    sound[] = {"TTS\output\STR_LL_SearchAction_Secured.ogg", 2, 1, 100};
-    titles[] = {};
-};
-
-class STR_TAG_Marker_Heli_Ammo {
-    name = "STR_TAG_Marker_Heli_Ammo";
-    sound[] = {"TTS\output\STR_TAG_Marker_Heli_Ammo.ogg", 2, 1, 100};
-    titles[] = {};
-};
-
-class STR_TAG_Marker_Heli_CAS {
-    name = "STR_TAG_Marker_Heli_CAS";
-    sound[] = {"TTS\output\STR_TAG_Marker_Heli_CAS.ogg", 2, 1, 100};
-    titles[] = {};
-};
-
-class STR_TAG_Marker_Heli_Debark {
-    name = "STR_TAG_Marker_Heli_Debark";
-    sound[] = {"TTS\output\STR_TAG_Marker_Heli_Debark.ogg", 2, 1, 100};
-    titles[] = {};
-};
-
-class STR_TAG_Marker_Heli_Extract {
-    name = "STR_TAG_Marker_Heli_Extract";
-    sound[] = {"TTS\output\STR_TAG_Marker_Heli_Extract.ogg", 2, 1, 100};
-    titles[] = {};
-};
-
-class STR_TAG_Marker_Heli_Vehicle {
-    name = "STR_TAG_Marker_Heli_Vehicle";
-    sound[] = {"TTS\output\STR_TAG_Marker_Heli_Vehicle.ogg", 2, 1, 100};
+class STR_LL_Task_Assigned {
+    name = "STR_LL_Task_Assigned";
+    sound[] = {"TTS\output\STR_LL_Task_Assigned.ogg", 2, 1, 100};
     titles[] = {};
 };
 
