@@ -360,6 +360,9 @@ if (_mode == "defuse") exitWith {
 
         private _pos = getPosATL _bomb;
 
+        // Attendre 20 secondes après le désamorçage
+        sleep 20;
+
         // Déclencher un écran de fumée blanche très épaisse (particules) localement sur tous les clients
         [[_pos], {
             params ["_pos"];
@@ -376,13 +379,13 @@ if (_mode == "defuse") exitWith {
                     [0.5], 0.1, 0, "", "", _emitter
                 ];
                 _emitter setDropInterval 0.005; // Densité extrême
-                sleep 25; // Dure 25 secondes pour couvrir la suppression à 20s
+                sleep 25; // Dure 25 secondes
                 deleteVehicle _emitter;
             };
         }] remoteExec ["spawn", 0];
 
-        // Attendre 20 secondes conformément à la logique d'origine
-        sleep 20;
+        // Attendre 1 seconde pour que la fumée masque la caisse
+        sleep 1;
 
         // Supprimer la caisse sous couverture de la fumée épaisse
         if (!isNull _bomb) then {

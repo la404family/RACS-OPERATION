@@ -134,7 +134,7 @@ if (_mode == "init") exitWith {
                 private _pos = getPosATL _unit; 
                 _pos set [2, (_pos select 2) + 0.05];
 
-                private _doc = createVehicle ["SecretDocuments_01_F", _pos, [], 0, "CAN_COLLIDE"];
+                private _doc = createVehicle ["Land_Document_01_F", _pos, [], 0, "CAN_COLLIDE"];
                 _doc setPosATL _pos;
 
                 ["task_01_assassinat", _pos] call BIS_fnc_taskSetDestination;
