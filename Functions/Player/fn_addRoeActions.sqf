@@ -42,7 +42,6 @@ private _fnc_addRoeActions = {
 
     private _cond = "alive _target && leader group _target == _target && ({!isPlayer _x && alive _x && vehicle _x == _x} count units group _target > 0)";
 
-    // 1. Infiltration (Bleu, Furtif, Vitesse limitée, Posture accroupie)
     _unit addAction [
         localize "STR_LL_RoeAction_Infiltration",
         { ([group (_this select 1)] + (_this select 3)) call LL_fnc_applyRoE; },
@@ -50,7 +49,6 @@ private _fnc_addRoeActions = {
         7.2, false, true, "", _cond
     ];
 
-    // 2. Normal (Reset, Comportement standard/Vigilance)
     _unit addAction [
         localize "STR_LL_RoeAction_Reset",
         { ([group (_this select 1)] + (_this select 3)) call LL_fnc_applyRoE; },
@@ -58,7 +56,6 @@ private _fnc_addRoeActions = {
         7.1, false, true, "", _cond
     ];
 
-    // 3. Assaut (Rouge, Combat, Vitesse max, Posture debout, Attaque agressive)
     _unit addAction [
         localize "STR_LL_RoeAction_Assault",
         { ([group (_this select 1)] + (_this select 3)) call LL_fnc_applyRoE; },

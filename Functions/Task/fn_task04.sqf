@@ -198,10 +198,8 @@ if (_mode == "init") exitWith {
             private _posATL = getPosATL _unit;
             private _posASL = getPosASL _unit;
 
-            // Déclencher l'effet visuel de l'onde de choc (anneau de fumée) sur tous les clients
             [_posATL, 80, 8, [0.9, 0.85, 0.1, 0.8]] remoteExec ["LL_fnc_createSmokeRing", 0];
 
-            // Gérer les dégâts de l'onde de choc et l'effet de souffle physique sur le serveur
             [_posASL] spawn {
                 params ["_pos"];
                 private _maxRadius = 80;
@@ -220,14 +218,13 @@ if (_mode == "init") exitWith {
                                 _damagedUnits pushBack _x;
                                 private _damageFactor = 1 - (_dist / _maxRadius);
                                 if (_damageFactor > 0) then {
-                                    // Dégâts de souffle proportionnels
+
                                     private _dmg = 1.2 * _damageFactor;
                                     _x setDamage (damage _x + _dmg);
 
-                                    // Poussée physique (effet de souffle)
                                     if (_x isKindOf "Man") then {
                                         private _dir = _pos vectorFromTo (getPosASL _x);
-                                        _dir set [2, 0.15]; // légère élévation
+                                        _dir set [2, 0.15]; 
                                         private _vel = velocity _x;
                                         _x setVelocity (_vel vectorAdd (_dir vectorMultiply (15 * _damageFactor)));
                                     };

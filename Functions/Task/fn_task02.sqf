@@ -363,7 +363,6 @@ if (_mode == "defuse") exitWith {
         if (!isNull _bomb) then {
             private _pos = getPosATL _bomb;
 
-            // Déclencher un écran de fumée blanche locale sur les clients à la position de la caisse
             [_pos, {
                 params ["_pos"];
                 private _smoke = "#particlesource" createVehicleLocal _pos;
@@ -375,7 +374,7 @@ if (_mode == "defuse") exitWith {
                 };
             }] remoteExec ["spawn", 0];
 
-            sleep 0.5; // Laisser la fumée envelopper la caisse
+            sleep 0.5; 
             deleteVehicle _bomb;
         };
     };
