@@ -136,7 +136,7 @@ if (_mode == "plant") exitWith {
 
     _caller playMove "AinvPknlMstpSnonWnonDnon_medic_1";
 
-    ["STR_LL_Task_03_Warning"] remoteExec ["LL_fnc_radioMessage", 0];
+    ["STR_LL_Task_03_Warning", [], 6, false] remoteExec ["LL_fnc_radioMessage", 0];
 
     private _pos = getPosATL _radio;
     private _charge = createVehicle ["DemoCharge_F", _pos, [], 0, "CAN_COLLIDE"];

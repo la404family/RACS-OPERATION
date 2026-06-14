@@ -9,7 +9,7 @@ onLoadMission = "Déploiement des forces du RACS.";
 // loadScreen = "images\loadScreen.jpg";
 
 respawn = "BIRD";
-respawnDelay = -1;
+respawnDelay = 30;
 respawnDialog = 0;
 respawnOnStart = -1;
 

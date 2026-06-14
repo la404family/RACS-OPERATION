@@ -42,7 +42,7 @@ ALLOWED_KEYS = {
     "STR_TAG_Msg_Ammo_Dropped", "STR_TAG_Msg_CAS_RTB", "STR_TAG_Msg_Vehicle_Dropped",
     
     # Alertes de scénario & Tâches
-    "STR_LL_Task_03_Warning", "STR_LL_Task_05_Alert", "STR_LL_Task_Assigned"
+    "STR_LL_Task_05_Alert", "STR_LL_Task_Assigned"
 }
 
 def clean_text(text):

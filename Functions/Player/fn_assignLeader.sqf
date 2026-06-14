@@ -9,7 +9,7 @@ if (!isServer) exitWith {};
         sleep 5;
 
         private _activePlayers = allPlayers - entities "HeadlessClient_F";
-        private _livingPlayers = _activePlayers select { alive _x };
+        private _livingPlayers = _activePlayers select { alive _x && lifeState _x != "INCAPACITATED" };
 
         if (_livingPlayers isNotEqualTo []) then {
 
@@ -31,7 +31,7 @@ if (!isServer) exitWith {};
                     private _newLeader = _livingPlayers select 0;
                     _mainGrp selectLeader _newLeader;
 
-                    ["STR_LL_AssignLeader_Changed", [], 6, false] remoteExec ["LL_fnc_radioMessage", _livingPlayers];
+                    ["STR_LL_AssignLeader_Changed", [], 6, true] remoteExec ["LL_fnc_radioMessage", _livingPlayers];
                 };
             };
         };

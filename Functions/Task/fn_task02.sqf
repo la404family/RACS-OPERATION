@@ -360,7 +360,7 @@ if (_mode == "defuse") exitWith {
 
         private _pos = getPosATL _bomb;
 
-        sleep 20;
+        sleep 2;
 
         [[_pos], {
             params ["_pos"];

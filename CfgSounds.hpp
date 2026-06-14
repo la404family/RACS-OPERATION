@@ -294,12 +294,6 @@ class STR_LL_RoeAction_Changed {
     titles[] = {};
 };
 
-class STR_LL_Task_03_Warning {
-    name = "STR_LL_Task_03_Warning";
-    sound[] = {"TTS\output\STR_LL_Task_03_Warning.ogg", 2, 1, 100};
-    titles[] = {};
-};
-
 class STR_LL_Task_05_Alert {
     name = "STR_LL_Task_05_Alert";
     sound[] = {"TTS\output\STR_LL_Task_05_Alert.ogg", 2, 1, 100};
