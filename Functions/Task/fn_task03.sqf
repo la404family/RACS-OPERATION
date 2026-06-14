@@ -50,8 +50,7 @@ if (_mode == "init") exitWith {
 
     for "_i" from 0 to (_numRadios - 1) do {
         private _logic = _selectedRadios select _i;
-        private _spawnPos = getPosASL _logic;
-        _spawnPos set [2, (_spawnPos select 2) + 0.2];
+        private _spawnPos = getPosATL _logic;
 
         private _grpInner = createGroup [east, true];
         _grpInner setBehaviour "SAFE";
@@ -93,8 +92,10 @@ if (_mode == "init") exitWith {
 
         private _radioClass = "RuggedTerminal_01_communications_F";
         private _radio = createVehicle [_radioClass, [0,0,0], [], 0, "CAN_COLLIDE"];
-        _radio setPosASL _spawnPos;
+        _radio setPosATL _spawnPos;
         _radio setDir (random 360);
+        _radio setVehiclePosition [_spawnPos, [], 0, "CAN_COLLIDE"];
+        _radio setVectorUp (surfaceNormal _spawnPos);
         _radio setVariable ["LL_Task_Status", "WAIT", true];
         _radio setVariable ["LL_Radio_Marker", _mkrName, true];
 
