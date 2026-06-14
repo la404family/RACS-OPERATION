@@ -152,7 +152,7 @@ if (_mode == "init") exitWith {
                 _doc setVehicleVarName _varDoc;
                 missionNamespace setVariable [_varDoc, _doc, true];
 
-                [netId _unit, netId _doc] remoteExec ["LL_fnc_task01_addAction", 0, true];
+                [_unit, netId _unit, _varCorpse, _doc, netId _doc, _varDoc] remoteExec ["LL_fnc_task01_addAction", 0, true];
 
                 private _alivePlayers = allPlayers select { alive _x };
                 private _allTaskUnits = missionNamespace getVariable ["LL_Task01_AllUnits", []];

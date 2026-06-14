@@ -1,29 +1,15 @@
 if (!hasInterface) exitWith {};
 
 _this spawn {
-    params [["_hvtParam", objNull, [objNull, ""]]];
+    params [["_hvtParam", objNull, [objNull]], ["_netId", "", [""]]];
 
-    private _hvt = objNull;
-    if (_hvtParam isEqualType "") then {
+    private _hvt = _hvtParam;
+    if (isNull _hvt) then {
         waitUntil {
             sleep 0.5;
-            _hvt = objectFromNetId _hvtParam;
-            if (isNull _hvt) then {
-                _hvt = missionNamespace getVariable [_hvtParam, objNull];
-            };
+            if (_netId != "") then { _hvt = objectFromNetId _netId; };
+            if (isNull _hvt) then { _hvt = missionNamespace getVariable ["LL_Task06_HVT", objNull]; };
             !isNull _hvt
-        };
-    } else {
-        _hvt = _hvtParam;
-        if (isNull _hvt) then {
-            _hvt = missionNamespace getVariable ["LL_Task06_HVT", objNull];
-            if (isNull _hvt) then {
-                private _timeout = time + 15;
-                waitUntil {
-                    _hvt = missionNamespace getVariable ["LL_Task06_HVT", objNull];
-                    !isNull _hvt || time > _timeout
-                };
-            };
         };
     };
 

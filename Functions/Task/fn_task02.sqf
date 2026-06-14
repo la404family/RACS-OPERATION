@@ -144,7 +144,7 @@ if (_mode == "init") exitWith {
         _bomb setVehicleVarName _varName;
         missionNamespace setVariable [_varName, _bomb, true];
 
-        [netId _bomb] remoteExec ["LL_fnc_task02_addAction", 0, true];
+        [_bomb, netId _bomb, _varName] remoteExec ["LL_fnc_task02_addAction", 0, true];
     };
 
     missionNamespace setVariable ["LL_Task02_AllUnits", _allUnits, true];
