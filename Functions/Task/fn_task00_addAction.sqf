@@ -5,9 +5,14 @@ _this spawn {
 
     private _hostage = objNull;
     if (_hostageParam isEqualType "") then {
-        private _timeout = time + 15;
-        waitUntil { !isNull (missionNamespace getVariable [_hostageParam, objNull]) || time > _timeout };
-        _hostage = missionNamespace getVariable [_hostageParam, objNull];
+        waitUntil {
+            sleep 0.5;
+            _hostage = objectFromNetId _hostageParam;
+            if (isNull _hostage) then {
+                _hostage = missionNamespace getVariable [_hostageParam, objNull];
+            };
+            !isNull _hostage
+        };
     } else {
         _hostage = _hostageParam;
     };

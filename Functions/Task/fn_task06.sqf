@@ -94,7 +94,7 @@ if (_mode == "init") exitWith {
 
             ["[SERVER] HVT s'est rendu. Envoi de l'action de capture aux clients..."] remoteExec ["systemChat", 0];
 
-            [_hvt] remoteExec ["LL_fnc_task06_addAction", 0, true];
+            [netId _hvt] remoteExec ["LL_fnc_task06_addAction", 0, true];
         };
     };
 

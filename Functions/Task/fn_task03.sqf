@@ -101,7 +101,7 @@ if (_mode == "init") exitWith {
         _radio allowDamage false;
         [_radio] spawn { sleep 3; (_this select 0) allowDamage true; };
 
-        _radios pushBack _radio;
+        _radios pushBack (netId _radio);
     };
 
     missionNamespace setVariable ["LL_Task03_AllUnits", _allUnits, true];

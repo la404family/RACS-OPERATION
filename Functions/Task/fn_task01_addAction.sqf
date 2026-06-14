@@ -5,18 +5,28 @@ _this spawn {
 
     private _corpse = objNull;
     if (_corpseParam isEqualType "") then {
-        private _timeout = time + 15;
-        waitUntil { !isNull (missionNamespace getVariable [_corpseParam, objNull]) || time > _timeout };
-        _corpse = missionNamespace getVariable [_corpseParam, objNull];
+        waitUntil {
+            sleep 0.5;
+            _corpse = objectFromNetId _corpseParam;
+            if (isNull _corpse) then {
+                _corpse = missionNamespace getVariable [_corpseParam, objNull];
+            };
+            !isNull _corpse
+        };
     } else {
         _corpse = _corpseParam;
     };
 
     private _doc = objNull;
     if (_docParam isEqualType "") then {
-        private _timeout = time + 15;
-        waitUntil { !isNull (missionNamespace getVariable [_docParam, objNull]) || time > _timeout };
-        _doc = missionNamespace getVariable [_docParam, objNull];
+        waitUntil {
+            sleep 0.5;
+            _doc = objectFromNetId _docParam;
+            if (isNull _doc) then {
+                _doc = missionNamespace getVariable [_docParam, objNull];
+            };
+            !isNull _doc
+        };
     } else {
         _doc = _docParam;
     };

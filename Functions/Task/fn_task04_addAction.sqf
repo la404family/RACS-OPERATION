@@ -5,9 +5,14 @@ _this spawn {
 
     private _truck = objNull;
     if (_truckParam isEqualType "") then {
-        private _timeout = time + 15;
-        waitUntil { !isNull (missionNamespace getVariable [_truckParam, objNull]) || time > _timeout };
-        _truck = missionNamespace getVariable [_truckParam, objNull];
+        waitUntil {
+            sleep 0.5;
+            _truck = objectFromNetId _truckParam;
+            if (isNull _truck) then {
+                _truck = missionNamespace getVariable [_truckParam, objNull];
+            };
+            !isNull _truck
+        };
     } else {
         _truck = _truckParam;
     };

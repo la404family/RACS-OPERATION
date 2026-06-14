@@ -5,9 +5,14 @@ _this spawn {
 
     private _bomb = objNull;
     if (_bombParam isEqualType "") then {
-        private _timeout = time + 15;
-        waitUntil { !isNull (missionNamespace getVariable [_bombParam, objNull]) || time > _timeout };
-        _bomb = missionNamespace getVariable [_bombParam, objNull];
+        waitUntil {
+            sleep 0.5;
+            _bomb = objectFromNetId _bombParam;
+            if (isNull _bomb) then {
+                _bomb = missionNamespace getVariable [_bombParam, objNull];
+            };
+            !isNull _bomb
+        };
     } else {
         _bomb = _bombParam;
     };

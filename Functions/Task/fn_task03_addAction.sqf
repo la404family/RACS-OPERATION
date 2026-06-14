@@ -10,8 +10,14 @@ if (!hasInterface) exitWith {};
             format ["<t color='#FFFF00'>%1</t>", localize "STR_LL_Task_03_Action"],
             {
                 params ["_target", "_caller", "_actionId"];
-                private _radios = (missionNamespace getVariable ["LL_Task03_Radios", []]) select {
-                    !isNull _x && alive _x && _caller distance _x < 4 && (_x getVariable ["LL_Task_Status", "WAIT"] == "WAIT")
+                private _rawRadios = missionNamespace getVariable ["LL_Task03_Radios", []];
+                private _radios = [];
+                {
+                    private _r = if (_x isEqualType "") then { objectFromNetId _x } else { _x };
+                    if (!isNull _r) then { _radios pushBack _r; };
+                } forEach _rawRadios;
+                _radios = _radios select {
+                    alive _x && _caller distance _x < 4 && (_x getVariable ["LL_Task_Status", "WAIT"] == "WAIT")
                 };
                 if (count _radios == 0) exitWith {};
                 private _radio = _radios select 0;
@@ -27,8 +33,14 @@ if (!hasInterface) exitWith {};
             true,
             "",
             "alive _target && {
-                private _radios = (missionNamespace getVariable ['LL_Task03_Radios', []]) select {
-                    !isNull _x && alive _x && _target distance _x < 4 && (_x getVariable ['LL_Task_Status', 'WAIT'] == 'WAIT')
+                private _rawRadios = missionNamespace getVariable ['LL_Task03_Radios', []];
+                private _radios = [];
+                {
+                    private _r = if (_x isEqualType "") then { objectFromNetId _x } else { _x };
+                    if (!isNull _r) then { _radios pushBack _r; };
+                } forEach _rawRadios;
+                _radios = _radios select {
+                    alive _x && _target distance _x < 4 && (_x getVariable ['LL_Task_Status', 'WAIT'] == 'WAIT')
                 };
                 count _radios > 0
             }"
