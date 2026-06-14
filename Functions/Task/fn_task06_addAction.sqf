@@ -5,11 +5,12 @@ _this spawn {
 
     private _hvt = _hvtParam;
     if (isNull _hvt) then {
+        private _timeout = time + 30;
         waitUntil {
             sleep 0.5;
             if (_netId != "") then { _hvt = objectFromNetId _netId; };
             if (isNull _hvt) then { _hvt = missionNamespace getVariable ["LL_Task06_HVT", objNull]; };
-            !isNull _hvt
+            !isNull _hvt || time > _timeout
         };
     };
 

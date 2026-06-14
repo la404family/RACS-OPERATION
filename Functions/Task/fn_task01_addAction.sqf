@@ -8,21 +8,23 @@ _this spawn {
 
     private _corpse = _corpseParam;
     if (isNull _corpse) then {
+        private _timeout = time + 30;
         waitUntil {
             sleep 0.5;
             if (_corpseNetId != "") then { _corpse = objectFromNetId _corpseNetId; };
             if (isNull _corpse && _corpseVar != "") then { _corpse = missionNamespace getVariable [_corpseVar, objNull]; };
-            !isNull _corpse
+            !isNull _corpse || time > _timeout
         };
     };
 
     private _doc = _docParam;
     if (isNull _doc) then {
+        private _timeout = time + 30;
         waitUntil {
             sleep 0.5;
             if (_docNetId != "") then { _doc = objectFromNetId _docNetId; };
             if (isNull _doc && _docVar != "") then { _doc = missionNamespace getVariable [_docVar, objNull]; };
-            !isNull _doc
+            !isNull _doc || time > _timeout
         };
     };
 

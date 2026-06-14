@@ -5,11 +5,12 @@ _this spawn {
 
     private _bomb = _bombParam;
     if (isNull _bomb) then {
+        private _timeout = time + 30;
         waitUntil {
             sleep 0.5;
             if (_netId != "") then { _bomb = objectFromNetId _netId; };
             if (isNull _bomb && _varName != "") then { _bomb = missionNamespace getVariable [_varName, objNull]; };
-            !isNull _bomb
+            !isNull _bomb || time > _timeout
         };
     };
 

@@ -6,6 +6,27 @@ if (!hasInterface) exitWith {};
         if (_unit getVariable ["LL_Task03_Action_Added", false]) exitWith {};
         _unit setVariable ["LL_Task03_Action_Added", true];
 
+        if (isNil "LL_fnc_task03_cond") then {
+            LL_fnc_task03_cond = {
+                params ["_target", "_caller"];
+                private _rawRadios = missionNamespace getVariable ["LL_Task03_Radios", []];
+                if (count _rawRadios == 0) exitWith { false };
+                private _radios = [];
+                {
+                    private _r = if (_x isEqualType "") then { objectFromNetId _x } else { _x };
+                    if (!isNull _r) then { _radios pushBack _r; };
+                } forEach _rawRadios;
+                
+                private _found = false;
+                {
+                    if (alive _x && _target distance _x < 4 && (_x getVariable ["LL_Task_Status", "WAIT"] == "WAIT")) exitWith {
+                        _found = true;
+                    };
+                } forEach _radios;
+                _found
+            };
+        };
+
         _unit addAction [
             format ["<t color='#FFFF00'>%1</t>", localize "STR_LL_Task_03_Action"],
             {
@@ -32,18 +53,7 @@ if (!hasInterface) exitWith {};
             true,
             true,
             "",
-            "alive _target && {
-                private _rawRadios = missionNamespace getVariable ['LL_Task03_Radios', []];
-                private _radios = [];
-                {
-                    private _r = if (_x isEqualType "") then { objectFromNetId _x } else { _x };
-                    if (!isNull _r) then { _radios pushBack _r; };
-                } forEach _rawRadios;
-                _radios = _radios select {
-                    alive _x && _target distance _x < 4 && (_x getVariable ['LL_Task_Status', 'WAIT'] == 'WAIT')
-                };
-                count _radios > 0
-            }"
+            "alive _target && { [_target, _this] call LL_fnc_task03_cond }"
         ];
     };
 

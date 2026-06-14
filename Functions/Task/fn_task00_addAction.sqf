@@ -5,11 +5,12 @@ _this spawn {
 
     private _hostage = _hostageParam;
     if (isNull _hostage) then {
+        private _timeout = time + 30;
         waitUntil {
             sleep 0.5;
             if (_netId != "") then { _hostage = objectFromNetId _netId; };
             if (isNull _hostage && _varName != "") then { _hostage = missionNamespace getVariable [_varName, objNull]; };
-            !isNull _hostage
+            !isNull _hostage || time > _timeout
         };
     };
 

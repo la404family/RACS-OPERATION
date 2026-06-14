@@ -296,7 +296,7 @@ if (_mode == "init") exitWith {
         _truck setVehicleVarName _varName;
         missionNamespace setVariable [_varName, _truck, true];
 
-        [_truck, netId _truck, _varName] remoteExec ["LL_fnc_task04_addAction", 0, true];
+        [_truck, netId _truck, _varName] remoteExec ["LL_fnc_task04_addAction", 0, _truck];
 
     } forEach _selectedLogics;
 

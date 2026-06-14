@@ -389,8 +389,8 @@ if (isServer) then {
 
         sleep 21;
 
-        [_heli, ["doorLB", 1]] remoteExec ["animateDoor", 0, true];
-        [_heli, ["doorRB", 1]] remoteExec ["animateDoor", 0, true];
+        [_heli, ["doorLB", 1]] remoteExec ["animateDoor", 0, _heli];
+        [_heli, ["doorRB", 1]] remoteExec ["animateDoor", 0, _heli];
         _heli animateDoor ["doorLB", 1];
         _heli animateDoor ["doorRB", 1];
         sleep 5;   
@@ -438,8 +438,8 @@ if (isServer) then {
         _heli lock true;
         sleep 2;
 
-        [_heli, ["doorLB", 0]] remoteExec ["animateDoor", 0, true];
-        [_heli, ["doorRB", 0]] remoteExec ["animateDoor", 0, true];
+        [_heli, ["doorLB", 0]] remoteExec ["animateDoor", 0, _heli];
+        [_heli, ["doorRB", 0]] remoteExec ["animateDoor", 0, _heli];
         _heli animateDoor ["doorLB", 0];
         _heli animateDoor ["doorRB", 0];
 

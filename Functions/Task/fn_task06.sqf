@@ -94,7 +94,7 @@ if (_mode == "init") exitWith {
 
             ["[SERVER] HVT s'est rendu. Envoi de l'action de capture aux clients..."] remoteExec ["systemChat", 0];
 
-            [_hvt, netId _hvt] remoteExec ["LL_fnc_task06_addAction", 0, true];
+            [_hvt, netId _hvt] remoteExec ["LL_fnc_task06_addAction", 0, _hvt];
         };
     };
 
@@ -103,8 +103,8 @@ if (_mode == "init") exitWith {
         private _parent = attachedTo _unit;
         if (!isNull _parent && alive _parent) then {
             [_parent, false] remoteExec ["forceWalk", _parent];
-            [_unit, _parent] remoteExec ["enableCollisionWith", 0, true];
-            [_parent, _unit] remoteExec ["enableCollisionWith", 0, true];
+            [_unit, _parent] remoteExec ["enableCollisionWith", 0, _unit];
+            [_parent, _unit] remoteExec ["enableCollisionWith", 0, _unit];
         };
         detach _unit;
 
@@ -157,10 +157,10 @@ if (_mode == "escort") exitWith {
     _hvt disableAI "MOVE";
     _hvt disableAI "FSM";
     _hvt attachTo [_caller, [0.5, 0.4, 0]]; 
-    [_hvt, 0] remoteExec ["setDir", 0, true];
+    [_hvt, 0] remoteExec ["setDir", 0, _hvt];
 
-    [_hvt, _caller] remoteExec ["disableCollisionWith", 0, true];
-    [_caller, _hvt] remoteExec ["disableCollisionWith", 0, true];
+    [_hvt, _caller] remoteExec ["disableCollisionWith", 0, _hvt];
+    [_caller, _hvt] remoteExec ["disableCollisionWith", 0, _hvt];
 
     [_caller, true] remoteExec ["forceWalk", _caller];
 
@@ -205,8 +205,8 @@ if (_mode == "escort") exitWith {
                                 private _parent = attachedTo _hvt;
                                 if (!isNull _parent) then {
                                     [_parent, false] remoteExec ["forceWalk", _parent];
-                                    [_hvt, _parent] remoteExec ["enableCollisionWith", 0, true];
-                                    [_parent, _hvt] remoteExec ["enableCollisionWith", 0, true];
+                                    [_hvt, _parent] remoteExec ["enableCollisionWith", 0, _hvt];
+                                    [_parent, _hvt] remoteExec ["enableCollisionWith", 0, _hvt];
                                 };
                                 detach _hvt;
 
@@ -350,8 +350,8 @@ if (_mode == "release") exitWith {
 
     detach _hvt;
 
-    [_hvt, _caller] remoteExec ["enableCollisionWith", 0, true];
-    [_caller, _hvt] remoteExec ["enableCollisionWith", 0, true];
+    [_hvt, _caller] remoteExec ["enableCollisionWith", 0, _hvt];
+    [_caller, _hvt] remoteExec ["enableCollisionWith", 0, _hvt];
 
     [_caller, false] remoteExec ["forceWalk", _caller];
 

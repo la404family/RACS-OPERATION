@@ -5,11 +5,12 @@ _this spawn {
 
     private _truck = _truckParam;
     if (isNull _truck) then {
+        private _timeout = time + 30;
         waitUntil {
             sleep 0.5;
             if (_netId != "") then { _truck = objectFromNetId _netId; };
             if (isNull _truck && _varName != "") then { _truck = missionNamespace getVariable [_varName, objNull]; };
-            !isNull _truck
+            !isNull _truck || time > _timeout
         };
     };
 
