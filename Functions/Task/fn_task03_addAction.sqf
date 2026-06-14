@@ -16,7 +16,7 @@ if (!hasInterface) exitWith {};
                     private _r = if (_x isEqualType "") then { objectFromNetId _x } else { _x };
                     if (!isNull _r) then { _radios pushBack _r; };
                 } forEach _rawRadios;
-                
+
                 private _found = false;
                 {
                     if (alive _x && _target distance _x < 4 && (_x getVariable ["LL_Task_Status", "WAIT"] == "WAIT")) exitWith {

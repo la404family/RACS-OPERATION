@@ -360,10 +360,8 @@ if (_mode == "defuse") exitWith {
 
         private _pos = getPosATL _bomb;
 
-        // Attendre 20 secondes après le désamorçage
         sleep 20;
 
-        // Déclencher un écran de fumée blanche très épaisse (particules) localement sur tous les clients
         [[_pos], {
             params ["_pos"];
             [_pos] spawn {
@@ -374,20 +372,18 @@ if (_mode == "defuse") exitWith {
                 _emitter setParticleParams [
                     ["\A3\data_f\ParticleEffects\Universal\Universal", 16, 7, 48, 1], "", "Billboard",
                     1, 8, [0, 0, 0.1], [0, 0, 0.4], 0, 1.27, 1, 0.05,
-                    [1, 3.5, 6.5], // Expansion rapide de la fumée pour masquer la caisse
+                    [1, 3.5, 6.5], 
                     [[0.9, 0.9, 0.9, 0.85], [0.95, 0.95, 0.95, 0.55], [0.95, 0.95, 0.95, 0]],
                     [0.5], 0.1, 0, "", "", _emitter
                 ];
-                _emitter setDropInterval 0.005; // Densité extrême
-                sleep 25; // Dure 25 secondes
+                _emitter setDropInterval 0.005; 
+                sleep 25; 
                 deleteVehicle _emitter;
             };
         }] remoteExec ["spawn", 0];
 
-        // Attendre 1 seconde pour que la fumée masque la caisse
         sleep 1;
 
-        // Supprimer la caisse sous couverture de la fumée épaisse
         if (!isNull _bomb) then {
             deleteVehicle _bomb;
         };
