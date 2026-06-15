@@ -53,7 +53,7 @@ if (_mode == "init") exitWith {
 
         private _numGuards = 3 + floor (random 3); 
         for "_g" from 1 to _numGuards do {
-            sleep 0.7;
+            sleep 1.5;
             private _guardClass = selectRandom ["CUP_O_TK_Soldier", "CUP_O_TK_Soldier_GL", "CUP_O_TK_Soldier_AR"];
             private _guard = _grp createUnit [_guardClass, _spawnPos, [], 0, "NONE"];
             _guard setPosASL _spawnPos;
@@ -62,7 +62,7 @@ if (_mode == "init") exitWith {
             _allUnits pushBack _guard;
         };
 
-        sleep 0.7;
+        sleep 1.5;
         private _chiefClass = selectRandom ["CUP_O_TK_Commander", "CUP_O_TK_Officer"];
         private _chief = _grp createUnit [_chiefClass, _spawnPos, [], 0, "NONE"];
         _chief setPosASL _spawnPos;

@@ -50,7 +50,7 @@ if (_mode == "init") exitWith {
         _grpInner setCombatMode "RED";
         private _numInner = 2 + floor (random 2); 
         for "_g" from 1 to _numInner do {
-            sleep 0.5;
+            sleep 1.5;
             private _guardClass = selectRandom ["CUP_O_TK_Soldier", "CUP_O_TK_Soldier_GL", "CUP_O_TK_Soldier_AR"];
             private _guard = _grpInner createUnit [_guardClass, _spawnPos, [], 0, "NONE"];
             _guard setPosASL _spawnPos;
@@ -65,7 +65,7 @@ if (_mode == "init") exitWith {
         _grpOuter setCombatMode "RED";
         private _numOuter = 2 + floor (random 2); 
         for "_g" from 1 to _numOuter do {
-            sleep 0.5;
+            sleep 1.5;
             private _guardClass = selectRandom ["CUP_O_TK_Soldier", "CUP_O_TK_Soldier_GL", "CUP_O_TK_Soldier_AR"];
             private _guard = _grpOuter createUnit [_guardClass, _spawnPos, [], 0, "NONE"];
             _guard setPosASL _spawnPos;
@@ -82,7 +82,7 @@ if (_mode == "init") exitWith {
         _mkrName setMarkerText format ["%1 %2", localize "STR_LL_Task_00_Marker", _i + 1];
 
         if (_i == _hostageIndex) then {
-            sleep 0.7;
+            sleep 1.5;
             private _grpCiv = createGroup [civilian, true];
             private _hostage = _grpCiv createUnit ["C_man_polo_1_F", _spawnPos, [], 0, "NONE"];
             _hostage setPosASL _spawnPos;

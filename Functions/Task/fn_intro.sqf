@@ -79,8 +79,8 @@ if (hasInterface) then {
         private _ang2 = random 360;
         private _dist1 = 140 + (random 90);
         private _dist2 = 100 + (random 80);
-        private _h1 = 110 + (random 60);
-        private _h2 = 90  + (random 60);
+        private _h1 = 130 + (random 70);
+        private _h2 = 110 + (random 70);
 
         private _camStartX = (_pos1 select 0) + _dist1 * sin _ang1;
         private _camStartY = (_pos1 select 1) + _dist1 * cos _ang1;

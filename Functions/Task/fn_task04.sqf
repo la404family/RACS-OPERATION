@@ -65,7 +65,7 @@ if (_mode == "init") exitWith {
         _grpInner setCombatMode "RED";
         private _numInner = 2 + floor (random 2); 
         for "_g" from 1 to _numInner do {
-            sleep 0.5;
+            sleep 1.5;
             private _guardClass = selectRandom ["CUP_O_TK_Soldier", "CUP_O_TK_Soldier_GL", "CUP_O_TK_Soldier_AR"];
             private _guard = _grpInner createUnit [_guardClass, _spawnPos, [], 0, "NONE"];
             _guard setPosASL _spawnPos;
@@ -80,7 +80,7 @@ if (_mode == "init") exitWith {
         _grpOuter setCombatMode "RED";
         private _numOuter = 2 + floor (random 2); 
         for "_g" from 1 to _numOuter do {
-            sleep 0.5;
+            sleep 1.5;
             private _guardClass = selectRandom ["CUP_O_TK_Soldier", "CUP_O_TK_Soldier_GL", "CUP_O_TK_Soldier_AR"];
             private _guard = _grpOuter createUnit [_guardClass, _spawnPos, [], 0, "NONE"];
             _guard setPosASL _spawnPos;
@@ -90,7 +90,7 @@ if (_mode == "init") exitWith {
         };
         [_grpOuter, _spawnPos, 60] call BIS_fnc_taskPatrol;
 
-        sleep 0.7;
+        sleep 1.5;
         private _truckClasses = ["CUP_O_V3S_Refuel_TKA", "CUP_O_Ural_Refuel_TKA", "CUP_I_T810_Refuel_LDF"];
         private _truck = createVehicle [selectRandom _truckClasses, _spawnPos, [], 0, "CAN_COLLIDE"];
         _truck setPosASL _spawnPos;
@@ -335,7 +335,7 @@ if (_mode == "extract") exitWith {
         params ["_cargo"];
 
         private _spawnPosHeli = (getPos _cargo) getPos [2500, random 360];
-        _spawnPosHeli set [2, 150];
+        _spawnPosHeli set [2, 250];
 
         private _dropPos = _spawnPosHeli getPos [3000, random 360];
         _dropPos set [2, 150];
