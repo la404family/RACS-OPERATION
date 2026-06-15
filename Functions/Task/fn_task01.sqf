@@ -132,27 +132,19 @@ if (_mode == "init") exitWith {
 
             if (_unit getVariable ["LL_hasDocuments", false]) then {
                 private _pos = getPosATL _unit; 
-                _pos set [2, (_pos select 2) + 0.05];
-
-                private _doc = createVehicle ["Land_Document_01_F", _pos, [], 0, "CAN_COLLIDE"];
-                _doc setPosATL _pos;
 
                 ["task_01_assassinat", _pos] call BIS_fnc_taskSetDestination;
 
                 private _mkrDoc = createMarker ["mkr_task01_doc", _pos];
                 _mkrDoc setMarkerType "mil_objective";
-                _mkrDoc setMarkerColor "ColorWhite";
+                _mkrDoc setMarkerColor "ColorYellow";
                 _mkrDoc setMarkerText (localize "STR_LL_Task_01_MarkerDoc");
 
                 private _varCorpse = format ["LL_Task01_Corpse_%1_%2", _i, round(random 100000)];
                 _unit setVehicleVarName _varCorpse;
                 missionNamespace setVariable [_varCorpse, _unit, true];
 
-                private _varDoc = format ["LL_Task01_Doc_%1_%2", _i, round(random 100000)];
-                _doc setVehicleVarName _varDoc;
-                missionNamespace setVariable [_varDoc, _doc, true];
-
-                [_unit, netId _unit, _varCorpse, _doc, netId _doc, _varDoc] remoteExec ["LL_fnc_task01_addAction", 0, _unit];
+                [_unit, netId _unit, _varCorpse] remoteExec ["LL_fnc_task01_addAction", 0, _unit];
 
                 private _alivePlayers = allPlayers select { alive _x };
                 private _allTaskUnits = missionNamespace getVariable ["LL_Task01_AllUnits", []];
@@ -206,7 +198,7 @@ if (_mode == "init") exitWith {
 };
 
 if (_mode == "collect") exitWith {
-    _args params ["_corpse", "_doc"];
+    _args params ["_corpse", ["_doc", objNull, [objNull]]];
 
     if (missionNamespace getVariable ["LL_Task01_Completed", false]) exitWith {};
     missionNamespace setVariable ["LL_Task01_Completed", true, true];

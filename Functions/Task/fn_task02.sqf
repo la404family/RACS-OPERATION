@@ -360,7 +360,7 @@ if (_mode == "defuse") exitWith {
 
         private _pos = getPosATL _bomb;
 
-        sleep 2;
+        sleep 20;
 
         [[_pos], {
             params ["_pos"];
@@ -377,7 +377,7 @@ if (_mode == "defuse") exitWith {
                     [0.5], 0.1, 0, "", "", _emitter
                 ];
                 _emitter setDropInterval 0.005; 
-                sleep 25; 
+                sleep 2; 
                 deleteVehicle _emitter;
             };
         }] remoteExec ["spawn", 0];
