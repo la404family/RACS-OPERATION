@@ -92,8 +92,6 @@ if (_mode == "init") exitWith {
             private _civGrp = createGroup [civilian, true];
             [_hvt] joinSilent _civGrp;
 
-            ["[SERVER] HVT s'est rendu. Envoi de l'action de capture aux clients..."] remoteExec ["systemChat", 0];
-
             [_hvt, netId _hvt] remoteExec ["LL_fnc_task06_addAction", 0, _hvt];
         };
     };
@@ -182,14 +180,10 @@ if (_mode == "escort") exitWith {
 
         [_hvt] spawn {
             params ["_hvt"];
-            waitUntil {
-                sleep 1;
-                !alive _hvt || !isNull (missionNamespace getVariable ["LL_HELI_obj", objNull])
-            };
-
-            if (alive _hvt) then {
+            while { alive _hvt && ((_hvt getVariable ["LL_Task_Status", ""]) != "DONE") } do {
                 private _heli = missionNamespace getVariable ["LL_HELI_obj", objNull];
-                if (!isNull _heli) then {
+                if (!isNull _heli && alive _heli && !(_heli getVariable ["LL_Task06_ActionAdded", false])) then {
+                    _heli setVariable ["LL_Task06_ActionAdded", true, true];
                     [
                         _heli,
                         [
@@ -224,6 +218,7 @@ if (_mode == "escort") exitWith {
                         ]
                     ] remoteExec ["addAction", 0, _heli];
                 };
+                sleep 2;
             };
         };
 

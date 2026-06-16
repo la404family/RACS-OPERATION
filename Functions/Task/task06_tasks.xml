@@ -28,6 +28,34 @@
         <Italian>Imbarca HVT</Italian>
         <Polish>Umieść HVT na pokładzie</Polish>
     </Key>
+    <Key ID="STR_LL_Task_06_EscortAction">
+        <Original>Escorter le HVT</Original>
+        <French>Escorter le HVT</French>
+        <English>Escort HVT</English>
+        <Turkish>HVT'ye Refakat Et</Turkish>
+        <Korean>HVT 호위</Korean>
+        <Spanish>Escortar HVT</Spanish>
+        <Japanese>HVTの護衛</Japanese>
+        <Chinese>护送HVT</Chinese>
+        <Russian>Конвоировать HVT</Russian>
+        <German>HVT eskortieren</German>
+        <Italian>Scorta HVT</Italian>
+        <Polish>Eskortuj HVT</Polish>
+    </Key>
+    <Key ID="STR_LL_Task_06_ReleaseAction">
+        <Original>Relâcher le HVT</Original>
+        <French>Relâcher le HVT</French>
+        <English>Release HVT</English>
+        <Turkish>HVT'yi Serbest Bırak</Turkish>
+        <Korean>HVT 석방</Korean>
+        <Spanish>Liberar HVT</Spanish>
+        <Japanese>HVTの解放</Japanese>
+        <Chinese>释放HVT</Chinese>
+        <Russian>Отпустить HVT</Russian>
+        <German>HVT freilassen</German>
+        <Italian>Rilascia HVT</Italian>
+        <Polish>Uwolnij HVT</Polish>
+    </Key>
     <Key ID="STR_LL_Task_06_Title">
         <Original>Capture de HVT</Original>
         <French>Capture de HVT</French>

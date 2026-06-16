@@ -112,6 +112,7 @@ if (_mode == "init") exitWith {
             _hostage addEventHandler ["Killed", {
                 ["task_00_exfiltration", "FAILED", true] call BIS_fnc_taskSetState;
                 missionNamespace setVariable ["LL_g_taskInProgress", false, true];
+                for "_i" from 0 to 3 do { deleteMarker format ["mkr_task00_zone_%1", _i]; };
             }];
 
             private _varName = format ["LL_Task00_Hostage_%1_%2", _i, round(random 100000)];
@@ -174,6 +175,7 @@ if (_mode == "free") exitWith {
     _hostage setPosASL _hostageFixedPos;
     _hostage setDir _hostageFixedDir;
     [_hostage, ""] remoteExec ["switchMove", 0];
+    _hostage setVariable ["LL_Task_Status", "FREE", true];
 
     private _hostageGrp = group _hostage;
     private _dummy = _hostageGrp createUnit ["I_G_Soldier_F", getPosASL _hostage, [], 0, "NONE"];
@@ -189,10 +191,37 @@ if (_mode == "free") exitWith {
 
     { _hostage enableAI _x; } forEach ["MOVE", "AUTOTARGET", "TARGET"];
     _hostage setUnitPos "UP";
-    _hostage setBehaviour "CARELESS";
-    _hostage setSpeedMode "LIMITED";
     _hostage setSkill ["courage", 1];
     _hostage allowFleeing 0;
+
+    _hostage disableAI "FSM";
+    _hostage disableAI "AUTOCOMBAT";
+    _hostage disableAI "SUPPRESSION";
+    _hostage setBehaviour "CARELESS";
+    _hostage setSpeedMode "FULL";
+
+    [_hostage] spawn {
+        params ["_hostage"];
+        while { alive _hostage && (_hostage getVariable ["LL_Task_Status", ""]) == "FREE" && (vehicle _hostage == _hostage) } do {
+            private _alivePlayers = allPlayers select { alive _x };
+            if (count _alivePlayers > 0) then {
+                private _closestPlayer = objNull;
+                private _minDist = 999999;
+                {
+                    private _dist = _x distance2D _hostage;
+                    if (_dist < _minDist) then {
+                        _minDist = _dist;
+                        _closestPlayer = _x;
+                    };
+                } forEach _alivePlayers;
+
+                if (!isNull _closestPlayer && _minDist > 5) then {
+                    _hostage doMove (getPosATL _closestPlayer);
+                };
+            };
+            sleep 2;
+        };
+    };
 
     private _allBlufor = allUnits select { side _x == west && alive _x };
     private _allOpfor  = allUnits select { side _x == east && alive _x && _x != _hostage };
@@ -228,14 +257,10 @@ if (_mode == "free") exitWith {
 
     [_hostage] spawn {
         params ["_hostage"];
-        waitUntil {
-            sleep 1;
-            !alive _hostage || !isNull (missionNamespace getVariable ["LL_HELI_obj", objNull])
-        };
-
-        if (alive _hostage) then {
+        while { alive _hostage && (vehicle _hostage != (missionNamespace getVariable ["LL_HELI_obj", objNull])) } do {
             private _heli = missionNamespace getVariable ["LL_HELI_obj", objNull];
-            if (!isNull _heli) then {
+            if (!isNull _heli && alive _heli && !(_heli getVariable ["LL_Task00_ActionAdded", false])) then {
+                _heli setVariable ["LL_Task00_ActionAdded", true, true];
                 [
                     _heli,
                     [
@@ -249,6 +274,7 @@ if (_mode == "free") exitWith {
                             [_hostage] joinSilent (group _target);
                             _hostage assignAsCargo _target;
                             [_hostage] orderGetIn true;
+                            _hostage moveInCargo _target;
                         },
                         [_hostage],
                         6.0,
@@ -259,6 +285,7 @@ if (_mode == "free") exitWith {
                     ]
                 ] remoteExec ["addAction", 0, _heli];
             };
+            sleep 2;
         };
     };
 
