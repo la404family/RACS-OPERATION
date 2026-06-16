@@ -112,7 +112,6 @@ _markerDrone setMarkerSize [0.9, 0.9];
         } forEach _enemyMarkers;
         { _enemyMarkers deleteAt _x; } forEach _toRemove;
 
-        // Clean up laser targets on dead vehicles
         {
             private _ltW = _x getVariable ["LL_LaserTargetW", objNull];
             if (!alive _x && !isNull _ltW) then {
@@ -130,7 +129,6 @@ _markerDrone setMarkerSize [0.9, 0.9];
         {
             _grp reveal [_x, 4];
 
-            // Expose the target to both sensors and datalink to force AI locking
             west reportRemoteTarget [_x, 10];
             independent reportRemoteTarget [_x, 10];
             _x confirmSensorTarget [west, true];
@@ -140,7 +138,7 @@ _markerDrone setMarkerSize [0.9, 0.9];
             (gunner _drone) doFire _x;
 
             if (alive _x) then {
-                // Attach laser targets (West & Independent) so guided munitions can track and lock onto them
+
                 private _ltW = _x getVariable ["LL_LaserTargetW", objNull];
                 if (isNull _ltW) then {
                     _ltW = createVehicle ["LaserTargetW", getPosATL _x, [], 0, "CAN_COLLIDE"];
@@ -155,7 +153,6 @@ _markerDrone setMarkerSize [0.9, 0.9];
                     _x setVariable ["LL_LaserTargetC", _ltC];
                 };
 
-                // Failsafe: force fire Hellfire or GBU at target
                 private _wpn = "";
                 {
                     private _lowerW = toLower _x;
@@ -176,7 +173,6 @@ _markerDrone setMarkerSize [0.9, 0.9];
 
     ["STR_Drone_RTB"] remoteExec ["LL_fnc_radioMessage", 0];
 
-    // Final cleanup of laser targets
     {
         private _ltW = _x getVariable ["LL_LaserTargetW", objNull];
         if (!isNull _ltW) then {

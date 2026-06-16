@@ -26,7 +26,7 @@ if (_mode == "plant") exitWith {
         if (!isNull _jammer && alive _jammer) then {
             private _pos = getPos _jammer;
             "Bo_GBU12_LGB" createVehicle _pos;
-            _jammer setDamage 1; // Ensure the jammer is fully destroyed
+            _jammer setDamage 1; 
         };
     };
 };
@@ -76,10 +76,8 @@ if (_mode == "init") exitWith {
     private _posVeh = getPosASL _logicVehicles;
     _posVeh set [2, (_posVeh select 2) + 0.2];
 
-    // Determine total number of guards (15 to 25)
     private _totalEnemies = 15 + floor (random 11);
-    
-    // Split into 5 groups (3 to 5 units each)
+
     private _groupSizes = [];
     private _rem = _totalEnemies;
     for "_i" from 1 to 4 do {
@@ -102,7 +100,7 @@ if (_mode == "init") exitWith {
         private _centerPos = if (_gIdx < 2) then { _posJammer } else { _posVeh };
 
         for "_u" from 1 to _sz do {
-            sleep 1.5; // Staged delay between spawns
+            sleep 1.5; 
             private _cls = selectRandom _classes;
             private _spawnSpot = _centerPos getPos [random 15, random 360];
             private _unit = _grp createUnit [_cls, _spawnSpot, [], 0, "NONE"];
@@ -117,40 +115,36 @@ if (_mode == "init") exitWith {
         };
 
         switch (_gIdx) do {
-            case 0: { // Group 1: static interior defense at Jammer
+            case 0: { 
                 { _x disableAI "MOVE"; } forEach units _grp;
             };
-            case 1: { // Group 2: tight patrol around Jammer
+            case 1: { 
                 [_grp, _posJammer, 20] call BIS_fnc_taskPatrol;
             };
-            case 2: { // Group 3: static guards around vehicles
+            case 2: { 
                 { _x setUnitPos "UP"; } forEach units _grp;
             };
-            case 3: { // Group 4: tight patrol around vehicles
+            case 3: { 
                 [_grp, _posVeh, 30] call BIS_fnc_taskPatrol;
             };
-            case 4: { // Group 5: wide area patrol
+            case 4: { 
                 [_grp, _posVeh, 80] call BIS_fnc_taskPatrol;
             };
         };
         _groups pushBack _grp;
     };
 
-    // Now spawn the main objectives (vehicles) after all guards have spawned
     sleep 1.5;
 
-    // Spawn Jammer Truck (Tempest Dispositif)
     private _jammer = createVehicle ["O_Truck_03_device_F", _posJammer, [], 0, "NONE"];
     _jammer setPosASL _posJammer;
     _jammer allowDamage false;
     [_jammer] spawn { sleep 3; (_this select 0) allowDamage true; };
-    _jammer setFuel 0; // Remove fuel so it cannot move
+    _jammer setFuel 0; 
 
-    // Setup sabotage action on Jammer
     _jammer setVariable ["LL_Task_Status", "WAIT", true];
     [_jammer, netId _jammer] remoteExec ["LL_fnc_task08_addAction", 0, _jammer];
 
-    // Spawn DCA (ZSU-39 Tigris)
     private _dca = createVehicle ["O_T_APC_Tracked_02_AA_ghex_F", _posVeh, [], 0, "NONE"];
     _dca setPosASL _posVeh;
     _dca allowDamage false;
@@ -158,9 +152,8 @@ if (_mode == "init") exitWith {
     createVehicleCrew _dca;
     (group (driver _dca)) setCombatMode "RED";
     (group (driver _dca)) setBehaviour "COMBAT";
-    _dca setFuel 0; // Remove fuel so it cannot move
+    _dca setFuel 0; 
 
-    // Spawn Heavy Artillery (BM-21 Grad) side-by-side (12m offset)
     private _dirVeh = getDir _logicVehicles;
     private _posGrad = _posVeh getPos [12, _dirVeh + 90];
     _posGrad set [2, (_posVeh select 2)];
@@ -172,15 +165,13 @@ if (_mode == "init") exitWith {
     createVehicleCrew _artillery;
     (group (driver _artillery)) setCombatMode "RED";
     (group (driver _artillery)) setBehaviour "COMBAT";
-    _artillery setFuel 0; // Remove fuel so it cannot move
+    _artillery setFuel 0; 
 
-    // Configure global tracking variables
     missionNamespace setVariable ["LL_Task08_Targets", [_dca, _artillery, _jammer], true];
     missionNamespace setVariable ["LL_Drone_Jammed", true, true];
     missionNamespace setVariable ["LL_Heli_Jammed", true, true];
     missionNamespace setVariable ["LL_Task08_Finished", false, true];
 
-    // Create markers
     private _mkrJammer = "mkr_task08_jammer";
     createMarker [_mkrJammer, _posJammer];
     _mkrJammer setMarkerType "mil_objective";
@@ -211,34 +202,29 @@ if (_mode == "init") exitWith {
 
     [[], { player createDiaryRecord ["diary", [localize "STR_LL_Diary_Task08_Title", localize "STR_LL_Diary_Task08_Text"]]; }] remoteExec ["spawn", 0, true];
 
-    // RACS Cargo Plane (C-130J) flyover thread (spawns in 2 minutes for testing)
     [_posVeh, _jammer, _dca, _mkrJammer, _mkrVehicles] spawn {
         params ["_posVeh", "_jammer", "_dca", "_mkrJammer", "_mkrVehicles"];
 
-        private _delay = 2400 + random 900; // Random delay between 40 minutes (2400s) and 55 minutes (3300s)
+        private _delay = 2400 + random 900; 
         private _startTime = time;
         private _endTime = _startTime + _delay;
 
-        // Dynamic countdown timer loop
         while { time < _endTime && !(missionNamespace getVariable ["LL_Task08_Finished", false]) } do {
             private _timeLeft = _endTime - time;
             private _min = floor (_timeLeft / 60);
             private _sec = floor (_timeLeft % 60);
-            
-            // Format time remaining
+
             private _timerStr = if (_min > 0) then {
                 format ["%1 min %2%3s", _min, if (_sec < 10) then {"0"} else {""}, _sec]
             } else {
                 format ["%1s", _sec]
             };
 
-            // Update DCA marker if it exists
             if (getMarkerColor _mkrVehicles != "") then {
                 private _defaultTextVeh = localize "STR_LL_Task_08_MarkerVehicles";
                 _mkrVehicles setMarkerText (format ["%1 (%2)", _defaultTextVeh, _timerStr]);
             };
 
-            // Update Jammer marker if it exists
             if (getMarkerColor _mkrJammer != "") then {
                 private _defaultTextJam = localize "STR_LL_Task_08_Marker";
                 _mkrJammer setMarkerText (format ["%1 (%2)", _defaultTextJam, _timerStr]);
@@ -247,7 +233,6 @@ if (_mode == "init") exitWith {
             sleep 1;
         };
 
-        // Restore default texts on markers if they still exist before spawning
         if (getMarkerColor _mkrVehicles != "") then {
             _mkrVehicles setMarkerText (localize "STR_LL_Task_08_MarkerVehicles");
         };
@@ -255,12 +240,10 @@ if (_mode == "init") exitWith {
             _mkrJammer setMarkerText (localize "STR_LL_Task_08_Marker");
         };
 
-        // Exit if task is already completed or failed
         if (missionNamespace getVariable ["LL_Task08_Finished", false]) exitWith {};
 
         ["STR_LL_Task_08_Plane_Incoming"] remoteExec ["LL_fnc_radioMessage", 0];
 
-        // Start and end positions for the C-130J cargo flight
         private _spawnPos = [(_posVeh select 0) - 3000, (_posVeh select 1) - 3000, 300];
         private _targetPos = [(_posVeh select 0) + 3000, (_posVeh select 1) + 3000, 300];
 
@@ -272,7 +255,6 @@ if (_mode == "init") exitWith {
         createVehicleCrew _plane;
         (crew _plane) joinSilent _grpPlane;
 
-        // Flight waypoints
         private _wp1 = _grpPlane addWaypoint [_posVeh, 0];
         _wp1 setWaypointType "MOVE";
         _wp1 setWaypointSpeed "NORMAL";
@@ -282,11 +264,10 @@ if (_mode == "init") exitWith {
         _wp2 setWaypointType "MOVE";
         _wp2 setWaypointSpeed "NORMAL";
 
-        // Wait until plane exits the airspace or gets shot down
         waitUntil { sleep 3; !alive _plane || _plane distance2D _targetPos < 300 || (missionNamespace getVariable ["LL_Task08_Finished", false]) };
 
         if (missionNamespace getVariable ["LL_Task08_Finished", false]) exitWith {
-            // Silently clean up cargo plane if mission finished
+
             { deleteVehicle _x; } forEach (crew _plane);
             deleteVehicle _plane;
             deleteGroup _grpPlane;
@@ -304,56 +285,49 @@ if (_mode == "init") exitWith {
         deleteGroup _grpPlane;
     };
 
-    // Monitoring thread
     [_jammer, _dca, _artillery, _mkrJammer, _mkrVehicles, _enemies, _groups] spawn {
         params ["_jammer", "_dca", "_artillery", "_mkrJammer", "_mkrVehicles", "_enemies", "_groups"];
 
         private _droneUnjammed = false;
         private _heliUnjammed = false;
 
-        // Loop runs while targets are alive AND the task hasn't been completed or failed
         while { (alive _jammer || alive _dca || alive _artillery) && !(missionNamespace getVariable ["LL_Task08_Finished", false]) } do {
             sleep 2;
 
-            // Check if DCA is destroyed (unlocks heli support)
             if (!_heliUnjammed && {!alive _dca}) then {
                 _heliUnjammed = true;
                 missionNamespace setVariable ["LL_Heli_Jammed", false, true];
                 if (getMarkerColor _mkrVehicles != "") then { deleteMarker _mkrVehicles; };
                 ["STR_LL_Heli_Action_Unjammed"] remoteExec ["LL_fnc_radioMessage", 0];
-                sleep 5; // Prevent message overlapping if both targets are destroyed in the same loop cycle
+                sleep 5; 
             };
 
-            // Check if Jammer is destroyed (unlocks drone support)
             if (!_droneUnjammed && {!alive _jammer}) then {
                 _droneUnjammed = true;
                 missionNamespace setVariable ["LL_Drone_Jammed", false, true];
                 if (getMarkerColor _mkrJammer != "") then { deleteMarker _mkrJammer; };
                 ["STR_LL_Drone_Action_Unjammed"] remoteExec ["LL_fnc_radioMessage", 0];
 
-                // DCA loses targeting capability on the drone (set captive)
                 if (alive _dca) then {
                     _dca setCaptive true;
                     { _x setCaptive true; } forEach (crew _dca);
                 };
-                sleep 5; // Prevent message overlapping if both targets are destroyed in the same loop cycle
+                sleep 5; 
             };
         };
 
-        // Determine if players succeeded (all targets destroyed)
         private _success = !(alive _jammer || alive _dca || alive _artillery);
 
         if (_success) then {
-            // Success flow
+
             ["task_08_main", "SUCCEEDED", true] call BIS_fnc_taskSetState;
             missionNamespace setVariable ["LL_Task08_Finished", true, true];
         } else {
-            // Failure flow (e.g. plane shot down)
+
             if (["task_08_main"] call BIS_fnc_taskState != "FAILED") then {
                 ["task_08_main", "FAILED", true] call BIS_fnc_taskSetState;
             };
 
-            // 1. Crew exits vehicles immediately
             {
                 private _veh = _x;
                 if (!isNull _veh && alive _veh) then {
@@ -365,7 +339,6 @@ if (_mode == "init") exitWith {
                 };
             } forEach [_jammer, _dca, _artillery];
 
-            // 2. Spawn a thread to make vehicles disappear in smoke in 20 seconds
             [_jammer, _dca, _artillery] spawn {
                 params ["_jammer", "_dca", "_artillery"];
                 sleep 20;
@@ -373,9 +346,9 @@ if (_mode == "init") exitWith {
                     private _veh = _x;
                     if (!isNull _veh) then {
                         private _pos = getPosATL _veh;
-                        // Trigger smoke ring
+
                         [_pos, 15, 5, [0.2, 0.2, 0.2, 0.8]] remoteExec ["LL_fnc_createSmokeRing", 0];
-                        // Delete crew (if somehow any are inside) and delete vehicle
+
                         { deleteVehicle _x; } forEach (crew _veh);
                         deleteVehicle _veh;
                     };
@@ -383,7 +356,6 @@ if (_mode == "init") exitWith {
             };
         };
 
-        // 3. Make all surviving enemies (guards + crew who exited if failure) hunt the players
         private _allEnemies = [];
         {
             if (!isNull _x && alive _x) then {
@@ -404,7 +376,7 @@ if (_mode == "init") exitWith {
 
         [_allEnemies, _groups] spawn {
             params ["_enemiesToHunt", "_originalGroups"];
-            
+
             {
                 if (!isNull _x) then {
                     _x setBehaviour "AWARE";
@@ -444,7 +416,7 @@ if (_mode == "init") exitWith {
 
                         if (!isNull _closestPlayer) then {
                             _enemy reveal [_closestPlayer, 4];
-                            
+
                             private _lastPush = _enemy getVariable ["LL_Task08_LastPush", 0];
                             if (time - _lastPush > 10) then {
                                 _enemy setVariable ["LL_Task08_LastPush", time];
@@ -458,11 +430,9 @@ if (_mode == "init") exitWith {
             };
         };
 
-        // Lift all jamming (failsafe)
         missionNamespace setVariable ["LL_Drone_Jammed", false, true];
         missionNamespace setVariable ["LL_Heli_Jammed", false, true];
 
-        // Clean up remaining/dangling markers
         if (getMarkerColor _mkrJammer != "") then { deleteMarker _mkrJammer; };
         if (getMarkerColor _mkrVehicles != "") then { deleteMarker _mkrVehicles; };
 
