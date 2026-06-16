@@ -154,4 +154,18 @@
         <Italian>È la volontà di Dio. Grazie per aver combattuto al nostro fianco.</Italian>
         <Polish>Taka jest wola Boga. Dziękujemy za wspólną walkę.</Polish>
     </Key>
+    <Key ID="STR_LL_Task_07_SubtitleFollow">
+        <Original>Suivez les villageois !</Original>
+        <French>Suivez les villageois !</French>
+        <English>Follow the villagers!</English>
+        <Turkish>Köylüleri takip edin!</Turkish>
+        <Korean>주민들을 따르십시오!</Korean>
+        <Spanish>¡Sigan a los aldeanos!</Spanish>
+        <Japanese>村人たちに付いて行ってください！</Japanese>
+        <Chinese>跟随村民！</Chinese>
+        <Russian>Следуйте за жителями!</Russian>
+        <German>Folgen Sie den Dorfbewohnern!</German>
+        <Italian>Seguite gli abitanti del villaggio!</Italian>
+        <Polish>Idźcie za mieszkańcami!</Polish>
+    </Key>
 </Keys>

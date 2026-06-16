@@ -280,6 +280,9 @@ if (_mode == "talk") exitWith {
 
     [[], { player createDiaryRecord ["diary", [localize "STR_LL_Diary_Task07_Title", localize "STR_LL_Diary_Task07_Text"]]; }] remoteExec ["spawn", 0, true];
 
+    // Show localized follow subtitle without audio (text message)
+    ["STR_LL_Task_07_SubtitleFollow", [], 6, false] remoteExec ["LL_fnc_radioMessage", 0];
+
     // Order villagers to run and attack
     {
         _x setVariable ["LL_Task07_RunningToBattle", true, true];
@@ -400,9 +403,19 @@ if (_mode == "talk") exitWith {
                 missionNamespace setVariable ["LL_g_taskInProgress", false, true];
             } else {
                 _rep setVariable ["LL_Task_Status", "READY_DEFEAT", true];
+
+                // Isolate representative in a peaceful group to reset combat behavior
+                private _safeGrp = createGroup [west, true];
+                [_rep] joinSilent _safeGrp;
+
                 _rep disableAI "MOVE";
+                _rep disableAI "AUTOTARGET";
+                _rep disableAI "TARGET";
+                _rep disableAI "WEAPONAIM";
                 _rep setUnitPos "UP";
                 _rep setBehaviour "SAFE";
+                _rep setCombatMode "BLUE";
+                _rep action ["WeaponOnBack", _rep];
                 [_rep, "AmovPercMstpSrasWpstDnon"] remoteExec ["switchMove", 0];
 
                 private _mkrThanks = "mkr_task07_thanks";
@@ -439,9 +452,19 @@ if (_mode == "talk") exitWith {
                 missionNamespace setVariable ["LL_g_taskInProgress", false, true];
             } else {
                 _rep setVariable ["LL_Task_Status", "READY_THANKS", true];
+
+                // Isolate representative in a peaceful group to reset combat behavior
+                private _safeGrp = createGroup [west, true];
+                [_rep] joinSilent _safeGrp;
+
                 _rep disableAI "MOVE";
+                _rep disableAI "AUTOTARGET";
+                _rep disableAI "TARGET";
+                _rep disableAI "WEAPONAIM";
                 _rep setUnitPos "UP";
                 _rep setBehaviour "SAFE";
+                _rep setCombatMode "BLUE";
+                _rep action ["WeaponOnBack", _rep];
                 [_rep, "AmovPercMstpSrasWpstDnon"] remoteExec ["switchMove", 0];
 
                 private _mkrThanks = "mkr_task07_thanks";
@@ -481,7 +504,12 @@ if (_mode == "complete") exitWith {
     if ((_rep getVariable ["LL_Task_Status", ""]) != "READY_THANKS") exitWith {};
     _rep setVariable ["LL_Task_Status", "DONE", true];
 
-    // Play talking animation on the representative
+    // Make representative face the player
+    _rep setDir (_rep getDir _caller);
+    _rep setFormDir (_rep getDir _caller);
+
+    // Force weapon to back and play talking animation
+    _rep action ["WeaponOnBack", _rep];
     [_rep, "Acts_CivilTalking_1"] remoteExec ["switchMove", 0];
 
     // Show subtitle message (stays on screen for 10 seconds)
@@ -511,8 +539,14 @@ if (_mode == "complete") exitWith {
             private _dissolveGrp = createGroup [west, true];
             {
                 _x enableAI "MOVE";
+                _x enableAI "AUTOTARGET";
+                _x enableAI "TARGET";
+                _x enableAI "WEAPONAIM";
+                _x setUnitPos "UP";
                 _x setBehaviour "SAFE";
-                _x setSpeedMode "FULL";
+                _x setSpeedMode "LIMITED";
+                [_x, "AmovPercMstpSrasWpstDnon"] remoteExec ["switchMove", 0];
+                _x action ["WeaponOnBack", _x];
             } forEach _aliveVillagers;
             _aliveVillagers joinSilent _dissolveGrp;
 
@@ -536,7 +570,7 @@ if (_mode == "complete") exitWith {
                     while { count waypoints _grp > 0 } do { deleteWaypoint [_grp, 0]; };
                     private _wp = _grp addWaypoint [_dissolvePos, 5];
                     _wp setWaypointType "MOVE";
-                    _wp setWaypointSpeed "FULL";
+                    _wp setWaypointSpeed "LIMITED";
                     _wp setWaypointBehaviour "SAFE";
                     waitUntil { sleep 1; ({ alive _x } count _alive) == 0 || (leader _grp distance2D _dissolvePos <= 5) };
                     if (({ alive _x } count _alive) == 0) exitWith { _running = false; };
@@ -561,7 +595,12 @@ if (_mode == "complete_defeat") exitWith {
     if ((_rep getVariable ["LL_Task_Status", ""]) != "READY_DEFEAT") exitWith {};
     _rep setVariable ["LL_Task_Status", "DONE", true];
 
-    // Play talking animation (sad/disappointed dialogue gesture)
+    // Make representative face the player
+    _rep setDir (_rep getDir _caller);
+    _rep setFormDir (_rep getDir _caller);
+
+    // Force weapon to back and play talking animation
+    _rep action ["WeaponOnBack", _rep];
     [_rep, "Acts_CivilTalking_2"] remoteExec ["switchMove", 0];
 
     // Show defeat subtitle message (stays on screen for 10 seconds)
@@ -587,8 +626,14 @@ if (_mode == "complete_defeat") exitWith {
             private _dissolveGrp = createGroup [west, true];
             {
                 _x enableAI "MOVE";
+                _x enableAI "AUTOTARGET";
+                _x enableAI "TARGET";
+                _x enableAI "WEAPONAIM";
+                _x setUnitPos "UP";
                 _x setBehaviour "SAFE";
-                _x setSpeedMode "FULL";
+                _x setSpeedMode "LIMITED";
+                [_x, "AmovPercMstpSrasWpstDnon"] remoteExec ["switchMove", 0];
+                _x action ["WeaponOnBack", _x];
             } forEach _aliveVillagers;
             _aliveVillagers joinSilent _dissolveGrp;
 
@@ -612,7 +657,7 @@ if (_mode == "complete_defeat") exitWith {
                     while { count waypoints _grp > 0 } do { deleteWaypoint [_grp, 0]; };
                     private _wp = _grp addWaypoint [_dissolvePos, 5];
                     _wp setWaypointType "MOVE";
-                    _wp setWaypointSpeed "FULL";
+                    _wp setWaypointSpeed "LIMITED";
                     _wp setWaypointBehaviour "SAFE";
                     waitUntil { sleep 1; ({ alive _x } count _alive) == 0 || (leader _grp distance2D _dissolvePos <= 5) };
                     if (({ alive _x } count _alive) == 0) exitWith { _running = false; };
