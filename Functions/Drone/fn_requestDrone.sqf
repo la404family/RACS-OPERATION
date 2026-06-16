@@ -80,7 +80,7 @@ _markerDrone setMarkerSize [0.9, 0.9];
     while { time < _endTime && alive _drone && !(missionNamespace getVariable ["LL_Drone_Jammed", false]) } do {
         _mDrone setMarkerPos (getPosATL _drone);
 
-        private _enemies = _center nearEntities [["CAManBase", "Car", "Tank", "Helicopter", "Plane", "Ship"], _scanR];
+        private _enemies = _center nearEntities [["Car", "Tank", "Helicopter", "Plane", "Ship"], _scanR];
         _enemies = _enemies select { alive _x && (side _x == east || _x in (missionNamespace getVariable ["LL_Task08_Targets", []])) };
 
         private _currentEnemyIds = [];

@@ -67,7 +67,7 @@ if (_mode == "init") exitWith {
         private _guardsInner = [];
         private _numInner = 2 + floor (random 2); 
         for "_g" from 1 to _numInner do {
-            sleep 1.5;
+            sleep 4;
             private _guardClass = selectRandom ["CUP_O_TK_Soldier", "CUP_O_TK_Soldier_GL", "CUP_O_TK_Soldier_AR"];
             private _guard = _grpInner createUnit [_guardClass, _spawnPos, [], 0, "NONE"];
             _guard setPosASL _spawnPos;
@@ -76,6 +76,7 @@ if (_mode == "init") exitWith {
             _guardsInner pushBack _guard;
         };
 
+        sleep 4;
         private _officer = _grpInner createUnit ["CUP_O_TK_Officer", _spawnPos, [], 0, "NONE"];
         _officer setPosASL _spawnPos;
         _officer allowDamage false;
@@ -91,7 +92,7 @@ if (_mode == "init") exitWith {
         private _guardsOuter = [];
         private _numOuter = 2 + floor (random 2); 
         for "_g" from 1 to _numOuter do {
-            sleep 1.5;
+            sleep 4;
             private _guardClass = selectRandom ["CUP_O_TK_Soldier", "CUP_O_TK_Soldier_GL", "CUP_O_TK_Soldier_AR"];
             private _guard = _grpOuter createUnit [_guardClass, _spawnPos, [], 0, "NONE"];
             _guard setPosASL _spawnPos;

@@ -42,7 +42,7 @@ if (_mode == "init") exitWith {
 
     private _numGuards = 10 + floor(random 6); 
     for "_g" from 1 to _numGuards do {
-        sleep 1.5;
+        sleep 4;
         private _guardClass = selectRandom ["CUP_O_TK_Soldier", "CUP_O_TK_Soldier_GL", "CUP_O_TK_Soldier_AR"];
         private _currentGrp = if (_g % 2 == 0) then { _grpInner } else { _grpOuter };
         private _guard = _currentGrp createUnit [_guardClass, _spawnPos, [], 0, "NONE"];
@@ -55,7 +55,7 @@ if (_mode == "init") exitWith {
     [_grpInner, _spawnPos, 30] call BIS_fnc_taskPatrol;
     [_grpOuter, _spawnPos, 90] call BIS_fnc_taskPatrol;
 
-    sleep 1.5;
+    sleep 4;
     private _hvtClass = "CUP_O_TK_Commander";
     private _hvt = _grpInner createUnit [_hvtClass, _spawnPos, [], 0, "NONE"];
     _hvt setPosASL _spawnPos;

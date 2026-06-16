@@ -53,7 +53,7 @@ if (_mode == "init") exitWith {
     private _chief = objNull;
 
     for "_g" from 1 to _numVillagers do {
-        sleep 1.5; 
+        sleep 4; 
 
         private _class = "C_man_1";
         private _unit = _villagerGrp createUnit [_class, _rdvPos, [], 0, "NONE"];
@@ -101,50 +101,94 @@ if (_mode == "init") exitWith {
 
         _villagers pushBack _unit;
 
-        if (_g == 1) then {
-            _chief = _unit;
-            _villagerGrp selectLeader _chief;
-
-            _chief disableAI "MOVE";
-            _chief setUnitPos "UP";
-            _chief switchMove "Acts_CivilTalking_1";
-
-            _chief addEventHandler ["AnimDone", {
-                params ["_unit"];
-                if (alive _unit && (_unit getVariable ["LL_Task_Status", "WAIT"]) == "WAIT") then {
-                    _unit switchMove "Acts_CivilTalking_1";
-                };
-            }];
-
-            [_chief] spawn {
-                params ["_unit"];
-                while { alive _unit && (_unit getVariable ["LL_Task_Status", "WAIT"]) == "WAIT" } do {
-                    private _nearPlayers = _unit nearEntities ["CAManBase", 100] select { isPlayer _x && alive _x };
-                    if (count _nearPlayers > 0) then {
-                        private _nearest = _nearPlayers # 0;
-                        _unit setDir (_unit getDir _nearest);
-                        _unit setFormDir (_unit getDir _nearest);
-                    };
-                    sleep 2;
-                };
-            };
-        } else {
-
-            [_unit] spawn {
-                params ["_unit"];
-                _unit setBehaviour "SAFE";
-                _unit setSpeedMode "LIMITED";
-                private _pos = getPosATL _unit;
-                while { alive _unit && !(_unit getVariable ["LL_Task07_RunningToBattle", false]) } do {
-                    sleep (5 + random 10);
-                    if (alive _unit && !(_unit getVariable ["LL_Task07_RunningToBattle", false])) then {
-                        private _dest = _pos getPos [10 + random 15, random 360];
-                        _unit doMove _dest;
-                    };
+        [_unit] spawn {
+            params ["_unit"];
+            _unit setBehaviour "SAFE";
+            _unit setSpeedMode "LIMITED";
+            private _pos = getPosATL _unit;
+            while { alive _unit && !(_unit getVariable ["LL_Task07_RunningToBattle", false]) } do {
+                sleep (5 + random 10);
+                if (alive _unit && !(_unit getVariable ["LL_Task07_RunningToBattle", false])) then {
+                    private _dest = _pos getPos [10 + random 15, random 360];
+                    _unit doMove _dest;
                 };
             };
         };
     };
+
+    sleep 4;
+
+    private _chiefClass = "C_man_1";
+    _chief = _villagerGrp createUnit [_chiefClass, _rdvPos, [], 0, "NONE"];
+    _chief setPosASL _rdvPos;
+    _chief allowDamage false;
+    [_chief] spawn { sleep 3; (_this select 0) allowDamage true; };
+
+    _chief setVariable ["MISSION_TemplateApplied", true, true];
+
+    private _maleTemplates = MISSION_CivilianTemplates select { !(_x select 2) };
+    private _template = selectRandom _maleTemplates;
+    _template params ["_tClass", "_tLoadout", "_tIsFemale", "_tFace", "_tPitch"];
+
+    _chief setUnitLoadout _tLoadout;
+
+    removeBackpack _chief;
+    _chief addBackpack (selectRandom MISSION_BanditBackpacks);
+
+    private _bLoadout = selectRandom MISSION_BanditLoadouts;
+    _bLoadout params ["_priWep","_priMag","_priMagCount","_secWep","_secMag","_secMagCount","_smoke","_smokeCount","_FAK","_FAKCount"];
+
+    if (_priWep != "") then {
+        _chief addWeapon _priWep;
+        for "_i" from 1 to _priMagCount do { _chief addMagazine _priMag };
+        _chief addPrimaryWeaponItem (selectRandom ["CUP_acc_Flashlight","CUP_acc_Zenit_2DS"]);
+    };
+    if (_secWep != "") then {
+        _chief addWeapon _secWep;
+        for "_i" from 1 to _secMagCount do { _chief addMagazine _secMag };
+        _chief addHandgunItem (selectRandom ["CUP_acc_CZ_M3X","acc_Flashlight_pistol"]);
+    };
+    for "_i" from 1 to _smokeCount do { _chief addMagazine _smoke };
+    for "_i" from 1 to _FAKCount do { _chief addItem _FAK };
+    _chief enableGunLights "forceOn";
+
+    removeGoggles _chief;
+    _chief addGoggles (selectRandom MISSION_CivilianBeards);
+    removeHeadgear _chief;
+    _chief addHeadgear "H_ShemagOpen_khk"; 
+
+    private _nameData = selectRandom MISSION_CivilianNames_Male;
+    private _speaker = selectRandom ["Male01PER","Male02PER","Male03PER"];
+    [_chief, _nameData, _tFace, _speaker, _tPitch] remoteExec ["LL_fnc_applyIdentity", 0, _chief];
+    if (!isNil "LL_fnc_setupUVO") then { [_chief] call LL_fnc_setupUVO; };
+
+    _villagerGrp selectLeader _chief;
+
+    _chief disableAI "MOVE";
+    _chief setUnitPos "UP";
+    _chief switchMove "Acts_CivilTalking_1";
+
+    _chief addEventHandler ["AnimDone", {
+        params ["_unit"];
+        if (alive _unit && (_unit getVariable ["LL_Task_Status", "WAIT"]) == "WAIT") then {
+            _unit switchMove "Acts_CivilTalking_1";
+        };
+    }];
+
+    [_chief] spawn {
+        params ["_unit"];
+        while { alive _unit && (_unit getVariable ["LL_Task_Status", "WAIT"]) == "WAIT" } do {
+            private _nearPlayers = _unit nearEntities ["CAManBase", 100] select { isPlayer _x && alive _x };
+            if (count _nearPlayers > 0) then {
+                private _nearest = _nearPlayers # 0;
+                _unit setDir (_unit getDir _nearest);
+                _unit setFormDir (_unit getDir _nearest);
+            };
+            sleep 2;
+        };
+    };
+
+    _villagers pushBack _chief;
 
     _chief setVariable ["LL_Task_Status", "WAIT", true];
     missionNamespace setVariable ["LL_Task07_Chief", _chief, true];
