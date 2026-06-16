@@ -21,7 +21,6 @@ _this spawn {
 
     if (isNull _unit) exitWith {};
 
-    // Determine target variables and actions based on mode
     private _actionLabel = if (_mode == "talk") then {
         localize "STR_LL_Task_07_Action"
     } else {

@@ -1,9 +1,3 @@
-/*
-    File: fn_addRoeActions.sqf
-    Description: Gère les Règles d'Engagement (ROE) de l'escouade du joueur.
-    Locality: Exécuté uniquement sur le client local (hasInterface).
-*/
-
 if (!hasInterface) exitWith {};
 
 if (isNil "LL_fnc_applyRoE") then {
@@ -28,8 +22,7 @@ if (isNil "LL_fnc_applyRoE") then {
 
         {
             if (!isPlayer _x && { alive _x } && { vehicle _x == _x }) then {
-                // Utilise setUnitPos pour forcer la posture accroupie en infiltration,
-                // mais setUnitPosWeak pour permettre aux IA de se mettre à l'abri au combat.
+
                 if (_unitPos == "MIDDLE") then {
                     _x setUnitPos _unitPos;
                 } else {
@@ -67,7 +60,6 @@ private _fnc_addRoeActions = {
 
     private _cond = "alive _target && { leader group _target == _target } && { {!isPlayer _x && { alive _x } && { vehicle _x == _x }} count (units group _target) > 0 }";
 
-    // 1. Infiltration : CombatMode BLUE, Vitesse LIMITED, Stance MIDDLE, Autocombat DESACTIVE (true)
     _unit addAction [
         localize "STR_LL_RoeAction_Infiltration",
         { ([group (_this select 1)] + (_this select 3)) call LL_fnc_applyRoE; },
@@ -75,7 +67,6 @@ private _fnc_addRoeActions = {
         7.2, false, true, "", _cond
     ];
 
-    // 2. Normal / Reset : CombatMode YELLOW, Vitesse NORMAL, Stance AUTO, Autocombat ACTIVE (false)
     _unit addAction [
         localize "STR_LL_RoeAction_Reset",
         { ([group (_this select 1)] + (_this select 3)) call LL_fnc_applyRoE; },
@@ -83,7 +74,6 @@ private _fnc_addRoeActions = {
         7.1, false, true, "", _cond
     ];
 
-    // 3. Assaut agressif : CombatMode RED, Vitesse FULL, Stance AUTO (sécurisé), Autocombat ACTIVE (false)
     _unit addAction [
         localize "STR_LL_RoeAction_Assault",
         { ([group (_this select 1)] + (_this select 3)) call LL_fnc_applyRoE; },

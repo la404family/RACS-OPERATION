@@ -48,12 +48,12 @@ if (_mode == "init") exitWith {
     _villagerGrp setBehaviour "SAFE";
     _villagerGrp setCombatMode "GREEN";
 
-    private _numVillagers = 5 + floor (random 4); // 5 to 8 villagers
+    private _numVillagers = 5 + floor (random 4); 
     private _villagers = [];
     private _chief = objNull;
 
     for "_g" from 1 to _numVillagers do {
-        sleep 1.5; // Staged delay
+        sleep 1.5; 
 
         private _class = "C_man_1";
         private _unit = _villagerGrp createUnit [_class, _rdvPos, [], 0, "NONE"];
@@ -61,17 +61,14 @@ if (_mode == "init") exitWith {
         _unit allowDamage false;
         [_unit] spawn { sleep 3; (_this select 0) allowDamage true; };
 
-        // Disable automatic general template
         _unit setVariable ["MISSION_TemplateApplied", true, true];
 
-        // Apply civilian templates loadout manually
         private _maleTemplates = MISSION_CivilianTemplates select { !(_x select 2) };
         private _template = selectRandom _maleTemplates;
         _template params ["_tClass", "_tLoadout", "_tIsFemale", "_tFace", "_tPitch"];
 
         _unit setUnitLoadout _tLoadout;
 
-        // Equip as armed civilian
         removeBackpack _unit;
         _unit addBackpack (selectRandom MISSION_BanditBackpacks);
 
@@ -92,13 +89,11 @@ if (_mode == "init") exitWith {
         for "_i" from 1 to _FAKCount do { _unit addItem _FAK };
         _unit enableGunLights "forceOn";
 
-        // Override Hat with White Keffieh (H_ShemagOpen_khk)
         removeGoggles _unit;
         _unit addGoggles (selectRandom MISSION_CivilianBeards);
         removeHeadgear _unit;
-        _unit addHeadgear "H_ShemagOpen_khk"; // White Keffieh
+        _unit addHeadgear "H_ShemagOpen_khk"; 
 
-        // Apply name and voice identity
         private _nameData = selectRandom MISSION_CivilianNames_Male;
         private _speaker = selectRandom ["Male01PER","Male02PER","Male03PER"];
         [_unit, _nameData, _tFace, _speaker, _tPitch] remoteExec ["LL_fnc_applyIdentity", 0, _unit];
@@ -110,7 +105,6 @@ if (_mode == "init") exitWith {
             _chief = _unit;
             _villagerGrp selectLeader _chief;
 
-            // Wait animation loop for chief
             _chief disableAI "MOVE";
             _chief setUnitPos "UP";
             _chief switchMove "Acts_CivilTalking_1";
@@ -122,7 +116,6 @@ if (_mode == "init") exitWith {
                 };
             }];
 
-            // Chief faces closest player
             [_chief] spawn {
                 params ["_unit"];
                 while { alive _unit && (_unit getVariable ["LL_Task_Status", "WAIT"]) == "WAIT" } do {
@@ -136,7 +129,7 @@ if (_mode == "init") exitWith {
                 };
             };
         } else {
-            // Villagers patrol slightly around rendezvous point
+
             [_unit] spawn {
                 params ["_unit"];
                 _unit setBehaviour "SAFE";
@@ -193,10 +186,8 @@ if (_mode == "talk") exitWith {
     if ((_chief getVariable ["LL_Task_Status", "WAIT"]) != "WAIT") exitWith {};
     _chief setVariable ["LL_Task_Status", "ACTION", true];
 
-    // Show localized subtitle without audio
     ["STR_LL_Task_07_SubtitleRdv", [], 10, false] remoteExec ["LL_fnc_radioMessage", 0];
 
-    // --- IMMERSIVE NATIVE VOICE PATTERN ---
     private _pnjGrp = group _chief;
     private _dummy = _pnjGrp createUnit ["I_G_Soldier_F", getPos _chief, [], 0, "NONE"];
     _dummy hideObjectGlobal true;
@@ -209,11 +200,9 @@ if (_mode == "talk") exitWith {
 
     sleep 10;
 
-    // Enable movement
     _chief enableAI "MOVE";
     [_chief, "AmovPercMstpSrasWpstDnon"] remoteExec ["switchMove", 0];
 
-    // Succeed RDV task
     ["task_07_rdv", "SUCCEEDED", true] call BIS_fnc_taskSetState;
     deleteMarker "mkr_task07_rdv";
 
@@ -221,7 +210,6 @@ if (_mode == "talk") exitWith {
     private _villagers = missionNamespace getVariable ["LL_Task07_Villagers", []];
     private _militiaPos = missionNamespace getVariable ["LL_Task07_MilitiaPos", [0,0,0]];
 
-    // Spawn enemy militia (10 to 20 units) divided into groups of 2-3 with different patrol radii
     private _numEnemies = 10 + floor (random 11);
     private _enemies = [];
     private _enemyGroups = [];
@@ -234,19 +222,18 @@ if (_mode == "talk") exitWith {
         _grp setCombatMode "RED";
 
         for "_g" from 1 to _grpSize do {
-            sleep 1.5; // Staged delay
+            sleep 1.5; 
             private _class = selectRandom ["CUP_O_TK_Soldier", "CUP_O_TK_Soldier_GL", "CUP_O_TK_Soldier_AR"];
             private _unit = _grp createUnit [_class, _militiaPos, [], 0, "NONE"];
             _unit setPosASL _militiaPos;
             _unit allowDamage false;
             [_unit] spawn { sleep 3; (_this select 0) allowDamage true; };
-            // Set courage 1 and allowFleeing 0 immediately for pre-combat patrol courage
+
             _unit setSkill ["courage", 1];
             _unit allowFleeing 0;
             _enemies pushBack _unit;
         };
 
-        // All groups patrol with a radius of 50m to spread out before combat
         private _radius = 50;
         [_grp, _militiaPos, _radius] call BIS_fnc_taskPatrol;
         _enemyGroups pushBack _grp;
@@ -280,10 +267,8 @@ if (_mode == "talk") exitWith {
 
     [[], { player createDiaryRecord ["diary", [localize "STR_LL_Diary_Task07_Title", localize "STR_LL_Diary_Task07_Text"]]; }] remoteExec ["spawn", 0, true];
 
-    // Show localized follow subtitle without audio (text message)
     ["STR_LL_Task_07_SubtitleFollow", [], 6, false] remoteExec ["LL_fnc_radioMessage", 0];
 
-    // Order villagers to run and attack
     {
         _x setVariable ["LL_Task07_RunningToBattle", true, true];
         _x setBehaviour "AWARE";
@@ -303,7 +288,6 @@ if (_mode == "talk") exitWith {
     _wp setWaypointBehaviour "AWARE";
     _villagerGrp setCurrentWaypoint _wp;
 
-    // Start server monitoring thread
     [_villagers, _enemies, _mkrMilice, _militiaPos, _chief] spawn {
         params ["_villagers", "_enemies", "_mkrMilice", "_militiaPos", "_chief"];
 
@@ -317,17 +301,14 @@ if (_mode == "talk") exitWith {
             private _aliveVillagers = _villagers select { alive _x };
             private _aliveEnemies = _enemies select { alive _x };
 
-            // Check if majority of villagers are dead
             if (count _aliveVillagers < (_initialVillagerCount / 2)) then {
                 _defeatTriggered = true;
             };
 
-            // Loop ends only when all enemies are dead
             if (count _aliveEnemies == 0) exitWith {};
 
             private _fightStarted = (time - _startTime) > 35;
 
-            // Aggressive loop for allied villagers
             {
                 private _villager = _x;
                 _villager setSkill ["courage", 1];
@@ -355,7 +336,6 @@ if (_mode == "talk") exitWith {
                 };
             } forEach _aliveVillagers;
 
-            // Aggressive loop for enemies
             {
                 private _enemy = _x;
                 _enemy setSkill ["courage", 1];
@@ -396,7 +376,7 @@ if (_mode == "talk") exitWith {
         };
 
         if (_defeatTriggered) then {
-            // DEFEAT
+
             ["task_07_milice", "FAILED", true] call BIS_fnc_taskSetState;
 
             if (isNull _rep) then {
@@ -404,7 +384,6 @@ if (_mode == "talk") exitWith {
             } else {
                 _rep setVariable ["LL_Task_Status", "READY_DEFEAT", true];
 
-                // Isolate representative in a peaceful group to reset combat behavior
                 private _safeGrp = createGroup [west, true];
                 [_rep] joinSilent _safeGrp;
 
@@ -446,14 +425,13 @@ if (_mode == "talk") exitWith {
                 [_rep, netId _rep, _varName, "defeat"] remoteExec ["LL_fnc_task07_addAction", 0, _rep];
             };
         } else {
-            // VICTORY
+
             if (isNull _rep) then {
                 ["task_07_milice", "SUCCEEDED", true] call BIS_fnc_taskSetState;
                 missionNamespace setVariable ["LL_g_taskInProgress", false, true];
             } else {
                 _rep setVariable ["LL_Task_Status", "READY_THANKS", true];
 
-                // Isolate representative in a peaceful group to reset combat behavior
                 private _safeGrp = createGroup [west, true];
                 [_rep] joinSilent _safeGrp;
 
@@ -504,34 +482,26 @@ if (_mode == "complete") exitWith {
     if ((_rep getVariable ["LL_Task_Status", ""]) != "READY_THANKS") exitWith {};
     _rep setVariable ["LL_Task_Status", "DONE", true];
 
-    // Make representative face the player
     _rep setDir (_rep getDir _caller);
     _rep setFormDir (_rep getDir _caller);
 
-    // Force weapon to back and play talking animation
     _rep action ["WeaponOnBack", _rep];
     [_rep, "Acts_CivilTalking_1"] remoteExec ["switchMove", 0];
 
-    // Show subtitle message (stays on screen for 10 seconds)
     ["STR_LL_Task_07_SubtitleThanks", [], 10, false] remoteExec ["LL_fnc_radioMessage", 0];
 
-    // Spawn a thread to handle the speech duration, task completion, and then the flight
     [_rep] spawn {
         params ["_rep"];
-        
-        // Wait 10 seconds for the dialogue animation and speech to finish
+
         sleep 10;
-        
-        // Reset animation to standing alert state before running
+
         [_rep, "AmovPercMstpSrasWpstDnon"] remoteExec ["switchMove", 0];
         sleep 0.5;
 
-        // Succeed tasks
         ["task_07_thanks", "SUCCEEDED", true] call BIS_fnc_taskSetState;
         ["task_07_milice", "SUCCEEDED", true] call BIS_fnc_taskSetState;
         deleteMarker "mkr_task07_thanks";
 
-        // Now trigger the flight and dissolution
         private _villagers = missionNamespace getVariable ["LL_Task07_Villagers", []];
         private _aliveVillagers = _villagers select { alive _x };
 
@@ -595,24 +565,19 @@ if (_mode == "complete_defeat") exitWith {
     if ((_rep getVariable ["LL_Task_Status", ""]) != "READY_DEFEAT") exitWith {};
     _rep setVariable ["LL_Task_Status", "DONE", true];
 
-    // Make representative face the player
     _rep setDir (_rep getDir _caller);
     _rep setFormDir (_rep getDir _caller);
 
-    // Force weapon to back and play talking animation
     _rep action ["WeaponOnBack", _rep];
     [_rep, "Acts_CivilTalking_2"] remoteExec ["switchMove", 0];
 
-    // Show defeat subtitle message (stays on screen for 10 seconds)
     ["STR_LL_Task_07_SubtitleDefeat", [], 10, false] remoteExec ["LL_fnc_radioMessage", 0];
 
     [_rep] spawn {
         params ["_rep"];
 
-        // Wait 10 seconds for speech to finish
         sleep 10;
 
-        // Reset animation before running
         [_rep, "AmovPercMstpSrasWpstDnon"] remoteExec ["switchMove", 0];
         sleep 0.5;
 
