@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keys>
+    <Key ID="STR_LL_Diary_Task07_Title">
+        <Original>OPORD : Soutenir des civils armés</Original>
+        <French>OPORD : Soutenir des civils armés</French>
+        <English>OPORD: Support Armed Civilians</English>
+        <Turkish>OPORD: Silahlı Sivillere Destek</Turkish>
+        <Korean>OPORD: 무장 민간인 지원</Korean>
+        <Spanish>OPORD: Apoyar a civiles armados</Spanish>
+        <Japanese>OPORD: 武装市民の支援</Japanese>
+        <Chinese>OPORD: 支持武装平民</Chinese>
+        <Russian>OPORD: Поддержка вооруженных гражданских</Russian>
+        <German>OPORD: Bewaffnete Zivilisten unterstützen</German>
+        <Italian>OPORD: Supporto ai civili armati</Italian>
+        <Polish>OPORD: Wsparcie uzbrojonych cywilów</Polish>
+    </Key>
+    <Key ID="STR_LL_Diary_Task07_Text">
+        <Original>Des villageois subissent une pression constante de la part des milices hostiles. Une faction de villageois armés s'est regroupée pour défendre leur village, mais elle a besoin de notre soutien tactique. Rejoignez le chef de la milice au point de rendez-vous, puis aidez-les à nettoyer la zone en veillant à la survie de la majorité des villageois. Si plus de la moitié des villageois armés succombent, l'opération sera un échec.</Original>
+        <French>Des villageois subissent une pression constante de la part des milices hostiles. Une faction de villageois armés s'est regroupée pour défendre leur village, mais elle a besoin de notre soutien tactique. Rejoignez le chef de la milice au point de rendez-vous, puis aidez-les à nettoyer la zone en veillant à la survie de la majorité des villageois. Si plus de la moitié des villageois armés succombent, l'opération sera un échec.</French>
+        <English>Villagers are under constant threat from hostile militias. A faction of armed villagers has grouped to defend their village but needs our tactical support. Meet the militia chief at the rendezvous point, then assist them in clearing the sector while ensuring the survival of the majority of the villagers. If more than half of the armed villagers die, the operation will fail.</English>
+        <Turkish>Köylüler, düşman milislerin sürekli tehdidi altındadır. Silahlı köylülerden oluşan bir grup köylerini savunmak için bir araya geldi ancak taktiksel desteğimize ihtiyaçları var. Buluşma noktasında milis lideriyle görüşün, ardından köylülerin çoğunluğunun hayatta kalmasını sağlayarak sektörü temizlemelerine yardımcı olun. Silahlı köylülerin yarısından fazlası ölürse operasyon başarısız olacaktır.</Turkish>
+        <Korean>민간인들이 적대적인 민병대의 지속적인 위협을 받고 있습니다. 무장한 주민들로 구성된 한 분파가 마을을 지키기 위해 결집했으나 우리의 전술적 지원이 필요합니다. 접선 장소에서 민병대장을 만나 주민 대다수의 생존을 보장하면서 구역을 소탕하도록 도우십시오. 무장 주민의 절반 이상이 사망하면 작전은 실패합니다.</Korean>
+        <Spanish>Los aldeanos están bajo la constante amenaza de milicias hostiles. Una facción de aldeanos armados se ha agrupado para defender su pueblo, pero necesita nuestro apoyo táctico. Reúnete con el jefe de la milicia en el punto de encuentro, luego ayúdalos a limpiar el sector asegurando la supervivencia de la mayoría de los aldeanos. Si más de la mitad de los aldeanos armados muere, la operación fracasará.</Spanish>
+        <Japanese>村人たちは敵対的な民兵組織からの絶え間ない脅威にさらされています。武装した村人の一派が村を守るために結集しましたが、私たちの戦術的支援を必要としています。待ち合わせ場所で民兵のリーダーに会い、村人の大部分の生存を確保しつつセクターの掃討を支援してください。武装した村人の半数以上が死亡した場合、作戦は失敗します。</Japanese>
+        <Chinese>村民们正受到敌对民兵的持续威胁。一群武装村民聚集起来保卫他们的村庄，但需要我们的战术支持。在会合点与民兵首领会面，然后协助他们清理该区域，同时确保大多数村民能够存活。如果超过一半的武装村民死亡，行动将宣告失败。</Chinese>
+        <Russian>Местные жители находятся под постоянной угрозой со стороны враждебных боевиков. Группа вооруженных местных жителей объединилась для защиты своей деревни, но им нужна наша тактическая поддержка. Встретьтесь с командиром ополчения в точке сбора, затем помогите им зачистить сектор, обеспечив выживание большинства жителей. Если погибнет более половины вооруженных ополченцев, операция будет провалена.</Russian>
+        <German>Die Dorfbewohner stehen unter ständiger Bedrohung durch feindliche Milizen. Eine Fraktion bewaffneter Dorfbewohner hat sich zusammengeschlossen, um ihr Dorf zu verteidigen, benötigt jedoch unsere taktische Unterstützung. Treffen Sie den Anführer der Miliz am Treffpunkt und helfen Sie ihnen dann bei der Säuberung des Sektors, während Sie das Überleben der Mehrheit der Dorfbewohner sichern. Wenn mehr als die Hälfte der bewaffneten Dorfbewohner stirbt, scheitert die Operation.</German>
+        <Italian>Gli abitanti sono sotto la costante minaccia di milizie ostili. Una fazione di abitanti armati si è riunita per difendere il proprio villaggio, ma ha bisogno del nostro supporto tattico. Incontra il capo della milizia al punto di ritrovo, quindi aiutali a ripulire il settore garantendo la sopravvivenza della maggior parte degli abitanti. Se più della metà degli abitanti armati muore, l'operazione fallirà.</Italian>
+        <Polish>Mieszkańcy są pod nieustannym naciskiem wrogich bojówek. Grupa uzbrojonych mieszkańców zjednoczyła się w celu obrony swojej wioski, lecz potrzebuje naszego wsparcia taktycznego. Spotkaj się z dowódcą milicji w punkcie zbiórki, a następnie pomóż im oczyścić sektor, dbając o przetrwanie większości mieszkańców. Jeśli zginie ponad połowa uzbrojonych cywilów, operacja zakończy się niepowodzeniem.</Polish>
+    </Key>
+</Keys>

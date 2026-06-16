@@ -2841,6 +2841,188 @@ OSTRZEŻENIE: Jeśli odkryją, że jeden z nich został zabity, pozostali dowód
             <Italian>Signore della guerra nemico (HVT)</Italian>
             <Polish>Wrogi watażka (HVT)</Polish>
         </Key>
+        <Key ID="STR_LL_Diary_Task07_Title">
+            <Original>OPORD : Soutenir des civils armés</Original>
+            <French>OPORD : Soutenir des civils armés</French>
+            <English>OPORD: Support Armed Civilians</English>
+            <Turkish>OPORD: Silahlı Sivillere Destek</Turkish>
+            <Korean>OPORD: 무장 민간인 지원</Korean>
+            <Spanish>OPORD: Apoyar a civiles armados</Spanish>
+            <Japanese>OPORD: 武装市民の支援</Japanese>
+            <Chinese>OPORD: 支持武装平民</Chinese>
+            <Russian>OPORD: Поддержка вооруженных гражданских</Russian>
+            <German>OPORD: Bewaffnete Zivilisten unterstützen</German>
+            <Italian>OPORD: Supporto ai civili armati</Italian>
+            <Polish>OPORD: Wsparcie uzbrojonych cywilów</Polish>
+        </Key>
+        <Key ID="STR_LL_Diary_Task07_Text">
+            <Original>Des villageois subissent une pression constante de la part des milices hostiles. Une faction de villageois armés s'est regroupée pour défendre leur village, mais elle a besoin de notre soutien tactique. Rejoignez le chef de la milice au point de rendez-vous, puis aidez-les à nettoyer la zone en veillant à la survie de la majorité des villageois. Si plus de la moitié des villageois armés succombent, l'opération sera un échec.</Original>
+            <French>Des villageois subissent une pression constante de la part des milices hostiles. Une faction de villageois armés s'est regroupée pour défendre leur village, mais elle a besoin de notre soutien tactique. Rejoignez le chef de la milice au point de rendez-vous, puis aidez-les à nettoyer la zone en veillant à la survie de la majorité des villageois. Si plus de la moitié des villageois armés succombent, l'opération sera un échec.</French>
+            <English>Villagers are under constant threat from hostile militias. A faction of armed villagers has grouped to defend their village but needs our tactical support. Meet the militia chief at the rendezvous point, then assist them in clearing the sector while ensuring the survival of the majority of the villagers. If more than half of the armed villagers die, the operation will fail.</English>
+            <Turkish>Köylüler, düşman milislerin sürekli tehdidi altındadır. Silahlı köylülerden oluşan bir grup köylerini savunmak için bir araya geldi ancak taktiksel desteğimize ihtiyaçları var. Buluşma noktasında milis lideriyle görüşün, ardından köylülerin çoğunluğunun hayatta kalmasını sağlayarak sektörü temizlemelerine yardımcı olun. Silahlı köylülerin yarısından fazlası ölürse operasyon başarısız olacaktır.</Turkish>
+            <Korean>민간인들이 적대적인 민병대의 지속적인 위협을 받고 있습니다. 무장한 주민들로 구성된 한 분파가 마을을 지키기 위해 결집했으나 우리의 전술적 지원이 필요합니다. 접선 장소에서 민병대장을 만나 주민 대다수의 생존을 보장하면서 구역을 소탕하도록 도우십시오. 무장 주민의 절반 이상이 사망하면 작전은 실패합니다.</Korean>
+            <Spanish>Los aldeanos están bajo la constante amenaza de milicias hostiles. Una facción de aldeanos armados se ha agrupado para defender su pueblo, pero necesita nuestro apoyo táctico. Reúnete con el jefe de la milicia en el punto de encuentro, luego ayúdalos a limpiar el sector asegurando la supervivencia de la mayoría de los aldeanos. Si más de la mitad de los aldeanos armados muere, la operación fracasará.</Spanish>
+            <Japanese>村人たちは敵対的な民兵組織からの絶え間ない脅威にさらされています。武装した村人の一派が村を守るために結集しましたが、私たちの戦術的支援を必要としています。待ち合わせ場所で民兵のリーダーに会い、村人の大部分の生存を確保しつつセクターの掃討を支援してください。武装した村人の半数以上が死亡した場合、作戦は失敗します。</Japanese>
+            <Chinese>村民们正受到敌对民兵的持续威胁。一群武装村民聚集起来保卫他们的村庄，但需要我们的战术支持。在会合点与民兵首领会面，然后协助他们清理该区域，同时确保大多数村民能够存活。如果超过一半的武装村民死亡，行动将宣告失败。</Chinese>
+            <Russian>Местные жители находятся под постоянной угрозой со стороны враждебных боевиков. Группа вооруженных местных жителей объединилась для защиты своей деревни, но им нужна наша тактическая поддержка. Встретьтесь с командиром ополчения в точке сбора, затем помогите им зачистить сектор, обеспечив выживание большинства жителей. Если погибнет более половины вооруженных ополченцев, операция будет провалена.</Russian>
+            <German>Die Dorfbewohner stehen unter ständiger Bedrohung durch feindliche Milizen. Eine Fraktion bewaffneter Dorfbewohner hat sich zusammengeschlossen, um ihr Dorf zu verteidigen, benötigt jedoch unsere taktische Unterstützung. Treffen Sie den Anführer der Miliz am Treffpunkt und helfen Sie ihnen dann bei der Säuberung des Sektors, während Sie das Überleben der Mehrheit der Dorfbewohner sichern. Wenn mehr als die Hälfte der bewaffneten Dorfbewohner stirbt, scheitert die Operation.</German>
+            <Italian>Gli abitanti sono sotto la costante minaccia di milizie ostili. Una fazione di abitanti armati si è riunita per difendere il proprio villaggio, ma ha bisogno del nostro supporto tattico. Incontra il capo della milizia al punto di ritrovo, quindi aiutali a ripulire il settore garantendo la sopravvivenza della maggior parte degli abitanti. Se più della metà degli abitanti armati muore, l'operazione fallirà.</Italian>
+            <Polish>Mieszkańcy są pod nieustannym naciskiem wrogich bojówek. Grupa uzbrojonych mieszkańców zjednoczyła się w celu obrony swojej wioski, lecz potrzebuje naszego wsparcia taktycznego. Spotkaj się z dowódcą milicji w punkcie zbiórki, a następnie pomóż im oczyścić sektor, dbając o przetrwanie większości mieszkańców. Jeśli zginie ponad połowa uzbrojonych cywilów, operacja zakończy się niepowodzeniem.</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_07_Action">
+            <Original>Parler au chef du village</Original>
+            <French>Parler au chef du village</French>
+            <English>Speak to village chief</English>
+            <Turkish>Köy lideriyle konuş</Turkish>
+            <Korean>촌장과 대화하기</Korean>
+            <Spanish>Hablar con el jefe de la aldea</Spanish>
+            <Japanese>村長と話す</Japanese>
+            <Chinese>与村长交谈</Chinese>
+            <Russian>Поговорить со старейшиной</Russian>
+            <German>Mit dem Dorfältesten sprechen</German>
+            <Italian>Parla con il capo del villaggio</Italian>
+            <Polish>Porozmawiaj z sołtysem</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_07_ActionThanks">
+            <Original>Parler au représentant</Original>
+            <French>Parler au représentant</French>
+            <English>Speak to representative</English>
+            <Turkish>Temsilciyle konuş</Turkish>
+            <Korean>대표와 대화하기</Korean>
+            <Spanish>Hablar con el representante</Spanish>
+            <Japanese>代表者と話す</Japanese>
+            <Chinese>与代表交谈</Chinese>
+            <Russian>Поговорить с представителем</Russian>
+            <German>Mit dem Vertreter sprechen</German>
+            <Italian>Parla con il rappresentante</Italian>
+            <Polish>Porozmawiaj z przedstawicielem</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_07_RDV_Title">
+            <Original>Rendez-vous au village</Original>
+            <French>Rendez-vous au village</French>
+            <English>Village Rendezvous</English>
+            <Turkish>Köy Buluşması</Turkish>
+            <Korean>마을 접선</Korean>
+            <Spanish>Punto de encuentro en la aldea</Spanish>
+            <Japanese>村での待ち合わせ</Japanese>
+            <Chinese>村庄会合</Chinese>
+            <Russian>Встреча в деревне</Russian>
+            <German>Treffpunkt im Dorf</German>
+            <Italian>Ritrovo nel villaggio</Italian>
+            <Polish>Spotkanie w wiosce</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_07_RDV_Desc">
+            <Original>Rejoignez le chef du village allié pour obtenir des renseignements.</Original>
+            <French>Rejoignez le chef du village allié pour obtenir des renseignements.</French>
+            <English>Meet the allied village chief to gather intel.</English>
+            <Turkish>Bilgi almak için müttefik köy lideriyle buluşun.</Turkish>
+            <Korean>정보를 얻기 위해 아군 촌장을 만나십시오.</Korean>
+            <Spanish>Reúnete con el jefe aliado de la aldea para obtener información.</Spanish>
+            <Japanese>情報を集めるために同盟国の村長に会ってください。</Japanese>
+            <Chinese>会见盟军村长以获取情报。</Chinese>
+            <Russian>Встретьтесь с союзным старейшиной деревни для получения сведений.</Russian>
+            <German>Treffen Sie den verbündeten Dorfältesten, um Informationen zu sammeln.</German>
+            <Italian>Incontra il capo del villaggio alleato per raccogliere informazioni.</Italian>
+            <Polish>Spotkają się z sojuszniczym sołtysem, aby zebrać informacje.</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_07_RDV_Marker">
+            <Original>Chef de la milice</Original>
+            <French>Chef de la milice</French>
+            <English>Militia Chief</English>
+            <Turkish>Milis Lideri</Turkish>
+            <Korean>민병대장</Korean>
+            <Spanish>Jefe de la milicia</Spanish>
+            <Japanese>民兵のリーダー</Japanese>
+            <Chinese>民兵首领</Chinese>
+            <Russian>Командир ополчения</Russian>
+            <German>Milizführer</German>
+            <Italian>Capo della milizia</Italian>
+            <Polish>Dowódca milicji</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_07_Title">
+            <Original>Soutenir la milice locale</Original>
+            <French>Soutenir la milice locale</French>
+            <English>Support Local Militia</English>
+            <Turkish>Yerel Milisi Destekle</Turkish>
+            <Korean>지역 민병대 지원</Korean>
+            <Spanish>Apoyar a la milicia local</Spanish>
+            <Japanese>地元民兵の支援</Japanese>
+            <Chinese>支持当地民兵</Chinese>
+            <Russian>Поддержать местное ополчение</Russian>
+            <German>Lokale Miliz unterstützen</German>
+            <Italian>Supporta la milizia locale</Italian>
+            <Polish>Wsparcie lokalnej milicji</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_07_Desc">
+            <Original>Aidez les villageois armés à détruire la milice hostile. Protégez-les pour éviter un massacre.</Original>
+            <French>Aidez les villageois armés à détruire la milice hostile. Protégez-les pour éviter un massacre.</French>
+            <English>Help the armed villagers destroy the hostile militia. Protect them to avoid a massacre.</English>
+            <Turkish>Silahlı köylülerin düşman milisi yok etmesine yardım edin. Katliamı önlemek için onları koruyun.</Turkish>
+            <Korean>무장한 주민들이 적대적인 민병대를 격퇴하도록 도우십시오. 학살을 방지하기 위해 그들을 보호하십시오.</Korean>
+            <Spanish>Ayuda a los aldeanos armados a destruir a la milicia hostil. Protégelos para evitar una masacre.</Spanish>
+            <Japanese>武装した村人が敵対的な民兵組織を撃破するのを支援してください。虐殺を避けるために彼らを保護してください。</Japanese>
+            <Chinese>帮助武装村民消灭敌对民兵。保护他们以避免遭遇屠杀。</Chinese>
+            <Russian>Помогите вооруженным жителям уничтожить враждебную группировку. Защитите их, чтобы избежать резни.</Russian>
+            <German>Helfen Sie den bewaffneten Dorfbewohnern, die feindliche Miliz zu vernichten. Schützen Sie sie, um ein Massaker zu verhindern.</German>
+            <Italian>Aiuta gli abitanti armati a distruggere la milizia ostile. Proteggili per evitare un massacro.</Italian>
+            <Polish>Pomóż uzbrojonym mieszkańcom zniszczyć wrogą milicję. Chroń ich, aby uniknąć masakry.</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_07_Marker">
+            <Original>Milice ennemie</Original>
+            <French>Milice ennemie</French>
+            <English>Hostile Militia</English>
+            <Turkish>Düşman Milisler</Turkish>
+            <Korean>적대 민병대</Korean>
+            <Spanish>Milicia enemiga</Spanish>
+            <Japanese>敵対民兵</Japanese>
+            <Chinese>敌对民兵</Chinese>
+            <Russian>Вражеское ополчение</Russian>
+            <German>Feindliche Miliz</German>
+            <Italian>Milizia nemica</Italian>
+            <Polish>Wroga milicja</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_07_SubtitleRdv">
+            <Original>Dieu soit loué ! Aidez-nous à repousser les insurgés tout près d'ici !</Original>
+            <French>Dieu soit loué ! Aidez-nous à repousser les insurgés tout près d'ici !</French>
+            <English>God be praised! Help us push back the insurgents nearby!</English>
+            <Turkish>Allah'a şükürler olsun! Yakındaki isyancıları püskürtmemize yardım edin!</Turkish>
+            <Korean>신을 찬양하십시오! 인근의 반군을 격퇴하도록 도와주십시오!</Korean>
+            <Spanish>¡Alabado sea Dios! ¡Ayúdennos a repeler a los insurgentes cercanos!</Spanish>
+            <Japanese>神に感謝します！近くの反乱軍を撃退するのを助けてください！</Japanese>
+            <Chinese>谢天谢地！快帮我们击退附近的叛军！</Chinese>
+            <Russian>Слава Богу! Помогите нам отбить нападение повстанцев рядом!</Russian>
+            <German>Gott sei gepriesen! Helfen Sie uns, die Aufständischen in der Nähe zurückzuschlagen!</German>
+            <Italian>Sia lodato Dio! Aiutateci a respingere gli insorti qui vicino!</Italian>
+            <Polish>Chwała Bogu! Pomóżcie nam odeprzeć rebelianców w pobliżu!</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_07_SubtitleThanks">
+            <Original>Dieu soit loué, vous nous avez sauvés ! Que la paix soit sur vous.</Original>
+            <French>Dieu soit loué, vous nous avez sauvés ! Que la paix soit sur vous.</French>
+            <English>God be praised, you saved us! Peace be upon you.</English>
+            <Turkish>Allah'a şükürler olsun, bizi kurtardınız! Barış üzerinize olsun.</Turkish>
+            <Korean>신을 찬양하십시오, 당신이 우리를 구했습니다! 평화가 함께하기를.</Korean>
+            <Spanish>¡Alabado sea Dios, nos han salvado! Que la paz sea con ustedes.</Spanish>
+            <Japanese>神に感謝します、私たちを救ってくれました！あなたに平和がありますように。</Japanese>
+            <Chinese>感谢真主，你们救了我们！愿和平与你们同在。</Chinese>
+            <Russian>Слава Богу, вы спасли нас! Мир вам.</Russian>
+            <German>Gott sei gepriesen, Sie haben uns gerettet! Friede sei mit Ihnen.</German>
+            <Italian>Sia lodato Dio, ci avete salvato! La pace sia con voi.</Italian>
+            <Polish>Chwała Bogu, ocaliliście nas! Pokój z wami.</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_07_SubtitleDefeat">
+            <Original>C'est la volonté de Dieu. Merci d'avoir combattu à nos côtés.</Original>
+            <French>C'est la volonté de Dieu. Merci d'avoir combattu à nos côtés.</French>
+            <English>It is God's will. Thank you for fighting alongside us.</English>
+            <Turkish>Allah'ın takdiri. Bizimle birlikte savaştığınız için teşekkürler.</Turkish>
+            <Korean>신의 뜻입니다. 우리와 함께 싸워주셔서 감사합니다.</Korean>
+            <Spanish>Es la voluntad de Dios. Gracias por luchar a nuestro lado.</Spanish>
+            <Japanese>神の御心です。一緒に戦ってくれてありがとうございました。</Japanese>
+            <Chinese>这是真主的意愿。感谢你们与我们并肩作战。</Chinese>
+            <Russian>На то воля Божья. Спасибо, что сражались вместе с нами.</Russian>
+            <German>Es ist Gottes Wille. Danke, dass Sie an unserer Seite gekämpft haben.</German>
+            <Italian>È la volontà di Dio. Grazie per aver combattuto al nostro fianco.</Italian>
+            <Polish>Taka jest wola Boga. Dziękujemy za wspólną walkę.</Polish>
+        </Key>
         <Key ID="STR_LL_Action_RequestTask">
             <Original>Demander votre tâche</Original>
             <French>Demander votre tâche</French>

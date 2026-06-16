@@ -66,12 +66,12 @@ Quand une scène comporte une unité principale (chef de milice, otage, cible, b
 
 1. Faire spawner les **unités secondaires** en premier.
 2. Les faire **patrouiller** aléatoirement dans la zone.
-3. Attendre un délai de **0.7 secondes** entre chaque spawn secondaire.
+3. Attendre un délai de **1.5 seconde** entre chaque spawn secondaire.
 4. Faire spawner l'**unité principale** en dernier.
 
 ```sqf
 for "_i" from 0 to (_numGuards - 1) do {
-    sleep 0.7;
+    sleep 1.5;
     // ... spawn du garde ...
 };
 // Puis spawn du chef

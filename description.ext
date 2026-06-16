@@ -96,6 +96,8 @@ class CfgFunctions {
             class task05 {};
             class task06 {};
             class task06_addAction {};
+            class task07 {};
+            class task07_addAction {};
             class intro {};
             class addTaskAction {};
             class createSmokeRing {};
