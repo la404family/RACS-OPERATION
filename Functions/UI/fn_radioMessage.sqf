@@ -12,6 +12,13 @@ if (_playAudio) then {
 };
 
 private _localizedText = localize _stringKey;
+if (_localizedText isEqualTo "") then {
+    if (_stringKey isEqualTo "STR_Drone_Jammed") then {
+        _localizedText = "Brouillage radio détecté. Impossible de contacter le drone.";
+    } else {
+        _localizedText = _stringKey;
+    };
+};
 if (count _formatArgs > 0) then {
     _localizedText = format ([_localizedText] + _formatArgs);
 };

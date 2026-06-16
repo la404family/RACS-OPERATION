@@ -6,6 +6,9 @@ params [
 ];
 
 if (isNull _caller) exitWith {};
+if (missionNamespace getVariable ["LL_Drone_Jammed", false]) exitWith {
+    ["STR_Drone_Jammed"] remoteExec ["LL_fnc_radioMessage", owner _caller];
+};
 if (missionNamespace getVariable ["LL_Drone_Active", false]) exitWith {
     ["STR_Drone_AlreadyActive"] remoteExec ["LL_fnc_radioMessage", owner _caller];
 };
@@ -19,12 +22,12 @@ private _scanRadius = 500;
 private _duration = 300;
 private _spawnPos = [_targetPos select 0, (_targetPos select 1) - 2000, _altitude];
 
-private _grp = createGroup independent;
 private _drone = createVehicle ["CUP_B_USMC_DYN_MQ9", _spawnPos, [], 0, "FLY"];
 _drone setDir (_spawnPos getDir _targetPos);
 _drone setVelocityModelSpace [0, 80, 0];
+_drone flyInHeight 350;
 createVehicleCrew _drone;
-(crew _drone) joinSilent _grp;
+private _grp = group (driver _drone);
 
 _drone allowDamage false;
 
@@ -74,11 +77,11 @@ _markerDrone setMarkerSize [0.9, 0.9];
     private _endTime = time + _dur;
     private _enemyMarkers = createHashMap;
 
-    while { time < _endTime && alive _drone } do {
+    while { time < _endTime && alive _drone && !(missionNamespace getVariable ["LL_Drone_Jammed", false]) } do {
         _mDrone setMarkerPos (getPosATL _drone);
 
         private _enemies = _center nearEntities [["CAManBase", "Car", "Tank", "Helicopter", "Plane", "Ship"], _scanR];
-        _enemies = _enemies select { alive _x && side _x == east };
+        _enemies = _enemies select { alive _x && (side _x == east || _x in (missionNamespace getVariable ["LL_Task08_Targets", []])) };
 
         private _currentEnemyIds = [];
 
@@ -109,17 +112,83 @@ _markerDrone setMarkerSize [0.9, 0.9];
         } forEach _enemyMarkers;
         { _enemyMarkers deleteAt _x; } forEach _toRemove;
 
+        // Clean up laser targets on dead vehicles
+        {
+            private _ltW = _x getVariable ["LL_LaserTargetW", objNull];
+            if (!alive _x && !isNull _ltW) then {
+                deleteVehicle _ltW;
+                _x setVariable ["LL_LaserTargetW", objNull];
+            };
+            private _ltC = _x getVariable ["LL_LaserTargetC", objNull];
+            if (!alive _x && !isNull _ltC) then {
+                deleteVehicle _ltC;
+                _x setVariable ["LL_LaserTargetC", objNull];
+            };
+        } forEach (missionNamespace getVariable ["LL_Task08_Targets", []]);
+
         private _vehicles = _enemies select { !(_x isKindOf "CAManBase") };
         {
             _grp reveal [_x, 4];
+
+            // Expose the target to both sensors and datalink to force AI locking
+            west reportRemoteTarget [_x, 10];
+            independent reportRemoteTarget [_x, 10];
+            _x confirmSensorTarget [west, true];
+            _x confirmSensorTarget [independent, true];
+
             (gunner _drone) doTarget _x;
             (gunner _drone) doFire _x;
+
+            if (alive _x) then {
+                // Attach laser targets (West & Independent) so guided munitions can track and lock onto them
+                private _ltW = _x getVariable ["LL_LaserTargetW", objNull];
+                if (isNull _ltW) then {
+                    _ltW = createVehicle ["LaserTargetW", getPosATL _x, [], 0, "CAN_COLLIDE"];
+                    _ltW attachTo [_x, [0, 0, 0.5]];
+                    _x setVariable ["LL_LaserTargetW", _ltW];
+                };
+
+                private _ltC = _x getVariable ["LL_LaserTargetC", objNull];
+                if (isNull _ltC) then {
+                    _ltC = createVehicle ["LaserTargetC", getPosATL _x, [], 0, "CAN_COLLIDE"];
+                    _ltC attachTo [_x, [0, 0, 0.5]];
+                    _x setVariable ["LL_LaserTargetC", _ltC];
+                };
+
+                // Failsafe: force fire Hellfire or GBU at target
+                private _wpn = "";
+                {
+                    private _lowerW = toLower _x;
+                    if (["agm", _lowerW] call BIS_fnc_inString || ["hellfire", _lowerW] call BIS_fnc_inString || ["scalpel", _lowerW] call BIS_fnc_inString || ["lg", _lowerW] call BIS_fnc_inString || ["missile", _lowerW] call BIS_fnc_inString || ["bomb", _lowerW] call BIS_fnc_inString || ["gbu", _lowerW] call BIS_fnc_inString) exitWith {
+                        _wpn = _x;
+                    };
+                } forEach (_drone weaponsTurret [0]);
+
+                if (_wpn != "") then {
+                    _drone selectWeaponTurret [_wpn, [0]];
+                    (gunner _drone) fireAtTarget [_x, _wpn];
+                };
+            };
         } forEach _vehicles;
 
         sleep 3;
     };
 
     ["STR_Drone_RTB"] remoteExec ["LL_fnc_radioMessage", 0];
+
+    // Final cleanup of laser targets
+    {
+        private _ltW = _x getVariable ["LL_LaserTargetW", objNull];
+        if (!isNull _ltW) then {
+            deleteVehicle _ltW;
+            _x setVariable ["LL_LaserTargetW", objNull];
+        };
+        private _ltC = _x getVariable ["LL_LaserTargetC", objNull];
+        if (!isNull _ltC) then {
+            deleteVehicle _ltC;
+            _x setVariable ["LL_LaserTargetC", objNull];
+        };
+    } forEach (missionNamespace getVariable ["LL_Task08_Targets", []]);
 
     { deleteMarker _y; } forEach _enemyMarkers;
     _enemyMarkers = createHashMap;

@@ -10,6 +10,9 @@ if (!hasInterface) exitWith {};
             localize "STR_Drone_Surveillance",
             {
                 params ["_target", "_caller", "_actionId"];
+                if (missionNamespace getVariable ["LL_Drone_Jammed", false]) exitWith {
+                    ["STR_Drone_Jammed"] call LL_fnc_radioMessage;
+                };
                 if (missionNamespace getVariable ["LL_Drone_Active", false]) exitWith {
                     ["STR_Drone_AlreadyActive_Wait"] call LL_fnc_radioMessage;
                 };

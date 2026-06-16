@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keys>
+    <Key ID="STR_LL_Task_08_Title">
+        <Original>Neutraliser le réseau de brouillage</Original>
+        <French>Neutraliser le réseau de brouillage</French>
+        <English>Neutralize Jamming Network</English>
+        <Spanish>Neutralizar la red de interferencias</Spanish>
+        <Italian>Neutralizzare la rete di disturbo</Italian>
+        <German>Störnetzwerk neutralisieren</German>
+        <Polish>Neutralizacja sieci zakłócającej</Polish>
+        <Russian>Нейтрализовать сеть помех</Russian>
+        <Turkish>Karıştırma Ağını Etkisiz Hale Getir</Turkish>
+        <Korean>교란 네트워크 무력화</Korean>
+        <Japanese>ジャミングネットワークの無力化</Japanese>
+        <Chinese>消灭干扰网络</Chinese>
+    </Key>
+    <Key ID="STR_LL_Task_08_Desc">
+        <Original>Détruisez le Tempest (brouilleur), la DCA Tigris et l'artillerie BM-21 Grad. Le drone peut être appelé après la destruction du brouilleur.</Original>
+        <French>Détruisez le Tempest (brouilleur), la DCA Tigris et l'artillerie BM-21 Grad. Le drone peut être appelé après la destruction du brouilleur.</French>
+        <English>Destroy the Tempest (jammer), the Tigris AA, and the BM-21 Grad artillery. The drone can be called after the jammer is destroyed.</English>
+        <Spanish>Destruye el Tempest (inhibidor), el Tigris DCA y la artillería BM-21 Grad. El dron se puede llamar tras destruir el inhibidor.</Spanish>
+        <Italian>Distruggi il Tempest (disturbatore), la DCA Tigris e l'artiglieria BM-21 Grad. Il drone può essere chiamato dopo la distruzione del disturbatore.</Italian>
+        <German>Zerstören Sie den Tempest (Störsender), die Tigris Flak und die BM-21 Grad Artillerie. Die Drohne kann nach Zerstörung des Störsenders gerufen werden.</German>
+        <Polish>Zniszcz Tempest (zagłuszacz), Tigris DCA i artylerię BM-21 Grad. Dron może być wezwany po zniszczeniu zagłuszacza.</Polish>
+        <Russian>Уничтожьте Tempest (помехопостановщик), ПВО Tigris и артиллерию BM-21 Grad. Дрон можно вызвать после уничтожения помехопостановщика.</Russian>
+        <Turkish>Tempest (karıştırıcı), Tigris uçaksavarı ve BM-21 Grad topçusunu yok edin. Karıştırıcı yok edildikten sonra dron çağrılabilir.</Turkish>
+        <Korean>템페스트(교란기), 티그리스 대공포, BM-21 그라드 포병을 파괴하십시오. 교란기 파괴 후 드론을 호출할 수 있습니다.</Korean>
+        <Japanese>テンペスト（ジャマー）、チグリス対空砲、BM-21グラード砲兵を破壊する。ジャマー破壊後にドローンを要請できます。</Japanese>
+        <Chinese>摧毁神风干扰车、Tigris防空车与BM-21 Grad火箭炮。摧毁干扰车后可呼叫无人机支持。</Chinese>
+    </Key>
+    <Key ID="STR_LL_Task_08_Marker">
+        <Original>Tempest Brouilleur</Original>
+        <French>Tempest Brouilleur</French>
+        <English>Tempest Jammer</English>
+        <Spanish>Inhibidor Tempest</Spanish>
+        <Italian>Disturbatore Tempest</Italian>
+        <German>Tempest-Störsender</German>
+        <Polish>Zagłuszacz Tempest</Polish>
+        <Russian>Помехопостановщик Tempest</Russian>
+        <Turkish>Tempest Karıştırıcı</Turkish>
+        <Korean>템페스트 교란기</Korean>
+        <Japanese>テンペストジャマー</Japanese>
+        <Chinese>神风干扰车</Chinese>
+    </Key>
+    <Key ID="STR_LL_Task_08_MarkerVehicles">
+        <Original>DCA - Risque Élevé</Original>
+        <French>DCA - Risque Élevé</French>
+        <English>AA - High Risk</English>
+        <Spanish>DCA - Riesgo Alto</Spanish>
+        <Italian>DCA - Rischio Elevato</Italian>
+        <German>Flak - Hohes Risiko</German>
+        <Polish>DCA - Wysokie Ryzyko</Polish>
+        <Russian>ПВО - Высокий риск</Russian>
+        <Turkish>Uçaksavar - Yüksek Risk</Turkish>
+        <Korean>대공 - 높은 위험</Korean>
+        <Japanese>対空 - 高いリスク</Japanese>
+        <Chinese>防空 - 高风险</Chinese>
+    </Key>
+    <Key ID="STR_LL_Heli_Action_Jammed">
+        <Original>Menace antiaérienne détectée. Impossible de contacter l'hélicoptère.</Original>
+        <French>Menace antiaérienne détectée. Impossible de contacter l'hélicoptère.</French>
+        <English>Anti-aircraft threat detected. Unable to contact the helicopter.</English>
+        <Spanish>Amenaza antiaérea detectada. Imposible contactar al helicóptero.</Spanish>
+        <Italian>Minaccia antiaerea rilevata. Impossibile contattare l'elicottero.</Italian>
+        <German>Flugabwehrbedrohung erkannt. Verbindung zum Hubschrauber nicht möglich.</German>
+        <Polish>Wykryto zagrożenie przeciwlotnicze. Brak kontaktu z helikopterem.</Polish>
+        <Russian>Обнаружена угроза ПВО. Связь с вертолетом невозможна.</Russian>
+        <Turkish>Uçaksavar tehdidi algılandı. Helikopterle iletişim kurulamıyor.</Turkish>
+        <Korean>대공 위협이 감지되었습니다. 헬리콥ter와 통신할 수 없습니다.</Korean>
+        <Japanese>対空脅威を検出。ヘリコプターと通信できません。</Japanese>
+        <Chinese>检测到防空威胁。无法联系直升机。</Chinese>
+    </Key>
+    <Key ID="STR_LL_Heli_Action_Unjammed">
+        <Original>Menace DCA éliminée. Le soutien hélicoptère est disponible.</Original>
+        <French>Menace DCA éliminée. Le soutien hélicoptère est disponible.</French>
+        <English>Anti-aircraft threat eliminated. Helicopter support is available.</English>
+        <Spanish>Amenaza antiaérea eliminada. Soporte de helicóptero disponible.</Spanish>
+        <Italian>Minaccia antiaerea eliminata. Supporto elicottero disponibile.</Italian>
+        <German>Flugabwehrbedrohung eliminiert. Hubschrauberunterstützung verfügbar.</German>
+        <Polish>Zagrożenie przeciwlotnicze wyeliminowane. Wsparcie helikoptera dostępne.</Polish>
+        <Russian>Угроза ПВО устранена. Доступна поддержка вертолета.</Russian>
+        <Turkish>Uçaksavar tehdidi ortadan kaldırıldı. Helikopter desteği mevcut.</Turkish>
+        <Korean>대공 위협이 제거되었습니다. 헬리콥터 지원을 사용할 수 있습니다.</Korean>
+        <Japanese>対空脅威を排除。ヘリコプターの支援が利用可能です。</Japanese>
+        <Chinese>防空威胁已消除。直升机支持已可用。</Chinese>
+    </Key>
+    <Key ID="STR_LL_Drone_Action_Unjammed">
+        <Original>Brouilleur détruit. Le soutien drone est rétabli.</Original>
+        <French>Brouilleur détruit. Le soutien drone est rétabli.</French>
+        <English>Jammer destroyed. Drone support has been restored.</English>
+        <Spanish>Inhibidor destruido. Soporte de dron restablecido.</Spanish>
+        <Italian>Disturbatore distrutto. Supporto drone ripristinato.</Italian>
+        <German>Störsender zerstört. Drohnenunterstützung wiederhergestellt.</German>
+        <Polish>Zagłuszacz zniszczony. Wsparcie drona przywrócone.</Polish>
+        <Russian>Помехопостановщик уничтожен. Поддержка дрона восстановлена.</Russian>
+        <Turkish>Karıştırıcı yok edildi. Dron desteği yeniden sağlandı.</Turkish>
+        <Korean>교란기가 파괴되었습니다. 드론 지원이 복구되었습니다.</Korean>
+        <Japanese>ジャマー破壊。ドローン支援が復旧しました。</Japanese>
+        <Chinese>干扰车已摧毁。无人机支持已恢复。</Chinese>
+    </Key>
+    <Key ID="STR_LL_Task_08_Plane_Incoming">
+        <Original>Cargo RACS en approche ! Sécurisez l'espace aérien !</Original>
+        <French>Cargo RACS en approche ! Sécurisez l'espace aérien !</French>
+        <English>RACS Cargo plane incoming! Secure the airspace!</English>
+        <Spanish>¡Carguero RACS en camino! ¡Aseguren el espacio aéreo!</Spanish>
+        <Italian>Cargo RACS in arrivo! Mettete in sicurezza lo spazio aereo!</Italian>
+        <German>RACS-Frachtflugzeug im Anflug! Sichern Sie den Luftraum!</German>
+        <Polish>Transportowiec RACS nadlatuje! Zabezpiecz przestrzeń powietrzną!</Polish>
+        <Russian>Транспортник RACS на подходе! Обезопасьте воздушное пространство!</Russian>
+        <Turkish>RACS Kargo uçağı yaklaşıyor! Hava sahasını güvenli hale getirin!</Turkish>
+        <Korean>RACS 수송기 접근 중! 공역을 확보하십시오!</Korean>
+        <Japanese>RACS輸送機が接近中！空域を確保せよ！</Japanese>
+        <Chinese>RACS运输机正在接近！请确保领空安全！</Chinese>
+    </Key>
+    <Key ID="STR_LL_Task_08_Plane_ShotDown">
+        <Original>Le cargo RACS a été abattu ! Mission échouée !</Original>
+        <French>Le cargo RACS a été abattu ! Mission échouée !</French>
+        <English>The RACS cargo plane has been shot down! Mission failed!</English>
+        <Spanish>¡El carguero RACS ha sido derribado! ¡Misión fallida!</Spanish>
+        <Italian>Il cargo RACS è stato abbattuto! Missione fallita!</Italian>
+        <German>Das RACS-Frachtflugzeug wurde abgeschossen! Mission fehlgeschlagen!</German>
+        <Polish>Transportowiec RACS został zestrzelony! Misja nieudana!</Polish>
+        <Russian>Транспортник RACS сбит! Миссия провалена!</Russian>
+        <Turkish>RACS kargo uçağı vuruldu! Görev başarısız!</Turkish>
+        <Korean>RACS 수송기가 격추되었습니다! 임무 실패!</Korean>
+        <Japanese>RACS輸送機が撃墜された！ミッション失敗！</Japanese>
+        <Chinese>RACS运输机已被击落！任务失败！</Chinese>
+    </Key>
+    <Key ID="STR_LL_Task_08_Plane_Safe">
+        <Original>Le cargo RACS a traversé la zone en sécurité.</Original>
+        <French>Le cargo RACS a traversé la zone en sécurité.</French>
+        <English>The RACS cargo plane has crossed the airspace safely.</English>
+        <Spanish>El carguero RACS ha cruzado la zona de forma segura.</Spanish>
+        <Italian>Il cargo RACS ha attraversato la zona in sicurezza.</Italian>
+        <German>Das RACS-Frachtflugzeug hat den Luftraum sicher durchquert.</German>
+        <Polish>Transportowiec RACS bezpiecznie przekroczył przestrzeń powietrzną.</Polish>
+        <Russian>Транспортник RACS благополучно пересек зону.</Russian>
+        <Turkish>RACS kargo uçağı hava sahasından güvenle geçti.</Turkish>
+        <Korean>RACS 수송기가 안전하게 공역을 통과했습니다.</Korean>
+        <Japanese>RACS輸送機は安全に空域を通過しました。</Japanese>
+        <Chinese>RACS运输机已安全飞越该空域。</Chinese>
+    </Key>
+</Keys>

@@ -8,6 +8,9 @@ if (!hasInterface) exitWith {};
 
         private _fnc_requestWithMap = {
             params ["_type"];
+            if (missionNamespace getVariable ["LL_Heli_Jammed", false]) exitWith {
+                ["STR_LL_Heli_Action_Jammed"] call LL_fnc_radioMessage;
+            };
             if (_type == "VEHICULE" && { missionNamespace getVariable ["TAG_VehicleSupport_Delivered", false] }) exitWith {
                 ["STR_LL_Heli_Action_VehicleAlready"] call LL_fnc_radioMessage;
             };

@@ -3037,6 +3037,174 @@ OSTRZEŻENIE: Jeśli odkryją, że jeden z nich został zabity, pozostali dowód
             <Italian>Seguite gli abitanti del villaggio!</Italian>
             <Polish>Idźcie za mieszkańcami!</Polish>
         </Key>
+        <Key ID="STR_LL_Diary_Task08_Title">
+            <Original>OPORD : Neutralisation de réseau antiaérien et de brouillage</Original>
+            <French>OPORD : Neutralisation de réseau antiaérien et de brouillage</French>
+            <English>OPORD: Neutralize Anti-Aircraft &amp; Jamming Network</English>
+            <Turkish>OPORD: Uçaksavar ve Karıştırma Ağını Etkisiz Hale Getir</Turkish>
+            <Korean>OPORD: 대공 및 교란 네트워크 무력화</Korean>
+            <Spanish>OPORD: Neutralizar red antiaérea y de interferencias</Spanish>
+            <Japanese>OPORD: 対空およびジャミングネットワークの無力化</Japanese>
+            <Chinese>OPORD: 消灭防空与干扰网络</Chinese>
+            <Russian>OPORD: Нейтрализация ПВО и сети помех</Russian>
+            <German>OPORD: Flugabwehr- und Störnetzwerk neutralisieren</German>
+            <Italian>OPORD: Neutralizzazione della rete antiaerea e di disturbo</Italian>
+            <Polish>OPORD: Neutralizacja sieci przeciwlotniczej i zakłócającej</Polish>
+        </Key>
+        <Key ID="STR_LL_Diary_Task08_Text">
+            <Original>&lt;font color='#FF4444'&gt;MISSION À HAUT RISQUE&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;L'ennemi a mis en place un réseau de brouillage et de défense antiaérienne hautement protégé. Les soutiens aériens sont indisponibles au début de l'opération.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;VOL LOGISTIQUE ALLIÉ :&lt;/font&gt;&lt;br/&gt;- Un avion cargo RACS C-130J (ViV) doit survoler l'espace aérien &lt;b&gt;entre la 45ème et la 55ème minute&lt;/b&gt; de l'opération.&lt;br/&gt;- Si le brouilleur Tempest n'est pas détruit avant son arrivée, la DCA ennemie repèrera et abattra l'avion cargo, provoquant l'échec de la mission.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;INFORMATIONS TACTIQUES :&lt;/font&gt;&lt;br/&gt;- &lt;font color='#FF8800'&gt;Brouilleur Drone (Position A) :&lt;/font&gt; Un camion Tempest (Dispositif) bloque l'utilisation du drone.&lt;br/&gt;- &lt;font color='#FF8800'&gt;DCA et Artillerie (Position B, &gt;600m) :&lt;/font&gt; Un blindé ZSU-39 Tigris DCA et un lance-roquettes BM-21 Grad bloquent les hélicoptères.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;RÉSOLUTION :&lt;/font&gt;&lt;br/&gt;- La destruction du Tempest (Dispositif) valide la tâche principale, débloque le drone, et aveugle la DCA.&lt;br/&gt;- La destruction de la DCA Tigris débloque le soutien hélicoptère.&lt;br/&gt;&lt;br/&gt;L'utilisation du drone et le soutien hélicoptère sont vitaux. Vous pouvez détruire la DCA et l'artillerie avant de détruire le brouilleur pour obtenir de l'aide aérienne. Une fois le brouilleur Tempest détruit, tous les soutiens aériens restants sont disponibles.</Original>
+            <French>&lt;font color='#FF4444'&gt;MISSION À HAUT RISQUE&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;L'ennemi a mis en place un réseau de brouillage et de défense antiaérienne hautement protégé. Les soutiens aériens sont indisponibles au début de l'opération.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;VOL LOGISTIQUE ALLIÉ :&lt;/font&gt;&lt;br/&gt;- Un avion cargo RACS C-130J (ViV) doit survoler l'espace aérien &lt;b&gt;entre la 45ème et la 55ème minute&lt;/b&gt; de l'opération.&lt;br/&gt;- Si le brouilleur Tempest n'est pas détruit avant son arrivée, la DCA ennemie repèrera et abattra l'avion cargo, provoquant l'échec de la mission.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;INFORMATIONS TACTIQUES :&lt;/font&gt;&lt;br/&gt;- &lt;font color='#FF8800'&gt;Brouilleur Drone (Position A) :&lt;/font&gt; Un camion Tempest (Dispositif) bloque l'utilisation du drone.&lt;br/&gt;- &lt;font color='#FF8800'&gt;DCA et Artillerie (Position B, &gt;600m) :&lt;/font&gt; Un blindé ZSU-39 Tigris DCA et un lance-roquettes BM-21 Grad bloquent les hélicoptères.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;RÉSOLUTION :&lt;/font&gt;&lt;br/&gt;- La destruction du Tempest (Dispositif) valide la tâche principale, débloque le drone, et aveugle la DCA.&lt;br/&gt;- La destruction de la DCA Tigris débloque le soutien hélicoptère.&lt;br/&gt;&lt;br/&gt;L'utilisation du drone et le soutien hélicoptère sont vitaux. Vous pouvez détruire la DCA et l'artillerie avant de détruire le brouilleur pour obtenir de l'aide aérienne. Une fois le brouilleur Tempest détruit, tous les soutiens aériens restants sont disponibles.</French>
+            <English>&lt;font color='#FF4444'&gt;HIGH RISK MISSION&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;The enemy has set up a highly protected jamming and anti-aircraft network. Air support is unavailable at the start of the operation.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;ALLIED LOGISTICS FLIGHT:&lt;/font&gt;&lt;br/&gt;- A RACS C-130J (ViV) cargo plane is scheduled to cross the airspace &lt;b&gt;between the 45th and 55th minute&lt;/b&gt; of the operation.&lt;br/&gt;- If the Tempest jammer is not destroyed before its arrival, the enemy AA will detect and shoot down the cargo plane, causing mission failure.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;TACTICAL INFO:&lt;/font&gt;&lt;br/&gt;- &lt;font color='#FF8800'&gt;Drone Jammer (Position A):&lt;/font&gt; A Tempest (Device) truck blocks drone support.&lt;br/&gt;- &lt;font color='#FF8800'&gt;AA &amp;amp; Artillery (Position B, &gt;600m):&lt;/font&gt; A ZSU-39 Tigris AA and a BM-21 Grad rocket launcher block helicopter support.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;RESOLUTION:&lt;/font&gt;&lt;br/&gt;- Destroying the Tempest (Device) validates the main task, unlocks the drone, and blinds the enemy AA.&lt;br/&gt;- Destroying the Tigris AA unlocks helicopter support.&lt;br/&gt;&lt;br/&gt;Drone and helicopter support are vital. You can destroy the AA and artillery before destroying the jammer to get air support. Once the Tempest jammer is destroyed, all remaining air support becomes available.</English>
+            <Turkish>&lt;font color='#FF4444'&gt;YÜKSEK RİSKLİ GÖREV&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;Düşman, yüksek korumalı bir karıştırma ve uçaksavar ağı kurdu. Operasyonun başında hava desteği mevcut değildir.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;MÜTTEFİK LOJİSTİK UÇUŞU :&lt;/font&gt;&lt;br/&gt;- Bir RACS C-130J (ViV) kargo uçağının operasyonun &lt;b&gt;45. ve 55. dakikaları arasında&lt;/b&gt; hava sahasından geçmesi planlanıyor.&lt;br/&gt;- Tempest karıştırıcı gelmeden önce yok edilmezse, düşman uçaksavarı kargo uçağını vuracak ve görevin başarısız olmasına neden olacaktır.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;TAKTİK BİLGİ:&lt;/font&gt;&lt;br/&gt;- &lt;font color='#FF8800'&gt;Dron Karıştırıcı (Konum A):&lt;/font&gt; Tempest (Cihaz) kamyonu dron desteğini engelliyor.&lt;br/&gt;- &lt;font color='#FF8800'&gt;Uçaksavar ve Topçu (Konum B, &gt;600m):&lt;/font&gt; ZSU-39 Tigris uçaksavarı ve BM-21 Grad roketatarı helikopter desteğini engelliyor.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;ÇÖZÜM:&lt;/font&gt;&lt;br/&gt;- Tempest (Cihaz) kamyonunu yok etmek ana görevi tamamlar, dronu açar ve düşman uçaksavarını kör eder.&lt;br/&gt;- Tigris uçaksavarını yok etmek helikopter desteğini açar.&lt;br/&gt;&lt;br/&gt;Dron ve helikopter desteği hayati önem taşır. Hava desteği almak için karıştırıcıyı yok etmeden önce uçaksavar ve topçuyu yok edebilirsiniz. Tempest karıştırıcı yok edildiğinde, kalan tüm hava desteği kullanılabilir hale gelecektir.</Turkish>
+            <Korean>&lt;font color='#FF4444'&gt;고위험 임무&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;적군이 강력하게 보호되는 교란 및 대공 네트워크를 구축했습니다. 작전 시작 시 공중 지원을 사용할 수 없습니다.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;아군 보급 비행 :&lt;/font&gt;&lt;br/&gt;- RACS C-130J (ViV) 수송기가 작전 시작 후 &lt;b&gt;45분에서 55분 사이&lt;/b&gt;에 공역을 통과할 예정입니다.&lt;br/&gt;- 수송기 도착 전에 템페스트 교란기가 파괴되지 않으면 적 대공포가 수송기를 격추하여 임무가 실패하게 됩니다.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;전술 정보:&lt;/font&gt;&lt;br/&gt;- &lt;font color='#FF8800'&gt;드론 교란기 (위치 A):&lt;/font&gt; 템페스트 (장치) 트럭이 드론 지원을 차断합니다.&lt;br/&gt;- &lt;font color='#FF8800'&gt;대공 및 포병 (위치 B, &gt;600m):&lt;/font&gt; ZSU-39 티그리스 대공포와 BM-21 그라드 다연장로켓이 헬기 지원을 차단합니다.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;해결 방법:&lt;/font&gt;&lt;br/&gt;- 템페스트 (장치)를 파괴하면 메인 임무가 완료되고 드론이 잠금 해제되며 적 대공포가 무력화됩니다.&lt;br/&gt;- 티그리스 대공포를 파괴하면 헬기 지원이 잠금 해제됩니다.&lt;br/&gt;&lt;br/&gt;드론과 헬기 지원은 필수적입니다. 공중 지원을 받기 위해 교란기를 파괴하기 전에 대공포와 포병을 먼저 파괴할 수 있습니다. 템페스트 교란기가 파괴되면 남아 있는 모든 공중 지원을 사용할 수 있게 됩니다.</Korean>
+            <Spanish>&lt;font color='#FF4444'&gt;MISIÓN DE ALTO RIESGO&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;El enemigo ha desplegado una red de interferencias y defensa antiaérea altamente protegida. El apoyo aéreo no está disponible al inicio de la operación.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;VUELO LOGÍSTICO ALIADO :&lt;/font&gt;&lt;br/&gt;- Un avión de carga RACS C-130J (ViV) cruzará el espacio aéreo &lt;b&gt;entre el minuto 45 y el 55&lt;/b&gt; de la operación.&lt;br/&gt;- Si el inhibidor Tempest no se destruye antes de su llegada, la DCA enemiga derribará el avión de carga, lo que provocará el fracaso de la misión.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;INFORMACIÓN TÁCTICA:&lt;/font&gt;&lt;br/&gt;- &lt;font color='#FF8800'&gt;Inhibidor de Dron (Posición A):&lt;/font&gt; Un camión Tempest (Dispositivo) bloquea el dron.&lt;br/&gt;- &lt;font color='#FF8800'&gt;DCA y Artillería (Posición B, &gt;600m):&lt;/font&gt; Un blindado ZSU-39 Tigris DCA y un lanzacohetes BM-21 Grad bloquean los helicópteros.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;RESOLUCIÓN:&lt;/font&gt;&lt;br/&gt;- Destruir el Tempest (Dispositivo) valida la tarea principal, desbloquea el dron y ciega la DCA.&lt;br/&gt;- Destruir el Tigris DCA desbloquea el apoyo de helicóptero.&lt;br/&gt;&lt;br/&gt;El uso del dron y el apoyo de helicóptero son vitales. Puede destruir la DCA y la artillería antes de destruir el inhibidor para obtener apoyo aéreo. Once destruido el inhibidor Tempest, todos los apoyos aéreos restantes estarán disponibles.</Spanish>
+            <Japanese>&lt;font color='#FF4444'&gt;高リスクミッション&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;敵は厳重に保護されたジャミングおよび対空ネットワークを構築しました。作戦開始時は航空支援を利用できません。&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;味方輸送機の飛行：&lt;/font&gt;&lt;br/&gt;- 作戦開始後&lt;b&gt;45分から55分の間&lt;/b&gt;に、RACS C-130J (ViV) 輸送機が空域を通過する予定です。&lt;br/&gt;- 到着前にテンペストジャマーが破壊されていない場合、敵の対空砲が輸送機を撃墜し、ミッションは失敗に終わります。&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;戦術情報：&lt;/font&gt;&lt;br/&gt;- &lt;font color='#FF8800'&gt;ドローンジャマー (位置 A)：&lt;/font&gt; テンペスト（デバイス）トラックがドローンを妨害しています。&lt;br/&gt;- &lt;font color='#FF8800'&gt;対空兵器および砲兵 (位置 B, &gt;600m)：&lt;/font&gt; ZSU-39チグリス対空戦車とBM-21グラードがヘリを妨害しています。&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;解決方法：&lt;/font&gt;&lt;br/&gt;- テンペスト（デバイス）の破壊でメインタスクが完了し、ドローンが解除され、敵の対空砲は無力化されます。&lt;br/&gt;- チグリス対空戦車の破壊でヘリ支援が解除されます。&lt;br/&gt;&lt;br/&gt;ドローンとヘリの支援は不可欠です。航空支援を得るために、ジャマーを破壊する前に対空兵器や砲兵を破壊することができます。テンペストジャマーが破壊されると、残りのすべての航空支援が利用可能になります。</Japanese>
+            <Chinese>&lt;font color='#FF4444'&gt;高风险任务&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;敌军建立了一套严密防护的电子干扰与防空网络。行动开始时，空中支持将无法使用。&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;盟军后勤飞行计划：&lt;/font&gt;&lt;br/&gt;- 一架 RACS C-130J (ViV) 运输机计划在行动开始后的&lt;b&gt;第45至55分钟之间&lt;/b&gt;飞越领空。&lt;br/&gt;- 如果在此之前未能摧毁神风干扰车，敌军防空力量将发现并击落该运输机，导致任务失败。&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;战术情报：&lt;/font&gt;&lt;br/&gt;- &lt;font color='#FF8800'&gt;无人机干扰车（位置 A）：&lt;/font&gt; 一辆神风（设备）干扰车阻断了无人机支持。&lt;br/&gt;- &lt;font color='#FF8800'&gt;防空与火箭炮（位置 B，&gt;600米）：&lt;/font&gt; 一辆ZSU-39 Tigris防空车和一辆BM-21 Grad火箭炮阻断了直升机支持。&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;解除方式：&lt;/font&gt;&lt;br/&gt;- 摧毁神风（设备）干扰车将完成主任务并解锁无人机支持，并使敌军防空雷达失效。&lt;br/&gt;- 摧毁Tigris防空车将解锁直升机支持。&lt;br/&gt;&lt;br/&gt;无人机与直升机支持至关重要。您可以先摧毁防空车与火箭炮以获取直升机空中支持，然后再去摧毁干扰车。一旦摧毁神风干扰车，所有剩余的空中支持都将恢复可用。</Chinese>
+            <Russian>&lt;font color='#FF4444'&gt;МИССИЯ ВЫСОКОГО РИСКА&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;Противник развернул высокозащищенную сеть помех и ПВО. Воздушная поддержка недоступна в начале операции.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;СОЮЗНЫЙ ЛОГИСТИЧЕСКИЙ РЕЙС :&lt;/font&gt;&lt;br/&gt;- Транспортный самолет RACS C-130J (ViV) пересечет воздушное пространство &lt;b&gt;между 45-й и 55-й минутами&lt;/b&gt; операции.&lt;br/&gt;- Если помехопостановщик Tempest не будет уничтожен до его прибытия, вражеская ПВО собьет транспортник, что приведет к провалу миссии.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;ТАКТИЧЕСКИЕ ДАННЫЕ:&lt;/font&gt;&lt;br/&gt;- &lt;font color='#FF8800'&gt;Помехопостановщик дрона (Позиция A):&lt;/font&gt; Грузовик Tempest (Устройство) блокирует дрон.&lt;br/&gt;- &lt;font color='#FF8800'&gt;ПВО и артиллерия (Позиция B, &gt;600м):&lt;/font&gt; Бронемашина ZSU-39 Tigris и РСЗО BM-21 Grad блокируют вертолеты.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;УСЛОВИЯ:&lt;/font&gt;&lt;br/&gt;- Уничтожение Tempest (Устройство) завершает задачу, разблокирует дрон и ослепляет ПВО.&lt;br/&gt;- Уничтожение ПВО Tigris разблокирует поддержку вертолета.&lt;br/&gt;&lt;br/&gt;Использование дрона и вертолета критически важно. Вы можете уничтожить ПВО и артиллерию до нейтрализации помехопостановщика, чтобы получить поддержку с воздуха. Как только Tempest уничтожен, вся оставшаяся поддержка станет доступна.</Russian>
+            <German>&lt;font color='#FF4444'&gt;MISSION MIT HOHEM RISIKO&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;Der Feind hat ein stark geschütztes Stör- und Flugabwehrnetzwerk errichtet. Luftunterstützung ist zu Beginn der Operation nicht verfügbar.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;ALLIIERTER LOGISTIKFLUG :&lt;/font&gt;&lt;br/&gt;- Ein RACS C-130J (ViV) Frachtflugzeug wird den Luftraum &lt;b&gt;zwischen der 45. und 55. Minute&lt;/b&gt; der Operation überqueren.&lt;br/&gt;- Wenn der Tempest-Störsender vor seiner Ankunft nicht zerstört wird, schießt die feindliche Flak das Frachtflugzeug ab, was zum Scheitern der Mission führt.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;TAKTIK-INFO:&lt;/font&gt;&lt;br/&gt;- &lt;font color='#FF8800'&gt;Drohnen-Störsender (Position A):&lt;/font&gt; Ein Tempest-LKW (Gerät) blockiert die Drohne.&lt;br/&gt;- &lt;font color='#FF8800'&gt;Flak und Artillerie (Position B, &gt;600m):&lt;/font&gt; Eine ZSU-39 Tigris Flak und ein BM-21 Grad Raketenwerfer blockieren die Hubschrauber.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;LÖSUNG:&lt;/font&gt;&lt;br/&gt;- Die Zerstörung des Tempest (Gerät) schließt die Hauptaufgabe ab, schaltet die Drohne frei und blendet die Flak.&lt;br/&gt;- Die Zerstörung der Tigris Flak schaltet die Hubschrauberunterstützung frei.&lt;br/&gt;&lt;br/&gt;Drohnen- und Hubschrauberunterstützung sind lebenswichtig. Sie können die Flak und Artillerie vor dem Störsender zerstören, um Luftunterstützung zu erhalten. Sobald der Tempest-Störsender zerstört ist, steht die gesamte verbleibende Luftunterstützung zur Verfügung.</German>
+            <Italian>&lt;font color='#FF4444'&gt;MISSIONE AD ALTO RISCHIO&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;Il nemico ha allestito una rete di disturbo e difesa antiaerea altamente protetta. I supporti aerei non sono disponibili all'inizio dell'operazione.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;VOLO LOGISTICO ALLEATO :&lt;/font&gt;&lt;br/&gt;- Un aereo cargo RACS C-130J (ViV) attraverserà lo spazio aereo &lt;b&gt;tra il 45° e il 55° minuto&lt;/b&gt; dell'operazione.&lt;br/&gt;- Se il disturbatore Tempest non viene distrutto prima del suo arrivo, la DCA nemica abbatterà l'aereo cargo, causando il fallimento della missione.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;INFO TATTICHE:&lt;/font&gt;&lt;br/&gt;- &lt;font color='#FF8800'&gt;Disturbatore Drone (Posizione A):&lt;/font&gt; Un camion Tempest (Dispositivo) blocca il drone.&lt;br/&gt;- &lt;font color='#FF8800'&gt;DCA e Artiglieria (Posizione B, &gt;600m):&lt;/font&gt; Un blindato ZSU-39 Tigris DCA e un lanciarazzi BM-21 Grad bloccano gli elicotteri.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;RISOLUZIONE:&lt;/font&gt;&lt;br/&gt;- La distruzione del Tempest (Dispositivo) convalida la missione principale, sblocca il drone e acceca la DCA.&lt;br/&gt;- La distruzione della DCA Tigris sblocca il supporto elicottero.&lt;br/&gt;&lt;br/&gt;L'uso del drone e del supporto elicottero sono vitali. È possibile distruggere la DCA e l'artiglieria prima del disturbatore per ottenere supporto aereo. Una volta distrutto il disturbatore Tempest, tutti i restanti supporti aerei saranno disponibili.</Italian>
+            <Polish>&lt;font color='#FF4444'&gt;MISJA WYSOKIEGO RYZYKA&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;Wróg rozmieścił silnie chronioną sieć zakłócania i obrony przeciwlotniczej. Wsparcie lotnicze jest niedostępne na początku operacji.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;SOJUSZNICZY LOT LOGISTYCZNY :&lt;/font&gt;&lt;br/&gt;- Samolot transportowy RACS C-130J (ViV) przeleci nad obszarem działań &lt;b&gt;między 45. a 55. minutą&lt;/b&gt; operacji.&lt;br/&gt;- Jeśli zagłuszacz Tempest nadrzędny nie zostanie zniszczony przed jego przybyciem, wroga obrona przeciwlotnicza zestrzeli samolot transportowy, powodując niepowodzenie misji.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;INFO TAKTYCZNE:&lt;/font&gt;&lt;br/&gt;- &lt;font color='#FF8800'&gt;Zagłuszacz Drona (Pozycja A):&lt;/font&gt; Ciężarówka Tempest (Urządzenie) blokuje drona.&lt;br/&gt;- &lt;font color='#FF8800'&gt;DCA i Artyleria (Pozycja B, &gt;600m):&lt;/font&gt; Pojazd ZSU-39 Tigris DCA i wyrzutnia BM-21 Grad blokują helikoptery.&lt;br/&gt;&lt;br/&gt;&lt;font color='#FFFF00'&gt;ROZWIĄZANIE:&lt;/font&gt;&lt;br/&gt;- Zniszczenie pojazdu Tempest (Urządzenie) zalicza zadanie główne, odblokowuje drona i oślepia obronę przeciwlotniczą.&lt;br/&gt;- Zniszczenie pojazdu Tigris DCA odblokowuje wsparcie helikoptera.&lt;br/&gt;&lt;br/&gt;Użycie drona i helikoptera jest kluczowe. Możesz zniszczyć obronę przeciwlotniczą i artylerię przed zagłuszaczem, aby uzyskać wsparcie lotnicze. Po zniszczeniu zagłuszacza Tempest całe pozostałe wsparcie będzie dostępne.</Polish>
+        </Key>
+        <Key ID="STR_LL_Task_08_Title">
+            <Original>Neutraliser le réseau de brouillage</Original>
+            <French>Neutraliser le réseau de brouillage</French>
+            <English>Neutralize Jamming Network</English>
+            <Spanish>Neutralizar la red de interferencias</Spanish>
+            <Italian>Neutralizzare la rete di disturbo</Italian>
+            <German>Störnetzwerk neutralisieren</German>
+            <Polish>Neutralizacja sieci zakłócającej</Polish>
+            <Russian>Нейтрализовать сеть помех</Russian>
+            <Turkish>Karıştırma Ağını Etkisiz Hale Getir</Turkish>
+            <Korean>교란 네트워크 무력화</Korean>
+            <Japanese>ジャミングネットワークの無力化</Japanese>
+            <Chinese>消灭干扰网络</Chinese>
+        </Key>
+        <Key ID="STR_LL_Task_08_Desc">
+            <Original>Détruisez le Tempest (brouilleur), la DCA Tigris et l'artillerie BM-21 Grad. Le drone peut être appelé après la destruction du brouilleur.</Original>
+            <French>Détruisez le Tempest (brouilleur), la DCA Tigris et l'artillerie BM-21 Grad. Le drone peut être appelé après la destruction du brouilleur.</French>
+            <English>Destroy the Tempest (jammer), the Tigris AA, and the BM-21 Grad artillery. The drone can be called after the jammer is destroyed.</English>
+            <Spanish>Destruye el Tempest (inhibidor), el Tigris DCA y la artillería BM-21 Grad. El dron se puede llamar tras destruir el inhibidor.</Spanish>
+            <Italian>Distruggi il Tempest (disturbatore), la DCA Tigris e l'artiglieria BM-21 Grad. Il drone può essere chiamato dopo la distruzione del disturbatore.</Italian>
+            <German>Zerstören Sie den Tempest (Störsender), die Tigris Flak und die BM-21 Grad Artillerie. Die Drohne kann nach Zerstörung des Störsenders gerufen werden.</German>
+            <Polish>Zniszcz Tempest (zagłuszacz), Tigris DCA i artylerię BM-21 Grad. Dron może być wezwany po zniszczeniu zagłuszacza.</Polish>
+            <Russian>Уничтожьте Tempest (помехопостановщик), ПВО Tigris и артиллерию BM-21 Grad. Дрон можно вызвать после уничтожения помехопостановщика.</Russian>
+            <Turkish>Tempest (karıştırıcı), Tigris uçaksavarı ve BM-21 Grad topçusunu yok edin. Karıştırıcı yok edildikten sonra dron çağrılabilir.</Turkish>
+            <Korean>템페스트(교란기), 티그리스 대공포, BM-21 그라드 포병을 파괴하십시오. 교란기 파괴 후 드론을 호출할 수 있습니다.</Korean>
+            <Japanese>テンペスト（ジャマー）、チグリス対空砲、BM-21グラード砲兵を破壊する。ジャマー破壊後にドローンを要請できます。</Japanese>
+            <Chinese>摧毁神风干扰车、Tigris防空车与BM-21 Grad火箭炮。摧毁干扰车后可呼叫无人机支持。</Chinese>
+        </Key>
+        <Key ID="STR_LL_Task_08_Marker">
+            <Original>Tempest Brouilleur</Original>
+            <French>Tempest Brouilleur</French>
+            <English>Tempest Jammer</English>
+            <Spanish>Inhibidor Tempest</Spanish>
+            <Italian>Disturbatore Tempest</Italian>
+            <German>Tempest-Störsender</German>
+            <Polish>Zagłuszacz Tempest</Polish>
+            <Russian>Помехопостановщик Tempest</Russian>
+            <Turkish>Tempest Karıştırıcı</Turkish>
+            <Korean>템페스트 교란기</Korean>
+            <Japanese>テンペストジャマー</Japanese>
+            <Chinese>神风干扰车</Chinese>
+        </Key>
+        <Key ID="STR_LL_Task_08_MarkerVehicles">
+            <Original>DCA - Risque Élevé</Original>
+            <French>DCA - Risque Élevé</French>
+            <English>AA - High Risk</English>
+            <Spanish>DCA - Riesgo Alto</Spanish>
+            <Italian>DCA - Rischio Elevato</Italian>
+            <German>Flak - Hohes Risiko</German>
+            <Polish>DCA - Wysokie Ryzyko</Polish>
+            <Russian>ПВО - Высокий риск</Russian>
+            <Turkish>Uçaksavar - Yüksek Risk</Turkish>
+            <Korean>대공 - 높은 위험</Korean>
+            <Japanese>対空 - 高いリスク</Japanese>
+            <Chinese>防空 - 高风险</Chinese>
+        </Key>
+        <Key ID="STR_LL_Heli_Action_Jammed">
+            <Original>Menace antiaérienne détectée. Impossible de contacter l'hélicoptère.</Original>
+            <French>Menace antiaérienne détectée. Impossible de contacter l'hélicoptère.</French>
+            <English>Anti-aircraft threat detected. Unable to contact the helicopter.</English>
+            <Spanish>Amenaza antiaérea detectada. Imposible contactar al helicóptero.</Spanish>
+            <Italian>Minaccia antiaerea rilevata. Impossibile contattare l'elicottero.</Italian>
+            <German>Flugabwehrbedrohung erkannt. Verbindung zum Hubschrauber nicht möglich.</German>
+            <Polish>Wykryto zagrożenie przeciwlotnicze. Brak kontaktu z helikopterem.</Polish>
+            <Russian>Обнаружена угроза ПВО. Связь с вертолетом невозможна.</Russian>
+            <Turkish>Uçaksavar tehdidi algılandı. Helikopterle iletişim kurulamıyor.</Turkish>
+            <Korean>대공 위협이 감지되었습니다. 헬리콥ter와 통신할 수 없습니다.</Korean>
+            <Japanese>対空脅威を検出。ヘリコプターと通信できません。</Japanese>
+            <Chinese>检测到防空威胁。无法联系直升机。</Chinese>
+        </Key>
+        <Key ID="STR_LL_Heli_Action_Unjammed">
+            <Original>Menace DCA éliminée. Le soutien hélicoptère est disponible.</Original>
+            <French>Menace DCA éliminée. Le soutien hélicoptère est disponible.</French>
+            <English>Anti-aircraft threat eliminated. Helicopter support is available.</English>
+            <Spanish>Amenaza antiaérea eliminada. Soporte de helicóptero disponible.</Spanish>
+            <Italian>Minaccia antiaerea eliminata. Supporto elicottero disponibile.</Italian>
+            <German>Flugabwehrbedrohung eliminiert. Hubschrauberunterstützung verfügbar.</German>
+            <Polish>Zagrożenie przeciwlotnicze wyeliminowane. Wsparcie helikoptera dostępne.</Polish>
+            <Russian>Угроза ПВО устранена. Доступна поддержка вертолета.</Russian>
+            <Turkish>Uçaksavar tehdidi ortadan kaldırıldı. Helikopter desteği mevcut.</Turkish>
+            <Korean>대공 위협이 제거되었습니다. 헬리콥터 지원을 사용할 수 있습니다.</Korean>
+            <Japanese>対空脅威を排除。ヘリコプターの支援が利用可能です。</Japanese>
+            <Chinese>防空威胁已消除。直升机支持已可用。</Chinese>
+        </Key>
+        <Key ID="STR_LL_Drone_Action_Unjammed">
+            <Original>Brouilleur détruit. Le soutien drone est rétabli.</Original>
+            <French>Brouilleur détruit. Le soutien drone est rétabli.</French>
+            <English>Jammer destroyed. Drone support has been restored.</English>
+            <Spanish>Inhibidor destruido. Soporte de dron restablecido.</Spanish>
+            <Italian>Disturbatore distrutto. Supporto drone ripristinato.</Italian>
+            <German>Störsender zerstört. Drohnenunterstützung wiederhergestellt.</German>
+            <Polish>Zagłuszacz zniszczony. Wsparcie drona przywrócone.</Polish>
+            <Russian>Помехопостановщик уничтожен. Поддержка дрона восстановлена.</Russian>
+            <Turkish>Karıştırıcı yok edildi. Dron desteği yeniden sağlandı.</Turkish>
+            <Korean>교란기가 파괴되었습니다. 드론 지원이 복구되었습니다.</Korean>
+            <Japanese>ジャマー破壊。ドローン支援が復旧しました。</Japanese>
+            <Chinese>干扰车已摧毁。无人机支持已恢复。</Chinese>
+        </Key>
+        <Key ID="STR_LL_Task_08_Plane_Incoming">
+            <Original>Cargo RACS en approche ! Sécurisez l'espace aérien !</Original>
+            <French>Cargo RACS en approche ! Sécurisez l'espace aérien !</French>
+            <English>RACS Cargo plane incoming! Secure the airspace!</English>
+            <Spanish>¡Carguero RACS en camino! ¡Aseguren el espacio aéreo!</Spanish>
+            <Italian>Cargo RACS in arrivo! Mettete in sicurezza lo spazio aereo!</Italian>
+            <German>RACS-Frachtflugzeug im Anflug! Sichern Sie den Luftraum!</German>
+            <Polish>Transportowiec RACS nadlatuje! Zabezpiecz przestrzeń powietrzną!</Polish>
+            <Russian>Транспортник RACS на подходе! Обезопасьте воздушное пространство!</Russian>
+            <Turkish>RACS Kargo uçağı yaklaşıyor! Hava sahasını güvenli hale getirin!</Turkish>
+            <Korean>RACS 수송기 접근 중! 공역을 확보하십시오!</Korean>
+            <Japanese>RACS輸送機が接近中！空域を確保せよ！</Japanese>
+            <Chinese>RACS运输机正在接近！请确保领空安全！</Chinese>
+        </Key>
+        <Key ID="STR_LL_Task_08_Plane_ShotDown">
+            <Original>Le cargo RACS a été abattu ! Mission échouée !</Original>
+            <French>Le cargo RACS a été abattu ! Mission échouée !</French>
+            <English>The RACS cargo plane has been shot down! Mission failed!</English>
+            <Spanish>¡El carguero RACS ha sido derribado! ¡Misión fallida!</Spanish>
+            <Italian>Il cargo RACS è stato abbattuto! Missione fallita!</Italian>
+            <German>Das RACS-Frachtflugzeug wurde abgeschossen! Mission fehlgeschlagen!</German>
+            <Polish>Transportowiec RACS został zestrzelony! Misja nieudana!</Polish>
+            <Russian>Транспортник RACS сбит! Миссия провалена!</Russian>
+            <Turkish>RACS kargo uçağı vuruldu! Görev başarısız!</Turkish>
+            <Korean>RACS 수송기가 격추되었습니다! 임무 실패!</Korean>
+            <Japanese>RACS輸送機が撃墜された！ミッション失敗！</Japanese>
+            <Chinese>RACS运输机已被击落！任务失败！</Chinese>
+        </Key>
+        <Key ID="STR_LL_Task_08_Plane_Safe">
+            <Original>Le cargo RACS a traversé la zone en sécurité.</Original>
+            <French>Le cargo RACS a traversé la zone en sécurité.</French>
+            <English>The RACS cargo plane has crossed the airspace safely.</English>
+            <Spanish>El carguero RACS ha cruzado la zona de forma segura.</Spanish>
+            <Italian>Il cargo RACS ha attraversato la zona in sicurezza.</Italian>
+            <German>Das RACS-Frachtflugzeug hat den Luftraum sicher durchquert.</German>
+            <Polish>Transportowiec RACS bezpiecznie przekroczył przestrzeń powietrzną.</Polish>
+            <Russian>Транспортник RACS благополучно пересек зону.</Russian>
+            <Turkish>RACS kargo uçağı hava sahasından güvenle geçti.</Turkish>
+            <Korean>RACS 수송기가 안전하게 공역을 통과했습니다.</Korean>
+            <Japanese>RACS輸送機は安全に空域を通過しました。</Japanese>
+            <Chinese>RACS运输机已安全飞越该空域。</Chinese>
+        </Key>
         <Key ID="STR_LL_Action_RequestTask">
             <Original>Demander votre tâche</Original>
             <French>Demander votre tâche</French>
