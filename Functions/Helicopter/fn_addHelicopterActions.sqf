@@ -22,12 +22,15 @@ if (!hasInterface) exitWith {};
                 };
             };
 
+            // Fix 3 — Annuler toute requête hélico précédente en attente
+            missionNamespace setVariable ["LL_Heli_MapClick", false];
+
             openMap true;
             ["STR_LL_Heli_Action_ClickMap"] call LL_fnc_radioMessage;
             missionNamespace setVariable ["LL_Heli_MapClick", true];
             missionNamespace setVariable ["LL_Heli_PendingType", _type];
 
-            addMissionEventHandler ["MapSingleClick", {
+            private _ehId = addMissionEventHandler ["MapSingleClick", {
                 params ["_units", "_pos", "_alt", "_shift"];
                 if !(missionNamespace getVariable ["LL_Heli_MapClick", false]) exitWith {};
                 missionNamespace setVariable ["LL_Heli_MapClick", false];
@@ -37,6 +40,16 @@ if (!hasInterface) exitWith {};
                 [_type, _pos, player] remoteExec ["LL_fnc_requestHelicopter", 2];
                 ["STR_LL_Heli_Action_EnRoute", [round (_pos select 0), round (_pos select 1), _type]] call LL_fnc_radioMessage;
             }];
+
+            // Fix 2 — Nettoyage si la carte est fermée par Échap sans clic
+            [_ehId] spawn {
+                params ["_ehId"];
+                waitUntil { sleep 0.2; !visibleMap || !(missionNamespace getVariable ["LL_Heli_MapClick", false]) };
+                if (missionNamespace getVariable ["LL_Heli_MapClick", false]) then {
+                    missionNamespace setVariable ["LL_Heli_MapClick", false];
+                    removeMissionEventHandler ["MapSingleClick", _ehId];
+                };
+            };
         };
 
         missionNamespace setVariable ["LL_fnc_requestWithMap", _fnc_requestWithMap];

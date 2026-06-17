@@ -11,7 +11,7 @@ if (!hasInterface) exitWith {};
             {
                 ["REQUEST"] remoteExec ["LL_fnc_taskManager", 2];
             },
-            nil, 7.5, false, true, "", "alive _target && leader (group _target) isEqualTo _target && !(missionNamespace getVariable ['LL_g_taskInProgress', false])"
+            nil, 7.45, false, true, "", "alive _target && leader (group _target) isEqualTo _target && !(missionNamespace getVariable ['LL_g_taskInProgress', false])"
         ];
     };
 
