@@ -31,6 +31,7 @@ if (_mode == "init") exitWith {
     } forEach _logicsPool;
 
     private _numZones = count _selectedLogics;
+    missionNamespace setVariable ["LL_Task00_NumZones", _numZones, true];
     if (_numZones < 2) exitWith {
         diag_log "[LL] task00 ERROR: Impossible de trouver 2 lieux à >250m. Relance dans 15s.";
         [[], "LL_fnc_task00"] spawn { sleep 15; ["init"] spawn LL_fnc_task00; };
@@ -110,9 +111,10 @@ if (_mode == "init") exitWith {
             }];
 
             _hostage addEventHandler ["Killed", {
+                private _nz = missionNamespace getVariable ["LL_Task00_NumZones", 4];
                 ["task_00_exfiltration", "FAILED", true] call BIS_fnc_taskSetState;
                 missionNamespace setVariable ["LL_g_taskInProgress", false, true];
-                for "_i" from 0 to 3 do { deleteMarker format ["mkr_task00_zone_%1", _i]; };
+                for "_i" from 0 to (_nz - 1) do { deleteMarker format ["mkr_task00_zone_%1", _i]; };
             }];
 
             private _varName = format ["LL_Task00_Hostage_%1_%2", _i, round(random 100000)];
@@ -251,7 +253,8 @@ if (_mode == "free") exitWith {
         } forEach _allOpfor;
     };
 
-    for "_i" from 0 to 3 do { deleteMarker format ["mkr_task00_zone_%1", _i]; };
+    private _nz = missionNamespace getVariable ["LL_Task00_NumZones", 4];
+    for "_i" from 0 to (_nz - 1) do { deleteMarker format ["mkr_task00_zone_%1", _i]; };
 
     ["EMBARQUEMENT", getPos _hostage, _caller, 3] spawn LL_fnc_heliDispatch;
 

@@ -681,6 +681,9 @@ if (_mode == "complete_defeat") exitWith {
             };
         };
 
+        // Nettoyage des groupes ennemis vides
+        { if (!isNull _x && count units _x == 0) then { deleteGroup _x; }; } forEach (missionNamespace getVariable ["LL_Task07_EnemyGroups", []]);
+
         missionNamespace setVariable ["LL_g_taskInProgress", false, true];
     };
 };

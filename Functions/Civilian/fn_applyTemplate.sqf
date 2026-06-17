@@ -35,13 +35,13 @@ if (_agentSide == east || _agentSide == west || _agent getVariable ["LL_forceTem
     _bLoadout params ["_priWep","_priMag","_priMagCount","_secWep","_secMag","_secMagCount","_smoke","_smokeCount","_FAK","_FAKCount"];
 
     if (_priWep != "") then {
-        _agent addWeapon _priWep;
         for "_i" from 1 to _priMagCount do { _agent addMagazine _priMag };
+        _agent addWeapon _priWep;
         _agent addPrimaryWeaponItem (selectRandom ["CUP_acc_Flashlight","CUP_acc_Zenit_2DS"]);
     };
     if (_secWep != "") then {
-        _agent addWeapon _secWep;
         for "_i" from 1 to _secMagCount do { _agent addMagazine _secMag };
+        _agent addWeapon _secWep;
         _agent addHandgunItem (selectRandom ["CUP_acc_CZ_M3X","acc_Flashlight_pistol"]);
     };
     for "_i" from 1 to _smokeCount do { _agent addMagazine _smoke };

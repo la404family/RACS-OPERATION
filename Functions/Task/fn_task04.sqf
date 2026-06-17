@@ -113,7 +113,7 @@ if (_mode == "init") exitWith {
                 _unit setVariable ["LL_Toxic_Level", _level max (_unit getVariable ["LL_Toxic_Level", 0]), true];
                 private _emitter = _unit getVariable ["LL_Toxic_Smoke1", objNull];
                 if (isNull _emitter) then {
-                    _emitter = "#particlesource" createVehicleLocal (getPos _unit);
+                    _emitter = "#particlesource" createVehicle (getPos _unit);
                     _unit setVariable ["LL_Toxic_Smoke1", _emitter];
 
                     [_unit] spawn {

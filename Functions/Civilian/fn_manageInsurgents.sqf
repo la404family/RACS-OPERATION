@@ -22,13 +22,13 @@ private _fnc_equipBandit = {
         _bLoadout params ["_priWep","_priMag","_priMagCount","_secWep","_secMag","_secMagCount","_smoke","_smokeCount","_FAK","_FAKCount"];
 
         if (_priWep != "") then {
-            _unit addWeapon _priWep;
             for "_i" from 1 to _priMagCount do { _unit addMagazine _priMag };
+            _unit addWeapon _priWep;
             _unit addPrimaryWeaponItem (selectRandom ["CUP_acc_Flashlight","CUP_acc_Zenit_2DS"]);
         };
         if (_secWep != "") then {
-            _unit addWeapon _secWep;
             for "_i" from 1 to _secMagCount do { _unit addMagazine _secMag };
+            _unit addWeapon _secWep;
             _unit addHandgunItem (selectRandom ["CUP_acc_CZ_M3X","acc_Flashlight_pistol"]);
         };
         for "_i" from 1 to _smokeCount do { _unit addMagazine _smoke };
