@@ -12,17 +12,22 @@ if (_mode == "init") exitWith {
     private _logicsPool = _allLogics call BIS_fnc_arrayShuffle;
     private _alivePlayers = allPlayers select { alive _x };
     private _selectedLogic = objNull;
+    private _maxDist = 2000;
 
-    {
-        private _candidate = _x;
-        private _candidatePos = getPosASL _candidate;
-        private _valid = true;
-        { if (_x distance2D _candidatePos < 250) exitWith { _valid = false; }; } forEach _alivePlayers;
-        if (_valid) exitWith { _selectedLogic = _candidate; };
-    } forEach _logicsPool;
+    while { isNull _selectedLogic && _maxDist <= 15000 } do {
+        {
+            private _candidate = _x;
+            private _candidatePos = getPosASL _candidate;
+            private _valid = true;
+            { private _d = _x distance2D _candidatePos; if (_d < 250 || _d > _maxDist) exitWith { _valid = false; }; } forEach _alivePlayers;
+            if (_valid) exitWith { _selectedLogic = _candidate; };
+        } forEach _logicsPool;
+
+        if (isNull _selectedLogic) then { _maxDist = _maxDist + 500; };
+    };
 
     if (isNull _selectedLogic) exitWith {
-        diag_log "[LL] task06 ERROR: Impossible de trouver un M_Dans_Bat_ à >250m. Relance dans 15s.";
+        diag_log "[LL] task06 ERROR: Impossible de trouver un M_Dans_Bat_ valide. Relance dans 15s.";
         [[], "LL_fnc_task06"] spawn { sleep 15; ["init"] spawn LL_fnc_task06; };
     };
 

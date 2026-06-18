@@ -17,34 +17,32 @@ if (_mode == "init") exitWith {
     private _selectedLogics = [];
     private _logicsPool = _allLogics call BIS_fnc_arrayShuffle;
     private _alivePlayers = allPlayers select { alive _x };
+    private _maxDist = 2000;
 
-    {
-        private _candidate = _x;
-        private _candidatePos = getPosASL _candidate;
-        private _valid = true;
-
+    while { count _selectedLogics < 2 && _maxDist <= 15000 } do {
+        _selectedLogics = [];
         {
-            if (_x distance2D _candidatePos < 250) exitWith { _valid = false; };
-        } forEach _alivePlayers;
+            private _candidate = _x;
+            private _candidatePos = getPosASL _candidate;
+            private _valid = true;
 
-        if (_valid) then {
+            { private _d = _x distance2D _candidatePos; if (_d < 250 || _d > _maxDist) exitWith { _valid = false; }; } forEach _alivePlayers;
 
-            {
-                if ((getPosASL _x) distance2D _candidatePos < 250) exitWith { _valid = false; };
-            } forEach _selectedLogics;
-        };
+            if (_valid) then {
+                { if ((getPosASL _x) distance2D _candidatePos < 250) exitWith { _valid = false; }; } forEach _selectedLogics;
+            };
 
-        if (_valid) then {
-            _selectedLogics pushBack _candidate;
-        };
+            if (_valid) then { _selectedLogics pushBack _candidate; };
+            if (count _selectedLogics >= _targetNumSpawns) exitWith {};
+        } forEach _logicsPool;
 
-        if (count _selectedLogics >= _targetNumSpawns) exitWith {};
-    } forEach _logicsPool;
+        if (count _selectedLogics < 2) then { _maxDist = _maxDist + 500; };
+    };
 
     private _numSpawns = count _selectedLogics;
 
     if (_numSpawns < 2) exitWith {
-        diag_log "[LL] task01 ERROR: Impossible de trouver assez de lieux à >250m. Relance dans 15s.";
+        diag_log "[LL] task01 ERROR: Impossible de trouver assez de lieux valides. Relance dans 15s.";
         [[], "LL_fnc_task01"] spawn {
             sleep 15;
             ["init"] spawn LL_fnc_task01;

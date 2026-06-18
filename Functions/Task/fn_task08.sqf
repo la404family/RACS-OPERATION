@@ -41,28 +41,32 @@ if (_mode == "init") exitWith {
     } forEach (allVariables missionNamespace);
 
     private _alivePlayers = allPlayers select { alive _x };
-
-    private _eligibleHeliports = _allHeliports select {
-        private _pos = getPosASL _x;
-        private _farFromPlayers = true;
-        { if (_x distance2D _pos < 250) exitWith { _farFromPlayers = false; }; } forEach _alivePlayers;
-        _farFromPlayers
-    };
-
     private _logicJammer = objNull;
     private _logicVehicles = objNull;
+    private _maxDist = 2000;
 
-    if (count _eligibleHeliports >= 2) then {
-        private _shuffled = _eligibleHeliports call BIS_fnc_arrayShuffle;
-        {
-            private _candJammer = _x;
-            private _validVeh = (_shuffled - [_candJammer]) select { (_x distance2D _candJammer) >= 600 };
-            if (count _validVeh > 0) exitWith {
-                _logicJammer = _candJammer;
-                _validVeh = [_validVeh, [], { _x distance2D _candJammer }, "ASCEND"] call BIS_fnc_sortBy;
-                _logicVehicles = _validVeh select 0;
-            };
-        } forEach _shuffled;
+    while { isNull _logicJammer && _maxDist <= 15000 } do {
+        private _eligibleHeliports = _allHeliports select {
+            private _pos = getPosASL _x;
+            private _ok = true;
+            { private _d = _x distance2D _pos; if (_d < 250 || _d > _maxDist) exitWith { _ok = false; }; } forEach _alivePlayers;
+            _ok
+        };
+
+        if (count _eligibleHeliports >= 2) then {
+            private _shuffled = _eligibleHeliports call BIS_fnc_arrayShuffle;
+            {
+                private _candJammer = _x;
+                private _validVeh = (_shuffled - [_candJammer]) select { (_x distance2D _candJammer) >= 600 };
+                if (count _validVeh > 0) exitWith {
+                    _logicJammer = _candJammer;
+                    _validVeh = [_validVeh, [], { _x distance2D _candJammer }, "ASCEND"] call BIS_fnc_sortBy;
+                    _logicVehicles = _validVeh select 0;
+                };
+            } forEach _shuffled;
+        };
+
+        if (isNull _logicJammer) then { _maxDist = _maxDist + 500; };
     };
 
     if (isNull _logicJammer || isNull _logicVehicles) exitWith {

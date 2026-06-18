@@ -19,29 +19,21 @@ if (_mode == "init") exitWith {
     private _selectedLogics = [];
     private _alivePlayers = allPlayers select { alive _x };
     private _logicsPool = _allLogics call BIS_fnc_arrayShuffle;
+    private _maxDist = 2000;
 
-    {
-        private _candidate = _x;
-        private _candidatePos = getPosASL _candidate;
-        private _valid = true;
-        { if (_x distance2D _candidatePos < 250) exitWith { _valid = false; }; } forEach _alivePlayers;
-        { if (_x distance2D _candidatePos < 250) exitWith { _valid = false; }; } forEach _selectedLogics;
-        if (_valid) then { _selectedLogics pushBack _candidate; };
-        if (count _selectedLogics == _numTrucks) exitWith {};
-    } forEach _logicsPool;
-
-    if (count _selectedLogics < _numTrucks) then {
+    while { count _selectedLogics < 1 && _maxDist <= 15000 } do {
+        _selectedLogics = [];
         {
             private _candidate = _x;
-            if !(_candidate in _selectedLogics) then {
-                private _candidatePos = getPosASL _candidate;
-                private _valid = true;
-                { if (_x distance2D _candidatePos < 150) exitWith { _valid = false; }; } forEach _alivePlayers;
-                { if (_x distance2D _candidatePos < 100) exitWith { _valid = false; }; } forEach _selectedLogics;
-                if (_valid) then { _selectedLogics pushBack _candidate; };
-            };
+            private _candidatePos = getPosASL _candidate;
+            private _valid = true;
+            { private _d = _x distance2D _candidatePos; if (_d < 250 || _d > _maxDist) exitWith { _valid = false; }; } forEach _alivePlayers;
+            { if (_x distance2D _candidatePos < 250) exitWith { _valid = false; }; } forEach _selectedLogics;
+            if (_valid) then { _selectedLogics pushBack _candidate; };
             if (count _selectedLogics == _numTrucks) exitWith {};
         } forEach _logicsPool;
+
+        if (count _selectedLogics < 1) then { _maxDist = _maxDist + 500; };
     };
 
     if (count _selectedLogics < 1) exitWith {
