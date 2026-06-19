@@ -22,7 +22,6 @@ if (!hasInterface) exitWith {};
                 };
             };
 
-            // Fix 3 — Annuler toute requête hélico précédente en attente
             missionNamespace setVariable ["LL_Heli_MapClick", false];
 
             openMap true;
@@ -41,7 +40,6 @@ if (!hasInterface) exitWith {};
                 ["STR_LL_Heli_Action_EnRoute", [round (_pos select 0), round (_pos select 1), _type]] call LL_fnc_radioMessage;
             }];
 
-            // Fix 2 — Nettoyage si la carte est fermée par Échap sans clic
             [_ehId] spawn {
                 params ["_ehId"];
                 waitUntil { sleep 0.2; !visibleMap || !(missionNamespace getVariable ["LL_Heli_MapClick", false]) };

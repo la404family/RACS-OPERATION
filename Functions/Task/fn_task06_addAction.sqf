@@ -46,5 +46,4 @@ _this spawn {
         "alive _target && (_target getVariable ['LL_Task_Status', '']) == 'ESCORTED' && attachedTo _target == _this"
     ];
 
-
 };

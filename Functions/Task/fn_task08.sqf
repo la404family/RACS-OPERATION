@@ -253,15 +253,15 @@ if (_mode == "init") exitWith {
         private _spawnPos2D = _posVeh getPos [_dist, _angleIn];
         private _targetPos2D = _posVeh getPos [_dist, _angleIn + 180];
 
-        private _spawnPos = [_spawnPos2D select 0, _spawnPos2D select 1, 1500]; // Spawn en haute altitude (ASL) anti-montagne
+        private _spawnPos = [_spawnPos2D select 0, _spawnPos2D select 1, 1500]; 
         private _targetPos = [_targetPos2D select 0, _targetPos2D select 1, 300];
 
         private _grpPlane = createGroup [independent, true];
         private _plane = createVehicle ["CUP_I_C130J_Cargo_RACS", _spawnPos, [], 0, "FLY"];
         _plane setPosASL _spawnPos;
         _plane setDir (_spawnPos getDir _posVeh);
-        _plane setVelocityModelSpace [0, 150, 0]; // Injection de vélocité (Anti-Stall)
-        _plane flyInHeight 300; // Descente en douceur
+        _plane setVelocityModelSpace [0, 150, 0]; 
+        _plane flyInHeight 300; 
         createVehicleCrew _plane;
         (crew _plane) joinSilent _grpPlane;
 
@@ -330,23 +330,21 @@ if (_mode == "init") exitWith {
 
             ["task_08_main", "SUCCEEDED", true] call BIS_fnc_taskSetState;
             missionNamespace setVariable ["LL_Task08_Finished", true, true];
-            
-            // Avion récompense d'immersion (5 minutes plus tard)
+
             [_posVeh] spawn {
                 params ["_posVeh"];
-                sleep 300; // 5 minutes
-                
+                sleep 300; 
+
                 private _angleIn = random 360;
                 private _dist = (worldSize / 2) max 4000;
                 private _startPos = _posVeh getPos [_dist, _angleIn];
                 private _endPos = _posVeh getPos [_dist, _angleIn + 180];
-                
+
                 _startPos set [2, 300];
                 _endPos set [2, 300];
-                
-                // On réutilise le message radio confirmant que le ciel est dégagé
+
                 ["STR_LL_Task_08_Plane_Safe"] remoteExec ["LL_fnc_radioMessage", 0];
-                
+
                 [
                     _startPos, 
                     _endPos, 

@@ -17,7 +17,6 @@ if (!hasInterface) exitWith {};
                     ["STR_Drone_AlreadyActive_Wait"] call LL_fnc_radioMessage;
                 };
 
-                // Fix 3 — Annuler toute requête drone précédente en attente
                 LL_Drone_MapClick = false;
 
                 openMap true;
@@ -34,7 +33,6 @@ if (!hasInterface) exitWith {};
                     ["STR_Drone_EnRoute", [round (_pos select 0), round (_pos select 1)]] call LL_fnc_radioMessage;
                 }];
 
-                // Fix 2 — Nettoyage si la carte est fermée par Échap sans clic
                 [_ehId] spawn {
                     params ["_ehId"];
                     waitUntil { sleep 0.2; !visibleMap || !LL_Drone_MapClick };

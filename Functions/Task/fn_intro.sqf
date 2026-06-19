@@ -88,7 +88,7 @@ if (hasInterface) then {
 
         private _cam = "camera" camCreate [_camStartX, _camStartY, _camStartZ];
         _cam cameraEffect ["INTERNAL", "BACK"];
-        
+
         if (sunOrMoon < 0.3) then {
             camUseNVG true;
         };
@@ -107,35 +107,35 @@ if (hasInterface) then {
 
         [_cam, _tgt1, _tgt2, _camStartX, _camStartY, _camStartZ, _endCamX, _endCamY, _endCamZ] spawn {
             params ["_cam", "_tgt1", "_tgt2", "_startX", "_startY", "_startZ", "_endX", "_endY", "_endZ"];
-            
+
             private _duration = 15;
             private _startTime = time;
-            
+
             private _startASL = getTerrainHeightASL [_startX, _startY] + _startZ;
             private _endASL = getTerrainHeightASL [_endX, _endY] + _endZ;
-            
+
             private _startTgt = getPosASL _tgt1;
             private _endTgt = getPosASL _tgt2;
 
             while { time < _startTime + _duration } do {
                 private _progress = ((time - _startTime) / _duration) min 1;
-                
+
                 private _curX = _startX + (_endX - _startX) * _progress;
                 private _curY = _startY + (_endY - _startY) * _progress;
                 private _curASL = _startASL + (_endASL - _startASL) * _progress;
-                
+
                 private _groundASL = getTerrainHeightASL [_curX, _curY];
                 if (_curASL < _groundASL + 25) then {
                     _curASL = _groundASL + 25;
                 };
-                
+
                 private _curZ_AGL = _curASL - _groundASL;
                 _cam camSetPos [_curX, _curY, _curZ_AGL];
-                
+
                 private _curTgtX = (_startTgt select 0) + ((_endTgt select 0) - (_startTgt select 0)) * _progress;
                 private _curTgtY = (_startTgt select 1) + ((_endTgt select 1) - (_startTgt select 1)) * _progress;
                 private _curTgtZ = (_startTgt select 2) + ((_endTgt select 2) - (_startTgt select 2)) * _progress;
-                
+
                 _cam camSetTarget [_curTgtX, _curTgtY, _curTgtZ];
                 _cam camCommit 0.1;
                 sleep 0.1;

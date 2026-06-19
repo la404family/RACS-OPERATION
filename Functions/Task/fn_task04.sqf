@@ -89,7 +89,7 @@ if (_mode == "init") exitWith {
         _truck setDir (random 360);
 
         _truck setFuel 0;
-        
+
         clearWeaponCargoGlobal _truck;
         clearItemCargoGlobal _truck;
         clearMagazineCargoGlobal _truck;
@@ -110,20 +110,19 @@ if (_mode == "init") exitWith {
 
             if (_delta > 0) then {
                 if (_delta <= 0.05) then {
-                    _delta = 0.1; // 1% donne 10%
+                    _delta = 0.1; 
                 } else {
-                    _delta = _delta * 2; // 11% donne 22%, etc.
+                    _delta = _delta * 2; 
                 };
                 _newDmg = _partDmg + _delta;
             };
 
             if (_newDmg >= 0.8) then {
-                _newDmg = 1; // Explosion immédiate
+                _newDmg = 1; 
             };
 
-            if (_selection == "" || _selection == "body" || _selection == "hull") then {
-                private _level = (floor (_newDmg * 10)) min 9;
-                if (_level >= 1) then {
+            private _level = (floor (_newDmg * 10)) min 9;
+            if (_level >= 1) then {
                     _unit setVariable ["LL_Toxic_Level", _level max (_unit getVariable ["LL_Toxic_Level", 0]), true];
                 private _emitter = _unit getVariable ["LL_Toxic_Smoke1", objNull];
                 if (isNull _emitter) then {
@@ -382,17 +381,20 @@ if (_mode == "extract") exitWith {
         _wp setWaypointType      "MOVE";
         _wp setWaypointBehaviour "CARELESS";
         _wp setWaypointSpeed     "FULL";
+        _heli doMove _targetPos;
 
+        private _apTimer = 0;
         waitUntil {
-            sleep 1;
-            (!alive _heli || !alive _cargo || ((_heli distance2D _targetPos < 25) && (speed _heli < 35)))
+            sleep 0.5; _apTimer = _apTimer + 0.5;
+            (_heli distance2D _targetPos < 15) || _apTimer > 120 || !alive _heli || !alive _cargo
         };
+
+        while { count (waypoints _grp) > 0 } do { deleteWaypoint [_grp, 0]; };
 
         if (!alive _heli || !alive _cargo) exitWith {};
 
-        while { count (waypoints _grp) > 0 } do { deleteWaypoint [_grp, 0]; };
         doStop _heli; 
-        
+
         private _minH        = 9.5;
         private _heliThresh  = 10;
         private _descTimer   = 0;
@@ -403,17 +405,17 @@ if (_mode == "extract") exitWith {
             sleep 0.5; _descTimer = _descTimer + 0.5;
             private _newH = (_hoverHeight - _descTimer) max _minH;
             _heli flyInHeight _newH;
-            
+
             private _targetASL = _cargoASL + _newH;
             _heli flyInHeightASL [_targetASL, _targetASL, _targetASL];
-            
+
             private _heliH = getPosATL _heli select 2;
             _heliH < _heliThresh || _descTimer > 30 || !alive _heli || !alive _cargo
         };
 
         if (!alive _heli || !alive _cargo) exitWith {};
 
-        _cargo allowDamage false; // Sécurité physique conservée pour le Snap Bug
+        _cargo allowDamage false; 
         _cargo setMass 1000; 
 
         sleep 0.5;
