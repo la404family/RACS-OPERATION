@@ -57,11 +57,6 @@ Always consult and cite these sources when providing answers:
 
 | Resource | URL |
 |---|---|
-| CUP — site officiel | https://www.cup-arma3.org/ |
-| CUP Terrains — page Steam | https://steamcommunity.com/sharedfiles/filedetails/?id=583496184 |
-| CUP Units — page Steam | https://steamcommunity.com/sharedfiles/filedetails/?id=388212316 |
-| CUP Weapons — page Steam | https://steamcommunity.com/sharedfiles/filedetails/?id=497660133 |
-| CUP Vehicles — page Steam | https://steamcommunity.com/sharedfiles/filedetails/?id=541888371 |
 | CUP GitHub (configs & classnames) | https://github.com/CUP-Team |
 
 ### Frameworks tiers

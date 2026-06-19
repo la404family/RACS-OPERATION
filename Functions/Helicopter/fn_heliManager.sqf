@@ -26,18 +26,40 @@ private _fnAborted = {
 };
 
 private _fnGetSpawnPos = {
-
     params ["_targetPos", "_height"];
-    private _corners = [
-        [200,  200,  _height],
-        [200,  4920, _height],
-        [4920, 4920, _height],
-        [4920, 200,  _height]
-    ];
-    private _best = _corners # 0;
-    private _maxD = 0;
-    { private _d = _x distance2D _targetPos; if (_d > _maxD) then { _maxD = _d; _best = _x; }; } forEach _corners;
-    _best
+    
+    private _alivePlayers = allPlayers select { alive _x };
+    private _spawnRadius = 2500;
+    private _foundPos = [];
+    private _mapSize = worldSize;
+    
+    while { count _foundPos == 0 && _spawnRadius <= 8000 } do {
+        private _attempts = 0;
+        while { _attempts < 30 && count _foundPos == 0 } do {
+            private _angle = random 360;
+            private _testPos = _targetPos getPos [_spawnRadius, _angle];
+            _testPos set [2, 350]; 
+            
+            if ((_testPos select 0) > 0 && (_testPos select 0) < _mapSize && (_testPos select 1) > 0 && (_testPos select 1) < _mapSize) then {
+                private _tooClose = false;
+                {
+                    if (_x distance2D _testPos < 2000) exitWith { _tooClose = true; };
+                } forEach _alivePlayers;
+                
+                if (!_tooClose) then { _foundPos = _testPos; };
+            };
+            _attempts = _attempts + 1;
+        };
+        if (count _foundPos == 0) then { _spawnRadius = _spawnRadius + 500; };
+    };
+    
+    if (count _foundPos == 0) then {
+        private _angle = random 360;
+        _foundPos = _targetPos getPos [2500, _angle];
+        _foundPos set [2, 350];
+    };
+    
+    _foundPos
 };
 
 private _fnGetLZ = {
@@ -205,7 +227,7 @@ private _fnRTB = {
     if (alive _heli) then {
         _heli flyInHeight _flyHeight;
         _heli limitSpeed  300;
-        private _rtbDest = [0, 0, 0];
+        private _rtbDest = _homeBase;
         private _wpRTB = _group addWaypoint [_rtbDest, 0];
         _wpRTB setWaypointType       "MOVE";
         _wpRTB setWaypointBehaviour  "CARELESS";

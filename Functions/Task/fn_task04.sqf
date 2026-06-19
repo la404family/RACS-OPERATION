@@ -21,7 +21,7 @@ if (_mode == "init") exitWith {
     private _logicsPool = _allLogics call BIS_fnc_arrayShuffle;
     private _maxDist = 2000;
 
-    while { count _selectedLogics < 1 && _maxDist <= 15000 } do {
+    while { count _selectedLogics < _numTrucks && _maxDist <= 15000 } do {
         _selectedLogics = [];
         {
             private _candidate = _x;
@@ -33,7 +33,7 @@ if (_mode == "init") exitWith {
             if (count _selectedLogics == _numTrucks) exitWith {};
         } forEach _logicsPool;
 
-        if (count _selectedLogics < 1) then { _maxDist = _maxDist + 500; };
+        if (count _selectedLogics < _numTrucks) then { _maxDist = _maxDist + 500; };
     };
 
     if (count _selectedLogics < 1) exitWith {

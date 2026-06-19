@@ -80,8 +80,11 @@ _markerDrone setMarkerSize [0.9, 0.9];
     while { time < _endTime && alive _drone && !(missionNamespace getVariable ["LL_Drone_Jammed", false]) } do {
         _mDrone setMarkerPos (getPosATL _drone);
 
-        private _enemies = _center nearEntities [["Car", "Tank", "Helicopter", "Plane", "Ship"], _scanR];
-        _enemies = _enemies select { alive _x && (side _x == east || _x in (missionNamespace getVariable ["LL_Task08_Targets", []])) };
+        private _enemies = [];
+        if ((_drone distance2D _center) <= (_radius + 200)) then {
+            _enemies = _center nearEntities [["Car", "Tank", "Helicopter", "Plane", "Ship", "Man"], _scanR];
+            _enemies = _enemies select { alive _x && (side _x == east || _x in (missionNamespace getVariable ["LL_Task08_Targets", []])) };
+        };
 
         private _currentEnemyIds = [];
 

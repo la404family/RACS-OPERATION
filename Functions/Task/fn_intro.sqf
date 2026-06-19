@@ -77,8 +77,8 @@ if (hasInterface) then {
 
         private _ang1 = random 360;
         private _ang2 = random 360;
-        private _dist1 = 140 + (random 90);
-        private _dist2 = 100 + (random 80);
+        private _dist1 = 200 + (random 90);
+        private _dist2 = 150 + (random 80);
         private _h1 = 130 + (random 70);
         private _h2 = 110 + (random 70);
 
