@@ -89,6 +89,11 @@ if (_mode == "init") exitWith {
         _truck setDir (random 360);
 
         _truck setFuel 0;
+        
+        clearWeaponCargoGlobal _truck;
+        clearItemCargoGlobal _truck;
+        clearMagazineCargoGlobal _truck;
+        clearBackpackCargoGlobal _truck;
 
         _allTrucks pushBack _truck;
         _allUnits pushBack _truck;
@@ -97,12 +102,29 @@ if (_mode == "init") exitWith {
             params ["_unit", "_selection", "_damage"];
             if (!alive _unit) exitWith { _damage };
 
-            private _currentDmg = damage _unit;
-            private _newDmg = _currentDmg max _damage;
+            private _partDmg = if (_selection != "") then { _unit getHit _selection } else { damage _unit };
+            if (isNil "_partDmg") then { _partDmg = damage _unit; };
 
-            private _level = (floor (_newDmg * 10)) min 9;
-            if (_level >= 1) then {
-                _unit setVariable ["LL_Toxic_Level", _level max (_unit getVariable ["LL_Toxic_Level", 0]), true];
+            private _delta = _damage - _partDmg;
+            private _newDmg = _partDmg;
+
+            if (_delta > 0) then {
+                if (_delta <= 0.05) then {
+                    _delta = 0.1; // 1% donne 10%
+                } else {
+                    _delta = _delta * 2; // 11% donne 22%, etc.
+                };
+                _newDmg = _partDmg + _delta;
+            };
+
+            if (_newDmg >= 0.8) then {
+                _newDmg = 1; // Explosion immédiate
+            };
+
+            if (_selection == "" || _selection == "body" || _selection == "hull") then {
+                private _level = (floor (_newDmg * 10)) min 9;
+                if (_level >= 1) then {
+                    _unit setVariable ["LL_Toxic_Level", _level max (_unit getVariable ["LL_Toxic_Level", 0]), true];
                 private _emitter = _unit getVariable ["LL_Toxic_Smoke1", objNull];
                 if (isNull _emitter) then {
                     _emitter = "#particlesource" createVehicle (getPos _unit);
@@ -150,7 +172,7 @@ if (_mode == "init") exitWith {
                 };
             };
 
-            _damage
+            _newDmg
         }];
 
         _truck setHitPointDamage ["HitEngine", 1];
@@ -360,34 +382,38 @@ if (_mode == "extract") exitWith {
         _wp setWaypointType      "MOVE";
         _wp setWaypointBehaviour "CARELESS";
         _wp setWaypointSpeed     "FULL";
-        _heli doMove _targetPos;
 
-        private _apTimer = 0;
         waitUntil {
-            sleep 0.5; _apTimer = _apTimer + 0.5;
-            (_heli distance2D _targetPos < 15) || _apTimer > 120 || !alive _heli || !alive _cargo
+            sleep 1;
+            (!alive _heli || !alive _cargo || ((_heli distance2D _targetPos < 25) && (speed _heli < 35)))
         };
-
-        while { count (waypoints _grp) > 0 } do { deleteWaypoint [_grp, 0]; };
 
         if (!alive _heli || !alive _cargo) exitWith {};
 
-        doStop _heli;
+        while { count (waypoints _grp) > 0 } do { deleteWaypoint [_grp, 0]; };
+        doStop _heli; 
+        
         private _minH        = 9.5;
         private _heliThresh  = 10;
         private _descTimer   = 0;
+        private _hoverHeight = 15;
+        private _cargoASL    = (getPosASL _cargo) select 2;
 
         waitUntil {
             sleep 0.5; _descTimer = _descTimer + 0.5;
             private _newH = (_hoverHeight - _descTimer) max _minH;
             _heli flyInHeight _newH;
-            _heli flyInHeightASL [_newH, _newH, _newH];
+            
+            private _targetASL = _cargoASL + _newH;
+            _heli flyInHeightASL [_targetASL, _targetASL, _targetASL];
+            
             private _heliH = getPosATL _heli select 2;
             _heliH < _heliThresh || _descTimer > 30 || !alive _heli || !alive _cargo
         };
 
         if (!alive _heli || !alive _cargo) exitWith {};
 
+        _cargo allowDamage false; // Sécurité physique conservée pour le Snap Bug
         _cargo setMass 1000; 
 
         sleep 0.5;
@@ -398,11 +424,12 @@ if (_mode == "extract") exitWith {
         };
 
         _heli flyInHeight 50;
-        _heli flyInHeightASL [50, 50, 50];
+        private _escapeASL = _cargoASL + 50;
+        _heli flyInHeightASL [_escapeASL, _escapeASL, _escapeASL];
 
-        _wp = _grp addWaypoint [_dropPos, 0];
-        _wp setWaypointType "MOVE";
-        _wp setWaypointSpeed "NORMAL";
+        private _wp2 = _grp addWaypoint [_dropPos, 0];
+        _wp2 setWaypointType "MOVE";
+        _wp2 setWaypointSpeed "NORMAL";
         _heli doMove _dropPos;
 
         private _remaining = missionNamespace getVariable ["LL_Task04_RemainingTrucks", []];
