@@ -248,14 +248,20 @@ if (_mode == "init") exitWith {
 
         ["STR_LL_Task_08_Plane_Incoming"] remoteExec ["LL_fnc_radioMessage", 0];
 
-        private _spawnPos = [(_posVeh select 0) - 3000, (_posVeh select 1) - 3000, 300];
-        private _targetPos = [(_posVeh select 0) + 3000, (_posVeh select 1) + 3000, 300];
+        private _angleIn = random 360;
+        private _dist = (worldSize / 2) max 4000;
+        private _spawnPos2D = _posVeh getPos [_dist, _angleIn];
+        private _targetPos2D = _posVeh getPos [_dist, _angleIn + 180];
+
+        private _spawnPos = [_spawnPos2D select 0, _spawnPos2D select 1, 1500]; // Spawn en haute altitude (ASL) anti-montagne
+        private _targetPos = [_targetPos2D select 0, _targetPos2D select 1, 300];
 
         private _grpPlane = createGroup [independent, true];
         private _plane = createVehicle ["CUP_I_C130J_Cargo_RACS", _spawnPos, [], 0, "FLY"];
+        _plane setPosASL _spawnPos;
         _plane setDir (_spawnPos getDir _posVeh);
-        _plane setVelocityModelSpace [0, 100, 0];
-        _plane flyInHeight 300;
+        _plane setVelocityModelSpace [0, 150, 0]; // Injection de vélocité (Anti-Stall)
+        _plane flyInHeight 300; // Descente en douceur
         createVehicleCrew _plane;
         (crew _plane) joinSilent _grpPlane;
 
@@ -268,10 +274,9 @@ if (_mode == "init") exitWith {
         _wp2 setWaypointType "MOVE";
         _wp2 setWaypointSpeed "NORMAL";
 
-        waitUntil { sleep 3; !alive _plane || _plane distance2D _targetPos < 300 || (missionNamespace getVariable ["LL_Task08_Finished", false]) };
+        waitUntil { sleep 3; !alive _plane || _plane distance2D _targetPos < 500 || (missionNamespace getVariable ["LL_Task08_Finished", false]) };
 
         if (missionNamespace getVariable ["LL_Task08_Finished", false]) exitWith {
-
             { deleteVehicle _x; } forEach (crew _plane);
             deleteVehicle _plane;
             deleteGroup _grpPlane;
@@ -282,7 +287,6 @@ if (_mode == "init") exitWith {
             ["task_08_main", "FAILED", true] call BIS_fnc_taskSetState;
             missionNamespace setVariable ["LL_Task08_Finished", true, true];
         } else {
-            ["STR_LL_Task_08_Plane_Safe"] remoteExec ["LL_fnc_radioMessage", 0];
             { deleteVehicle _x; } forEach (crew _plane);
             deleteVehicle _plane;
         };
@@ -326,6 +330,32 @@ if (_mode == "init") exitWith {
 
             ["task_08_main", "SUCCEEDED", true] call BIS_fnc_taskSetState;
             missionNamespace setVariable ["LL_Task08_Finished", true, true];
+            
+            // Avion récompense d'immersion (5 minutes plus tard)
+            [_posVeh] spawn {
+                params ["_posVeh"];
+                sleep 300; // 5 minutes
+                
+                private _angleIn = random 360;
+                private _dist = (worldSize / 2) max 4000;
+                private _startPos = _posVeh getPos [_dist, _angleIn];
+                private _endPos = _posVeh getPos [_dist, _angleIn + 180];
+                
+                _startPos set [2, 300];
+                _endPos set [2, 300];
+                
+                // On réutilise le message radio confirmant que le ciel est dégagé
+                ["STR_LL_Task_08_Plane_Safe"] remoteExec ["LL_fnc_radioMessage", 0];
+                
+                [
+                    _startPos, 
+                    _endPos, 
+                    300, 
+                    "NORMAL", 
+                    "CUP_I_C130J_Cargo_RACS", 
+                    independent
+                ] call BIS_fnc_ambientFlyby;
+            };
         } else {
 
             if (["task_08_main"] call BIS_fnc_taskState != "FAILED") then {
