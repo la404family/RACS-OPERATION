@@ -94,7 +94,10 @@ if (_mode == "init") exitWith {
             _hvt disableAI "TARGET";
             _hvt disableAI "AUTOTARGET";
             _hvt setUnitPos "UP";
-            [_hvt, "AmovPercMstpSnonWnonDnon_AmovPercMstpSsurWnonDnon"] remoteExec ["switchMove", 0];
+            // Transition douce vers mains sur la tête
+            [_hvt, "AmovPercMstpSnonWnonDnon_AmovPercMstpSsurWnonDnon"] remoteExec ["playMove", 0];
+            // Verrouiller la boucle surrender après la fin de la transition (~1.3s)
+            [_hvt] spawn { params ["_u"]; sleep 1.3; [_u, "AmovPercMstpSsurWnonDnon"] remoteExec ["switchMove", 0]; };
 
             _hvt setVariable ["LL_Task_Status", "READY_TO_CAPTURE", true];
 
@@ -168,73 +171,137 @@ if (_mode == "escort") exitWith {
     _hvt disableAI "TARGET";
     _hvt disableAI "AUTOTARGET";
     _hvt setBehaviour "CARELESS";
+    _hvt forceWalk true;
     _hvt setSpeedMode "LIMITED";
+    _hvt setUnitPos "UP";
 
-    [_hvt, "AmovPercMstpSsurWnonDnon"] remoteExec ["switchMove", 0];
-
+    // Désactivation des collisions avant le suivi
     [_hvt, _caller] remoteExec ["disableCollisionWith", 0];
     [_caller, _hvt] remoteExec ["disableCollisionWith", 0];
+
+    // Transition d'anim vers pose de reddition (si pas encore dans cet état)
+    [_hvt, "AmovPercMstpSnonWnonDnon_AmovPercMstpSsurWnonDnon"] remoteExec ["playMove", 0];
+
+    // Premier doMove vers la position actuelle du joueur pour initialiser le pathfinding
+    _hvt doMove (getPosATL _caller);
 
     [_hvt, _caller] spawn {
         params ["_hvt", "_caller"];
         if (isNull _hvt || isNull _caller) exitWith {};
 
-        private _lastAnimState = "STOP";
-        private _lastMoveTime = 0;
+        // ── Seuils de comportement ──────────────────────────────────────────
+        private _DIST_TIGHT    = 2.0;  // m  – zone «collé» : stoppe si l'escorteur est arrêté
+        private _DIST_WALK     = 5.0;  // m  – marche forcée en dessous
+        private _DIST_FAST     = 10.0; // m  – trot pour rattraper
+        private _DIST_SPRINT   = 18.0; // m  – course si trop de retard
+        private _MOVE_REFRESH  = 0.7;  // m  – déplacement joueur min avant ré-émission doMove
+        private _SPEED_MOVING  = 0.3;  // m/s – seuil «en mouvement» pour l'otage
+        private _ANIM_DEBOUNCE = 0.7;  // s  – délai min entre deux changements d'état anim
 
+        // ── Suivi de position ───────────────────────────────────────────────
+        // doMove est ré-émis uniquement si le joueur s'est déplacé d'au moins _MOVE_REFRESH
+        // ou si l'otage est trop loin – évite les recalculs pathfinding inutiles
+        private _lastFollowPos = getPosATL _caller;
+
+        // ── Machine à états animation ───────────────────────────────────────
+        private _animState              = "IDLE";
+        private _animLockUntil          = time + 1.5;
+        private _pendingSwitchSurrender = time + 1.5;
+
+        // ── Boucle principale de suivi ──────────────────────────────────────
         while { alive _hvt && (_hvt getVariable ["LL_Task_Status", ""]) == "ESCORTED" } do {
+
+            // ── Garde : escorteur mort ou déconnecté ────────────────────────
             if (isNull _caller || !alive _caller) exitWith {
                 _hvt setVariable ["LL_Task_Status", "READY_TO_CAPTURE", true];
                 _hvt setVariable ["LL_Task06_EscortParent", objNull, true];
                 _hvt disableAI "PATH";
-                [_hvt, "AmovPercMstpSnonWnonDnon_AmovPercMstpSsurWnonDnon"] remoteExec ["switchMove", 0];
+                doStop _hvt;
+                [_hvt, "AmovPercMstpSnonWnonDnon_AmovPercMstpSsurWnonDnon"] remoteExec ["playMove", 0];
+                [_hvt] spawn { params ["_u"]; sleep 1.3; [_u, "AmovPercMstpSsurWnonDnon"] remoteExec ["switchMove", 0]; };
             };
 
             if (vehicle _hvt == _hvt && attachedTo _hvt isEqualTo objNull) then {
-                private _targetPos = getPosATL _caller;
-                private _dist = _hvt distance2D _caller;
+                private _callerPos   = getPosATL _caller;
+                private _dist        = _hvt distance2D _caller;
+                private _hvtSpeed    = vectorMagnitude (velocity _hvt);
+                private _callerSpeed = vectorMagnitude (velocity _caller);
 
-                // Gestion dynamique de l'allure de l'otage en fonction de la distance (suivi ultra-serré)
-                if (_dist > 5) then {
+                // ── Vitesse adaptative ──────────────────────────────────────
+                if (_dist > _DIST_SPRINT) then {
                     _hvt forceWalk false;
-                    _hvt setSpeedMode "FULL"; // Trot/Course rapide si retard
+                    _hvt setSpeedMode "FULL";
                 } else {
-                    _hvt forceWalk true;
-                    _hvt setSpeedMode "LIMITED"; // Marche forcée si très proche
+                    if (_dist > _DIST_FAST) then {
+                        _hvt forceWalk false;
+                        _hvt setSpeedMode "NORMAL";
+                    } else {
+                        if (_dist > _DIST_WALK) then {
+                            _hvt forceWalk false;
+                            _hvt setSpeedMode "LIMITED";
+                        } else {
+                            _hvt forceWalk true;
+                            _hvt setSpeedMode "LIMITED";
+                        };
+                    };
                 };
 
-                private _playerMoving = (vectorMagnitude (velocity _caller)) > 0.2;
+                // ── Suivi doMove intelligent ────────────────────────────────
+                // Ré-émettre seulement si le joueur a bougé OU si l'otage est décroché
+                private _playerMoved = _lastFollowPos distance2D _callerPos > _MOVE_REFRESH;
+                if (_playerMoved || _dist > _DIST_TIGHT) then {
+                    _hvt doMove _callerPos;
+                    _lastFollowPos = _callerPos;
+                };
 
-                if (_playerMoving || _dist > 1.8) then {
-                    // Eviter de surcharger le pathfinding en limitant l'envoi de doMove à toutes les 0.4s
-                    if (time - _lastMoveTime > 0.4) then {
-                        _hvt doMove _targetPos;
-                        _lastMoveTime = time;
+                // Stopper si l'escorteur immobile et l'otage est collé (<2 m)
+                if (_callerSpeed < 0.1 && _dist < _DIST_TIGHT) then {
+                    doStop _hvt;
+                };
+
+                // ── Machine à états animation (debounce) ────────────────────
+                if (time > _animLockUntil) then {
+                    private _hvtIsMoving = _hvtSpeed > _SPEED_MOVING || _dist > _DIST_WALK;
+
+                    // IDLE → WALK : switchMove normal lève le verrou surrender
+                    // et redonne la capacité de marche à l'AI ANIM
+                    if (_hvtIsMoving && _animState == "IDLE") then {
+                        _animState              = "WALK";
+                        _animLockUntil          = time + _ANIM_DEBOUNCE;
+                        _pendingSwitchSurrender = -1;
+                        [_hvt, "AmovPercMstpSnonWnonDnon"] remoteExec ["switchMove", 0];
                     };
-                    
-                    if (_lastAnimState != "MOVE") then {
-                        _lastAnimState = "MOVE";
-                        [_hvt, "AmovPercMstpSsurWnonDnon_AmovPercMstpSnonWnonDnon"] remoteExec ["switchMove", 0];
-                    };
-                } else {
-                    if (_lastAnimState != "STOP") then {
-                        _lastAnimState = "STOP";
-                        doStop _hvt;
+
+                    // WALK → IDLE : playMove fluide + surrender verrouillé en différé
+                    if (!_hvtIsMoving && _animState == "WALK") then {
+                        _animState     = "IDLE";
+                        _animLockUntil = time + _ANIM_DEBOUNCE;
                         _hvt setDir (getDir _caller);
-                        [_hvt, "AmovPercMstpSnonWnonDnon_AmovPercMstpSsurWnonDnon"] remoteExec ["switchMove", 0];
+                        [_hvt, "AmovPercMstpSnonWnonDnon_AmovPercMstpSsurWnonDnon"] remoteExec ["playMove", 0];
+                        _pendingSwitchSurrender = time + 1.3;
                     };
+                };
+
+                // Verrouillage surrender différé (seulement si toujours IDLE)
+                if (_pendingSwitchSurrender > 0 && time > _pendingSwitchSurrender && _animState == "IDLE") then {
+                    _pendingSwitchSurrender = -1;
+                    [_hvt, "AmovPercMstpSsurWnonDnon"] remoteExec ["switchMove", 0];
                 };
             };
-            sleep 0.15; // Boucle très rapide pour une réactivité optimale sous les 3 mètres
+
+            sleep 0.2;
         };
 
-        if (!isNull _caller) then {
+        // ── Nettoyage à la sortie de la boucle ─────────────────────────────
+        if (!isNull _caller && alive _caller) then {
             [_hvt, _caller] remoteExec ["enableCollisionWith", 0];
             [_caller, _hvt] remoteExec ["enableCollisionWith", 0];
         };
 
         if (alive _hvt && (_hvt getVariable ["LL_Task_Status", ""]) != "DONE") then {
-            [_hvt, "AmovPercMstpSnonWnonDnon_AmovPercMstpSsurWnonDnon"] remoteExec ["switchMove", 0];
+            doStop _hvt;
+            [_hvt, "AmovPercMstpSnonWnonDnon_AmovPercMstpSsurWnonDnon"] remoteExec ["playMove", 0];
+            [_hvt] spawn { params ["_u"]; sleep 1.3; [_u, "AmovPercMstpSsurWnonDnon"] remoteExec ["switchMove", 0]; };
         };
     };
 
@@ -395,5 +462,14 @@ if (_mode == "release") exitWith {
     _hvt setVariable ["LL_Task_Status", "READY_TO_CAPTURE", true];
     _hvt setVariable ["LL_Task06_EscortParent", objNull, true];
 
+    // Stopper le déplacement et désactiver le pathfinding
     _hvt disableAI "PATH";
+    doStop _hvt;
+
+    // Rétablir les collisions immédiatement
+    [_hvt, _caller] remoteExec ["enableCollisionWith", 0];
+    [_caller, _hvt] remoteExec ["enableCollisionWith", 0];
+
+    // Transition douce vers la pose de reddition statique
+    [_hvt, "AmovPercMstpSnonWnonDnon_AmovPercMstpSsurWnonDnon"] remoteExec ["playMove", 0];
 };
