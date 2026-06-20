@@ -240,7 +240,7 @@ private _fnRTB = {
         waitUntil {
             sleep 5;
             private _playersSafe = ({ _x distance2D _heli < 1200 } count allPlayers) == 0;
-            ((_heli distance2D _rtbDest < 100) && _playersSafe) || !alive _heli || call _fnAborted
+            ((_heli distance2D _rtbDest < 100) && _playersSafe) || !alive _heli
         };
 
         while { count (waypoints _group) > 0 } do { deleteWaypoint [_group, 0]; };
@@ -782,9 +782,9 @@ private _fnExecExtract = {
     private _posTimer = 0;
     waitUntil {
         sleep 0.5; _posTimer = _posTimer + 0.5;
-        (_heli distance2D _targetPos < 5) || _posTimer > 30 || !alive _heli
+        (_heli distance2D _targetPos < 5) || _posTimer > 30 || !alive _heli || call _fnAborted
     };
-    if (!alive _heli) exitWith { false };
+    if (!alive _heli || call _fnAborted) exitWith { false };
     while { count (waypoints _group) > 0 } do { deleteWaypoint [_group, 0]; };
 
     doStop _heli;
@@ -796,15 +796,16 @@ private _fnExecExtract = {
         private _newH = (15 - _descentTimer) max 3;
         _heli flyInHeight _newH;
         _heli flyInHeightASL [_newH, _newH, _newH];
-        (getPosATL _heli select 2) <= 5 || _descentTimer > 30 || !alive _heli
+        (getPosATL _heli select 2) <= 5 || _descentTimer > 30 || !alive _heli || call _fnAborted
     };
-    if (!alive _heli) exitWith { false };
+    if (!alive _heli || call _fnAborted) exitWith { false };
 
     while { count (waypoints _group) > 0 } do { deleteWaypoint [_group, 0]; };
     _heli flyInHeight 0;
     _heli land "LAND";
     private _landTimeout = time + 30;
-    waitUntil { sleep 0.5; !alive _heli || isTouchingGround _heli || time > _landTimeout };
+    waitUntil { sleep 0.5; !alive _heli || isTouchingGround _heli || time > _landTimeout || call _fnAborted };
+    if (call _fnAborted) exitWith { false };
     if (!isTouchingGround _heli && alive _heli) then {
         _heli setVelocity [0,0,0];
         _heli setPos [_targetPos # 0, _targetPos # 1, 0];

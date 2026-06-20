@@ -87,10 +87,14 @@ if (_mode == "init") exitWith {
 
             removeAllWeapons _hvt;
 
-            _hvt disableAI "MOVE";
+            _hvt enableAI "MOVE";
             _hvt enableAI "ANIM";
+            _hvt disableAI "PATH";
+            _hvt disableAI "FSM";
+            _hvt disableAI "TARGET";
+            _hvt disableAI "AUTOTARGET";
             _hvt setUnitPos "UP";
-            [_hvt, "AmovPercMstpSsurWnonDnon"] remoteExec ["playMoveNow", 0];
+            [_hvt, "AmovPercMstpSnonWnonDnon_AmovPercMstpSsurWnonDnon"] remoteExec ["switchMove", 0];
 
             _hvt setVariable ["LL_Task_Status", "READY_TO_CAPTURE", true];
 
@@ -103,9 +107,8 @@ if (_mode == "init") exitWith {
 
     _hvt addEventHandler ["Killed", {
         params ["_unit"];
-        private _parent = attachedTo _unit;
+        private _parent = _unit getVariable ["LL_Task06_EscortParent", objNull];
         if (!isNull _parent && alive _parent) then {
-            [_parent, false] remoteExec ["forceWalk", _parent];
             [_unit, _parent] remoteExec ["enableCollisionWith", 0, _unit];
             [_parent, _unit] remoteExec ["enableCollisionWith", 0, _unit];
         };
@@ -156,16 +159,84 @@ if (_mode == "escort") exitWith {
 
     if ((_hvt getVariable ["LL_Task_Status", ""]) != "READY_TO_CAPTURE") exitWith {};
     _hvt setVariable ["LL_Task_Status", "ESCORTED", true];
+    _hvt setVariable ["LL_Task06_EscortParent", _caller, true];
 
-    _hvt disableAI "MOVE";
+    _hvt enableAI "MOVE";
+    _hvt enableAI "ANIM";
+    _hvt enableAI "PATH";
     _hvt disableAI "FSM";
-    _hvt attachTo [_caller, [0.5, 0.4, 0]]; 
-    [_hvt, 0] remoteExec ["setDir", 0, _hvt];
+    _hvt disableAI "TARGET";
+    _hvt disableAI "AUTOTARGET";
+    _hvt setBehaviour "CARELESS";
+    _hvt setSpeedMode "LIMITED";
 
-    [_hvt, _caller] remoteExec ["disableCollisionWith", 0, _hvt];
-    [_caller, _hvt] remoteExec ["disableCollisionWith", 0, _hvt];
+    [_hvt, "AmovPercMstpSsurWnonDnon"] remoteExec ["switchMove", 0];
 
-    [_caller, true] remoteExec ["forceWalk", _caller];
+    [_hvt, _caller] remoteExec ["disableCollisionWith", 0];
+    [_caller, _hvt] remoteExec ["disableCollisionWith", 0];
+
+    [_hvt, _caller] spawn {
+        params ["_hvt", "_caller"];
+        if (isNull _hvt || isNull _caller) exitWith {};
+
+        private _lastAnimState = "STOP";
+        private _lastMoveTime = 0;
+
+        while { alive _hvt && (_hvt getVariable ["LL_Task_Status", ""]) == "ESCORTED" } do {
+            if (isNull _caller || !alive _caller) exitWith {
+                _hvt setVariable ["LL_Task_Status", "READY_TO_CAPTURE", true];
+                _hvt setVariable ["LL_Task06_EscortParent", objNull, true];
+                _hvt disableAI "PATH";
+                [_hvt, "AmovPercMstpSnonWnonDnon_AmovPercMstpSsurWnonDnon"] remoteExec ["switchMove", 0];
+            };
+
+            if (vehicle _hvt == _hvt && attachedTo _hvt isEqualTo objNull) then {
+                private _targetPos = getPosATL _caller;
+                private _dist = _hvt distance2D _caller;
+
+                // Gestion dynamique de l'allure de l'otage en fonction de la distance (suivi ultra-serré)
+                if (_dist > 5) then {
+                    _hvt forceWalk false;
+                    _hvt setSpeedMode "FULL"; // Trot/Course rapide si retard
+                } else {
+                    _hvt forceWalk true;
+                    _hvt setSpeedMode "LIMITED"; // Marche forcée si très proche
+                };
+
+                private _playerMoving = (vectorMagnitude (velocity _caller)) > 0.2;
+
+                if (_playerMoving || _dist > 1.8) then {
+                    // Eviter de surcharger le pathfinding en limitant l'envoi de doMove à toutes les 0.4s
+                    if (time - _lastMoveTime > 0.4) then {
+                        _hvt doMove _targetPos;
+                        _lastMoveTime = time;
+                    };
+                    
+                    if (_lastAnimState != "MOVE") then {
+                        _lastAnimState = "MOVE";
+                        [_hvt, "AmovPercMstpSsurWnonDnon_AmovPercMstpSnonWnonDnon"] remoteExec ["switchMove", 0];
+                    };
+                } else {
+                    if (_lastAnimState != "STOP") then {
+                        _lastAnimState = "STOP";
+                        doStop _hvt;
+                        _hvt setDir (getDir _caller);
+                        [_hvt, "AmovPercMstpSnonWnonDnon_AmovPercMstpSsurWnonDnon"] remoteExec ["switchMove", 0];
+                    };
+                };
+            };
+            sleep 0.15; // Boucle très rapide pour une réactivité optimale sous les 3 mètres
+        };
+
+        if (!isNull _caller) then {
+            [_hvt, _caller] remoteExec ["enableCollisionWith", 0];
+            [_caller, _hvt] remoteExec ["enableCollisionWith", 0];
+        };
+
+        if (alive _hvt && (_hvt getVariable ["LL_Task_Status", ""]) != "DONE") then {
+            [_hvt, "AmovPercMstpSnonWnonDnon_AmovPercMstpSsurWnonDnon"] remoteExec ["switchMove", 0];
+        };
+    };
 
     if !(missionNamespace getVariable ["LL_Task06_Triggered", false]) then {
         missionNamespace setVariable ["LL_Task06_Triggered", true, true];
@@ -182,6 +253,39 @@ if (_mode == "escort") exitWith {
         ["EMBARQUEMENT", getPos _hvt, _caller, 3] spawn LL_fnc_heliDispatch;
 
         deleteMarker "mkr_task06_zone";
+
+        private _allUnits = missionNamespace getVariable ["LL_Task06_AllUnits", []];
+        private _guards = _allUnits select { _x != _hvt && alive _x };
+        if (count _guards > 0) then {
+            private _players = allPlayers select { alive _x };
+            private _groups = [];
+            {
+                private _guard = _x;
+                _guard enableAI "MOVE";
+                _guard enableAI "AUTOTARGET";
+                _guard enableAI "TARGET";
+                _guard setBehaviour "COMBAT";
+                _guard setCombatMode "RED";
+                _guard setSpeedMode "FULL";
+                _guard disableAI "SUPPRESSION";
+                _guard setSkill ["courage", 1.0];
+                _guard setSkill ["aimingAccuracy", 0.15 + random 0.10];
+                { _guard reveal [_x, 4]; } forEach _players;
+
+                private _g = group _guard;
+                if !(_g in _groups) then { _groups pushBack _g; };
+            } forEach _guards;
+
+            {
+                private _grp = _x;
+                while { count waypoints _grp > 0 } do { deleteWaypoint [_grp, 0]; };
+                private _wp = _grp addWaypoint [getPosATL _caller, 15];
+                _wp setWaypointType "SAD";
+                _wp setWaypointSpeed "FULL";
+                _wp setWaypointBehaviour "COMBAT";
+                _wp setWaypointCombatMode "RED";
+            } forEach _groups;
+        };
 
         [_hvt] spawn {
             params ["_hvt"];
@@ -201,9 +305,8 @@ if (_mode == "escort") exitWith {
 
                                 _hvt setVariable ["LL_Task_Status", "DONE", true];
 
-                                private _parent = attachedTo _hvt;
+                                private _parent = _hvt getVariable ["LL_Task06_EscortParent", objNull];
                                 if (!isNull _parent) then {
-                                    [_parent, false] remoteExec ["forceWalk", _parent];
                                     [_hvt, _parent] remoteExec ["enableCollisionWith", 0, _hvt];
                                     [_parent, _hvt] remoteExec ["enableCollisionWith", 0, _hvt];
                                 };
@@ -211,6 +314,7 @@ if (_mode == "escort") exitWith {
 
                                 [_hvt] joinSilent (group _target);
                                 _hvt assignAsCargo _target;
+                                _hvt enableAI "PATH";
                                 [_hvt] orderGetIn true;
                                 _hvt moveInCargo _target;
                             },
@@ -219,7 +323,7 @@ if (_mode == "escort") exitWith {
                             true,
                             true,
                             "",
-                            "alive _target && (_target distance _this < 10) && ((missionNamespace getVariable ['LL_Task06_HVT', objNull]) getVariable ['LL_Task_Status', '']) == 'ESCORTED' && attachedTo (missionNamespace getVariable ['LL_Task06_HVT', objNull]) == _this"
+                            "alive _target && (_target distance _this < 10) && ((missionNamespace getVariable ['LL_Task06_HVT', objNull]) getVariable ['LL_Task_Status', '']) == 'ESCORTED' && ((missionNamespace getVariable ['LL_Task06_HVT', objNull]) getVariable ['LL_Task06_EscortParent', objNull]) == _this"
                         ]
                     ] remoteExec ["addAction", 0, _heli];
                 };
@@ -247,99 +351,41 @@ if (_mode == "escort") exitWith {
             private _guards = _allUnits select { _x != _hvt && alive _x };
 
             if (count _guards > 0) then {
-                private _dissolveGrp = createGroup [east, true];
+                private _players = allPlayers select { alive _x };
+                private _groups = [];
                 {
-                    _x enableAI "MOVE";
-                    _x setBehaviour "SAFE";
-                    _x setSpeedMode "FULL";
-                    _x setVariable ["LL_TaskXX_Escaping", true, true];
+                    private _guard = _x;
+                    _guard enableAI "MOVE";
+                    _guard enableAI "AUTOTARGET";
+                    _guard enableAI "TARGET";
+                    _guard setBehaviour "COMBAT";
+                    _guard setCombatMode "RED";
+                    _guard setSpeedMode "FULL";
+                    _guard disableAI "SUPPRESSION";
+                    _guard setSkill ["courage", 1.0];
+                    _guard setSkill ["aimingAccuracy", 0.15 + random 0.10];
+                    { _guard reveal [_x, 4]; } forEach _players;
+
+                    private _g = group _guard;
+                    if !(_g in _groups) then { _groups pushBack _g; };
                 } forEach _guards;
 
-                _guards joinSilent _dissolveGrp;
-
-                [_guards, _dissolveGrp] spawn {
-                    params ["_units", "_grp"];
-                    private _alive = _units select { alive _x };
-                    if (count _alive == 0) exitWith {};
-
-                    private _running = true;
-                    while { _running && ({ alive _x } count _alive) > 0 } do {
-                        private _refPos  = getPos (leader _grp);
-                        private _dissolvePos = [];
-                        private _attempts    = 0;
-
-                        while { count _dissolvePos == 0 && _attempts < 30 } do {
-                            _attempts = _attempts + 1;
-                            private _candidate = _refPos getPos [200 + random 300, random 360];
-                            private _valid = true;
-                            { if (_x distance2D _candidate <= 150) exitWith { _valid = false; }; } forEach (allPlayers select { alive _x });
-                            if (_valid) then { _dissolvePos = _candidate; };
-                         };
-
-                        if (count _dissolvePos == 0) then {
-                            _dissolvePos = _refPos getPos [400, random 360];
-                        };
-
+                if (count _players > 0) then {
+                    private _firstPlayer = _players select 0;
+                    {
+                        private _grp = _x;
                         while { count waypoints _grp > 0 } do { deleteWaypoint [_grp, 0]; };
-                        private _wp = _grp addWaypoint [_dissolvePos, 5];
-                        _wp setWaypointType "MOVE";
+                        private _wp = _grp addWaypoint [getPosATL _firstPlayer, 15];
+                        _wp setWaypointType "SAD";
                         _wp setWaypointSpeed "FULL";
-                        _wp setWaypointBehaviour "SAFE";
-
-                        waitUntil {
-                            sleep 1;
-                            ({ alive _x } count _alive) == 0 || (leader _grp distance2D _dissolvePos <= 5)
-                        };
-
-                        if (({ alive _x } count _alive) == 0) exitWith { _running = false; };
-
-                        private _allFar = true;
-                        { if (_x distance2D _dissolvePos <= 150) exitWith { _allFar = false; }; } forEach (allPlayers select { alive _x });
-
-                        if (_allFar) then {
-                            { if (!isNull _x && alive _x) then { deleteVehicle _x; }; } forEach _alive;
-                            if (!isNull _grp) then { deleteGroup _grp; };
-                            _running = false;
-                        };
-                    };
+                        _wp setWaypointBehaviour "COMBAT";
+                        _wp setWaypointCombatMode "RED";
+                    } forEach _groups;
                 };
             };
         };
     };
 
-    if !(_hvt getVariable ["LL_Task06_LoopRunning", false]) then {
-        _hvt setVariable ["LL_Task06_LoopRunning", true, true];
-        [_hvt] spawn {
-            params ["_hvt"];
-            while { alive _hvt && (_hvt getVariable ["LL_Task_Status", ""]) != "DONE" } do {
-                private _status = _hvt getVariable ["LL_Task_Status", ""];
-                if (_status == "ESCORTED") then {
-                    private _parent = attachedTo _hvt;
-                    if (!isNull _parent && alive _parent) then {
-                        private _parentSpeed = vectorMagnitude (velocity _parent);
-                        private _isMoving = _parentSpeed > 0.2;
-                        private _anim = animationState _hvt;
-                        if (_isMoving) then {
-                            if (_anim != "amovpercmwlkssurwnondnon" && _anim != "amovpercmwlkssurwnondnon_f") then {
-                                [_hvt, "AmovPercMwlkSsurWnonDnon"] remoteExec ["playMoveNow", 0];
-                            };
-                        } else {
-                            if (_anim != "amovpercmstpssurwnondnon") then {
-                                [_hvt, "AmovPercMstpSsurWnonDnon"] remoteExec ["playMoveNow", 0];
-                            };
-                        };
-                    } else {
-
-                        detach _hvt;
-                        _hvt setVariable ["LL_Task_Status", "READY_TO_CAPTURE", true];
-                        [_hvt, "AmovPercMstpSsurWnonDnon"] remoteExec ["playMoveNow", 0];
-                    };
-                };
-                sleep 0.4;
-            };
-            _hvt setVariable ["LL_Task06_LoopRunning", false, true];
-        };
-    };
 };
 
 if (_mode == "release") exitWith {
@@ -347,13 +393,7 @@ if (_mode == "release") exitWith {
 
     if ((_hvt getVariable ["LL_Task_Status", ""]) != "ESCORTED") exitWith {};
     _hvt setVariable ["LL_Task_Status", "READY_TO_CAPTURE", true];
+    _hvt setVariable ["LL_Task06_EscortParent", objNull, true];
 
-    detach _hvt;
-
-    [_hvt, _caller] remoteExec ["enableCollisionWith", 0, _hvt];
-    [_caller, _hvt] remoteExec ["enableCollisionWith", 0, _hvt];
-
-    [_caller, false] remoteExec ["forceWalk", _caller];
-
-    [_hvt, "AmovPercMstpSsurWnonDnon"] remoteExec ["playMoveNow", 0];
+    _hvt disableAI "PATH";
 };

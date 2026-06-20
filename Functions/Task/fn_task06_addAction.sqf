@@ -43,7 +43,7 @@ _this spawn {
             ["release", [_target, _caller]] remoteExec ["LL_fnc_task06", 2];
         },
         nil, 6.0, true, true, "",
-        "alive _target && (_target getVariable ['LL_Task_Status', '']) == 'ESCORTED' && attachedTo _target == _this"
+        "alive _target && (_target getVariable ['LL_Task_Status', '']) == 'ESCORTED' && (_target getVariable ['LL_Task06_EscortParent', objNull]) == _this"
     ];
 
 };
