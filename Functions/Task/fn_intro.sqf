@@ -148,7 +148,7 @@ if (hasInterface) then {
             format [
                 "<t size='3.2' color='#ffffff' font='PuristaBold' shadow='2' align='center'>%1</t><br/>" +
                 "<t size='1.5' color='#E5B729' font='PuristaSemiBold' align='center' letterSpacing='0.15'>%2</t><br/>" +
-                "<t size='1.5' color='#1D8340' font='PuristaBold' align='center'>- - - - - - * * * * * - - - - - -</t>",
+                "<t size='1.3' color='#1D8340' font='PuristaBold' shadow='2' align='center'><t color='#ffffff'>R</t>OYAL <t color='#ffffff'>A</t>RMY <t color='#ffffff'>C</t>ORPS OF <t color='#ffffff'>S</t>AHRANI</t>",
                 "<t color='#12778A'>O</t>PERATION <t color='#12778A'>R</t>OYAL <t color='#12778A'>A</t>LLIANCE",
                 localize "STR_LL_Intro_Presents"
             ],

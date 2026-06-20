@@ -91,5 +91,11 @@ _unit linkItem "ItemRadio";
 _unit linkItem "NVGogglesB_blk_F";
 
 if (_pWeapon != "") then { _unit selectWeapon _pWeapon; };
-[_unit, "CSAT_ScimitarRegiment"] call BIS_fnc_setUnitInsignia;
+[_unit, "RACS_Custom_Patch"] spawn {
+    params ["_unit", "_insignia"];
+    sleep 0.5;
+    if (alive _unit) then {
+        [_unit, _insignia] call BIS_fnc_setUnitInsignia;
+    };
+};
 _unit setVariable ["LL_LoadoutSet", true, true];

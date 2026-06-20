@@ -18,7 +18,7 @@ if (_mode == "init") exitWith {
         private _eligibleLogics = _allLogics select {
             private _pos = getPosASL _x;
             private _ok = true;
-            { private _d = _x distance2D _pos; if (_d < 250 || _d > _maxDist) exitWith { _ok = false; }; } forEach _alivePlayers;
+            { private _d = _x distance2D _pos; if (_d < 950 || _d > _maxDist) exitWith { _ok = false; }; } forEach _alivePlayers;
             _ok
         };
 
@@ -553,56 +553,7 @@ if (_mode == "complete") exitWith {
 
         private _villagers = missionNamespace getVariable ["LL_Task07_Villagers", []];
         private _aliveVillagers = _villagers select { alive _x };
-
-        if (count _aliveVillagers > 0) then {
-            private _dissolveGrp = createGroup [west, true];
-            {
-                _x enableAI "MOVE";
-                _x enableAI "AUTOTARGET";
-                _x enableAI "TARGET";
-                _x enableAI "WEAPONAIM";
-                _x setUnitPos "UP";
-                _x setBehaviour "SAFE";
-                _x setSpeedMode "LIMITED";
-                [_x, "AmovPercMstpSrasWpstDnon"] remoteExec ["switchMove", 0];
-                _x action ["WeaponOnBack", _x];
-            } forEach _aliveVillagers;
-            _aliveVillagers joinSilent _dissolveGrp;
-
-            [_aliveVillagers, _dissolveGrp] spawn {
-                params ["_units", "_grp"];
-                private _alive = _units select { alive _x };
-                if (count _alive == 0) exitWith {};
-                private _running = true;
-                while { _running && ({ alive _x } count _alive) > 0 } do {
-                    private _refPos  = getPos (leader _grp);
-                    private _dissolvePos = [];
-                    private _attempts    = 0;
-                    while { count _dissolvePos == 0 && _attempts < 30 } do {
-                        _attempts = _attempts + 1;
-                        private _candidate = _refPos getPos [200 + random 300, random 360];
-                        private _valid = true;
-                        { if (_x distance2D _candidate <= 150) exitWith { _valid = false; }; } forEach (allPlayers select { alive _x });
-                        if (_valid) then { _dissolvePos = _candidate; };
-                    };
-                    if (count _dissolvePos == 0) then { _dissolvePos = _refPos getPos [400, random 360]; };
-                    while { count waypoints _grp > 0 } do { deleteWaypoint [_grp, 0]; };
-                    private _wp = _grp addWaypoint [_dissolvePos, 5];
-                    _wp setWaypointType "MOVE";
-                    _wp setWaypointSpeed "LIMITED";
-                    _wp setWaypointBehaviour "SAFE";
-                    waitUntil { sleep 1; ({ alive _x } count _alive) == 0 || (leader _grp distance2D _dissolvePos <= 5) };
-                    if (({ alive _x } count _alive) == 0) exitWith { _running = false; };
-                    private _allFar = true;
-                    { if (_x distance2D _dissolvePos <= 150) exitWith { _allFar = false; }; } forEach (allPlayers select { alive _x });
-                    if (_allFar) then {
-                        { if (!isNull _x && alive _x) then { deleteVehicle _x; }; } forEach _alive;
-                        if (!isNull _grp) then { deleteGroup _grp; };
-                        _running = false;
-                    };
-                };
-            };
-        };
+        [_aliveVillagers] spawn LL_fnc_taskCleanup;
 
         missionNamespace setVariable ["LL_g_taskInProgress", false, true];
     };
@@ -635,56 +586,7 @@ if (_mode == "complete_defeat") exitWith {
 
         private _villagers = missionNamespace getVariable ["LL_Task07_Villagers", []];
         private _aliveVillagers = _villagers select { alive _x };
-
-        if (count _aliveVillagers > 0) then {
-            private _dissolveGrp = createGroup [west, true];
-            {
-                _x enableAI "MOVE";
-                _x enableAI "AUTOTARGET";
-                _x enableAI "TARGET";
-                _x enableAI "WEAPONAIM";
-                _x setUnitPos "UP";
-                _x setBehaviour "SAFE";
-                _x setSpeedMode "LIMITED";
-                [_x, "AmovPercMstpSrasWpstDnon"] remoteExec ["switchMove", 0];
-                _x action ["WeaponOnBack", _x];
-            } forEach _aliveVillagers;
-            _aliveVillagers joinSilent _dissolveGrp;
-
-            [_aliveVillagers, _dissolveGrp] spawn {
-                params ["_units", "_grp"];
-                private _alive = _units select { alive _x };
-                if (count _alive == 0) exitWith {};
-                private _running = true;
-                while { _running && ({ alive _x } count _alive) > 0 } do {
-                    private _refPos  = getPos (leader _grp);
-                    private _dissolvePos = [];
-                    private _attempts    = 0;
-                    while { count _dissolvePos == 0 && _attempts < 30 } do {
-                        _attempts = _attempts + 1;
-                        private _candidate = _refPos getPos [200 + random 300, random 360];
-                        private _valid = true;
-                        { if (_x distance2D _candidate <= 150) exitWith { _valid = false; }; } forEach (allPlayers select { alive _x });
-                        if (_valid) then { _dissolvePos = _candidate; };
-                    };
-                    if (count _dissolvePos == 0) then { _dissolvePos = _refPos getPos [400, random 360]; };
-                    while { count waypoints _grp > 0 } do { deleteWaypoint [_grp, 0]; };
-                    private _wp = _grp addWaypoint [_dissolvePos, 5];
-                    _wp setWaypointType "MOVE";
-                    _wp setWaypointSpeed "LIMITED";
-                    _wp setWaypointBehaviour "SAFE";
-                    waitUntil { sleep 1; ({ alive _x } count _alive) == 0 || (leader _grp distance2D _dissolvePos <= 5) };
-                    if (({ alive _x } count _alive) == 0) exitWith { _running = false; };
-                    private _allFar = true;
-                    { if (_x distance2D _dissolvePos <= 150) exitWith { _allFar = false; }; } forEach (allPlayers select { alive _x });
-                    if (_allFar) then {
-                        { if (!isNull _x && alive _x) then { deleteVehicle _x; }; } forEach _alive;
-                        if (!isNull _grp) then { deleteGroup _grp; };
-                        _running = false;
-                    };
-                };
-            };
-        };
+        [_aliveVillagers] spawn LL_fnc_taskCleanup;
 
         { if (!isNull _x && count units _x == 0) then { deleteGroup _x; }; } forEach (missionNamespace getVariable ["LL_Task07_EnemyGroups", []]);
 

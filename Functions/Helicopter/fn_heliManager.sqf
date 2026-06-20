@@ -611,7 +611,13 @@ private _fnExecDeploy = {
         removeAllWeapons _unit; 
 
         _unit forceAddUniform (selectRandom _uniforms);
-        [_unit, "CSAT_ScimitarRegiment"] call BIS_fnc_setUnitInsignia;
+        [_unit, "RACS_Custom_Patch"] spawn {
+            params ["_unit", "_insignia"];
+            sleep 0.5;
+            if (alive _unit) then {
+                [_unit, _insignia] call BIS_fnc_setUnitInsignia;
+            };
+        };
         _unit addVest     (selectRandom _vestPool);
         _unit addBackpack (selectRandom _backpacks);
         _unit addHeadgear (selectRandom _helmets);

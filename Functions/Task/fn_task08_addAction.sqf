@@ -20,8 +20,8 @@ _this spawn {
         {
             params ["_target", "_caller", "_actionId"];
 
-            if (missionNamespace getVariable ["LL_Task08_Triggered", false]) exitWith {};
-            missionNamespace setVariable ["LL_Task08_Triggered", true, true];
+            if (_target getVariable ["LL_Task08_Triggered", false]) exitWith {};
+            _target setVariable ["LL_Task08_Triggered", true, true];
 
             _target removeAction _actionId;
 

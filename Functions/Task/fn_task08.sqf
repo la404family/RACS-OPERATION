@@ -49,7 +49,7 @@ if (_mode == "init") exitWith {
         private _eligibleHeliports = _allHeliports select {
             private _pos = getPosASL _x;
             private _ok = true;
-            { private _d = _x distance2D _pos; if (_d < 250 || _d > _maxDist) exitWith { _ok = false; }; } forEach _alivePlayers;
+            { private _d = _x distance2D _pos; if (_d < 950 || _d > _maxDist) exitWith { _ok = false; }; } forEach _alivePlayers;
             _ok
         };
 
@@ -157,6 +157,9 @@ if (_mode == "init") exitWith {
     (group (driver _dca)) setCombatMode "RED";
     (group (driver _dca)) setBehaviour "COMBAT";
     _dca setFuel 0; 
+
+    _dca setVariable ["LL_Task_Status", "WAIT", true];
+    [_dca, netId _dca] remoteExec ["LL_fnc_task08_addAction", 0, _dca]; 
 
     private _dirVeh = getDir _logicVehicles;
     private _posGrad = _posVeh getPos [12, _dirVeh + 90];
@@ -406,61 +409,7 @@ if (_mode == "init") exitWith {
             };
         } forEach [_jammer, _dca, _artillery];
 
-        [_allEnemies, _groups] spawn {
-            params ["_enemiesToHunt", "_originalGroups"];
-
-            {
-                if (!isNull _x) then {
-                    _x setBehaviour "AWARE";
-                    _x setCombatMode "RED";
-                    _x setSpeedMode "FULL";
-                };
-            } forEach _originalGroups;
-
-            {
-                if (alive _x) then {
-                    _x enableAI "MOVE";
-                    _x enableAI "AUTOTARGET";
-                    _x enableAI "TARGET";
-                    _x enableAI "WEAPONAIM";
-                    _x setUnitPos "UP";
-                    _x setBehaviour "COMBAT";
-                    _x setSpeedMode "FULL";
-                };
-            } forEach _enemiesToHunt;
-
-            while { ({ alive _x } count _enemiesToHunt) > 0 } do {
-                private _alivePlayers = allPlayers select { alive _x };
-                if (count _alivePlayers == 0) exitWith {};
-
-                {
-                    private _enemy = _x;
-                    if (alive _enemy) then {
-                        private _closestPlayer = objNull;
-                        private _minDist = 999999;
-                        {
-                            private _d = _enemy distance2D _x;
-                            if (_d < _minDist) then {
-                                _minDist = _d;
-                                _closestPlayer = _x;
-                            };
-                        } forEach _alivePlayers;
-
-                        if (!isNull _closestPlayer) then {
-                            _enemy reveal [_closestPlayer, 4];
-
-                            private _lastPush = _enemy getVariable ["LL_Task08_LastPush", 0];
-                            if (time - _lastPush > 10) then {
-                                _enemy setVariable ["LL_Task08_LastPush", time];
-                                _enemy doMove (getPosATL _closestPlayer);
-                            };
-                        };
-                    };
-                } forEach _enemiesToHunt;
-
-                sleep 5;
-            };
-        };
+        [_allEnemies] spawn LL_fnc_taskCleanup;
 
         missionNamespace setVariable ["LL_Drone_Jammed", false, true];
         missionNamespace setVariable ["LL_Heli_Jammed", false, true];

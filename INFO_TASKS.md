@@ -56,9 +56,9 @@ _unit allowDamage false;
 [_unit] spawn { sleep 3; (_this select 0) allowDamage true; };
 ```
 
-### Distance minimale de sécurité (250m)
+### Distance minimale de sécurité (950m)
 Toute tâche générée aléatoirement doit respecter des règles strictes de distance pour éviter le spawn sous les yeux des joueurs :
-- **Minimum 250m** entre le lieu de la tâche et n'importe quel joueur vivant sur le serveur.
+- **Minimum 950m** entre le lieu de la tâche et n'importe quel joueur vivant sur le serveur.
 - S'il y a plusieurs lieux pour une même tâche, ils doivent être espacés d'au moins **250m** entre eux.
 
 ### Ordre de spawn : secondaires avant principal
@@ -227,8 +227,7 @@ Toujours rechercher les Game Logics `M_Dans_Bat_XXX` placées dans l'éditeur co
 Ces logiques doivent être **à l'intérieur d'un bâtiment**, positionnées en X, Y, Z précis (+ 0.2 en Z).
 
 ### Filtres de distance
-- Ne jamais sélectionner une position à **moins de 100 mètres** d'un joueur.
-- Préférer une position à **plus de 250 mètres** si possible.
+- Ne jamais sélectionner une position à **moins de 950 mètres** d'un joueur.
 
 ### Fallback progressif
 Si aucune logique n'est disponible, rechercher un bâtiment aléatoire en élargissant le rayon par paliers (250 → 400 → 550 → 700 → 850 → 1000 m).  
@@ -319,114 +318,33 @@ Tous les logs commencent par `[LL]` suivi du nom de la fonction.
 
 ## 14. Déplacement et suppression des I.A inutiles de fin de task
 
-### Concept : le point de dissolution
+### Concept : la fonction globale de nettoyage `LL_fnc_taskCleanup`
 
-À la fin d'une tâche, les I.A qui ne servent plus (gardes, PNJ d'ambiance…) doivent être supprimées proprement **hors du champ de vision des joueurs**, sans téléportation visible.
-
-La solution est le **point de dissolution** (`_dissolvePos`) : une position de terrain calculée dynamiquement à plus de **150 m de tous les joueurs connectés**, vers laquelle le groupe est envoyé à pied. Aucun objet éditeur n'est nécessaire — la position est calculée à la volée depuis la position courante du groupe.
-
----
-
-### Algorithme de dissolution
-
-1. Depuis la position du leader du groupe, tirer un point aléatoire à **200–500 m** dans une direction aléatoire.
-2. Vérifier que ce point est à **> 150 m de tous les joueurs vivants**.
-3. Si valide : envoyer le groupe à ce point (waypoint complétion 5 m).
-4. À l'arrivée à 5 m : **re-vérifier** que tous les joueurs sont toujours à > 150 m.
-   - Si oui : `deleteVehicle` chaque unité + `deleteGroup`.
-   - Si non : recommencer depuis l'étape 1 (nouveau point).
-5. Maximum **30 tentatives** de recherche par itération ; fallback à 400 m direction aléatoire si aucune position valide trouvée.
-
----
-
-### Pattern obligatoire (spawn autonome)
+À la fin d'une tâche, les IA restantes ne servent plus. Afin d'éviter qu'elles ne se téléportent ou ne soient supprimées de manière visible sous les yeux des joueurs, elles sont traitées de manière unifiée via la fonction `LL_fnc_taskCleanup` appelée avec la liste des unités :
 
 ```sqf
-// Dissolution hors de vue — TASK_RULES §14
-// À appeler après joinSilent du groupe dans _dissolveGrp
-[_units, _dissolveGrp] spawn {
-    params ["_units", "_grp"];
-    private _alive = _units select { alive _x };
-    if (count _alive == 0) exitWith {};
-
-    private _running = true;
-    while { _running && ({ alive _x } count _alive) > 0 } do {
-
-        // 1. Chercher un point de dissolution valide
-        private _refPos  = getPos (leader _grp);
-        private _dissolvePos = [];
-        private _attempts    = 0;
-
-        while { count _dissolvePos == 0 && _attempts < 30 } do {
-            _attempts = _attempts + 1;
-            private _candidate = _refPos getPos [200 + random 300, random 360];
-            private _valid = true;
-            { if (_x distance2D _candidate <= 150) exitWith { _valid = false; }; }
-                forEach (allPlayers select { alive _x });
-            if (_valid) then { _dissolvePos = _candidate; };
-        };
-
-        // Fallback si aucun point valide trouvé après 30 essais
-        if (count _dissolvePos == 0) then {
-            _dissolvePos = _refPos getPos [400, random 360];
-        };
-
-        // 2. Envoyer le groupe vers ce point
-        while { count waypoints _grp > 0 } do { deleteWaypoint [_grp, 0]; };
-        private _wp = _grp addWaypoint [_dissolvePos, 5];
-        _wp setWaypointType "MOVE";
-        _wp setWaypointSpeed "FULL";
-        _wp setWaypointBehaviour "SAFE";
-
-        // 3. Attendre l'arrivée à 5m du point
-        waitUntil {
-            sleep 1;
-            ({ alive _x } count _alive) == 0
-            || (leader _grp distance2D _dissolvePos <= 5)
-        };
-
-        if (({ alive _x } count _alive) == 0) exitWith { _running = false; };
-
-        // 4. Re-vérifier la distance des joueurs
-        private _allFar = true;
-        { if (_x distance2D _dissolvePos <= 150) exitWith { _allFar = false; }; }
-            forEach (allPlayers select { alive _x });
-
-        if (_allFar) then {
-            // 5. Suppression propre
-            { if (!isNull _x && alive _x) then { deleteVehicle _x; }; } forEach _alive;
-            if (!isNull _grp) then { deleteGroup _grp; };
-            _running = false;
-        };
-        // Sinon : nouvelle itération (le groupe marche vers un nouveau point)
-    };
-};
+[_guards] spawn LL_fnc_taskCleanup;
 ```
 
 ---
 
-### Prérequis avant d'appeler le pattern
+### Comportement unifié de la fonction `LL_fnc_taskCleanup` :
 
-```sqf
-// S'assurer que les unités peuvent se déplacer
-{ _x enableAI "MOVE"; _x setBehaviour "SAFE"; _x setSpeedMode "FULL"; } forEach _units;
+1. **Suppression immédiate à plus de 1500m :**
+   Toutes les IA (hommes ou véhicules) situées à plus de **1500 mètres** de n'importe quel joueur vivant sont supprimées immédiatement (`deleteVehicle`) pour libérer les ressources du serveur.
 
-// Désactiver les boucles de patrouille individuelles via un flag
-{ _x setVariable ["LL_TaskXX_Escaping", true, true]; } forEach _units;
+2. **IA Ennemies (`east`) à moins de 1500m - Contre-attaque ultra-agressive :**
+   Toutes les IA ennemies proches sont réunies et divisées en petits groupes tactiques de **2 ou 3 unités**. Ces groupes sont configurés en comportement combat (`COMBAT`), vitesse maximale (`FULL`), précision élevée, et reçoivent des waypoints dynamiques de recherche et destruction (`SAD`) vers le joueur vivant le plus proche (mis à jour toutes les 10 secondes).
 
-// Regrouper dans un groupe dédié
-private _dissolveGrp = createGroup [independent, true];
-_units joinSilent _dissolveGrp;
-```
+3. **IA Amies ou Civiles (autres camps) à moins de 1500m - Fuite propre :**
+   Les IA non-ennemies (comme les villageois ou civils) fuient le secteur vers un **point de dissolution** temporaire calculé à plus de **150m** des joueurs et se suppriment une fois arrivées hors de vue.
 
 ---
 
-### Règles
-
-- **Jamais de `setPosASL` ni de téléportation** visible — les unités marchent toujours jusqu'au point.
-- Le seuil d'arrivée est **5 m** (waypoint complétion = 5 m).
-- La vérification joueurs est faite **deux fois** : avant (recherche du point) et après (arrivée).
-- Ce pattern remplace les chapitres précédents sur la suppression à distance fixe.
+### Avantages :
+- Centralisé dans [fn_taskCleanup.sqf](file:///C:/Users/kevin/Documents/Arma%203/missions/RACS.cup_Zargabad_a3/Functions/Task/fn_taskCleanup.sqf), aucun log de débogage (`diag_log`) n'est utilisé.
+- Évite les suppressions visibles à l'écran.
+- Crée une tension de fin de mission où les forces ennemies locales convergent immédiatement pour traquer les joueurs.
 
 ---
 
@@ -442,3 +360,5 @@ _units joinSilent _dissolveGrp;
 | Variable globale partagée | `LL_g_nomVariable` | `LL_g_usedTaskPos` |
 | Fonction tâche | `LL_fnc_taskXX` | `LL_fnc_task01` |
 | Fonction addAction | `LL_fnc_taskXX_addAction` | `LL_fnc_task01_addAction` |
+| Fonction de nettoyage | `LL_fnc_taskCleanup` | `LL_fnc_taskCleanup` |
+

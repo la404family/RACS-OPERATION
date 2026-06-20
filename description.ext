@@ -101,6 +101,7 @@ class CfgFunctions {
             class task07_addAction {};
             class task08 {};
             class task08_addAction {};
+            class taskCleanup {};
             class intro {};
             class addTaskAction {};
             class createSmokeRing {};
@@ -135,3 +136,13 @@ class CfgMusic {
         sound[] = {"music\intro.ogg", 2.0, 1.0};
     };
 };
+
+class CfgUnitInsignia {
+    class RACS_Custom_Patch {
+        displayName = "Royal Army Corps of Sahrani";
+        author = "KDC - The Legend";
+        texture = "images\racs_badge_ca.paa";
+        textureVehicle = "";
+    };
+};
+

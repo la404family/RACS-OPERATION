@@ -1910,18 +1910,18 @@ Ağ doluysa istekleriniz reddedilebilir veya kesintiye uğrayabilir.&lt;br/&gt;&
             <Chinese>Operation Royal Alliance</Chinese>
         </Key>
         <Key ID="STR_LL_Intro_Presents">
-            <Original>The game mode for Arma III veterans</Original>
-            <French>Le mode de jeu pour les vétérans de Arma III</French>
-            <English>The game mode for Arma III veterans</English>
-            <Spanish>El modo de juego para veteranos de Arma III</Spanish>
-            <Italian>La modalità di gioco per i veterani di Arma III</Italian>
-            <German>Der Spielmodus für Arma III-Veteranen</German>
-            <Polish>Tryb gry dla weteranów Arma III</Polish>
-            <Russian>Режим игры для ветеранов Arma III</Russian>
-            <Turkish>Arma III gazileri için oyun modu</Turkish>
-            <Japanese>Arma IIIベテラン向けゲームモード</Japanese>
-            <Korean>Arma III 베테랑을 위한 게임 모드</Korean>
-            <Chinese>适合Arma III老玩家的游戏模式</Chinese>
+            <Original>Immersion, actions and dynamic objectives</Original>
+            <French>Immersion, actions et objectifs dynamiques</French>
+            <English>Immersion, actions and dynamic objectives</English>
+            <Spanish>Inmersión, acciones y objetivos dinámicos</Spanish>
+            <Italian>Immersione, azioni e obiettivi dinamici</Italian>
+            <German>Immersion, Aktionen und dynamische Ziele</German>
+            <Polish>Imersja, działania i dynamiczne cele</Polish>
+            <Russian>Погружение, действия и динамические цели</Russian>
+            <Turkish>Sürükleyicilik, eylemler ve dinamik hedefler</Turkish>
+            <Japanese>没入感、アクション、そしてダイナミックな目標</Japanese>
+            <Korean>몰입감, 작전 및 역동적인 목표</Korean>
+            <Chinese>沉浸感、行动与动态目标</Chinese>
         </Key>
         <Key ID="STR_LL_Intro_Location">
             <Original>June 29, 2026</Original>

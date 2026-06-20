@@ -19,7 +19,7 @@ if (_mode == "init") exitWith {
             private _candidate = _x;
             private _candidatePos = getPosASL _candidate;
             private _valid = true;
-            { private _d = _x distance2D _candidatePos; if (_d < 250 || _d > _maxDist) exitWith { _valid = false; }; } forEach _alivePlayers;
+            { private _d = _x distance2D _candidatePos; if (_d < 950 || _d > _maxDist) exitWith { _valid = false; }; } forEach _alivePlayers;
             if (_valid) exitWith { _selectedLogic = _candidate; };
         } forEach _logicsPool;
 
@@ -396,40 +396,7 @@ if (_mode == "escort") exitWith {
 
             private _allUnits = missionNamespace getVariable ["LL_Task06_AllUnits", []];
             private _guards = _allUnits select { _x != _hvt && alive _x };
-
-            if (count _guards > 0) then {
-                private _players = allPlayers select { alive _x };
-                private _groups = [];
-                {
-                    private _guard = _x;
-                    _guard enableAI "MOVE";
-                    _guard enableAI "AUTOTARGET";
-                    _guard enableAI "TARGET";
-                    _guard setBehaviour "COMBAT";
-                    _guard setCombatMode "RED";
-                    _guard setSpeedMode "FULL";
-                    _guard disableAI "SUPPRESSION";
-                    _guard setSkill ["courage", 1.0];
-                    _guard setSkill ["aimingAccuracy", 0.15 + random 0.10];
-                    { _guard reveal [_x, 4]; } forEach _players;
-
-                    private _g = group _guard;
-                    if !(_g in _groups) then { _groups pushBack _g; };
-                } forEach _guards;
-
-                if (count _players > 0) then {
-                    private _firstPlayer = _players select 0;
-                    {
-                        private _grp = _x;
-                        while { count waypoints _grp > 0 } do { deleteWaypoint [_grp, 0]; };
-                        private _wp = _grp addWaypoint [getPosATL _firstPlayer, 15];
-                        _wp setWaypointType "SAD";
-                        _wp setWaypointSpeed "FULL";
-                        _wp setWaypointBehaviour "COMBAT";
-                        _wp setWaypointCombatMode "RED";
-                    } forEach _groups;
-                };
-            };
+            [_guards] spawn LL_fnc_taskCleanup;
         };
     };
 
