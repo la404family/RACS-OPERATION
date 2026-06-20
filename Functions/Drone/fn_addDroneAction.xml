@@ -56,4 +56,18 @@
         <Korean>드론이 [%1, %2] 위치로 이동 중입니다.</Korean>
         <Chinese>无人机正在前往位置 [%1, %2]。</Chinese>
     </Key>
+    <Key ID="STR_Drone_Jammed">
+        <Original>Drone signal jammed!</Original>
+        <French>Signal du drone brouillé !</French>
+        <English>Drone signal jammed!</English>
+        <Spanish>¡Señal del dron interferida!</Spanish>
+        <Italian>Segnale del drone disturbato!</Italian>
+        <German>Drohnensignal gestört!</German>
+        <Polish>Sygnał drona zakłócony!</Polish>
+        <Russian>Сигнал дрона заглушен!</Russian>
+        <Turkish>Dron sinyali karıştırıldı!</Turkish>
+        <Japanese>ドローンの信号が妨害されました！</Japanese>
+        <Korean>드론 신호가 교란되었습니다!</Korean>
+        <Chinese>无人机信号被干扰！</Chinese>
+    </Key>
 </Keys>

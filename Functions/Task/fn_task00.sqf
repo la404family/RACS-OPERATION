@@ -23,7 +23,7 @@ if (_mode == "init") exitWith {
             private _candidatePos = getPosASL _candidate;
             private _valid = true;
 
-            { private _d = _x distance2D _candidatePos; if (_d < 950 || _d > _maxDist) exitWith { _valid = false; }; } forEach _alivePlayers;
+            { private _d = _x distance2D _candidatePos; if (_d < 750 || _d > _maxDist) exitWith { _valid = false; }; } forEach _alivePlayers;
 
             if (_valid) then {
                 { if ((getPosASL _x) distance2D _candidatePos < 250) exitWith { _valid = false; }; } forEach _selectedLogics;

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keys>
+    <Key ID="STR_LL_StartArsenal_Marker">
+        <Original>PREPARATION (Arsenal)</Original>
+        <French>PREPARATIFS (Arsenal)</French>
+        <English>PREPARATION (Arsenal)</English>
+        <Spanish>PREPARACIÓN (Arsenal)</Spanish>
+        <Italian>PREPARAZIONE (Arsenal)</Italian>
+        <German>VORBEREITUNG (Arsenal)</German>
+        <Polish>PRZYGOTOWANIE (Arsenał)</Polish>
+        <Russian>ПОДГОТОВКА (Арсенал)</Russian>
+        <Turkish>HAZIRLIK (Arsenal)</Turkish>
+        <Japanese>準備 (アーセナル)</Japanese>
+        <Korean>준비 (아스날)</Korean>
+        <Chinese>准备 (兵器库)</Chinese>
+    </Key>
+</Keys>

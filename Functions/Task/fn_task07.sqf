@@ -18,7 +18,7 @@ if (_mode == "init") exitWith {
         private _eligibleLogics = _allLogics select {
             private _pos = getPosASL _x;
             private _ok = true;
-            { private _d = _x distance2D _pos; if (_d < 950 || _d > _maxDist) exitWith { _ok = false; }; } forEach _alivePlayers;
+            { private _d = _x distance2D _pos; if (_d < 750 || _d > _maxDist) exitWith { _ok = false; }; } forEach _alivePlayers;
             _ok
         };
 

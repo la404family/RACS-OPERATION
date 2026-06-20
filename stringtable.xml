@@ -783,6 +783,20 @@ Ağ doluysa istekleriniz reddedilebilir veya kesintiye uğrayabilir.&lt;br/&gt;&
             <Korean>드론이 [%1, %2] 위치로 이동 중입니다.</Korean>
             <Chinese>无人机正在前往位置 [%1, %2]。</Chinese>
         </Key>
+        <Key ID="STR_Drone_Jammed">
+            <Original>Drone signal jammed!</Original>
+            <French>Signal du drone brouillé !</French>
+            <English>Drone signal jammed!</English>
+            <Spanish>¡Señal del dron interferida!</Spanish>
+            <Italian>Segnale del drone disturbato!</Italian>
+            <German>Drohnensignal gestört!</German>
+            <Polish>Sygnał drona zakłócony!</Polish>
+            <Russian>Сигнал дрона заглушен!</Russian>
+            <Turkish>Dron sinyali karıştırıldı!</Turkish>
+            <Japanese>ドローンの信号が妨害されました！</Japanese>
+            <Korean>드론 신호가 교란되었습니다!</Korean>
+            <Chinese>无人机信号被干扰！</Chinese>
+        </Key>
         <Key ID="STR_Drone_AlreadyActive">
             <Original>Drone déjà en mission.</Original>
             <English>Drone is already on a mission.</English>
@@ -1554,6 +1568,76 @@ Ağ doluysa istekleriniz reddedilebilir veya kesintiye uğrayabilir.&lt;br/&gt;&
             <Japanese>航空支援 (CAS)</Japanese>
             <Korean>항공 지원 (CAS)</Korean>
             <Chinese>空中支援 (CAS)</Chinese>
+        </Key>
+        <Key ID="STR_LL_Heli_Msg_Extract_Counter">
+            <Original>Helicopter departing in %1 seconds!</Original>
+            <French>Départ de l'hélicoptère dans %1 secondes !</French>
+            <English>Helicopter departing in %1 seconds!</English>
+            <Spanish>¡El helicóptero parte en %1 segundos!</Spanish>
+            <Italian>L'elicottero parte tra %1 secondi!</Italian>
+            <German>Helikopter fliegt in %1 Sekunden ab!</German>
+            <Polish>Helikopter odlatuje za %1 sekund!</Polish>
+            <Russian>Вертолет отправляется через %1 секунд!</Russian>
+            <Turkish>Helikopter %1 saniye içinde kalkıyor!</Turkish>
+            <Japanese>ヘリコプターは %1 秒以内に出発します！</Japanese>
+            <Korean>개인 헬기가 %1초 후에 이륙합니다!</Korean>
+            <Chinese>直升机将在 %1 秒内起飞！</Chinese>
+        </Key>
+        <Key ID="STR_LL_Heli_Msg_Extract_Waiting_Hostage">
+            <Original>Waiting for the hostage...</Original>
+            <French>En attente de l'otage...</French>
+            <English>Waiting for the hostage...</English>
+            <Spanish>Esperando al rehén...</Spanish>
+            <Italian>In attesa dell'ostaggio...</Italian>
+            <German>Warten auf die Geisel...</German>
+            <Polish>Oczekiwanie na zakładnika...</Polish>
+            <Russian>Ожидание заложника...</Russian>
+            <Turkish>Rehine bekleniyor...</Turkish>
+            <Japanese>人質を待っています...</Japanese>
+            <Korean>인질을 기다리는 중...</Korean>
+            <Chinese>正在等待人质...</Chinese>
+        </Key>
+        <Key ID="STR_TAG_Msg_Ammo_Error">
+            <Original>Error: Unable to deliver ammo.</Original>
+            <French>Erreur : Impossible de livrer les munitions.</French>
+            <English>Error: Unable to deliver ammo.</English>
+            <Spanish>Error: No se pudo entregar la munición.</Spanish>
+            <Italian>Errore: Impossibile consegnare le munizioni.</Italian>
+            <German>Fehler: Munition konnte nicht geliefert werden.</German>
+            <Polish>Błąd: Nie można dostarczyć amunicji.</Polish>
+            <Russian>Ошибка: Не удалось доставить боеприпасы.</Russian>
+            <Turkish>Hata: Mühimmat teslim edilemiyor.</Turkish>
+            <Japanese>エラー：弾薬を配達できません。</Japanese>
+            <Korean>오류: 탄약을 보낼 수 없습니다.</Korean>
+            <Chinese>错误：无法送达弹药。</Chinese>
+        </Key>
+        <Key ID="STR_TAG_Msg_CAS_Error">
+            <Original>Error: Air support unavailable.</Original>
+            <French>Erreur : Appui aérien indisponible.</French>
+            <English>Error: Air support unavailable.</English>
+            <Spanish>Error: Apoyo aéreo no disponible.</Spanish>
+            <Italian>Errore: Supporto aereo non disponibile.</Italian>
+            <German>Fehler: Luftunterstützung nicht verfügbar.</German>
+            <Polish>Błąd: Wsparcie lotnicze niedostępne.</Polish>
+            <Russian>Ошибка: Воздушная поддержка недоступна.</Russian>
+            <Turkish>Hata: Hava desteği kullanılamıyor.</Turkish>
+            <Japanese>エラー：航空支援を利用できません。</Japanese>
+            <Korean>오류: 항공 지원을 이용할 수 없습니다.</Korean>
+            <Chinese>错误：空中支援不可用。</Chinese>
+        </Key>
+        <Key ID="STR_TAG_Msg_Vehicle_Error">
+            <Original>Error: Unable to deliver vehicle.</Original>
+            <French>Erreur : Impossible de livrer le véhicule.</French>
+            <English>Error: Unable to deliver vehicle.</English>
+            <Spanish>Error: No se pudo entregar el vehículo.</Spanish>
+            <Italian>Errore: Impossibile consegnare il veicolo.</Italian>
+            <German>Fehler: Fahrzeug konnte nicht geliefert werden.</German>
+            <Polish>Błąd: Nie można dostarczyć pojazdu.</Polish>
+            <Russian>Ошибка: Не удалось доставить технику.</Russian>
+            <Turkish>Hata: Araç teslim edilemiyor.</Turkish>
+            <Japanese>エラー：車両を配達できません。</Japanese>
+            <Korean>오류: 차량을 보낼 수 없습니다.</Korean>
+            <Chinese>错误：无法送达车辆。</Chinese>
         </Key>
     </Package>
     <Package name="Player">
@@ -3260,6 +3344,22 @@ OSTRZEŻENIE: Jeśli odkryją, że jeden z nich został zabity, pozostali dowód
             <German>Ihnen wurde eine neue Mission zugewiesen. Lesen Sie das Aufgaben-Briefing.</German>
             <Italian>Ti è stata assegnata una nuova missione. Leggi il briefing del compito.</Italian>
             <Polish>Otrzymałeś nową misję. Przeczytaj odprawę zadania.</Polish>
+        </Key>
+    </Package>
+    <Package name="Vehicle">
+        <Key ID="STR_LL_StartArsenal_Marker">
+            <Original>PREPARATION (Arsenal)</Original>
+            <French>PREPARATIFS (Arsenal)</French>
+            <English>PREPARATION (Arsenal)</English>
+            <Spanish>PREPARACIÓN (Arsenal)</Spanish>
+            <Italian>PREPARAZIONE (Arsenal)</Italian>
+            <German>VORBEREITUNG (Arsenal)</German>
+            <Polish>PRZYGOTOWANIE (Arsenał)</Polish>
+            <Russian>ПОДГОТОВКА (Арсенал)</Russian>
+            <Turkish>HAZIRLIK (Arsenal)</Turkish>
+            <Japanese>準備 (アーセナル)</Japanese>
+            <Korean>준비 (아스날)</Korean>
+            <Chinese>准备 (兵器库)</Chinese>
         </Key>
     </Package>
 </Project>

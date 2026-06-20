@@ -114,6 +114,7 @@ class CfgFunctions {
         class Vehicle {
             file = "Functions\Vehicle";
             class initVehicleLoadout {};
+            class spawnStartArsenal {};
         };
     };
 };

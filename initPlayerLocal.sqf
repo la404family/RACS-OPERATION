@@ -18,3 +18,7 @@ player addEventHandler ["Killed", {
 player addEventHandler ["Respawn", {
     [netId player] remoteExec ["LL_fnc_unregisterDeadPlayer", 2];
 }];
+
+[missionNamespace, "arsenalClosed", {
+    [] remoteExec ["LL_fnc_initVehicleLoadout", 2];
+}] call BIS_fnc_addScriptedEventHandler;

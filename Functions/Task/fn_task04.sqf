@@ -27,7 +27,7 @@ if (_mode == "init") exitWith {
             private _candidate = _x;
             private _candidatePos = getPosASL _candidate;
             private _valid = true;
-            { private _d = _x distance2D _candidatePos; if (_d < 950 || _d > _maxDist) exitWith { _valid = false; }; } forEach _alivePlayers;
+            { private _d = _x distance2D _candidatePos; if (_d < 750 || _d > _maxDist) exitWith { _valid = false; }; } forEach _alivePlayers;
             { if (_x distance2D _candidatePos < 250) exitWith { _valid = false; }; } forEach _selectedLogics;
             if (_valid) then { _selectedLogics pushBack _candidate; };
             if (count _selectedLogics == _numTrucks) exitWith {};
@@ -306,15 +306,23 @@ if (_mode == "extract") exitWith {
     [_truck] spawn {
         params ["_cargo"];
 
-        private _spawnPosHeli = (getPos _cargo) getPos [2500, random 360];
-        _spawnPosHeli set [2, 250];
+        private _spawnPosHeli = (getPosATL _cargo) getPos [1500, random 360];
+        if (_spawnPosHeli select 0 < 50 || { _spawnPosHeli select 0 > (worldSize - 50) || { _spawnPosHeli select 1 < 50 || { _spawnPosHeli select 1 > (worldSize - 50) } } }) then {
+            _spawnPosHeli = [15, 15, 250];
+        } else {
+            _spawnPosHeli set [2, 250];
+        };
 
-        private _dropPos = _spawnPosHeli getPos [3000, random 360];
-        _dropPos set [2, 150];
+        private _dropPos = _spawnPosHeli getPos [1500, random 360];
+        if (_dropPos select 0 < 50 || { _dropPos select 0 > (worldSize - 50) || { _dropPos select 1 < 50 || { _dropPos select 1 > (worldSize - 50) } } }) then {
+            _dropPos = [worldSize - 50, worldSize - 50, 150];
+        } else {
+            _dropPos set [2, 150];
+        };
 
         private _grp = createGroup [independent, true];
         private _heli = createVehicle ["CUP_I_UH60L_FFV_RACS", _spawnPosHeli, [], 0, "FLY"];
-        _heli setPosASL _spawnPosHeli;
+        _heli setPosATL _spawnPosHeli;
 
         private _pilot = _grp createUnit ["CUP_I_RACS_Pilot", _spawnPosHeli, [], 0, "NONE"];
         _pilot moveInDriver _heli;
@@ -383,6 +391,10 @@ if (_mode == "extract") exitWith {
         if (isNull (getSlingLoad _heli)) then {
             _heli setSlingLoad _cargo;
         };
+
+        // Supprime les EH de dégâts et de mort pour éviter l'échec de la mission après treuillage (ex: largage de 150m)
+        _cargo removeAllEventHandlers "Killed";
+        _cargo removeAllEventHandlers "HandleDamage";
 
         _heli flyInHeight 50;
         private _escapeASL = _cargoASL + 50;

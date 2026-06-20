@@ -238,4 +238,74 @@
         <Korean>항공 지원 (CAS)</Korean>
         <Chinese>空中支援 (CAS)</Chinese>
     </Key>
+    <Key ID="STR_LL_Heli_Msg_Extract_Counter">
+        <Original>Helicopter departing in %1 seconds!</Original>
+        <French>Départ de l'hélicoptère dans %1 secondes !</French>
+        <English>Helicopter departing in %1 seconds!</English>
+        <Spanish>¡El helicóptero parte en %1 segundos!</Spanish>
+        <Italian>L'elicottero parte tra %1 secondi!</Italian>
+        <German>Helikopter fliegt in %1 Sekunden ab!</German>
+        <Polish>Helikopter odlatuje za %1 sekund!</Polish>
+        <Russian>Вертолет отправляется через %1 секунд!</Russian>
+        <Turkish>Helikopter %1 saniye içinde kalkıyor!</Turkish>
+        <Japanese>ヘリコプターは %1 秒以内に出発します！</Japanese>
+        <Korean>개인 헬기가 %1초 후에 이륙합니다!</Korean>
+        <Chinese>直升机将在 %1 秒内起飞！</Chinese>
+    </Key>
+    <Key ID="STR_LL_Heli_Msg_Extract_Waiting_Hostage">
+        <Original>Waiting for the hostage...</Original>
+        <French>En attente de l'otage...</French>
+        <English>Waiting for the hostage...</English>
+        <Spanish>Esperando al rehén...</Spanish>
+        <Italian>In attesa dell'ostaggio...</Italian>
+        <German>Warten auf die Geisel...</German>
+        <Polish>Oczekiwanie na zakładnika...</Polish>
+        <Russian>Ожидание заложника...</Russian>
+        <Turkish>Rehine bekleniyor...</Turkish>
+        <Japanese>人質を待っています...</Japanese>
+        <Korean>인질을 기다리는 중...</Korean>
+        <Chinese>正在等待人质...</Chinese>
+    </Key>
+    <Key ID="STR_TAG_Msg_Ammo_Error">
+        <Original>Error: Unable to deliver ammo.</Original>
+        <French>Erreur : Impossible de livrer les munitions.</French>
+        <English>Error: Unable to deliver ammo.</English>
+        <Spanish>Error: No se pudo entregar la munición.</Spanish>
+        <Italian>Errore: Impossibile consegnare le munizioni.</Italian>
+        <German>Fehler: Munition konnte nicht geliefert werden.</German>
+        <Polish>Błąd: Nie można dostarczyć amunicji.</Polish>
+        <Russian>Ошибка: Не удалось доставить боеприпасы.</Russian>
+        <Turkish>Hata: Mühimmat teslim edilemiyor.</Turkish>
+        <Japanese>エラー：弾薬を配達できません。</Japanese>
+        <Korean>오류: 탄약을 보낼 수 없습니다.</Korean>
+        <Chinese>错误：无法送达弹药。</Chinese>
+    </Key>
+    <Key ID="STR_TAG_Msg_CAS_Error">
+        <Original>Error: Air support unavailable.</Original>
+        <French>Erreur : Appui aérien indisponible.</French>
+        <English>Error: Air support unavailable.</English>
+        <Spanish>Error: Apoyo aéreo no disponible.</Spanish>
+        <Italian>Errore: Supporto aereo non disponibile.</Italian>
+        <German>Fehler: Luftunterstützung nicht verfügbar.</German>
+        <Polish>Błąd: Wsparcie lotnicze niedostępne.</Polish>
+        <Russian>Ошибка: Воздушная поддержка недоступна.</Russian>
+        <Turkish>Hata: Hava desteği kullanılamıyor.</Turkish>
+        <Japanese>エラー：航空支援を利用できません。</Japanese>
+        <Korean>오류: 항공 지원을 이용할 수 없습니다.</Korean>
+        <Chinese>错误：空中支援不可用。</Chinese>
+    </Key>
+    <Key ID="STR_TAG_Msg_Vehicle_Error">
+        <Original>Error: Unable to deliver vehicle.</Original>
+        <French>Erreur : Impossible de livrer le véhicule.</French>
+        <English>Error: Unable to deliver vehicle.</English>
+        <Spanish>Error: No se pudo entregar el vehículo.</Spanish>
+        <Italian>Errore: Impossibile consegnare il veicolo.</Italian>
+        <German>Fehler: Fahrzeug konnte nicht geliefert werden.</German>
+        <Polish>Błąd: Nie można dostarczyć pojazdu.</Polish>
+        <Russian>Ошибка: Не удалось доставить технику.</Russian>
+        <Turkish>Hata: Araç teslim edilemiyor.</Turkish>
+        <Japanese>エラー：車両を配達できません。</Japanese>
+        <Korean>오류: 차량을 보낼 수 없습니다.</Korean>
+        <Chinese>错误：无法送达车辆。</Chinese>
+    </Key>
 </Keys>

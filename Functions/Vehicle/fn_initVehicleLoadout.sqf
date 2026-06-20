@@ -27,6 +27,7 @@ for "_i" from 0 to 99 do {
     private _weaponsToCheck = [];
     if (primaryWeapon _x != "") then { _weaponsToCheck pushBack [primaryWeapon _x, primaryWeaponMagazine _x] };
     if (secondaryWeapon _x != "") then { _weaponsToCheck pushBack [secondaryWeapon _x, secondaryWeaponMagazine _x] };
+    if (handgunWeapon _x != "") then { _weaponsToCheck pushBack [handgunWeapon _x, handgunMagazine _x] };
 
     {
         _x params ["_w", "_mArray"];
