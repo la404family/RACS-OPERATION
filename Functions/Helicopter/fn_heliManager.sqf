@@ -825,13 +825,14 @@ private _fnExecExtract = {
     ["STR_LL_Heli_Msg_Landed_Extract"] remoteExec ["LL_fnc_radioMessage", 0];
 
     private _task02bHostage   = missionNamespace getVariable ["LL_Task02b_Hostage", objNull];
-    private _isTask02bExtract = !isNull _task02bHostage && { alive _task02bHostage } && { !(missionNamespace getVariable ["LL_Task02b_Freed_Done", false]) };
-
     private _task00Hostage    = missionNamespace getVariable ["LL_Task00_Hostage", objNull];
-    private _isTask00Extract  = !isNull _task00Hostage && { alive _task00Hostage } && { missionNamespace getVariable ["LL_g_taskInProgress", false] };
-
     private _task06HVT        = missionNamespace getVariable ["LL_Task06_HVT", objNull];
-    private _isTask06Extract  = !isNull _task06HVT && { alive _task06HVT } && { missionNamespace getVariable ["LL_g_taskInProgress", false] };
+
+    private _taskInProgress   = missionNamespace getVariable ["LL_g_taskInProgress", false];
+
+    private _isTask02bExtract = _taskInProgress && { !isNull _task02bHostage && { alive _task02bHostage } && { !(missionNamespace getVariable ["LL_Task02b_Freed_Done", false]) } };
+    private _isTask00Extract  = _taskInProgress && { !isNull _task00Hostage && { alive _task00Hostage } };
+    private _isTask06Extract  = _taskInProgress && { !isNull _task06HVT && { alive _task06HVT } };
 
     private _ejectEH = -1;
     if (_isTask02bExtract || _isTask00Extract || _isTask06Extract) then {
@@ -960,6 +961,11 @@ private _fnExecExtract = {
                 };
             };
         } forEach [_hostage2b, _hostage00, _hvt06];
+
+        missionNamespace setVariable ["LL_Task00_Hostage", objNull, true];
+        missionNamespace setVariable ["LL_Task06_HVT", objNull, true];
+        missionNamespace setVariable ["LL_Task02b_Hostage", objNull, true];
+        missionNamespace setVariable ["LL_g_taskInProgress", false, true];
 
         false
     };

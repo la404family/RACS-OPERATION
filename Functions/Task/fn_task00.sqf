@@ -301,7 +301,10 @@ if (_mode == "free") exitWith {
     waitUntil {
         sleep 2;
         private _heli = missionNamespace getVariable ["LL_HELI_obj", objNull];
-        !alive _hostage || (!isNull _heli && {vehicle _hostage == _heli})
+        private _heliState = missionNamespace getVariable ["LL_HELI_state", "IDLE"];
+        !alive _hostage 
+        || (!isNull _heli && {vehicle _hostage == _heli}) 
+        || (isNull _heli && _heliState == "IDLE")
     };
 
     if (alive _hostage) then {

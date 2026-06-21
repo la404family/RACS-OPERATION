@@ -382,7 +382,11 @@ if (_mode == "escort") exitWith {
             params ["_hvt"];
             waitUntil {
                 sleep 2;
-                !alive _hvt || vehicle _hvt != _hvt
+                private _heli = missionNamespace getVariable ["LL_HELI_obj", objNull];
+                private _heliState = missionNamespace getVariable ["LL_HELI_state", "IDLE"];
+                !alive _hvt 
+                || (vehicle _hvt != _hvt) 
+                || (isNull _heli && _heliState == "IDLE")
             };
 
             if (alive _hvt) then {

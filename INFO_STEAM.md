@@ -1,133 +1,37 @@
-[h1]🎖️ Operation Royal Alliance (ORA)[/h1]
+[b]O[/b]pération . [b]R[/b]oyal . [b]A[/b]lliance
+[b]The briefing, mission diary, and interface are fully localized in all languages.[/b]
 
-[b]Arma 3 SP/COOP Mission[/b] · 1-8 Players
+[h2]🎯 OPERATIONS ORDER (OPORD)[/h2]
+"You are the Tactical Leader of this expeditionary force. The area is unpredictable: each session generates completely randomized mission objectives, weather, time of day, and deployment locations. You will request your missions directly in the field via your radio channel (mouse scroll wheel action menu)."
 
-The briefing, mission diary, and interface are fully localized in all languages.
-
-[h1]🎯 Leader Gameplay[/h1]
-
-The Leader controls all strategic decisions:
-
-[list]
-[*] Request missions
-[*] Request helicopter support
-[*] Request drone support
-[*] Change Rules of Engagement (ROE)
-[*] Order AI to heal
-[*] Order AI resupply
-[/list]
-
-In Singleplayer, you command 7 AI. In COOP, the first slot is the Leader.
-
-[h1]🎮 Leader Actions[/h1]
+[h2]🚁 TACTICAL SUPPORT (SUPPORT ASSETS)[/h2]
+"You have a direct line to our heavy assets:"
 
 [list]
-[*] Drone Surveillance
-[*] Ammo Delivery
-[*] Vehicle Delivery
-[*] Close Air Support (CAS)
-[*] Reinforcements
-[*] Extraction
-[*] Request Mission
-[*] ROE: Infiltration
-[*] ROE: Normal
-[*] ROE: Assault
-[*] Heal Squad
+[*] [b]Tactical Preparation (Starting Arsenal):[/b] A temporary weapons-only arsenal crate is deployed at your starting vehicle. Grab your preferred gear within [b]20 minutes[/b] before it self-destructs (with a red smoke signal). Your starting vehicle will automatically adapt its cargo to match your new weapon calibers (adding extra magazines).
+[*] [b]Close Air Support (CAS):[/b] A UH-60L Black Hawk is on station. Paint the target, and they will handle enemy contacts (Cooldown: 5 minutes).
+[*] [b]MQ-9 Reaper Reconnaissance:[/b] Deploy our drone to mark targets and obliterate enemy armor with guided munitions. It engages vehicles, not infantry, then returns to base (RTB).
+[*] [b]Smart Logistics (Resupply):[/b] Request an airdrop. The logistics system will scan your weapons and adapt the dropped ammo based on your calibers. Your AI will rearm themselves (action to be performed in front of the ammo crate).
+[*] [b]Mobility & Extraction:[/b] Need to move fast? Request a Land Rover MG airdrop. Things getting too hot? Call in airborne reinforcements or request an emergency extraction (MISSION END).
 [/list]
 
-[h1]🚁 Helicopter Support[/h1]
-
-Select support and click a location on the map.
-
-[b]Ammo Delivery[/b]
-[list]
-[*] Dynamic ammo crate based on squad weapons
-[*] AI automatically rearm from the crate
-[*] Reusable
-[/list]
-
-[b]Vehicle Delivery[/b]
-[list]
-[*] Land Rover MG
-[*] One use per mission
-[/list]
-
-[b]Close Air Support[/b]
-[list]
-[*] Helicopter attacks detected enemies
-[*] 5-minute cooldown
-[/list]
-
-[b]Reinforcements[/b]
-[list]
-[*] AI paratroopers join the squad
-[*] Equipped similarly to players
-[/list]
-
-[b]Extraction[/b]
-[list]
-[*] Helicopter extracts the team
-[*] Highest priority support
-[/list]
-
-[h1]🛩️ MQ-9 Reaper Drone[/h1]
+[h2]🧠 COMMAND AND R.O.E[/h2]
+"Through your command interface, you control your squad's Rules of Engagement (ROE):"
 
 [list]
-[*] Patrols a selected area
-[*] Detects enemy vehicles
-[*] Marks targets on the map
-[*] Attacks vehicles with guided weapons
-[*] RTB when mission is complete
+[*] [b]INFILTRATION:[/b] Stealth movement, weapons lowered, reduced speed. We fly under the radar.
+[*] [b]NORMAL:[/b] Standard posture, sectors covered, and active surveillance.
+[*] [b]ASSAULT:[/b] Aggressive search for contact. Fast movement and dynamic cover-seeking.
 [/list]
 
-Does not engage infantry.
+"And if someone's bleeding, you have the authority to order your AI to heal themselves with their Medikits and take cover."
 
-[b]2-minute cooldown after RTB.[/b]
-
-[h1]🩹 Squad Management[/h1]
-
-[b]Heal Squad[/b]
+[h2]🌍 ADDITIONAL INTEL[/h2]
 [list]
-[*] Wounded AI heal themselves
-[*] Supports Medikit and FirstAidKit
+[*] [b]Total Immersion:[/b] The civilian population is dynamic (watch out for infiltrated insurgents!). Minarets broadcast the Ezan (Call to Prayer). Keep your eyes peeled.
+[*] [b]Accessibility:[/b] Based on the CUP mod, deployment requires NO DLC.
+[*] [b]Mission Report:[/b] Leave a Like, Favorite the mission, and report any bugs to your Superior Officer in the comments!
 [/list]
 
-[b]Resupply[/b]
-[list]
-[*] Ammo
-[*] Launcher rounds
-[*] Grenades
-[*] Smoke grenades
-[*] First aid kits
-[/list]
-
-[h1]🎯 Dynamic Missions[/h1]
-
-Request a mission to receive a random objective with map markers and radio briefing.
-
-Randomized every session:
-
-[list]
-[*] Missions
-[*] Locations
-[*] Weather
-[*] Time of day
-[/list]
-
-Only one active mission at a time.
-
-[h1]🌍 Immersion[/h1]
-
-[list]
-[*] 3D positional Call to Prayer (Ezan)
-[*] Dynamic civilian population
-[*] Hidden insurgent threats
-[*] Random weather and daytime
-[*] Randomized names, faces, voices and equipment
-[/list]
-
-[h1]🔄 Respawn[/h1]
-
-[b]Singleplayer:[/b] Switch to another squad member.
-
-[b]Multiplayer:[/b] Revive system and reinforcement requests available.
+[hr][/hr]
+🌍 [b]Find all O.R.A maps here / Retrouvez toutes les cartes O.R.A ici :[/b] 🔗 https://steamcommunity.com/id/KevinDC404/myworkshopfiles/
