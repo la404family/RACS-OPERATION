@@ -176,7 +176,6 @@ if (_mode == "init") exitWith {
                 };
             };
 
-            // Appliquer explicitement les dégâts globaux ou locaux pour s'assurer que le camion explose
             if (_selection == "") then {
                 _unit setDamage _newDmg;
             } else {
@@ -404,7 +403,6 @@ if (_mode == "extract") exitWith {
             _heli setSlingLoad _cargo;
         };
 
-        // Supprime les EH de dégâts et de mort pour éviter l'échec de la mission après treuillage (ex: largage de 150m)
         _cargo removeAllEventHandlers "Killed";
         _cargo removeAllEventHandlers "HandleDamage";
 
