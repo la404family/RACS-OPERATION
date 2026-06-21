@@ -19,26 +19,31 @@ if (_mode == "init") exitWith {
     private _selectedRadios = [];
     private _logicsPool = _allHeliports call BIS_fnc_arrayShuffle;
     private _alivePlayers = allPlayers select { alive _x };
-    private _maxDist = 2000;
+    private _minDistPlayers = 750;
+    while { count _selectedRadios < 1 && _minDistPlayers >= 100 } do {
+        _maxDist = 2000;
+        while { count _selectedRadios < 1 && _maxDist <= 15000 } do {
+            _selectedRadios = [];
+            {
+                private _candidate = _x;
+                private _candidatePos = getPosASL _candidate;
+                private _valid = true;
 
-    while { count _selectedRadios < 1 && _maxDist <= 15000 } do {
-        _selectedRadios = [];
-        {
-            private _candidate = _x;
-            private _candidatePos = getPosASL _candidate;
-            private _valid = true;
+                { private _d = _x distance2D _candidatePos; if (_d < _minDistPlayers || _d > _maxDist) exitWith { _valid = false; }; } forEach _alivePlayers;
 
-            { private _d = _x distance2D _candidatePos; if (_d < 750 || _d > _maxDist) exitWith { _valid = false; }; } forEach _alivePlayers;
+                if (_valid) then {
+                    { if ((getPosASL _x) distance2D _candidatePos < 250) exitWith { _valid = false; }; } forEach _selectedRadios;
+                };
 
-            if (_valid) then {
-                { if ((getPosASL _x) distance2D _candidatePos < 250) exitWith { _valid = false; }; } forEach _selectedRadios;
-            };
+                if (_valid) then { _selectedRadios pushBack _candidate; };
+                if (count _selectedRadios >= _targetNumRadios) exitWith {};
+            } forEach _logicsPool;
 
-            if (_valid) then { _selectedRadios pushBack _candidate; };
-            if (count _selectedRadios >= _targetNumRadios) exitWith {};
-        } forEach _logicsPool;
-
-        if (count _selectedRadios < 1) then { _maxDist = _maxDist + 500; };
+            if (count _selectedRadios < 1) then { _maxDist = _maxDist + 500; };
+        };
+        if (count _selectedRadios < 1) then {
+            _minDistPlayers = _minDistPlayers - 50;
+        };
     };
 
     private _numRadios = count _selectedRadios;

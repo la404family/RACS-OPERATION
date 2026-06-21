@@ -12,18 +12,23 @@ if (_mode == "init") exitWith {
     private _logicsPool = _allLogics call BIS_fnc_arrayShuffle;
     private _alivePlayers = allPlayers select { alive _x };
     private _selectedLogic = objNull;
-    private _maxDist = 2000;
+    private _minDistPlayers = 750;
+    while { isNull _selectedLogic && _minDistPlayers >= 100 } do {
+        _maxDist = 2000;
+        while { isNull _selectedLogic && _maxDist <= 15000 } do {
+            {
+                private _candidate = _x;
+                private _candidatePos = getPosASL _candidate;
+                private _valid = true;
+                { private _d = _x distance2D _candidatePos; if (_d < _minDistPlayers || _d > _maxDist) exitWith { _valid = false; }; } forEach _alivePlayers;
+                if (_valid) exitWith { _selectedLogic = _candidate; };
+            } forEach _logicsPool;
 
-    while { isNull _selectedLogic && _maxDist <= 15000 } do {
-        {
-            private _candidate = _x;
-            private _candidatePos = getPosASL _candidate;
-            private _valid = true;
-            { private _d = _x distance2D _candidatePos; if (_d < 750 || _d > _maxDist) exitWith { _valid = false; }; } forEach _alivePlayers;
-            if (_valid) exitWith { _selectedLogic = _candidate; };
-        } forEach _logicsPool;
-
-        if (isNull _selectedLogic) then { _maxDist = _maxDist + 500; };
+            if (isNull _selectedLogic) then { _maxDist = _maxDist + 500; };
+        };
+        if (isNull _selectedLogic) then {
+            _minDistPlayers = _minDistPlayers - 50;
+        };
     };
 
     if (isNull _selectedLogic) exitWith {

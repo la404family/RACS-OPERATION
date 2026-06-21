@@ -17,26 +17,31 @@ if (_mode == "init") exitWith {
     private _selectedLogics = [];
     private _logicsPool = _allLogics call BIS_fnc_arrayShuffle;
     private _alivePlayers = allPlayers select { alive _x };
-    private _maxDist = 2000;
+    private _minDistPlayers = 750;
+    while { count _selectedLogics < 2 && _minDistPlayers >= 100 } do {
+        _maxDist = 2000;
+        while { count _selectedLogics < 2 && _maxDist <= 15000 } do {
+            _selectedLogics = [];
+            {
+                private _candidate = _x;
+                private _candidatePos = getPosASL _candidate;
+                private _valid = true;
 
-    while { count _selectedLogics < 2 && _maxDist <= 15000 } do {
-        _selectedLogics = [];
-        {
-            private _candidate = _x;
-            private _candidatePos = getPosASL _candidate;
-            private _valid = true;
+                { private _d = _x distance2D _candidatePos; if (_d < _minDistPlayers || _d > _maxDist) exitWith { _valid = false; }; } forEach _alivePlayers;
 
-            { private _d = _x distance2D _candidatePos; if (_d < 750 || _d > _maxDist) exitWith { _valid = false; }; } forEach _alivePlayers;
+                if (_valid) then {
+                    { if ((getPosASL _x) distance2D _candidatePos < 250) exitWith { _valid = false; }; } forEach _selectedLogics;
+                };
 
-            if (_valid) then {
-                { if ((getPosASL _x) distance2D _candidatePos < 250) exitWith { _valid = false; }; } forEach _selectedLogics;
-            };
+                if (_valid) then { _selectedLogics pushBack _candidate; };
+                if (count _selectedLogics >= _targetNumSpawns) exitWith {};
+            } forEach _logicsPool;
 
-            if (_valid) then { _selectedLogics pushBack _candidate; };
-            if (count _selectedLogics >= _targetNumSpawns) exitWith {};
-        } forEach _logicsPool;
-
-        if (count _selectedLogics < 2) then { _maxDist = _maxDist + 500; };
+            if (count _selectedLogics < 2) then { _maxDist = _maxDist + 500; };
+        };
+        if (count _selectedLogics < 2) then {
+            _minDistPlayers = _minDistPlayers - 50;
+        };
     };
 
     private _numSpawns = count _selectedLogics;

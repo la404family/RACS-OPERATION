@@ -12,30 +12,35 @@ if (_mode == "init") exitWith {
     private _alivePlayers = allPlayers select { alive _x };
     private _logicRdv = objNull;
     private _logicMilitia = objNull;
-    private _maxDist = 2000;
+    private _minDistPlayers = 750;
+    while { isNull _logicRdv && _minDistPlayers >= 100 } do {
+        _maxDist = 2000;
+        while { isNull _logicRdv && _maxDist <= 15000 } do {
+            private _eligibleLogics = _allLogics select {
+                private _pos = getPosASL _x;
+                private _ok = true;
+                { private _d = _x distance2D _pos; if (_d < _minDistPlayers || _d > _maxDist) exitWith { _ok = false; }; } forEach _alivePlayers;
+                _ok
+            };
 
-    while { isNull _logicRdv && _maxDist <= 15000 } do {
-        private _eligibleLogics = _allLogics select {
-            private _pos = getPosASL _x;
-            private _ok = true;
-            { private _d = _x distance2D _pos; if (_d < 750 || _d > _maxDist) exitWith { _ok = false; }; } forEach _alivePlayers;
-            _ok
+            if (count _eligibleLogics >= 2) then {
+                private _shuffledEligible = _eligibleLogics call BIS_fnc_arrayShuffle;
+                {
+                    private _rdvCandidate = _x;
+                    private _validCandidates = (_shuffledEligible - [_rdvCandidate]) select { (_x distance2D _rdvCandidate) >= 250 };
+                    if (count _validCandidates > 0) exitWith {
+                        _logicRdv = _rdvCandidate;
+                        _validCandidates = [_validCandidates, [], { _x distance2D _rdvCandidate }, "ASCEND"] call BIS_fnc_sortBy;
+                        _logicMilitia = _validCandidates select 0;
+                    };
+                } forEach _shuffledEligible;
+            };
+
+            if (isNull _logicRdv) then { _maxDist = _maxDist + 500; };
         };
-
-        if (count _eligibleLogics >= 2) then {
-            private _shuffledEligible = _eligibleLogics call BIS_fnc_arrayShuffle;
-            {
-                private _rdvCandidate = _x;
-                private _validCandidates = (_shuffledEligible - [_rdvCandidate]) select { (_x distance2D _rdvCandidate) >= 250 };
-                if (count _validCandidates > 0) exitWith {
-                    _logicRdv = _rdvCandidate;
-                    _validCandidates = [_validCandidates, [], { _x distance2D _rdvCandidate }, "ASCEND"] call BIS_fnc_sortBy;
-                    _logicMilitia = _validCandidates select 0;
-                };
-            } forEach _shuffledEligible;
+        if (isNull _logicRdv) then {
+            _minDistPlayers = _minDistPlayers - 50;
         };
-
-        if (isNull _logicRdv) then { _maxDist = _maxDist + 500; };
     };
 
     if (isNull _logicRdv || isNull _logicMilitia) exitWith {

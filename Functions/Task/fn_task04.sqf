@@ -19,21 +19,26 @@ if (_mode == "init") exitWith {
     private _selectedLogics = [];
     private _alivePlayers = allPlayers select { alive _x };
     private _logicsPool = _allLogics call BIS_fnc_arrayShuffle;
-    private _maxDist = 2000;
+    private _minDistPlayers = 750;
+    while { count _selectedLogics < _numTrucks && _minDistPlayers >= 100 } do {
+        _maxDist = 2000;
+        while { count _selectedLogics < _numTrucks && _maxDist <= 15000 } do {
+            _selectedLogics = [];
+            {
+                private _candidate = _x;
+                private _candidatePos = getPosASL _candidate;
+                private _valid = true;
+                { private _d = _x distance2D _candidatePos; if (_d < _minDistPlayers || _d > _maxDist) exitWith { _valid = false; }; } forEach _alivePlayers;
+                { if (_x distance2D _candidatePos < 250) exitWith { _valid = false; }; } forEach _selectedLogics;
+                if (_valid) then { _selectedLogics pushBack _candidate; };
+                if (count _selectedLogics == _numTrucks) exitWith {};
+            } forEach _logicsPool;
 
-    while { count _selectedLogics < _numTrucks && _maxDist <= 15000 } do {
-        _selectedLogics = [];
-        {
-            private _candidate = _x;
-            private _candidatePos = getPosASL _candidate;
-            private _valid = true;
-            { private _d = _x distance2D _candidatePos; if (_d < 750 || _d > _maxDist) exitWith { _valid = false; }; } forEach _alivePlayers;
-            { if (_x distance2D _candidatePos < 250) exitWith { _valid = false; }; } forEach _selectedLogics;
-            if (_valid) then { _selectedLogics pushBack _candidate; };
-            if (count _selectedLogics == _numTrucks) exitWith {};
-        } forEach _logicsPool;
-
-        if (count _selectedLogics < _numTrucks) then { _maxDist = _maxDist + 500; };
+            if (count _selectedLogics < _numTrucks) then { _maxDist = _maxDist + 500; };
+        };
+        if (count _selectedLogics < _numTrucks) then {
+            _minDistPlayers = _minDistPlayers - 50;
+        };
     };
 
     if (count _selectedLogics < 1) exitWith {
@@ -99,8 +104,8 @@ if (_mode == "init") exitWith {
         _allUnits pushBack _truck;
 
         _truck addEventHandler ["HandleDamage", {
-            params ["_unit", "_selection", "_damage"];
-            if (!alive _unit) exitWith { _damage };
+            params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitPartIndex", "_instigator", "_hitPoint"];
+            if (!alive _unit) exitWith { 0 };
 
             private _partDmg = if (_selection != "") then { _unit getHit _selection } else { damage _unit };
             if (isNil "_partDmg") then { _partDmg = damage _unit; };
@@ -123,7 +128,7 @@ if (_mode == "init") exitWith {
 
             private _level = (floor (_newDmg * 10)) min 9;
             if (_level >= 1) then {
-                    _unit setVariable ["LL_Toxic_Level", _level max (_unit getVariable ["LL_Toxic_Level", 0]), true];
+                _unit setVariable ["LL_Toxic_Level", _level max (_unit getVariable ["LL_Toxic_Level", 0]), true];
                 private _emitter = _unit getVariable ["LL_Toxic_Smoke1", objNull];
                 if (isNull _emitter) then {
                     _emitter = "#particlesource" createVehicle (getPos _unit);
@@ -169,6 +174,13 @@ if (_mode == "init") exitWith {
                         };
                     };
                 };
+            };
+
+            // Appliquer explicitement les dégâts globaux ou locaux pour s'assurer que le camion explose
+            if (_selection == "") then {
+                _unit setDamage _newDmg;
+            } else {
+                _unit setHitPointDamage [_hitPoint, _newDmg];
             };
 
             _newDmg
@@ -383,7 +395,7 @@ if (_mode == "extract") exitWith {
         if (!alive _heli || !alive _cargo) exitWith {};
 
         _cargo allowDamage false; 
-        _cargo setMass 1000; 
+        _cargo setMass 1; 
 
         sleep 0.5;
         _heli setSlingLoad _cargo;
@@ -399,6 +411,7 @@ if (_mode == "extract") exitWith {
         _heli flyInHeight 50;
         private _escapeASL = _cargoASL + 50;
         _heli flyInHeightASL [_escapeASL, _escapeASL, _escapeASL];
+        _heli limitSpeed 90;
 
         private _wp2 = _grp addWaypoint [_dropPos, 0];
         _wp2 setWaypointType "MOVE";
